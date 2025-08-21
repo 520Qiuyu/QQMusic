@@ -1,4 +1,6 @@
+import { getAlbumInfo, getAlbumPicUrl } from '@/apis/album';
 import {
+  getSimilarSinger,
   getSingerAlbum,
   getSingerAllAlbum,
   getSingerFollowCount,
@@ -6,6 +8,8 @@ import {
   getSingerInfo,
   getSingerList,
 } from '@/apis/singer';
+import { getSongInfo, getSongLyric, getSongPlayUrl } from '@/apis/song';
+import { getSongList, getSongListCategory, getSongListDetail } from '@/apis/songList';
 import { AreaList, GenreList, SexList } from '@/constants';
 import { useVisible } from '@/hooks';
 import type { Ref } from '@/hooks/useVisible';
@@ -110,6 +114,135 @@ const TestModal = forwardRef((props, ref: ForwardedRef<Ref>) => {
     }
   };
 
+  // 测试获取相似歌手
+
+  const [getSimilarSingerLoading, setGetSimilarSingerLoading] = useState(false);
+  const handleGetSimilarSinger = async () => {
+    try {
+      setGetSimilarSingerLoading(true);
+      const res = await getSimilarSinger(mid);
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      setGetSimilarSingerLoading(false);
+    }
+  };
+
+  // 测试获取专辑信息
+  const [albummid, setAlbummid] = useState('0016l2F430zMux');
+  const [getAlbumInfoLoading, setGetAlbumInfoLoading] = useState(false);
+  const handleGetAlbumInfo = async () => {
+    try {
+      setGetAlbumInfoLoading(true);
+      const res = await getAlbumInfo(albummid);
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      setGetAlbumInfoLoading(false);
+    }
+  };
+
+  // 测试获取专辑图片
+
+  const [getAlbumPicUrlLoading, setGetAlbumPicUrlLoading] = useState(false);
+  const handleGetAlbumPicUrl = async () => {
+    try {
+      setGetAlbumPicUrlLoading(true);
+      const res = getAlbumPicUrl(albummid);
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      setGetAlbumPicUrlLoading(false);
+    }
+  };
+
+  // 测试获取歌单列表
+  const [getSongListLoading, setGetSongListLoading] = useState(false);
+  const [getSongListCategoryLoading, setGetSongListCategoryLoading] = useState(false);
+  const handleGetSongListCategory = async () => {
+    try {
+      setGetSongListCategoryLoading(true);
+      const res = await getSongListCategory();
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      setGetSongListCategoryLoading(false);
+    }
+  };
+  const handleGetSongList = async () => {
+    try {
+      setGetSongListLoading(true);
+      const res = await getSongList();
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      setGetSongListLoading(false);
+    }
+  };
+
+  // 测试获取歌单详情
+  const [disstid, setDisstid] = useState('7011264340');
+  const [getSongListDetailLoading, setGetSongListDetailLoading] = useState(false);
+  const handleGetSongListDetail = async () => {
+    try {
+      setGetSongListDetailLoading(true);
+      const res = await getSongListDetail(disstid);
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      setGetSongListDetailLoading(false);
+    }
+  };
+
+  // 测试获取歌曲歌词
+  const [getSongLyricLoading, setGetSongLyricLoading] = useState(false);
+  const [songmid, setSongmid] = useState('003rJSwm3TechU');
+  const handleGetSongLyric = async () => {
+    try {
+      setGetSongLyricLoading(true);
+      const res = await getSongLyric(songmid);
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      setGetSongLyricLoading(false);
+    }
+  };
+
+  // 测试获取歌曲播放链接
+  const [getSongPlayUrlLoading, setGetSongPlayUrlLoading] = useState(false);
+  const handleGetSongPlayUrl = async () => {
+    try {
+      setGetSongPlayUrlLoading(true);
+      const res = await getSongPlayUrl(songmid.split(','));
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      setGetSongPlayUrlLoading(false);
+    }
+  };
+
+  // 测试获取歌曲信息
+  const [getSongInfoLoading, setGetSongInfoLoading] = useState(false);
+  const handleGetSongInfo = async () => {
+    try {
+      setGetSongInfoLoading(true);
+      const res = await getSongInfo(songmid);
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      setGetSongInfoLoading(false);
+    }
+  };
+
   return (
     <Modal title='测试Modal' open={visible} onCancel={close} width={1000} footer={null} centered>
       <Form>
@@ -178,6 +311,84 @@ const TestModal = forwardRef((props, ref: ForwardedRef<Ref>) => {
               onClick={handleGetSingerHotSong}
               loading={getSingerHotSongLoading}>
               获取歌手热门歌曲
+            </Button>
+            <Button
+              type='primary'
+              onClick={handleGetSimilarSinger}
+              loading={getSimilarSingerLoading}>
+              获取相似歌手
+            </Button>
+          </Space>
+        </Form.Item>
+
+        {/* 测试获取专辑信息 */}
+        <Form.Item label='获取专辑信息'>
+          <Space>
+            <Input
+              placeholder='请输入专辑mid'
+              style={{ width: 300 }}
+              value={albummid}
+              onChange={(e) => setAlbummid(e.target.value)}
+            />
+            <Button type='primary' onClick={handleGetAlbumInfo} loading={getAlbumInfoLoading}>
+              获取专辑信息
+            </Button>
+            <Button type='primary' onClick={handleGetAlbumPicUrl} loading={getAlbumPicUrlLoading}>
+              获取专辑图片
+            </Button>
+          </Space>
+        </Form.Item>
+
+        {/* 测试获取歌单列表 */}
+        <Form.Item label='获取歌单列表'>
+          <Space>
+            <Button
+              type='primary'
+              onClick={handleGetSongListCategory}
+              loading={getSongListCategoryLoading}>
+              获取歌单分类列表
+            </Button>
+            <Button type='primary' onClick={handleGetSongList} loading={getSongListLoading}>
+              获取歌单列表
+            </Button>
+          </Space>
+        </Form.Item>
+
+        {/* 测试获取歌单详情 */}
+        <Form.Item label='获取歌单详情'>
+          <Space>
+            <Input
+              placeholder='请输入歌单id'
+              style={{ width: 300 }}
+              value={disstid}
+              onChange={(e) => setDisstid(e.target.value)}
+            />
+            <Button
+              type='primary'
+              onClick={handleGetSongListDetail}
+              loading={getSongListDetailLoading}>
+              获取歌单详情
+            </Button>
+          </Space>
+        </Form.Item>
+
+        {/* 测试获取歌曲歌词 */}
+        <Form.Item label='获取歌曲歌词'>
+          <Space>
+            <Input
+              placeholder='请输入歌曲mid'
+              style={{ width: 300 }}
+              value={songmid}
+              onChange={(e) => setSongmid(e.target.value)}
+            />
+            <Button type='primary' onClick={handleGetSongLyric} loading={getSongLyricLoading}>
+              获取歌曲歌词
+            </Button>
+            <Button type='primary' onClick={handleGetSongPlayUrl} loading={getSongPlayUrlLoading}>
+              获取歌曲播放链接
+            </Button>
+            <Button type='primary' onClick={handleGetSongInfo} loading={getSongInfoLoading}>
+              获取歌曲信息
             </Button>
           </Space>
         </Form.Item>

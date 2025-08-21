@@ -1,4 +1,4 @@
-import type { AlbumInfo, SingerInfo } from '@/types/singer';
+import type { AlbumInfo, SingerHotSongData, SingerInfo } from '@/types/singer';
 import { qqMusicRequest } from '@/utils/request';
 import dayjs from 'dayjs';
 
@@ -152,7 +152,7 @@ export const getSingerHotSong = async (
     sin?: number;
     num?: number;
   } = {},
-): Promise<any> => {
+): Promise<SingerHotSongData> => {
   const { sin = 0, num = 80 } = options;
   const params = {
     singermid,
@@ -185,3 +185,36 @@ export const getSingerHotSong = async (
   }
   throw new Error('获取歌手热门歌曲失败');
 };
+
+/** 获取相似歌手 */
+export const getSimilarSinger = async (
+  singer_mid: string,
+  options: { start?: number; num?: number } = {},
+): Promise<{
+  hasmore: number;
+  items: Array<{
+    id: number;
+    mid: string;
+    name: string;
+    pic: string;
+  }>;
+}> => {
+  const { start = 0, num = 5 } = options;
+  const params = {
+    singer_mid,
+    format: 'json',
+    outCharset: 'utf-8',
+    utf8: '1',
+    start: start + '',
+    num: num + '',
+  };
+
+  const res = await qqMusicRequest(
+    `/v8/fcg-bin/fcg_v8_simsinger.fcg?${new URLSearchParams(params).toString()}`,
+    {},
+  );
+
+  return res.singers;
+};
+
+

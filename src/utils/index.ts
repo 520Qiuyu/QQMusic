@@ -1,9 +1,5 @@
 // #region ================ 工具函数 ================
-
-import md5 from 'md5';
 import { unsafeWindow } from 'vite-plugin-monkey/dist/client';
-import * as mm from 'music-metadata';
-import { QUALITY_LEVELS } from '@/constant';
 
 /**
  * 格式化文件大小
@@ -35,25 +31,16 @@ export const formatDuration = (ms) => {
 };
 
 /**
- * 获取音质描述
- * @param {string} level 音质等级
- * @returns {string} 音质描述
- */
-export const getQualityDesc = (level) => {
-  return QUALITY_LEVELS[level] || level;
-};
-
-/**
  * 将数组分割成多个小数组
  * @param {Array} array - 被分割的数组
  * @param {number} size - 小数组的大小
  * @returns {Array} - 一个包含小数组的数组
  */
-export function chunkArray(array, size) {
+export function chunkArray<T>(array: T[], size: number): T[][] {
   if (size <= 0) {
     throw new Error('Size must be greater than 0');
   }
-  const result = [];
+  const result: T[][] = [];
   for (let i = 0; i < array.length; i += size) {
     result.push(array.slice(i, i + size));
   }
@@ -191,15 +178,6 @@ export const getGlobalThis = () => {
 };
 
 /**
- * 获取网易云用户信息
- * @returns {Object}
- */
-export const getGUser = () => {
-  const globalThis = getGlobalThis();
-  return globalThis.GUser || {};
-};
-
-/**
  * 获取字符串长度（中文算2个字符）
  * @param {string} str
  * @returns {number}
@@ -236,62 +214,6 @@ export const truncateString = (str, maxLength) => {
 export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /**
- * 计算文件的MD5哈希值
- * @param {File} file - 要计算MD5的文件对象
- * @returns {Promise<string>} 返回文件的MD5哈希值（32位小写十六进制字符串）
- * @example
- * const file = new File(['hello'], 'hello.txt');
- * const md5 = await getFileMD5(file);
- * console.log(md5); // 5d41402abc4b2a76b9719d911017c592
- */
-export async function getFileMD5(file) {
-  const arrayBuffer = await file.arrayBuffer(); // 读取文件为 ArrayBuffer
-  const uint8Array = new Uint8Array(arrayBuffer);
-  return md5(uint8Array);
-}
-
-/**
- * 从音频文件中获取元数据信息
- * @param {File} file - 音频文件对象
- * @returns {Promise<Object>} 包含音频元数据的对象
- * @example
- * const file = new File(['...'], 'song.mp3');
- * const metadata = await getAudioMetadata(file);
- * console.log(metadata.title, metadata.artist, metadata.album);
- */
-export async function getAudioMetadata(file) {
-  try {
-    const metadata = await mm.parseBlob(file);
-    console.log('metadata.common', metadata, metadata.common);
-    const { album, artist, artists, title } = metadata.common || {};
-    const { bitrate } = metadata.format || {};
-    return {
-      title: title || '',
-      artist: artist || artists?.[0] || '',
-      artists: artists || (artist ? [artist] : []),
-      album: album || '',
-      duration: metadata.format?.duration || 0,
-      bitrate: metadata.format?.bitrate || 0,
-      sampleRate: metadata.format?.sampleRate || 0,
-      format: metadata.format?.container || '',
-      bitrate: Math.floor(bitrate / 1000) || 0,
-    };
-  } catch (error) {
-    console.error('Failed to parse audio metadata:', error);
-    return {
-      title: '',
-      artist: '',
-      artists: [],
-      album: '',
-      duration: 0,
-      bitrate: 0,
-      sampleRate: 0,
-      format: '',
-    };
-  }
-}
-
-/**
  * 合并多个对象，只用非空值进行覆盖
  * @param {...Object} objects - 要合并的对象列表
  * @returns {Object} 合并后的新对象
@@ -315,134 +237,22 @@ export const mergeObjects = (o1, ...objects) => {
   }, o1);
 };
 
+/**
+ * 获取cookie键值对
+ */
+export const getCookie = (key?: string) => {
+  const cookie = document.cookie;
+  const cookieMap = {};
+  cookie.split('; ').forEach((row) => {
+    const [key, value] = row.split('=');
+    cookieMap[key] = value;
+  });
+  if (!key) return cookieMap;
+  return cookieMap[key];
+};
+
 // #endregion ================ 工具函数 ================
 
 // #region ================ 下载功能 ================
-
-/**
- * 批量下载歌曲
- * @param {Array} songList 歌曲列表
- * @param {Object} config 下载配置
- */
-export async function batchDownloadSongs(songList, config) {
-  const downloadQueue = [];
-
-  // 准备下载队列
-  for (const song of songList) {
-    if (config.filter && !config.filter(song)) continue;
-
-    downloadQueue.push({
-      song,
-      status: 'pending',
-    });
-  }
-
-  // 创建进度提示
-  const progressBox = await Swal.fire({
-    title: '批量下载中',
-    html: `
-                <div class="download-progress">
-                    <div id="download-status">准备下载 ${downloadQueue.length} 首歌曲...</div>
-                    <div class="progress-bar">
-                        <div id="progress-inner" style="width: 0%"></div>
-                    </div>
-                </div>
-            `,
-    showConfirmButton: false,
-    allowOutsideClick: false,
-  });
-
-  // 开始下载
-  const threads = [];
-  const threadCount = config.threadCount || 3;
-
-  for (let i = 0; i < threadCount; i++) {
-    threads.push(downloadThread(i));
-  }
-
-  // 下载线程
-  async function downloadThread(threadIndex) {
-    while (true) {
-      // 获取待下载任务
-      const task = downloadQueue.find((t) => t.status === 'pending');
-      if (!task) break;
-
-      // 标记为进行中
-      task.status = 'downloading';
-
-      try {
-        // 获取下载链接
-        const urlRes = await new Promise((resolve, reject) => {
-          weapiRequest('/api/song/enhance/player/url/v1', {
-            data: {
-              ids: [task.song.id],
-              level: config.level || 'standard',
-            },
-            onload: resolve,
-            onerror: reject,
-          });
-        });
-
-        if (!urlRes.data?.[0]?.url) {
-          throw new Error('获取下载链接失败');
-        }
-
-        // 开始下载
-        await new Promise((resolve, reject) => {
-          const fileName =
-            generateFileName(
-              task.song.name,
-              getArtistInfo(task.song),
-              config.fileNameFormat,
-            ) + '.mp3';
-
-          GM_download({
-            url: urlRes.data[0].url,
-            name: fileName,
-            onload: resolve,
-            onerror: reject,
-          });
-        });
-
-        task.status = 'success';
-      } catch (error) {
-        console.error('Download failed:', error);
-        task.status = 'error';
-      }
-
-      // 更新进度
-      updateProgress();
-    }
-  }
-
-  // 更新进度显示
-  function updateProgress() {
-    const finished = downloadQueue.filter(
-      (t) => t.status === 'success' || t.status === 'error',
-    ).length;
-    const progress = ((finished / downloadQueue.length) * 100).toFixed(1);
-    const successful = downloadQueue.filter(
-      (t) => t.status === 'success',
-    ).length;
-    const failed = downloadQueue.filter((t) => t.status === 'error').length;
-
-    document.getElementById('progress-inner').style.width = `${progress}%`;
-    document.getElementById('download-status').textContent =
-      `已完成: ${finished}/${downloadQueue.length} (成功: ${successful}, 失败: ${failed})`;
-
-    if (finished === downloadQueue.length) {
-      setTimeout(() => {
-        Swal.close();
-        showTip(
-          `下载完成 成功: ${successful}, 失败: ${failed}`,
-          failed > 0 ? 'warning' : 'success',
-        );
-      }, 1000);
-    }
-  }
-
-  // 等待所有线程完成
-  await Promise.all(threads);
-}
 
 // #endregion ================ 下载功能 ================

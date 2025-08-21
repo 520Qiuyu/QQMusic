@@ -1,3 +1,5 @@
+import { getCookie } from '@/utils';
+
 export const mapToList = (map: Record<string, number>) => {
   return Object.entries(map).map(([key, value]) => ({
     label: key,
@@ -40,3 +42,41 @@ export const Sex = {
   组合: 2,
 } as const;
 export const SexList = mapToList(Sex);
+
+export const getCommonParams = () => ({
+  g_tk: 1124214810,
+  loginUin: getCookie('uin') || '0',
+  hostUin: 0,
+  inCharset: 'utf8',
+  outCharset: 'utf-8',
+  // format: 'json',
+  notice: 0,
+  platform: 'yqq.json',
+  needNewCode: 0,
+});
+
+export const _guid =
+  (Math.round(2147483647 * Math.random()) * new Date().getUTCMilliseconds()) % 1e10;
+
+export const FileType = {
+  m4a: {
+    s: 'C400',
+    e: '.m4a',
+  },
+  128: {
+    s: 'M500',
+    e: '.mp3',
+  },
+  320: {
+    s: 'M800',
+    e: '.mp3',
+  },
+  ape: {
+    s: 'A000',
+    e: '.ape',
+  },
+  flac: {
+    s: 'F000',
+    e: '.flac',
+  },
+} as const;
