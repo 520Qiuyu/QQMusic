@@ -1,10 +1,14 @@
 import { _guid, getCommonParams, FileType } from '@/constants';
+import type { SongDetailsData } from '@/types/song';
 import { getCookie } from '@/utils';
 import { qqMusicRequest } from '@/utils/request';
 import dayjs from 'dayjs';
 
 /** 获取歌曲信息 */
-export const getSongInfo = async (songmid: string, options: { songid?: string } = {}) => {
+export const getSongInfo = async (
+  songmid: string,
+  options: { songid?: string } = {},
+): Promise<SongDetailsData> => {
   const { songid = '' } = options;
   const params = {
     ...getCommonParams(),
