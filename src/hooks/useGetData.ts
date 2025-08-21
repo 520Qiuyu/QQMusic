@@ -1,4 +1,3 @@
-import type { IApiResponse } from '@/types/request';
 import { useEffect, useState } from 'react';
 
 /**
@@ -26,11 +25,8 @@ export const useGetData = <T = any>(api: API<T>, params?: any, options?: Options
     try {
       setLoading(true);
       const res = await api(params);
-      const { status = 200, response, data } = res;
-      if (status === 200) {
-        setData(response || data || ({} as T));
-        callback && callback(response || data || ({} as T));
-      }
+      setData(res || ({} as T));
+      callback && callback(res || ({} as T));
     } catch (error) {
       console.log('error', error);
     } finally {
@@ -56,7 +52,7 @@ export const useGetData = <T = any>(api: API<T>, params?: any, options?: Options
 };
 
 // 传入的api
-export type API<T = {}> = (params?: any) => Promise<IApiResponse<T>>;
+export type API<T = {}> = (params?: any) => Promise<T>;
 // 回调类型
 export type CallBack<T = {}> = (data: T) => any;
 // 配置项

@@ -11,6 +11,7 @@
   "dependencies": {
     "@ant-design/icons": "^5.5.2",
     "antd": "^5.22.4",
+    "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
     "nanoid": "^5.1.5",
     "react": "^19.1.1",
@@ -28,4 +29,3 @@
     "vite-plugin-monkey": "^7.0.0"
   }
 }
-

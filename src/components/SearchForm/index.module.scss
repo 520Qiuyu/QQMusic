@@ -1,3 +1,18 @@
 .search-form {
-  padding: 16px 0;
+  margin-bottom: -16px;
+  :global {
+    .ant-form-item {
+      margin-bottom: 16px;
+    }
+
+    // 组件圆角样式
+    input.ant-input,
+    .ant-input-affix-wrapper,
+    .ant-picker,
+    .ant-calendar-picker-input,
+    .ant-select-selector,
+    .ant-select-multiple .ant-select-selection-item {
+      border-radius: 32px;
+    }
+  }
 }

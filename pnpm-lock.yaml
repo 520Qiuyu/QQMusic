@@ -8,12 +8,12 @@ dependencies:
   '@ant-design/icons':
     specifier: ^5.5.2
     version: 5.6.1(react-dom@19.1.1)(react@19.1.1)
-  '@types/node':
-    specifier: ^24.3.0
-    version: 24.3.0
   antd:
     specifier: ^5.22.4
     version: 5.27.1(react-dom@19.1.1)(react@19.1.1)
+  classnames:
+    specifier: ^2.5.1
+    version: 2.5.1
   dayjs:
     specifier: ^1.11.13
     version: 1.11.13
@@ -31,6 +31,9 @@ dependencies:
     version: 1.90.0
 
 devDependencies:
+  '@types/node':
+    specifier: ^24.3.0
+    version: 24.3.0
   '@types/react':
     specifier: ^19.1.10
     version: 19.1.10
@@ -1069,6 +1072,7 @@ packages:
     resolution: {integrity: sha512-aPTXCrfwnDLj4VvXrm+UUCQjNEvJgNA8s5F1cvwQU+3KNltTOkBm1j30uNLyqqPNe7gE3KFzImYoZEfLhp4Yow==}
     dependencies:
       undici-types: 7.10.0
+    dev: true
 
   /@types/react-dom@19.1.7(@types/react@19.1.10):
     resolution: {integrity: sha512-i5ZzwYpqjmrKenzkoLM2Ibzt6mAsM7pxB6BCIouEVVmgiqaMj1TjaK7hnA36hbW5aZv20kx7Lw6hWzPWg0Rurw==}
@@ -2423,6 +2427,7 @@ packages:
 
   /undici-types@7.10.0:
     resolution: {integrity: sha512-t5Fy/nfn+14LuOc2KNYg75vZqClpAiqscVvMygNnlsHBFpSXdJaYtXMcdNLpl/Qvc3P2cB3s6lOV51nqsFq4ag==}
+    dev: true
 
   /unimport@3.14.6:
     resolution: {integrity: sha512-CYvbDaTT04Rh8bmD8jz3WPmHYZRG/NnvYVzwD6V1YAlvvKROlAeNDUBhkBGzNav2RKaeuXvlWYaa1V4Lfi/O0g==}
