@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.5.2",
+    "ahooks": "^3.9.3",
     "antd": "^5.22.4",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",

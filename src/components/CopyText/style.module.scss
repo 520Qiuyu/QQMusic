@@ -1,0 +1,17 @@
+.copy-text {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .text {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .copy-btn {
+    flex-shrink: 0;
+    padding: 0;
+  }
+}

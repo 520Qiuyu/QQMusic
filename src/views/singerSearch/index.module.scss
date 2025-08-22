@@ -1,0 +1,96 @@
+.singer-search-modal {
+  :global(.ant-modal-body) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.singer-info {
+  display: flex;
+  align-items: center;
+
+  .singer-avatar {
+    border: 3px solid #f0f0f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: #31c27c;
+      transform: scale(1.05);
+    }
+  }
+
+  .singer-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .singer-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #262626;
+      line-height: 1.4;
+    }
+
+    .singer-country {
+      font-size: 13px;
+      color: #666;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      &::before {
+        content: '📍';
+        font-size: 12px;
+      }
+    }
+
+    .singer-id {
+      font-size: 12px;
+      color: #999;
+      font-family: 'Courier New', monospace;
+      background: #f5f5f5;
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: inline-block;
+      width: fit-content;
+    }
+  }
+}
+
+.singer-id-text {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: #666;
+  background: #f8f9fa;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.singer-mid-text {
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: #999;
+  background: #f5f5f5;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+  word-break: break-all;
+}
+
+.info-tag {
+  border-radius: 6px;
+  font-size: 12px;
+  padding: 4px 8px;
+  font-weight: 500;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  &.ant-tag-blue {
+    background: linear-gradient(135deg, #e6f7ff 0%, #bae7ff 100%);
+    color: #1890ff;
+  }
+}
+

@@ -105,7 +105,8 @@ export const getSingerList = async (options: {
           genre: +genre,
           index: -100,
           sin: (cur_page - 1) * 80,
-          cur_page,
+          num: 80,
+          cur_page: cur_page,
         },
       },
     }),
@@ -216,5 +217,3 @@ export const getSimilarSinger = async (
 
   return res.singers;
 };
-
-
