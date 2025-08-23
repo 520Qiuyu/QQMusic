@@ -1,0 +1,239 @@
+// 定义统计项颜色主题
+$stat-colors: (
+  songs: (
+    #667eea,
+    #764ba2,
+    rgba(102, 126, 234, 0.3),
+    rgba(102, 126, 234, 0.4),
+  ),
+  albums: (
+    #f093fb,
+    #f5576c,
+    rgba(240, 147, 251, 0.3),
+    rgba(240, 147, 251, 0.4),
+  ),
+  mvs: (
+    #4facfe,
+    #00f2fe,
+    rgba(79, 172, 254, 0.3),
+    rgba(79, 172, 254, 0.4),
+  ),
+);
+
+// 生成统计项样式的函数
+@function get-stat-style($type) {
+  @return map-get($stat-colors, $type);
+}
+
+// 生成统计项样式的mixin
+@mixin stat-item-style($type) {
+  $colors: get-stat-style($type);
+  $start-color: nth($colors, 1);
+  $end-color: nth($colors, 2);
+  $shadow-color: nth($colors, 3);
+  $hover-shadow-color: nth($colors, 4);
+
+  background: linear-gradient(135deg, #{$start-color} 0%, #{$end-color} 100%);
+  box-shadow: 0 2px 8px #{$shadow-color};
+
+  &:hover {
+    box-shadow: 0 4px 12px #{$hover-shadow-color};
+  }
+}
+
+.hot-song-modal {
+  .modal-title {
+    width: 100%;
+
+    .title-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 30px;
+
+      .title-stats {
+        display: flex;
+        align-items: center;
+
+        .stat-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 8px 16px;
+          border-radius: 8px;
+          margin-left: 12px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+
+          // 使用循环生成不同颜色的统计项
+          @each $type, $colors in $stat-colors {
+            $index: index(map-keys($stat-colors), $type);
+
+            &:nth-child(#{$index}) {
+              @include stat-item-style($type);
+            }
+          }
+
+          // 为不同统计项添加不同的悬停效果
+          @each $type, $colors in $stat-colors {
+            $index: index(map-keys($stat-colors), $type);
+
+            &:nth-child(#{$index}):hover {
+              transform: translateY(-2px) scale(1.02);
+            }
+          }
+
+          &:hover {
+            transform: translateY(-2px);
+          }
+
+          &.loading {
+            opacity: 0.7;
+
+            // 为不同统计项添加不同的动画延迟
+            @each $type, $colors in $stat-colors {
+              $index: index(map-keys($stat-colors), $type);
+
+              &:nth-child(#{$index}) .stat-value {
+                animation: pulse 1.5s ease-in-out infinite;
+                animation-delay: #{$index * 0.2}s;
+              }
+            }
+          }
+
+          .stat-label {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            margin-bottom: 2px;
+          }
+
+          .stat-value {
+            font-size: 16px;
+            color: #ffffff;
+            font-weight: 600;
+            line-height: 1;
+            transition: all 0.3s ease;
+
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .singer-info-display {
+    margin-bottom: 16px;
+    padding: 16px;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+    border-left: 4px solid #1890ff;
+  }
+
+  .song-table {
+    margin-bottom: 16px;
+  }
+
+  .song-info {
+    .album-cover {
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      overflow: hidden;
+      flex-shrink: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+    }
+
+    .song-details {
+      flex: 1;
+      min-width: 0;
+
+      .song-name {
+        font-weight: 500;
+        color: #262626;
+        margin-bottom: 4px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 150px;
+      }
+
+      .song-album {
+        font-size: 12px;
+        color: #8c8c8c;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 150px;
+      }
+    }
+  }
+
+  .singer-info {
+    .singer-name {
+      font-weight: 500;
+      color: #262626;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 120px;
+    }
+
+    .singer-id {
+      font-size: 12px;
+      color: #8c8c8c;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 120px;
+    }
+  }
+
+  .song-id-text,
+  .song-mid-text {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 12px;
+    color: #595959;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100px;
+    display: inline-block;
+  }
+
+  .upload-time {
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 16px;
+
+    .selected-count {
+      font-size: 14px;
+      color: #595959;
+      margin-right: auto;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

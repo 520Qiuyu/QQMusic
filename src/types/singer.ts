@@ -116,6 +116,8 @@ export interface File {
   size_ape: number;
   /** DTS格式大小 */
   size_dts: number;
+  /** FLAC格式大小 */
+  size_flac: number;
 }
 
 export interface Mv {

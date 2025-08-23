@@ -5,11 +5,7 @@
  */
 export const downloadWithFileName = async (url: string, name: string) => {
   try {
-    // 通过本地代理重写 URL，避免跨域
-    const proxiedUrl = url.startsWith('https://y.qq.com')
-      ? url.replace('https://y.qq.com', '/qqmusic')
-      : url;
-    const response = await fetch(proxiedUrl);
+    const response = await fetch(url);
     const blob = await response.blob();
     const blobUrl = window.URL.createObjectURL(blob);
 
