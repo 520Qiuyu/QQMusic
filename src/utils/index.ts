@@ -1,4 +1,6 @@
 // #region ================ 工具函数 ================
+import type { FileType } from '@/constants';
+import type { SongInfo } from '@/types/singer';
 import { unsafeWindow } from 'vite-plugin-monkey/dist/client';
 
 /**
@@ -83,7 +85,7 @@ export const getAlbumTextInSongDetail = (song) => {
  * const result = uniqueArrayByKey(arr, 'id');
  * // result: [{id: 1, name: 'a'}, {id: 2, name: 'c'}]
  */
-export const uniqueArrayByKey = (arr, key) => {
+export const uniqueArrayByKey = <T>(arr: T[], key: keyof T): T[] => {
   if (!Array.isArray(arr)) return [];
   if (!key) return arr;
 
@@ -111,7 +113,7 @@ export const uniqueArrayByKey = (arr, key) => {
  * ];
  * const results = await promiseLimit(tasks, 2);
  */
-export const promiseLimit = (promiseArray, limit = 6) => {
+export const promiseLimit = <T>(promiseArray: (() => Promise<T>)[], limit = 6): Promise<T[]> => {
   if (!Array.isArray(promiseArray)) {
     throw new Error('第一个参数必须是数组');
   }
@@ -249,6 +251,23 @@ export const getCookie = (key?: string) => {
   });
   if (!key) return cookieMap;
   return cookieMap[key];
+};
+
+/**
+ * 根据文件大小信息判断最高音质
+ * @param file 文件信息
+ * @returns 最高音质类型
+ */
+export const getHighestQuality = (file: SongInfo['file']): keyof typeof FileType => {
+  // 按音质从高到低排序检查
+  if (file.size_flac > 0) return 'flac';
+  if (file.size_ape > 0) return 'ape';
+  if (file.size_320mp3 > 0) return 320;
+  if (file.size_192aac > 0) return 'm4a';
+  if (file.size_128mp3 > 0) return 128;
+
+  // 默认返回128kbps
+  return 128;
 };
 
 // #endregion ================ 工具函数 ================

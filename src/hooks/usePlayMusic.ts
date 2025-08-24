@@ -34,10 +34,22 @@ export const usePlayMusic = () => {
       audio.play();
       setCurrentMid(mid);
       urlMap.current[mid] = url;
+      return new Promise((resolve) => {
+        audio.onended = () => {
+          resolve(true);
+          setIsPlaying(undefined);
+        };
+      });
     } catch (error) {
       console.log('error', error);
     } finally {
       setIsPlaying(mid);
+    }
+  };
+
+  const playList = async (midList: string[]) => {
+    for (const mid of midList) {
+      await play(mid);
     }
   };
 
@@ -68,10 +80,19 @@ export const usePlayMusic = () => {
     audio.onpause = () => {
       setIsPlaying(undefined);
     };
-    audio.onended = () => {
-      setIsPlaying(undefined);
-    };
   }, [currentMid]);
 
-  return { url, isPlaying, currentTime, duration, play, pause, stop, audio, download };
+  return {
+    url,
+    isPlaying,
+    currentTime,
+    duration,
+    play,
+    pause,
+    stop,
+    audio,
+    download,
+    playList,
+    getUrl,
+  };
 };

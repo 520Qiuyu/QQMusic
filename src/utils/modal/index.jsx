@@ -22,6 +22,10 @@ export const msgWarning = (content) => {
 export const msgError = (content) => {
   message.error(content);
 };
+/** 加载中 */
+export const msgLoading = (content) => {
+  message.loading(content);
+};
 
 /** 确认弹窗 */
 export const confirm = (content, title, otherOptions = {}) => {

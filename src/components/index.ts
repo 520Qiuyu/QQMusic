@@ -1,4 +1,4 @@
-// 由d:\Documents\QQMusic\scripts\generate-exports.cjs自动生成，请勿修改
+// 由d:\Documents\GitHub\QQMusic\scripts\generate-exports.cjs自动生成，请勿修改
 export { default as ButtonGroup} from './ButtonGroup/index.tsx';
 export { default as CopyText} from './CopyText/index.tsx';
 export { default as SearchForm} from './SearchForm/index.tsx';

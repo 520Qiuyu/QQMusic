@@ -10,6 +10,7 @@ import { useCompRef, useGetData, useVisible } from '../../hooks';
 import type { Ref } from '../../hooks/useVisible';
 import type { SingerInfo } from '../../types/singer';
 import HotSongModal from '../hotSong';
+import AlbumListModal from '../albumList';
 import styles from './index.module.scss';
 
 interface SearchParams {
@@ -91,6 +92,17 @@ const SingerSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
     });
   };
 
+  // 查看专辑
+  const albumModalRef = useCompRef(AlbumListModal);
+  const handleAlbum = (record: SingerInfo) => {
+    albumModalRef.current.open({
+      singerId: record.singer_id,
+      singerMid: record.singer_mid,
+      singerName: record.singer_name,
+      singerPic: record.singer_pic,
+    });
+  };
+
   // 表格列配置
   const columns: ColumnType<SingerInfo>[] = [
     {
@@ -144,7 +156,12 @@ const SingerSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
             onClick={() => handleHotSong(record)}>
             查看热门歌曲
           </Button>
-          <Button type='link' color='danger' size='small' icon={<PlayCircleOutlined />}>
+          <Button
+            type='link'
+            color='danger'
+            size='small'
+            icon={<PlayCircleOutlined />}
+            onClick={() => handleAlbum(record)}>
             查看专辑
           </Button>
         </Space>
@@ -203,6 +220,7 @@ const SingerSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
 
       {/* 热门歌曲Modal */}
       <HotSongModal ref={hotSongModalRef} />
+      <AlbumListModal ref={albumModalRef} />
     </Modal>
   );
 });

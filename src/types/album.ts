@@ -22,7 +22,7 @@ export interface Preview {
   trysize: number;
 }
 
-export interface AlbumInfo {
+export interface AlbumSongInfo {
   albumdesc: string;
   albumid: number;
   albummid: string;
@@ -71,7 +71,7 @@ export interface AlbumInfoData {
   genre: string;
   id: number;
   lan: string;
-  list: AlbumInfo[];
+  list: AlbumSongInfo[];
   mid: string;
   name: string;
   radio_anchor: number;
