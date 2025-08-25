@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
 
 jobs:
   build-job:
@@ -11,10 +17,13 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -45,10 +54,10 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - name: Commit dist
+      - name: Commit and push dist files
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add dist -f
-          git commit -m "chore: update dist files" || echo "No changes to commit"
+          git commit -m "chore: update dist files [skip ci]" || echo "No changes to commit"
           git push
