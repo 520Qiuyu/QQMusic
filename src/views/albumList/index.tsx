@@ -3,16 +3,17 @@ import { CopyText, SearchForm } from '@/components';
 import type { Option as SearchFormOption } from '@/components/SearchForm';
 import { usePlayMusic } from '@/hooks/usePlayMusic';
 import { uniqueArrayByKey } from '@/utils';
+import { downloadAsJson } from '@/utils/download';
 import { msgError, msgLoading, msgSuccess, msgWarning } from '@/utils/modal';
 import {
   DownloadOutlined,
-  EyeOutlined,
   LoadingOutlined,
   PauseCircleOutlined,
   PlayCircleOutlined,
+  SaveOutlined,
   UserOutlined,
 } from '@ant-design/icons';
-import { Avatar, Button, Image, Modal, Space, Table, Tag, Typography, message } from 'antd';
+import { App, Avatar, Button, Image, Modal, Space, Table, Tag, Typography, message } from 'antd';
 import type { ColumnType } from 'antd/es/table';
 import type { TableProps } from 'antd/lib';
 import { forwardRef, useState, type ForwardedRef } from 'react';
@@ -50,6 +51,7 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
     ref,
   );
 
+  const { modal: ModalUtils } = App.useApp();
   const [searchParams, setSearchParams] = useState<SearchParams>({
     pageNum: 1,
     pageSize: 20,
@@ -87,8 +89,15 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
   });
 
   const { play, pause, stop, isPlaying, download } = usePlayMusic();
-  const { albumInfo, isLoading, getAlbumDetail, getAlbumSongList, playAlbum, downloadAlbumSong } =
-    useGetAlbumDetail();
+  const {
+    albumInfo,
+    isLoading,
+    getAlbumDetail,
+    getAlbumSongList,
+    playAlbum,
+    downloadAlbumSong,
+    getDownLoadJson,
+  } = useGetAlbumDetail();
 
   /**
    * 处理专辑播放
@@ -135,46 +144,13 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
     }
   };
 
-  /**
-   * 查看专辑详情
-   * @param record 专辑信息
-   */
-  const handleViewDetail = (record: AlbumInfo) => {
-    const { albumName, albumMid, publishDate, totalNum, albumType } = record;
-
-    Modal.info({
-      title: `《${albumName}》专辑详情`,
-      width: 600,
-      content: (
-        <div style={{ marginTop: 16 }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
-            <Image
-              width={120}
-              height={120}
-              src={getAlbumPicUrl(albumMid)}
-              alt={albumName}
-              style={{ borderRadius: 8, marginRight: 16 }}
-            />
-            <div>
-              <h3 style={{ margin: '0 0 8px 0' }}>{albumName}</h3>
-              <p style={{ margin: '0 0 4px 0', color: '#666' }}>歌手：{singerInfo.singerName}</p>
-              <p style={{ margin: '0 0 4px 0', color: '#666' }}>
-                发行时间：{publishDate || '未知'}
-              </p>
-              <p style={{ margin: '0 0 4px 0', color: '#666' }}>歌曲数：{totalNum || 0} 首</p>
-              <p style={{ margin: '0 0 4px 0', color: '#666' }}>专辑类型：{albumType || '专辑'}</p>
-            </div>
-          </div>
-          <div style={{ borderTop: '1px solid #f0f0f0', paddingTop: 16 }}>
-            <p style={{ margin: 0, color: '#666' }}>专辑ID：{record.albumID}</p>
-            <p style={{ margin: '8px 0 0 0', color: '#666' }}>专辑MID：{albumMid}</p>
-          </div>
-        </div>
-      ),
-      onOk() {
-        console.log('查看专辑详情:', record);
-      },
-    });
+  const handleDownloadJson = async (record: AlbumInfo) => {
+    try {
+      const { albumMid, albumName } = record;
+      await getDownLoadJson(albumMid);
+    } catch (error) {
+      msgError('下载JSON失败: ' + (error as Error).message);
+    }
   };
 
   // 表格列配置
@@ -273,7 +249,7 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
     {
       title: '操作',
       key: 'action',
-      width: 250,
+      width: 300,
       align: 'center',
       fixed: 'right',
       render: (_, record: AlbumInfo) => {
@@ -298,10 +274,10 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
             <Button
               type='link'
               size='small'
-              icon={<EyeOutlined />}
-              onClick={() => handleViewDetail(record)}
-              title='查看详情'>
-              详情
+              icon={<SaveOutlined />}
+              onClick={() => handleDownloadJson(record)}
+              title='下载JSON'>
+              下载JSON
             </Button>
             <Button
               type='link'
@@ -388,6 +364,35 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
     }
   };
 
+  /**
+   * 批量下载选中专辑的JSON
+   */
+  const handleBatchDownloadJson = async () => {
+    if (selectedRows.length === 0) {
+      msgWarning('请先选择要下载的专辑');
+      return;
+    }
+    try {
+      setDownloading(true);
+      msgLoading(`正在准备下载 ${selectedRows.length} 张专辑...`);
+      const result = [] as any;
+      for (const album of selectedRows) {
+        console.log('album', album);
+        const res = await getDownLoadJson(album.albumMid);
+        result.push(res);
+      }
+      console.log('result', result);
+      downloadAsJson(result, `${singerInfo.singerName}-专辑.json`);
+      message.destroy();
+      msgSuccess(`成功下载 ${selectedRows.length} 张专辑！`);
+    } catch (error) {
+      message.destroy();
+      msgError('批量下载JSON失败: ' + (error as Error).message);
+    } finally {
+      setDownloading(false);
+    }
+  };
+
   const renderFooter = () => {
     return (
       <div className={styles['footer']}>
@@ -401,6 +406,15 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
           )}
         </div>
         <Space>
+          {/* 全部选择 */}
+          <Button
+            onClick={() => {
+              setSelectedRowKeys(filteredList?.map((item) => item.albumMid) || []);
+              setSelectedRows(filteredList || []);
+            }}
+            disabled={filteredList?.length === 0}>
+            全部选择
+          </Button>
           <Button
             onClick={() => {
               setSelectedRowKeys([]);
@@ -408,6 +422,14 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
             }}
             disabled={selectedRows.length === 0}>
             清空选择
+          </Button>
+          {/* 下载Json选中专辑 */}
+          <Button
+            type='primary'
+            onClick={handleBatchDownloadJson}
+            loading={downloading}
+            disabled={selectedRows.length === 0}>
+            下载Json
           </Button>
           <Button
             type='primary'

@@ -54,14 +54,6 @@ export default defineConfig({
     },
   },
   server: {
-    headers: {
-      'Content-Security-Policy': `
-      default-src 'self';
-      script-src 'self' http://localhost:5173 'unsafe-eval' blob:;
-      connect-src 'self' ws://localhost:5173;
-    `
-        .replace(/\s{2,}/g, ' ')
-        .trim(),
-    },
+    open: false,
   },
 });

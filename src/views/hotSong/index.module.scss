@@ -1,3 +1,6 @@
+@use "sass:map";
+@use "sass:list";
+
 // 定义统计项颜色主题
 $stat-colors: (
   songs: (
@@ -22,16 +25,16 @@ $stat-colors: (
 
 // 生成统计项样式的函数
 @function get-stat-style($type) {
-  @return map-get($stat-colors, $type);
+  @return map.get($stat-colors, $type);
 }
 
 // 生成统计项样式的mixin
 @mixin stat-item-style($type) {
   $colors: get-stat-style($type);
-  $start-color: nth($colors, 1);
-  $end-color: nth($colors, 2);
-  $shadow-color: nth($colors, 3);
-  $hover-shadow-color: nth($colors, 4);
+  $start-color: list.nth($colors, 1);
+  $end-color: list.nth($colors, 2);
+  $shadow-color: list.nth($colors, 3);
+  $hover-shadow-color: list.nth($colors, 4);
 
   background: linear-gradient(135deg, #{$start-color} 0%, #{$end-color} 100%);
   box-shadow: 0 2px 8px #{$shadow-color};
@@ -69,7 +72,7 @@ $stat-colors: (
 
           // 使用循环生成不同颜色的统计项
           @each $type, $colors in $stat-colors {
-            $index: index(map-keys($stat-colors), $type);
+            $index: list.index(map.keys($stat-colors), $type);
 
             &:nth-child(#{$index}) {
               @include stat-item-style($type);
@@ -78,7 +81,7 @@ $stat-colors: (
 
           // 为不同统计项添加不同的悬停效果
           @each $type, $colors in $stat-colors {
-            $index: index(map-keys($stat-colors), $type);
+            $index: list.index(map.keys($stat-colors), $type);
 
             &:nth-child(#{$index}):hover {
               transform: translateY(-2px) scale(1.02);
@@ -94,7 +97,7 @@ $stat-colors: (
 
             // 为不同统计项添加不同的动画延迟
             @each $type, $colors in $stat-colors {
-              $index: index(map-keys($stat-colors), $type);
+              $index: list.index(map.keys($stat-colors), $type);
 
               &:nth-child(#{$index}) .stat-value {
                 animation: pulse 1.5s ease-in-out infinite;

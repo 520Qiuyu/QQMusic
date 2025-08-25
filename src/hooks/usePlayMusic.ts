@@ -1,4 +1,4 @@
-import { getSongPlayUrl } from '@/apis/song';
+import { getSongLyric, getSongPlayUrl } from '@/apis/song';
 import type { FileType } from '@/constants';
 import { downloadWithFileName } from '@/utils/download';
 import { useState } from 'react';
@@ -62,6 +62,11 @@ export const usePlayMusic = () => {
     }
   };
 
+  const getLyric = async (mid: string) => {
+    const res = await getSongLyric(mid);
+    return res;
+  };
+
   const pause = () => {
     audio.pause();
     setIsPlaying(undefined);
@@ -94,5 +99,6 @@ export const usePlayMusic = () => {
     download,
     playList,
     getUrl,
+    getLyric,
   };
 };

@@ -1,11 +1,10 @@
-import { getAlbumInfo } from '@/apis/album';
+import { getAlbumInfo, getAlbumPicUrl } from '@/apis/album';
+import type { FileType } from '@/constants';
 import type { AlbumInfoData, AlbumSongInfo } from '@/types/album';
+import { promiseLimit } from '@/utils';
+import { downloadWithFileName } from '@/utils/download';
 import { useRef, useState } from 'react';
 import { usePlayMusic } from './usePlayMusic';
-import { getSongPlayUrl } from '@/apis/song';
-import { promiseLimit, sleep } from '@/utils';
-import type { FileType } from '@/constants';
-import { downloadWithFileName } from '@/utils/download';
 
 export const useGetAlbumDetail = () => {
   const [currentMid, setCurrentMid] = useState<string>('');
@@ -13,7 +12,7 @@ export const useGetAlbumDetail = () => {
   const [isLoading, setIsLoading] = useState(false);
   const albumInfoMap = useRef<Record<string, AlbumInfoData>>({});
 
-  const { playList, play, getUrl, download } = usePlayMusic();
+  const { playList, play, getUrl, download, getLyric } = usePlayMusic();
 
   const getAlbumDetail = async (mid: string) => {
     try {
@@ -83,6 +82,26 @@ export const useGetAlbumDetail = () => {
     }
   };
 
+  const getDownLoadJson = async (mid: string) => {
+    const albumDetail = await getAlbumDetail(mid);
+    const { name, list } = albumDetail || {};
+    const promiseArr = list?.map((item) => async () => {
+      const lrcContent = await getLyric(item.songmid);
+      const url = await getUrl(item.songmid, getHighestQuality(item));
+      return {
+        songName: item.songname,
+        url,
+        lrcContent,
+      };
+    });
+    const songList = await promiseLimit(promiseArr!, 6);
+    return {
+      albumName: name,
+      albumCover: getAlbumPicUrl(mid),
+      songList,
+    };
+  };
+
   const playAlbum = async (mid: string) => {
     const songList = await getAlbumSongList(mid);
     console.log('songList', songList);
@@ -101,6 +120,7 @@ export const useGetAlbumDetail = () => {
     playAlbum,
     getAlbumSongUrl,
     downloadAlbumSong,
+    getDownLoadJson,
   };
 };
 
