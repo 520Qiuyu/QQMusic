@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.5.2",
+    "@types/lodash": "^4.17.20",
     "ahooks": "^3.9.3",
     "antd": "^5.22.4",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.13",
+    "lodash": "^4.17.21",
     "nanoid": "^5.1.5",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

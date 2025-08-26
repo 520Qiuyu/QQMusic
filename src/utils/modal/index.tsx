@@ -4,6 +4,7 @@ import { App } from 'antd';
 import type { MessageInstance } from 'antd/es/message/interface';
 import type { ModalStaticFunctions } from 'antd/es/modal/confirm';
 import type { NotificationInstance } from 'antd/es/notification/interface';
+import { nanoid } from 'nanoid';
 
 // 静态消费有问题,参考官方示例↓
 // https://ant-design.antgroup.com/components/app-cn#%E5%85%A8%E5%B1%80%E5%9C%BA%E6%99%AFredux-%E5%9C%BA%E6%99%AF
@@ -37,25 +38,17 @@ export const msgError = (content: string) => {
   return message.error(content);
 };
 /** 加载中消息提示 */
-export const msgLoading = (
-  loadingContent: string,
-  completeCallBack?: (hide: PromiseLike<void>) => void,
-  successContent: string = '操作成功',
-  errorContent: string = '操作失败',
-) => {
-  const hide = message
-    .loading(loadingContent, 0)
-    .then(() => {
-      completeCallBack?.(hide);
+export const msgLoading = (loadingContent: string, completeCallBack?: () => void) => {
+  const key = nanoid();
+  message
+    .loading({
+      key,
+      content: loadingContent,
     })
-    .then(
-      () => {
-        msgSuccess(successContent);
-      },
-      () => {
-        msgError(errorContent);
-      },
-    );
+    .then(() => {
+      completeCallBack?.();
+    });
+  return () => message.destroy(key);
 };
 
 /** 确认弹窗 */

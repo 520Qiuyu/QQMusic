@@ -51,11 +51,6 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
     ref,
   );
 
-  const { modal: ModalUtils } = App.useApp();
-  const [searchParams, setSearchParams] = useState<SearchParams>({
-    pageNum: 1,
-    pageSize: 20,
-  });
   const [singerInfo, setSingerInfo] = useState<IOpenParams>({} as IOpenParams);
 
   // 获取专辑数据
@@ -80,7 +75,7 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
     },
   ];
 
-  const { filteredList, setFilteredList, handleFilter } = useFilter(data, {
+  const { filteredList, handleFilter } = useFilter(data, {
     fields: {
       albumName: {
         getValue: (item) => item.albumName,
@@ -99,57 +94,62 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
     getDownLoadJson,
   } = useGetAlbumDetail();
 
-  /**
-   * 处理专辑播放
-   * @param record 专辑信息
-   */
+  /** 处理专辑播放 */
+  const [playing, setPlaying] = useState<string | undefined>();
   const handlePlay = async (record: AlbumInfo) => {
     try {
-      console.log('record', record);
+      setPlaying(record.albumMid);
       const { albumMid, albumName } = record;
-      msgLoading(`正在加载《${albumName}》...`);
+      // 使用 msgLoading 的 Promise 形式，让它自动处理成功和失败
+      const hide = msgLoading(`正在加载《${albumName}》...`);
+
       await playAlbum(albumMid);
-      message.destroy();
+
+      hide();
       msgSuccess(`《${albumName}》开始播放`);
     } catch (error) {
-      message.destroy();
-      message.error('播放失败: ' + (error as Error).message);
       console.error('播放失败:', error);
+    } finally {
+      setPlaying(undefined);
     }
   };
 
-  const [downloading, setDownloading] = useState(false);
-
+  const [downloading, setDownloading] = useState<string | undefined>();
   /**
    * 处理专辑下载
    * @param record 专辑信息
    */
   const handleDownload = async (record: AlbumInfo) => {
     try {
-      setDownloading(true);
+      setDownloading(record.albumMid);
       const { albumMid, albumName } = record;
 
-      msgLoading(`正在准备下载《${albumName}》...`);
+      // 使用 msgLoading 的 Promise 形式，让它自动处理成功和失败
+      const hide = msgLoading(`正在准备下载《${albumName}》...`);
 
       // 这里需要获取专辑详情并下载所有歌曲
       // 暂时使用专辑MID作为歌曲MID（实际项目中需要获取专辑详情）
       await downloadAlbumSong(albumMid);
-
+      hide();
       msgSuccess(`《${albumName}》下载成功！`);
     } catch (error) {
-      msgError('下载失败: ' + (error as Error).message);
       console.error('下载失败:', error);
     } finally {
-      setDownloading(false);
+      setDownloading(undefined);
     }
   };
 
+  const [downloadingJson, setDownloadingJson] = useState<string | undefined>(undefined);
   const handleDownloadJson = async (record: AlbumInfo) => {
     try {
+      setDownloadingJson(record.albumMid);
       const { albumMid, albumName } = record;
-      await getDownLoadJson(albumMid);
+      const res = await getDownLoadJson(albumMid);
+      downloadAsJson([res], `${albumName}-专辑`);
     } catch (error) {
       msgError('下载JSON失败: ' + (error as Error).message);
+    } finally {
+      setDownloadingJson(undefined);
     }
   };
 
@@ -258,14 +258,14 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
             <Button
               type='link'
               size='small'
-              icon={
-                isPlaying === record.albumMid ? <PauseCircleOutlined /> : <PlayCircleOutlined />
-              }
+              loading={playing === record.albumMid}
+              icon={playing === record.albumMid ? <PauseCircleOutlined /> : <PlayCircleOutlined />}
               onClick={() => {
                 if (isPlaying === record.albumMid) {
                   pause();
                 } else {
                   handlePlay(record);
+                  return;
                 }
               }}
               title='播放专辑'>
@@ -274,6 +274,7 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
             <Button
               type='link'
               size='small'
+              loading={downloadingJson === record.albumMid}
               icon={<SaveOutlined />}
               onClick={() => handleDownloadJson(record)}
               title='下载JSON'>
@@ -282,7 +283,8 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
             <Button
               type='link'
               size='small'
-              icon={downloading ? <LoadingOutlined /> : <DownloadOutlined />}
+              loading={downloading === record.albumMid}
+              icon={<DownloadOutlined />}
               onClick={() => handleDownload(record)}
               title='下载专辑'>
               下载
@@ -332,9 +334,8 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
     );
   };
 
-  /**
-   * 批量下载选中的专辑
-   */
+  /** 批量下载选中的专辑 */
+  const [downloadingBatch, setDownloadingBatch] = useState(false);
   const handleBatchDownload = async () => {
     if (selectedRows.length === 0) {
       msgWarning('请先选择要下载的专辑');
@@ -342,7 +343,7 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
     }
 
     try {
-      setDownloading(true);
+      setDownloadingBatch(true);
       message.loading(`正在准备下载 ${selectedRows.length} 张专辑...`, 0);
 
       // 这里可以实现批量下载逻辑
@@ -360,36 +361,36 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
       msgError('批量下载失败: ' + (error as Error).message);
       console.error('批量下载失败:', error);
     } finally {
-      setDownloading(false);
+      setDownloadingBatch(false);
     }
   };
 
-  /**
-   * 批量下载选中专辑的JSON
-   */
+  /** 批量下载选中专辑的JSON */
+  const [downloadingBatchJson, setDownloadingBatchJson] = useState(false);
   const handleBatchDownloadJson = async () => {
     if (selectedRows.length === 0) {
       msgWarning('请先选择要下载的专辑');
       return;
     }
     try {
-      setDownloading(true);
-      msgLoading(`正在准备下载 ${selectedRows.length} 张专辑...`);
+      setDownloadingBatchJson(true);
+
+      // 使用 msgLoading 的 Promise 形式，让它自动处理成功和失败
+      const hide = msgLoading(`正在准备下载 ${selectedRows.length} 张专辑...`);
+
       const result = [] as any;
       for (const album of selectedRows) {
         console.log('album', album);
         const res = await getDownLoadJson(album.albumMid);
         result.push(res);
       }
-      console.log('result', result);
-      downloadAsJson(result, `${singerInfo.singerName}-专辑.json`);
-      message.destroy();
+      downloadAsJson(result, `${singerInfo.singerName}-专辑`);
+      hide();
       msgSuccess(`成功下载 ${selectedRows.length} 张专辑！`);
     } catch (error) {
-      message.destroy();
-      msgError('批量下载JSON失败: ' + (error as Error).message);
+      console.error('批量下载JSON失败:', error);
     } finally {
-      setDownloading(false);
+      setDownloadingBatchJson(false);
     }
   };
 
@@ -427,16 +428,16 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
           <Button
             type='primary'
             onClick={handleBatchDownloadJson}
-            loading={downloading}
+            loading={downloadingBatchJson}
             disabled={selectedRows.length === 0}>
-            下载Json
+            下载Json{selectedRows?.length ? `(${selectedRows?.length})` : ''}
           </Button>
           <Button
             type='primary'
             onClick={handleBatchDownload}
-            loading={downloading}
+            loading={downloadingBatch}
             disabled={selectedRows.length === 0}>
-            下载选中专辑
+            下载选中专辑{selectedRows?.length ? `(${selectedRows?.length})` : ''}
           </Button>
         </Space>
       </div>

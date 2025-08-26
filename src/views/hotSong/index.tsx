@@ -1,24 +1,26 @@
+import { getAlbumPicUrl } from '@/apis/album';
 import { CopyText } from '@/components';
+import { FileType } from '@/constants';
+import { usePlayMusic } from '@/hooks/usePlayMusic';
+import { promiseLimit } from '@/utils';
+import { downloadAsJson } from '@/utils/download';
+import { msgLoading, msgWarning } from '@/utils/modal';
 import {
   DownloadOutlined,
-  HeartOutlined,
-  LoadingOutlined,
   PauseCircleOutlined,
   PlayCircleOutlined,
   UserOutlined,
 } from '@ant-design/icons';
 import { Avatar, Button, Image, Modal, Pagination, Space, Table, Typography } from 'antd';
 import type { ColumnType } from 'antd/es/table';
-import { forwardRef, useMemo, useState, type ForwardedRef } from 'react';
+import type { TableProps } from 'antd/lib';
+import { groupBy } from 'lodash';
+import { forwardRef, useState, type ForwardedRef } from 'react';
 import { getSingerHotSong } from '../../apis/singer';
 import { useGetData, useVisible } from '../../hooks';
 import type { Ref } from '../../hooks/useVisible';
-import type { SingerInfo, SongInfo } from '../../types/singer';
+import type { SongInfo } from '../../types/singer';
 import styles from './index.module.scss';
-import { getAlbumPicUrl } from '@/apis/album';
-import { usePlayMusic } from '@/hooks/usePlayMusic';
-import { FileType } from '@/constants';
-import type { TableProps } from 'antd/lib';
 
 interface SearchParams {
   pageNum: number;
@@ -66,7 +68,7 @@ const HotSongModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams>>
     },
   );
 
-  const { play, pause, stop, isPlaying, download } = usePlayMusic();
+  const { play, pause, stop, isPlaying, download, getUrl, getLyric } = usePlayMusic();
 
   /**
    * 根据文件大小信息判断最高音质
@@ -93,17 +95,17 @@ const HotSongModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams>>
     play(mid, quality);
   };
 
-  const [downloading, setDownloading] = useState(false);
+  const [downloading, setDownloading] = useState<string | undefined>();
   const handleDownload = async (record: SongInfo) => {
     try {
-      setDownloading(true);
+      setDownloading(record.mid);
       const { mid, name, file } = record;
       const quality = getHighestQuality(file);
       await download(mid, name, quality);
     } catch (error) {
       console.log('error', error);
     } finally {
-      setDownloading(false);
+      setDownloading(undefined);
     }
   };
 
@@ -239,7 +241,8 @@ const HotSongModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams>>
             <Button
               type='link'
               size='small'
-              icon={downloading ? <LoadingOutlined /> : <DownloadOutlined />}
+              loading={downloading === record.mid}
+              icon={<DownloadOutlined />}
               onClick={() => {
                 handleDownload(record);
               }}>
@@ -294,14 +297,108 @@ const HotSongModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams>>
     );
   };
 
+  /** 批量下载选中歌曲的JSON */
+  const [downloadingBatchJson, setDownloadingBatchJson] = useState(false);
+  const handleBatchDownloadJson = async () => {
+    try {
+      if (selectedRows.length === 0) {
+        msgWarning('请先选择要下载的歌曲');
+        return;
+      }
+      console.log('selectedRows', selectedRows);
+      setDownloadingBatchJson(true);
+      // 首先按照专辑groupBy
+      const groupData = groupBy(selectedRows, 'album.mid');
+      console.log('groupData', groupData);
+      const result = [] as {
+        albumName: string;
+        albumCover: string;
+        songList: {
+          songName: string;
+          url: string;
+          lrcContent: string;
+        }[];
+      }[];
+      const hide = msgLoading(`正在准备下载 ${selectedRows.length} 首歌曲...`);
+      for (const albumMid in groupData) {
+        const album = groupData[albumMid];
+        const albumName = album[0].album.name;
+        const albumCover = getAlbumPicUrl(albumMid);
+        const promiseArr = album.map((song) => async () => {
+          const lrcContent = await getLyric(song.mid);
+          const url = await getUrl(song.mid, getHighestQuality(song.file));
+          return {
+            songName: song.name,
+            url,
+            lrcContent,
+          };
+        });
+        const albumSongs = await promiseLimit(promiseArr, 6);
+        result.push({
+          albumName: albumName,
+          albumCover: albumCover,
+          songList: albumSongs,
+        });
+      }
+      downloadAsJson(result, `${singerInfo.singerName}-专辑`);
+      hide();
+    } catch (error) {
+      console.error('批量下载JSON失败:', error);
+    } finally {
+      setDownloadingBatchJson(false);
+    }
+  };
+
+  /** 批量下载歌曲 */
+  const [downloadingBatch, setDownloadingBatch] = useState(false);
+  const handleBatchDownload = async () => {
+    try {
+      if (selectedRows.length === 0) {
+        msgWarning('请先选择要下载的歌曲');
+        return;
+      }
+      console.log('selectedRows', selectedRows);
+      setDownloadingBatch(true);
+      for (const song of selectedRows) {
+        await download(song.mid, song.name, getHighestQuality(song.file));
+      }
+    } catch (error) {
+      console.error('批量下载失败:', error);
+    } finally {
+      setDownloadingBatch(false);
+    }
+  };
+
   const renderFooter = () => {
     return (
       <div className={styles['footer']}>
         {/* 已选择数目 */}
         <div className={styles['selected-count']}>已选择 {selectedRows.length} 首歌曲</div>
-        <Button type='primary' onClick={() => {}}>
-          下载全部
-        </Button>
+        <Space>
+          <Button
+            onClick={() => {
+              setSelectedRowKeys([]);
+              setSelectedRows([]);
+            }}
+            disabled={selectedRows.length === 0}>
+            清空选择
+          </Button>
+          {/* 下载JSON选中歌曲 */}
+          <Button
+            type='primary'
+            onClick={handleBatchDownloadJson}
+            loading={downloadingBatchJson}
+            disabled={!selectedRows?.length}>
+            下载JSON{selectedRows?.length ? `(${selectedRows?.length})` : ''}
+          </Button>
+          <Button
+            type='primary'
+            onClick={handleBatchDownload}
+            loading={downloadingBatch}
+            disabled={!selectedRows?.length}>
+            下载选中歌曲{selectedRows?.length ? `(${selectedRows?.length})` : ''}
+          </Button>
+        </Space>
       </div>
     );
   };
