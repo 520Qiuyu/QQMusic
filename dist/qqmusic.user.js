@@ -12928,7 +12928,7 @@
     "button-group": "_button-group_y8t3i_1"
   };
   const getSearchResult = async (keyword, type = "song", options) => {
-    const { pageNum = 1, pageSize = 10 } = {};
+    const { pageNum = 1, pageSize = 20 } = {};
     const params = {
       w: keyword,
       n: pageSize,
