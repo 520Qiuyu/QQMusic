@@ -80,3 +80,15 @@ export const FileType = {
     e: '.flac',
   },
 } as const;
+
+export const ResourceType = {
+  歌曲: 'song',
+  专辑: 'album',
+  视频: 'mv',
+  歌单: 'playlist',
+  歌手: 'user',
+  歌词: 'lyric',
+} as const;
+
+export type ResourceTypeKeys = keyof typeof ResourceType;
+export type ResourceTypeValues = (typeof ResourceType)[ResourceTypeKeys];

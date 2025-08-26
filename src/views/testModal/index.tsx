@@ -1,4 +1,5 @@
 import { getAlbumInfo, getAlbumPicUrl } from '@/apis/album';
+import { getSearchResult } from '@/apis/search';
 import {
   getSimilarSinger,
   getSingerAlbum,
@@ -10,7 +11,7 @@ import {
 } from '@/apis/singer';
 import { getSongInfo, getSongLyric, getSongPlayUrl } from '@/apis/song';
 import { getSongList, getSongListCategory, getSongListDetail } from '@/apis/songList';
-import { AreaList, GenreList, SexList } from '@/constants';
+import { AreaList, GenreList, ResourceType, SexList, type ResourceTypeValues } from '@/constants';
 import { useVisible } from '@/hooks';
 import type { Ref } from '@/hooks/useVisible';
 import { Button, Form, Input, Modal, Select, Space } from 'antd';
@@ -85,7 +86,6 @@ const TestModal = forwardRef((props, ref: ForwardedRef<Ref>) => {
   };
 
   // 测试获取歌手被关注数量
-
   const [getSingerFollowCountLoading, setGetSingerFollowCountLoading] = useState(false);
   const handleGetSingerFollowCount = async () => {
     try {
@@ -100,7 +100,6 @@ const TestModal = forwardRef((props, ref: ForwardedRef<Ref>) => {
   };
 
   // 测试获取歌手热门歌曲
-
   const [getSingerHotSongLoading, setGetSingerHotSongLoading] = useState(false);
   const handleGetSingerHotSong = async () => {
     try {
@@ -115,7 +114,6 @@ const TestModal = forwardRef((props, ref: ForwardedRef<Ref>) => {
   };
 
   // 测试获取相似歌手
-
   const [getSimilarSingerLoading, setGetSimilarSingerLoading] = useState(false);
   const handleGetSimilarSinger = async () => {
     try {
@@ -145,7 +143,6 @@ const TestModal = forwardRef((props, ref: ForwardedRef<Ref>) => {
   };
 
   // 测试获取专辑图片
-
   const [getAlbumPicUrlLoading, setGetAlbumPicUrlLoading] = useState(false);
   const handleGetAlbumPicUrl = async () => {
     try {
@@ -240,6 +237,24 @@ const TestModal = forwardRef((props, ref: ForwardedRef<Ref>) => {
       console.log('error', error);
     } finally {
       setGetSongInfoLoading(false);
+    }
+  };
+
+  // 测试获取搜索结果
+  const [getSearchResultLoading, setGetSearchResultLoading] = useState(false);
+  const [getSearchResultParams, setGetSearchResultParams] = useState({
+    keyword: '',
+    type: 'song' as ResourceTypeValues,
+  });
+  const handleGetSearchResult = async () => {
+    try {
+      setGetSearchResultLoading(true);
+      const res = await getSearchResult(getSearchResultParams.keyword, getSearchResultParams.type);
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      setGetSearchResultLoading(false);
     }
   };
 
@@ -389,6 +404,35 @@ const TestModal = forwardRef((props, ref: ForwardedRef<Ref>) => {
             </Button>
             <Button type='primary' onClick={handleGetSongInfo} loading={getSongInfoLoading}>
               获取歌曲信息
+            </Button>
+          </Space>
+        </Form.Item>
+
+        {/* 测试获取搜索结果 */}
+        <Form.Item label='获取搜索结果'>
+          <Space>
+            <Input
+              placeholder='请输入搜索关键词'
+              style={{ width: 300 }}
+              value={getSearchResultParams.keyword}
+              onChange={(e) =>
+                setGetSearchResultParams({ ...getSearchResultParams, keyword: e.target.value })
+              }
+            />
+            <Select
+              options={Object.entries(ResourceType).map(([key, value]) => ({
+                label: key,
+                value,
+              }))}
+              style={{ width: 150 }}
+              value={getSearchResultParams.type}
+              onChange={(value) =>
+                setGetSearchResultParams({ ...getSearchResultParams, type: value })
+              }
+              allowClear 
+            />
+            <Button type='primary' onClick={handleGetSearchResult} loading={getSearchResultLoading}>
+              获取搜索结果
             </Button>
           </Space>
         </Form.Item>
