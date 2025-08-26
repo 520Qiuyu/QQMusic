@@ -10,7 +10,7 @@ export const getSearchResult = async (
     pageSize: number;
   },
 ) => {
-  const { pageNum = 1, pageSize = 10 } = options || {};
+  const { pageNum = 1, pageSize = 20 } = options || {};
   const params = {
     w: keyword,
     n: pageSize,
