@@ -21,9 +21,9 @@
 (function (antd, require$$1, require$$2, icons) {
   'use strict';
 
-  const d=new Set;const t = async e=>{d.has(e)||(d.add(e),(t=>{typeof GM_addStyle=="function"?GM_addStyle(t):document.head.appendChild(document.createElement("style")).append(t);})(e));};
+  const d=new Set;const _ = async e=>{d.has(e)||(d.add(e),(t=>{typeof GM_addStyle=="function"?GM_addStyle(t):document.head.appendChild(document.createElement("style")).append(t);})(e));};
 
-  t(' @charset "UTF-8";._button-group_y8t3i_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#fff3;border-radius:22px;box-shadow:0 2px 10px #0006;padding:10px 0;z-index:999;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}._button-group_y8t3i_1::-webkit-scrollbar{width:0;background:transparent}._button-group_y8t3i_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_y8t3i_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_y8t3i_1 .ant-btn:active{transform:scale(.95)}._button-group_y8t3i_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_y8t3i_1 .ant-btn:hover .anticon{color:#fff}._button-group_y8t3i_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_y8t3i_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c}._copy-text_1att4_1{display:flex;align-items:center;width:100%}._copy-text_1att4_1 ._text_1att4_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_1att4_1 ._copy-btn_1att4_12{flex-shrink:0;padding:0}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._select-search_19wb1_1 .ant-select:first-child .ant-select-selector{border-radius:32px 0 0 32px!important}._select-search_19wb1_1>:last-child{border-radius:0 32px 32px 0!important}._search-form_10eg9_1{margin-bottom:-16px}._search-form_10eg9_1 .ant-form-item{margin-bottom:16px}._search-form_10eg9_1 input.ant-input,._search-form_10eg9_1 .ant-input-affix-wrapper,._search-form_10eg9_1 .ant-picker,._search-form_10eg9_1 .ant-calendar-picker-input,._search-form_10eg9_1 .ant-select-selector,._search-form_10eg9_1 .ant-select-multiple .ant-select-selection-item{border-radius:32px}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1{width:100%}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4{display:flex;align-items:center;justify-content:space-between;padding-right:30px}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10{display:flex;align-items:center}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14{display:flex;flex-direction:column;align-items:center;padding:8px 16px;border-radius:8px;margin-left:12px;box-shadow:0 2px 8px #0000001a;transition:all .3s ease;position:relative;overflow:hidden}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(1){background:linear-gradient(135deg,#667eea,#764ba2);box-shadow:0 2px 8px #667eea4d}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(1):hover{box-shadow:0 4px 12px #667eea66}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(2){background:linear-gradient(135deg,#f093fb,#f5576c);box-shadow:0 2px 8px #f093fb4d}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(2):hover{box-shadow:0 4px 12px #f093fb66}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(3){background:linear-gradient(135deg,#4facfe,#00f2fe);box-shadow:0 2px 8px #4facfe4d}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(3):hover{box-shadow:0 4px 12px #4facfe66}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(1):hover{transform:translateY(-2px) scale(1.02)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(2):hover{transform:translateY(-2px) scale(1.02)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(3):hover{transform:translateY(-2px) scale(1.02)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:hover{transform:translateY(-2px)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59{opacity:.7}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59:nth-child(1) ._stat-value_jnpqx_62{animation:_pulse_jnpqx_1 1.5s ease-in-out infinite;animation-delay:.2s}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59:nth-child(2) ._stat-value_jnpqx_62{animation:_pulse_jnpqx_1 1.5s ease-in-out infinite;animation-delay:.4s}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59:nth-child(3) ._stat-value_jnpqx_62{animation:_pulse_jnpqx_1 1.5s ease-in-out infinite;animation-delay:.6s}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14 ._stat-label_jnpqx_74{font-size:12px;color:#fffc;font-weight:500;margin-bottom:2px}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14 ._stat-value_jnpqx_62{font-size:16px;color:#fff;font-weight:600;line-height:1;transition:all .3s ease}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14 ._stat-value_jnpqx_62:hover{transform:scale(1.1)}._hot-song-modal_jnpqx_1 ._singer-info-display_jnpqx_90{margin-bottom:16px;padding:16px;background-color:#f5f5f5;border-radius:6px;border-left:4px solid #1890ff}._hot-song-modal_jnpqx_1 ._song-table_jnpqx_97{margin-bottom:16px}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._album-cover_jnpqx_100{width:40px;height:40px;border-radius:4px;overflow:hidden;flex-shrink:0}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._album-cover_jnpqx_100 img{width:100%;height:100%;object-fit:cover;border-radius:4px}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._song-details_jnpqx_113{flex:1;min-width:0}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._song-details_jnpqx_113 ._song-name_jnpqx_117{font-weight:500;color:#262626;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:150px}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._song-details_jnpqx_113 ._song-album_jnpqx_126{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:150px}._hot-song-modal_jnpqx_1 ._singer-info_jnpqx_90 ._singer-name_jnpqx_134{font-weight:500;color:#262626;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._hot-song-modal_jnpqx_1 ._singer-info_jnpqx_90 ._singer-id_jnpqx_142{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._hot-song-modal_jnpqx_1 ._song-id-text_jnpqx_150,._hot-song-modal_jnpqx_1 ._song-mid-text_jnpqx_151{font-family:Monaco,Menlo,Ubuntu Mono,monospace;font-size:12px;color:#595959;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100px;display:inline-block}._hot-song-modal_jnpqx_1 ._footer_jnpqx_161{display:flex;align-items:center;justify-content:flex-end;margin-top:16px}._hot-song-modal_jnpqx_1 ._footer_jnpqx_161 ._selected-count_jnpqx_167{font-size:14px;color:#595959;margin-right:auto}@keyframes _pulse_jnpqx_1{0%,to{opacity:1}50%{opacity:.5}}._album-list-modal_13s8d_1 ._modal-title_13s8d_1{width:100%}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4{display:flex;align-items:center;justify-content:space-between;padding-right:30px}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10{display:flex;align-items:center}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14{display:flex;flex-direction:column;align-items:center;padding:8px 16px;border-radius:8px;margin-left:12px;box-shadow:0 2px 8px #0000001a;transition:all .3s ease;position:relative;overflow:hidden}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(1){background:linear-gradient(135deg,#667eea,#764ba2);box-shadow:0 2px 8px #667eea4d}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(1):hover{box-shadow:0 4px 12px #667eea66}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(2){background:linear-gradient(135deg,#f093fb,#f5576c);box-shadow:0 2px 8px #f093fb4d}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(2):hover{box-shadow:0 4px 12px #f093fb66}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(1):hover{transform:translateY(-2px) scale(1.02)}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(2):hover{transform:translateY(-2px) scale(1.02)}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:hover{transform:translateY(-2px)}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14._loading_13s8d_49{opacity:.7}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14._loading_13s8d_49:nth-child(1) ._stat-value_13s8d_52{animation:_pulse_13s8d_1 1.5s ease-in-out infinite;animation-delay:.2s}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14._loading_13s8d_49:nth-child(2) ._stat-value_13s8d_52{animation:_pulse_13s8d_1 1.5s ease-in-out infinite;animation-delay:.4s}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14 ._stat-label_13s8d_60{font-size:12px;color:#fffc;font-weight:500;margin-bottom:2px}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14 ._stat-value_13s8d_52{font-size:16px;color:#fff;font-weight:600;line-height:1;transition:all .3s ease}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14 ._stat-value_13s8d_52:hover{transform:scale(1.1)}._album-list-modal_13s8d_1 ._album-table_13s8d_76{margin-bottom:16px}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-cover_13s8d_79{width:60px;height:60px;border-radius:6px;overflow:hidden;flex-shrink:0}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-cover_13s8d_79 img{width:100%;height:100%;object-fit:cover;border-radius:6px}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-details_13s8d_92{flex:1;min-width:0}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-details_13s8d_92 ._album-name_13s8d_96{font-weight:500;color:#262626;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:180px}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-details_13s8d_92 ._album-trans-name_13s8d_105{font-size:12px;color:#8c8c8c;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:180px}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-details_13s8d_92 ._album-type_13s8d_114{margin-top:4px}._album-list-modal_13s8d_1 ._singer-info_13s8d_117 ._singer-name_13s8d_117{font-weight:500;color:#262626;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._album-list-modal_13s8d_1 ._singer-info_13s8d_117 ._singer-id_13s8d_125{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._album-list-modal_13s8d_1 ._album-id-text_13s8d_133,._album-list-modal_13s8d_1 ._album-mid-text_13s8d_134{font-family:Monaco,Menlo,Ubuntu Mono,monospace;font-size:12px;color:#595959;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100px;display:inline-block}._album-list-modal_13s8d_1 ._publish-date_13s8d_144{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px;display:inline-block}._album-list-modal_13s8d_1 ._footer_13s8d_151{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-top:1px solid #f0f0f0}._album-list-modal_13s8d_1 ._footer_13s8d_151 ._selected-count_13s8d_158{font-size:14px;color:#666}._album-list-modal_13s8d_1 ._footer_13s8d_151 ._selected-count_13s8d_158 ._selected-info_13s8d_162{color:#1890ff;margin-left:8px;font-weight:500}@keyframes _pulse_13s8d_1{0%,to{opacity:1}50%{opacity:.5}}._singer-search-modal_1jeib_2 .ant-modal-body{display:flex;flex-direction:column;gap:16px}._singer-info_1jeib_8{display:flex;align-items:center}._singer-info_1jeib_8 ._singer-avatar_1jeib_12{border:3px solid #f0f0f0;box-shadow:0 2px 8px #0000001a;transition:all .3s ease}._singer-info_1jeib_8 ._singer-avatar_1jeib_12:hover{border-color:#31c27c;transform:scale(1.05)}._singer-info_1jeib_8 ._singer-details_1jeib_21{display:flex;flex-direction:column;gap:4px}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-name_1jeib_26{font-size:16px;font-weight:600;color:#262626;line-height:1.4}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-country_1jeib_32{font-size:13px;color:#666;display:flex;align-items:center;gap:4px}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-country_1jeib_32:before{content:"\u{1F4CD}";font-size:12px}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-id_1jeib_43{font-size:12px;color:#999;font-family:Courier New,monospace;background:#f5f5f5;padding:2px 6px;border-radius:4px;display:inline-block;width:fit-content}._singer-id-text_1jeib_54{font-family:Courier New,monospace;font-size:13px;color:#666;background:#f8f9fa;padding:4px 8px;border-radius:4px;border:1px solid #e9ecef}._singer-mid-text_1jeib_64{font-family:Courier New,monospace;font-size:12px;color:#999;background:#f5f5f5;padding:4px 8px;border-radius:4px;border:1px solid #e9ecef;word-break:break-all}._info-tag_1jeib_75{border-radius:6px;font-size:12px;padding:4px 8px;font-weight:500;border:none;box-shadow:0 1px 3px #0000001a}._info-tag_1jeib_75._ant-tag-blue_1jeib_83{background:linear-gradient(135deg,#e6f7ff,#bae7ff);color:#1890ff}::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:transparent;border-radius:6px}::-webkit-scrollbar-thumb{background:#8080804d;border-radius:6px;transition:all .2s ease-in-out}::-webkit-scrollbar-thumb:hover{background:#80808080}*{scrollbar-width:thin;scrollbar-color:rgba(128,128,128,.3) transparent} ');
+  _(' @charset "UTF-8";._button-group_y8t3i_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#fff3;border-radius:22px;box-shadow:0 2px 10px #0006;padding:10px 0;z-index:999;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}._button-group_y8t3i_1::-webkit-scrollbar{width:0;background:transparent}._button-group_y8t3i_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_y8t3i_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_y8t3i_1 .ant-btn:active{transform:scale(.95)}._button-group_y8t3i_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_y8t3i_1 .ant-btn:hover .anticon{color:#fff}._button-group_y8t3i_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_y8t3i_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c}._copy-text_1att4_1{display:flex;align-items:center;width:100%}._copy-text_1att4_1 ._text_1att4_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_1att4_1 ._copy-btn_1att4_12{flex-shrink:0;padding:0}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._select-search_19wb1_1 .ant-select:first-child .ant-select-selector{border-radius:32px 0 0 32px!important}._select-search_19wb1_1>:last-child{border-radius:0 32px 32px 0!important}._search-form_10eg9_1{margin-bottom:-16px}._search-form_10eg9_1 .ant-form-item{margin-bottom:16px}._search-form_10eg9_1 input.ant-input,._search-form_10eg9_1 .ant-input-affix-wrapper,._search-form_10eg9_1 .ant-picker,._search-form_10eg9_1 .ant-calendar-picker-input,._search-form_10eg9_1 .ant-select-selector,._search-form_10eg9_1 .ant-select-multiple .ant-select-selection-item{border-radius:32px}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1{width:100%}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4{display:flex;align-items:center;justify-content:space-between;padding-right:30px}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10{display:flex;align-items:center}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14{display:flex;flex-direction:column;align-items:center;padding:8px 16px;border-radius:8px;margin-left:12px;box-shadow:0 2px 8px #0000001a;transition:all .3s ease;position:relative;overflow:hidden}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(1){background:linear-gradient(135deg,#667eea,#764ba2);box-shadow:0 2px 8px #667eea4d}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(1):hover{box-shadow:0 4px 12px #667eea66}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(2){background:linear-gradient(135deg,#f093fb,#f5576c);box-shadow:0 2px 8px #f093fb4d}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(2):hover{box-shadow:0 4px 12px #f093fb66}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(3){background:linear-gradient(135deg,#4facfe,#00f2fe);box-shadow:0 2px 8px #4facfe4d}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(3):hover{box-shadow:0 4px 12px #4facfe66}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(1):hover{transform:translateY(-2px) scale(1.02)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(2):hover{transform:translateY(-2px) scale(1.02)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(3):hover{transform:translateY(-2px) scale(1.02)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:hover{transform:translateY(-2px)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59{opacity:.7}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59:nth-child(1) ._stat-value_jnpqx_62{animation:_pulse_jnpqx_1 1.5s ease-in-out infinite;animation-delay:.2s}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59:nth-child(2) ._stat-value_jnpqx_62{animation:_pulse_jnpqx_1 1.5s ease-in-out infinite;animation-delay:.4s}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59:nth-child(3) ._stat-value_jnpqx_62{animation:_pulse_jnpqx_1 1.5s ease-in-out infinite;animation-delay:.6s}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14 ._stat-label_jnpqx_74{font-size:12px;color:#fffc;font-weight:500;margin-bottom:2px}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14 ._stat-value_jnpqx_62{font-size:16px;color:#fff;font-weight:600;line-height:1;transition:all .3s ease}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14 ._stat-value_jnpqx_62:hover{transform:scale(1.1)}._hot-song-modal_jnpqx_1 ._singer-info-display_jnpqx_90{margin-bottom:16px;padding:16px;background-color:#f5f5f5;border-radius:6px;border-left:4px solid #1890ff}._hot-song-modal_jnpqx_1 ._song-table_jnpqx_97{margin-bottom:16px}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._album-cover_jnpqx_100{width:40px;height:40px;border-radius:4px;overflow:hidden;flex-shrink:0}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._album-cover_jnpqx_100 img{width:100%;height:100%;object-fit:cover;border-radius:4px}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._song-details_jnpqx_113{flex:1;min-width:0}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._song-details_jnpqx_113 ._song-name_jnpqx_117{font-weight:500;color:#262626;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:150px}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._song-details_jnpqx_113 ._song-album_jnpqx_126{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:150px}._hot-song-modal_jnpqx_1 ._singer-info_jnpqx_90 ._singer-name_jnpqx_134{font-weight:500;color:#262626;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._hot-song-modal_jnpqx_1 ._singer-info_jnpqx_90 ._singer-id_jnpqx_142{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._hot-song-modal_jnpqx_1 ._song-id-text_jnpqx_150,._hot-song-modal_jnpqx_1 ._song-mid-text_jnpqx_151{font-family:Monaco,Menlo,Ubuntu Mono,monospace;font-size:12px;color:#595959;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100px;display:inline-block}._hot-song-modal_jnpqx_1 ._footer_jnpqx_161{display:flex;align-items:center;justify-content:flex-end;margin-top:16px}._hot-song-modal_jnpqx_1 ._footer_jnpqx_161 ._selected-count_jnpqx_167{font-size:14px;color:#595959;margin-right:auto}@keyframes _pulse_jnpqx_1{0%,to{opacity:1}50%{opacity:.5}}._album-list-modal_13s8d_1 ._modal-title_13s8d_1{width:100%}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4{display:flex;align-items:center;justify-content:space-between;padding-right:30px}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10{display:flex;align-items:center}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14{display:flex;flex-direction:column;align-items:center;padding:8px 16px;border-radius:8px;margin-left:12px;box-shadow:0 2px 8px #0000001a;transition:all .3s ease;position:relative;overflow:hidden}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(1){background:linear-gradient(135deg,#667eea,#764ba2);box-shadow:0 2px 8px #667eea4d}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(1):hover{box-shadow:0 4px 12px #667eea66}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(2){background:linear-gradient(135deg,#f093fb,#f5576c);box-shadow:0 2px 8px #f093fb4d}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(2):hover{box-shadow:0 4px 12px #f093fb66}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(1):hover{transform:translateY(-2px) scale(1.02)}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(2):hover{transform:translateY(-2px) scale(1.02)}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:hover{transform:translateY(-2px)}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14._loading_13s8d_49{opacity:.7}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14._loading_13s8d_49:nth-child(1) ._stat-value_13s8d_52{animation:_pulse_13s8d_1 1.5s ease-in-out infinite;animation-delay:.2s}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14._loading_13s8d_49:nth-child(2) ._stat-value_13s8d_52{animation:_pulse_13s8d_1 1.5s ease-in-out infinite;animation-delay:.4s}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14 ._stat-label_13s8d_60{font-size:12px;color:#fffc;font-weight:500;margin-bottom:2px}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14 ._stat-value_13s8d_52{font-size:16px;color:#fff;font-weight:600;line-height:1;transition:all .3s ease}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14 ._stat-value_13s8d_52:hover{transform:scale(1.1)}._album-list-modal_13s8d_1 ._album-table_13s8d_76{margin-bottom:16px}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-cover_13s8d_79{width:60px;height:60px;border-radius:6px;overflow:hidden;flex-shrink:0}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-cover_13s8d_79 img{width:100%;height:100%;object-fit:cover;border-radius:6px}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-details_13s8d_92{flex:1;min-width:0}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-details_13s8d_92 ._album-name_13s8d_96{font-weight:500;color:#262626;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:180px}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-details_13s8d_92 ._album-trans-name_13s8d_105{font-size:12px;color:#8c8c8c;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:180px}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-details_13s8d_92 ._album-type_13s8d_114{margin-top:4px}._album-list-modal_13s8d_1 ._singer-info_13s8d_117 ._singer-name_13s8d_117{font-weight:500;color:#262626;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._album-list-modal_13s8d_1 ._singer-info_13s8d_117 ._singer-id_13s8d_125{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._album-list-modal_13s8d_1 ._album-id-text_13s8d_133,._album-list-modal_13s8d_1 ._album-mid-text_13s8d_134{font-family:Monaco,Menlo,Ubuntu Mono,monospace;font-size:12px;color:#595959;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100px;display:inline-block}._album-list-modal_13s8d_1 ._publish-date_13s8d_144{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px;display:inline-block}._album-list-modal_13s8d_1 ._footer_13s8d_151{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-top:1px solid #f0f0f0}._album-list-modal_13s8d_1 ._footer_13s8d_151 ._selected-count_13s8d_158{font-size:14px;color:#666}._album-list-modal_13s8d_1 ._footer_13s8d_151 ._selected-count_13s8d_158 ._selected-info_13s8d_162{color:#1890ff;margin-left:8px;font-weight:500}@keyframes _pulse_13s8d_1{0%,to{opacity:1}50%{opacity:.5}}._singer-search-modal_1jeib_2 .ant-modal-body{display:flex;flex-direction:column;gap:16px}._singer-info_1jeib_8{display:flex;align-items:center}._singer-info_1jeib_8 ._singer-avatar_1jeib_12{border:3px solid #f0f0f0;box-shadow:0 2px 8px #0000001a;transition:all .3s ease}._singer-info_1jeib_8 ._singer-avatar_1jeib_12:hover{border-color:#31c27c;transform:scale(1.05)}._singer-info_1jeib_8 ._singer-details_1jeib_21{display:flex;flex-direction:column;gap:4px}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-name_1jeib_26{font-size:16px;font-weight:600;color:#262626;line-height:1.4}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-country_1jeib_32{font-size:13px;color:#666;display:flex;align-items:center;gap:4px}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-country_1jeib_32:before{content:"\u{1F4CD}";font-size:12px}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-id_1jeib_43{font-size:12px;color:#999;font-family:Courier New,monospace;background:#f5f5f5;padding:2px 6px;border-radius:4px;display:inline-block;width:fit-content}._singer-id-text_1jeib_54{font-family:Courier New,monospace;font-size:13px;color:#666;background:#f8f9fa;padding:4px 8px;border-radius:4px;border:1px solid #e9ecef}._singer-mid-text_1jeib_64{font-family:Courier New,monospace;font-size:12px;color:#999;background:#f5f5f5;padding:4px 8px;border-radius:4px;border:1px solid #e9ecef;word-break:break-all}._info-tag_1jeib_75{border-radius:6px;font-size:12px;padding:4px 8px;font-weight:500;border:none;box-shadow:0 1px 3px #0000001a}._info-tag_1jeib_75._ant-tag-blue_1jeib_83{background:linear-gradient(135deg,#e6f7ff,#bae7ff);color:#1890ff}._song-search-modal_15iqn_1 ._modal-title_15iqn_1{display:flex;align-items:center;justify-content:space-between}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6 ._title-text_15iqn_11{font-size:16px;font-weight:600;color:#333}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-cover_15iqn_21{width:60px;height:60px;border-radius:8px;overflow:hidden;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-name_15iqn_36{font-size:14px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-album_15iqn_46{font-size:12px;color:#666;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55 ._singer-name_15iqn_60{font-size:14px;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._duration_15iqn_69{font-size:14px;color:#666;font-family:monospace}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75{font-size:12px;color:#666;font-family:monospace;background-color:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74:hover,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75:hover{background-color:#e6f7ff;color:#1890ff}::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:transparent;border-radius:6px}::-webkit-scrollbar-thumb{background:#8080804d;border-radius:6px;transition:all .2s ease-in-out}::-webkit-scrollbar-thumb:hover{background:#80808080}*{scrollbar-width:thin;scrollbar-color:rgba(128,128,128,.3) transparent} ');
 
   var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
   function getDefaultExportFromCjs(x) {
@@ -12215,6 +12215,14 @@
       e: ".flac"
     }
   };
+  const ResourceType = {
+    歌曲: "song",
+    专辑: "album",
+    视频: "mv",
+    歌单: "playlist",
+    歌手: "user",
+    歌词: "lyric"
+  };
   var dayjs_min$1 = { exports: {} };
   var dayjs_min = dayjs_min$1.exports;
   var hasRequiredDayjs_min;
@@ -12614,7 +12622,7 @@
     const [url, setUrl] = require$$1.useState("");
     const [isPlaying, setIsPlaying] = require$$1.useState();
     const [currentTime, setCurrentTime] = require$$1.useState(0);
-    const [duration, setDuration] = require$$1.useState(0);
+    const [duration2, setDuration] = require$$1.useState(0);
     const urlMap = require$$1.useRef({});
     const getUrl = async (mid, quality = "flac") => {
       if (urlMap.current[mid]) {
@@ -12685,7 +12693,7 @@
       url,
       isPlaying,
       currentTime,
-      duration,
+      duration: duration2,
       play,
       pause,
       stop,
@@ -12916,8 +12924,36 @@
       }
     );
   });
-  const styles$6 = {
+  const styles$7 = {
     "button-group": "_button-group_y8t3i_1"
+  };
+  const getSearchResult = async (keyword, type = "song", options) => {
+    const { pageNum = 1, pageSize = 10 } = {};
+    const params = {
+      w: keyword,
+      n: pageSize,
+      p: pageNum,
+      catZhida: 1,
+      format: "json",
+      outCharset: "utf-8",
+      ct: 24,
+      qqmusic_ver: 1298,
+      remoteplace: `txt.yqq.${type}`,
+      t: 0,
+      aggr: 1,
+      cr: 1,
+      lossless: 0,
+      flag_qc: 0,
+      platform: "yqq.json"
+    };
+    const res = await qqMusicRequest(
+      `/soso/fcgi-bin/client_search_cp?${new URLSearchParams(params).toString()}`,
+      {
+        method: "GET"
+      },
+      "c"
+    );
+    return res;
   };
   const getSingerInfo = async (singermid) => {
     const params = {
@@ -13330,6 +13366,22 @@
         setGetSongInfoLoading(false);
       }
     };
+    const [getSearchResultLoading, setGetSearchResultLoading] = require$$1.useState(false);
+    const [getSearchResultParams, setGetSearchResultParams] = require$$1.useState({
+      keyword: "",
+      type: "song"
+    });
+    const handleGetSearchResult = async () => {
+      try {
+        setGetSearchResultLoading(true);
+        const res = await getSearchResult(getSearchResultParams.keyword, getSearchResultParams.type);
+        console.log("res", res);
+      } catch (error) {
+        console.log("error", error);
+      } finally {
+        setGetSearchResultLoading(false);
+      }
+    };
     return /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Modal, { title: "测试Modal", open: visible, onCancel: close, width: 1e3, footer: null, centered: true, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Form, { children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { label: "获取歌手列表", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -13474,6 +13526,31 @@
         /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", onClick: handleGetSongLyric, loading: getSongLyricLoading, children: "获取歌曲歌词" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", onClick: handleGetSongPlayUrl, loading: getSongPlayUrlLoading, children: "获取歌曲播放链接" }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", onClick: handleGetSongInfo, loading: getSongInfoLoading, children: "获取歌曲信息" })
+      ] }) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { label: "获取搜索结果", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          antd.Input,
+          {
+            placeholder: "请输入搜索关键词",
+            style: { width: 300 },
+            value: getSearchResultParams.keyword,
+            onChange: (e) => setGetSearchResultParams({ ...getSearchResultParams, keyword: e.target.value })
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          antd.Select,
+          {
+            options: Object.entries(ResourceType).map(([key, value]) => ({
+              label: key,
+              value
+            })),
+            style: { width: 150 },
+            value: getSearchResultParams.type,
+            onChange: (value) => setGetSearchResultParams({ ...getSearchResultParams, type: value }),
+            allowClear: true
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", onClick: handleGetSearchResult, loading: getSearchResultLoading, children: "获取搜索结果" })
       ] }) })
     ] }) });
   });
@@ -13544,7 +13621,7 @@
     });
     return () => message.destroy(key);
   };
-  const styles$5 = {
+  const styles$6 = {
     "copy-text": "_copy-text_1att4_1",
     "copy-btn": "_copy-btn_1att4_12"
   };
@@ -13613,7 +13690,7 @@
   }
   var classnamesExports = requireClassnames();
   const classNames = /* @__PURE__ */ getDefaultExportFromCjs(classnamesExports);
-  const styles$4 = {
+  const styles$5 = {
     "text-overflow-show-tips-container": "_text-overflow-show-tips-container_btabq_1"
   };
   function __read(o, n) {
@@ -14273,7 +14350,7 @@
       "div",
       {
         ...restProps,
-        className: classNames(styles$4["text-overflow-show-tips-container"], className),
+        className: classNames(styles$5["text-overflow-show-tips-container"], className),
         children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, children: text })
       }
     ) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, ...restProps, className, children: text });
@@ -14298,7 +14375,7 @@
       copy(text);
       msgSuccess("复制成功");
     };
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: classNames(styles$5["copy-text"], className), ...rest, children: [
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: classNames(styles$6["copy-text"], className), ...rest, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         TextOverflowShowTips,
         {
@@ -14316,7 +14393,7 @@
           type: "link",
           icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.CopyOutlined, {}),
           onClick: handleCopy,
-          className: styles$5["copy-btn"]
+          className: styles$6["copy-btn"]
         }
       )
     ] });
@@ -14325,7 +14402,7 @@
     "select-search": "_select-search_19wb1_1"
   };
   const { Group } = antd.Input;
-  const defaultSearchParams$1 = {
+  const defaultSearchParams$2 = {
     prop: "xm",
     value: ""
   };
@@ -14342,9 +14419,9 @@
       inputWidth = 180
     } = props;
     const [searchParams, setSearchParams] = require$$1.useState(() => {
-      if (value?.prop == void 0) return defaultValue || defaultSearchParams$1;
+      if (value?.prop == void 0) return defaultValue || defaultSearchParams$2;
       return {
-        ...defaultValue || defaultSearchParams$1,
+        ...defaultValue || defaultSearchParams$2,
         ...value
       };
     });
@@ -14420,7 +14497,7 @@
       label: "姓名"
     }
   ];
-  const styles$3 = {};
+  const styles$4 = {};
   const { RangePicker: AntRangePicker } = antd.DatePicker;
   const RangePicker = ({
     value,
@@ -14452,7 +14529,7 @@
         value: rangeValue,
         onChange: handleChange,
         format,
-        className: classNames(styles$3["rangePicker"], className),
+        className: classNames(styles$4["rangePicker"], className),
         placeholder,
         ...rest
       }
@@ -20120,7 +20197,7 @@
   var lodashExports = requireLodash();
   const loading$1 = "_loading_jnpqx_59";
   const footer$1 = "_footer_jnpqx_161";
-  const styles$2 = {
+  const styles$3 = {
     "hot-song-modal": "_hot-song-modal_jnpqx_1",
     "modal-title": "_modal-title_jnpqx_1",
     "title-content": "_title-content_jnpqx_4",
@@ -20208,8 +20285,8 @@
         dataIndex: "name",
         key: "name",
         width: 250,
-        render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", className: styles$2["song-info"], children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["album-cover"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", className: styles$3["song-info"], children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3["album-cover"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(
             antd.Image,
             {
               width: 40,
@@ -20218,9 +20295,9 @@
               alt: record.album?.name || "专辑封面"
             }
           ) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["song-details"], children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["song-name"], title: text, children: text }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["song-album"], title: record.album?.name || "未知专辑", children: record.album?.name || "未知专辑" })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3["song-details"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3["song-name"], title: text, children: text }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3["song-album"], title: record.album?.name || "未知专辑", children: record.album?.name || "未知专辑" })
           ] })
         ] })
       },
@@ -20231,9 +20308,9 @@
         width: 200,
         render: (singer) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "small", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Avatar, { icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.UserOutlined, {}), src: singerInfo?.singerPic, size: 40 }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["singer-info"], children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["singer-name"], title: singer?.[0]?.name || "未知歌手", children: singer?.[0]?.name || "未知歌手" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["singer-id"], title: singer?.[0]?.id?.toString() || "", children: singer?.[0]?.id || "" })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3["singer-info"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3["singer-name"], title: singer?.[0]?.name || "未知歌手", children: singer?.[0]?.name || "未知歌手" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3["singer-id"], title: singer?.[0]?.id?.toString() || "", children: singer?.[0]?.id || "" })
           ] })
         ] })
       },
@@ -20258,7 +20335,7 @@
         render: (_, __, index2) => {
           const extra = data?.extras?.[index2];
           const uploadTime = extra?.upload_time || "";
-          return /* @__PURE__ */ jsxRuntimeExports.jsx(Text$1, { className: styles$2["upload-time"], title: uploadTime, children: uploadTime });
+          return /* @__PURE__ */ jsxRuntimeExports.jsx(Text$1, { className: styles$3["upload-time"], title: uploadTime, children: uploadTime });
         }
       },
       {
@@ -20267,7 +20344,7 @@
         key: "id",
         width: 120,
         align: "center",
-        render: (id) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$2["song-id-text"], text: id + "" })
+        render: (id) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$3["song-id-text"], text: id + "" })
       },
       {
         title: "歌曲MID",
@@ -20275,7 +20352,7 @@
         key: "mid",
         width: 200,
         align: "center",
-        render: (mid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$2["song-mid-text"], text: mid })
+        render: (mid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$3["song-mid-text"], text: mid })
       },
       {
         title: "操作",
@@ -20334,23 +20411,23 @@
       }
     };
     const renderTitle = () => {
-      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["modal-title"], children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["title-content"], children: [
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3["modal-title"], children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3["title-content"], children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs(Title$1, { level: 4, style: { margin: 0 }, children: [
           singerInfo.singerName,
           " - 热门歌曲"
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["title-stats"], children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$2["stat-item"]} ${loading2 ? styles$2["loading"] : ""}`, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$2["stat-label"], children: "歌曲" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$2["stat-value"], children: loading2 ? "..." : data?.total_song || 0 })
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3["title-stats"], children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$3["stat-item"]} ${loading2 ? styles$3["loading"] : ""}`, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$3["stat-label"], children: "歌曲" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$3["stat-value"], children: loading2 ? "..." : data?.total_song || 0 })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$2["stat-item"]} ${loading2 ? styles$2["loading"] : ""}`, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$2["stat-label"], children: "专辑" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$2["stat-value"], children: loading2 ? "..." : data?.total_album || 0 })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$3["stat-item"]} ${loading2 ? styles$3["loading"] : ""}`, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$3["stat-label"], children: "专辑" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$3["stat-value"], children: loading2 ? "..." : data?.total_album || 0 })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$2["stat-item"]} ${loading2 ? styles$2["loading"] : ""}`, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$2["stat-label"], children: "MV" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$2["stat-value"], children: loading2 ? "..." : data?.total_mv || 0 })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$3["stat-item"]} ${loading2 ? styles$3["loading"] : ""}`, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$3["stat-label"], children: "MV" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$3["stat-value"], children: loading2 ? "..." : data?.total_mv || 0 })
           ] })
         ] })
       ] }) });
@@ -20415,8 +20492,8 @@
       }
     };
     const renderFooter = () => {
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["footer"], children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["selected-count"], children: [
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3["footer"], children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3["selected-count"], children: [
           "已选择 ",
           selectedRows.length,
           " 首歌曲"
@@ -20471,7 +20548,7 @@
         footer: renderFooter(),
         width: 1200,
         centered: true,
-        className: styles$2["hot-song-modal"],
+        className: styles$3["hot-song-modal"],
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             antd.Table,
@@ -20483,7 +20560,7 @@
               loading: loading2,
               pagination: false,
               scroll: { y: 500, x: 1100 },
-              className: styles$2["song-table"]
+              className: styles$3["song-table"]
             }
           ),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20506,7 +20583,7 @@
   });
   const loading = "_loading_13s8d_49";
   const footer = "_footer_13s8d_151";
-  const styles$1 = {
+  const styles$2 = {
     "album-list-modal": "_album-list-modal_13s8d_1",
     "modal-title": "_modal-title_13s8d_1",
     "title-content": "_title-content_13s8d_4",
@@ -20628,8 +20705,8 @@
         dataIndex: "albumName",
         key: "albumName",
         width: 300,
-        render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", className: styles$1["album-info"], children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["album-cover"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", className: styles$2["album-info"], children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["album-cover"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(
             antd.Image,
             {
               width: 60,
@@ -20639,10 +20716,10 @@
               fallback: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAADDCAYAAADQvc6UAAABRWlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSSwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAwSDCIMogwMCcmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis7PPOq3QdDFcvjV3jOD1boQVTPQrgSkktTgbSf4A4LbmgqISBgTEFyFYuLykAsTuAbJEioKOA7DkgdjqEvQHEToKwj4DVhAQ5A9k3gGyB5IxEoBmML4BsnSQk8XQkNtReEOBxcfXxUQg1Mjc0dyHgXNJBSWpFCYh2zi+oLMpMzyhRcASGUqqCZ16yno6CkYGRAQMDKMwhqj/fAIcloxgHQqxAjIHBEugw5sUIsSQpBobtQPdLciLEVJYzMPBHMDBsayhILEqEO4DxG0txmrERhM29nYGBddr//5/DGRjYNRkY/l7////39v///y4Dmn+LgeHANwDrkl1AuO+pmgAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAwqADAAQAAAABAAAAwwAAAAD9b/HnAAAHlklEQVR4Ae3dP3Ik1RnG4W+FgYxN"
             }
           ) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["album-details"], children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["album-name"], title: text, children: text }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["album-trans-name"], title: record.albumTranName || "", children: record.albumTranName || "" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["album-type"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tag, { color: "blue", children: record.albumType || "专辑" }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["album-details"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["album-name"], title: text, children: text }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["album-trans-name"], title: record.albumTranName || "", children: record.albumTranName || "" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["album-type"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tag, { color: "blue", children: record.albumType || "专辑" }) })
           ] })
         ] })
       },
@@ -20653,9 +20730,9 @@
         width: 200,
         render: (singerName) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "small", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Avatar, { icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.UserOutlined, {}), src: singerInfo?.singerPic, size: 40 }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["singer-info"], children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["singer-name"], title: singerName || "未知歌手", children: singerName || "未知歌手" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["singer-id"], title: singerInfo?.singerId?.toString() || "", children: singerInfo?.singerId || "" })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["singer-info"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["singer-name"], title: singerName || "未知歌手", children: singerName || "未知歌手" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["singer-id"], title: singerInfo?.singerId?.toString() || "", children: singerInfo?.singerId || "" })
           ] })
         ] })
       },
@@ -20666,7 +20743,7 @@
         width: 150,
         align: "center",
         render: (publishDate) => {
-          return /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { className: styles$1["publish-date"], title: publishDate, children: publishDate || "未知" });
+          return /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { className: styles$2["publish-date"], title: publishDate, children: publishDate || "未知" });
         }
       },
       {
@@ -20686,7 +20763,7 @@
         key: "albumID",
         width: 120,
         align: "center",
-        render: (albumID) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$1["album-id-text"], text: albumID + "" })
+        render: (albumID) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$2["album-id-text"], text: albumID + "" })
       },
       {
         title: "专辑MID",
@@ -20694,7 +20771,7 @@
         key: "albumMid",
         width: 200,
         align: "center",
-        render: (albumMid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$1["album-mid-text"], text: albumMid })
+        render: (albumMid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$2["album-mid-text"], text: albumMid })
       },
       {
         title: "操作",
@@ -20764,19 +20841,19 @@
       }
     };
     const renderTitle = () => {
-      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["modal-title"], children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["title-content"], children: [
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["modal-title"], children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["title-content"], children: [
         /* @__PURE__ */ jsxRuntimeExports.jsxs(Title, { level: 4, style: { margin: 0 }, children: [
           singerInfo.singerName,
           " - 专辑列表"
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["title-stats"], children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$1["stat-item"]} ${loading2 ? styles$1["loading"] : ""}`, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$1["stat-label"], children: "专辑" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$1["stat-value"], children: loading2 ? "..." : data?.length || 0 })
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["title-stats"], children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$2["stat-item"]} ${loading2 ? styles$2["loading"] : ""}`, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$2["stat-label"], children: "专辑" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$2["stat-value"], children: loading2 ? "..." : data?.length || 0 })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$1["stat-item"]} ${loading2 ? styles$1["loading"] : ""}`, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$1["stat-label"], children: "歌曲" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$1["stat-value"], children: loading2 ? "..." : data?.reduce((sum, album) => sum + (album.totalNum || 0), 0) || 0 })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$2["stat-item"]} ${loading2 ? styles$2["loading"] : ""}`, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$2["stat-label"], children: "歌曲" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$2["stat-value"], children: loading2 ? "..." : data?.reduce((sum, album) => sum + (album.totalNum || 0), 0) || 0 })
           ] })
         ] })
       ] }) });
@@ -20828,12 +20905,12 @@
       }
     };
     const renderFooter = () => {
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["footer"], children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["selected-count"], children: [
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["footer"], children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["selected-count"], children: [
           "已选择 ",
           selectedRows.length,
           " 张专辑",
-          selectedRows.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$1["selected-info"], children: [
+          selectedRows.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$2["selected-info"], children: [
             "（共 ",
             selectedRows.reduce((sum, album) => sum + (album.totalNum || 0), 0),
             " 首歌曲）"
@@ -20900,7 +20977,7 @@
         footer: renderFooter(),
         width: 1200,
         centered: true,
-        className: styles$1["album-list-modal"],
+        className: styles$2["album-list-modal"],
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             SearchForm$1,
@@ -20919,7 +20996,7 @@
               rowKey: "albumMid",
               loading: loading2,
               scroll: { y: 500, x: 1100 },
-              className: styles$1["album-table"],
+              className: styles$2["album-table"],
               pagination: {
                 showSizeChanger: true,
                 showQuickJumper: true,
@@ -20932,7 +21009,7 @@
       }
     );
   });
-  const styles = {
+  const styles$1 = {
     "singer-search-modal": "_singer-search-modal_1jeib_2",
     "singer-info": "_singer-info_1jeib_8",
     "singer-avatar": "_singer-avatar_1jeib_12",
@@ -20943,7 +21020,7 @@
     "singer-id-text": "_singer-id-text_1jeib_54",
     "singer-mid-text": "_singer-mid-text_1jeib_64"
   };
-  const defaultSearchParams = {
+  const defaultSearchParams$1 = {
     cur_page: 1,
     area: Area.全部,
     sex: Sex.全部,
@@ -20952,7 +21029,7 @@
   const SingerSearch = require$$1.forwardRef((props, ref) => {
     const { visible, close } = useVisible({}, ref);
     const [keyword, setKeyword] = require$$1.useState("");
-    const [searchParams, setSearchParams] = require$$1.useState(defaultSearchParams);
+    const [searchParams, setSearchParams] = require$$1.useState(defaultSearchParams$1);
     const searchFormOptions = [
       // 地区
       {
@@ -21023,20 +21100,20 @@
         dataIndex: "singer_name",
         key: "singer_name",
         width: 300,
-        render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", className: styles["singer-info"], children: [
+        render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", className: styles$1["singer-info"], children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             antd.Avatar,
             {
               src: record.singer_pic,
               icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.UserOutlined, {}),
               size: 48,
-              className: styles["singer-avatar"]
+              className: styles$1["singer-avatar"]
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles["singer-details"], children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["singer-name"], children: text }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["singer-country"], children: record.country || "未知地区" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles["singer-id"], children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["singer-details"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["singer-name"], children: text }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["singer-country"], children: record.country || "未知地区" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["singer-id"], children: [
               "ID: ",
               record.singer_id
             ] })
@@ -21049,7 +21126,7 @@
         key: "singer_id",
         width: 120,
         align: "center",
-        render: (id) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles["singer-id-text"], text: id + "" })
+        render: (id) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$1["singer-id-text"], text: id + "" })
       },
       {
         title: "歌手MID",
@@ -21057,7 +21134,7 @@
         key: "singer_mid",
         width: 200,
         align: "center",
-        render: (mid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles["singer-mid-text"], text: mid })
+        render: (mid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$1["singer-mid-text"], text: mid })
       },
       {
         title: "操作",
@@ -21108,7 +21185,7 @@
         footer: null,
         width: 1100,
         centered: true,
-        className: styles["singer-search-modal"],
+        className: styles$1["singer-search-modal"],
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(SearchForm$1, { options: searchFormOptions, searchParams, onSearch: handleSearch }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21561,6 +21638,178 @@
       }
     );
   });
+  const duration = "_duration_15iqn_69";
+  const styles = {
+    "song-search-modal": "_song-search-modal_15iqn_1",
+    "modal-title": "_modal-title_15iqn_1",
+    "title-content": "_title-content_15iqn_6",
+    "title-text": "_title-text_15iqn_11",
+    "song-table": "_song-table_15iqn_16",
+    "song-info": "_song-info_15iqn_16",
+    "song-cover": "_song-cover_15iqn_21",
+    "song-details": "_song-details_15iqn_31",
+    "song-name": "_song-name_15iqn_36",
+    "song-album": "_song-album_15iqn_46",
+    "singer-info": "_singer-info_15iqn_55",
+    "singer-name": "_singer-name_15iqn_60",
+    duration,
+    "song-id-text": "_song-id-text_15iqn_74",
+    "song-mid-text": "_song-mid-text_15iqn_75"
+  };
+  const defaultSearchParams = {
+    cur_page: 1
+  };
+  const SongSearch = require$$1.forwardRef((props, ref) => {
+    const { visible, close } = useVisible({}, ref);
+    const [keyword, setKeyword] = require$$1.useState("");
+    const [searchParams, setSearchParams] = require$$1.useState(defaultSearchParams);
+    const searchFormOptions = [
+      // 歌曲名称
+      {
+        label: "歌曲名称",
+        type: "input",
+        inputProps: {
+          placeholder: "请输入歌曲名称",
+          value: keyword,
+          allowClear: true,
+          onChange: (e) => {
+            console.log("e", e);
+            setKeyword(e.target.value);
+          }
+        }
+      }
+    ];
+    const handleSearch = (values) => {
+      const newParams = Object.fromEntries(
+        searchFormOptions.filter((item) => item.name).map((item) => [item.name, values[item.name]])
+      );
+      setSearchParams({
+        ...searchParams,
+        ...newParams
+      });
+    };
+    const columns = [
+      {
+        title: "歌曲信息",
+        dataIndex: "songName",
+        key: "songName",
+        width: 300,
+        render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", className: styles["song-info"], children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["song-cover"] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles["song-details"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["song-name"], title: text, children: text }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["song-album"], title: record.albumName || "", children: record.albumName || "" })
+          ] })
+        ] })
+      },
+      {
+        title: "歌手",
+        dataIndex: "singerName",
+        key: "singerName",
+        width: 200,
+        render: (singerName) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "small", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Avatar, { icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.UserOutlined, {}), size: 40 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["singer-info"], children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["singer-name"], title: singerName || "未知歌手", children: singerName || "未知歌手" }) })
+        ] })
+      },
+      {
+        title: "时长",
+        dataIndex: "duration",
+        key: "duration",
+        width: 100,
+        align: "center",
+        render: (duration2) => {
+          const minutes = Math.floor(duration2 / 60);
+          const seconds = duration2 % 60;
+          return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles["duration"], children: [
+            minutes,
+            ":",
+            seconds.toString().padStart(2, "0")
+          ] });
+        }
+      },
+      {
+        title: "歌曲ID",
+        dataIndex: "songId",
+        key: "songId",
+        width: 120,
+        align: "center",
+        render: (songId) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles["song-id-text"], text: songId + "" })
+      },
+      {
+        title: "歌曲MID",
+        dataIndex: "songMid",
+        key: "songMid",
+        width: 200,
+        align: "center",
+        render: (songMid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles["song-mid-text"], text: songMid })
+      },
+      {
+        title: "操作",
+        key: "action",
+        width: 200,
+        align: "center",
+        fixed: "right",
+        render: (_, record) => {
+          return /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Space, { size: "middle", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            antd.Button,
+            {
+              type: "link",
+              size: "small",
+              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.PlayCircleOutlined, {}),
+              onClick: () => handlePlay(record),
+              title: "播放歌曲",
+              children: "播放"
+            }
+          ) });
+        }
+      }
+    ];
+    const handlePlay = (record) => {
+      console.log("播放歌曲:", record);
+    };
+    const renderTitle = () => {
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["modal-title"], children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["title-content"], children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles["title-text"], children: "歌曲查询" }) }) });
+    };
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      antd.Modal,
+      {
+        title: renderTitle(),
+        open: visible,
+        onCancel: close,
+        width: 1200,
+        centered: true,
+        className: styles["song-search-modal"],
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            SearchForm$1,
+            {
+              options: searchFormOptions,
+              onSearch: handleSearch,
+              style: { marginBottom: 16 }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            antd.Table,
+            {
+              columns,
+              dataSource: [],
+              rowKey: "songId",
+              loading: false,
+              scroll: { y: 500, x: 1100 },
+              className: styles["song-table"],
+              pagination: {
+                showSizeChanger: true,
+                showQuickJumper: true,
+                align: "end",
+                showTotal: (total) => `共 ${total} 首歌曲`
+              }
+            }
+          )
+        ]
+      }
+    );
+  });
   const ButtonGroup = () => {
     const singerSearchRef = useCompRef();
     const handleSingerSearch = () => {
@@ -21574,6 +21823,10 @@
     const handleAlbumSearch = () => {
       albumSearchRef.current.open();
     };
+    const songSearchRef = useCompRef();
+    const handleSongSearch = () => {
+      songSearchRef.current.open();
+    };
     const demoRef = useCompRef();
     const handleDemo = () => {
       demoRef.current.open();
@@ -21582,14 +21835,14 @@
     const handleTestModal = () => {
       testModalRef.current.open();
     };
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$6["button-group"], children: [
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["button-group"], children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "歌手查询", placement: "left", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
         antd.Button,
         {
           type: "primary",
           icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.UserOutlined, {}),
           onClick: handleSingerSearch,
-          className: styles$6["button"]
+          className: styles$7["button"]
         }
       ) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "歌单查询", placement: "left", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21598,7 +21851,7 @@
           type: "primary",
           icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.UnorderedListOutlined, {}),
           onClick: handleSongListSearch,
-          className: styles$6["button"]
+          className: styles$7["button"]
         }
       ) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "专辑查询", placement: "left", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21607,7 +21860,16 @@
           type: "primary",
           icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.BookOutlined, {}),
           onClick: handleAlbumSearch,
-          className: styles$6["button"]
+          className: styles$7["button"]
+        }
+      ) }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "歌曲查询", placement: "left", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        antd.Button,
+        {
+          type: "primary",
+          icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.CustomerServiceOutlined, {}),
+          onClick: handleSongSearch,
+          className: styles$7["button"]
         }
       ) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "demo", placement: "left", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21616,7 +21878,7 @@
           type: "primary",
           icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.InfoCircleOutlined, {}),
           onClick: handleDemo,
-          className: styles$6["button"]
+          className: styles$7["button"]
         }
       ) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "testModal", placement: "left", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21625,14 +21887,15 @@
           type: "primary",
           icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.InfoCircleOutlined, {}),
           onClick: handleTestModal,
-          className: styles$6["button"]
+          className: styles$7["button"]
         }
       ) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Demo, { ref: demoRef }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(TestModal, { ref: testModalRef }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SingerSearch, { ref: singerSearchRef }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(SongListSearch, { ref: songListSearchRef }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(AlbumSearch, { ref: albumSearchRef })
+      /* @__PURE__ */ jsxRuntimeExports.jsx(AlbumSearch, { ref: albumSearchRef }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SongSearch, { ref: songSearchRef })
     ] });
   };
   function App() {
