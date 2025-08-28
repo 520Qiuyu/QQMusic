@@ -12619,10 +12619,9 @@
   const audio = new Audio();
   const usePlayMusic = () => {
     const [currentMid, setCurrentMid] = require$$1.useState("");
-    const [url, setUrl] = require$$1.useState("");
     const [isPlaying, setIsPlaying] = require$$1.useState();
     const [currentTime, setCurrentTime] = require$$1.useState(0);
-    const [duration2, setDuration] = require$$1.useState(0);
+    const [duration, setDuration] = require$$1.useState(0);
     const urlMap = require$$1.useRef({});
     const getUrl = async (mid, quality = "flac") => {
       if (urlMap.current[mid]) {
@@ -12630,7 +12629,9 @@
       }
       const res = await getSongPlayUrl(mid, quality && { quality });
       urlMap.current[mid] = res[mid].url;
-      return res[mid].url;
+      const url = res[mid].url;
+      if (!url) throw new Error("获取歌曲播放地址失败");
+      return url;
     };
     const play = async (mid, quality = "flac") => {
       try {
@@ -12638,11 +12639,12 @@
           audio.play();
           return;
         }
-        const url2 = await getUrl(mid, quality);
-        audio.src = url2;
+        const url = await getUrl(mid, quality);
+        console.log("url", url);
+        audio.src = url;
         audio.play();
         setCurrentMid(mid);
-        urlMap.current[mid] = url2;
+        urlMap.current[mid] = url;
         return new Promise((resolve) => {
           audio.onended = () => {
             resolve(true);
@@ -12662,8 +12664,8 @@
     };
     const download = async (mid, name, quality = "flac") => {
       try {
-        const url2 = await getUrl(mid, quality);
-        await downloadWithFileName(url2.replace("http://", "https://"), name);
+        const url = await getUrl(mid, quality);
+        await downloadWithFileName(url.replace("http://", "https://"), name);
       } catch (error) {
         console.log("error", error);
       }
@@ -12690,10 +12692,9 @@
       };
     }, [currentMid]);
     return {
-      url,
       isPlaying,
       currentTime,
-      duration: duration2,
+      duration,
       play,
       pause,
       stop,
@@ -12814,10 +12815,10 @@
     };
   };
   const getHighestQuality = (file) => {
-    if (file.sizeflac > 0) return "flac";
-    if (file.sizeape > 0) return "ape";
-    if (file.size320 > 0) return 320;
-    if (file.size128 > 0) return 128;
+    if (file.sizeflac && file.sizeflac > 0) return "flac";
+    if (file.sizeape && file.sizeape > 0) return "ape";
+    if (file.size320 && file.size320 > 0) return 320;
+    if (file.size128 && file.size128 > 0) return 128;
     return 128;
   };
   const useGetData = (api, params, options) => {
@@ -12928,7 +12929,7 @@
     "button-group": "_button-group_y8t3i_1"
   };
   const getSearchResult = async (keyword, type = "song", options) => {
-    const { pageNum = 1, pageSize = 20 } = {};
+    const { pageNum = 1, pageSize = 20 } = options || {};
     const params = {
       w: keyword,
       n: pageSize,
@@ -12953,7 +12954,10 @@
       },
       "c"
     );
-    return res;
+    if (res.code === 0) {
+      return res.data;
+    }
+    throw new Error("搜索失败");
   };
   const getSingerInfo = async (singermid) => {
     const params = {
@@ -13116,6 +13120,10 @@
       {}
     );
     return res.singers;
+  };
+  const getSingerPic = (singermid, options) => {
+    const { size = "800x800" } = {};
+    return `https://y.qq.com/music/photo_new/T001R${size}M000${singermid}.jpg?max_age=2592000`;
   };
   const getSongListCategory = async () => {
     const params = {
@@ -21638,7 +21646,6 @@
       }
     );
   });
-  const duration = "_duration_15iqn_69";
   const styles = {
     "song-search-modal": "_song-search-modal_15iqn_1",
     "modal-title": "_modal-title_15iqn_1",
@@ -21652,12 +21659,11 @@
     "song-album": "_song-album_15iqn_46",
     "singer-info": "_singer-info_15iqn_55",
     "singer-name": "_singer-name_15iqn_60",
-    duration,
-    "song-id-text": "_song-id-text_15iqn_74",
     "song-mid-text": "_song-mid-text_15iqn_75"
   };
   const defaultSearchParams = {
-    cur_page: 1
+    pageNum: 1,
+    pageSize: 20
   };
   const SongSearch = require$$1.forwardRef((props, ref) => {
     const { visible, close } = useVisible({}, ref);
@@ -21667,6 +21673,7 @@
       // 歌曲名称
       {
         label: "歌曲名称",
+        name: "keyword",
         type: "input",
         inputProps: {
           placeholder: "请输入歌曲名称",
@@ -21688,85 +21695,158 @@
         ...newParams
       });
     };
+    const [qualityMap, setQualityMap] = require$$1.useState({});
     const columns = [
       {
         title: "歌曲信息",
-        dataIndex: "songName",
-        key: "songName",
+        dataIndex: "songname",
         width: 300,
         render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", className: styles["song-info"], children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["song-cover"] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["song-cover"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Image, { src: getAlbumPicUrl(record.albummid) }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles["song-details"], children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["song-name"], title: text, children: text }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["song-album"], title: record.albumName || "", children: record.albumName || "" })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["song-album"], title: record.albumname || "", children: record.albumname || "" })
           ] })
         ] })
       },
       {
         title: "歌手",
-        dataIndex: "singerName",
-        key: "singerName",
+        dataIndex: "singer",
         width: 200,
-        render: (singerName) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "small", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Avatar, { icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.UserOutlined, {}), size: 40 }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["singer-info"], children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["singer-name"], title: singerName || "未知歌手", children: singerName || "未知歌手" }) })
+        render: (singers) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "small", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Image, { src: getSingerPic(singers[0].mid), width: 40, height: 40 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["singer-info"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            "div",
+            {
+              className: styles["singer-name"],
+              title: singers?.map((s) => s.name).join("/") || "未知歌手",
+              children: singers?.map((s) => s.name).join("/") || "未知歌手"
+            }
+          ) })
         ] })
       },
       {
-        title: "时长",
-        dataIndex: "duration",
-        key: "duration",
-        width: 100,
+        title: "专辑",
+        dataIndex: "albumname",
+        width: 200,
+        ellipsis: true
+      },
+      {
+        title: "大小",
+        dataIndex: "size128",
+        width: 120,
         align: "center",
-        render: (duration2) => {
-          const minutes = Math.floor(duration2 / 60);
-          const seconds = duration2 % 60;
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles["duration"], children: [
-            minutes,
-            ":",
-            seconds.toString().padStart(2, "0")
+        render: (_, record) => {
+          const sizeKey = `size${qualityMap[record.songmid] || 128}`;
+          const size = record[sizeKey] || 0;
+          return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+            Math.round(size / 1024 / 1024),
+            "MB"
           ] });
+        }
+      },
+      // 音质选择器
+      {
+        title: "音质",
+        key: "quality",
+        width: 150,
+        align: "center",
+        render: (_, record) => {
+          const options = [];
+          if (record.size128) options.push({ label: "128k", value: 128 });
+          if (record.size320) options.push({ label: "320k", value: 320 });
+          if (record.sizeflac) options.push({ label: "FLAC", value: "flac" });
+          return /* @__PURE__ */ jsxRuntimeExports.jsx(
+            antd.Select,
+            {
+              options,
+              defaultValue: 128,
+              style: { width: "100%" },
+              onChange: (value) => {
+                setQualityMap((prev) => ({
+                  ...prev,
+                  [record.songmid]: value
+                }));
+              }
+            }
+          );
+        }
+      },
+      {
+        title: "格式",
+        key: "format",
+        width: 150,
+        align: "center",
+        render: (_, record) => {
+          const formats = [];
+          if (record.size128) formats.push("MP3 128k");
+          if (record.size320) formats.push("MP3 320k");
+          if (record.sizeflac) formats.push("FLAC");
+          return formats.join(" / ");
         }
       },
       {
         title: "歌曲ID",
-        dataIndex: "songId",
-        key: "songId",
-        width: 120,
-        align: "center",
-        render: (songId) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles["song-id-text"], text: songId + "" })
-      },
-      {
-        title: "歌曲MID",
-        dataIndex: "songMid",
-        key: "songMid",
+        dataIndex: "songmid",
         width: 200,
         align: "center",
-        render: (songMid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles["song-mid-text"], text: songMid })
+        render: (songmid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles["song-mid-text"], text: songmid })
       },
       {
         title: "操作",
         key: "action",
-        width: 200,
+        width: 300,
         align: "center",
         fixed: "right",
         render: (_, record) => {
-          return /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Space, { size: "middle", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            antd.Button,
-            {
-              type: "link",
-              size: "small",
-              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.PlayCircleOutlined, {}),
-              onClick: () => handlePlay(record),
-              title: "播放歌曲",
-              children: "播放"
-            }
-          ) });
+          return /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              antd.Button,
+              {
+                type: "link",
+                size: "small",
+                icon: isPlaying === record.songmid ? /* @__PURE__ */ jsxRuntimeExports.jsx(icons.PauseCircleOutlined, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(icons.PlayCircleOutlined, {}),
+                onClick: () => handlePlay(record),
+                title: "播放歌曲",
+                children: "播放"
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              antd.Button,
+              {
+                type: "link",
+                size: "small",
+                icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.DownloadOutlined, {}),
+                onClick: () => handleDownload(record),
+                title: "下载歌曲",
+                children: "下载"
+              }
+            )
+          ] });
         }
       }
     ];
+    const { data, loading: loading2 } = useGetData(
+      () => getSearchResult(searchParams.keyword, "song", searchParams),
+      void 0,
+      {
+        returnFunction: () => !searchParams.keyword,
+        monitors: [searchParams]
+      }
+    );
+    console.log("data", data);
+    const { play, download, isPlaying, pause } = usePlayMusic();
     const handlePlay = (record) => {
       console.log("播放歌曲:", record);
+      if (isPlaying) {
+        pause();
+      } else {
+        play(record.songmid, qualityMap[record.songmid] || 128);
+      }
+    };
+    const handleDownload = (record) => {
+      const quality = getHighestQuality(record);
+      download(record.songmid, record.songname, qualityMap[record.songmid] || quality);
     };
     const renderTitle = () => {
       return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["modal-title"], children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles["title-content"], children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles["title-text"], children: "歌曲查询" }) }) });
@@ -21793,17 +21873,27 @@
             antd.Table,
             {
               columns,
-              dataSource: [],
-              rowKey: "songId",
-              loading: false,
+              dataSource: data?.song?.list || [],
+              rowKey: "songmid",
+              loading: loading2,
               scroll: { y: 500, x: 1100 },
               className: styles["song-table"],
-              pagination: {
-                showSizeChanger: true,
-                showQuickJumper: true,
-                align: "end",
-                showTotal: (total) => `共 ${total} 首歌曲`
-              }
+              pagination: false
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            antd.Pagination,
+            {
+              align: "end",
+              total: data?.song?.totalnum || 0,
+              current: searchParams.pageNum,
+              pageSize: searchParams.pageSize,
+              showSizeChanger: true,
+              showTotal: (total) => `共 ${total} 首歌曲`,
+              onChange: (page, pageSize) => {
+                setSearchParams({ ...searchParams, pageNum: page, pageSize });
+              },
+              style: { marginTop: 16 }
             }
           )
         ]
