@@ -124,12 +124,18 @@ export const useGetAlbumDetail = () => {
   };
 };
 
-const getHighestQuality = (file: AlbumSongInfo): keyof typeof FileType => {
+export const getHighestQuality = (file: {
+  size128?: number;
+  size320?: number;
+  sizeape?: number;
+  sizeflac?: number;
+  sizeogg?: number;
+}): keyof typeof FileType => {
   // 按音质从高到低排序检查
-  if (file.sizeflac > 0) return 'flac';
-  if (file.sizeape > 0) return 'ape';
-  if (file.size320 > 0) return 320;
-  if (file.size128 > 0) return 128;
+  if (file.sizeflac && file.sizeflac > 0) return 'flac';
+  if (file.sizeape && file.sizeape > 0) return 'ape';
+  if (file.size320 && file.size320 > 0) return 320;
+  if (file.size128 && file.size128 > 0) return 128;
 
   // 默认返回128kbps
   return 128;

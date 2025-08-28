@@ -217,3 +217,8 @@ export const getSimilarSinger = async (
 
   return res.singers;
 };
+
+export const getSingerPic = (singermid: string, options?: { size: string }) => {
+  const { size = '800x800' } = options || {};
+  return `https://y.qq.com/music/photo_new/T001R${size}M000${singermid}.jpg?max_age=2592000`;
+};

@@ -1,5 +1,6 @@
 import type { ResourceTypeValues } from '@/constants';
 import { qqMusicRequest } from '@/utils/request';
+import type { SearchResult } from '../types/search';
 
 /** 获取搜索结果 */
 export const getSearchResult = async (
@@ -9,7 +10,7 @@ export const getSearchResult = async (
     pageNum: number;
     pageSize: number;
   },
-) => {
+): Promise<SearchResult> => {
   const { pageNum = 1, pageSize = 20 } = options || {};
   const params = {
     w: keyword,
@@ -36,5 +37,9 @@ export const getSearchResult = async (
     },
     'c',
   );
-  return res;
+  if (res.code === 0) {
+    return res.data;
+  }
+
+  throw new Error('搜索失败');
 };

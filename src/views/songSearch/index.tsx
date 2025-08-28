@@ -1,20 +1,33 @@
+import { getAlbumPicUrl } from '@/apis/album';
+import { getSearchResult } from '@/apis/search';
 import { CopyText, SearchForm } from '@/components';
 import type { Option as SearchFormOption } from '@/components/SearchForm';
-import { PlayCircleOutlined, UserOutlined } from '@ant-design/icons';
-import { Avatar, Button, Modal, Pagination, Space, Table, Tag } from 'antd';
+import type { Singer, SongInfo } from '@/types/search';
+import {
+  DownloadOutlined,
+  PauseCircleOutlined,
+  PlayCircleOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
+import { Avatar, Button, Image, Modal, Pagination, Select, Space, Table } from 'antd';
 import type { ColumnType } from 'antd/es/table';
 import { forwardRef, useState, type ForwardedRef } from 'react';
-import { useCompRef, useVisible } from '../../hooks';
+import { useGetData, usePlayMusic, useVisible } from '../../hooks';
 import type { Ref } from '../../hooks/useVisible';
 import styles from './index.module.scss';
+import { getSingerPic } from '@/apis/singer';
+import { getHighestQuality } from '@/hooks/useGetAlbumDetail';
+import type { FileType } from '@/constants';
 
 interface SearchParams {
   keyword?: string;
-  cur_page: number;
+  pageNum: number;
+  pageSize: number;
 }
 
 const defaultSearchParams: SearchParams = {
-  cur_page: 1,
+  pageNum: 1,
+  pageSize: 20,
 };
 
 const SongSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
@@ -22,11 +35,12 @@ const SongSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
 
   const [keyword, setKeyword] = useState('');
   const [searchParams, setSearchParams] = useState<SearchParams>(defaultSearchParams);
-  
+
   const searchFormOptions: SearchFormOption[] = [
     // 歌曲名称
     {
       label: '歌曲名称',
+      name: 'keyword',
       type: 'input',
       inputProps: {
         placeholder: '请输入歌曲名称',
@@ -50,24 +64,24 @@ const SongSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
     });
   };
 
+  const [qualityMap, setQualityMap] = useState<Record<string, keyof typeof FileType>>({});
   // 表格列配置
-  const columns: ColumnType<any>[] = [
+  const columns: ColumnType<SongInfo>[] = [
     {
       title: '歌曲信息',
-      dataIndex: 'songName',
-      key: 'songName',
+      dataIndex: 'songname',
       width: 300,
       render: (text, record) => (
         <Space size='middle' className={styles['song-info']}>
           <div className={styles['song-cover']}>
-            {/* 这里可以添加歌曲封面 */}
+            <Image src={getAlbumPicUrl(record.albummid)} />
           </div>
           <div className={styles['song-details']}>
             <div className={styles['song-name']} title={text}>
               {text}
             </div>
-            <div className={styles['song-album']} title={record.albumName || ''}>
-              {record.albumName || ''}
+            <div className={styles['song-album']} title={record.albumname || ''}>
+              {record.albumname || ''}
             </div>
           </div>
         </Space>
@@ -75,72 +89,108 @@ const SongSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
     },
     {
       title: '歌手',
-      dataIndex: 'singerName',
-      key: 'singerName',
+      dataIndex: 'singer',
       width: 200,
-      render: (singerName: string) => (
+      render: (singers: Singer[]) => (
         <Space size='small'>
-          <Avatar icon={<UserOutlined />} size={40} />
+          <Image src={getSingerPic(singers[0].mid)} width={40} height={40} />
           <div className={styles['singer-info']}>
-            <div className={styles['singer-name']} title={singerName || '未知歌手'}>
-              {singerName || '未知歌手'}
+            <div
+              className={styles['singer-name']}
+              title={singers?.map((s) => s.name).join('/') || '未知歌手'}>
+              {singers?.map((s) => s.name).join('/') || '未知歌手'}
             </div>
           </div>
         </Space>
       ),
     },
     {
-      title: '时长',
-      dataIndex: 'duration',
-      key: 'duration',
-      width: 100,
+      title: '专辑',
+      dataIndex: 'albumname',
+      width: 200,
+      ellipsis: true,
+    },
+    {
+      title: '大小',
+      dataIndex: 'size128',
+      width: 120,
       align: 'center',
-      render: (duration: number) => {
-        const minutes = Math.floor(duration / 60);
-        const seconds = duration % 60;
+      render: (_, record) => {
+        const sizeKey = `size${qualityMap[record.songmid] || 128}`;
+        const size = record[sizeKey] || 0;
+        return <span>{Math.round(size / 1024 / 1024)}MB</span>;
+      },
+    },
+    // 音质选择器
+    {
+      title: '音质',
+      key: 'quality',
+      width: 150,
+      align: 'center',
+      render: (_, record) => {
+        const options: { label: string; value: number | string }[] = [];
+        if (record.size128) options.push({ label: '128k', value: 128 });
+        if (record.size320) options.push({ label: '320k', value: 320 });
+        if (record.sizeflac) options.push({ label: 'FLAC', value: 'flac' });
         return (
-          <span className={styles['duration']}>
-            {minutes}:{seconds.toString().padStart(2, '0')}
-          </span>
+          <Select
+            options={options}
+            defaultValue={128}
+            style={{ width: '100%' }}
+            onChange={(value) => {
+              setQualityMap((prev) => ({
+                ...prev,
+                [record.songmid]: value as any,
+              }));
+            }}
+          />
         );
       },
     },
     {
-      title: '歌曲ID',
-      dataIndex: 'songId',
-      key: 'songId',
-      width: 120,
+      title: '格式',
+      key: 'format',
+      width: 150,
       align: 'center',
-      render: (songId: number) => (
-        <CopyText className={styles['song-id-text']} text={songId + ''} />
-      ),
+      render: (_, record) => {
+        const formats: string[] = [];
+        if (record.size128) formats.push('MP3 128k');
+        if (record.size320) formats.push('MP3 320k');
+        if (record.sizeflac) formats.push('FLAC');
+        return formats.join(' / ');
+      },
     },
     {
-      title: '歌曲MID',
-      dataIndex: 'songMid',
-      key: 'songMid',
+      title: '歌曲ID',
+      dataIndex: 'songmid',
       width: 200,
       align: 'center',
-      render: (songMid: string) => (
-        <CopyText className={styles['song-mid-text']} text={songMid} />
-      ),
+      render: (songmid: string) => <CopyText className={styles['song-mid-text']} text={songmid} />,
     },
     {
       title: '操作',
       key: 'action',
-      width: 200,
+      width: 300,
       align: 'center',
       fixed: 'right',
-      render: (_, record: any) => {
+      render: (_, record) => {
         return (
           <Space size='middle'>
             <Button
               type='link'
               size='small'
-              icon={<PlayCircleOutlined />}
+              icon={isPlaying === record.songmid ? <PauseCircleOutlined /> : <PlayCircleOutlined />}
               onClick={() => handlePlay(record)}
               title='播放歌曲'>
               播放
+            </Button>
+            <Button
+              type='link'
+              size='small'
+              icon={<DownloadOutlined />}
+              onClick={() => handleDownload(record)}
+              title='下载歌曲'>
+              下载
             </Button>
           </Space>
         );
@@ -148,9 +198,29 @@ const SongSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
     },
   ];
 
-  const handlePlay = (record: any) => {
+  const { data, loading } = useGetData(
+    () => getSearchResult(searchParams.keyword!, 'song', searchParams),
+    undefined,
+    {
+      returnFunction: () => !searchParams.keyword,
+      monitors: [searchParams],
+    },
+  );
+  console.log('data', data);
+
+  const { play, download, isPlaying, pause } = usePlayMusic();
+  const handlePlay = (record: SongInfo) => {
     console.log('播放歌曲:', record);
-    // 这里实现播放逻辑
+    if (isPlaying) {
+      pause();
+    } else {
+      play(record.songmid, qualityMap[record.songmid] || 128);
+    }
+  };
+  const handleDownload = (record: SongInfo) => {
+    // 先挑选音质
+    const quality = getHighestQuality(record);
+    download(record.songmid, record.songname, qualityMap[record.songmid] || quality);
   };
 
   const renderTitle = () => {
@@ -180,17 +250,25 @@ const SongSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
       {/* 歌曲列表 */}
       <Table
         columns={columns}
-        dataSource={[]} // 这里需要添加实际的数据源
-        rowKey='songId'
-        loading={false}
+        dataSource={data?.song?.list || []} // 这里需要添加实际的数据源
+        rowKey='songmid'
+        loading={loading}
         scroll={{ y: 500, x: 1100 }}
         className={styles['song-table']}
-        pagination={{
-          showSizeChanger: true,
-          showQuickJumper: true,
-          align: 'end',
-          showTotal: (total) => `共 ${total} 首歌曲`,
+        pagination={false}
+      />
+
+      <Pagination
+        align='end'
+        total={data?.song?.totalnum || 0}
+        current={searchParams.pageNum}
+        pageSize={searchParams.pageSize}
+        showSizeChanger={true}
+        showTotal={(total) => `共 ${total} 首歌曲`}
+        onChange={(page, pageSize) => {
+          setSearchParams({ ...searchParams, pageNum: page, pageSize });
         }}
+        style={{ marginTop: 16 }}
       />
     </Modal>
   );

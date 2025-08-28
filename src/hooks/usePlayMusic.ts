@@ -1,13 +1,12 @@
 import { getSongLyric, getSongPlayUrl } from '@/apis/song';
 import type { FileType } from '@/constants';
 import { downloadWithFileName } from '@/utils/download';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const audio = new Audio();
 
 export const usePlayMusic = () => {
   const [currentMid, setCurrentMid] = useState<string>('');
-  const [url, setUrl] = useState<string>('');
   const [isPlaying, setIsPlaying] = useState<string>();
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -19,7 +18,9 @@ export const usePlayMusic = () => {
     }
     const res = await getSongPlayUrl(mid, quality && { quality });
     urlMap.current[mid] = res[mid].url;
-    return res[mid].url;
+    const url = res[mid].url;
+    if (!url) throw new Error('获取歌曲播放地址失败');
+    return url;
   };
 
   const play = async (mid: string, quality: keyof typeof FileType = 'flac') => {
@@ -30,6 +31,7 @@ export const usePlayMusic = () => {
         return;
       }
       const url = await getUrl(mid, quality);
+      console.log('url', url);
       audio.src = url;
       audio.play();
       setCurrentMid(mid);
@@ -88,7 +90,6 @@ export const usePlayMusic = () => {
   }, [currentMid]);
 
   return {
-    url,
     isPlaying,
     currentTime,
     duration,
