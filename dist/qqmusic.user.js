@@ -14410,7 +14410,7 @@
     "select-search": "_select-search_19wb1_1"
   };
   const { Group } = antd.Input;
-  const defaultSearchParams$2 = {
+  const defaultSearchParams$3 = {
     prop: "xm",
     value: ""
   };
@@ -14427,9 +14427,9 @@
       inputWidth = 180
     } = props;
     const [searchParams, setSearchParams] = require$$1.useState(() => {
-      if (value?.prop == void 0) return defaultValue || defaultSearchParams$2;
+      if (value?.prop == void 0) return defaultValue || defaultSearchParams$3;
       return {
-        ...defaultValue || defaultSearchParams$2,
+        ...defaultValue || defaultSearchParams$3,
         ...value
       };
     });
@@ -21028,7 +21028,7 @@
     "singer-id-text": "_singer-id-text_1jeib_54",
     "singer-mid-text": "_singer-mid-text_1jeib_64"
   };
-  const defaultSearchParams$1 = {
+  const defaultSearchParams$2 = {
     cur_page: 1,
     area: Area.全部,
     sex: Sex.全部,
@@ -21037,7 +21037,7 @@
   const SingerSearch = require$$1.forwardRef((props, ref) => {
     const { visible, close } = useVisible({}, ref);
     const [keyword, setKeyword] = require$$1.useState("");
-    const [searchParams, setSearchParams] = require$$1.useState(defaultSearchParams$1);
+    const [searchParams, setSearchParams] = require$$1.useState(defaultSearchParams$2);
     const searchFormOptions = [
       // 地区
       {
@@ -21231,227 +21231,272 @@
     );
   });
   const { Option } = antd.Select;
+  const defaultSearchParams$1 = {
+    pageNum: 0,
+    pageSize: 20
+  };
   const SongListSearch = require$$1.forwardRef((props, ref) => {
     const { visible, close } = useVisible({}, ref);
-    const [form] = antd.Form.useForm();
-    const [loading2, setLoading] = require$$1.useState(false);
-    const [songList, setSongList] = require$$1.useState([]);
-    const [total, setTotal] = require$$1.useState(0);
-    const [currentPage, setCurrentPage] = require$$1.useState(0);
-    const [categories, setCategories] = require$$1.useState([]);
-    require$$1.useEffect(() => {
-      const fetchCategories = async () => {
-        try {
-          const res = await getSongListCategory();
-          setCategories(res || []);
-        } catch (error) {
-          console.error("获取歌单分类失败:", error);
+    const [searchParams, setSearchParams] = require$$1.useState(defaultSearchParams$1);
+    const { data: songListCategory } = useGetData(getSongListCategory, void 0, {
+      initialValue: []
+    });
+    require$$1.useMemo(() => {
+      const categories = [];
+      songListCategory?.forEach((group) => {
+        group.items.forEach((item) => {
+          categories.push({
+            categoryId: item.categoryId,
+            categoryName: item.categoryName
+          });
+        });
+      });
+      return categories;
+    }, [songListCategory]);
+    const categoryOptions = require$$1.useMemo(() => {
+      return songListCategory?.map((item) => ({
+        label: item.categoryGroupName,
+        value: item.categoryGroupName,
+        checkable: false,
+        children: item.items.map((item2) => ({
+          label: item2.categoryName,
+          value: item2.categoryId
+        }))
+      }));
+    }, [songListCategory]);
+    const searchFormOptions = [
+      // 分类
+      {
+        label: "分类",
+        name: "categoryIds",
+        type: "treeSelect",
+        inputProps: {
+          treeData: categoryOptions
         }
-      };
-      fetchCategories();
-    }, []);
+      },
+      // 排序
+      {
+        label: "排序",
+        name: "sortId",
+        type: "select",
+        options: [
+          { label: "默认", value: 1 },
+          { label: "最新", value: 2 },
+          { label: "最热", value: 3 },
+          { label: "评分", value: 4 },
+          { label: "none", value: 5 }
+        ],
+        inputProps: {
+          mode: void 0,
+          allowClear: true
+        }
+      }
+    ];
+    const handleSearch = (values) => {
+      const newParams = Object.fromEntries(
+        searchFormOptions.filter((item) => item.name).map((item) => [item.name, values[item.name]])
+      );
+      setSearchParams({
+        ...searchParams,
+        ...newParams
+      });
+    };
     const columns = [
       {
-        title: "歌单",
+        title: "歌单信息",
         dataIndex: "dissname",
         key: "dissname",
-        render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { children: [
+        width: 350,
+        render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             antd.Image,
             {
               src: record.imgurl,
               alt: text,
-              width: 40,
-              height: 40,
-              style: { borderRadius: 4 },
+              width: 60,
+              height: 60,
+              style: { borderRadius: 8 },
               fallback: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAADDCAYAAADQvc6UAAABRWlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSSwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAwSDCIMogwMCcmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis7PPOq3QdDFcvjV3jOD1boQVTPQrgSkktTgbSf4A4LbmgqISBgTEFyFYuLykAsTuAbJEioKOA7DkgdjqEvQHEToKwj4DVhAQ5A9k3gGyB5IxEoBmML4BsnSQk8XQkNtReEOBxcfXxUQg1Mjc0dyHgXNJBSWpFCYh2zi+oLMpMzyhRcASGUqqCZ16yno6CkYGRAQMDKMwhqj/fAIcloxgHQqxAjIHBEugw5sUIsSQpBobtQPdLciLEVJYzMPBHMDBsayhILEqEO4DxG0txmrERhM29nYGBddr//5/DGRjYNRkY/l7////39v///y4Dmn+LgeHANwDrkl1AuO+pmgAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAwqADAAQAAAABAAAAwwAAAAD9b/HnAAAHlklEQVR4Ae3dP3Ik1RnG4W+FgYxN"
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontWeight: 500 }, children: text }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontSize: 12, color: "#666" }, children: record.creator?.name || "未知用户" })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexDirection: "column", gap: 4 }, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontWeight: 500, fontSize: 14 }, children: text }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontSize: 12, color: "#666" }, children: record.creator?.name || "未知用户" }),
+            record.introduction && /* @__PURE__ */ jsxRuntimeExports.jsx(
+              "div",
+              {
+                style: {
+                  fontSize: 11,
+                  color: "#999",
+                  maxWidth: 200,
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap"
+                },
+                children: record.introduction
+              }
+            )
           ] })
         ] })
       },
       {
-        title: "分类",
-        dataIndex: "categoryId",
-        key: "categoryId",
-        render: (categoryId) => {
-          const category = categories.find((item) => item.categoryId === categoryId);
-          return category ? /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tag, { color: "blue", children: category.categoryName }) : "-";
-        }
-      },
-      {
-        title: "歌曲数",
-        dataIndex: "song_count",
-        key: "song_count",
-        render: (count) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Tag, { color: "green", children: [
-          count,
-          " 首"
+        title: "创建者",
+        dataIndex: "creator",
+        key: "creator",
+        width: 180,
+        render: (creator) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "small", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Avatar, { src: creator?.avatarUrl, icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.UserOutlined, {}), size: 40 }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexDirection: "column", gap: 2 }, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontSize: 14, fontWeight: 500 }, children: creator?.name || "未知用户" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { fontSize: 11, color: "#999" }, children: [
+              "QQ: ",
+              creator?.qq || "-"
+            ] }),
+            creator?.isVip === 1 && /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tag, { color: "gold", children: "VIP" })
+          ] })
         ] })
       },
       {
-        title: "播放量",
-        dataIndex: "listennum",
-        key: "listennum",
-        render: (num) => {
-          if (num >= 1e4) {
-            return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
-              (num / 1e4).toFixed(1),
-              "万"
-            ] });
-          }
-          return /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: num });
-        }
+        title: "统计信息",
+        key: "stats",
+        width: 200,
+        render: (_, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexDirection: "column", gap: 4, alignItems: "center" }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 }, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(icons.EyeOutlined, { style: { color: "#1890ff" } }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: record.listenum >= 1e4 ? `${(record.listenum / 1e4).toFixed(1)}万` : record.listenum })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 }, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(icons.StarOutlined, { style: { color: "#faad14" } }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: record.score ? record.score.toFixed(1) : "-" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 }, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(icons.TrophyOutlined, { style: { color: "#52c41a" } }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
+              "v",
+              record.version
+            ] })
+          ] })
+        ] })
       },
       {
-        title: "收藏数",
-        dataIndex: "favoritenum",
-        key: "favoritenum",
-        render: (num) => {
-          if (num >= 1e4) {
-            return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
-              (num / 1e4).toFixed(1),
-              "万"
-            ] });
+        title: "时间信息",
+        key: "time-info",
+        width: 180,
+        render: (_, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexDirection: "column", gap: 4, alignItems: "center" }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 4 }, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(icons.ClockCircleOutlined, { style: { color: "#666" } }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 12 }, children: record.createtime ? new Date(record.createtime).toLocaleDateString() : "-" })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { fontSize: 11, color: "#999" }, children: [
+            "提交: ",
+            record.commit_time ? new Date(record.commit_time).toLocaleDateString() : "-"
+          ] })
+        ] })
+      },
+      {
+        title: "歌单ID",
+        dataIndex: "dissid",
+        key: "dissid",
+        width: 150,
+        align: "center",
+        render: (dissid) => /* @__PURE__ */ jsxRuntimeExports.jsx(
+          CopyText,
+          {
+            text: dissid,
+            style: {
+              fontSize: 12,
+              color: "#666",
+              fontFamily: "monospace",
+              background: "#f5f5f5",
+              padding: "2px 6px",
+              borderRadius: 4,
+              cursor: "pointer"
+            }
           }
-          return /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: num });
-        }
+        )
       },
       {
         title: "操作",
         key: "action",
-        render: (_, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
+        width: 200,
+        align: "center",
+        fixed: "right",
+        render: (_, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "small", direction: "vertical", children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "播放歌单", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
             antd.Button,
             {
               type: "link",
               size: "small",
               icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.PlayCircleOutlined, {}),
+              onClick: () => handlePlay(record),
               children: "播放"
             }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
+          ) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "收藏歌单", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
             antd.Button,
             {
               type: "link",
               size: "small",
               icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.HeartOutlined, {}),
+              onClick: () => handleFavorite(record),
               children: "收藏"
             }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "link", size: "small", children: "查看详情" })
+          ) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "查看详情", children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "link", size: "small", onClick: () => handleViewDetail(record), children: "详情" }) })
         ] })
       }
     ];
-    const handleSearch = async (page = 0) => {
-      try {
-        setLoading(true);
-        const values = await form.validateFields();
-        const res = await getSongList({
-          categoryId: values.categoryId,
-          sortId: values.sortId,
-          page,
-          limit: 20
-        });
-        setSongList(res.list || []);
-        setTotal(res.total || 0);
-        setCurrentPage(page);
-      } catch (error) {
-        console.error("搜索歌单失败:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    const handleReset = () => {
-      form.resetFields();
-      setSongList([]);
-      setTotal(0);
-      setCurrentPage(0);
-    };
-    const handlePageChange = (page) => {
-      handleSearch(page - 1);
-    };
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-      antd.Modal,
+    const { data, loading: loading2 } = useGetData(
+      getSongList,
       {
-        title: "歌单查询",
-        open: visible,
-        onCancel: close,
-        footer: null,
-        width: 1200,
-        centered: true,
-        children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            antd.Form,
-            {
-              form,
-              layout: "inline",
-              style: { marginBottom: 16 },
-              initialValues: {
-                categoryId: 1e7,
-                // 默认全部
-                sortId: 5
-                // 默认推荐
-              },
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { name: "categoryId", label: "分类", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Select, { style: { width: 150 }, children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Option, { value: 1e7, children: "全部" }),
-                  categories.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx(Option, { value: item.categoryId, children: item.categoryName }, item.categoryId))
-                ] }) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { name: "sortId", label: "排序", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Select, { style: { width: 120 }, children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Option, { value: 5, children: "推荐" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Option, { value: 2, children: "最新" }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Option, { value: 3, children: "最热" })
-                ] }) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { name: "keyword", label: "关键词", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  antd.Input,
-                  {
-                    placeholder: "歌单名称",
-                    style: { width: 200 },
-                    allowClear: true
-                  }
-                ) }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(
-                    antd.Button,
-                    {
-                      type: "primary",
-                      icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.SearchOutlined, {}),
-                      onClick: () => handleSearch(0),
-                      loading: loading2,
-                      children: "搜索"
-                    }
-                  ),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { onClick: handleReset, children: "重置" })
-                ] }) })
-              ]
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            antd.Table,
-            {
-              columns,
-              dataSource: songList,
-              rowKey: "tid",
-              loading: loading2,
-              pagination: {
-                current: currentPage + 1,
-                // 转换为从1开始的页码
-                total,
-                pageSize: 20,
-                showSizeChanger: false,
-                showQuickJumper: true,
-                showTotal: (total2) => `共 ${total2} 个歌单`,
-                onChange: handlePageChange
-              },
-              scroll: { y: 500 }
-            }
-          )
-        ]
+        ...searchParams,
+        limit: searchParams.pageSize,
+        page: searchParams.pageNum
+      },
+      {
+        returnFunction: () => !visible,
+        monitors: [searchParams, visible]
       }
     );
+    console.log("data", data);
+    const handlePlay = (record) => {
+      console.log("播放歌单:", record);
+    };
+    const handleFavorite = (record) => {
+      console.log("收藏歌单:", record);
+    };
+    const handleViewDetail = (record) => {
+      console.log("查看歌单详情:", record);
+    };
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Modal, { title: "歌单查询", open: visible, onCancel: close, footer: null, width: 1200, centered: true, children: [
+      /* @__PURE__ */ jsxRuntimeExports.jsx(SearchForm$1, { options: searchFormOptions, searchParams, onSearch: handleSearch }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        antd.Table,
+        {
+          columns,
+          dataSource: data?.list || [],
+          rowKey: "dissid",
+          loading: loading2,
+          scroll: { y: 500, x: 1200 },
+          pagination: false
+        }
+      ),
+      /* @__PURE__ */ jsxRuntimeExports.jsx(
+        antd.Pagination,
+        {
+          align: "end",
+          total: data?.sum || 0,
+          current: searchParams.pageNum,
+          pageSize: searchParams.pageSize,
+          showSizeChanger: true,
+          showTotal: (total) => `共 ${total} 个歌单`,
+          onChange: (page, pageSize) => {
+            setSearchParams({ ...searchParams, pageNum: page, pageSize });
+          },
+          style: { marginTop: 16 }
+        }
+      )
+    ] });
   });
   const AlbumSearch = require$$1.forwardRef((props, ref) => {
     const { visible, close } = useVisible({}, ref);
