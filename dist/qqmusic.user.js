@@ -23,7 +23,7 @@
 
   const d=new Set;const _ = async e=>{d.has(e)||(d.add(e),(t=>{typeof GM_addStyle=="function"?GM_addStyle(t):document.head.appendChild(document.createElement("style")).append(t);})(e));};
 
-  _(' @charset "UTF-8";._button-group_y8t3i_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#fff3;border-radius:22px;box-shadow:0 2px 10px #0006;padding:10px 0;z-index:999;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}._button-group_y8t3i_1::-webkit-scrollbar{width:0;background:transparent}._button-group_y8t3i_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_y8t3i_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_y8t3i_1 .ant-btn:active{transform:scale(.95)}._button-group_y8t3i_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_y8t3i_1 .ant-btn:hover .anticon{color:#fff}._button-group_y8t3i_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_y8t3i_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c}._copy-text_1att4_1{display:flex;align-items:center;width:100%}._copy-text_1att4_1 ._text_1att4_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_1att4_1 ._copy-btn_1att4_12{flex-shrink:0;padding:0}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._select-search_19wb1_1 .ant-select:first-child .ant-select-selector{border-radius:32px 0 0 32px!important}._select-search_19wb1_1>:last-child{border-radius:0 32px 32px 0!important}._search-form_10eg9_1{margin-bottom:-16px}._search-form_10eg9_1 .ant-form-item{margin-bottom:16px}._search-form_10eg9_1 input.ant-input,._search-form_10eg9_1 .ant-input-affix-wrapper,._search-form_10eg9_1 .ant-picker,._search-form_10eg9_1 .ant-calendar-picker-input,._search-form_10eg9_1 .ant-select-selector,._search-form_10eg9_1 .ant-select-multiple .ant-select-selection-item{border-radius:32px}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1{width:100%}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4{display:flex;align-items:center;justify-content:space-between;padding-right:30px}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10{display:flex;align-items:center}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14{display:flex;flex-direction:column;align-items:center;padding:8px 16px;border-radius:8px;margin-left:12px;box-shadow:0 2px 8px #0000001a;transition:all .3s ease;position:relative;overflow:hidden}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(1){background:linear-gradient(135deg,#667eea,#764ba2);box-shadow:0 2px 8px #667eea4d}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(1):hover{box-shadow:0 4px 12px #667eea66}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(2){background:linear-gradient(135deg,#f093fb,#f5576c);box-shadow:0 2px 8px #f093fb4d}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(2):hover{box-shadow:0 4px 12px #f093fb66}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(3){background:linear-gradient(135deg,#4facfe,#00f2fe);box-shadow:0 2px 8px #4facfe4d}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(3):hover{box-shadow:0 4px 12px #4facfe66}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(1):hover{transform:translateY(-2px) scale(1.02)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(2):hover{transform:translateY(-2px) scale(1.02)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(3):hover{transform:translateY(-2px) scale(1.02)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:hover{transform:translateY(-2px)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59{opacity:.7}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59:nth-child(1) ._stat-value_jnpqx_62{animation:_pulse_jnpqx_1 1.5s ease-in-out infinite;animation-delay:.2s}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59:nth-child(2) ._stat-value_jnpqx_62{animation:_pulse_jnpqx_1 1.5s ease-in-out infinite;animation-delay:.4s}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59:nth-child(3) ._stat-value_jnpqx_62{animation:_pulse_jnpqx_1 1.5s ease-in-out infinite;animation-delay:.6s}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14 ._stat-label_jnpqx_74{font-size:12px;color:#fffc;font-weight:500;margin-bottom:2px}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14 ._stat-value_jnpqx_62{font-size:16px;color:#fff;font-weight:600;line-height:1;transition:all .3s ease}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14 ._stat-value_jnpqx_62:hover{transform:scale(1.1)}._hot-song-modal_jnpqx_1 ._singer-info-display_jnpqx_90{margin-bottom:16px;padding:16px;background-color:#f5f5f5;border-radius:6px;border-left:4px solid #1890ff}._hot-song-modal_jnpqx_1 ._song-table_jnpqx_97{margin-bottom:16px}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._album-cover_jnpqx_100{width:40px;height:40px;border-radius:4px;overflow:hidden;flex-shrink:0}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._album-cover_jnpqx_100 img{width:100%;height:100%;object-fit:cover;border-radius:4px}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._song-details_jnpqx_113{flex:1;min-width:0}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._song-details_jnpqx_113 ._song-name_jnpqx_117{font-weight:500;color:#262626;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:150px}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._song-details_jnpqx_113 ._song-album_jnpqx_126{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:150px}._hot-song-modal_jnpqx_1 ._singer-info_jnpqx_90 ._singer-name_jnpqx_134{font-weight:500;color:#262626;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._hot-song-modal_jnpqx_1 ._singer-info_jnpqx_90 ._singer-id_jnpqx_142{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._hot-song-modal_jnpqx_1 ._song-id-text_jnpqx_150,._hot-song-modal_jnpqx_1 ._song-mid-text_jnpqx_151{font-family:Monaco,Menlo,Ubuntu Mono,monospace;font-size:12px;color:#595959;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100px;display:inline-block}._hot-song-modal_jnpqx_1 ._footer_jnpqx_161{display:flex;align-items:center;justify-content:flex-end;margin-top:16px}._hot-song-modal_jnpqx_1 ._footer_jnpqx_161 ._selected-count_jnpqx_167{font-size:14px;color:#595959;margin-right:auto}@keyframes _pulse_jnpqx_1{0%,to{opacity:1}50%{opacity:.5}}._album-list-modal_13s8d_1 ._modal-title_13s8d_1{width:100%}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4{display:flex;align-items:center;justify-content:space-between;padding-right:30px}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10{display:flex;align-items:center}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14{display:flex;flex-direction:column;align-items:center;padding:8px 16px;border-radius:8px;margin-left:12px;box-shadow:0 2px 8px #0000001a;transition:all .3s ease;position:relative;overflow:hidden}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(1){background:linear-gradient(135deg,#667eea,#764ba2);box-shadow:0 2px 8px #667eea4d}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(1):hover{box-shadow:0 4px 12px #667eea66}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(2){background:linear-gradient(135deg,#f093fb,#f5576c);box-shadow:0 2px 8px #f093fb4d}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(2):hover{box-shadow:0 4px 12px #f093fb66}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(1):hover{transform:translateY(-2px) scale(1.02)}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(2):hover{transform:translateY(-2px) scale(1.02)}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:hover{transform:translateY(-2px)}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14._loading_13s8d_49{opacity:.7}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14._loading_13s8d_49:nth-child(1) ._stat-value_13s8d_52{animation:_pulse_13s8d_1 1.5s ease-in-out infinite;animation-delay:.2s}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14._loading_13s8d_49:nth-child(2) ._stat-value_13s8d_52{animation:_pulse_13s8d_1 1.5s ease-in-out infinite;animation-delay:.4s}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14 ._stat-label_13s8d_60{font-size:12px;color:#fffc;font-weight:500;margin-bottom:2px}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14 ._stat-value_13s8d_52{font-size:16px;color:#fff;font-weight:600;line-height:1;transition:all .3s ease}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14 ._stat-value_13s8d_52:hover{transform:scale(1.1)}._album-list-modal_13s8d_1 ._album-table_13s8d_76{margin-bottom:16px}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-cover_13s8d_79{width:60px;height:60px;border-radius:6px;overflow:hidden;flex-shrink:0}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-cover_13s8d_79 img{width:100%;height:100%;object-fit:cover;border-radius:6px}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-details_13s8d_92{flex:1;min-width:0}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-details_13s8d_92 ._album-name_13s8d_96{font-weight:500;color:#262626;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:180px}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-details_13s8d_92 ._album-trans-name_13s8d_105{font-size:12px;color:#8c8c8c;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:180px}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-details_13s8d_92 ._album-type_13s8d_114{margin-top:4px}._album-list-modal_13s8d_1 ._singer-info_13s8d_117 ._singer-name_13s8d_117{font-weight:500;color:#262626;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._album-list-modal_13s8d_1 ._singer-info_13s8d_117 ._singer-id_13s8d_125{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._album-list-modal_13s8d_1 ._album-id-text_13s8d_133,._album-list-modal_13s8d_1 ._album-mid-text_13s8d_134{font-family:Monaco,Menlo,Ubuntu Mono,monospace;font-size:12px;color:#595959;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100px;display:inline-block}._album-list-modal_13s8d_1 ._publish-date_13s8d_144{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px;display:inline-block}._album-list-modal_13s8d_1 ._footer_13s8d_151{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-top:1px solid #f0f0f0}._album-list-modal_13s8d_1 ._footer_13s8d_151 ._selected-count_13s8d_158{font-size:14px;color:#666}._album-list-modal_13s8d_1 ._footer_13s8d_151 ._selected-count_13s8d_158 ._selected-info_13s8d_162{color:#1890ff;margin-left:8px;font-weight:500}@keyframes _pulse_13s8d_1{0%,to{opacity:1}50%{opacity:.5}}._singer-search-modal_1jeib_2 .ant-modal-body{display:flex;flex-direction:column;gap:16px}._singer-info_1jeib_8{display:flex;align-items:center}._singer-info_1jeib_8 ._singer-avatar_1jeib_12{border:3px solid #f0f0f0;box-shadow:0 2px 8px #0000001a;transition:all .3s ease}._singer-info_1jeib_8 ._singer-avatar_1jeib_12:hover{border-color:#31c27c;transform:scale(1.05)}._singer-info_1jeib_8 ._singer-details_1jeib_21{display:flex;flex-direction:column;gap:4px}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-name_1jeib_26{font-size:16px;font-weight:600;color:#262626;line-height:1.4}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-country_1jeib_32{font-size:13px;color:#666;display:flex;align-items:center;gap:4px}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-country_1jeib_32:before{content:"\u{1F4CD}";font-size:12px}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-id_1jeib_43{font-size:12px;color:#999;font-family:Courier New,monospace;background:#f5f5f5;padding:2px 6px;border-radius:4px;display:inline-block;width:fit-content}._singer-id-text_1jeib_54{font-family:Courier New,monospace;font-size:13px;color:#666;background:#f8f9fa;padding:4px 8px;border-radius:4px;border:1px solid #e9ecef}._singer-mid-text_1jeib_64{font-family:Courier New,monospace;font-size:12px;color:#999;background:#f5f5f5;padding:4px 8px;border-radius:4px;border:1px solid #e9ecef;word-break:break-all}._info-tag_1jeib_75{border-radius:6px;font-size:12px;padding:4px 8px;font-weight:500;border:none;box-shadow:0 1px 3px #0000001a}._info-tag_1jeib_75._ant-tag-blue_1jeib_83{background:linear-gradient(135deg,#e6f7ff,#bae7ff);color:#1890ff}._song-search-modal_15iqn_1 ._modal-title_15iqn_1{display:flex;align-items:center;justify-content:space-between}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6 ._title-text_15iqn_11{font-size:16px;font-weight:600;color:#333}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-cover_15iqn_21{width:60px;height:60px;border-radius:8px;overflow:hidden;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-name_15iqn_36{font-size:14px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-album_15iqn_46{font-size:12px;color:#666;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55 ._singer-name_15iqn_60{font-size:14px;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._duration_15iqn_69{font-size:14px;color:#666;font-family:monospace}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75{font-size:12px;color:#666;font-family:monospace;background-color:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74:hover,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75:hover{background-color:#e6f7ff;color:#1890ff}::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:transparent;border-radius:6px}::-webkit-scrollbar-thumb{background:#8080804d;border-radius:6px;transition:all .2s ease-in-out}::-webkit-scrollbar-thumb:hover{background:#80808080}*{scrollbar-width:thin;scrollbar-color:rgba(128,128,128,.3) transparent} ');
+  _(' @charset "UTF-8";._button-group_y8t3i_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#fff3;border-radius:22px;box-shadow:0 2px 10px #0006;padding:10px 0;z-index:999;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}._button-group_y8t3i_1::-webkit-scrollbar{width:0;background:transparent}._button-group_y8t3i_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_y8t3i_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_y8t3i_1 .ant-btn:active{transform:scale(.95)}._button-group_y8t3i_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_y8t3i_1 .ant-btn:hover .anticon{color:#fff}._button-group_y8t3i_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_y8t3i_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c}._copy-text_1att4_1{display:flex;align-items:center;width:100%}._copy-text_1att4_1 ._text_1att4_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_1att4_1 ._copy-btn_1att4_12{flex-shrink:0;padding:0}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._select-search_19wb1_1 .ant-select:first-child .ant-select-selector{border-radius:32px 0 0 32px!important}._select-search_19wb1_1>:last-child{border-radius:0 32px 32px 0!important}._search-form_10eg9_1{margin-bottom:-16px}._search-form_10eg9_1 .ant-form-item{margin-bottom:16px}._search-form_10eg9_1 input.ant-input,._search-form_10eg9_1 .ant-input-affix-wrapper,._search-form_10eg9_1 .ant-picker,._search-form_10eg9_1 .ant-calendar-picker-input,._search-form_10eg9_1 .ant-select-selector,._search-form_10eg9_1 .ant-select-multiple .ant-select-selection-item{border-radius:32px}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1{width:100%}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4{display:flex;align-items:center;justify-content:space-between;padding-right:30px}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10{display:flex;align-items:center}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14{display:flex;flex-direction:column;align-items:center;padding:8px 16px;border-radius:8px;margin-left:12px;box-shadow:0 2px 8px #0000001a;transition:all .3s ease;position:relative;overflow:hidden}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(1){background:linear-gradient(135deg,#667eea,#764ba2);box-shadow:0 2px 8px #667eea4d}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(1):hover{box-shadow:0 4px 12px #667eea66}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(2){background:linear-gradient(135deg,#f093fb,#f5576c);box-shadow:0 2px 8px #f093fb4d}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(2):hover{box-shadow:0 4px 12px #f093fb66}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(3){background:linear-gradient(135deg,#4facfe,#00f2fe);box-shadow:0 2px 8px #4facfe4d}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(3):hover{box-shadow:0 4px 12px #4facfe66}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(1):hover{transform:translateY(-2px) scale(1.02)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(2):hover{transform:translateY(-2px) scale(1.02)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(3):hover{transform:translateY(-2px) scale(1.02)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:hover{transform:translateY(-2px)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59{opacity:.7}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59:nth-child(1) ._stat-value_jnpqx_62{animation:_pulse_jnpqx_1 1.5s ease-in-out infinite;animation-delay:.2s}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59:nth-child(2) ._stat-value_jnpqx_62{animation:_pulse_jnpqx_1 1.5s ease-in-out infinite;animation-delay:.4s}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59:nth-child(3) ._stat-value_jnpqx_62{animation:_pulse_jnpqx_1 1.5s ease-in-out infinite;animation-delay:.6s}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14 ._stat-label_jnpqx_74{font-size:12px;color:#fffc;font-weight:500;margin-bottom:2px}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14 ._stat-value_jnpqx_62{font-size:16px;color:#fff;font-weight:600;line-height:1;transition:all .3s ease}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14 ._stat-value_jnpqx_62:hover{transform:scale(1.1)}._hot-song-modal_jnpqx_1 ._singer-info-display_jnpqx_90{margin-bottom:16px;padding:16px;background-color:#f5f5f5;border-radius:6px;border-left:4px solid #1890ff}._hot-song-modal_jnpqx_1 ._song-table_jnpqx_97{margin-bottom:16px}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._album-cover_jnpqx_100{width:40px;height:40px;border-radius:4px;overflow:hidden;flex-shrink:0}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._album-cover_jnpqx_100 img{width:100%;height:100%;object-fit:cover;border-radius:4px}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._song-details_jnpqx_113{flex:1;min-width:0}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._song-details_jnpqx_113 ._song-name_jnpqx_117{font-weight:500;color:#262626;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:150px}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._song-details_jnpqx_113 ._song-album_jnpqx_126{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:150px}._hot-song-modal_jnpqx_1 ._singer-info_jnpqx_90 ._singer-name_jnpqx_134{font-weight:500;color:#262626;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._hot-song-modal_jnpqx_1 ._singer-info_jnpqx_90 ._singer-id_jnpqx_142{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._hot-song-modal_jnpqx_1 ._song-id-text_jnpqx_150,._hot-song-modal_jnpqx_1 ._song-mid-text_jnpqx_151{font-family:Monaco,Menlo,Ubuntu Mono,monospace;font-size:12px;color:#595959;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100px;display:inline-block}._hot-song-modal_jnpqx_1 ._footer_jnpqx_161{display:flex;align-items:center;justify-content:flex-end;margin-top:16px}._hot-song-modal_jnpqx_1 ._footer_jnpqx_161 ._selected-count_jnpqx_167{font-size:14px;color:#595959;margin-right:auto}@keyframes _pulse_jnpqx_1{0%,to{opacity:1}50%{opacity:.5}}._album-list-modal_13s8d_1 ._modal-title_13s8d_1{width:100%}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4{display:flex;align-items:center;justify-content:space-between;padding-right:30px}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10{display:flex;align-items:center}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14{display:flex;flex-direction:column;align-items:center;padding:8px 16px;border-radius:8px;margin-left:12px;box-shadow:0 2px 8px #0000001a;transition:all .3s ease;position:relative;overflow:hidden}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(1){background:linear-gradient(135deg,#667eea,#764ba2);box-shadow:0 2px 8px #667eea4d}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(1):hover{box-shadow:0 4px 12px #667eea66}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(2){background:linear-gradient(135deg,#f093fb,#f5576c);box-shadow:0 2px 8px #f093fb4d}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(2):hover{box-shadow:0 4px 12px #f093fb66}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(1):hover{transform:translateY(-2px) scale(1.02)}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:nth-child(2):hover{transform:translateY(-2px) scale(1.02)}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14:hover{transform:translateY(-2px)}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14._loading_13s8d_49{opacity:.7}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14._loading_13s8d_49:nth-child(1) ._stat-value_13s8d_52{animation:_pulse_13s8d_1 1.5s ease-in-out infinite;animation-delay:.2s}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14._loading_13s8d_49:nth-child(2) ._stat-value_13s8d_52{animation:_pulse_13s8d_1 1.5s ease-in-out infinite;animation-delay:.4s}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14 ._stat-label_13s8d_60{font-size:12px;color:#fffc;font-weight:500;margin-bottom:2px}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14 ._stat-value_13s8d_52{font-size:16px;color:#fff;font-weight:600;line-height:1;transition:all .3s ease}._album-list-modal_13s8d_1 ._modal-title_13s8d_1 ._title-content_13s8d_4 ._title-stats_13s8d_10 ._stat-item_13s8d_14 ._stat-value_13s8d_52:hover{transform:scale(1.1)}._album-list-modal_13s8d_1 ._album-table_13s8d_76{margin-bottom:16px}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-cover_13s8d_79{width:60px;height:60px;border-radius:6px;overflow:hidden;flex-shrink:0}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-cover_13s8d_79 img{width:100%;height:100%;object-fit:cover;border-radius:6px}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-details_13s8d_92{flex:1;min-width:0}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-details_13s8d_92 ._album-name_13s8d_96{font-weight:500;color:#262626;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:180px}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-details_13s8d_92 ._album-trans-name_13s8d_105{font-size:12px;color:#8c8c8c;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:180px}._album-list-modal_13s8d_1 ._album-info_13s8d_79 ._album-details_13s8d_92 ._album-type_13s8d_114{margin-top:4px}._album-list-modal_13s8d_1 ._singer-info_13s8d_117 ._singer-name_13s8d_117{font-weight:500;color:#262626;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._album-list-modal_13s8d_1 ._singer-info_13s8d_117 ._singer-id_13s8d_125{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._album-list-modal_13s8d_1 ._album-id-text_13s8d_133,._album-list-modal_13s8d_1 ._album-mid-text_13s8d_134{font-family:Monaco,Menlo,Ubuntu Mono,monospace;font-size:12px;color:#595959;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100px;display:inline-block}._album-list-modal_13s8d_1 ._publish-date_13s8d_144{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px;display:inline-block}._album-list-modal_13s8d_1 ._footer_13s8d_151{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-top:1px solid #f0f0f0}._album-list-modal_13s8d_1 ._footer_13s8d_151 ._selected-count_13s8d_158{font-size:14px;color:#666}._album-list-modal_13s8d_1 ._footer_13s8d_151 ._selected-count_13s8d_158 ._selected-info_13s8d_162{color:#1890ff;margin-left:8px;font-weight:500}@keyframes _pulse_13s8d_1{0%,to{opacity:1}50%{opacity:.5}}._singer-search-modal_1jeib_2 .ant-modal-body{display:flex;flex-direction:column;gap:16px}._singer-info_1jeib_8{display:flex;align-items:center}._singer-info_1jeib_8 ._singer-avatar_1jeib_12{border:3px solid #f0f0f0;box-shadow:0 2px 8px #0000001a;transition:all .3s ease}._singer-info_1jeib_8 ._singer-avatar_1jeib_12:hover{border-color:#31c27c;transform:scale(1.05)}._singer-info_1jeib_8 ._singer-details_1jeib_21{display:flex;flex-direction:column;gap:4px}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-name_1jeib_26{font-size:16px;font-weight:600;color:#262626;line-height:1.4}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-country_1jeib_32{font-size:13px;color:#666;display:flex;align-items:center;gap:4px}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-country_1jeib_32:before{content:"\u{1F4CD}";font-size:12px}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-id_1jeib_43{font-size:12px;color:#999;font-family:Courier New,monospace;background:#f5f5f5;padding:2px 6px;border-radius:4px;display:inline-block;width:fit-content}._singer-id-text_1jeib_54{font-family:Courier New,monospace;font-size:13px;color:#666;background:#f8f9fa;padding:4px 8px;border-radius:4px;border:1px solid #e9ecef}._singer-mid-text_1jeib_64{font-family:Courier New,monospace;font-size:12px;color:#999;background:#f5f5f5;padding:4px 8px;border-radius:4px;border:1px solid #e9ecef;word-break:break-all}._info-tag_1jeib_75{border-radius:6px;font-size:12px;padding:4px 8px;font-weight:500;border:none;box-shadow:0 1px 3px #0000001a}._info-tag_1jeib_75._ant-tag-blue_1jeib_83{background:linear-gradient(135deg,#e6f7ff,#bae7ff);color:#1890ff}._song-list-search-modal_1h6z1_1 ._play-count-overlay_1h6z1_1{position:absolute;bottom:2px;right:2px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;font-weight:500;display:flex;align-items:center;gap:2px;min-width:20px;justify-content:center;line-height:1}._song-list-search-modal_1h6z1_1 ._playlist-cover-container_1h6z1_19{position:relative;display:inline-block}._song-list-search-modal_1h6z1_1 ._playlist-info_1h6z1_23{display:flex;flex-direction:column;gap:4px}._song-list-search-modal_1h6z1_1 ._playlist-info_1h6z1_23 ._playlist-name_1h6z1_28{font-weight:500;font-size:14px}._song-list-search-modal_1h6z1_1 ._playlist-info_1h6z1_23 ._creator-info_1h6z1_32{display:flex;align-items:center;gap:4px;font-size:12px;color:#666}._song-list-search-modal_1h6z1_1 ._playlist-info_1h6z1_23 ._creator-name_1h6z1_39{font-size:12px;color:#666}._song-list-search-modal_1h6z1_1 ._playlist-info_1h6z1_23 ._creator-qq_1h6z1_43{font-size:11px;color:#999}._song-list-search-modal_1h6z1_1 ._playlist-info_1h6z1_23 ._introduction_1h6z1_47{font-size:11px;color:#999;max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-list-search-modal_1h6z1_1 ._stats-info_1h6z1_55{display:flex;flex-direction:column;gap:4px;align-items:center}._song-list-search-modal_1h6z1_1 ._stats-info_1h6z1_55 ._score-item_1h6z1_61{display:flex;align-items:center;gap:8px}._song-list-search-modal_1h6z1_1 ._stats-info_1h6z1_55 ._score-item_1h6z1_61 ._score-value_1h6z1_66{font-size:14px;font-weight:500}._song-list-search-modal_1h6z1_1 ._stats-info_1h6z1_55 ._version-item_1h6z1_70{display:flex;align-items:center;gap:8px}._song-list-search-modal_1h6z1_1 ._stats-info_1h6z1_55 ._version-item_1h6z1_70 ._version-text_1h6z1_75{font-size:12px;color:#666}._song-list-search-modal_1h6z1_1 ._time-info_1h6z1_79{display:flex;flex-direction:column;gap:4px;align-items:center}._song-list-search-modal_1h6z1_1 ._time-info_1h6z1_79 ._create-time_1h6z1_85{display:flex;align-items:center;gap:4px;font-size:12px}._song-list-search-modal_1h6z1_1 ._time-info_1h6z1_79 ._commit-time_1h6z1_91{font-size:11px;color:#999}._song-list-search-modal_1h6z1_1 ._playlist-id_1h6z1_95{font-size:12px;color:#666;font-family:monospace;background:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-list-search-modal_1h6z1_1 ._playlist-id_1h6z1_95:hover{background:#e6f7ff;color:#1890ff}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._modal-title_1p6k4_1{margin-bottom:16px}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._playlist-basic-info_1p6k4_4{display:flex;align-items:flex-start;gap:16px;padding:16px;background:#fafafa;border-radius:8px;margin-bottom:16px}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._playlist-basic-info_1p6k4_4 ._playlist-info_1p6k4_13{flex:1;display:flex;flex-direction:column;gap:8px}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._playlist-basic-info_1p6k4_4 ._playlist-info_1p6k4_13 ._playlist-name_1p6k4_19{margin:0;color:#262626}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._playlist-basic-info_1p6k4_4 ._playlist-info_1p6k4_13 ._creator-info_1p6k4_23{display:flex;align-items:center;gap:8px}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._playlist-basic-info_1p6k4_4 ._playlist-info_1p6k4_13 ._creator-info_1p6k4_23 ._creator-name_1p6k4_28{font-size:14px;color:#666}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._playlist-basic-info_1p6k4_4 ._playlist-info_1p6k4_13 ._playlist-stats_1p6k4_32{display:flex;align-items:center;gap:16px}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._playlist-basic-info_1p6k4_4 ._playlist-info_1p6k4_13 ._playlist-stats_1p6k4_32 ._ant-typography_1p6k4_37{font-size:12px;color:#999}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._playlist-basic-info_1p6k4_4 ._playlist-info_1p6k4_13 ._playlist-desc_1p6k4_41{margin-top:8px}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._playlist-basic-info_1p6k4_4 ._playlist-info_1p6k4_13 ._playlist-desc_1p6k4_41 ._description-text_1p6k4_44{font-size:12px;line-height:1.4;color:#666;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis}._song-list-detail-modal_1p6k4_1 ._action-buttons_1p6k4_54{margin-top:24px;padding:16px;background:#f8f9fa;border-radius:8px;text-align:center}._song-list-detail-modal_1p6k4_1 ._song-list-section_1p6k4_61 ._ant-table_1p6k4_61 ._ant-table-thead_1p6k4_61>tr>th{background:#fafafa;font-weight:500}._song-list-detail-modal_1p6k4_1 ._song-list-section_1p6k4_61 ._ant-table_1p6k4_61 ._ant-table-tbody_1p6k4_65>tr:hover>td{background:#f5f5f5}._song-list-detail-modal_1p6k4_1 ._song-info_1p6k4_68{display:flex;flex-direction:column;gap:4px}._song-list-detail-modal_1p6k4_1 ._song-info_1p6k4_68 ._song-name_1p6k4_73{font-weight:500;font-size:14px;color:#262626}._song-list-detail-modal_1p6k4_1 ._song-info_1p6k4_68 ._song-artist_1p6k4_78{font-size:12px;color:#666;display:flex;align-items:center;flex-wrap:wrap;gap:4px}._song-list-detail-modal_1p6k4_1 ._song-info_1p6k4_68 ._song-artist_1p6k4_78 ._artist-item_1p6k4_86{display:flex;align-items:center}._song-list-detail-modal_1p6k4_1 ._song-info_1p6k4_68 ._song-artist_1p6k4_78 ._artist-item_1p6k4_86 ._artist-name_1p6k4_90{font-size:12px;color:#666}._song-list-detail-modal_1p6k4_1 ._song-info_1p6k4_68 ._song-artist_1p6k4_78 ._artist-item_1p6k4_86 ._artist-separator_1p6k4_94{margin:0 4px;color:#999;font-size:10px}._song-list-detail-modal_1p6k4_1 ._album-name_1p6k4_99{font-size:12px;color:#666;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-list-detail-modal_1p6k4_1 ._song-duration_1p6k4_107{font-family:monospace;font-size:12px;color:#999}._song-search-modal_15iqn_1 ._modal-title_15iqn_1{display:flex;align-items:center;justify-content:space-between}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6 ._title-text_15iqn_11{font-size:16px;font-weight:600;color:#333}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-cover_15iqn_21{width:60px;height:60px;border-radius:8px;overflow:hidden;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-name_15iqn_36{font-size:14px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-album_15iqn_46{font-size:12px;color:#666;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55 ._singer-name_15iqn_60{font-size:14px;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._duration_15iqn_69{font-size:14px;color:#666;font-family:monospace}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75{font-size:12px;color:#666;font-family:monospace;background-color:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74:hover,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75:hover{background-color:#e6f7ff;color:#1890ff}::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:transparent;border-radius:6px}::-webkit-scrollbar-thumb{background:#8080804d;border-radius:6px;transition:all .2s ease-in-out}::-webkit-scrollbar-thumb:hover{background:#80808080}*{scrollbar-width:thin;scrollbar-color:rgba(128,128,128,.3) transparent} ');
 
   var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
   function getDefaultExportFromCjs(x) {
@@ -12033,6 +12033,7 @@
   };
   const uniqueArrayByKey = (arr, key) => {
     if (!Array.isArray(arr)) return [];
+    if (!key) return arr;
     const seen = /* @__PURE__ */ new Map();
     return arr.filter((item) => {
       if (!item || typeof item !== "object") return false;
@@ -12741,7 +12742,7 @@
     const getAlbumSongUrl = async (mid) => {
       const res = await getAlbumSongList(mid);
       const ids = res?.map((item) => {
-        const quality = getHighestQuality(item);
+        const quality = getHighestQuality$1(item);
         return {
           id: item.songmid,
           name: item.songname,
@@ -12780,7 +12781,7 @@
       const { name, list } = albumDetail || {};
       const promiseArr = list?.map((item) => async () => {
         const lrcContent = await getLyric(item.songmid);
-        const url = await getUrl(item.songmid, getHighestQuality(item));
+        const url = await getUrl(item.songmid, getHighestQuality$1(item));
         return {
           songName: item.songname,
           url,
@@ -12814,11 +12815,184 @@
       getDownLoadJson
     };
   };
-  const getHighestQuality = (file) => {
+  const getHighestQuality$1 = (file) => {
     if (file.sizeflac && file.sizeflac > 0) return "flac";
     if (file.sizeape && file.sizeape > 0) return "ape";
     if (file.size320 && file.size320 > 0) return 320;
     if (file.size128 && file.size128 > 0) return 128;
+    return 128;
+  };
+  const getSongListCategory = async () => {
+    const params = {
+      format: "json",
+      outCharset: "utf-8"
+    };
+    const res = await qqMusicRequest(
+      `/splcloud/fcgi-bin/fcg_get_diss_tag_conf.fcg?${new URLSearchParams(params)}`,
+      {}
+    );
+    if (res.code === 0) {
+      return res.data?.categories;
+    }
+    throw new Error("获取歌单分类列表失败");
+  };
+  const getSongList = async (options = {}) => {
+    const { limit = 20, page = 0, sortId = 5, categoryId = 1e7 } = options;
+    const sin = page * limit;
+    const ein = limit * (page + 1) - 1;
+    const params = {
+      categoryId,
+      sortId,
+      sin,
+      ein,
+      format: "json",
+      outCharset: "utf-8",
+      picmid: 1
+    };
+    const res = await qqMusicRequest(
+      `/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg?${new URLSearchParams(params).toString()}`,
+      {}
+    );
+    if (res.code === 0) {
+      return res.data;
+    }
+    throw new Error("获取歌单列表失败");
+  };
+  const getSongListDetail = async (disstid) => {
+    const disstidStr = Array.isArray(disstid) ? disstid.join(",") : disstid;
+    const params = {
+      disstid: disstidStr,
+      format: "json",
+      outCharset: "utf-8",
+      type: "1",
+      json: "1",
+      utf8: "1",
+      onlysong: "0",
+      new_format: "1"
+    };
+    const res = await qqMusicRequest(
+      `/qzone/fcg-bin/fcg_ucc_getcdinfo_byids_cp.fcg?${new URLSearchParams(params).toString()}`,
+      {}
+    );
+    if (res.code === 0) {
+      return res.cdlist;
+    }
+    throw new Error("获取歌单详情失败");
+  };
+  const useGetSonglistDetail = () => {
+    const [playlistInfo, setPlaylistInfo] = require$$1.useState();
+    const [isLoading, setIsLoading] = require$$1.useState(false);
+    const playlistInfoMap = require$$1.useRef({});
+    const { play, getUrl, getLyric } = usePlayMusic();
+    const getPlaylistDetail = async (dissid) => {
+      try {
+        setIsLoading(true);
+        if (playlistInfoMap.current[dissid]) {
+          return playlistInfoMap.current[dissid];
+        }
+        const res = await getSongListDetail(dissid);
+        console.log("歌单详情响应:", res);
+        const playlistDetail = Array.isArray(res) ? res[0] : res;
+        playlistInfoMap.current[dissid] = playlistDetail;
+        return playlistDetail;
+      } catch (error) {
+        console.error("获取歌单详情失败:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    const getPlaylistSongList = async (dissid) => {
+      try {
+        setIsLoading(true);
+        const res = await getPlaylistDetail(dissid);
+        return res?.songlist;
+      } catch (error) {
+        console.error("获取歌单歌曲列表失败:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    const getPlaylistSongUrl = async (dissid) => {
+      const res = await getPlaylistSongList(dissid);
+      const ids = res?.map((item) => {
+        const quality = getHighestQuality(item.file);
+        return {
+          id: item.mid,
+          name: item.name,
+          quality
+        };
+      });
+      const promiseArr = ids?.map((item) => async () => {
+        const url = await getUrl(item.id, item.quality);
+        return {
+          ...item,
+          url
+        };
+      });
+      const urls = await promiseLimit(promiseArr, 6);
+      console.log("歌单歌曲播放地址:", urls);
+      return urls;
+    };
+    const downloadPlaylistSong = async (dissid) => {
+      try {
+        const urls = await getPlaylistSongUrl(dissid);
+        console.log("准备下载歌单歌曲:", urls);
+        for (const item of urls) {
+          const { id, name, url } = item;
+          console.log("id:", id);
+          console.log("name:", name);
+          console.log("url:", url);
+          console.log(`当前正在下载${name}...`);
+          await downloadWithFileName(url.replace("http://", "https://"), name);
+        }
+      } catch (error) {
+        console.error("下载歌单歌曲失败:", error);
+      }
+    };
+    const getPlaylistDownloadJson = async (dissid) => {
+      const playlistDetail = await getPlaylistDetail(dissid);
+      const { dissname, songlist } = playlistDetail || {};
+      const promiseArr = songlist?.map((item) => async () => {
+        const lrcContent = await getLyric(item.mid);
+        const url = await getUrl(item.mid, getHighestQuality(item.file));
+        return {
+          songName: item.name,
+          url,
+          lrcContent
+        };
+      });
+      const songList = await promiseLimit(promiseArr, 6);
+      return {
+        playlistName: dissname,
+        playlistCover: playlistDetail?.pic_mid ? `https://y.gtimg.cn/music/photo_new/T002R300x300M000${playlistDetail.pic_mid}.jpg` : "",
+        songList
+      };
+    };
+    const playPlaylist = async (dissid) => {
+      const songList = await getPlaylistSongList(dissid);
+      console.log("歌单歌曲列表:", songList);
+      if (!songList?.length) return;
+      for (const item of songList) {
+        console.log("当前正在播放", item.name);
+        await play(item.mid);
+      }
+    };
+    return {
+      playlistInfo,
+      isLoading,
+      getPlaylistDetail,
+      getPlaylistSongList,
+      playPlaylist,
+      getPlaylistSongUrl,
+      downloadPlaylistSong,
+      getPlaylistDownloadJson
+    };
+  };
+  const getHighestQuality = (file) => {
+    if (file.size_flac && file.size_flac > 0) return "flac";
+    if (file.size_ape && file.size_ape > 0) return "ape";
+    if (file.size_320mp3 && file.size_320mp3 > 0) return 320;
+    if (file.size_128mp3 && file.size_128mp3 > 0) return 128;
     return 128;
   };
   const useGetData = (api, params, options) => {
@@ -12925,7 +13099,7 @@
       }
     );
   });
-  const styles$7 = {
+  const styles$9 = {
     "button-group": "_button-group_y8t3i_1"
   };
   const getSearchResult = async (keyword, type = "song", options) => {
@@ -13124,63 +13298,6 @@
   const getSingerPic = (singermid, options) => {
     const { size = "800x800" } = {};
     return `https://y.qq.com/music/photo_new/T001R${size}M000${singermid}.jpg?max_age=2592000`;
-  };
-  const getSongListCategory = async () => {
-    const params = {
-      format: "json",
-      outCharset: "utf-8"
-    };
-    const res = await qqMusicRequest(
-      `/splcloud/fcgi-bin/fcg_get_diss_tag_conf.fcg?${new URLSearchParams(params)}`,
-      {}
-    );
-    if (res.code === 0) {
-      return res.data?.categories;
-    }
-    throw new Error("获取歌单分类列表失败");
-  };
-  const getSongList = async (options = {}) => {
-    const { limit = 20, page = 0, sortId = 5, categoryId = 1e7 } = options;
-    const sin = page * limit;
-    const ein = limit * (page + 1) - 1;
-    const params = {
-      categoryId,
-      sortId,
-      sin,
-      ein,
-      format: "json",
-      outCharset: "utf-8",
-      picmid: 1
-    };
-    const res = await qqMusicRequest(
-      `/splcloud/fcgi-bin/fcg_get_diss_by_tag.fcg?${new URLSearchParams(params).toString()}`,
-      {}
-    );
-    if (res.code === 0) {
-      return res.data;
-    }
-    throw new Error("获取歌单列表失败");
-  };
-  const getSongListDetail = async (disstid) => {
-    const disstidStr = Array.isArray(disstid) ? disstid.join(",") : disstid;
-    const params = {
-      disstid: disstidStr,
-      format: "json",
-      outCharset: "utf-8",
-      type: "1",
-      json: "1",
-      utf8: "1",
-      onlysong: "0",
-      new_format: "1"
-    };
-    const res = await qqMusicRequest(
-      `/qzone/fcg-bin/fcg_ucc_getcdinfo_byids_cp.fcg?${new URLSearchParams(params).toString()}`,
-      {}
-    );
-    if (res.code === 0) {
-      return res.cdlist;
-    }
-    throw new Error("获取歌单详情失败");
   };
   const TestModal = require$$1.forwardRef((props, ref) => {
     const { visible, close } = useVisible({}, ref);
@@ -13629,7 +13746,7 @@
     });
     return () => message.destroy(key);
   };
-  const styles$6 = {
+  const styles$8 = {
     "copy-text": "_copy-text_1att4_1",
     "copy-btn": "_copy-btn_1att4_12"
   };
@@ -13698,7 +13815,7 @@
   }
   var classnamesExports = requireClassnames();
   const classNames = /* @__PURE__ */ getDefaultExportFromCjs(classnamesExports);
-  const styles$5 = {
+  const styles$7 = {
     "text-overflow-show-tips-container": "_text-overflow-show-tips-container_btabq_1"
   };
   function __read(o, n) {
@@ -14358,7 +14475,7 @@
       "div",
       {
         ...restProps,
-        className: classNames(styles$5["text-overflow-show-tips-container"], className),
+        className: classNames(styles$7["text-overflow-show-tips-container"], className),
         children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, children: text })
       }
     ) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, ...restProps, className, children: text });
@@ -14383,7 +14500,7 @@
       copy(text);
       msgSuccess("复制成功");
     };
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: classNames(styles$6["copy-text"], className), ...rest, children: [
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: classNames(styles$8["copy-text"], className), ...rest, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(
         TextOverflowShowTips,
         {
@@ -14401,7 +14518,7 @@
           type: "link",
           icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.CopyOutlined, {}),
           onClick: handleCopy,
-          className: styles$6["copy-btn"]
+          className: styles$8["copy-btn"]
         }
       )
     ] });
@@ -14505,7 +14622,7 @@
       label: "姓名"
     }
   ];
-  const styles$4 = {};
+  const styles$6 = {};
   const { RangePicker: AntRangePicker } = antd.DatePicker;
   const RangePicker = ({
     value,
@@ -14537,7 +14654,7 @@
         value: rangeValue,
         onChange: handleChange,
         format,
-        className: classNames(styles$4["rangePicker"], className),
+        className: classNames(styles$6["rangePicker"], className),
         placeholder,
         ...rest
       }
@@ -20205,7 +20322,7 @@
   var lodashExports = requireLodash();
   const loading$1 = "_loading_jnpqx_59";
   const footer$1 = "_footer_jnpqx_161";
-  const styles$3 = {
+  const styles$5 = {
     "hot-song-modal": "_hot-song-modal_jnpqx_1",
     "modal-title": "_modal-title_jnpqx_1",
     "title-content": "_title-content_jnpqx_4",
@@ -20228,7 +20345,7 @@
     footer: footer$1,
     "selected-count": "_selected-count_jnpqx_167"
   };
-  const { Text: Text$1, Title: Title$1 } = antd.Typography;
+  const { Text: Text$2, Title: Title$2 } = antd.Typography;
   const HotSongModal = require$$1.forwardRef((props, ref) => {
     const { visible, close } = useVisible(
       {
@@ -20293,8 +20410,8 @@
         dataIndex: "name",
         key: "name",
         width: 250,
-        render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", className: styles$3["song-info"], children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3["album-cover"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", className: styles$5["song-info"], children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$5["album-cover"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(
             antd.Image,
             {
               width: 40,
@@ -20303,9 +20420,9 @@
               alt: record.album?.name || "专辑封面"
             }
           ) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3["song-details"], children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3["song-name"], title: text, children: text }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3["song-album"], title: record.album?.name || "未知专辑", children: record.album?.name || "未知专辑" })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$5["song-details"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$5["song-name"], title: text, children: text }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$5["song-album"], title: record.album?.name || "未知专辑", children: record.album?.name || "未知专辑" })
           ] })
         ] })
       },
@@ -20316,9 +20433,9 @@
         width: 200,
         render: (singer) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "small", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Avatar, { icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.UserOutlined, {}), src: singerInfo?.singerPic, size: 40 }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3["singer-info"], children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3["singer-name"], title: singer?.[0]?.name || "未知歌手", children: singer?.[0]?.name || "未知歌手" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3["singer-id"], title: singer?.[0]?.id?.toString() || "", children: singer?.[0]?.id || "" })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$5["singer-info"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$5["singer-name"], title: singer?.[0]?.name || "未知歌手", children: singer?.[0]?.name || "未知歌手" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$5["singer-id"], title: singer?.[0]?.id?.toString() || "", children: singer?.[0]?.id || "" })
           ] })
         ] })
       },
@@ -20343,7 +20460,7 @@
         render: (_, __, index2) => {
           const extra = data?.extras?.[index2];
           const uploadTime = extra?.upload_time || "";
-          return /* @__PURE__ */ jsxRuntimeExports.jsx(Text$1, { className: styles$3["upload-time"], title: uploadTime, children: uploadTime });
+          return /* @__PURE__ */ jsxRuntimeExports.jsx(Text$2, { className: styles$5["upload-time"], title: uploadTime, children: uploadTime });
         }
       },
       {
@@ -20352,7 +20469,7 @@
         key: "id",
         width: 120,
         align: "center",
-        render: (id) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$3["song-id-text"], text: id + "" })
+        render: (id) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$5["song-id-text"], text: id + "" })
       },
       {
         title: "歌曲MID",
@@ -20360,7 +20477,7 @@
         key: "mid",
         width: 200,
         align: "center",
-        render: (mid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$3["song-mid-text"], text: mid })
+        render: (mid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$5["song-mid-text"], text: mid })
       },
       {
         title: "操作",
@@ -20419,23 +20536,23 @@
       }
     };
     const renderTitle = () => {
-      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3["modal-title"], children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3["title-content"], children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(Title$1, { level: 4, style: { margin: 0 }, children: [
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$5["modal-title"], children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$5["title-content"], children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(Title$2, { level: 4, style: { margin: 0 }, children: [
           singerInfo.singerName,
           " - 热门歌曲"
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3["title-stats"], children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$3["stat-item"]} ${loading2 ? styles$3["loading"] : ""}`, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$3["stat-label"], children: "歌曲" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$3["stat-value"], children: loading2 ? "..." : data?.total_song || 0 })
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$5["title-stats"], children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$5["stat-item"]} ${loading2 ? styles$5["loading"] : ""}`, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$5["stat-label"], children: "歌曲" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$5["stat-value"], children: loading2 ? "..." : data?.total_song || 0 })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$3["stat-item"]} ${loading2 ? styles$3["loading"] : ""}`, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$3["stat-label"], children: "专辑" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$3["stat-value"], children: loading2 ? "..." : data?.total_album || 0 })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$5["stat-item"]} ${loading2 ? styles$5["loading"] : ""}`, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$5["stat-label"], children: "专辑" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$5["stat-value"], children: loading2 ? "..." : data?.total_album || 0 })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$3["stat-item"]} ${loading2 ? styles$3["loading"] : ""}`, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$3["stat-label"], children: "MV" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$3["stat-value"], children: loading2 ? "..." : data?.total_mv || 0 })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$5["stat-item"]} ${loading2 ? styles$5["loading"] : ""}`, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$5["stat-label"], children: "MV" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$5["stat-value"], children: loading2 ? "..." : data?.total_mv || 0 })
           ] })
         ] })
       ] }) });
@@ -20500,8 +20617,8 @@
       }
     };
     const renderFooter = () => {
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3["footer"], children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3["selected-count"], children: [
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$5["footer"], children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$5["selected-count"], children: [
           "已选择 ",
           selectedRows.length,
           " 首歌曲"
@@ -20556,7 +20673,7 @@
         footer: renderFooter(),
         width: 1200,
         centered: true,
-        className: styles$3["hot-song-modal"],
+        className: styles$5["hot-song-modal"],
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             antd.Table,
@@ -20568,7 +20685,7 @@
               loading: loading2,
               pagination: false,
               scroll: { y: 500, x: 1100 },
-              className: styles$3["song-table"]
+              className: styles$5["song-table"]
             }
           ),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -20591,7 +20708,7 @@
   });
   const loading = "_loading_13s8d_49";
   const footer = "_footer_13s8d_151";
-  const styles$2 = {
+  const styles$4 = {
     "album-list-modal": "_album-list-modal_13s8d_1",
     "modal-title": "_modal-title_13s8d_1",
     "title-content": "_title-content_13s8d_4",
@@ -20617,7 +20734,7 @@
     "selected-count": "_selected-count_13s8d_158",
     "selected-info": "_selected-info_13s8d_162"
   };
-  const { Text, Title } = antd.Typography;
+  const { Text: Text$1, Title: Title$1 } = antd.Typography;
   const AlbumListModal = require$$1.forwardRef((props, ref) => {
     const { visible, close } = useVisible(
       {
@@ -20713,8 +20830,8 @@
         dataIndex: "albumName",
         key: "albumName",
         width: 300,
-        render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", className: styles$2["album-info"], children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["album-cover"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+        render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", className: styles$4["album-info"], children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$4["album-cover"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(
             antd.Image,
             {
               width: 60,
@@ -20724,10 +20841,10 @@
               fallback: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAADDCAYAAADQvc6UAAABRWlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSSwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAwSDCIMogwMCcmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis7PPOq3QdDFcvjV3jOD1boQVTPQrgSkktTgbSf4A4LbmgqISBgTEFyFYuLykAsTuAbJEioKOA7DkgdjqEvQHEToKwj4DVhAQ5A9k3gGyB5IxEoBmML4BsnSQk8XQkNtReEOBxcfXxUQg1Mjc0dyHgXNJBSWpFCYh2zi+oLMpMzyhRcASGUqqCZ16yno6CkYGRAQMDKMwhqj/fAIcloxgHQqxAjIHBEugw5sUIsSQpBobtQPdLciLEVJYzMPBHMDBsayhILEqEO4DxG0txmrERhM29nYGBddr//5/DGRjYNRkY/l7////39v///y4Dmn+LgeHANwDrkl1AuO+pmgAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAwqADAAQAAAABAAAAwwAAAAD9b/HnAAAHlklEQVR4Ae3dP3Ik1RnG4W+FgYxN"
             }
           ) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["album-details"], children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["album-name"], title: text, children: text }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["album-trans-name"], title: record.albumTranName || "", children: record.albumTranName || "" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["album-type"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tag, { color: "blue", children: record.albumType || "专辑" }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$4["album-details"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$4["album-name"], title: text, children: text }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$4["album-trans-name"], title: record.albumTranName || "", children: record.albumTranName || "" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$4["album-type"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tag, { color: "blue", children: record.albumType || "专辑" }) })
           ] })
         ] })
       },
@@ -20738,9 +20855,9 @@
         width: 200,
         render: (singerName) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "small", children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Avatar, { icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.UserOutlined, {}), src: singerInfo?.singerPic, size: 40 }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["singer-info"], children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["singer-name"], title: singerName || "未知歌手", children: singerName || "未知歌手" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["singer-id"], title: singerInfo?.singerId?.toString() || "", children: singerInfo?.singerId || "" })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$4["singer-info"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$4["singer-name"], title: singerName || "未知歌手", children: singerName || "未知歌手" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$4["singer-id"], title: singerInfo?.singerId?.toString() || "", children: singerInfo?.singerId || "" })
           ] })
         ] })
       },
@@ -20751,7 +20868,7 @@
         width: 150,
         align: "center",
         render: (publishDate) => {
-          return /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { className: styles$2["publish-date"], title: publishDate, children: publishDate || "未知" });
+          return /* @__PURE__ */ jsxRuntimeExports.jsx(Text$1, { className: styles$4["publish-date"], title: publishDate, children: publishDate || "未知" });
         }
       },
       {
@@ -20771,7 +20888,7 @@
         key: "albumID",
         width: 120,
         align: "center",
-        render: (albumID) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$2["album-id-text"], text: albumID + "" })
+        render: (albumID) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$4["album-id-text"], text: albumID + "" })
       },
       {
         title: "专辑MID",
@@ -20779,7 +20896,7 @@
         key: "albumMid",
         width: 200,
         align: "center",
-        render: (albumMid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$2["album-mid-text"], text: albumMid })
+        render: (albumMid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$4["album-mid-text"], text: albumMid })
       },
       {
         title: "操作",
@@ -20849,19 +20966,19 @@
       }
     };
     const renderTitle = () => {
-      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["modal-title"], children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["title-content"], children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs(Title, { level: 4, style: { margin: 0 }, children: [
+      return /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$4["modal-title"], children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$4["title-content"], children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(Title$1, { level: 4, style: { margin: 0 }, children: [
           singerInfo.singerName,
           " - 专辑列表"
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["title-stats"], children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$2["stat-item"]} ${loading2 ? styles$2["loading"] : ""}`, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$2["stat-label"], children: "专辑" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$2["stat-value"], children: loading2 ? "..." : data?.length || 0 })
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$4["title-stats"], children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$4["stat-item"]} ${loading2 ? styles$4["loading"] : ""}`, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$4["stat-label"], children: "专辑" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$4["stat-value"], children: loading2 ? "..." : data?.length || 0 })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$2["stat-item"]} ${loading2 ? styles$2["loading"] : ""}`, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$2["stat-label"], children: "歌曲" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$2["stat-value"], children: loading2 ? "..." : data?.reduce((sum, album) => sum + (album.totalNum || 0), 0) || 0 })
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: `${styles$4["stat-item"]} ${loading2 ? styles$4["loading"] : ""}`, children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$4["stat-label"], children: "歌曲" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$4["stat-value"], children: loading2 ? "..." : data?.reduce((sum, album) => sum + (album.totalNum || 0), 0) || 0 })
           ] })
         ] })
       ] }) });
@@ -20913,12 +21030,12 @@
       }
     };
     const renderFooter = () => {
-      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["footer"], children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["selected-count"], children: [
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$4["footer"], children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$4["selected-count"], children: [
           "已选择 ",
           selectedRows.length,
           " 张专辑",
-          selectedRows.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$2["selected-info"], children: [
+          selectedRows.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$4["selected-info"], children: [
             "（共 ",
             selectedRows.reduce((sum, album) => sum + (album.totalNum || 0), 0),
             " 首歌曲）"
@@ -20985,7 +21102,7 @@
         footer: renderFooter(),
         width: 1200,
         centered: true,
-        className: styles$2["album-list-modal"],
+        className: styles$4["album-list-modal"],
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             SearchForm$1,
@@ -21004,7 +21121,7 @@
               rowKey: "albumMid",
               loading: loading2,
               scroll: { y: 500, x: 1100 },
-              className: styles$2["album-table"],
+              className: styles$4["album-table"],
               pagination: {
                 showSizeChanger: true,
                 showQuickJumper: true,
@@ -21017,7 +21134,7 @@
       }
     );
   });
-  const styles$1 = {
+  const styles$3 = {
     "singer-search-modal": "_singer-search-modal_1jeib_2",
     "singer-info": "_singer-info_1jeib_8",
     "singer-avatar": "_singer-avatar_1jeib_12",
@@ -21108,20 +21225,20 @@
         dataIndex: "singer_name",
         key: "singer_name",
         width: 300,
-        render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", className: styles$1["singer-info"], children: [
+        render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", className: styles$3["singer-info"], children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(
             antd.Avatar,
             {
               src: record.singer_pic,
               icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.UserOutlined, {}),
               size: 48,
-              className: styles$1["singer-avatar"]
+              className: styles$3["singer-avatar"]
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["singer-details"], children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["singer-name"], children: text }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["singer-country"], children: record.country || "未知地区" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["singer-id"], children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3["singer-details"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3["singer-name"], children: text }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3["singer-country"], children: record.country || "未知地区" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3["singer-id"], children: [
               "ID: ",
               record.singer_id
             ] })
@@ -21134,7 +21251,7 @@
         key: "singer_id",
         width: 120,
         align: "center",
-        render: (id) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$1["singer-id-text"], text: id + "" })
+        render: (id) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$3["singer-id-text"], text: id + "" })
       },
       {
         title: "歌手MID",
@@ -21142,7 +21259,7 @@
         key: "singer_mid",
         width: 200,
         align: "center",
-        render: (mid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$1["singer-mid-text"], text: mid })
+        render: (mid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$3["singer-mid-text"], text: mid })
       },
       {
         title: "操作",
@@ -21193,7 +21310,7 @@
         footer: null,
         width: 1100,
         centered: true,
-        className: styles$1["singer-search-modal"],
+        className: styles$3["singer-search-modal"],
         children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(SearchForm$1, { options: searchFormOptions, searchParams, onSearch: handleSearch }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21230,6 +21347,394 @@
       }
     );
   });
+  function getQQAvatarUrl(qqNumber, size = 640, prefix = "q1") {
+    const safeQQ = encodeURIComponent(qqNumber);
+    const safeSize = Number(size) || 100;
+    const safePrefix = ["q1", "q2", "q3", "q4"].includes(prefix) ? prefix : "q1";
+    return `https://${safePrefix}.qlogo.cn/g?b=qq&nk=${safeQQ}&s=${safeSize}`;
+  }
+  const introduction = "_introduction_1h6z1_47";
+  const styles$2 = {
+    "song-list-search-modal": "_song-list-search-modal_1h6z1_1",
+    "play-count-overlay": "_play-count-overlay_1h6z1_1",
+    "playlist-cover-container": "_playlist-cover-container_1h6z1_19",
+    "playlist-info": "_playlist-info_1h6z1_23",
+    "playlist-name": "_playlist-name_1h6z1_28",
+    "creator-info": "_creator-info_1h6z1_32",
+    "creator-name": "_creator-name_1h6z1_39",
+    "creator-qq": "_creator-qq_1h6z1_43",
+    introduction,
+    "time-info": "_time-info_1h6z1_79",
+    "create-time": "_create-time_1h6z1_85",
+    "commit-time": "_commit-time_1h6z1_91",
+    "playlist-id": "_playlist-id_1h6z1_95"
+  };
+  const styles$1 = {
+    "song-list-detail-modal": "_song-list-detail-modal_1p6k4_1",
+    "modal-header": "_modal-header_1p6k4_1",
+    "modal-title": "_modal-title_1p6k4_1",
+    "playlist-basic-info": "_playlist-basic-info_1p6k4_4",
+    "playlist-info": "_playlist-info_1p6k4_13",
+    "playlist-name": "_playlist-name_1p6k4_19",
+    "creator-info": "_creator-info_1p6k4_23",
+    "creator-name": "_creator-name_1p6k4_28",
+    "playlist-stats": "_playlist-stats_1p6k4_32",
+    "playlist-desc": "_playlist-desc_1p6k4_41",
+    "description-text": "_description-text_1p6k4_44",
+    "song-info": "_song-info_1p6k4_68",
+    "song-name": "_song-name_1p6k4_73",
+    "song-artist": "_song-artist_1p6k4_78",
+    "artist-item": "_artist-item_1p6k4_86",
+    "artist-name": "_artist-name_1p6k4_90",
+    "artist-separator": "_artist-separator_1p6k4_94",
+    "album-name": "_album-name_1p6k4_99",
+    "song-duration": "_song-duration_1p6k4_107"
+  };
+  const { Text, Title } = antd.Typography;
+  const SongListDetail = require$$1.forwardRef((props, ref) => {
+    const { visible, close } = useVisible(
+      {
+        onOpen(params) {
+          if (params) {
+            setCurrentDissid(params.dissid);
+          }
+        }
+      },
+      ref
+    );
+    const [currentDissid, setCurrentDissid] = require$$1.useState("");
+    const [qualityMap, setQualityMap] = require$$1.useState({});
+    const {
+      getPlaylistDetail,
+      getPlaylistSongList,
+      playPlaylist,
+      downloadPlaylistSong,
+      getPlaylistDownloadJson,
+      isLoading
+    } = useGetSonglistDetail();
+    const { play, isPlaying, pause, download } = usePlayMusic();
+    const { data: detail } = useGetData(getPlaylistDetail, currentDissid, {
+      initialValue: {},
+      returnFunction: () => !currentDissid || !visible,
+      monitors: [currentDissid, visible]
+    });
+    const { data: list, loading: loading2 } = useGetData(getPlaylistSongList, currentDissid, {
+      initialValue: [],
+      returnFunction: () => !currentDissid || !visible,
+      monitors: [currentDissid, visible]
+    });
+    const { filteredList, handleFilter } = useFilter(list || [], {
+      fields: {
+        name: {
+          getValue: (item) => item.name
+        },
+        albumName: {
+          getValue: (item) => item.album.name
+        },
+        singer: {
+          getValue: (item) => item.singer.map((s) => s.name).join(" / ")
+        }
+      }
+    });
+    const searchFormOptions = [
+      {
+        label: "名字",
+        name: "name",
+        type: "select",
+        inputProps: {
+          mode: "multiple"
+        },
+        options: uniqueArrayByKey(list, "name").map((item) => ({
+          label: item.name,
+          value: item.name
+        }))
+      },
+      // 歌手
+      {
+        label: "歌手",
+        name: "singer",
+        type: "select",
+        inputProps: {
+          mode: "multiple"
+        },
+        options: Object.entries(
+          lodashExports.groupBy(list, (item) => item.singer.map((s) => s.name).join(" / "))
+        ).map(([key, value]) => ({
+          label: key,
+          value: key
+        }))
+      },
+      // 专辑
+      {
+        label: "专辑",
+        name: "albumName",
+        type: "select",
+        inputProps: {
+          mode: "multiple"
+        },
+        options: Object.entries(lodashExports.groupBy(list, (item) => item.album.name)).map(([key, value]) => ({
+          label: key,
+          value: key
+        }))
+      }
+    ];
+    const handlePlay = (record) => {
+      console.log("record", record);
+      if (isPlaying) {
+        pause();
+      } else {
+        play(record.mid, qualityMap[record.mid] || 128);
+      }
+    };
+    const [downloading, setDownloading] = require$$1.useState("");
+    const handleDownload = async (record) => {
+      try {
+        if (downloading === record.mid) return;
+        setDownloading(record.mid);
+        await download(record.mid, record.name, qualityMap[record.mid] || 128);
+      } catch (error) {
+        console.log("error", error);
+      } finally {
+        setDownloading("");
+      }
+    };
+    const songColumns = [
+      {
+        title: "歌曲信息",
+        dataIndex: "name",
+        key: "name",
+        width: 300,
+        render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Space, { size: "middle", children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["song-info"], children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["song-name"], children: text }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["song-artist"], children: record.singer?.map((s, index2) => /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$1["artist-item"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              antd.Avatar,
+              {
+                src: getSingerPic(s.mid),
+                icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.UserOutlined, {}),
+                size: 16,
+                style: { marginRight: 4 }
+              }
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$1["artist-name"], children: s.name }),
+            index2 < record.singer.length - 1 && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$1["artist-separator"], children: "/" })
+          ] }, s.mid || index2)) || "-" })
+        ] }) })
+      },
+      {
+        title: "专辑",
+        dataIndex: "album",
+        key: "album",
+        width: 200,
+        render: (album) => /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { className: styles$1["album-name"], children: album?.name || "-" })
+      },
+      {
+        title: "时长",
+        dataIndex: "interval",
+        key: "interval",
+        width: 100,
+        align: "center",
+        render: (interval) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Text, { className: styles$1["song-duration"], children: [
+          Math.floor(interval / 60),
+          ":",
+          (interval % 60).toString().padStart(2, "0")
+        ] })
+      },
+      // 音质选择器
+      {
+        title: "音质",
+        key: "quality",
+        width: 100,
+        align: "center",
+        render: (_, record) => {
+          const options = [];
+          const { file } = record;
+          if (file.size_128mp3) options.push({ label: "128k", value: 128 });
+          if (file.size_320mp3) options.push({ label: "320k", value: 320 });
+          if (file.size_flac) options.push({ label: "FLAC", value: "flac" });
+          return /* @__PURE__ */ jsxRuntimeExports.jsx(
+            antd.Select,
+            {
+              options,
+              defaultValue: 128,
+              style: { width: "100%" },
+              onChange: (value) => {
+                setQualityMap((prev) => ({
+                  ...prev,
+                  [record.mid]: value
+                }));
+              }
+            }
+          );
+        }
+      },
+      {
+        title: "操作",
+        key: "action",
+        width: 200,
+        align: "center",
+        fixed: "right",
+        render: (_, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "播放", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            antd.Button,
+            {
+              type: "link",
+              size: "small",
+              icon: isPlaying === record.mid ? /* @__PURE__ */ jsxRuntimeExports.jsx(icons.PauseCircleOutlined, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(icons.PlayCircleOutlined, {}),
+              onClick: () => handlePlay(record),
+              children: "播放"
+            }
+          ) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "下载", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            antd.Button,
+            {
+              type: "link",
+              size: "small",
+              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.DownloadOutlined, {}),
+              loading: downloading === record.mid,
+              onClick: () => handleDownload(record),
+              children: "下载"
+            }
+          ) })
+        ] })
+      }
+    ];
+    const renderTitle = () => {
+      const { pic_mid, dissname, nickname, isvip, visitnum, scoreavage, songnum, desc, uin } = detail || {};
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["modal-header"], children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Title, { level: 4, className: styles$1["modal-title"], children: "歌单详情" }),
+        detail && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["playlist-basic-info"], children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            antd.Image,
+            {
+              src: pic_mid ? `https://y.gtimg.cn/music/photo_new/T002R300x300M000${pic_mid}.jpg` : "",
+              alt: dissname,
+              width: 80,
+              height: 80,
+              style: { borderRadius: 8 },
+              fallback: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAADDCAYAAADQvc6UAAABRWlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSSwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAwSDCIMogwMCcmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis7PPOq3QdDFcvjV3jOD1boQVTPQrgSkktTgbSf4A4LbmgqISBgTEFyFYuLykAsTuAbJEioKOA7DkgdjqEvQHEToKwj4DVhAQ5A9k3gGyB5IxEoBmML4BsnSQk8XQkNtReEOBxcfXxUQg1Mjc0dyHgXNJBSWpFCYh2zi+oLMpMzyhRcASGUqqCZ16yno6CkYGRAQMDKMwhqj/fAIcloxgHQqxAjIHBEugw5sUIsSQpBobtQPdLciLEVJYzMPBHMDBsayhILEqEO4DxG0txmrERhM29nYGBddr//5/DGRjYNRkY/l7////39v///y4Dmn+LgeHANwDrkl1AuO+pmgAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAwqADAAQAAAABAAAAwwAAAAD9b/HnAAAHlklEQVR4Ae3dP3Ik1RnG4W+FgYxN"
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["playlist-info"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Title, { level: 5, className: styles$1["playlist-name"], children: dissname }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["creator-info"], children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                antd.Avatar,
+                {
+                  src: getQQAvatarUrl(uin),
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.UserOutlined, {}),
+                  size: 24,
+                  style: { marginRight: 8 }
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { className: styles$1["creator-name"], children: nickname || "未知用户" }),
+              isvip === 1 && /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tag, { color: "gold", children: "VIP" })
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["playlist-stats"], children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(Text, { type: "secondary", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(icons.EyeOutlined, {}),
+                " ",
+                visitnum?.toLocaleString() || 0,
+                " 播放"
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(Text, { type: "secondary", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(icons.StarOutlined, {}),
+                " ",
+                scoreavage || "-",
+                " 评分"
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(Text, { type: "secondary", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(icons.TrophyOutlined, {}),
+                " ",
+                songnum || 0,
+                " 首歌曲"
+              ] })
+            ] }) }),
+            desc && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["playlist-desc"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text, { type: "secondary", className: styles$1["description-text"], children: desc }) })
+          ] })
+        ] })
+      ] });
+    };
+    const handlePlayAll = async () => {
+      if (!currentDissid) return;
+      try {
+        await playPlaylist(currentDissid);
+      } catch (error) {
+        console.error("播放歌单失败:", error);
+      }
+    };
+    const handleDownloadAll = async () => {
+      if (!currentDissid) return;
+      try {
+        await downloadPlaylistSong(currentDissid);
+      } catch (error) {
+        console.error("下载歌单失败:", error);
+      }
+    };
+    const handleDownloadAllJson = async () => {
+      if (!currentDissid) return;
+      try {
+        await getPlaylistDownloadJson(currentDissid);
+      } catch (error) {
+        console.error("下载歌单JSON失败:", error);
+      }
+    };
+    const renderFooter = () => {
+      return /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsx(
+          antd.Button,
+          {
+            type: "primary",
+            icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.PlayCircleOutlined, {}),
+            onClick: handlePlayAll,
+            loading: isLoading,
+            children: "播放全部"
+          }
+        ),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.DownloadOutlined, {}), onClick: handleDownloadAll, loading: isLoading, children: "下载全部" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.FileOutlined, {}), onClick: handleDownloadAllJson, loading: isLoading, children: "下载JSON" })
+      ] });
+    };
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      antd.Modal,
+      {
+        title: renderTitle(),
+        open: visible,
+        onCancel: close,
+        footer: renderFooter(),
+        width: 1200,
+        centered: true,
+        className: styles$1["song-list-detail-modal"],
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            SearchForm$1,
+            {
+              options: searchFormOptions,
+              onSearch: handleFilter,
+              style: {
+                marginBottom: 0
+              }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            antd.Table,
+            {
+              columns: songColumns,
+              dataSource: filteredList,
+              rowKey: "mid",
+              loading: loading2,
+              scroll: { y: 400, x: 800 },
+              pagination: {
+                showSizeChanger: true,
+                showQuickJumper: true,
+                showTotal: (total) => `共 ${total} 首歌曲`
+              }
+            }
+          )
+        ]
+      }
+    );
+  });
   const { Option } = antd.Select;
   const defaultSearchParams$1 = {
     pageNum: 0,
@@ -21238,21 +21743,14 @@
   const SongListSearch = require$$1.forwardRef((props, ref) => {
     const { visible, close } = useVisible({}, ref);
     const [searchParams, setSearchParams] = require$$1.useState(defaultSearchParams$1);
+    const {
+      playPlaylist,
+      downloadPlaylistSong,
+      getPlaylistDownloadJson
+    } = useGetSonglistDetail();
     const { data: songListCategory } = useGetData(getSongListCategory, void 0, {
       initialValue: []
     });
-    require$$1.useMemo(() => {
-      const categories = [];
-      songListCategory?.forEach((group) => {
-        group.items.forEach((item) => {
-          categories.push({
-            categoryId: item.categoryId,
-            categoryName: item.categoryName
-          });
-        });
-      });
-      return categories;
-    }, [songListCategory]);
     const categoryOptions = require$$1.useMemo(() => {
       return songListCategory?.map((item) => ({
         label: item.categoryGroupName,
@@ -21301,80 +21799,78 @@
         ...newParams
       });
     };
+    const handlePlay = async (record) => {
+      console.log("播放歌单:", record);
+      try {
+        await playPlaylist(record.dissid);
+      } catch (error) {
+        console.error("播放歌单失败:", error);
+      }
+    };
+    const songListDetailRef = useCompRef();
+    const handleViewDetail = async (record) => {
+      console.log("查看歌单详情:", record);
+      songListDetailRef.current?.open({
+        dissid: record.dissid
+      });
+    };
+    const handleDownload = async (record) => {
+      console.log("下载歌单:", record);
+      try {
+        await downloadPlaylistSong(record.dissid);
+      } catch (error) {
+        console.error("下载歌单失败:", error);
+      }
+    };
+    const handleDownloadJson = async (record) => {
+      console.log("下载歌单json:", record);
+      try {
+        await getPlaylistDownloadJson(record.dissid);
+      } catch (error) {
+        console.error("下载歌单json失败:", error);
+      }
+    };
     const columns = [
       {
         title: "歌单信息",
         dataIndex: "dissname",
         key: "dissname",
-        width: 350,
+        width: 400,
         render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            antd.Image,
-            {
-              src: record.imgurl,
-              alt: text,
-              width: 60,
-              height: 60,
-              style: { borderRadius: 8 },
-              fallback: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAADDCAYAAADQvc6UAAABRWlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSSwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAwSDCIMogwMCcmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis7PPOq3QdDFcvjV3jOD1boQVTPQrgSkktTgbSf4A4LbmgqISBgTEFyFYuLykAsTuAbJEioKOA7DkgdjqEvQHEToKwj4DVhAQ5A9k3gGyB5IxEoBmML4BsnSQk8XQkNtReEOBxcfXxUQg1Mjc0dyHgXNJBSWpFCYh2zi+oLMpMzyhRcASGUqqCZ16yno6CkYGRAQMDKMwhqj/fAIcloxgHQqxAjIHBEugw5sUIsSQpBobtQPdLciLEVJYzMPBHMDBsayhILEqEO4DxG0txmrERhM29nYGBddr//5/DGRjYNRkY/l7////39v///y4Dmn+LgeHANwDrkl1AuO+pmgAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAwqADAAQAAAABAAAAwwAAAAD9b/HnAAAHlklEQVR4Ae3dP3Ik1RnG4W+FgYxN"
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexDirection: "column", gap: 4 }, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontWeight: 500, fontSize: 14 }, children: text }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontSize: 12, color: "#666" }, children: record.creator?.name || "未知用户" }),
-            record.introduction && /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "div",
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["playlist-cover-container"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(
+              antd.Image,
               {
-                style: {
-                  fontSize: 11,
-                  color: "#999",
-                  maxWidth: 200,
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                  whiteSpace: "nowrap"
-                },
-                children: record.introduction
+                src: record.imgurl,
+                alt: text,
+                width: 60,
+                height: 60,
+                style: { borderRadius: 8 },
+                fallback: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAADDCAYAAADQvc6UAAABRWlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSSwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAwSDCIMogwMCcmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis7PPOq3QdDFcvjV3jOD1boQVTPQrgSkktTgbSf4A4LbmgqISBgTEFyFYuLykAsTuAbJEioKOA7DkgdjqEvQHEToKwj4DVhAQ5A9k3gGyB5IxEoBmML4BsnSQk8XQkNtReEOBxcfXxUQg1Mjc0dyHgXNJBSWpFCYh2zi+oLMpMzyhRcASGUqqCZ16yno6CkYGRAQMDKMwhqj/fAIcloxgHQqxAjIHBEugw5sUIsSQpBobtQPdLciLEVJYzMPBHMDBsayhILEqEO4DxG0txmrERhM29nYGBddr//5/DGRjYNRkY/l7////39v///y4Dmn+LgeHANwDrkl1AuO+pmgAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAwqADAAQAAAABAAAAwwAAAAD9b/HnAAAHlklEQVR4Ae3dP3Ik1RnG4W+FgYxN"
               }
-            )
-          ] })
-        ] })
-      },
-      {
-        title: "创建者",
-        dataIndex: "creator",
-        key: "creator",
-        width: 180,
-        render: (creator) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "small", children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Avatar, { src: creator?.avatarUrl, icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.UserOutlined, {}), size: 40 }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexDirection: "column", gap: 2 }, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { style: { fontSize: 14, fontWeight: 500 }, children: creator?.name || "未知用户" }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { fontSize: 11, color: "#999" }, children: [
-              "QQ: ",
-              creator?.qq || "-"
+            ),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["play-count-overlay"], children: /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: formatPlayCount(record.listennum || 0) }) })
+          ] }),
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["playlist-info"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["playlist-name"], children: text }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["creator-info"], children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                antd.Avatar,
+                {
+                  src: getQQAvatarUrl(record.creator?.qq),
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.UserOutlined, {}),
+                  size: 20,
+                  style: { marginRight: 8 }
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$2["creator-name"], children: record.creator?.name || "未知用户" }),
+              record.creator?.isVip === 1 && /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tag, { color: "gold", children: "VIP" })
             ] }),
-            creator?.isVip === 1 && /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tag, { color: "gold", children: "VIP" })
-          ] })
-        ] })
-      },
-      {
-        title: "统计信息",
-        key: "stats",
-        width: 200,
-        render: (_, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexDirection: "column", gap: 4, alignItems: "center" }, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 }, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(icons.EyeOutlined, { style: { color: "#1890ff" } }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: record.listenum >= 1e4 ? `${(record.listenum / 1e4).toFixed(1)}万` : record.listenum })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 }, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(icons.StarOutlined, { style: { color: "#faad14" } }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: record.score ? record.score.toFixed(1) : "-" })
-          ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 8 }, children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(icons.TrophyOutlined, { style: { color: "#52c41a" } }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
-              "v",
-              record.version
-            ] })
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["creator-qq"], children: [
+              "QQ: ",
+              record.creator?.qq || "-"
+            ] }),
+            record.introduction && /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$2["introduction"], children: record.introduction })
           ] })
         ] })
       },
@@ -21382,12 +21878,12 @@
         title: "时间信息",
         key: "time-info",
         width: 180,
-        render: (_, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", flexDirection: "column", gap: 4, alignItems: "center" }, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { display: "flex", alignItems: "center", gap: 4 }, children: [
+        render: (_, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["time-info"], children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["create-time"], children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(icons.ClockCircleOutlined, { style: { color: "#666" } }),
-            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { style: { fontSize: 12 }, children: record.createtime ? new Date(record.createtime).toLocaleDateString() : "-" })
+            /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: record.createtime ? new Date(record.createtime).toLocaleDateString() : "-" })
           ] }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { fontSize: 11, color: "#999" }, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$2["commit-time"], children: [
             "提交: ",
             record.commit_time ? new Date(record.commit_time).toLocaleDateString() : "-"
           ] })
@@ -21399,29 +21895,15 @@
         key: "dissid",
         width: 150,
         align: "center",
-        render: (dissid) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-          CopyText,
-          {
-            text: dissid,
-            style: {
-              fontSize: 12,
-              color: "#666",
-              fontFamily: "monospace",
-              background: "#f5f5f5",
-              padding: "2px 6px",
-              borderRadius: 4,
-              cursor: "pointer"
-            }
-          }
-        )
+        render: (dissid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { text: dissid, className: styles$2["playlist-id"] })
       },
       {
         title: "操作",
         key: "action",
-        width: 200,
+        width: 350,
         align: "center",
         fixed: "right",
-        render: (_, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "small", direction: "vertical", children: [
+        render: (_, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "播放歌单", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
             antd.Button,
             {
@@ -21432,17 +21914,36 @@
               children: "播放"
             }
           ) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "收藏歌单", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "下载歌单", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
             antd.Button,
             {
               type: "link",
               size: "small",
-              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.HeartOutlined, {}),
-              onClick: () => handleFavorite(record),
-              children: "收藏"
+              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.DownloadOutlined, {}),
+              onClick: () => handleDownload(record),
+              children: "下载"
             }
           ) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "查看详情", children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "link", size: "small", onClick: () => handleViewDetail(record), children: "详情" }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "下载json", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            antd.Button,
+            {
+              type: "link",
+              size: "small",
+              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.FileOutlined, {}),
+              onClick: () => handleDownloadJson(record),
+              children: "下载json"
+            }
+          ) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "查看详情", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+            antd.Button,
+            {
+              type: "link",
+              size: "small",
+              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.InfoCircleOutlined, {}),
+              onClick: () => handleViewDetail(record),
+              children: "详情"
+            }
+          ) })
         ] })
       }
     ];
@@ -21459,45 +21960,68 @@
       }
     );
     console.log("data", data);
-    const handlePlay = (record) => {
-      console.log("播放歌单:", record);
-    };
-    const handleFavorite = (record) => {
-      console.log("收藏歌单:", record);
-    };
-    const handleViewDetail = (record) => {
-      console.log("查看歌单详情:", record);
-    };
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Modal, { title: "歌单查询", open: visible, onCancel: close, footer: null, width: 1200, centered: true, children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(SearchForm$1, { options: searchFormOptions, searchParams, onSearch: handleSearch }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        antd.Table,
-        {
-          columns,
-          dataSource: data?.list || [],
-          rowKey: "dissid",
-          loading: loading2,
-          scroll: { y: 500, x: 1200 },
-          pagination: false
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        antd.Pagination,
-        {
-          align: "end",
-          total: data?.sum || 0,
-          current: searchParams.pageNum,
-          pageSize: searchParams.pageSize,
-          showSizeChanger: true,
-          showTotal: (total) => `共 ${total} 个歌单`,
-          onChange: (page, pageSize) => {
-            setSearchParams({ ...searchParams, pageNum: page, pageSize });
-          },
-          style: { marginTop: 16 }
-        }
-      )
-    ] });
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+      antd.Modal,
+      {
+        title: "歌单查询",
+        open: visible,
+        onCancel: close,
+        footer: null,
+        width: 1200,
+        centered: true,
+        className: styles$2["song-list-search-modal"],
+        children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            SearchForm$1,
+            {
+              options: searchFormOptions,
+              searchParams,
+              onSearch: handleSearch,
+              style: {
+                marginBottom: 16
+              }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            antd.Table,
+            {
+              columns,
+              dataSource: data?.list || [],
+              rowKey: "dissid",
+              loading: loading2,
+              scroll: { y: 500, x: 970 },
+              pagination: false
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            antd.Pagination,
+            {
+              align: "end",
+              total: data?.sum || 0,
+              current: searchParams.pageNum,
+              pageSize: searchParams.pageSize,
+              showSizeChanger: true,
+              showTotal: (total) => `共 ${total} 个歌单`,
+              onChange: (page, pageSize) => {
+                setSearchParams({ ...searchParams, pageNum: page, pageSize });
+              },
+              style: { marginTop: 16 }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(SongListDetail, { ref: songListDetailRef })
+        ]
+      }
+    );
   });
+  const formatPlayCount = (count) => {
+    if (count >= 1e8) {
+      return `${(count / 1e8).toFixed(1)}亿`;
+    } else if (count >= 1e4) {
+      return `${(count / 1e4).toFixed(1)}万`;
+    } else {
+      return count.toString();
+    }
+  };
   const AlbumSearch = require$$1.forwardRef((props, ref) => {
     const { visible, close } = useVisible({}, ref);
     const [form] = antd.Form.useForm();
@@ -21890,7 +22414,7 @@
       }
     };
     const handleDownload = (record) => {
-      const quality = getHighestQuality(record);
+      const quality = getHighestQuality$1(record);
       download(record.songmid, record.songname, qualityMap[record.songmid] || quality);
     };
     const renderTitle = () => {
@@ -21970,14 +22494,14 @@
     const handleTestModal = () => {
       testModalRef.current.open();
     };
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["button-group"], children: [
+    return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$9["button-group"], children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "歌手查询", placement: "left", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
         antd.Button,
         {
           type: "primary",
           icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.UserOutlined, {}),
           onClick: handleSingerSearch,
-          className: styles$7["button"]
+          className: styles$9["button"]
         }
       ) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "歌单查询", placement: "left", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21986,7 +22510,7 @@
           type: "primary",
           icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.UnorderedListOutlined, {}),
           onClick: handleSongListSearch,
-          className: styles$7["button"]
+          className: styles$9["button"]
         }
       ) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "专辑查询", placement: "left", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -21995,7 +22519,7 @@
           type: "primary",
           icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.BookOutlined, {}),
           onClick: handleAlbumSearch,
-          className: styles$7["button"]
+          className: styles$9["button"]
         }
       ) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "歌曲查询", placement: "left", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22004,7 +22528,7 @@
           type: "primary",
           icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.CustomerServiceOutlined, {}),
           onClick: handleSongSearch,
-          className: styles$7["button"]
+          className: styles$9["button"]
         }
       ) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "demo", placement: "left", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22013,7 +22537,7 @@
           type: "primary",
           icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.InfoCircleOutlined, {}),
           onClick: handleDemo,
-          className: styles$7["button"]
+          className: styles$9["button"]
         }
       ) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tooltip, { title: "testModal", placement: "left", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -22022,7 +22546,7 @@
           type: "primary",
           icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.InfoCircleOutlined, {}),
           onClick: handleTestModal,
-          className: styles$7["button"]
+          className: styles$9["button"]
         }
       ) }),
       /* @__PURE__ */ jsxRuntimeExports.jsx(Demo, { ref: demoRef }),
