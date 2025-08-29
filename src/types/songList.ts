@@ -38,7 +38,7 @@ export interface SongListItem {
   dissname: string;
   imgurl: string;
   introduction: string;
-  listenum: number;
+  listennum: number;
   score: number;
   version: number;
 }

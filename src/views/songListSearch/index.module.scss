@@ -1,0 +1,131 @@
+@use 'sass:map';
+@use 'sass:list';
+
+.song-list-search-modal {
+  .play-count-overlay {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    min-width: 20px;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  .playlist-cover-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .playlist-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .playlist-name {
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .creator-info {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    .creator-name {
+      font-size: 12px;
+      color: #666;
+    }
+
+    .creator-qq {
+      font-size: 11px;
+      color: #999;
+    }
+
+    .introduction {
+      font-size: 11px;
+      color: #999;
+      max-width: 280px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+
+
+  .stats-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+
+    .score-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .score-value {
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+
+    .version-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .version-text {
+        font-size: 12px;
+        color: #666;
+      }
+    }
+  }
+
+  .time-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+
+    .create-time {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+    }
+
+    .commit-time {
+      font-size: 11px;
+      color: #999;
+    }
+  }
+
+  .playlist-id {
+    font-size: 12px;
+    color: #666;
+    font-family: monospace;
+    background: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background: #e6f7ff;
+      color: #1890ff;
+    }
+  }
+}
