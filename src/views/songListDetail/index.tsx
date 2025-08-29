@@ -5,39 +5,30 @@ import type { Option as SearchFormOption } from '@/components/SearchForm';
 import type { SongInfo } from '@/types/singer';
 import { uniqueArrayByKey } from '@/utils';
 import {
-    DownloadOutlined,
-    EyeOutlined,
-    FileOutlined,
-    HeartOutlined,
-    PlayCircleOutlined,
-    StarOutlined,
-    TrophyOutlined,
-    UserOutlined,
+  DownloadOutlined,
+  EyeOutlined,
+  FileOutlined,
+  HeartOutlined,
+  PauseCircleOutlined,
+  PlayCircleOutlined,
+  StarOutlined,
+  TrophyOutlined,
+  UserOutlined,
 } from '@ant-design/icons';
-import { Avatar, Button, Image, Modal, Space, Table, Tag, Tooltip, Typography } from 'antd';
+import { Avatar, Button, Image, Modal, Select, Space, Table, Tag, Tooltip, Typography } from 'antd';
 import type { ColumnType } from 'antd/es/table';
 import { groupBy } from 'lodash';
 import { forwardRef, useState, type ForwardedRef } from 'react';
-import { useFilter, useGetData, useGetSonglistDetail, useVisible } from '../../hooks';
+import { useFilter, useGetData, useGetSonglistDetail, usePlayMusic, useVisible } from '../../hooks';
 import type { Ref } from '../../hooks/useVisible';
 import styles from './index.module.scss';
+import type { FileType } from '@/constants';
 
 const { Text, Title } = Typography;
 
 interface IOpenParams {
   dissid?: string;
 }
-
-interface SearchParams {
-  pageNum: number;
-  pageSize: number;
-  keyword?: string;
-}
-
-const defaultSearchParams: SearchParams = {
-  pageNum: 0,
-  pageSize: 20,
-};
 
 const SongListDetail = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
   const { visible, open, close } = useVisible(
@@ -52,7 +43,7 @@ const SongListDetail = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
   );
 
   const [currentDissid, setCurrentDissid] = useState<string>('');
-  const [searchParams, setSearchParams] = useState<SearchParams>(defaultSearchParams);
+  const [qualityMap, setQualityMap] = useState<Record<string, keyof typeof FileType>>({});
 
   // 歌单详情hook
   const {
@@ -65,6 +56,8 @@ const SongListDetail = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
     getPlaylistSongUrl,
     playlistInfo,
   } = useGetSonglistDetail();
+  // 歌曲相关hook
+  const { play, isPlaying, pause, download } = usePlayMusic();
 
   const { data: detail, loading: detailLoading } = useGetData(getPlaylistDetail, currentDissid, {
     initialValue: {},
@@ -76,7 +69,6 @@ const SongListDetail = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
     returnFunction: () => !currentDissid || !visible,
     monitors: [currentDissid, visible],
   });
-  console.log('list', list);
 
   const { filteredList, handleFilter } = useFilter(list || [], {
     fields: {
@@ -91,34 +83,6 @@ const SongListDetail = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
       },
     },
   });
-
-  // 处理函数
-  const handlePlay = async () => {
-    if (!currentDissid) return;
-    try {
-      await playPlaylist(currentDissid);
-    } catch (error) {
-      console.error('播放歌单失败:', error);
-    }
-  };
-
-  const handleDownload = async () => {
-    if (!currentDissid) return;
-    try {
-      await downloadPlaylistSong(currentDissid);
-    } catch (error) {
-      console.error('下载歌单失败:', error);
-    }
-  };
-
-  const handleDownloadJson = async () => {
-    if (!currentDissid) return;
-    try {
-      await getPlaylistDownloadJson(currentDissid);
-    } catch (error) {
-      console.error('下载歌单JSON失败:', error);
-    }
-  };
 
   // 搜索表单配置
   const searchFormOptions: SearchFormOption[] = [
@@ -163,6 +127,29 @@ const SongListDetail = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
       })),
     },
   ];
+
+  /** 播放歌曲 */
+  const handlePlay = (record: SongInfo) => {
+    console.log('record', record);
+    if (isPlaying) {
+      pause();
+    } else {
+      play(record.mid, qualityMap[record.mid] || 128);
+    }
+  };
+  /** 下载歌曲 */
+  const [downloading, setDownloading] = useState<string>('');
+  const handleDownload = async (record: SongInfo) => {
+    try {
+      if (downloading === record.mid) return;
+      setDownloading(record.mid);
+      await download(record.mid, record.name, qualityMap[record.mid] || 128);
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      setDownloading('');
+    }
+  };
 
   // 歌曲列表列配置
   const songColumns: ColumnType<SongInfo>[] = [
@@ -214,6 +201,33 @@ const SongListDetail = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
         </Text>
       ),
     },
+    // 音质选择器
+    {
+      title: '音质',
+      key: 'quality',
+      width: 100,
+      align: 'center',
+      render: (_, record: SongInfo) => {
+        const options: { label: string; value: number | string }[] = [];
+        const { file } = record;
+        if (file.size_128mp3) options.push({ label: '128k', value: 128 });
+        if (file.size_320mp3) options.push({ label: '320k', value: 320 });
+        if (file.size_flac) options.push({ label: 'FLAC', value: 'flac' });
+        return (
+          <Select
+            options={options}
+            defaultValue={128}
+            style={{ width: '100%' }}
+            onChange={(value) => {
+              setQualityMap((prev) => ({
+                ...prev,
+                [record.mid]: value as any,
+              }));
+            }}
+          />
+        );
+      },
+    },
     {
       title: '操作',
       key: 'action',
@@ -226,8 +240,8 @@ const SongListDetail = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
             <Button
               type='link'
               size='small'
-              icon={<PlayCircleOutlined />}
-              onClick={() => console.log('播放歌曲:', record.name)}>
+              icon={isPlaying === record.mid ? <PauseCircleOutlined /> : <PlayCircleOutlined />}
+              onClick={() => handlePlay(record)}>
               播放
             </Button>
           </Tooltip>
@@ -236,7 +250,8 @@ const SongListDetail = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
               type='link'
               size='small'
               icon={<DownloadOutlined />}
-              onClick={() => console.log('下载歌曲:', record.name)}>
+              loading={downloading === record.mid}
+              onClick={() => handleDownload(record)}>
               下载
             </Button>
           </Tooltip>
@@ -307,24 +322,49 @@ const SongListDetail = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
     );
   };
 
+  /** 播放当前歌单 */
+  const handlePlayAll = async () => {
+    if (!currentDissid) return;
+    try {
+      await playPlaylist(currentDissid);
+    } catch (error) {
+      console.error('播放歌单失败:', error);
+    }
+  };
+  /** 下载当前歌单 */
+  const handleDownloadAll = async () => {
+    if (!currentDissid) return;
+    try {
+      await downloadPlaylistSong(currentDissid);
+    } catch (error) {
+      console.error('下载歌单失败:', error);
+    }
+  };
+  /** 下载当前歌单JSON */
+  const handleDownloadAllJson = async () => {
+    if (!currentDissid) return;
+    try {
+      await getPlaylistDownloadJson(currentDissid);
+    } catch (error) {
+      console.error('下载歌单JSON失败:', error);
+    }
+  };
+
   const renderFooter = () => {
     return (
       <Space>
         <Button
           type='primary'
           icon={<PlayCircleOutlined />}
-          onClick={handlePlay}
+          onClick={handlePlayAll}
           loading={isLoading}>
           播放全部
         </Button>
-        <Button icon={<DownloadOutlined />} onClick={handleDownload} loading={isLoading}>
+        <Button icon={<DownloadOutlined />} onClick={handleDownloadAll} loading={isLoading}>
           下载全部
         </Button>
-        <Button icon={<FileOutlined />} onClick={handleDownloadJson} loading={isLoading}>
+        <Button icon={<FileOutlined />} onClick={handleDownloadAllJson} loading={isLoading}>
           下载JSON
-        </Button>
-        <Button icon={<HeartOutlined />} onClick={() => console.log('收藏歌单')}>
-          收藏
         </Button>
       </Space>
     );
