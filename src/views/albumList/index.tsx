@@ -18,10 +18,11 @@ import type { ColumnType } from 'antd/es/table';
 import type { TableProps } from 'antd/lib';
 import { forwardRef, useState, type ForwardedRef } from 'react';
 import { getSingerAllAlbum } from '../../apis/singer';
-import { useFilter, useGetAlbumDetail, useGetData, useVisible } from '../../hooks';
+import { useCompRef, useFilter, useGetAlbumDetail, useGetData, useVisible } from '../../hooks';
 import type { Ref } from '../../hooks/useVisible';
 import type { AlbumInfo } from '../../types/singer';
 import styles from './index.module.scss';
+import AlbumDetail from '../albumDetail';
 
 interface SearchParams {
   pageNum: number;
@@ -52,6 +53,7 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
   );
 
   const [singerInfo, setSingerInfo] = useState<IOpenParams>({} as IOpenParams);
+  const albumDetailRef = useCompRef(AlbumDetail);
 
   // 获取专辑数据
   const { data, loading } = useGetData(getSingerAllAlbum, singerInfo.singerMid, {
@@ -468,6 +470,11 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
         loading={loading}
         scroll={{ y: 500, x: 1100 }}
         className={styles['album-table']}
+        onRow={(record) => ({
+          onClick: () => {
+            albumDetailRef.current?.open({ albummid: record.albumMid });
+          },
+        })}
         pagination={{
           showSizeChanger: true,
           showQuickJumper: true,
@@ -475,6 +482,9 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
           showTotal: (total) => `共 ${total} 张专辑`,
         }}
       />
+
+      {/* 专辑详情弹窗 */}
+      <AlbumDetail ref={albumDetailRef} />
     </Modal>
   );
 });

@@ -43,6 +43,7 @@ const SongListDetail = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
   );
 
   const [currentDissid, setCurrentDissid] = useState<string>('');
+  const [inputMid, setInputMid] = useState('');
   const [qualityMap, setQualityMap] = useState<Record<string, keyof typeof FileType>>({});
 
   // 歌单详情hook
@@ -125,6 +126,21 @@ const SongListDetail = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
         label: key,
         value: key,
       })),
+    },
+    // 歌单ID
+    {
+      label: '歌单ID',
+      type: 'input',
+      inputProps: {
+        placeholder: '请输入歌单ID',
+        value: inputMid,
+        onChange: (e) => setInputMid(e.target.value.trim()),
+        onPressEnter: () => {
+          if (inputMid) {
+            setCurrentDissid(inputMid);
+          }
+        },
+      },
     },
   ];
 

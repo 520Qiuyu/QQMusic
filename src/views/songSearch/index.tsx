@@ -2,14 +2,14 @@ import { getAlbumPicUrl } from '@/apis/album';
 import { getSearchResult } from '@/apis/search';
 import { CopyText, SearchForm } from '@/components';
 import type { Option as SearchFormOption } from '@/components/SearchForm';
-import type { Singer, SongInfo } from '@/types/search';
+import type { AlbumInfo, Singer, SongInfo } from '@/types/search';
 import {
   DownloadOutlined,
   PauseCircleOutlined,
   PlayCircleOutlined,
   UserOutlined,
 } from '@ant-design/icons';
-import { Avatar, Button, Image, Modal, Pagination, Select, Space, Table } from 'antd';
+import { Avatar, Button, Image, Modal, Pagination, Select, Space, Table, Tabs } from 'antd';
 import type { ColumnType } from 'antd/es/table';
 import { forwardRef, useState, type ForwardedRef } from 'react';
 import { useGetData, usePlayMusic, useVisible } from '../../hooks';
@@ -17,23 +17,24 @@ import type { Ref } from '../../hooks/useVisible';
 import styles from './index.module.scss';
 import { getSingerPic } from '@/apis/singer';
 import { getHighestQuality } from '@/hooks/useGetAlbumDetail';
-import type { FileType } from '@/constants';
+import type { FileType, ResourceTypeValues } from '@/constants';
 
 interface SearchParams {
   keyword?: string;
   pageNum: number;
   pageSize: number;
+  type: ResourceTypeValues;
 }
 
 const defaultSearchParams: SearchParams = {
   pageNum: 1,
   pageSize: 20,
+  type: 'song',
 };
 
 const SongSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
   const { visible, open, close } = useVisible({}, ref);
 
-  const [keyword, setKeyword] = useState('');
   const [searchParams, setSearchParams] = useState<SearchParams>(defaultSearchParams);
 
   const searchFormOptions: SearchFormOption[] = [
@@ -44,12 +45,6 @@ const SongSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
       type: 'input',
       inputProps: {
         placeholder: '请输入歌曲名称',
-        value: keyword,
-        allowClear: true,
-        onChange: (e) => {
-          console.log('e', e);
-          setKeyword(e.target.value);
-        },
       },
     },
   ];
@@ -65,8 +60,8 @@ const SongSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
   };
 
   const [qualityMap, setQualityMap] = useState<Record<string, keyof typeof FileType>>({});
-  // 表格列配置
-  const columns: ColumnType<SongInfo>[] = [
+  // 歌曲表格列配置
+  const columns_song: ColumnType<SongInfo>[] = [
     {
       title: '歌曲信息',
       dataIndex: 'songname',
@@ -198,8 +193,17 @@ const SongSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
     },
   ];
 
+  // 专辑表格列配置
+  const columns_album: ColumnType<AlbumInfo>[] = [
+    {
+      title: '专辑信息',
+      dataIndex: 'albumname',
+      width: 300,
+    },
+  ];
+
   const { data, loading } = useGetData(
-    () => getSearchResult(searchParams.keyword!, 'song', searchParams),
+    () => getSearchResult(searchParams.keyword!, searchParams.type, searchParams),
     undefined,
     {
       returnFunction: () => !searchParams.keyword,
@@ -247,16 +251,34 @@ const SongSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
         style={{ marginBottom: 16 }}
       />
 
-      {/* 歌曲列表 */}
-      <Table
-        columns={columns}
-        dataSource={data?.song?.list || []} // 这里需要添加实际的数据源
-        rowKey='songmid'
-        loading={loading}
-        scroll={{ y: 500, x: 1100 }}
-        className={styles['song-table']}
-        pagination={false}
-      />
+      <Tabs
+        activeKey={searchParams.type}
+        onChange={(key) => setSearchParams({ ...searchParams, type: key as ResourceTypeValues })}>
+        <Tabs.TabPane tab='歌曲' key='song'>
+          {/* 歌曲列表 */}
+          <Table
+            columns={columns_song}
+            dataSource={data?.song?.list || []} // 这里需要添加实际的数据源
+            rowKey='songmid'
+            loading={loading}
+            scroll={{ y: 500, x: 1100 }}
+            className={styles['song-table']}
+            pagination={false}
+          />
+        </Tabs.TabPane>
+        <Tabs.TabPane tab='专辑' key='album'>
+          {/* 专辑列表 */}
+          <Table
+            columns={columns_album}
+            dataSource={[]} // 这里需要添加实际的数据源
+            rowKey='albummid'
+            loading={loading}
+            scroll={{ y: 500, x: 1100 }}
+            className={styles['song-table']}
+            pagination={false}
+          />
+        </Tabs.TabPane>
+      </Tabs>
 
       <Pagination
         align='end'
