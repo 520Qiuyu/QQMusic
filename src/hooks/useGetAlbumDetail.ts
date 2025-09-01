@@ -98,7 +98,7 @@ export const useGetAlbumDetail = () => {
     return {
       albumName: name,
       albumCover: getAlbumPicUrl(mid),
-      songList,
+      list: songList,
     };
   };
 

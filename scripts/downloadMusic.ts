@@ -15,7 +15,7 @@ interface AlbumData {
 }
 
 /** 要下载的文件 */
-const DOWNLOAD_FILE = path.join(__dirname, 'temp歌单.json');
+const DOWNLOAD_FILE = path.join(__dirname, '过去现在时-专辑.json');
 /** 下载目录 */
 const DOWNLOAD_DIR = path.join(__dirname, '..', 'music');
 /** 并发量 */
