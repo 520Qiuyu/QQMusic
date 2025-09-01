@@ -10,7 +10,7 @@ interface SongData {
 
 interface AlbumData {
   albumName: string;
-  ablumCover: string;
+  albumCover: string;
   list: SongData[];
 }
 
@@ -82,9 +82,9 @@ async function downloadFile(url: string, filePath: string): Promise<void> {
  */
 async function downloadAlbumCover(albumData: AlbumData, albumDir: string): Promise<void> {
   if (!DOWNLOAD_COVER) return;
-  if (albumData.ablumCover) {
+  if (albumData.albumCover) {
     const coverPath = path.join(albumDir, 'cover.jpg');
-    await downloadFile(albumData.ablumCover, coverPath);
+    await downloadFile(albumData.albumCover, coverPath);
     console.log(`专辑封面下载完成: ${coverPath}`);
   }
 }
