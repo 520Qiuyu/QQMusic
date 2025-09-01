@@ -12792,7 +12792,7 @@
       return {
         albumName: name,
         albumCover: getAlbumPicUrl(mid),
-        songList
+        list: songList
       };
     };
     const playAlbum = async (mid) => {
