@@ -224,7 +224,7 @@ const SongSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
   const handleDownload = (record: SongInfo) => {
     // 先挑选音质
     const quality = getHighestQuality(record);
-    download(record.songmid, record.songname, qualityMap[record.songmid] || quality);
+    download(record.songmid, record.songname, qualityMap[record.songmid] || quality,record.albummid);
   };
 
   const renderTitle = () => {

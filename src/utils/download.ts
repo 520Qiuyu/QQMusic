@@ -1,12 +1,22 @@
 /**
+ * 获取文件blob
+ * @param url 文件地址
+ * @returns blob
+ */
+export const getFileBlob = async (url: string) => {
+  const response = await fetch(url);
+  const blob = await response.blob();
+  return { blob, response };
+};
+
+/**
  * 通过blob方式下载文件（适用于需要指定文件名的场景）
  * @param url 文件地址
  * @param name 文件名
  */
 export const downloadWithFileName = async (url: string, name: string) => {
   try {
-    const response = await fetch(url);
-    const blob = await response.blob();
+    const { blob, response } = await getFileBlob(url);
     const blobUrl = window.URL.createObjectURL(blob);
 
     // 获取url的后缀
@@ -99,4 +109,20 @@ export const downloadAsJson = (
     console.error('JSON数据下载失败:', error);
     return false;
   }
+};
+
+/**
+ * 直接下载文件
+ * @param file 文件
+ * @param name 文件名
+ */
+export const downloadFileWithBlob = (file: Blob, name: string) => {
+  const blobUrl = window.URL.createObjectURL(file);
+  const a = document.createElement('a');
+  a.href = blobUrl;
+  a.download = name;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  window.URL.revokeObjectURL(blobUrl);
 };

@@ -11,13 +11,30 @@ import {
 } from '@/apis/singer';
 import { getSongInfo, getSongLyric, getSongPlayUrl } from '@/apis/song';
 import { getSongList, getSongListCategory, getSongListDetail } from '@/apis/songList';
-import { AreaList, GenreList, ResourceType, SexList, type ResourceTypeValues } from '@/constants';
+import {
+  AreaList,
+  FlacTagList,
+  GenreList,
+  ResourceType,
+  SexList,
+  type ResourceTypeValues,
+} from '@/constants';
 import { useVisible } from '@/hooks';
 import type { Ref } from '@/hooks/useVisible';
+import { embedFlacPicture, readAllFlacTag, writeFlacTag, type FlacTags } from '@/libs/flac';
 import { Button, Form, Input, Modal, Select, Space } from 'antd';
-import dayjs from 'dayjs';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/atom-one-dark.css';
 import type { ForwardedRef } from 'react';
-import { forwardRef, useState } from 'react';
+import { forwardRef, useEffect, useMemo, useState } from 'react';
+import styles from './index.module.scss';
+import { downloadDirectly, downloadFileWithBlob } from '@/utils/download';
+import { msgError, msgSuccess } from '@/utils/modal';
+
+hljs.configure({
+  classPrefix: 'hljs-',
+  languages: ['json'],
+});
 
 const TestModal = forwardRef((props, ref: ForwardedRef<Ref>) => {
   const { visible, open, close } = useVisible({}, ref);
@@ -258,8 +275,81 @@ const TestModal = forwardRef((props, ref: ForwardedRef<Ref>) => {
     }
   };
 
+  // 测试metaflac.wasm
+  // 待修改的文件
+  const [testMetaflacWasmFile, setTestMetaflacWasmFile] = useState<File>();
+  // 待修改的文件的标签
+  const [fileTags, setFileTags] = useState<FlacTags>();
+  /** 高亮显示代码 */
+  const highlightedCode = useMemo(() => {
+    if (!fileTags) return '';
+    return hljs.highlight(JSON.stringify(fileTags, null, 2), { language: 'json' }).value;
+  }, [fileTags]);
+  useEffect(() => {
+    const asyncFn = async () => {
+      if (!testMetaflacWasmFile) return;
+      const tags = await readAllFlacTag(testMetaflacWasmFile);
+      setFileTags(tags);
+    };
+    asyncFn();
+  }, [testMetaflacWasmFile]);
+  /** 下载最新文件 */
+  const handleDownloadLatestFile = async () => {
+    if (!testMetaflacWasmFile) return;
+    downloadFileWithBlob(testMetaflacWasmFile, testMetaflacWasmFile.name);
+  };
+
+  const [writeFlacTagParams, setWriteFlacTagParams] = useState<{
+    tagName: keyof FlacTags;
+    tagValue: string;
+  }>({
+    tagName: 'title',
+    tagValue: '',
+  });
+  /** 修改标签 */
+  const handleWriteFlacTag = async () => {
+    if (!testMetaflacWasmFile) return;
+    const { tagName, tagValue } = writeFlacTagParams;
+    if (!tagName || !tagValue) return msgError('请输入标签值');
+    const outputFile = await writeFlacTag(testMetaflacWasmFile, tagName, tagValue);
+    console.log('outputFile', outputFile);
+    msgSuccess('修改标签成功');
+    // downloadFileWithBlob(outputFile!, testMetaflacWasmFile.name);
+    setTestMetaflacWasmFile(
+      new File([outputFile!], testMetaflacWasmFile.name, { type: 'audio/flac' }),
+    );
+  };
+  /** 嵌入图片 */
+  const coverInputRef = useRef<HTMLInputElement>(null);
+  const handleEmbedFlacPicture = async () => {
+    if (!testMetaflacWasmFile) return msgError('请先选择文件');
+    if (!coverInputRef.current?.files?.[0]) return msgError('请选择图片');
+    const outputFile = await embedFlacPicture(
+      testMetaflacWasmFile,
+      coverInputRef.current?.files?.[0]!,
+    );
+    console.log('outputFile', outputFile);
+    msgSuccess('嵌入图片成功');
+    downloadFileWithBlob(outputFile!, testMetaflacWasmFile.name);
+    setTestMetaflacWasmFile(
+      new File([outputFile!], testMetaflacWasmFile.name, { type: 'audio/flac' }),
+    );
+  };
+
   return (
-    <Modal title='测试Modal' open={visible} onCancel={close} width={1000} footer={null} centered>
+    <Modal
+      title='测试Modal'
+      open={visible}
+      onCancel={close}
+      width={1000}
+      footer={null}
+      centered
+      styles={{
+        body: {
+          maxHeight: '80vh',
+          overflowY: 'auto',
+        },
+      }}>
       <Form>
         {/* 测试获取歌手列表 */}
         <Form.Item label='获取歌手列表'>
@@ -429,12 +519,55 @@ const TestModal = forwardRef((props, ref: ForwardedRef<Ref>) => {
               onChange={(value) =>
                 setGetSearchResultParams({ ...getSearchResultParams, type: value })
               }
-              allowClear 
+              allowClear
             />
             <Button type='primary' onClick={handleGetSearchResult} loading={getSearchResultLoading}>
               获取搜索结果
             </Button>
           </Space>
+        </Form.Item>
+
+        {/* 测试metaflac-wasm */}
+        <Form.Item label='测试metaflac.wasm'>
+          <Space direction='vertical'>
+            {/* 选择以及下载最新文件 */}
+            <Space>
+              <input type='file' onChange={(e) => setTestMetaflacWasmFile(e.target.files?.[0])} />
+              <Button type='primary' onClick={handleDownloadLatestFile}>
+                下载最新文件
+              </Button>
+            </Space>
+            {/* 修改Tag */}
+            <Space>
+              <Select
+                options={FlacTagList}
+                style={{ width: 150 }}
+                value={writeFlacTagParams.tagName}
+                onChange={(value) =>
+                  setWriteFlacTagParams({ ...writeFlacTagParams, tagName: value })
+                }
+              />
+              <Input
+                placeholder='请输入标签值'
+                style={{ width: 150 }}
+                value={writeFlacTagParams.tagValue}
+                onChange={(e) =>
+                  setWriteFlacTagParams({ ...writeFlacTagParams, tagValue: e.target.value })
+                }
+              />
+              <Button type='primary' onClick={handleWriteFlacTag}>
+                写入标签
+              </Button>
+            </Space>
+            {/* 嵌入图片 */}
+            <Space>
+              <input type='file' ref={coverInputRef} accept='png,jpg,jpeg' />
+              <Button type='primary' onClick={handleEmbedFlacPicture}>
+                嵌入图片
+              </Button>
+            </Space>
+          </Space>
+          <code className={styles['code']} dangerouslySetInnerHTML={{ __html: highlightedCode }} />
         </Form.Item>
       </Form>
     </Modal>

@@ -1,6 +1,8 @@
+import { getAlbumPicUrl } from '@/apis/album';
 import { getSongLyric, getSongPlayUrl } from '@/apis/song';
 import type { FileType } from '@/constants';
-import { downloadWithFileName } from '@/utils/download';
+import { embedFlacPicture, readAllFlacTag, writeFlacTag } from '@/libs/flac';
+import { downloadFileWithBlob, downloadWithFileName, getFileBlob } from '@/utils/download';
 import { useEffect, useRef, useState } from 'react';
 
 const audio = new Audio();
@@ -55,10 +57,35 @@ export const usePlayMusic = () => {
     }
   };
 
-  const download = async (mid: string, name: string, quality: keyof typeof FileType = 'flac') => {
+  const download = async (
+    mid: string,
+    name: string,
+    quality: keyof typeof FileType = 'flac',
+    albumMid?: string,
+  ) => {
     try {
       const url = await getUrl(mid, quality);
-      await downloadWithFileName(url.replace('http://', 'https://'), name);
+      console.log(`当前下载歌曲${name},音质为${quality},链接为${url}`);
+      const { blob, response } = await getFileBlob(url.replace('http://', 'https://'));
+      let newBlob = blob;
+      // 写入歌词
+      const lyric = await getLyric(mid);
+      if (lyric) {
+        const outputFile = await writeFlacTag(blob, 'lyrics', lyric);
+        if (outputFile) {
+          newBlob = outputFile;
+        }
+      }
+      // 嵌入封面
+      if (albumMid) {
+        const cover = getAlbumPicUrl(albumMid);
+        const coverFile = await getFileBlob(cover);
+        const outputFile = await embedFlacPicture(newBlob, coverFile.blob);
+        if (outputFile) {
+          newBlob = outputFile;
+        }
+      }
+      downloadFileWithBlob(newBlob, name);
     } catch (error) {
       console.log('error', error);
     }

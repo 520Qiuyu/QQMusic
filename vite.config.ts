@@ -55,4 +55,7 @@ export default defineConfig({
   server: {
     open: false,
   },
+  optimizeDeps: {
+    exclude: ['metaflac.wasm'],
+  },
 });

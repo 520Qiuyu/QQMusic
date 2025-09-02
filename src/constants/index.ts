@@ -1,6 +1,6 @@
 import { getCookie } from '@/utils';
 
-export const mapToList = (map: Record<string, number>) => {
+export const mapToList = (map: Record<string, number | string>) => {
   return Object.entries(map).map(([key, value]) => ({
     label: key,
     value,
@@ -92,3 +92,18 @@ export const ResourceType = {
 
 export type ResourceTypeKeys = keyof typeof ResourceType;
 export type ResourceTypeValues = (typeof ResourceType)[ResourceTypeKeys];
+
+export const FlacTag = {
+  标题: 'title',
+  艺术家: 'artist',
+  专辑: 'album',
+  年份: 'year',
+  流派: 'genre',
+  评论: 'comment',
+  音轨: 'track',
+  碟片: 'disc',
+  作曲家: 'composer',
+  作词家: 'lyricist',
+  歌词: 'lyrics',
+} as const;
+export const FlacTagList = mapToList(FlacTag);

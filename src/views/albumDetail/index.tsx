@@ -77,6 +77,7 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
   /** 播放歌曲 */
   const handlePlay = (record: AlbumSongInfo) => {
     console.log('record', record);
+    console.log('qualityMap[record.songmid]', qualityMap[record.songmid]);
     if (isPlaying) {
       pause();
     } else {
@@ -89,7 +90,13 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
     try {
       if (downloading === record.songmid) return;
       setDownloading(record.songmid);
-      await download(record.songmid, record.songname, qualityMap[record.songmid] || 128);
+      console.log('qualityMap[record.songmid]', qualityMap[record.songmid]);
+      await download(
+        record.songmid,
+        record.songname,
+        qualityMap[record.songmid] || 128,
+        record.albummid,
+      );
     } catch (error) {
       console.log('error', error);
     } finally {

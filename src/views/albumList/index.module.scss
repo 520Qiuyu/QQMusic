@@ -146,6 +146,7 @@ $stat-colors: (
     .album-details {
       flex: 1;
       min-width: 0;
+      cursor: pointer;
 
       .album-name {
         font-weight: 500;

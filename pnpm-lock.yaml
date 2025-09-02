@@ -23,9 +23,15 @@ dependencies:
   dayjs:
     specifier: ^1.11.13
     version: 1.11.13
+  highlight.js:
+    specifier: ^11.11.1
+    version: 11.11.1
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
+  metaflac.wasm:
+    specifier: ^0.4.0
+    version: 0.4.0
   nanoid:
     specifier: ^5.1.5
     version: 5.1.5
@@ -1506,6 +1512,11 @@ packages:
       is-glob: 4.0.3
     dev: true
 
+  /highlight.js@11.11.1:
+    resolution: {integrity: sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==}
+    engines: {node: '>=12.0.0'}
+    dev: false
+
   /htmlparser2@10.0.0:
     resolution: {integrity: sha512-TwAZM+zE5Tq3lrEHvOlvwgj1XLWQCtaaibSN11Q+gGBAS7Y1uZSWwXXRe4iF6OXnaq1riyQAPFOBtYc77Mxq0g==}
     dependencies:
@@ -1641,6 +1652,10 @@ packages:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
     dev: true
+
+  /metaflac.wasm@0.4.0:
+    resolution: {integrity: sha512-0gWqGY+vI7CvUz5cxKdFm59DUYT0nEBdVtjGFLRKjgq+izHFuHGENTcGiW1gd+OGWOIU0zPotO1pPq4n3V8S9g==}
+    dev: false
 
   /micromatch@4.0.8:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}

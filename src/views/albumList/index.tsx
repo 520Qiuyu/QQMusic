@@ -7,13 +7,12 @@ import { downloadAsJson } from '@/utils/download';
 import { msgError, msgLoading, msgSuccess, msgWarning } from '@/utils/modal';
 import {
   DownloadOutlined,
-  LoadingOutlined,
   PauseCircleOutlined,
   PlayCircleOutlined,
   SaveOutlined,
-  UserOutlined,
+  UserOutlined
 } from '@ant-design/icons';
-import { App, Avatar, Button, Image, Modal, Space, Table, Tag, Typography, message } from 'antd';
+import { Avatar, Button, Image, Modal, Space, Table, Tag, Typography, message } from 'antd';
 import type { ColumnType } from 'antd/es/table';
 import type { TableProps } from 'antd/lib';
 import { forwardRef, useState, type ForwardedRef } from 'react';
@@ -21,8 +20,8 @@ import { getSingerAllAlbum } from '../../apis/singer';
 import { useCompRef, useFilter, useGetAlbumDetail, useGetData, useVisible } from '../../hooks';
 import type { Ref } from '../../hooks/useVisible';
 import type { AlbumInfo } from '../../types/singer';
-import styles from './index.module.scss';
 import AlbumDetail from '../albumDetail';
+import styles from './index.module.scss';
 
 interface SearchParams {
   pageNum: number;
@@ -173,7 +172,9 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
               fallback='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAADDCAYAAADQvc6UAAABRWlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSSwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAwSDCIMogwMCcmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis7PPOq3QdDFcvjV3jOD1boQVTPQrgSkktTgbSf4A4LbmgqISBgTEFyFYuLykAsTuAbJEioKOA7DkgdjqEvQHEToKwj4DVhAQ5A9k3gGyB5IxEoBmML4BsnSQk8XQkNtReEOBxcfXxUQg1Mjc0dyHgXNJBSWpFCYh2zi+oLMpMzyhRcASGUqqCZ16yno6CkYGRAQMDKMwhqj/fAIcloxgHQqxAjIHBEugw5sUIsSQpBobtQPdLciLEVJYzMPBHMDBsayhILEqEO4DxG0txmrERhM29nYGBddr//5/DGRjYNRkY/l7////39v///y4Dmn+LgeHANwDrkl1AuO+pmgAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAwqADAAQAAAABAAAAwwAAAAD9b/HnAAAHlklEQVR4Ae3dP3Ik1RnG4W+FgYxN'
             />
           </div>
-          <div className={styles['album-details']}>
+          <div
+            className={styles['album-details']}
+            onClick={() => albumDetailRef.current?.open({ albummid: record.albumMid })}>
             <div className={styles['album-name']} title={text}>
               {text}
             </div>
@@ -470,11 +471,6 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
         loading={loading}
         scroll={{ y: 500, x: 1100 }}
         className={styles['album-table']}
-        onRow={(record) => ({
-          onClick: () => {
-            albumDetailRef.current?.open({ albummid: record.albumMid });
-          },
-        })}
         pagination={{
           showSizeChanger: true,
           showQuickJumper: true,
