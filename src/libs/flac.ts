@@ -227,13 +227,18 @@ export const embedFlacPicture = async (file: Blob, picture: Blob): Promise<Blob 
 /** 同时写入歌词和封面 */
 export const writeFlacTagAndPicture = async (
   file: Blob,
-  tagName: keyof FlacTags,
-  tagValue: string,
-  picture: Blob,
+  tagName?: keyof FlacTags,
+  tagValue?: string,
+  picture?: Blob,
 ) => {
   try {
-    let outputFile = await writeFlacTag(file, tagName, tagValue);
-    outputFile = await embedFlacPicture(outputFile!, picture);
+    let outputFile = file;
+    if (tagName && tagValue) {
+      outputFile = (await writeFlacTag(file, tagName, tagValue))!;
+    }
+    if (picture) {
+      outputFile = (await embedFlacPicture(outputFile!, picture))!;
+    }
     return outputFile;
   } catch (error) {
     console.error('同时写入歌词和封面失败:', error);

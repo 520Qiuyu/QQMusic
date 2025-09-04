@@ -1,8 +1,8 @@
 import { getAlbumPicUrl } from '@/apis/album';
 import { getSongLyric, getSongPlayUrl } from '@/apis/song';
 import type { FileType } from '@/constants';
-import { embedFlacPicture, readAllFlacTag, writeFlacTag } from '@/libs/flac';
-import { downloadFileWithBlob, downloadWithFileName, getFileBlob } from '@/utils/download';
+import { writeFlacTagAndPicture } from '@/libs/flac';
+import { downloadFileWithBlob, getFileBlob } from '@/utils/download';
 import { useEffect, useRef, useState } from 'react';
 
 const audio = new Audio();
@@ -66,26 +66,38 @@ export const usePlayMusic = () => {
     try {
       const url = await getUrl(mid, quality);
       console.log(`当前下载歌曲${name},音质为${quality},链接为${url}`);
+      /** 获取文件后缀 */
+      const finalExt = url.split('?')[0].split('.').pop();
       const { blob, response } = await getFileBlob(url.replace('http://', 'https://'));
-      let newBlob = blob;
-      // 写入歌词
+      /** 输出文件 */
+      let outputFile: Blob = blob;
+      /** 获取歌词 */
       const lyric = await getLyric(mid);
-      if (lyric) {
-        const outputFile = await writeFlacTag(blob, 'lyrics', lyric);
-        if (outputFile) {
-          newBlob = outputFile;
-        }
-      }
-      // 嵌入封面
+      /** 获取封面 */
+      let coverBlob: Blob;
+      // 如果有专辑mid，则获取封面
       if (albumMid) {
         const cover = getAlbumPicUrl(albumMid);
-        const coverFile = await getFileBlob(cover);
-        const outputFile = await embedFlacPicture(newBlob, coverFile.blob);
-        if (outputFile) {
-          newBlob = outputFile;
-        }
+        const { blob, response } = await getFileBlob(cover.replace('http://', 'https://'));
+        coverBlob = blob;
       }
-      downloadFileWithBlob(newBlob, name);
+
+      console.log('blob', blob);
+      // 根据音频格式读取标签信息
+
+      switch (finalExt) {
+        case 'flac':
+          outputFile = await writeFlacTagAndPicture(blob, 'lyrics', lyric, coverBlob!);
+          break;
+       /*  case 'mp3':
+          outputFile = await writeFlacTagAndPicture(blob, 'lyrics', lyric, coverBlob!);
+          break; */
+        default:
+          console.log('当前格式不支持');
+          break;
+      }
+
+      downloadFileWithBlob(outputFile, name);
     } catch (error) {
       console.log('error', error);
     }

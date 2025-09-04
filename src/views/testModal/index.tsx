@@ -30,6 +30,8 @@ import { forwardRef, useEffect, useMemo, useState } from 'react';
 import styles from './index.module.scss';
 import { downloadDirectly, downloadFileWithBlob } from '@/utils/download';
 import { msgError, msgSuccess } from '@/utils/modal';
+import { embedMp3Picture, readAllMp3Tag, writeMp3Tag, type Mp3Tags } from '@/libs/mp3';
+import { readMp3Metadata } from '@/libs/mp3MusicMeta';
 
 hljs.configure({
   classPrefix: 'hljs-',
@@ -279,17 +281,32 @@ const TestModal = forwardRef((props, ref: ForwardedRef<Ref>) => {
   // 待修改的文件
   const [testMetaflacWasmFile, setTestMetaflacWasmFile] = useState<File>();
   // 待修改的文件的标签
-  const [fileTags, setFileTags] = useState<FlacTags>();
+  const [fileTags, setFileTags] = useState<FlacTags | Mp3Tags>();
   /** 高亮显示代码 */
   const highlightedCode = useMemo(() => {
     if (!fileTags) return '';
     return hljs.highlight(JSON.stringify(fileTags, null, 2), { language: 'json' }).value;
   }, [fileTags]);
+  /** 读取文件标签 */
   useEffect(() => {
     const asyncFn = async () => {
       if (!testMetaflacWasmFile) return;
-      const tags = await readAllFlacTag(testMetaflacWasmFile);
-      setFileTags(tags);
+      console.log('testMetaflacWasmFile', testMetaflacWasmFile);
+      const finalExt = testMetaflacWasmFile.name.split('.').pop();
+      let tags: FlacTags | Mp3Tags;
+      switch (finalExt) {
+        case 'flac':
+          tags = await readAllFlacTag(testMetaflacWasmFile);
+          setFileTags(tags);
+          break;
+        case 'mp3':
+          tags = await readMp3Metadata(testMetaflacWasmFile);
+          // setFileTags(tags);
+          break;
+        default:
+          console.log('当前格式不支持');
+          break;
+      }
     };
     asyncFn();
   }, [testMetaflacWasmFile]);
@@ -309,31 +326,57 @@ const TestModal = forwardRef((props, ref: ForwardedRef<Ref>) => {
   /** 修改标签 */
   const handleWriteFlacTag = async () => {
     if (!testMetaflacWasmFile) return;
+    const finalExt = testMetaflacWasmFile.name.split('.').pop();
     const { tagName, tagValue } = writeFlacTagParams;
+    console.log('writeFlacTagParams', writeFlacTagParams);
     if (!tagName || !tagValue) return msgError('请输入标签值');
-    const outputFile = await writeFlacTag(testMetaflacWasmFile, tagName, tagValue);
+    let outputFile: Blob = testMetaflacWasmFile;
+    switch (finalExt) {
+      case 'flac':
+        outputFile = (await writeFlacTag(testMetaflacWasmFile, tagName, tagValue))!;
+        break;
+      case 'mp3':
+        outputFile = (await writeMp3Tag(testMetaflacWasmFile, tagName, tagValue))!;
+        break;
+    }
+
     console.log('outputFile', outputFile);
     msgSuccess('修改标签成功');
     // downloadFileWithBlob(outputFile!, testMetaflacWasmFile.name);
-    setTestMetaflacWasmFile(
-      new File([outputFile!], testMetaflacWasmFile.name, { type: 'audio/flac' }),
-    );
+    setTestMetaflacWasmFile(new File([outputFile!], testMetaflacWasmFile.name));
   };
   /** 嵌入图片 */
   const coverInputRef = useRef<HTMLInputElement>(null);
   const handleEmbedFlacPicture = async () => {
     if (!testMetaflacWasmFile) return msgError('请先选择文件');
+    const finalExt = testMetaflacWasmFile.name.split('.').pop();
+    let outputFile: Blob = testMetaflacWasmFile;
     if (!coverInputRef.current?.files?.[0]) return msgError('请选择图片');
-    const outputFile = await embedFlacPicture(
-      testMetaflacWasmFile,
-      coverInputRef.current?.files?.[0]!,
-    );
+    switch (finalExt) {
+      case 'flac':
+        outputFile = (await embedFlacPicture(
+          testMetaflacWasmFile,
+          coverInputRef.current?.files?.[0]!,
+        ))!;
+        break;
+      case 'mp3':
+        outputFile = (await embedMp3Picture(
+          testMetaflacWasmFile,
+          coverInputRef.current?.files?.[0]!,
+        ))!;
+        break;
+    }
+
     console.log('outputFile', outputFile);
     msgSuccess('嵌入图片成功');
     downloadFileWithBlob(outputFile!, testMetaflacWasmFile.name);
-    setTestMetaflacWasmFile(
-      new File([outputFile!], testMetaflacWasmFile.name, { type: 'audio/flac' }),
-    );
+    setTestMetaflacWasmFile(new File([outputFile!], testMetaflacWasmFile.name));
+  };
+
+  const handleReadMp3Metadata = async () => {
+    if (!testMetaflacWasmFile) return;
+    const tags = await readMp3Metadata(testMetaflacWasmFile);
+    console.log('tags', tags);
   };
 
   return (
@@ -535,6 +578,10 @@ const TestModal = forwardRef((props, ref: ForwardedRef<Ref>) => {
               <input type='file' onChange={(e) => setTestMetaflacWasmFile(e.target.files?.[0])} />
               <Button type='primary' onClick={handleDownloadLatestFile}>
                 下载最新文件
+              </Button>
+              {/* 使用music-metadata读取文件 */}
+              <Button type='primary' onClick={handleReadMp3Metadata}>
+                使用music-metadata读取文件
               </Button>
             </Space>
             {/* 修改Tag */}
