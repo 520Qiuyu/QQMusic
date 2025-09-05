@@ -1,10 +1,10 @@
 import {
   BookOutlined,
   ContainerOutlined,
-  CustomerServiceOutlined,
   InfoCircleOutlined,
+  SearchOutlined,
   UnorderedListOutlined,
-  UserOutlined
+  UserOutlined,
 } from '@ant-design/icons';
 import { Button, Tooltip } from 'antd';
 import { useCompRef } from '../../hooks';
@@ -123,21 +123,21 @@ const ButtonGroup = () => {
       <Tooltip title={'歌曲查询'} placement='left'>
         <Button
           type='primary'
-          icon={<CustomerServiceOutlined />}
+          icon={<SearchOutlined />}
           onClick={handleSongSearch}
           className={styles['button']}
         />
       </Tooltip>
 
       {/* demo */}
-      <Tooltip title={'demo'} placement='left'>
+      {/* <Tooltip title={'demo'} placement='left'>
         <Button
           type='primary'
           icon={<InfoCircleOutlined />}
           onClick={handleDemo}
           className={styles['button']}
         />
-      </Tooltip>
+      </Tooltip> */}
 
       {/* testModal */}
       <Tooltip title={'testModal'} placement='left'>
