@@ -39,8 +39,8 @@ export default defineConfig({
 
       build: {
         externalGlobals: [
-          ['react', cdn.jsdelivr('React', 'umd/react.production.min.js')],
-          ['react-dom', cdn.jsdelivr('ReactDOM', 'umd/react-dom.production.min.js')],
+          ['react', cdn.jsdelivr('React', 'react@19.1.1/cjs/react.production.min.js')],
+          ['react-dom', cdn.jsdelivr('ReactDOM', 'react-dom@19.1.1/index.min.js')],
           ['antd', cdn.jsdelivr('antd', 'dist/antd.min.js')],
           ['@ant-design/icons', cdn.jsdelivr('icons', 'dist/index.umd.min.js')],
         ],
