@@ -13,6 +13,7 @@ import {
 import { Button, Image, Space, Table } from 'antd';
 import type { ColumnType } from 'antd/es/table';
 import styles from '../index.module.scss';
+import { getAlbumPicUrl } from '@/apis/album';
 
 interface AlbumTabProps {
   data: AlbumItem[];
@@ -101,7 +102,7 @@ const AlbumTab = ({ data, loading }: AlbumTabProps) => {
       render: (text, record) => (
         <Space size='middle' className={styles['song-info']}>
           <div className={styles['song-cover']}>
-            <Image src={record.albumPic} />
+            <Image src={getAlbumPicUrl(record.albumMID)} />
           </div>
           <div
             className={styles['song-details']}
