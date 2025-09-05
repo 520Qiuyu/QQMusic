@@ -1,5 +1,5 @@
 import { getAlbumInfo, getAlbumPicUrl } from '@/apis/album';
-import { getSearchResult } from '@/apis/search';
+import { getSearchResult, getWebSearchResult } from '@/apis/search';
 import {
   getSimilarSinger,
   getSingerAlbum,
@@ -274,6 +274,21 @@ const TestModal = forwardRef((props, ref: ForwardedRef<Ref>) => {
       console.log('error', error);
     } finally {
       setGetSearchResultLoading(false);
+    }
+  };
+  const [getWebSearchResultLoading, setGetWebSearchResultLoading] = useState(false);
+  const handleGetWebSearchResult = async () => {
+    try {
+      setGetWebSearchResultLoading(true);
+      const res = await getWebSearchResult(
+        getSearchResultParams.keyword,
+        getSearchResultParams.type,
+      );
+      console.log('res', res);
+    } catch (error) {
+      console.log('error', error);
+    } finally {
+      setGetWebSearchResultLoading(false);
     }
   };
 
@@ -566,6 +581,12 @@ const TestModal = forwardRef((props, ref: ForwardedRef<Ref>) => {
             />
             <Button type='primary' onClick={handleGetSearchResult} loading={getSearchResultLoading}>
               获取搜索结果
+            </Button>
+            <Button
+              type='primary'
+              onClick={handleGetWebSearchResult}
+              loading={getWebSearchResultLoading}>
+              获取web搜索结果
             </Button>
           </Space>
         </Form.Item>
