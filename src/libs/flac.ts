@@ -188,7 +188,7 @@ export const writeFlacTag = async (
     return file;
   } catch (error) {
     console.error('给 FLAC 写标签失败:', error);
-    return file;
+    throw new Error('给 FLAC 写标签失败');
   }
 };
 
@@ -220,7 +220,7 @@ export const embedFlacPicture = async (file: Blob, picture: Blob): Promise<Blob 
     return file;
   } catch (error) {
     console.error('给 FLAC 嵌入图片失败:', error);
-    return undefined;
+    throw new Error('给 FLAC 嵌入图片失败');
   }
 };
 
@@ -239,7 +239,7 @@ export const writeFlacTagAndPicture = async (
     if (picture) {
       outputFile = (await embedFlacPicture(outputFile!, picture))!;
     }
-    return outputFile;
+    return outputFile || file;
   } catch (error) {
     console.error('同时写入歌词和封面失败:', error);
     return file;
