@@ -242,6 +242,6 @@ export const writeFlacTagAndPicture = async (
     return outputFile;
   } catch (error) {
     console.error('同时写入歌词和封面失败:', error);
-    throw error;
+    return file;
   }
 };
