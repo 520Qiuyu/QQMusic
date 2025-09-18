@@ -315,8 +315,8 @@ const TestModal = forwardRef((props, ref: ForwardedRef<Ref>) => {
           setFileTags(tags);
           break;
         case 'mp3':
-          tags = await readMp3Metadata(testMetaflacWasmFile);
-          // setFileTags(tags);
+          tags = await readAllMp3Tag(testMetaflacWasmFile);
+          setFileTags(tags);
           break;
         default:
           console.log('当前格式不支持');

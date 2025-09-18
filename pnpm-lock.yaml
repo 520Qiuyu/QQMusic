@@ -8,6 +8,9 @@ dependencies:
   '@ant-design/icons':
     specifier: ^5.5.2
     version: 5.6.1(react-dom@19.1.1)(react@19.1.1)
+  '@gplane/id3':
+    specifier: github:520Qiuyu/id3
+    version: github.com/520Qiuyu/id3/9ee4e3e387e1e34ebe05c076e22d75d3fed4555e
   '@types/lodash':
     specifier: ^4.17.20
     version: 4.17.20
@@ -2796,3 +2799,9 @@ packages:
   /yallist@3.1.1:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
     dev: true
+
+  github.com/520Qiuyu/id3/9ee4e3e387e1e34ebe05c076e22d75d3fed4555e:
+    resolution: {tarball: https://codeload.github.com/520Qiuyu/id3/tar.gz/9ee4e3e387e1e34ebe05c076e22d75d3fed4555e}
+    name: '@gplane/id3'
+    version: 0.0.0
+    dev: false

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.5.2",
+    "@gplane/id3": "github:520Qiuyu/id3",
     "@types/lodash": "^4.17.20",
     "ahooks": "^3.9.3",
     "antd": "^5.22.4",
