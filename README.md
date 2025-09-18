@@ -16,7 +16,7 @@
 ## 🚀 使用方法
 
 1. 安装油猴插件（Tampermonkey）
-2. 安装本脚本 [![安装脚本](https://img.shields.io/badge/-%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC-blue)](https://raw.githubusercontent.com/your-username/QQMusic/main/dist/qqmusic.user.js)
+2. 安装本脚本 [![安装脚本](https://img.shields.io/badge/-%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC-blue)](https://raw.githubusercontent.com/520Qiuyu/QQMusic/main/dist/qqmusic.user.js)
 3. 打开QQ音乐网页版 - https://y.qq.com/
 4. 在页面右下角找到功能按钮组
 5. 点击相应功能按钮进行数据查询

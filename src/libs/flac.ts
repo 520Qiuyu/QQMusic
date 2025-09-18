@@ -185,10 +185,10 @@ export const writeFlacTag = async (
       return bufferToBlob(outputFile);
     }
 
-    return undefined;
+    return file;
   } catch (error) {
     console.error('给 FLAC 写标签失败:', error);
-    return undefined;
+    throw new Error('给 FLAC 写标签失败');
   }
 };
 
@@ -208,7 +208,7 @@ export const embedFlacPicture = async (file: Blob, picture: Blob): Promise<Blob 
     );
 
     if (!checkMetaflacSuccess(result, '给 FLAC 嵌入图片')) {
-      return undefined;
+      return file;
     }
 
     const outputFile = result.files.get('file.flac');
@@ -217,10 +217,10 @@ export const embedFlacPicture = async (file: Blob, picture: Blob): Promise<Blob 
       return bufferToBlob(outputFile);
     }
 
-    return undefined;
+    return file;
   } catch (error) {
     console.error('给 FLAC 嵌入图片失败:', error);
-    return undefined;
+    throw new Error('给 FLAC 嵌入图片失败');
   }
 };
 
@@ -239,9 +239,9 @@ export const writeFlacTagAndPicture = async (
     if (picture) {
       outputFile = (await embedFlacPicture(outputFile!, picture))!;
     }
-    return outputFile;
+    return outputFile || file;
   } catch (error) {
     console.error('同时写入歌词和封面失败:', error);
-    throw error;
+    return file;
   }
 };
