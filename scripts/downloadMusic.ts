@@ -15,9 +15,9 @@ interface AlbumData {
 }
 
 /** 要下载的文件 */
-const DOWNLOAD_FILE = path.join(__dirname, '王蓝茵-专辑.json');
+const DOWNLOAD_FILE = path.join(__dirname, '林俊杰-专辑.json');
 /** 下载目录 */
-const DOWNLOAD_DIR = path.join(__dirname, '..', 'music/王蓝茵');
+const DOWNLOAD_DIR = path.join(__dirname, '..', 'music/林俊杰');
 /** 并发量 */
 export const DOWNLOAD_LIMIT = 6;
 /** 是否下载封面 */
