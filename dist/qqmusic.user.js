@@ -7,7 +7,7 @@
 // @require    https://cdn.jsdelivr.net/npm/dayjs@1.11.13/dayjs.min.js
 // @require    https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js
 // @require    https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js
-// @require    https://cdn.jsdelivr.net/npm/antd@5.27.4/dist/antd.min.js
+// @require    https://cdn.jsdelivr.net/npm/antd@5.27.6/dist/antd.min.js
 // @require    https://cdn.jsdelivr.net/npm/@ant-design/icons@5.6.1/dist/index.umd.min.js
 // @require    https://cdn.jsdelivr.net/npm/systemjs@6.15.1/dist/system.min.js
 // @require    https://cdn.jsdelivr.net/npm/systemjs@6.15.1/dist/extras/named-register.min.js
