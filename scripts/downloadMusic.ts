@@ -15,15 +15,23 @@ interface AlbumData {
 }
 
 /** 要下载的文件 */
-const DOWNLOAD_FILE = path.join(__dirname, '林俊杰-专辑.json');
+const DOWNLOAD_FILE = path.join(__dirname, '王靖雯-专辑.json');
 /** 下载目录 */
-const DOWNLOAD_DIR = path.join(__dirname, '..', 'music/林俊杰');
+const DOWNLOAD_DIR = path.join(__dirname, '..', 'music/王靖雯');
 /** 并发量 */
 export const DOWNLOAD_LIMIT = 6;
 /** 是否下载封面 */
 const DOWNLOAD_COVER = true;
 /** 是否下载歌词 */
 const DOWNLOAD_LYRICS = true;
+/** 是否去掉伴奏 */
+const REMOVE_ACCOMPANY = true;
+/** 是否去掉演唱会 */
+const REMOVE_CONCERT = false;
+/** 是否去掉片段版 */
+const REMOVE_FRAGMENT = true;
+/** 是否去掉dj */
+const REMOVE_DJ = true;
 
 /**
  * 过滤文件名中的非法字符
@@ -146,7 +154,23 @@ async function downloadAlbum(albumData: AlbumData, baseDir: string): Promise<voi
       console.log(`\n处理歌曲: ${song.songName}`);
 
       // 去掉伴奏
-      if (song.songName.includes('伴奏')) return;
+      if (
+        REMOVE_ACCOMPANY &&
+        ['伴奏', '伴奏版', '伴奏带'].some((item) => song.songName.includes(item))
+      )
+        return console.log(`去掉伴奏: ${song.songName}`);
+      // 去掉演唱会
+      if (REMOVE_CONCERT && ['演唱会', 'Live', 'live'].some((item) => song.songName.includes(item)))
+        return console.log(`去掉演唱会: ${song.songName}`);
+      // 去掉片段版
+      if (
+        REMOVE_FRAGMENT &&
+        ['片段版', '片段版', '片段带'].some((item) => song.songName.includes(item))
+      )
+        return console.log(`去掉片段版: ${song.songName}`);
+      // 去掉dj
+      if (REMOVE_DJ && ['DJ', 'dj'].some((item) => song.songName.includes(item)))
+        return console.log(`去掉dj: ${song.songName}`);
 
       // 并行下载音频和歌词
       await Promise.all([downloadAudio(song, albumDir), downloadLyrics(song, albumDir)]);
