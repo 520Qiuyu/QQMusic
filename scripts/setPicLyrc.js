@@ -3,7 +3,7 @@ const { traverseDir, getFileType, getFiles } = require("./utils/file");
 const { embedFlacLyric, embedFlacCover } = require("./utils/music");
 
 // 音乐文件夹路径
-const musicPath = path.resolve(__dirname, "../music/王靖雯");
+const musicPath = path.resolve(__dirname, "../music/权志龙");
 
 // 封面类型
 const coverTypes = [".png", ".jpeg", ".jpg"];

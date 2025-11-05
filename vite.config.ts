@@ -54,6 +54,7 @@ export default defineConfig({
   },
   server: {
     open: false,
+    port: 8799,
   },
   optimizeDeps: {
     exclude: ['metaflac.wasm'],

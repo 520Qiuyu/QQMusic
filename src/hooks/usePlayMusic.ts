@@ -97,7 +97,7 @@ export const usePlayMusic = () => {
           break;
       }
 
-      downloadFileWithBlob(outputFile, name);
+      downloadFileWithBlob(outputFile, `${name}.${finalExt}`);
     } catch (error) {
       console.log('error', error);
     }
