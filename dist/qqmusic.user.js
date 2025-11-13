@@ -7,7 +7,7 @@
 // @require    https://cdn.jsdelivr.net/npm/dayjs@1.11.13/dayjs.min.js
 // @require    https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js
 // @require    https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js
-// @require    https://cdn.jsdelivr.net/npm/antd@5.28.0/dist/antd.min.js
+// @require    https://cdn.jsdelivr.net/npm/antd@5.28.1/dist/antd.min.js
 // @require    https://cdn.jsdelivr.net/npm/@ant-design/icons@5.6.1/dist/index.umd.min.js
 // @require    https://cdn.jsdelivr.net/npm/systemjs@6.15.1/dist/system.min.js
 // @require    https://cdn.jsdelivr.net/npm/systemjs@6.15.1/dist/extras/named-register.min.js
@@ -27,7 +27,7 @@ System.set("user:react", (()=>{const _=React;('default' in _)||(_.default=_);ret
 System.set("user:react-dom", (()=>{const _=ReactDOM;('default' in _)||(_.default=_);return _})());
 System.set("user:@ant-design/icons", (()=>{const _=icons;('default' in _)||(_.default=_);return _})());
 
-System.register("./__entry.js", ['./__monkey.entry-N3TMrARI.js'], (function (exports, module) {
+System.register("./__entry.js", ['./__monkey.entry-BZrUn6nH.js'], (function (exports, module) {
 	'use strict';
 	return {
 		setters: [null],
@@ -39,7 +39,7 @@ System.register("./__entry.js", ['./__monkey.entry-N3TMrARI.js'], (function (exp
 	};
 }));
 
-System.register("./__monkey.entry-N3TMrARI.js", ['react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./__monkey.entry-BZrUn6nH.js", ['react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var forwardRef, useState, useMemo, useEffect, useRef, require$$0, useImperativeHandle, useCallback, useLayoutEffect, Typography, Modal, Input, Button, Table, Form, Space, DatePicker, Pagination, Select, Tabs, ConfigProvider, Image, Avatar, Tooltip, Tag, message$1, App$1, TreeSelect, require$$0$1, SearchOutlined, DownloadOutlined, FileOutlined, PauseCircleOutlined, PlayCircleOutlined, UserOutlined, HeartOutlined, SaveOutlined, EyeOutlined, StarOutlined, TrophyOutlined, ClockCircleOutlined, InfoCircleOutlined, CopyOutlined, UnorderedListOutlined, ContainerOutlined, BookOutlined;
   return {
@@ -112,7 +112,7 @@ System.register("./__monkey.entry-N3TMrARI.js", ['react', 'antd', 'react-dom', '
         y: textDecode
       });
 
-      const d=new Set;const importCSS = async e=>{d.has(e)||(d.add(e),(t=>{typeof GM_addStyle=="function"?GM_addStyle(t):document.head.appendChild(document.createElement("style")).append(t);})(e));};
+      const d=new Set;const importCSS = async e=>{d.has(e)||(d.add(e),(t=>{typeof GM_addStyle=="function"?GM_addStyle(t):(document.head||document.documentElement).appendChild(document.createElement("style")).append(t);})(e));};
 
       importCSS(' @charset "UTF-8";._album-detail-modal_orws2_1 ._modal-header_orws2_1{display:flex;flex-direction:column;gap:8px}._album-detail-modal_orws2_1 ._album-basic-info_orws2_6{display:flex;align-items:center;gap:12px}._album-detail-modal_orws2_1 ._album-info_orws2_11{display:flex;flex-direction:column;gap:4px}._album-detail-modal_orws2_1 ._album-name_orws2_16{margin:0}._album-detail-modal_orws2_1 ._album-meta_orws2_19{display:flex;align-items:center;gap:8px}._album-detail-modal_orws2_1 ._song-table_orws2_24{margin-top:8px}._album-detail-modal_orws2_1 ._song-name_orws2_27{max-width:260px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._album-detail-modal_orws2_1 ._artist-item_orws2_33{display:inline-flex;align-items:center}._album-detail-modal_orws2_1 ._artist-name_orws2_37{font-size:12px;color:#595959}._album-detail-modal_orws2_1 ._artist-separator_orws2_41{margin:0 4px;color:#bfbfbf}._album-detail-modal_orws2_1 ._song-duration_orws2_45{font-variant-numeric:tabular-nums}._copy-text_1att4_1{display:flex;align-items:center;width:100%}._copy-text_1att4_1 ._text_1att4_6{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._copy-text_1att4_1 ._copy-btn_1att4_12{flex-shrink:0;padding:0}._text-overflow-show-tips-container_btabq_1{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:text}._select-search_19wb1_1 .ant-select:first-child .ant-select-selector{border-radius:32px 0 0 32px!important}._select-search_19wb1_1>:last-child{border-radius:0 32px 32px 0!important}._search-form_10eg9_1{margin-bottom:-16px}._search-form_10eg9_1 .ant-form-item{margin-bottom:16px}._search-form_10eg9_1 input.ant-input,._search-form_10eg9_1 .ant-input-affix-wrapper,._search-form_10eg9_1 .ant-picker,._search-form_10eg9_1 .ant-calendar-picker-input,._search-form_10eg9_1 .ant-select-selector,._search-form_10eg9_1 .ant-select-multiple .ant-select-selection-item{border-radius:32px}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1{width:100%}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4{display:flex;align-items:center;justify-content:space-between;padding-right:30px}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10{display:flex;align-items:center}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14{display:flex;flex-direction:column;align-items:center;padding:8px 16px;border-radius:8px;margin-left:12px;box-shadow:0 2px 8px #0000001a;transition:all .3s ease;position:relative;overflow:hidden}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(1){background:linear-gradient(135deg,#667eea,#764ba2);box-shadow:0 2px 8px #667eea4d}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(1):hover{box-shadow:0 4px 12px #667eea66}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(2){background:linear-gradient(135deg,#f093fb,#f5576c);box-shadow:0 2px 8px #f093fb4d}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(2):hover{box-shadow:0 4px 12px #f093fb66}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(3){background:linear-gradient(135deg,#4facfe,#00f2fe);box-shadow:0 2px 8px #4facfe4d}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(3):hover{box-shadow:0 4px 12px #4facfe66}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(1):hover{transform:translateY(-2px) scale(1.02)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(2):hover{transform:translateY(-2px) scale(1.02)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:nth-child(3):hover{transform:translateY(-2px) scale(1.02)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14:hover{transform:translateY(-2px)}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59{opacity:.7}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59:nth-child(1) ._stat-value_jnpqx_62{animation:_pulse_jnpqx_1 1.5s ease-in-out infinite;animation-delay:.2s}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59:nth-child(2) ._stat-value_jnpqx_62{animation:_pulse_jnpqx_1 1.5s ease-in-out infinite;animation-delay:.4s}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14._loading_jnpqx_59:nth-child(3) ._stat-value_jnpqx_62{animation:_pulse_jnpqx_1 1.5s ease-in-out infinite;animation-delay:.6s}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14 ._stat-label_jnpqx_74{font-size:12px;color:#fffc;font-weight:500;margin-bottom:2px}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14 ._stat-value_jnpqx_62{font-size:16px;color:#fff;font-weight:600;line-height:1;transition:all .3s ease}._hot-song-modal_jnpqx_1 ._modal-title_jnpqx_1 ._title-content_jnpqx_4 ._title-stats_jnpqx_10 ._stat-item_jnpqx_14 ._stat-value_jnpqx_62:hover{transform:scale(1.1)}._hot-song-modal_jnpqx_1 ._singer-info-display_jnpqx_90{margin-bottom:16px;padding:16px;background-color:#f5f5f5;border-radius:6px;border-left:4px solid #1890ff}._hot-song-modal_jnpqx_1 ._song-table_jnpqx_97{margin-bottom:16px}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._album-cover_jnpqx_100{width:40px;height:40px;border-radius:4px;overflow:hidden;flex-shrink:0}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._album-cover_jnpqx_100 img{width:100%;height:100%;object-fit:cover;border-radius:4px}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._song-details_jnpqx_113{flex:1;min-width:0}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._song-details_jnpqx_113 ._song-name_jnpqx_117{font-weight:500;color:#262626;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:150px}._hot-song-modal_jnpqx_1 ._song-info_jnpqx_100 ._song-details_jnpqx_113 ._song-album_jnpqx_126{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:150px}._hot-song-modal_jnpqx_1 ._singer-info_jnpqx_90 ._singer-name_jnpqx_134{font-weight:500;color:#262626;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._hot-song-modal_jnpqx_1 ._singer-info_jnpqx_90 ._singer-id_jnpqx_142{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._hot-song-modal_jnpqx_1 ._song-id-text_jnpqx_150,._hot-song-modal_jnpqx_1 ._song-mid-text_jnpqx_151{font-family:Monaco,Menlo,Ubuntu Mono,monospace;font-size:12px;color:#595959;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100px;display:inline-block}._hot-song-modal_jnpqx_1 ._footer_jnpqx_161{display:flex;align-items:center;justify-content:flex-end;margin-top:16px}._hot-song-modal_jnpqx_1 ._footer_jnpqx_161 ._selected-count_jnpqx_167{font-size:14px;color:#595959;margin-right:auto}@keyframes _pulse_jnpqx_1{0%,to{opacity:1}50%{opacity:.5}}._album-list-modal_1fb5b_1 ._modal-title_1fb5b_1{width:100%}._album-list-modal_1fb5b_1 ._modal-title_1fb5b_1 ._title-content_1fb5b_4{display:flex;align-items:center;justify-content:space-between;padding-right:30px}._album-list-modal_1fb5b_1 ._modal-title_1fb5b_1 ._title-content_1fb5b_4 ._title-stats_1fb5b_10{display:flex;align-items:center}._album-list-modal_1fb5b_1 ._modal-title_1fb5b_1 ._title-content_1fb5b_4 ._title-stats_1fb5b_10 ._stat-item_1fb5b_14{display:flex;flex-direction:column;align-items:center;padding:8px 16px;border-radius:8px;margin-left:12px;box-shadow:0 2px 8px #0000001a;transition:all .3s ease;position:relative;overflow:hidden}._album-list-modal_1fb5b_1 ._modal-title_1fb5b_1 ._title-content_1fb5b_4 ._title-stats_1fb5b_10 ._stat-item_1fb5b_14:nth-child(1){background:linear-gradient(135deg,#667eea,#764ba2);box-shadow:0 2px 8px #667eea4d}._album-list-modal_1fb5b_1 ._modal-title_1fb5b_1 ._title-content_1fb5b_4 ._title-stats_1fb5b_10 ._stat-item_1fb5b_14:nth-child(1):hover{box-shadow:0 4px 12px #667eea66}._album-list-modal_1fb5b_1 ._modal-title_1fb5b_1 ._title-content_1fb5b_4 ._title-stats_1fb5b_10 ._stat-item_1fb5b_14:nth-child(2){background:linear-gradient(135deg,#f093fb,#f5576c);box-shadow:0 2px 8px #f093fb4d}._album-list-modal_1fb5b_1 ._modal-title_1fb5b_1 ._title-content_1fb5b_4 ._title-stats_1fb5b_10 ._stat-item_1fb5b_14:nth-child(2):hover{box-shadow:0 4px 12px #f093fb66}._album-list-modal_1fb5b_1 ._modal-title_1fb5b_1 ._title-content_1fb5b_4 ._title-stats_1fb5b_10 ._stat-item_1fb5b_14:nth-child(1):hover{transform:translateY(-2px) scale(1.02)}._album-list-modal_1fb5b_1 ._modal-title_1fb5b_1 ._title-content_1fb5b_4 ._title-stats_1fb5b_10 ._stat-item_1fb5b_14:nth-child(2):hover{transform:translateY(-2px) scale(1.02)}._album-list-modal_1fb5b_1 ._modal-title_1fb5b_1 ._title-content_1fb5b_4 ._title-stats_1fb5b_10 ._stat-item_1fb5b_14:hover{transform:translateY(-2px)}._album-list-modal_1fb5b_1 ._modal-title_1fb5b_1 ._title-content_1fb5b_4 ._title-stats_1fb5b_10 ._stat-item_1fb5b_14._loading_1fb5b_49{opacity:.7}._album-list-modal_1fb5b_1 ._modal-title_1fb5b_1 ._title-content_1fb5b_4 ._title-stats_1fb5b_10 ._stat-item_1fb5b_14._loading_1fb5b_49:nth-child(1) ._stat-value_1fb5b_52{animation:_pulse_1fb5b_1 1.5s ease-in-out infinite;animation-delay:.2s}._album-list-modal_1fb5b_1 ._modal-title_1fb5b_1 ._title-content_1fb5b_4 ._title-stats_1fb5b_10 ._stat-item_1fb5b_14._loading_1fb5b_49:nth-child(2) ._stat-value_1fb5b_52{animation:_pulse_1fb5b_1 1.5s ease-in-out infinite;animation-delay:.4s}._album-list-modal_1fb5b_1 ._modal-title_1fb5b_1 ._title-content_1fb5b_4 ._title-stats_1fb5b_10 ._stat-item_1fb5b_14 ._stat-label_1fb5b_60{font-size:12px;color:#fffc;font-weight:500;margin-bottom:2px}._album-list-modal_1fb5b_1 ._modal-title_1fb5b_1 ._title-content_1fb5b_4 ._title-stats_1fb5b_10 ._stat-item_1fb5b_14 ._stat-value_1fb5b_52{font-size:16px;color:#fff;font-weight:600;line-height:1;transition:all .3s ease}._album-list-modal_1fb5b_1 ._modal-title_1fb5b_1 ._title-content_1fb5b_4 ._title-stats_1fb5b_10 ._stat-item_1fb5b_14 ._stat-value_1fb5b_52:hover{transform:scale(1.1)}._album-list-modal_1fb5b_1 ._album-table_1fb5b_76{margin-bottom:16px}._album-list-modal_1fb5b_1 ._album-info_1fb5b_79 ._album-cover_1fb5b_79{width:60px;height:60px;border-radius:6px;overflow:hidden;flex-shrink:0}._album-list-modal_1fb5b_1 ._album-info_1fb5b_79 ._album-cover_1fb5b_79 img{width:100%;height:100%;object-fit:cover;border-radius:6px}._album-list-modal_1fb5b_1 ._album-info_1fb5b_79 ._album-details_1fb5b_92{flex:1;min-width:0;cursor:pointer}._album-list-modal_1fb5b_1 ._album-info_1fb5b_79 ._album-details_1fb5b_92 ._album-name_1fb5b_97{font-weight:500;color:#262626;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:180px}._album-list-modal_1fb5b_1 ._album-info_1fb5b_79 ._album-details_1fb5b_92 ._album-trans-name_1fb5b_106{font-size:12px;color:#8c8c8c;margin-bottom:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:180px}._album-list-modal_1fb5b_1 ._album-info_1fb5b_79 ._album-details_1fb5b_92 ._album-type_1fb5b_115{margin-top:4px}._album-list-modal_1fb5b_1 ._singer-info_1fb5b_118 ._singer-name_1fb5b_118{font-weight:500;color:#262626;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._album-list-modal_1fb5b_1 ._singer-info_1fb5b_118 ._singer-id_1fb5b_126{font-size:12px;color:#8c8c8c;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._album-list-modal_1fb5b_1 ._album-id-text_1fb5b_134,._album-list-modal_1fb5b_1 ._album-mid-text_1fb5b_135{font-family:Monaco,Menlo,Ubuntu Mono,monospace;font-size:12px;color:#595959;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100px;display:inline-block}._album-list-modal_1fb5b_1 ._publish-date_1fb5b_145{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px;display:inline-block}._album-list-modal_1fb5b_1 ._footer_1fb5b_152{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-top:1px solid #f0f0f0}._album-list-modal_1fb5b_1 ._footer_1fb5b_152 ._selected-count_1fb5b_159{font-size:14px;color:#666}._album-list-modal_1fb5b_1 ._footer_1fb5b_152 ._selected-count_1fb5b_159 ._selected-info_1fb5b_163{color:#1890ff;margin-left:8px;font-weight:500}@keyframes _pulse_1fb5b_1{0%,to{opacity:1}50%{opacity:.5}}._singer-search-modal_1jeib_2 .ant-modal-body{display:flex;flex-direction:column;gap:16px}._singer-info_1jeib_8{display:flex;align-items:center}._singer-info_1jeib_8 ._singer-avatar_1jeib_12{border:3px solid #f0f0f0;box-shadow:0 2px 8px #0000001a;transition:all .3s ease}._singer-info_1jeib_8 ._singer-avatar_1jeib_12:hover{border-color:#31c27c;transform:scale(1.05)}._singer-info_1jeib_8 ._singer-details_1jeib_21{display:flex;flex-direction:column;gap:4px}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-name_1jeib_26{font-size:16px;font-weight:600;color:#262626;line-height:1.4}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-country_1jeib_32{font-size:13px;color:#666;display:flex;align-items:center;gap:4px}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-country_1jeib_32:before{content:"\u{1F4CD}";font-size:12px}._singer-info_1jeib_8 ._singer-details_1jeib_21 ._singer-id_1jeib_43{font-size:12px;color:#999;font-family:Courier New,monospace;background:#f5f5f5;padding:2px 6px;border-radius:4px;display:inline-block;width:fit-content}._singer-id-text_1jeib_54{font-family:Courier New,monospace;font-size:13px;color:#666;background:#f8f9fa;padding:4px 8px;border-radius:4px;border:1px solid #e9ecef}._singer-mid-text_1jeib_64{font-family:Courier New,monospace;font-size:12px;color:#999;background:#f5f5f5;padding:4px 8px;border-radius:4px;border:1px solid #e9ecef;word-break:break-all}._info-tag_1jeib_75{border-radius:6px;font-size:12px;padding:4px 8px;font-weight:500;border:none;box-shadow:0 1px 3px #0000001a}._info-tag_1jeib_75._ant-tag-blue_1jeib_83{background:linear-gradient(135deg,#e6f7ff,#bae7ff);color:#1890ff}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._modal-title_1p6k4_1{margin-bottom:16px}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._playlist-basic-info_1p6k4_4{display:flex;align-items:flex-start;gap:16px;padding:16px;background:#fafafa;border-radius:8px;margin-bottom:16px}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._playlist-basic-info_1p6k4_4 ._playlist-info_1p6k4_13{flex:1;display:flex;flex-direction:column;gap:8px}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._playlist-basic-info_1p6k4_4 ._playlist-info_1p6k4_13 ._playlist-name_1p6k4_19{margin:0;color:#262626}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._playlist-basic-info_1p6k4_4 ._playlist-info_1p6k4_13 ._creator-info_1p6k4_23{display:flex;align-items:center;gap:8px}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._playlist-basic-info_1p6k4_4 ._playlist-info_1p6k4_13 ._creator-info_1p6k4_23 ._creator-name_1p6k4_28{font-size:14px;color:#666}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._playlist-basic-info_1p6k4_4 ._playlist-info_1p6k4_13 ._playlist-stats_1p6k4_32{display:flex;align-items:center;gap:16px}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._playlist-basic-info_1p6k4_4 ._playlist-info_1p6k4_13 ._playlist-stats_1p6k4_32 ._ant-typography_1p6k4_37{font-size:12px;color:#999}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._playlist-basic-info_1p6k4_4 ._playlist-info_1p6k4_13 ._playlist-desc_1p6k4_41{margin-top:8px}._song-list-detail-modal_1p6k4_1 ._modal-header_1p6k4_1 ._playlist-basic-info_1p6k4_4 ._playlist-info_1p6k4_13 ._playlist-desc_1p6k4_41 ._description-text_1p6k4_44{font-size:12px;line-height:1.4;color:#666;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis}._song-list-detail-modal_1p6k4_1 ._action-buttons_1p6k4_54{margin-top:24px;padding:16px;background:#f8f9fa;border-radius:8px;text-align:center}._song-list-detail-modal_1p6k4_1 ._song-list-section_1p6k4_61 ._ant-table_1p6k4_61 ._ant-table-thead_1p6k4_61>tr>th{background:#fafafa;font-weight:500}._song-list-detail-modal_1p6k4_1 ._song-list-section_1p6k4_61 ._ant-table_1p6k4_61 ._ant-table-tbody_1p6k4_65>tr:hover>td{background:#f5f5f5}._song-list-detail-modal_1p6k4_1 ._song-info_1p6k4_68{display:flex;flex-direction:column;gap:4px}._song-list-detail-modal_1p6k4_1 ._song-info_1p6k4_68 ._song-name_1p6k4_73{font-weight:500;font-size:14px;color:#262626}._song-list-detail-modal_1p6k4_1 ._song-info_1p6k4_68 ._song-artist_1p6k4_78{font-size:12px;color:#666;display:flex;align-items:center;flex-wrap:wrap;gap:4px}._song-list-detail-modal_1p6k4_1 ._song-info_1p6k4_68 ._song-artist_1p6k4_78 ._artist-item_1p6k4_86{display:flex;align-items:center}._song-list-detail-modal_1p6k4_1 ._song-info_1p6k4_68 ._song-artist_1p6k4_78 ._artist-item_1p6k4_86 ._artist-name_1p6k4_90{font-size:12px;color:#666}._song-list-detail-modal_1p6k4_1 ._song-info_1p6k4_68 ._song-artist_1p6k4_78 ._artist-item_1p6k4_86 ._artist-separator_1p6k4_94{margin:0 4px;color:#999;font-size:10px}._song-list-detail-modal_1p6k4_1 ._album-name_1p6k4_99{font-size:12px;color:#666;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-list-detail-modal_1p6k4_1 ._song-duration_1p6k4_107{font-family:monospace;font-size:12px;color:#999}._song-list-search-modal_1h6z1_1 ._play-count-overlay_1h6z1_1{position:absolute;bottom:2px;right:2px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;font-size:10px;padding:2px 6px;border-radius:4px;font-weight:500;display:flex;align-items:center;gap:2px;min-width:20px;justify-content:center;line-height:1}._song-list-search-modal_1h6z1_1 ._playlist-cover-container_1h6z1_19{position:relative;display:inline-block}._song-list-search-modal_1h6z1_1 ._playlist-info_1h6z1_23{display:flex;flex-direction:column;gap:4px}._song-list-search-modal_1h6z1_1 ._playlist-info_1h6z1_23 ._playlist-name_1h6z1_28{font-weight:500;font-size:14px}._song-list-search-modal_1h6z1_1 ._playlist-info_1h6z1_23 ._creator-info_1h6z1_32{display:flex;align-items:center;gap:4px;font-size:12px;color:#666}._song-list-search-modal_1h6z1_1 ._playlist-info_1h6z1_23 ._creator-name_1h6z1_39{font-size:12px;color:#666}._song-list-search-modal_1h6z1_1 ._playlist-info_1h6z1_23 ._creator-qq_1h6z1_43{font-size:11px;color:#999}._song-list-search-modal_1h6z1_1 ._playlist-info_1h6z1_23 ._introduction_1h6z1_47{font-size:11px;color:#999;max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}._song-list-search-modal_1h6z1_1 ._stats-info_1h6z1_55{display:flex;flex-direction:column;gap:4px;align-items:center}._song-list-search-modal_1h6z1_1 ._stats-info_1h6z1_55 ._score-item_1h6z1_61{display:flex;align-items:center;gap:8px}._song-list-search-modal_1h6z1_1 ._stats-info_1h6z1_55 ._score-item_1h6z1_61 ._score-value_1h6z1_66{font-size:14px;font-weight:500}._song-list-search-modal_1h6z1_1 ._stats-info_1h6z1_55 ._version-item_1h6z1_70{display:flex;align-items:center;gap:8px}._song-list-search-modal_1h6z1_1 ._stats-info_1h6z1_55 ._version-item_1h6z1_70 ._version-text_1h6z1_75{font-size:12px;color:#666}._song-list-search-modal_1h6z1_1 ._time-info_1h6z1_79{display:flex;flex-direction:column;gap:4px;align-items:center}._song-list-search-modal_1h6z1_1 ._time-info_1h6z1_79 ._create-time_1h6z1_85{display:flex;align-items:center;gap:4px;font-size:12px}._song-list-search-modal_1h6z1_1 ._time-info_1h6z1_79 ._commit-time_1h6z1_91{font-size:11px;color:#999}._song-list-search-modal_1h6z1_1 ._playlist-id_1h6z1_95{font-size:12px;color:#666;font-family:monospace;background:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-list-search-modal_1h6z1_1 ._playlist-id_1h6z1_95:hover{background:#e6f7ff;color:#1890ff}._song-search-modal_15iqn_1 ._modal-title_15iqn_1{display:flex;align-items:center;justify-content:space-between}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._modal-title_15iqn_1 ._title-content_15iqn_6 ._title-text_15iqn_11{font-size:16px;font-weight:600;color:#333}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16{display:flex;align-items:center;gap:12px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-cover_15iqn_21{width:60px;height:60px;border-radius:8px;overflow:hidden;background-color:#f5f5f5;display:flex;align-items:center;justify-content:center}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-name_15iqn_36{font-size:14px;font-weight:500;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-info_15iqn_16 ._song-details_15iqn_31 ._song-album_15iqn_46{font-size:12px;color:#666;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:200px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55{display:flex;flex-direction:column;gap:4px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._singer-info_15iqn_55 ._singer-name_15iqn_60{font-size:14px;color:#333;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._duration_15iqn_69{font-size:14px;color:#666;font-family:monospace}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75{font-size:12px;color:#666;font-family:monospace;background-color:#f5f5f5;padding:2px 6px;border-radius:4px;cursor:pointer}._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-id-text_15iqn_74:hover,._song-search-modal_15iqn_1 ._song-table_15iqn_16 ._song-mid-text_15iqn_75:hover{background-color:#e6f7ff;color:#1890ff}._code_lguxt_1{display:block;margin-top:10px;padding:10px;border-radius:5px;white-space:pre-wrap;word-wrap:break-word;word-break:break-all;overflow-x:auto;font-size:12px;color:#333;line-height:1.5;font-family:monospace;background:#282c34;box-shadow:var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)),var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)),var(--tw-shadow)}._button-group_y8t3i_1{position:fixed;right:20px;top:50%;width:44px;max-height:400px;overflow-y:auto;background:#fff3;border-radius:22px;box-shadow:0 2px 10px #0006;padding:10px 0;z-index:999;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}._button-group_y8t3i_1::-webkit-scrollbar{width:0;background:transparent}._button-group_y8t3i_1 .ant-btn{width:36px;height:36px;padding:0;border:none;background:transparent;display:flex;align-items:center;justify-content:center;margin:4px auto;transition:all .3s}._button-group_y8t3i_1 .ant-btn:hover{background:#c20c0c1a;color:#fff;transform:scale(1.1)}._button-group_y8t3i_1 .ant-btn:active{transform:scale(.95)}._button-group_y8t3i_1 .ant-btn .anticon{font-size:20px;color:#666}._button-group_y8t3i_1 .ant-btn:hover .anticon{color:#fff}._button-group_y8t3i_1 .ant-tooltip .ant-tooltip-inner{background-color:#000c;border-radius:4px;font-size:12px;padding:4px 8px}._button-group_y8t3i_1 .ant-tooltip .ant-tooltip-arrow-content{background-color:#000c} ');
 
@@ -978,7 +978,7 @@ notice: 0,
       function requireDayjs_min() {
         if (hasRequiredDayjs_min) return dayjs_min$1.exports;
         hasRequiredDayjs_min = 1;
-        (function(module, exports) {
+        (function(module, exports$1) {
           !(function(t, e) {
             module.exports = e();
           })(dayjs_min, (function() {
@@ -6438,7 +6438,7 @@ jsxRuntimeExports.jsx(Item, { children: jsxRuntimeExports.jsx(Button, { onClick:
       function requireLodash() {
         if (hasRequiredLodash) return lodash$1.exports;
         hasRequiredLodash = 1;
-        (function(module, exports) {
+        (function(module, exports$1) {
           (function() {
             var undefined$1;
             var VERSION = "4.17.21";
@@ -6764,7 +6764,7 @@ jsxRuntimeExports.jsx(Item, { children: jsxRuntimeExports.jsx(Button, { onClick:
             var freeGlobal = typeof commonjsGlobal == "object" && commonjsGlobal && commonjsGlobal.Object === Object && commonjsGlobal;
             var freeSelf = typeof self == "object" && self && self.Object === Object && self;
             var root = freeGlobal || freeSelf || Function("return this")();
-            var freeExports = exports && !exports.nodeType && exports;
+            var freeExports = exports$1 && !exports$1.nodeType && exports$1;
             var freeModule = freeExports && true && module && !module.nodeType && module;
             var moduleExports = freeModule && freeModule.exports === freeExports;
             var freeProcess = moduleExports && freeGlobal.process;
@@ -66654,6 +66654,24 @@ get(_array, _off) {
         UINT8,
         Uint8ArrayType
       }, Symbol.toStringTag, { value: "Module" })));
+      var ch2 = {};
+      var wk = (function(c, id, msg, transfer, cb) {
+        var w = new Worker(ch2[id] || (ch2[id] = URL.createObjectURL(new Blob([
+          c + ';addEventListener("error",function(e){e=e.error;postMessage({$e$:[e.message,e.code,e.stack]})})'
+        ], { type: "text/javascript" }))));
+        w.onmessage = function(e) {
+          var d = e.data, ed = d.$e$;
+          if (ed) {
+            var err2 = new Error(ed[0]);
+            err2["code"] = ed[1];
+            err2.stack = ed[2];
+            cb(err2, null);
+          } else
+            cb(null, d);
+        };
+        w.postMessage(msg, transfer);
+        return w;
+      });
       var u8 = Uint8Array, u16 = Uint16Array, i32 = Int32Array;
       var fleb = new u8([
         0,
@@ -66760,7 +66778,7 @@ get(_array, _off) {
           le[i] = le[i - 1] + l[i - 1] << 1;
         }
         var co;
-        {
+        if (r) {
           co = new u16(1 << mb);
           var rvb = 15 - mb;
           for (i = 0; i < s; ++i) {
@@ -66771,6 +66789,13 @@ get(_array, _off) {
               for (var m = v | (1 << r_12) - 1; v <= m; ++v) {
                 co[rev[v] >> rvb] = sv;
               }
+            }
+          }
+        } else {
+          co = new u16(s);
+          for (i = 0; i < s; ++i) {
+            if (cd[i]) {
+              co[i] = rev[le[cd[i] - 1]++] >> 15 - cd[i];
             }
           }
         }
@@ -66788,8 +66813,8 @@ get(_array, _off) {
       var fdt = new u8(32);
       for (var i = 0; i < 32; ++i)
         fdt[i] = 5;
-      var flrm = hMap(flt, 9);
-      var fdrm = hMap(fdt, 5);
+      var flrm = hMap(flt, 9, 1);
+      var fdrm = hMap(fdt, 5, 1);
       var max = function(a) {
         var m = a[0];
         for (var i = 1; i < a.length; ++i) {
@@ -66810,6 +66835,8 @@ get(_array, _off) {
         return (p + 7) / 8 | 0;
       };
       var slc = function(v, s, e) {
+        if (s == null || s < 0)
+          s = 0;
         if (e == null || e > v.length)
           e = v.length;
         return new u8(v.subarray(s, e));
@@ -66840,7 +66867,7 @@ get(_array, _off) {
         return e;
       };
       var inflt = function(dat, st, buf, dict) {
-        var sl = dat.length, dl = 0;
+        var sl = dat.length, dl = dict ? dict.length : 0;
         if (!sl || st.f && !st.l)
           return buf || new u8(0);
         var noBuf = !buf;
@@ -66888,7 +66915,7 @@ get(_array, _off) {
               }
               pos += hcLen * 3;
               var clb = max(clt), clbmsk = (1 << clb) - 1;
-              var clm = hMap(clt, clb);
+              var clm = hMap(clt, clb, 1);
               for (var i = 0; i < tl; ) {
                 var r = clm[bits(dat, pos, clbmsk)];
                 pos += r & 15;
@@ -66910,8 +66937,8 @@ get(_array, _off) {
               var lt = ldt.subarray(0, hLit), dt = ldt.subarray(hLit);
               lbt = max(lt);
               dbt = max(dt);
-              lm = hMap(lt, lbt);
-              dm = hMap(dt, dbt);
+              lm = hMap(lt, lbt, 1);
+              dm = hMap(dt, dbt, 1);
             } else
               err(1);
             if (pos > tbts) {
@@ -66981,6 +67008,117 @@ get(_array, _off) {
         return bt != buf.length && noBuf ? slc(buf, 0, bt) : buf.subarray(0, bt);
       };
       var et = new u8(0);
+      var mrg = function(a, b) {
+        var o = {};
+        for (var k in a)
+          o[k] = a[k];
+        for (var k in b)
+          o[k] = b[k];
+        return o;
+      };
+      var wcln = function(fn, fnStr, td2) {
+        var dt = fn();
+        var st = fn.toString();
+        var ks = st.slice(st.indexOf("[") + 1, st.lastIndexOf("]")).replace(/\s+/g, "").split(",");
+        for (var i = 0; i < dt.length; ++i) {
+          var v = dt[i], k = ks[i];
+          if (typeof v == "function") {
+            fnStr += ";" + k + "=";
+            var st_1 = v.toString();
+            if (v.prototype) {
+              if (st_1.indexOf("[native code]") != -1) {
+                var spInd = st_1.indexOf(" ", 8) + 1;
+                fnStr += st_1.slice(spInd, st_1.indexOf("(", spInd));
+              } else {
+                fnStr += st_1;
+                for (var t in v.prototype)
+                  fnStr += ";" + k + ".prototype." + t + "=" + v.prototype[t].toString();
+              }
+            } else
+              fnStr += st_1;
+          } else
+            td2[k] = v;
+        }
+        return fnStr;
+      };
+      var ch = [];
+      var cbfs = function(v) {
+        var tl = [];
+        for (var k in v) {
+          if (v[k].buffer) {
+            tl.push((v[k] = new v[k].constructor(v[k])).buffer);
+          }
+        }
+        return tl;
+      };
+      var wrkr = function(fns, init, id, cb) {
+        if (!ch[id]) {
+          var fnStr = "", td_1 = {}, m = fns.length - 1;
+          for (var i = 0; i < m; ++i)
+            fnStr = wcln(fns[i], fnStr, td_1);
+          ch[id] = { c: wcln(fns[m], fnStr, td_1), e: td_1 };
+        }
+        var td2 = mrg({}, ch[id].e);
+        return wk(ch[id].c + ";onmessage=function(e){for(var k in e.data)self[k]=e.data[k];onmessage=" + init.toString() + "}", id, td2, cbfs(td2), cb);
+      };
+      var bInflt = function() {
+        return [u8, u16, i32, fleb, fdeb, clim, fl, fd, flrm, fdrm, rev, ec, hMap, max, bits, bits16, shft, slc, err, inflt, inflateSync, pbf, gopt];
+      };
+      var guze = function() {
+        return [gzs, gzl];
+      };
+      var pbf = function(msg) {
+        return postMessage(msg, [msg.buffer]);
+      };
+      var gopt = function(o) {
+        return o && {
+          out: o.size && new u8(o.size),
+          dictionary: o.dictionary
+        };
+      };
+      var astrm = function(strm) {
+        strm.ondata = function(dat, final) {
+          return postMessage([dat, final], [dat.buffer]);
+        };
+        return function(ev) {
+          if (ev.data.length) {
+            strm.push(ev.data[0], ev.data[1]);
+            postMessage([ev.data[0].length]);
+          } else
+            strm.flush();
+        };
+      };
+      var astrmify = function(fns, strm, opts, init, id, flush, ext) {
+        var t;
+        var w = wrkr(fns, init, id, function(err2, dat) {
+          if (err2)
+            w.terminate(), strm.ondata.call(strm, err2);
+          else if (!Array.isArray(dat))
+            ext(dat);
+          else if (dat.length == 1) {
+            strm.queuedSize -= dat[0];
+            if (strm.ondrain)
+              strm.ondrain(dat[0]);
+          } else {
+            if (dat[1])
+              w.terminate();
+            strm.ondata.call(strm, err2, dat[0], dat[1]);
+          }
+        });
+        w.postMessage(opts);
+        strm.queuedSize = 0;
+        strm.push = function(d, f) {
+          if (!strm.ondata)
+            err(5);
+          if (t)
+            strm.ondata(err(4, 0, 1), null, !!f);
+          strm.queuedSize += d.length;
+          w.postMessage([d, t = f], [d.buffer]);
+        };
+        strm.terminate = function() {
+          w.terminate();
+        };
+      };
       var gzs = function(d) {
         if (d[0] != 31 || d[1] != 139 || d[2] != 8)
           err(6, "invalid gzip data");
@@ -67003,9 +67141,103 @@ get(_array, _off) {
           err(6, "invalid zlib data: " + (d[1] & 32 ? "need" : "unexpected") + " dictionary");
         return (d[1] >> 3 & 4) + 2;
       };
-      function inflateSync(data, opts) {
-        return inflt(data, { i: 2 }, opts, opts);
+      function StrmOpt(opts, cb) {
+        if (typeof opts == "function")
+          cb = opts, opts = {};
+        this.ondata = cb;
+        return opts;
       }
+      var Inflate = (function() {
+        function Inflate2(opts, cb) {
+          if (typeof opts == "function")
+            cb = opts, opts = {};
+          this.ondata = cb;
+          var dict = opts && opts.dictionary && opts.dictionary.subarray(-32768);
+          this.s = { i: 0, b: dict ? dict.length : 0 };
+          this.o = new u8(32768);
+          this.p = new u8(0);
+          if (dict)
+            this.o.set(dict);
+        }
+        Inflate2.prototype.e = function(c) {
+          if (!this.ondata)
+            err(5);
+          if (this.d)
+            err(4);
+          if (!this.p.length)
+            this.p = c;
+          else if (c.length) {
+            var n = new u8(this.p.length + c.length);
+            n.set(this.p), n.set(c, this.p.length), this.p = n;
+          }
+        };
+        Inflate2.prototype.c = function(final) {
+          this.s.i = +(this.d = final || false);
+          var bts = this.s.b;
+          var dt = inflt(this.p, this.s, this.o);
+          this.ondata(slc(dt, bts, this.s.b), this.d);
+          this.o = slc(dt, this.s.b - 32768), this.s.b = this.o.length;
+          this.p = slc(this.p, this.s.p / 8 | 0), this.s.p &= 7;
+        };
+        Inflate2.prototype.push = function(chunk, final) {
+          this.e(chunk), this.c(final);
+        };
+        return Inflate2;
+      })();
+      function inflateSync(data, opts) {
+        return inflt(data, { i: 2 }, opts && opts.out, opts && opts.dictionary);
+      }
+      var Gunzip = (function() {
+        function Gunzip2(opts, cb) {
+          this.v = 1;
+          this.r = 0;
+          Inflate.call(this, opts, cb);
+        }
+        Gunzip2.prototype.push = function(chunk, final) {
+          Inflate.prototype.e.call(this, chunk);
+          this.r += chunk.length;
+          if (this.v) {
+            var p = this.p.subarray(this.v - 1);
+            var s = p.length > 3 ? gzs(p) : 4;
+            if (s > p.length) {
+              if (!final)
+                return;
+            } else if (this.v > 1 && this.onmember) {
+              this.onmember(this.r - p.length);
+            }
+            this.p = p.subarray(s), this.v = 0;
+          }
+          Inflate.prototype.c.call(this, final);
+          if (this.s.f && !this.s.l && !final) {
+            this.v = shft(this.s.p) + 9;
+            this.s = { i: 0 };
+            this.o = new u8(0);
+            this.push(new u8(0), final);
+          }
+        };
+        return Gunzip2;
+      })();
+      var AsyncGunzip = (function() {
+        function AsyncGunzip2(opts, cb) {
+          var _this = this;
+          astrmify([
+            bInflt,
+            guze,
+            function() {
+              return [astrm, Inflate, Gunzip];
+            }
+          ], this, StrmOpt.call(this, opts, cb), function(ev) {
+            var strm = new Gunzip(ev.data);
+            strm.onmember = function(offset) {
+              return postMessage(offset);
+            };
+            onmessage = astrm(strm);
+          }, 9, 0, function(offset) {
+            return _this.onmember && _this.onmember(offset);
+          });
+        }
+        return AsyncGunzip2;
+      })();
       function gunzipSync(data, opts) {
         var st = gzs(data);
         if (st + 8 > data.length)
@@ -67325,14 +67557,14 @@ get(_array, _off) {
       function requireBrowser() {
         if (hasRequiredBrowser) return browser.exports;
         hasRequiredBrowser = 1;
-        (function(module, exports) {
+        (function(module, exports$1) {
           var define_process_env_default = {};
-          exports.formatArgs = formatArgs;
-          exports.save = save;
-          exports.load = load;
-          exports.useColors = useColors;
-          exports.storage = localstorage();
-          exports.destroy = (() => {
+          exports$1.formatArgs = formatArgs;
+          exports$1.save = save;
+          exports$1.load = load;
+          exports$1.useColors = useColors;
+          exports$1.storage = localstorage();
+          exports$1.destroy = (() => {
             let warned = false;
             return () => {
               if (!warned) {
@@ -67341,7 +67573,7 @@ get(_array, _off) {
               }
             };
           })();
-          exports.colors = [
+          exports$1.colors = [
             "#0000CC",
             "#0000FF",
             "#0033CC",
@@ -67453,14 +67685,14 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
             });
             args.splice(lastC, 0, c);
           }
-          exports.log = console.debug || console.log || (() => {
+          exports$1.log = console.debug || console.log || (() => {
           });
           function save(namespaces) {
             try {
               if (namespaces) {
-                exports.storage.setItem("debug", namespaces);
+                exports$1.storage.setItem("debug", namespaces);
               } else {
-                exports.storage.removeItem("debug");
+                exports$1.storage.removeItem("debug");
               }
             } catch (error) {
             }
@@ -67468,7 +67700,7 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
           function load() {
             let r;
             try {
-              r = exports.storage.getItem("debug") || exports.storage.getItem("DEBUG");
+              r = exports$1.storage.getItem("debug") || exports$1.storage.getItem("DEBUG");
             } catch (error) {
             }
             if (!r && typeof process !== "undefined" && "env" in process) {
@@ -67482,7 +67714,7 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
             } catch (error) {
             }
           }
-          module.exports = requireCommon()(exports);
+          module.exports = requireCommon()(exports$1);
           const { formatters } = module.exports;
           formatters.j = function(v) {
             try {
@@ -67504,7 +67736,6 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
       };
       const DataDescriptor = {
         get(array) {
-          UINT16_LE.get(array, 6);
           return {
             signature: UINT32_LE.get(array, 0),
             compressedSize: UINT32_LE.get(array, 8),
@@ -67750,6 +67981,57 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
         }
         return mergedArray;
       }
+      class GzipHandler {
+        constructor(tokenizer) {
+          this.gunzip = void 0;
+          this.tokenizer = tokenizer;
+        }
+        inflate() {
+          let done = false;
+          let cancelled = false;
+          const parent = this;
+          return new ReadableStream({
+            start: (controller) => {
+              parent.gunzip = new AsyncGunzip((err2, chunk, final) => {
+                if (err2) {
+                  controller.error(err2);
+                  return;
+                }
+                if (chunk && !cancelled) {
+                  controller.enqueue(chunk);
+                }
+                if (final && !cancelled) {
+                  controller.close();
+                  parent.gunzip.terminate();
+                }
+              });
+            },
+            async pull(controller) {
+              const chunkSize = 1024;
+              try {
+                const buffer = new Uint8Array(chunkSize);
+                const size = await parent.tokenizer.readBuffer(buffer, { mayBeLess: true });
+                if (size === 0) {
+                  if (!done) {
+                    done = true;
+                    if (!cancelled) {
+                      parent.gunzip.push(new Uint8Array(0), true);
+                    }
+                  }
+                  return;
+                }
+                parent.gunzip.push(buffer.subarray(0, size), false);
+              } catch (err2) {
+                controller.error(err2);
+              }
+            },
+            cancel: () => {
+              parent.gunzip.terminate();
+              cancelled = true;
+            }
+          });
+        }
+      }
       const objectToString = Object.prototype.toString;
       const uint8ArrayStringified = "[object Uint8Array]";
       function isType(value, typeConstructor, typeStringified) {
@@ -67849,7 +68131,23 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
           return view.getUint8(0);
         }
       }
-      function stringToBytes(string) {
+      function stringToBytes(string, encoding) {
+        if (encoding === "utf-16le") {
+          const bytes = [];
+          for (let index2 = 0; index2 < string.length; index2++) {
+            const code2 = string.charCodeAt(index2);
+            bytes.push(code2 & 255, code2 >> 8 & 255);
+          }
+          return bytes;
+        }
+        if (encoding === "utf-16be") {
+          const bytes = [];
+          for (let index2 = 0; index2 < string.length; index2++) {
+            const code2 = string.charCodeAt(index2);
+            bytes.push(code2 >> 8 & 255, code2 & 255);
+          }
+          return bytes;
+        }
         return [...string].map((character) => character.charCodeAt(0));
       }
       function tarHeaderChecksumMatches(arrayBuffer, offset = 0) {
@@ -68045,7 +68343,10 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
         "jar",
         "rm",
         "ppsm",
-        "ppsx"
+        "ppsx",
+        "tar.gz",
+        "reg",
+        "dat"
       ];
       const mimeTypes = [
         "image/jpeg",
@@ -68218,7 +68519,9 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
         "application/vnd.ms-powerpoint.template.macroenabled.12",
         "application/vnd.ms-powerpoint.presentation.macroenabled.12",
         "application/java-archive",
-        "application/vnd.rn-realmedia"
+        "application/vnd.rn-realmedia",
+        "application/x-ms-regedit",
+        "application/x-ft-windows-registry-hive"
       ];
       const reasonableDetectionSizeInBytes = 4100;
       async function fileTypeFromBuffer(input, options) {
@@ -68408,10 +68711,15 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
           return this.fromTokenizer(fromBuffer(buffer, this.tokenizerOptions));
         }
         async fromBlob(blob) {
-          return this.fromStream(blob.stream());
+          const tokenizer = fromBlob(blob, this.tokenizerOptions);
+          try {
+            return await this.fromTokenizer(tokenizer);
+          } finally {
+            await tokenizer.close();
+          }
         }
         async fromStream(stream) {
-          const tokenizer = await fromWebStream(stream, this.tokenizerOptions);
+          const tokenizer = fromWebStream(stream, this.tokenizerOptions);
           try {
             return await this.fromTokenizer(tokenizer);
           } finally {
@@ -68456,7 +68764,7 @@ typeof navigator !== "undefined" && navigator.userAgent && navigator.userAgent.t
           return _check(this.buffer, header, options);
         }
         checkString(header, options) {
-          return this.check(stringToBytes(header), options);
+          return this.check(stringToBytes(header, options?.encoding), options);
         }
 detectConfident = async (tokenizer) => {
           this.buffer = new Uint8Array(reasonableDetectionSizeInBytes);
@@ -68464,7 +68772,7 @@ detectConfident = async (tokenizer) => {
             tokenizer.fileInfo.size = Number.MAX_SAFE_INTEGER;
           }
           this.tokenizer = tokenizer;
-          await tokenizer.peekBuffer(this.buffer, { length: 12, mayBeLess: true });
+          await tokenizer.peekBuffer(this.buffer, { length: 32, mayBeLess: true });
           if (this.check([66, 77])) {
             return {
               ext: "bmp",
@@ -68537,6 +68845,19 @@ detectConfident = async (tokenizer) => {
             };
           }
           if (this.check([31, 139, 8])) {
+            const gzipHandler = new GzipHandler(tokenizer);
+            const stream = gzipHandler.inflate();
+            try {
+              const compressedFileType = await this.fromStream(stream);
+              if (compressedFileType && compressedFileType.ext === "tar") {
+                return {
+                  ext: "tar.gz",
+                  mime: "application/gzip"
+                };
+              }
+            } finally {
+              await stream.cancel();
+            }
             return {
               ext: "gz",
               mime: "application/gzip"
@@ -68676,6 +68997,10 @@ detectConfident = async (tokenizer) => {
                     return { stop: true };
                   }
                   return {};
+              }
+            }).catch((error) => {
+              if (!(error instanceof EndOfStreamError)) {
+                throw error;
               }
             });
             return fileType ?? {
@@ -68949,6 +69274,12 @@ detectConfident = async (tokenizer) => {
               mime: "application/x-lz4"
 };
           }
+          if (this.checkString("regf")) {
+            return {
+              ext: "dat",
+              mime: "application/x-ft-windows-registry-hive"
+            };
+          }
           if (this.check([79, 84, 84, 79, 0])) {
             return {
               ext: "otf",
@@ -69206,6 +69537,12 @@ mime: "video/MP2P"
                 return { ext: "mp4", mime: "video/mp4" };
             }
           }
+          if (this.checkString("REGEDIT4\r\n")) {
+            return {
+              ext: "reg",
+              mime: "application/x-ms-regedit"
+            };
+          }
           if (this.check([82, 73, 70, 70])) {
             if (this.checkString("WEBP", { offset: 8 })) {
               return {
@@ -69334,7 +69671,7 @@ mime: "video/MP2P"
             };
           }
           if (this.check([254, 255])) {
-            if (this.check([0, 60, 0, 63, 0, 120, 0, 109, 0, 108], { offset: 2 })) {
+            if (this.checkString("<?xml ", { offset: 2, encoding: "utf-16be" })) {
               return {
                 ext: "xml",
                 mime: "application/xml"
@@ -69483,16 +69820,23 @@ mime: "video/MP2P"
             };
           }
           if (this.check([255, 254])) {
-            if (this.check([60, 0, 63, 0, 120, 0, 109, 0, 108, 0], { offset: 2 })) {
+            const encoding = "utf-16le";
+            if (this.checkString("<?xml ", { offset: 2, encoding })) {
               return {
                 ext: "xml",
                 mime: "application/xml"
               };
             }
-            if (this.check([255, 14, 83, 0, 107, 0, 101, 0, 116, 0, 99, 0, 104, 0, 85, 0, 112, 0, 32, 0, 77, 0, 111, 0, 100, 0, 101, 0, 108, 0], { offset: 2 })) {
+            if (this.check([255, 14], { offset: 2 }) && this.checkString("SketchUp Model", { offset: 4, encoding })) {
               return {
                 ext: "skp",
                 mime: "application/vnd.sketchup.skp"
+              };
+            }
+            if (this.checkString("Windows Registry Editor Version 5.00\r\n", { offset: 2, encoding })) {
+              return {
+                ext: "reg",
+                mime: "application/x-ms-regedit"
               };
             }
             return void 0;
@@ -70005,6 +70349,7 @@ toString() {
         lyrics: 1
       };
       const TimestampFormat = {
+        notSynchronized: 0,
         milliseconds: 2
       };
       const UINT32SYNCSAFE = exports("P", {
@@ -70963,30 +71308,39 @@ mapTag(tagType2, tag, warnings) {
           }
         }
       }
+      const TIMESTAMP_REGEX = /\[(\d{2}):(\d{2})\.(\d{2,3})]/;
+      function parseLyrics(input) {
+        if (TIMESTAMP_REGEX.test(input)) {
+          return parseLrc(input);
+        }
+        return toUnsyncedLyrics(input);
+      }
+      function toUnsyncedLyrics(lyrics) {
+        return {
+          contentType: LyricsContentType.lyrics,
+          timeStampFormat: TimestampFormat.notSynchronized,
+          text: lyrics.trim(),
+          syncText: []
+        };
+      }
       function parseLrc(lrcString) {
         const lines = lrcString.split("\n");
         const syncText = [];
-        const timestampRegex = /\[(\d{2}):(\d{2})\.(\d{2,3})\]/;
         for (const line of lines) {
-          const match = line.match(timestampRegex);
+          const match = line.match(TIMESTAMP_REGEX);
           if (match) {
             const minutes = Number.parseInt(match[1], 10);
             const seconds = Number.parseInt(match[2], 10);
-            const millisecondsStr = match[3];
-            let milliseconds;
-            if (millisecondsStr.length === 3) {
-              milliseconds = Number.parseInt(millisecondsStr, 10);
-            } else {
-              milliseconds = Number.parseInt(millisecondsStr, 10) * 10;
-            }
-            const timestamp = (minutes * 60 + seconds) * 1e3 + milliseconds;
-            const text = line.replace(timestampRegex, "").trim();
+            const ms2 = match[3].length === 3 ? Number.parseInt(match[3], 10) : Number.parseInt(match[3], 10) * 10;
+            const timestamp = (minutes * 60 + seconds) * 1e3 + ms2;
+            const text = line.replace(TIMESTAMP_REGEX, "").trim();
             syncText.push({ timestamp, text });
           }
         }
         return {
           contentType: LyricsContentType.lyrics,
           timeStampFormat: TimestampFormat.milliseconds,
+          text: syncText.map((line) => line.text).join("\n"),
           syncText
         };
       }
@@ -71150,7 +71504,7 @@ case "compilation":
               break;
             case "lyrics":
               if (typeof tag.value === "string") {
-                tag.value = parseLrc(tag.value);
+                tag.value = parseLyrics(tag.value);
               }
               break;
           }
@@ -71292,7 +71646,7 @@ setGenericTag(tagType2, tag) {
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-CdecagFW-DM1E4Qzh.js');
+            const { MpegParser } = await module.import('./MpegParser-DFm3fiHh-4CinrkdC.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -71314,7 +71668,7 @@ setGenericTag(tagType2, tag) {
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-Bt3ce3e6-CwDq2MNl.js');
+            const { AsfParser } = await module.import('./AsfParser-DLgVWO2g-B8V3hyEo.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -71325,7 +71679,7 @@ setGenericTag(tagType2, tag) {
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-BH-2_gBF-D5Nm6ttU.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-DCDZ9_xf-DQF1BHvM.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -71336,7 +71690,7 @@ setGenericTag(tagType2, tag) {
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-2OxSltSj-B3uW0isk.js');
+            const { AIFFParser } = await module.import('./AiffParser-Xyav1U1a-DXCyBcRW.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -71347,7 +71701,7 @@ setGenericTag(tagType2, tag) {
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-BEs7ktZI-Bk0LN4Bs.js');
+            const { DsfParser } = await module.import('./DsfParser-BW2bObWN-BmTftIo4.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -71358,7 +71712,7 @@ setGenericTag(tagType2, tag) {
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-CDoJy5RT-DfSxf9ft.js').then((n) => n.d);
+            const { FlacParser } = await module.import('./FlacParser-CzxjFkAw-XdOG2cH_.js').then((n) => n.d);
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -71369,18 +71723,18 @@ setGenericTag(tagType2, tag) {
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-CIgaKYCW-CcANeEHB.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-B4myYG_c-cOdJmc-J.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
       };
       const mp4ParserLoader = {
         parserType: "mp4",
-        extensions: [".mp4", ".m4a", ".m4b", ".m4pa", "m4v", "m4r", "3gp"],
-        mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
+        extensions: [".mp4", ".m4a", ".m4b", ".m4pa", "m4v", "m4r", "3gp", ".mov", ".movie", ".qt"],
+        mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4", "video/quicktime"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-CvStIgTi-DjSvNgQ_.js');
+            const { MP4Parser } = await module.import('./MP4Parser-CGFhdMoT-DlN6ixZb.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -71391,7 +71745,7 @@ setGenericTag(tagType2, tag) {
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-DPNBbFMr-MbvhRyOf.js');
+            const { MusepackParser } = await module.import('./MusepackParser-D36QPGd3-COh1YUQc.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -71402,7 +71756,7 @@ setGenericTag(tagType2, tag) {
         mimeTypes: ["audio/ogg", "audio/opus", "audio/speex", "video/ogg"],
 async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-CcHTXmXT-cv4CyyXL.js');
+            const { OggParser } = await module.import('./OggParser-CBe09N-S-DEQLgZ4d.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -71413,7 +71767,7 @@ async load() {
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-DddC_VjL-BHXulvrK.js');
+            const { WavPackParser } = await module.import('./WavPackParser-BjA8U822-Dg6X0tmI.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -71424,7 +71778,7 @@ async load() {
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-DDXFD9EE-pmM0nRsE.js');
+            const { WaveParser } = await module.import('./WaveParser-D_tMPrsX-DPknfWoe.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -71700,18 +72054,18 @@ constructor(metadata, tokenizer, options) {
         return out;
       }
       function encodeASCII(str) {
-        return new Uint8Array([...str].map((ch) => ch.charCodeAt(0) & 127));
+        return new Uint8Array([...str].map((ch3) => ch3.charCodeAt(0) & 127));
       }
       function encodeLatin1(str) {
-        return new Uint8Array([...str].map((ch) => ch.charCodeAt(0) & 255));
+        return new Uint8Array([...str].map((ch3) => ch3.charCodeAt(0) & 255));
       }
       function encodeWindows1252(str) {
-        return new Uint8Array([...str].map((ch) => {
-          const code2 = ch.charCodeAt(0);
+        return new Uint8Array([...str].map((ch3) => {
+          const code2 = ch3.charCodeAt(0);
           if (code2 <= 255)
             return code2;
-          if (WINDOWS_1252_REVERSE[ch] !== void 0)
-            return WINDOWS_1252_REVERSE[ch];
+          if (WINDOWS_1252_REVERSE[ch3] !== void 0)
+            return WINDOWS_1252_REVERSE[ch3];
           return 63;
         }));
       }
@@ -73040,7 +73394,7 @@ jsxRuntimeExports.jsx(require$$0.StrictMode, { children: jsxRuntimeExports.jsx(
   };
 }));
 
-System.register("./MpegParser-CdecagFW-DM1E4Qzh.js", ['./__monkey.entry-N3TMrARI.js', './AbstractID3Parser-CCLM14em-Cxcp8pvW.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-CTC4f46k-BXV1H0vm.js'], (function (exports, module) {
+System.register("./MpegParser-DFm3fiHh-4CinrkdC.js", ['./__monkey.entry-BZrUn6nH.js', './AbstractID3Parser-DERuzSBj-B4yoAyNr.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-DBOkAlmI-SD6-UlvW.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -73636,7 +73990,7 @@ async readXingInfoHeader() {
   };
 }));
 
-System.register("./AsfParser-Bt3ce3e6-CwDq2MNl.js", ['./__monkey.entry-N3TMrARI.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-DLgVWO2g-B8V3hyEo.js", ['./__monkey.entry-BZrUn6nH.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -74143,7 +74497,7 @@ streamPropertiesObject: null
   };
 }));
 
-System.register("./DsdiffParser-BH-2_gBF-D5Nm6ttU.js", ['./__monkey.entry-N3TMrARI.js', './ID3v2Parser-CTC4f46k-BXV1H0vm.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-DCDZ9_xf-DQF1BHvM.js", ['./__monkey.entry-BZrUn6nH.js', './ID3v2Parser-DBOkAlmI-SD6-UlvW.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -74318,7 +74672,7 @@ chunkSize: INT64_BE.get(buf, off + 4)
   };
 }));
 
-System.register("./AiffParser-2OxSltSj-B3uW0isk.js", ['./__monkey.entry-N3TMrARI.js', './ID3v2Parser-CTC4f46k-BXV1H0vm.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-Xyav1U1a-DXCyBcRW.js", ['./__monkey.entry-BZrUn6nH.js', './ID3v2Parser-DBOkAlmI-SD6-UlvW.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -74490,7 +74844,7 @@ case "ANNO":
   };
 }));
 
-System.register("./DsfParser-BEs7ktZI-Bk0LN4Bs.js", ['./__monkey.entry-N3TMrARI.js', './AbstractID3Parser-CCLM14em-Cxcp8pvW.js', './ID3v2Parser-CTC4f46k-BXV1H0vm.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-BW2bObWN-BmTftIo4.js", ['./__monkey.entry-BZrUn6nH.js', './AbstractID3Parser-DERuzSBj-B4yoAyNr.js', './ID3v2Parser-DBOkAlmI-SD6-UlvW.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -74589,7 +74943,7 @@ System.register("./DsfParser-BEs7ktZI-Bk0LN4Bs.js", ['./__monkey.entry-N3TMrARI.
   };
 }));
 
-System.register("./MatroskaParser-CIgaKYCW-CcANeEHB.js", ['./__monkey.entry-N3TMrARI.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-B4myYG_c-cOdJmc-J.js", ['./__monkey.entry-BZrUn6nH.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -75196,7 +75550,7 @@ case 475249515:
   };
 }));
 
-System.register("./MP4Parser-CvStIgTi-DjSvNgQ_.js", ['./__monkey.entry-N3TMrARI.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-CGFhdMoT-DlN6ixZb.js", ['./__monkey.entry-BZrUn6nH.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, textDecode, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, getBit, INT16_BE;
   return {
@@ -75949,6 +76303,8 @@ stsz: async (len) => {
                 switch (atom.header.name) {
                   case "trak":
                     return this.parseTrackBox(atom);
+                  case "udta":
+                    return this.parseTrackBox(atom);
                 }
                 break;
               case "moof":
@@ -76263,7 +76619,7 @@ parseSoundSampleDescription(sampleDescription) {
   };
 }));
 
-System.register("./MusepackParser-DPNBbFMr-MbvhRyOf.js", ['./__monkey.entry-N3TMrARI.js', './AbstractID3Parser-CCLM14em-Cxcp8pvW.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-CTC4f46k-BXV1H0vm.js'], (function (exports, module) {
+System.register("./MusepackParser-D36QPGd3-COh1YUQc.js", ['./__monkey.entry-BZrUn6nH.js', './AbstractID3Parser-DERuzSBj-B4yoAyNr.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-DBOkAlmI-SD6-UlvW.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, tryParseApeHeader, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, textDecode, AbstractID3Parser;
   return {
@@ -76542,7 +76898,7 @@ lastFrameLength: UINT32_LE.get(buf, off + 20) >>> 20 & 2047,
   };
 }));
 
-System.register("./OggParser-CcHTXmXT-cv4CyyXL.js", ['./__monkey.entry-N3TMrARI.js', './FlacParser-CDoJy5RT-DfSxf9ft.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './AbstractID3Parser-CCLM14em-Cxcp8pvW.js', './ID3v2Parser-CTC4f46k-BXV1H0vm.js'], (function (exports, module) {
+System.register("./OggParser-CBe09N-S-DEQLgZ4d.js", ['./__monkey.entry-BZrUn6nH.js', './FlacParser-CzxjFkAw-XdOG2cH_.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './AbstractID3Parser-DERuzSBj-B4yoAyNr.js', './ID3v2Parser-DBOkAlmI-SD6-UlvW.js'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, UINT8, UINT32_LE, getBit, StringType, UINT64_LE, makeUnexpectedFileContentError, Uint8ArrayType, FourCcToken, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, VorbisStream, FlacParser, BlockHeader, BlockType, VorbisPictureToken, BlockStreamInfo;
   return {
@@ -76907,7 +77263,7 @@ async parse() {
   };
 }));
 
-System.register("./FlacParser-CDoJy5RT-DfSxf9ft.js", ['./__monkey.entry-N3TMrARI.js', './AbstractID3Parser-CCLM14em-Cxcp8pvW.js'], (function (exports, module) {
+System.register("./FlacParser-CzxjFkAw-XdOG2cH_.js", ['./__monkey.entry-BZrUn6nH.js', './AbstractID3Parser-DERuzSBj-B4yoAyNr.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, UINT32_LE, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, textDecode, AttachedPictureType, UINT32_BE, StringType, UINT8, AbstractID3Parser;
   return {
@@ -77281,7 +77637,7 @@ async parseComment(data) {
   };
 }));
 
-System.register("./AbstractID3Parser-CCLM14em-Cxcp8pvW.js", ['./__monkey.entry-N3TMrARI.js', './ID3v2Parser-CTC4f46k-BXV1H0vm.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-DERuzSBj-B4yoAyNr.js", ['./__monkey.entry-BZrUn6nH.js', './ID3v2Parser-DBOkAlmI-SD6-UlvW.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -77345,7 +77701,7 @@ System.register("./AbstractID3Parser-CCLM14em-Cxcp8pvW.js", ['./__monkey.entry-N
   };
 }));
 
-System.register("./WavPackParser-DddC_VjL-BHXulvrK.js", ['./__monkey.entry-N3TMrARI.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-BjA8U822-Dg6X0tmI.js", ['./__monkey.entry-BZrUn6nH.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, tryParseApeHeader, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -77526,7 +77882,7 @@ async parseMetadataSubBlock(header, remainingLength) {
   };
 }));
 
-System.register("./WaveParser-DDXFD9EE-pmM0nRsE.js", ['./__monkey.entry-N3TMrARI.js', './ID3v2Parser-CTC4f46k-BXV1H0vm.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-D_tMPrsX-DPknfWoe.js", ['./__monkey.entry-BZrUn6nH.js', './ID3v2Parser-DBOkAlmI-SD6-UlvW.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -77800,7 +78156,7 @@ case "ID3 ": {
   };
 }));
 
-System.register("./ID3v2Parser-CTC4f46k-BXV1H0vm.js", ['./__monkey.entry-N3TMrARI.js'], (function (exports, module) {
+System.register("./ID3v2Parser-DBOkAlmI-SD6-UlvW.js", ['./__monkey.entry-BZrUn6nH.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, textDecode, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, decodeUintBE, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
@@ -77872,7 +78228,7 @@ System.register("./ID3v2Parser-CTC4f46k-BXV1H0vm.js", ['./__monkey.entry-N3TMrAR
         if (code === "CR")
           return "Cover";
         if (code.match(/^\d*$/)) {
-          return Genres[Number.parseInt(code)];
+          return Genres[Number.parseInt(code, 10)];
         }
       }
       class FrameParser {
