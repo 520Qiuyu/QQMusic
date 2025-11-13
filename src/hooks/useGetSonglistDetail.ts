@@ -88,15 +88,15 @@ export const useGetSonglistDetail = () => {
    */
   const downloadPlaylistSong = async (dissid: string) => {
     try {
-      const urls = await getPlaylistSongUrl(dissid);
-      console.log('准备下载歌单歌曲:', urls);
-      for (const item of urls) {
-        const { id, name, url } = item;
-        console.log('id:', id);
+      const songList = await getPlaylistSongList(dissid);
+      console.log('准备下载歌单歌曲:', songList);
+      for (const item of songList || []) {
+        const { mid, name, file } = item;
+        console.log('id:', mid);
         console.log('name:', name);
-        console.log('url:', url);
+        console.log('file:', file);
         console.log(`当前正在下载${name}...`);
-        await downloadWithFileName(url.replace('http://', 'https://'), name);
+        await download(mid, name, getHighestQuality(file));
       }
     } catch (error) {
       console.error('下载歌单歌曲失败:', error);

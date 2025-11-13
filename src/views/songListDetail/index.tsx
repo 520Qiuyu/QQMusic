@@ -1,8 +1,9 @@
 import { getQQAvatarUrl } from '@/apis/qq';
+import { getAlbumPicUrl } from '@/apis/album';
 import { getSingerPic } from '@/apis/singer';
-import { SearchForm } from '@/components';
+import { CopyText, SearchForm } from '@/components';
 import type { Option as SearchFormOption } from '@/components/SearchForm';
-import type { SongInfo } from '@/types/singer';
+import type { Album, SongInfo } from '@/types/singer';
 import { uniqueArrayByKey } from '@/utils';
 import {
   DownloadOutlined,
@@ -23,6 +24,7 @@ import { useFilter, useGetData, useGetSonglistDetail, usePlayMusic, useVisible }
 import type { Ref } from '../../hooks/useVisible';
 import styles from './index.module.scss';
 import type { FileType } from '@/constants';
+import { downloadAsJson } from '@/utils/download';
 
 const { Text, Title } = Typography;
 
@@ -30,7 +32,7 @@ interface IOpenParams {
   dissid?: string;
 }
 
-const SongListDetail = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
+const SongListDetail = forwardRef((_, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
   const { visible, open, close } = useVisible(
     {
       onOpen(params: IOpenParams) {
@@ -109,7 +111,7 @@ const SongListDetail = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
       },
       options: Object.entries(
         groupBy(list, (item) => item.singer.map((s) => s.name).join(' / ')),
-      ).map(([key, value]) => ({
+      ).map(([key]) => ({
         label: key,
         value: key,
       })),
@@ -122,7 +124,7 @@ const SongListDetail = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
       inputProps: {
         mode: 'multiple',
       },
-      options: Object.entries(groupBy(list, (item) => item.album.name)).map(([key, value]) => ({
+      options: Object.entries(groupBy(list, (item) => item.album.name)).map(([key]) => ({
         label: key,
         value: key,
       })),
@@ -173,66 +175,103 @@ const SongListDetail = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
       title: '歌曲信息',
       dataIndex: 'name',
       key: 'name',
-      width: 300,
+      width: 280,
       render: (text: string, record: SongInfo) => (
-        <Space size='middle'>
-          <div className={styles['song-info']}>
-            <div className={styles['song-name']}>{text}</div>
-            <div className={styles['song-artist']}>
-              {record.singer?.map((s, index) => (
-                <span key={s.mid || index} className={styles['artist-item']}>
-                  <Avatar
-                    src={getSingerPic(s.mid)}
-                    icon={<UserOutlined />}
-                    size={16}
-                    style={{ marginRight: 4 }}
-                  />
-                  <span className={styles['artist-name']}>{s.name}</span>
-                  {index < record.singer!.length - 1 && (
-                    <span className={styles['artist-separator']}>/</span>
-                  )}
-                </span>
-              )) || '-'}
+        <div className={styles['song-info']}>
+          <div className={styles['song-name']}>{text}</div>
+          <div className={styles['song-artist']}>
+            {record.singer?.map((s, index) => (
+              <span key={s.mid || index} className={styles['artist-item']}>
+                <span className={styles['artist-name']}>{s.name}</span>
+                {index < record.singer!.length - 1 && (
+                  <span className={styles['artist-separator']}>/</span>
+                )}
+              </span>
+            )) || '-'}
+          </div>
+          <div className={styles['song-id']}>
+            <CopyText text={record.mid} className={styles['id-copy']} />
+          </div>
+        </div>
+      ),
+    },
+    {
+      title: '专辑信息',
+      dataIndex: 'album',
+      key: 'album',
+      width: 280,
+      render: (album: Album) => (
+        <Space size='middle' className={styles['album-info']}>
+          <Image
+            width={60}
+            height={60}
+            src={album?.mid ? getAlbumPicUrl(album.mid, { size: '300x300' }) : ''}
+            alt={album?.name || ''}
+            fallback='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAADDCAYAAADQvc6UAAABRWlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSSwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAwSDCIMogwMCcmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis7PPOq3QdDFcvjV3jOD1boQVTPQrgSkktTgbSf4A4LbmgqISBgTEFyFYuLykAsTuAbJEioKOA7DkgdjqEvQHEToKwj4DVhAQ5A9k3gGyB5IxEoBmML4BsnSQk8XQkNtReEOBxcfXxUQg1Mjc0dyHgXNJBSWpFCYh2zi+oLMpMzyhRcASGUqqCZ16yno6CkYGRAQMDKMwhqj/fAIcloxgHQqxAjIHBEugw5sUIsSQpBobtQPdLciLEVJYzMPBHMDBsayhILEqEO4DxG0txmrERhM29nYGBddr//5/DGRjYNRkY/l7////39v///y4Dmn+LgeHANwDrkl1AuO+pmgAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAwqADAAQAAAABAAAAwwAAAAD9b/HnAAAHlklEQVR4Ae3dP3Ik1RnG4W+FgYxN'
+            style={{ borderRadius: 4 }}
+          />
+          <div className={styles['album-details']}>
+            <div className={styles['album-name']} title={album?.name || '-'}>
+              {album?.name || '-'}
+            </div>
+            <div className={styles['album-id']}>
+              {album?.mid ? (
+                <CopyText text={album.mid} className={styles['id-copy']} />
+              ) : (
+                <Text type='secondary'>-</Text>
+              )}
             </div>
           </div>
         </Space>
       ),
     },
     {
-      title: '专辑',
-      dataIndex: 'album',
-      key: 'album',
-      width: 200,
-      render: (album: any) => <Text className={styles['album-name']}>{album?.name || '-'}</Text>,
-    },
-    {
-      title: '时长',
-      dataIndex: 'interval',
-      key: 'interval',
-      width: 100,
-      align: 'center',
-      render: (interval: number) => (
-        <Text className={styles['song-duration']}>
-          {Math.floor(interval / 60)}:{(interval % 60).toString().padStart(2, '0')}
-        </Text>
+      title: '歌手信息',
+      dataIndex: 'singer',
+      key: 'singer',
+      width: 220,
+      render: (singers: SongInfo['singer']) => (
+        <div className={styles['singer-list']}>
+          {singers?.map((singer, index) => (
+            <div key={singer.mid || index} className={styles['singer-item']}>
+              <Avatar
+                src={getSingerPic(singer.mid)}
+                icon={<UserOutlined />}
+                size={32}
+                style={{ marginRight: 8 }}
+              />
+              <div className={styles['singer-details']}>
+                <div className={styles['singer-name']}>{singer.name}</div>
+                <CopyText text={singer.mid} className={styles['id-copy']} />
+              </div>
+            </div>
+          )) || '-'}
+        </div>
       ),
     },
-    // 音质选择器
     {
       title: '音质',
       key: 'quality',
-      width: 100,
+      width: 120,
       align: 'center',
       render: (_, record: SongInfo) => {
         const options: { label: string; value: number | string }[] = [];
         const { file } = record;
-        if (file.size_128mp3) options.push({ label: '128k', value: 128 });
-        if (file.size_320mp3) options.push({ label: '320k', value: 320 });
-        if (file.size_flac) options.push({ label: 'FLAC', value: 'flac' });
+
+        if (file.size_128mp3) {
+          options.push({ label: '128k', value: 128 });
+        }
+        if (file.size_320mp3) {
+          options.push({ label: '320k', value: 320 });
+        }
+        if (file.size_flac) {
+          options.push({ label: 'FLAC', value: 'flac' });
+        }
+
         return (
           <Select
             options={options}
-            defaultValue={128}
+            value={qualityMap[record.mid] || 128}
             style={{ width: '100%' }}
             onChange={(value) => {
               setQualityMap((prev) => ({
@@ -247,7 +286,7 @@ const SongListDetail = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
     {
       title: '操作',
       key: 'action',
-      width: 200,
+      width: 150,
       align: 'center',
       fixed: 'right',
       render: (_, record: SongInfo) => (
@@ -360,7 +399,9 @@ const SongListDetail = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
   const handleDownloadAllJson = async () => {
     if (!currentDissid) return;
     try {
-      await getPlaylistDownloadJson(currentDissid);
+      const data = await getPlaylistDownloadJson(currentDissid);
+      console.log('data', data);
+      downloadAsJson(data, `${data.playlistName}.json`);
     } catch (error) {
       console.error('下载歌单JSON失败:', error);
     }
