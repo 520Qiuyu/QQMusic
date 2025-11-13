@@ -96,7 +96,7 @@ export const useGetSonglistDetail = () => {
         console.log('name:', name);
         console.log('file:', file);
         console.log(`当前正在下载${name}...`);
-        await download(mid, name, getHighestQuality(file));
+        await download(mid, name, getHighestQuality(file), item.album?.mid);
       }
     } catch (error) {
       console.error('下载歌单歌曲失败:', error);
