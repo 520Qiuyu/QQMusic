@@ -161,7 +161,7 @@ const SongListDetail = forwardRef((_, ref: ForwardedRef<Ref<any, IOpenParams>>) 
     try {
       if (downloading === record.mid) return;
       setDownloading(record.mid);
-      await download(record.mid, record.name, qualityMap[record.mid] || 128);
+      await download(record.mid, record.name, qualityMap[record.mid] || 128, record.album?.mid);
     } catch (error) {
       console.log('error', error);
     } finally {
