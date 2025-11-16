@@ -181,6 +181,7 @@ export const getSingerHotSong = async (
     {},
     'u',
   );
+  console.log('res',res)
   if (res.code === 0) {
     return res.singer?.data;
   }

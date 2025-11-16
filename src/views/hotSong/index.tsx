@@ -44,6 +44,8 @@ const HotSongModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams>>
       },
       onReset: () => {
         setSingerInfo({} as IOpenParams);
+        setSelectedRowKeys([]);
+        setSelectedRows([]);
       },
     },
     ref,
@@ -313,7 +315,7 @@ const HotSongModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams>>
       const result = [] as {
         albumName: string;
         albumCover: string;
-        songList: {
+        list: {
           songName: string;
           url: string;
           lrcContent: string;
@@ -337,7 +339,7 @@ const HotSongModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams>>
         result.push({
           albumName: albumName,
           albumCover: albumCover,
-          songList: albumSongs,
+          list: albumSongs,
         });
       }
       downloadAsJson(result, `${singerInfo.singerName}-专辑`);
