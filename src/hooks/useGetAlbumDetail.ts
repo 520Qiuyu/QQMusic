@@ -1,8 +1,7 @@
 import { getAlbumInfo, getAlbumPicUrl } from '@/apis/album';
 import type { FileType } from '@/constants';
-import type { AlbumInfoData, AlbumSongInfo } from '@/types/album';
+import type { AlbumInfoData } from '@/types/album';
 import { promiseLimit } from '@/utils';
-import { downloadWithFileName } from '@/utils/download';
 import { useRef, useState } from 'react';
 import { usePlayMusic } from './usePlayMusic';
 
@@ -75,7 +74,7 @@ export const useGetAlbumDetail = () => {
         console.log('name', name);
         console.log('url', url);
         console.log(`当前正在下载${name}...`);
-        await downloadWithFileName(url.replace('http://', 'https://'), name);
+        await download(url.replace('http://', 'https://'), name, 'flac', mid);
       }
     } catch (error) {
       console.error('下载专辑歌曲失败:', error);
