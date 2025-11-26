@@ -263,3 +263,15 @@ export interface SingerHotSongData {
   total_song: number;
   yinyueren: string;
 }
+
+export interface SingerAllHotSongResult {
+  code: number;
+  total: number;
+  songList: SongInfo[];
+  totalAlbum: number;
+  totalMV: number;
+  totalSong: number;
+  extras: SingerHotSongExtra[];
+  singerBrief: string;
+  singerInfo: SingerInfo;
+}

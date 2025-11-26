@@ -1,5 +1,19 @@
 {
   "name": "qqmusic",
+  "author": "520Qiuyu",
+  "homepage": "https://github.com/520Qiuyu/QQMusic",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/520Qiuyu/QQMusic.git"
+  },
+  "description": "QQ音乐下载助手",
+  "keywords": [
+    "QQ音乐",
+    "数据查询",
+    "助手",
+    "油猴脚本",
+    "Tampermonkey"
+  ],
   "private": true,
   "version": "0.0.0",
   "type": "module",

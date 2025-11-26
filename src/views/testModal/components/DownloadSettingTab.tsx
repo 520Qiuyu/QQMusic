@@ -1,4 +1,5 @@
 import { useConfig } from '@/hooks/useConfig';
+import type { SettingStrategy } from '@/types/testModal';
 import { Descriptions } from 'antd';
 import SettingItem from './SettingItem';
 
@@ -19,7 +20,7 @@ const getQualityOptions = () => {
  * 下载设置配置策略
  * 每个策略包含配置项名称、对应的配置key、控件类型和额外配置
  */
-const DOWNLOAD_SETTING_STRATEGIES = [
+const DOWNLOAD_SETTING_STRATEGIES: SettingStrategy[] = [
   {
     label: '下载音质',
     key: 'quality',
@@ -35,11 +36,6 @@ const DOWNLOAD_SETTING_STRATEGIES = [
   {
     label: '是否内嵌歌词封面',
     key: 'embedLyricCover',
-    type: 'switch',
-  },
-  {
-    label: '是否内嵌歌曲信息',
-    key: 'embedSongInfo',
     type: 'switch',
   },
 ];
@@ -67,7 +63,7 @@ const DownloadSettingTab = () => {
   return (
     <Descriptions
       column={3}
-      size='large'
+      size='default'
       bordered
       style={{
         minWidth: 800,
@@ -78,7 +74,7 @@ const DownloadSettingTab = () => {
           <Item key={key} label={label}>
             <SettingItem
               value={downloadConfig[key as keyof typeof downloadConfig]}
-              onChange={(value) => handleConfigChange(key, value)}
+              onChange={((value: any) => handleConfigChange(key, value)) as any}
               type={type}
               {...rest}
             />
@@ -90,4 +86,3 @@ const DownloadSettingTab = () => {
 };
 
 export default DownloadSettingTab;
-

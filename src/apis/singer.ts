@@ -1,4 +1,11 @@
-import type { AlbumInfo, SingerHotSongData, SingerInfo, SongInfo } from '@/types/singer';
+import type {
+  AlbumInfo,
+  SingerAllHotSongResult,
+  SingerHotSongData,
+  SingerHotSongExtra,
+  SingerInfo,
+  SongInfo,
+} from '@/types/singer';
 import { qqMusicRequest } from '@/utils/request';
 import dayjs from 'dayjs';
 
@@ -181,7 +188,6 @@ export const getSingerHotSong = async (
     {},
     'u',
   );
-  console.log('res',res)
   if (res.code === 0) {
     return res.singer?.data;
   }
@@ -189,16 +195,26 @@ export const getSingerHotSong = async (
 };
 
 /** 获取歌手全部热门歌曲 */
-export const getSingerAllHotSong = async (singermid: string) => {
+export const getSingerAllHotSong = async (
+  singermid: string,
+  options?: {
+    onChange: (result: SingerAllHotSongResult) => void;
+  },
+) => {
+  const { onChange } = options || {};
   let sin = 0;
   const num = 60;
   let hasMore = true;
   const result = {
     code: 200,
     total: 0,
+    totalSong: 0,
+    totalAlbum: 0,
+    totalMV: 0,
     songList: [] as SongInfo[],
     singerBrief: '',
     singerInfo: {} as SingerInfo,
+    extras: [] as SingerHotSongExtra[],
   };
   while (hasMore) {
     const res = await getSingerHotSong(singermid, { sin, num });
@@ -207,14 +223,20 @@ export const getSingerAllHotSong = async (singermid: string) => {
         total: res.total_song,
         singerBrief: res.singer_brief,
         singerInfo: res.singer_info,
+        totalSong: res.total_song,
+        totalAlbum: res.total_album,
+        totalMV: res.total_mv,
         songList: [...result.songList, ...res.songlist],
+        extras: [...result.extras, ...res.extras],
       });
+      onChange?.(result);
       hasMore = result.songList.length < res.total_song;
     } else {
       hasMore = false;
     }
     sin += num;
   }
+  console.log('result', result);
   return result;
 };
 

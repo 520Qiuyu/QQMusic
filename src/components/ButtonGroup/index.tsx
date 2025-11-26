@@ -1,24 +1,28 @@
+import { useCompRef, useConfig } from '@/hooks';
+import AlbumDetail from '@/views/albumDetail';
+import AlbumSearch from '@/views/albumSearch';
+import GithubInfo from '@/views/githubInfo';
+import SingerSearch from '@/views/singerSearch';
+import SongListDetail from '@/views/songListDetail';
+import SongListSearch from '@/views/songListSearch';
+import SongSearch from '@/views/songSearch';
+import TestModal from '@/views/testModal';
 import {
   BookOutlined,
   ContainerOutlined,
+  GithubOutlined,
   InfoCircleOutlined,
   SearchOutlined,
   UnorderedListOutlined,
   UserOutlined,
 } from '@ant-design/icons';
 import { Button, Tooltip } from 'antd';
-import { useCompRef } from '../../hooks';
-import AlbumDetail from '../../views/albumDetail';
-import AlbumSearch from '../../views/albumSearch';
-import Demo from '../../views/demo';
-import SingerSearch from '../../views/singerSearch';
-import SongListDetail from '../../views/songListDetail';
-import SongListSearch from '../../views/songListSearch';
-import SongSearch from '../../views/songSearch';
-import TestModal from '../../views/testModal';
 import styles from './index.module.scss';
 
 const ButtonGroup = () => {
+  const { functionConfig } = useConfig();
+  const { enableSearch, enableGithubInfo, enableTestModal } = functionConfig;
+
   // 歌手查询
   const singerSearchRef = useCompRef(SingerSearch);
   const handleSingerSearch = () => {
@@ -55,16 +59,16 @@ const ButtonGroup = () => {
     albumDetailRef.current.open();
   };
 
-  // 云盘快速上传
-  const demoRef = useCompRef(Demo);
-  const handleDemo = () => {
-    demoRef.current.open();
-  };
-
   // testModal
   const testModalRef = useCompRef(TestModal);
   const handleTestModal = () => {
     testModalRef.current.open();
+  };
+
+  // githubInfo
+  const githubInfoRef = useCompRef(GithubInfo);
+  const handleGithubInfo = () => {
+    githubInfoRef.current.open();
   };
 
   return (
@@ -90,14 +94,14 @@ const ButtonGroup = () => {
       </Tooltip>
 
       {/* 专辑查询 */}
-      {/*       <Tooltip title={'专辑查询'} placement='left'>
+      <Tooltip title={'专辑查询'} placement='left'>
         <Button
           type='primary'
           icon={<BookOutlined />}
           onClick={handleAlbumSearch}
           className={styles['button']}
         />
-      </Tooltip> */}
+      </Tooltip>
 
       {/* 歌单详情 */}
       <Tooltip title={'歌单详情'} placement='left'>
@@ -120,37 +124,40 @@ const ButtonGroup = () => {
       </Tooltip>
 
       {/* 歌曲查询 */}
-      <Tooltip title={'歌曲查询'} placement='left'>
-        <Button
-          type='primary'
-          icon={<SearchOutlined />}
-          onClick={handleSongSearch}
-          className={styles['button']}
-        />
-      </Tooltip>
-
-      {/* demo */}
-      {/* <Tooltip title={'demo'} placement='left'>
-        <Button
-          type='primary'
-          icon={<InfoCircleOutlined />}
-          onClick={handleDemo}
-          className={styles['button']}
-        />
-      </Tooltip> */}
+      {enableSearch && (
+        <Tooltip title={'歌曲查询'} placement='left'>
+          <Button
+            type='primary'
+            icon={<SearchOutlined />}
+            onClick={handleSongSearch}
+            className={styles['button']}
+          />
+        </Tooltip>
+      )}
 
       {/* testModal */}
-      <Tooltip title={'testModal'} placement='left'>
-        <Button
-          type='primary'
-          icon={<InfoCircleOutlined />}
-          onClick={handleTestModal}
-          className={styles['button']}
-        />
-      </Tooltip>
+      {enableTestModal && (
+        <Tooltip title={'testModal'} placement='left'>
+          <Button
+            type='primary'
+            icon={<InfoCircleOutlined />}
+            onClick={handleTestModal}
+            className={styles['button']}
+          />
+        </Tooltip>
+      )}
 
-      {/* 弹窗组件 */}
-      <Demo ref={demoRef} />
+      {/* githubInfo */}
+      {enableGithubInfo && (
+        <Tooltip title={'githubInfo'} placement='left'>
+          <Button
+            type='primary'
+            icon={<GithubOutlined />}
+            onClick={handleGithubInfo}
+            className={styles['button']}
+          />
+        </Tooltip>
+      )}
       {/* testModal */}
       <TestModal ref={testModalRef} />
       {/* 歌手查询 */}
@@ -165,6 +172,8 @@ const ButtonGroup = () => {
       <AlbumDetail ref={albumDetailRef} />
       {/* 歌曲查询 */}
       <SongSearch ref={songSearchRef} />
+      {/* githubInfo */}
+      <GithubInfo ref={githubInfoRef} />
     </div>
   );
 };

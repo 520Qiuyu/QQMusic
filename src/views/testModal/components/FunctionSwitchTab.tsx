@@ -1,4 +1,5 @@
 import { useConfig } from '@/hooks/useConfig';
+import type { SettingStrategy } from '@/types/testModal';
 import { Descriptions } from 'antd';
 import SettingItem from './SettingItem';
 
@@ -8,7 +9,17 @@ const { Item } = Descriptions;
  * 功能开关配置策略
  * 每个策略包含功能名称和对应的配置key
  */
-const FUNCTION_SWITCH_STRATEGIES = [
+const FUNCTION_SWITCH_STRATEGIES: SettingStrategy[] = [
+  {
+    label: '搜索',
+    key: 'enableSearch',
+    type: 'switch',
+  },
+  {
+    label: 'GitHub信息',
+    key: 'enableGithubInfo',
+    type: 'switch',
+  },
   {
     label: '功能开关Tab',
     key: 'enableFunctionSwitchTab',
@@ -19,6 +30,19 @@ const FUNCTION_SWITCH_STRATEGIES = [
     label: '下载设置Tab',
     key: 'enableDownloadSetting',
     type: 'switch',
+  },
+  {
+    label: '并发上传歌曲数量',
+    key: 'uploadConcurrency',
+    type: 'input',
+  },
+  {
+    label: '演唱会关键词',
+    key: 'liveKeywords',
+    type: 'select',
+    mode: 'tags',
+    tokenSeparators: [',', '，', ' '],
+    style: { width: '100%' },
   },
   {
     label: '测试Modal',
@@ -48,13 +72,14 @@ const FunctionSwitchTab = () => {
   };
 
   return (
-    <Descriptions column={3} size='large' bordered>
+    <Descriptions column={3} bordered>
       {FUNCTION_SWITCH_STRATEGIES.map((strategy) => {
         const { type, key, label, disabled, ...rest } = strategy;
         return (
           <Item key={key} label={label}>
             <SettingItem
               value={functionConfig[key as keyof typeof functionConfig]}
+              // @ts-ignore
               onChange={(value) => handleSwitchChange(key, value)}
               type={type}
               disabled={disabled}
@@ -68,4 +93,3 @@ const FunctionSwitchTab = () => {
 };
 
 export default FunctionSwitchTab;
-

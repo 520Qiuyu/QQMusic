@@ -4,6 +4,7 @@ import type { FileType } from '@/constants';
 import { writeFlacTagAndPicture } from '@/libs/flac';
 import { downloadFileWithBlob, getFileBlob } from '@/utils/download';
 import { useEffect, useRef, useState } from 'react';
+import { useConfig } from './useConfig';
 
 const audio = new Audio();
 
@@ -13,8 +14,11 @@ export const usePlayMusic = () => {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const urlMap = useRef<Record<string, string>>({});
+  const { functionConfig, downloadConfig } = useConfig();
+  const { uploadConcurrency } = functionConfig;
+  const { quality: downloadQuality } = downloadConfig;
 
-  const getUrl = async (mid: string, quality: keyof typeof FileType = 'flac') => {
+  const getUrl = async (mid: string, quality = downloadQuality) => {
     if (urlMap.current[mid]) {
       return urlMap.current[mid];
     }
@@ -25,7 +29,7 @@ export const usePlayMusic = () => {
     return url;
   };
 
-  const play = async (mid: string, quality: keyof typeof FileType = 'flac') => {
+  const play = async (mid: string, quality = downloadQuality) => {
     try {
       // 播放当前歌曲，则直接播放
       if (mid === currentMid) {
@@ -60,7 +64,7 @@ export const usePlayMusic = () => {
   const download = async (
     mid: string,
     name: string,
-    quality: keyof typeof FileType = 'flac',
+    quality = downloadQuality,
     albumMid?: string,
   ) => {
     try {
@@ -89,7 +93,7 @@ export const usePlayMusic = () => {
         case 'flac':
           outputFile = await writeFlacTagAndPicture(blob, 'lyrics', lyric, coverBlob!);
           break;
-       /*  case 'mp3':
+        /*  case 'mp3':
           outputFile = await writeFlacTagAndPicture(blob, 'lyrics', lyric, coverBlob!);
           break; */
         default:

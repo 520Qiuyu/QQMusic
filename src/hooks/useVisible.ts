@@ -1,3 +1,4 @@
+import { useState, useRef, useImperativeHandle } from 'react';
 import type { RefObject } from 'react';
 
 /** 习惯使用函数式弹窗
@@ -27,8 +28,8 @@ export const useVisible = (props: Props = {}, ref?: React.ForwardedRef<any>) => 
     setVisible(false);
     onReset();
   };
-  const resolve = useRef<(p: any) => void>(null);
-  const reject = useRef<(p: any) => void>(null);
+  const resolve = useRef<((p: any) => void) | null>(null);
+  const reject = useRef<((p: any) => void) | null>(null);
   const submit = <T = any>() => {
     return new Promise<T>((_resolve, _reject) => {
       resolve.current = _resolve;

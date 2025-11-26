@@ -200,7 +200,7 @@ const SingerSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
         rowKey='singer_mid'
         loading={loading}
         pagination={false}
-        scroll={{ y: 400 }}
+        scroll={{ y: 500 }}
       />
 
       <Pagination

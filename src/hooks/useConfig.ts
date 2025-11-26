@@ -1,11 +1,9 @@
-import { useLocalStorageState } from 'ahooks';
-import { useEffect } from 'react';
 import {
   defaultDownloadConfig,
-  defaultFunctionConfig,
-  type DownloadConfig,
-  type FunctionConfig,
-} from '@/constants/config';
+  defaultFunctionConfig
+} from '@/config';
+import { useLocalStorageState } from 'ahooks';
+import { useEffect } from 'react';
 
 /**
  * 配置管理 Hook
@@ -15,7 +13,7 @@ import {
  */
 export const useConfig = () => {
   // 下载配置
-  const [downloadConfig, setDownloadConfig] = useLocalStorageState<DownloadConfig>(
+  const [downloadConfig, setDownloadConfig] = useLocalStorageState(
     'qqmusic_downloadConfig',
     {
       defaultValue: defaultDownloadConfig,
@@ -24,7 +22,7 @@ export const useConfig = () => {
   );
 
   // 功能配置
-  const [functionConfig, setFunctionConfig] = useLocalStorageState<FunctionConfig>(
+  const [functionConfig, setFunctionConfig] = useLocalStorageState(
     'qqmusic_functionConfig',
     {
       defaultValue: defaultFunctionConfig,
@@ -55,4 +53,3 @@ export const useConfig = () => {
     setFunctionConfig,
   };
 };
-

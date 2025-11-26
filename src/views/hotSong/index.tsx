@@ -1,8 +1,10 @@
 import { getAlbumPicUrl } from '@/apis/album';
 import { CopyText } from '@/components';
+import type { Option as SearchFormOption } from '@/components/SearchForm';
+import SearchForm from '@/components/SearchForm';
 import { FileType } from '@/constants';
 import { usePlayMusic } from '@/hooks/usePlayMusic';
-import { promiseLimit } from '@/utils';
+import { promiseLimit, uniqueArrayByKey } from '@/utils';
 import { downloadAsJson } from '@/utils/download';
 import { msgLoading, msgWarning } from '@/utils/modal';
 import {
@@ -11,21 +13,18 @@ import {
   PlayCircleOutlined,
   UserOutlined,
 } from '@ant-design/icons';
-import { Avatar, Button, Image, Modal, Pagination, Space, Table, Typography } from 'antd';
+import { Avatar, Button, Image, Modal, Space, Table, Typography } from 'antd';
 import type { ColumnType } from 'antd/es/table';
 import type { TableProps } from 'antd/lib';
 import { groupBy } from 'lodash';
 import { forwardRef, useState, type ForwardedRef } from 'react';
-import { getSingerHotSong } from '../../apis/singer';
-import { useGetData, useVisible } from '../../hooks';
+import { getSingerAllHotSong } from '../../apis/singer';
+import { useFilter, useGetData, useVisible } from '../../hooks';
 import type { Ref } from '../../hooks/useVisible';
-import type { SongInfo } from '../../types/singer';
+import type { SingerHotSongExtra, SongInfo } from '../../types/singer';
 import styles from './index.module.scss';
 
-interface SearchParams {
-  pageNum: number;
-  pageSize: number;
-}
+interface SearchParams {}
 interface IOpenParams {
   singerId: number;
   singerMid: string;
@@ -35,7 +34,17 @@ interface IOpenParams {
 
 const { Text, Title } = Typography;
 
-const HotSongModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
+const defaultLoadingData = {
+  total: 0,
+  loadedSong: 0,
+  songList: [] as SongInfo[],
+  totalSong: 0,
+  totalAlbum: 0,
+  totalMV: 0,
+  extras: [] as SingerHotSongExtra[],
+};
+
+const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
   const { visible, open, close } = useVisible(
     {
       onOpen: (params: IOpenParams) => {
@@ -46,31 +55,84 @@ const HotSongModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams>>
         setSingerInfo({} as IOpenParams);
         setSelectedRowKeys([]);
         setSelectedRows([]);
+        setLoadingData({
+          ...defaultLoadingData,
+        });
       },
     },
     ref,
   );
 
-  const [searchParams, setSearchParams] = useState<SearchParams>({
-    pageNum: 1,
-    pageSize: 10,
-  });
-  const [singerInfo, setSingerInfo] = useState<IOpenParams>({} as IOpenParams);
+  const { play, pause, stop, isPlaying, download, getUrl, getLyric } = usePlayMusic();
 
+  const [singerInfo, setSingerInfo] = useState<IOpenParams>({} as IOpenParams);
+  const [loadingData, setLoadingData] = useState(defaultLoadingData);
   // 获取热门歌曲数据
-  const { data, loading } = useGetData(
-    (p) => getSingerHotSong(singerInfo.singerMid, p),
+  const { loading } = useGetData(
+    () =>
+      getSingerAllHotSong(singerInfo.singerMid, {
+        onChange: (result) => {
+          setLoadingData({
+            total: result.total,
+            loadedSong: result.songList.length,
+            songList: result.songList,
+            totalSong: result.total,
+            totalAlbum: result.totalAlbum,
+            totalMV: result.totalMV,
+            extras: result.extras,
+          });
+        },
+      }),
+    undefined,
     {
-      sin: (searchParams.pageNum - 1) * searchParams.pageSize,
-      num: searchParams.pageSize,
-    },
-    {
-      monitors: [singerInfo.singerMid, searchParams],
+      monitors: [singerInfo.singerMid, visible],
       returnFunction: () => !visible || !singerInfo.singerMid,
     },
   );
+  const { songList = [], totalSong, totalAlbum, totalMV, extras } = loadingData;
 
-  const { play, pause, stop, isPlaying, download, getUrl, getLyric } = usePlayMusic();
+  const [searchParams, setSearchParams] = useState<SearchParams>({
+    keyword: '',
+  });
+  const searchFormOptions: SearchFormOption[] = [
+    {
+      label: '歌曲名称',
+      name: 'name',
+      type: 'select',
+      options: uniqueArrayByKey(songList, 'name').map((item) => ({
+        label: item.name,
+        value: item.name,
+      })),
+      inputProps: {
+        mode: 'multiple',
+      },
+    },
+    {
+      label: '专辑名称',
+      name: 'albumName',
+      type: 'select',
+      options: uniqueArrayByKey(
+        songList.map((item) => item.album),
+        'name',
+      ).map((item) => ({
+        label: item.name,
+        value: item.name,
+      })),
+      inputProps: {
+        mode: 'multiple',
+      },
+    },
+  ];
+  const { filteredList, handleFilter } = useFilter(songList, {
+    fields: {
+      name: {
+        getValue: (item) => item.name,
+      },
+      albumName: {
+        getValue: (item) => item.album?.name,
+      },
+    },
+  });
 
   /**
    * 根据文件大小信息判断最高音质
@@ -177,7 +239,7 @@ const HotSongModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams>>
       width: 150,
       align: 'center',
       render: (_, __, index: number) => {
-        const extra = data?.extras?.[index];
+        const extra = extras?.[index];
         const uploadTime = extra?.upload_time || '';
         return (
           <Text className={styles['upload-time']} title={uploadTime}>
@@ -279,19 +341,15 @@ const HotSongModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams>>
           <div className={styles['title-stats']}>
             <span className={`${styles['stat-item']} ${loading ? styles['loading'] : ''}`}>
               <span className={styles['stat-label']}>歌曲</span>
-              <span className={styles['stat-value']}>
-                {loading ? '...' : data?.total_song || 0}
-              </span>
+              <span className={styles['stat-value']}>{loading ? '...' : totalSong || 0}</span>
             </span>
             <span className={`${styles['stat-item']} ${loading ? styles['loading'] : ''}`}>
               <span className={styles['stat-label']}>专辑</span>
-              <span className={styles['stat-value']}>
-                {loading ? '...' : data?.total_album || 0}
-              </span>
+              <span className={styles['stat-value']}>{loading ? '...' : totalAlbum || 0}</span>
             </span>
             <span className={`${styles['stat-item']} ${loading ? styles['loading'] : ''}`}>
               <span className={styles['stat-label']}>MV</span>
-              <span className={styles['stat-value']}>{loading ? '...' : data?.total_mv || 0}</span>
+              <span className={styles['stat-value']}>{loading ? '...' : totalMV || 0}</span>
             </span>
           </div>
         </div>
@@ -377,14 +435,25 @@ const HotSongModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams>>
         {/* 已选择数目 */}
         <div className={styles['selected-count']}>已选择 {selectedRows.length} 首歌曲</div>
         <Space>
-          <Button
-            onClick={() => {
-              setSelectedRowKeys([]);
-              setSelectedRows([]);
-            }}
-            disabled={selectedRows.length === 0}>
-            清空选择
-          </Button>
+          {/* 全部选择 */}
+          {selectedRowKeys?.length < songList?.length ? (
+            <Button
+              onClick={() => {
+                setSelectedRowKeys(songList?.map((item) => item.mid) || []);
+                setSelectedRows(songList || []);
+              }}>
+              全部选择
+            </Button>
+          ) : (
+            <Button
+              onClick={() => {
+                setSelectedRowKeys([]);
+                setSelectedRows([]);
+              }}>
+              清空选择
+            </Button>
+          )}
+
           {/* 下载JSON选中歌曲 */}
           <Button
             type='primary'
@@ -414,32 +483,31 @@ const HotSongModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams>>
       width={1200}
       centered
       className={styles['hot-song-modal']}>
+      {/* 搜索表单 */}
+      <SearchForm
+        options={searchFormOptions}
+        searchParams={searchParams}
+        onSearch={handleFilter}
+        style={{ marginBottom: 16 }}
+      />
+
       {/* 歌曲列表 */}
       <Table
         rowSelection={rowSelection}
         columns={columns}
-        dataSource={data?.songlist || []}
+        dataSource={filteredList || []}
         rowKey='mid'
-        loading={loading}
-        pagination={false}
+        loading={loading && !loadingData.loadedSong}
+        pagination={{
+          showSizeChanger: true,
+          showQuickJumper: true,
+          showTotal: (total) => `共 ${total} 首歌曲`,
+        }}
         scroll={{ y: 500, x: 1100 }}
         className={styles['song-table']}
       />
-
-      {/* 分页器 */}
-      <Pagination
-        current={searchParams.pageNum}
-        total={data?.total_song || 0}
-        showSizeChanger={true}
-        showQuickJumper={true}
-        align='end'
-        showTotal={(total) => `共 ${total} 首歌曲`}
-        onChange={(page, pageSize) => {
-          setSearchParams({ ...searchParams, pageNum: page, pageSize });
-        }}
-      />
     </Modal>
   );
-});
+};
 
-export default HotSongModal;
+export default forwardRef(HotSongModal);

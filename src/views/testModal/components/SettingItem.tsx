@@ -7,7 +7,7 @@ import {
   Switch,
   TimePicker,
 } from 'antd';
-import type { ComponentProps } from 'react';
+import type { SettingStrategyType } from '@/types/testModal';
 
 interface SettingItemProps {
   /** 当前值 */
@@ -15,7 +15,7 @@ interface SettingItemProps {
   /** 值变化回调 */
   onChange?: (value: any) => void;
   /** 控件类型 */
-  type?: 'input' | 'select' | 'radio' | 'checkbox' | 'switch' | 'date' | 'time';
+  type?: SettingStrategyType;
   /** 是否禁用 */
   disabled?: boolean;
   /** 其他属性 */
