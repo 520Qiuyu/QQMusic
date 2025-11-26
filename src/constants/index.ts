@@ -107,3 +107,12 @@ export const FlacTag = {
   歌词: 'lyrics',
 } as const;
 export const FlacTagList = mapToList(FlacTag);
+
+/** FLAC标签中文映射（反向映射） */
+export const FLAC_TAGS: Record<string, string> = Object.entries(FlacTag).reduce(
+  (acc, [key, value]) => {
+    acc[value] = key;
+    return acc;
+  },
+  {} as Record<string, string>,
+);

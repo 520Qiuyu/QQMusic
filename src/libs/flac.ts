@@ -118,6 +118,23 @@ export const writeFlacTag = async (
 };
 
 /**
+ * 读取flac文件中的图片
+ * @example
+ * const pictures = await readFlacPictures(file);
+ */
+export const readFlacPictures = async (file: Blob): Promise<Blob[]> => {
+  try {
+    const metaflac = await Metaflac.fromBlob(file);
+    // 获取全部图片，通常只有1张（index: 0），但规范上可能有多张
+    const pictures = metaflac.getPicturesSpecs?.() || [];
+    return pictures.map((_, index) => metaflac.exportPictureToBlob(index));
+  } catch (error) {
+    console.error('读取 FLAC 封面图片失败:', error);
+    return [];
+  }
+};
+
+/**
  * 给flac嵌入图片
  * @example
  * const newFile = await embedFlacPicture(file, coverImage);

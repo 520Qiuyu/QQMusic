@@ -63,7 +63,7 @@ export const useGetSonglistDetail = () => {
   const getPlaylistSongUrl = async (dissid: string) => {
     const res = await getPlaylistSongList(dissid);
     const ids = res?.map((item) => {
-      const quality = getHighestQuality(item.file);
+      const quality = getHighestQualityInSonglist(item.file);
       return {
         id: item.mid,
         name: item.name,
@@ -96,7 +96,7 @@ export const useGetSonglistDetail = () => {
         console.log('name:', name);
         console.log('file:', file);
         console.log(`当前正在下载${name}...`);
-        await download(mid, name, getHighestQuality(file), item.album?.mid);
+        await download(mid, name, getHighestQualityInSonglist(file), item.album?.mid);
       }
     } catch (error) {
       console.error('下载歌单歌曲失败:', error);
@@ -113,7 +113,7 @@ export const useGetSonglistDetail = () => {
     const { dissname, songlist } = playlistDetail || {};
     const promiseArr = songlist?.map((item) => async () => {
       const lrcContent = await getLyric(item.mid);
-      const url = await getUrl(item.mid, getHighestQuality(item.file));
+      const url = await getUrl(item.mid, getHighestQualityInSonglist(item.file));
       return {
         songName: item.name,
         url,
@@ -123,7 +123,9 @@ export const useGetSonglistDetail = () => {
     const songList = await promiseLimit(promiseArr!, 6);
     return {
       playlistName: dissname,
-      playlistCover: playlistDetail?.pic_mid ? `https://y.gtimg.cn/music/photo_new/T002R300x300M000${playlistDetail.pic_mid}.jpg` : '',
+      playlistCover: playlistDetail?.pic_mid
+        ? `https://y.gtimg.cn/music/photo_new/T002R300x300M000${playlistDetail.pic_mid}.jpg`
+        : '',
       songList,
     };
   };
@@ -151,16 +153,11 @@ export const useGetSonglistDetail = () => {
     getPlaylistSongUrl,
     downloadPlaylistSong,
     getPlaylistDownloadJson,
-    
+    getHighestQualityInSonglist,
   };
 };
 
-/**
- * 获取最高音质
- * @param file 文件信息对象
- * @returns 最高音质类型
- */
-export const getHighestQuality = (file: {
+const getHighestQualityInSonglist = (file: {
   size_flac?: number;
   size_ape?: number;
   size_320mp3?: number;

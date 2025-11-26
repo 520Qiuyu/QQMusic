@@ -1,4 +1,4 @@
-import type { AlbumInfo, SingerHotSongData, SingerInfo } from '@/types/singer';
+import type { AlbumInfo, SingerHotSongData, SingerInfo, SongInfo } from '@/types/singer';
 import { qqMusicRequest } from '@/utils/request';
 import dayjs from 'dayjs';
 
@@ -154,7 +154,7 @@ export const getSingerHotSong = async (
     num?: number;
   } = {},
 ): Promise<SingerHotSongData> => {
-  const { sin = 0, num = 80 } = options;
+  const { sin = 0, num = 60 } = options;
   const params = {
     singermid,
     format: 'json',
@@ -185,6 +185,36 @@ export const getSingerHotSong = async (
     return res.singer?.data;
   }
   throw new Error('获取歌手热门歌曲失败');
+};
+
+/** 获取歌手全部热门歌曲 */
+export const getSingerAllHotSong = async (singermid: string) => {
+  let sin = 0;
+  const num = 60;
+  let hasMore = true;
+  const result = {
+    code: 200,
+    total: 0,
+    songList: [] as SongInfo[],
+    singerBrief: '',
+    singerInfo: {} as SingerInfo,
+  };
+  while (hasMore) {
+    const res = await getSingerHotSong(singermid, { sin, num });
+    if (res) {
+      Object.assign(result, {
+        total: res.total_song,
+        singerBrief: res.singer_brief,
+        singerInfo: res.singer_info,
+        songList: [...result.songList, ...res.songlist],
+      });
+      hasMore = result.songList.length < res.total_song;
+    } else {
+      hasMore = false;
+    }
+    sin += num;
+  }
+  return result;
 };
 
 /** 获取相似歌手 */

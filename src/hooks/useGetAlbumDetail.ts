@@ -45,7 +45,7 @@ export const useGetAlbumDetail = () => {
   const getAlbumSongUrl = async (mid: string) => {
     const res = await getAlbumSongList(mid);
     const ids = res?.map((item) => {
-      const quality = getHighestQuality(item as any);
+      const quality = getHighestQualityInAlbum(item as any);
       return {
         id: item.songmid,
         name: item.songname,
@@ -66,15 +66,14 @@ export const useGetAlbumDetail = () => {
 
   const downloadAlbumSong = async (mid: string) => {
     try {
-      const urls = await getAlbumSongUrl(mid);
-      console.log('urls', urls);
-      for (const item of urls) {
-        const { id, name, url } = item;
-        console.log('id', id);
-        console.log('name', name);
-        console.log('url', url);
-        console.log(`当前正在下载${name}...`);
-        await download(url.replace('http://', 'https://'), name, 'flac', mid);
+      const albumSongList = await getAlbumSongList(mid);
+      console.log('albumSongList', albumSongList);
+      for (const item of albumSongList || []) {
+        const { songmid, songname } = item;
+        console.log('songmid', songmid);
+        console.log('songname', songname);
+        console.log(`当前正在下载${songname}...`);
+        await download(songmid, songname, 'flac', mid);
       }
     } catch (error) {
       console.error('下载专辑歌曲失败:', error);
@@ -86,7 +85,7 @@ export const useGetAlbumDetail = () => {
     const { name, list } = albumDetail || {};
     const promiseArr = list?.map((item) => async () => {
       const lrcContent = await getLyric(item.songmid);
-      const url = await getUrl(item.songmid, getHighestQuality(item));
+      const url = await getUrl(item.songmid, getHighestQualityInAlbum(item));
       return {
         songName: item.songname,
         url,
@@ -111,6 +110,23 @@ export const useGetAlbumDetail = () => {
     }
   };
 
+  const getHighestQualityInAlbum = (file: {
+    size128?: number;
+    size320?: number;
+    sizeape?: number;
+    sizeflac?: number;
+    sizeogg?: number;
+  }): keyof typeof FileType => {
+    // 按音质从高到低排序检查
+    if (file.sizeflac && file.sizeflac > 0) return 'flac';
+    if (file.sizeape && file.sizeape > 0) return 'ape';
+    if (file.size320 && file.size320 > 0) return 320;
+    if (file.size128 && file.size128 > 0) return 128;
+
+    // 默认返回128kbps
+    return 128;
+  };
+
   return {
     albumInfo,
     isLoading,
@@ -120,22 +136,6 @@ export const useGetAlbumDetail = () => {
     getAlbumSongUrl,
     downloadAlbumSong,
     getDownLoadJson,
+    getHighestQualityInAlbum,
   };
-};
-
-export const getHighestQuality = (file: {
-  size128?: number;
-  size320?: number;
-  sizeape?: number;
-  sizeflac?: number;
-  sizeogg?: number;
-}): keyof typeof FileType => {
-  // 按音质从高到低排序检查
-  if (file.sizeflac && file.sizeflac > 0) return 'flac';
-  if (file.sizeape && file.sizeape > 0) return 'ape';
-  if (file.size320 && file.size320 > 0) return 320;
-  if (file.size128 && file.size128 > 0) return 128;
-
-  // 默认返回128kbps
-  return 128;
 };

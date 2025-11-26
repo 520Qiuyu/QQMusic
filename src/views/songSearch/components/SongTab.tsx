@@ -2,13 +2,9 @@ import { getAlbumPicUrl } from '@/apis/album';
 import { getSingerPic } from '@/apis/singer';
 import { CopyText } from '@/components';
 import type { SongInfo } from '@/types/search';
-import { getHighestQuality } from '@/hooks/useGetAlbumDetail';
+import { useGetAlbumDetail } from '@/hooks/useGetAlbumDetail';
 import type { FileType } from '@/constants';
-import {
-  DownloadOutlined,
-  PauseCircleOutlined,
-  PlayCircleOutlined,
-} from '@ant-design/icons';
+import { DownloadOutlined, PauseCircleOutlined, PlayCircleOutlined } from '@ant-design/icons';
 import { Button, Image, Select, Space, Table } from 'antd';
 import type { ColumnType } from 'antd/es/table';
 import { useState } from 'react';
@@ -23,6 +19,7 @@ interface SongTabProps {
 const SongTab = ({ data, loading }: SongTabProps) => {
   const [qualityMap, setQualityMap] = useState<Record<string, keyof typeof FileType>>({});
   const { play, download, isPlaying, pause } = usePlayMusic();
+  const { getHighestQualityInAlbum } = useGetAlbumDetail();
 
   const handlePlay = (record: SongInfo) => {
     console.log('播放歌曲:', record);
@@ -35,7 +32,7 @@ const SongTab = ({ data, loading }: SongTabProps) => {
 
   const handleDownload = (record: SongInfo) => {
     // 先挑选音质
-    const quality = getHighestQuality(record);
+    const quality = getHighestQualityInAlbum(record);
     download(
       record.songmid,
       record.songname,
