@@ -536,23 +536,6 @@
     });
     return require$$0.useRef(proxy);
   };
-  var createUpdateEffect = function(hook) {
-    return function(effect, deps) {
-      var isMounted = require$$0.useRef(false);
-      hook(function() {
-        return function() {
-          isMounted.current = false;
-        };
-      }, []);
-      hook(function() {
-        if (!isMounted.current) {
-          isMounted.current = true;
-        } else {
-          return effect();
-        }
-      }, deps);
-    };
-  };
   function __read(o, n) {
     var m = typeof Symbol === "function" && o[Symbol.iterator];
     if (!m) return o;
@@ -577,27 +560,6 @@
   var isFunction = function(value) {
     return typeof value === "function";
   };
-  var isUndef = function(value) {
-    return typeof value === "undefined";
-  };
-  var useMemoizedFn = function(fn) {
-    var fnRef = require$$0.useRef(fn);
-    fnRef.current = require$$0.useMemo(function() {
-      return fn;
-    }, [fn]);
-    var memoizedFn = require$$0.useRef(void 0);
-    if (!memoizedFn.current) {
-      memoizedFn.current = function() {
-        var args = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-          args[_i] = arguments[_i];
-        }
-        return fnRef.current.apply(this, args);
-      };
-    }
-    return memoizedFn.current;
-  };
-  const useUpdateEffect = createUpdateEffect(require$$0.useEffect);
   function depsAreSame(oldDeps, deps) {
     if (oldDeps === deps) {
       return true;
@@ -960,139 +922,6 @@
   }
   var dayjs_minExports = requireDayjs_min();
   const dayjs = /* @__PURE__ */ getDefaultExportFromCjs(dayjs_minExports);
-  function useEventListener(eventName, handler, options) {
-    if (options === void 0) {
-      options = {};
-    }
-    var _a = options.enable, enable = _a === void 0 ? true : _a;
-    var handlerRef = useLatest(handler);
-    useEffectWithTarget$1(function() {
-      if (!enable) {
-        return;
-      }
-      var targetElement = getTargetElement(options.target, window);
-      if (!(targetElement === null || targetElement === void 0 ? void 0 : targetElement.addEventListener)) {
-        return;
-      }
-      var eventListener = function(event) {
-        return handlerRef.current(event);
-      };
-      var eventNameArray = Array.isArray(eventName) ? eventName : [eventName];
-      eventNameArray.forEach(function(event) {
-        targetElement.addEventListener(event, eventListener, {
-          capture: options.capture,
-          once: options.once,
-          passive: options.passive
-        });
-      });
-      return function() {
-        eventNameArray.forEach(function(event) {
-          targetElement.removeEventListener(event, eventListener, {
-            capture: options.capture
-          });
-        });
-      };
-    }, [eventName, options.capture, options.once, options.passive, enable], options.target);
-  }
-  var SYNC_STORAGE_EVENT_NAME = "AHOOKS_SYNC_STORAGE_EVENT_NAME";
-  function createUseStorageState(getStorage) {
-    function useStorageState(key, options) {
-      if (options === void 0) {
-        options = {};
-      }
-      var storage;
-      var _a = options.listenStorageChange, listenStorageChange = _a === void 0 ? false : _a, _b = options.onError, onError = _b === void 0 ? function(e) {
-        console.error(e);
-      } : _b;
-      try {
-        storage = getStorage();
-      } catch (err) {
-        onError(err);
-      }
-      var serializer = function(value) {
-        if (options.serializer) {
-          return options.serializer(value);
-        }
-        return JSON.stringify(value);
-      };
-      var deserializer = function(value) {
-        if (options.deserializer) {
-          return options.deserializer(value);
-        }
-        return JSON.parse(value);
-      };
-      function getStoredValue() {
-        try {
-          var raw = storage === null || storage === void 0 ? void 0 : storage.getItem(key);
-          if (raw) {
-            return deserializer(raw);
-          }
-        } catch (e) {
-          onError(e);
-        }
-        if (isFunction(options.defaultValue)) {
-          return options.defaultValue();
-        }
-        return options.defaultValue;
-      }
-      var _c = __read(require$$0.useState(getStoredValue), 2), state = _c[0], setState = _c[1];
-      useUpdateEffect(function() {
-        setState(getStoredValue());
-      }, [key]);
-      var updateState = function(value) {
-        var currentState = isFunction(value) ? value(state) : value;
-        if (!listenStorageChange) {
-          setState(currentState);
-        }
-        try {
-          var newValue = void 0;
-          var oldValue = storage === null || storage === void 0 ? void 0 : storage.getItem(key);
-          if (isUndef(currentState)) {
-            newValue = null;
-            storage === null || storage === void 0 ? void 0 : storage.removeItem(key);
-          } else {
-            newValue = serializer(currentState);
-            storage === null || storage === void 0 ? void 0 : storage.setItem(key, newValue);
-          }
-          dispatchEvent(
-            // send custom event to communicate within same page
-            // importantly this should not be a StorageEvent since those cannot
-            // be constructed with a non-built-in storage area
-            new CustomEvent(SYNC_STORAGE_EVENT_NAME, {
-              detail: {
-                key,
-                newValue,
-                oldValue,
-                storageArea: storage
-              }
-            })
-          );
-        } catch (e) {
-          onError(e);
-        }
-      };
-      var syncState = function(event) {
-        if (event.key !== key || event.storageArea !== storage) {
-          return;
-        }
-        setState(getStoredValue());
-      };
-      var syncStateFromCustomEvent = function(event) {
-        syncState(event.detail);
-      };
-      useEventListener("storage", syncState, {
-        enable: listenStorageChange
-      });
-      useEventListener(SYNC_STORAGE_EVENT_NAME, syncStateFromCustomEvent, {
-        enable: listenStorageChange
-      });
-      return [state, useMemoizedFn(updateState)];
-    }
-    return useStorageState;
-  }
-  var useLocalStorageState = createUseStorageState(function() {
-    return isBrowser$1 ? localStorage : void 0;
-  });
   function useRafState(initialState) {
     var ref = require$$0.useRef(0);
     var _a = __read(require$$0.useState(initialState), 2), state = _a[0], setState = _a[1];
@@ -1624,53 +1453,6 @@
     }, [], target);
     return state;
   }
-  const defaultFunctionConfig = {
-    enableFunctionSwitchTab: true,
-    enableDownloadSetting: true,
-    enableTestModal: true
-  };
-  const defaultDownloadConfig = {
-    quality: "flac",
-    downloadLyric: true,
-    embedLyricCover: true,
-    embedSongInfo: true
-  };
-  const useConfig = () => {
-    const [downloadConfig, setDownloadConfig] = useLocalStorageState(
-      "qqmusic_downloadConfig",
-      {
-        defaultValue: defaultDownloadConfig,
-        listenStorageChange: true
-      }
-    );
-    const [functionConfig, setFunctionConfig] = useLocalStorageState(
-      "qqmusic_functionConfig",
-      {
-        defaultValue: defaultFunctionConfig,
-        listenStorageChange: true
-      }
-    );
-    require$$0.useEffect(() => {
-      setFunctionConfig({
-        ...defaultFunctionConfig,
-        ...functionConfig
-      });
-      setDownloadConfig({
-        ...defaultDownloadConfig,
-        ...downloadConfig
-      });
-    }, []);
-    return {
-      /** 下载配置 */
-      downloadConfig: downloadConfig || defaultDownloadConfig,
-      /** 设置下载配置 */
-      setDownloadConfig,
-      /** 功能配置 */
-      functionConfig: functionConfig || defaultFunctionConfig,
-      /** 设置功能配置 */
-      setFunctionConfig
-    };
-  };
   function useFilter(list, config) {
     const [filteredList, setFilteredList] = require$$0.useState(list);
     require$$0.useEffect(() => {
@@ -1913,17 +1695,6 @@
     组合: 2
   };
   const SexList = mapToList(Sex);
-  const getCommonParams = () => ({
-    g_tk: 1124214810,
-    loginUin: getCookie("uin") || "0",
-    hostUin: 0,
-    inCharset: "utf8",
-    outCharset: "utf-8",
-    // format: 'json',
-    notice: 0,
-    platform: "yqq.json",
-    needNewCode: 0
-  });
   const _guid = Math.round(2147483647 * Math.random()) * (/* @__PURE__ */ new Date()).getUTCMilliseconds() % 1e10;
   const FileType = {
     m4a: {
@@ -1947,14 +1718,6 @@
       e: ".flac"
     }
   };
-  const ResourceType = {
-    歌曲: "song",
-    专辑: "album",
-    视频: "mv",
-    歌单: "playlist",
-    歌手: "user",
-    歌词: "lyric"
-  };
   const FlacTag = {
     标题: "title",
     艺术家: "artist",
@@ -1969,49 +1732,13 @@
     歌词: "lyrics"
   };
   mapToList(FlacTag);
-  const FLAC_TAGS = Object.entries(FlacTag).reduce(
+  Object.entries(FlacTag).reduce(
     (acc, [key, value]) => {
       acc[value] = key;
       return acc;
     },
     {}
   );
-  const getSongInfo = async (songmid, options = {}) => {
-    const { songid = "" } = options;
-    const params = {
-      ...getCommonParams(),
-      format: "json",
-      inCharset: "utf8",
-      outCharset: "utf-8",
-      notice: 0,
-      platform: "yqq.json",
-      needNewCode: 0,
-      data: JSON.stringify({
-        comm: {
-          ct: 24,
-          cv: 0
-        },
-        songinfo: {
-          method: "get_song_detail_yqq",
-          param: {
-            song_type: 0,
-            song_mid: songmid,
-            song_id: songid
-          },
-          module: "music.pf_song_detail_svr"
-        }
-      })
-    };
-    const res = await qqMusicRequest(
-      `/cgi-bin/musicu.fcg?${new URLSearchParams(params).toString()}`,
-      {},
-      "u"
-    );
-    if (res.code === 0) {
-      return res.songinfo?.data;
-    }
-    throw new Error("获取歌曲信息失败");
-  };
   const getSongLyric = async (songmid) => {
     const params = {
       songmid,
@@ -2992,88 +2719,6 @@
       return BrowserBuffer.concat(stream);
     }
   }
-  const parseTags = (tags) => {
-    const result = {};
-    tags.forEach((tag) => {
-      const equalIndex = tag.indexOf("=");
-      if (equalIndex === -1) return;
-      const name = tag.substring(0, equalIndex).toLowerCase();
-      const value = tag.substring(equalIndex + 1);
-      if (result[name]) {
-        result[name] = result[name] + "\n" + value;
-      } else {
-        result[name] = value;
-      }
-    });
-    return result;
-  };
-  const readAllFlacTag = async (file) => {
-    try {
-      const metaflac = await Metaflac.fromBlob(file);
-      const tags = metaflac.getAllTags();
-      const parsedTags = parseTags(tags);
-      console.log("解析后的标签:", parsedTags);
-      return parsedTags;
-    } catch (error) {
-      console.error("读取 FLAC 标签失败:", error);
-      return {};
-    }
-  };
-  const readFlacTag = async (file, tagName) => {
-    try {
-      const metaflac = await Metaflac.fromBlob(file);
-      const tagString = metaflac.getTag(tagName.toUpperCase());
-      if (!tagString) {
-        return void 0;
-      }
-      const lines = tagString.split("\n");
-      if (lines.length > 0) {
-        const equalIndex = lines[0].indexOf("=");
-        if (equalIndex !== -1) {
-          return lines[0].substring(equalIndex + 1);
-        }
-      }
-      return void 0;
-    } catch (error) {
-      console.error(`读取 FLAC 标签 ${tagName} 失败:`, error);
-      return void 0;
-    }
-  };
-  const writeFlacTag = async (file, tagName, tagValue) => {
-    try {
-      const metaflac = await Metaflac.fromBlob(file);
-      metaflac.removeTag(tagName.toUpperCase());
-      metaflac.setTag(`${tagName.toUpperCase()}=${tagValue}`);
-      const newBlob = metaflac.saveAsBlob();
-      console.log("给 FLAC 写标签成功");
-      return newBlob;
-    } catch (error) {
-      console.error("给 FLAC 写标签失败:", error);
-      throw new Error("给 FLAC 写标签失败");
-    }
-  };
-  const readFlacPictures = async (file) => {
-    try {
-      const metaflac = await Metaflac.fromBlob(file);
-      const pictures = metaflac.getPicturesSpecs?.() || [];
-      return pictures.map((_, index2) => metaflac.exportPictureToBlob(index2));
-    } catch (error) {
-      console.error("读取 FLAC 封面图片失败:", error);
-      return [];
-    }
-  };
-  const embedFlacPicture = async (file, picture) => {
-    try {
-      const metaflac = await Metaflac.fromBlob(file);
-      await metaflac.importPictureFromFile(picture);
-      const newBlob = metaflac.saveAsBlob();
-      console.log("给 FLAC 嵌入图片成功");
-      return newBlob;
-    } catch (error) {
-      console.error("给 FLAC 嵌入图片失败:", error);
-      return file;
-    }
-  };
   const writeFlacTagAndPicture = async (file, tagName, tagValue, picture) => {
     try {
       const metaflac = await Metaflac.fromBlob(file);
@@ -3629,23 +3274,6 @@
   };
   const NOOP = () => {
   };
-  const getSingerInfo = async (singermid) => {
-    const params = {
-      singermid,
-      format: "xml",
-      outCharset: "utf-8",
-      utf8: "1",
-      r: dayjs().valueOf() + ""
-    };
-    return qqMusicRequest(
-      `/splcloud/fcgi-bin/fcg_get_singer_desc.fcg?${new URLSearchParams(params).toString()}`,
-      {
-        method: "GET",
-        responseType: "text"
-        // 改为 text 因为返回的是 XML
-      }
-    );
-  };
   const getSingerAlbum = async (singermid, options = {}) => {
     const { begin = 0, num = 80 } = options;
     const params = {
@@ -3729,20 +3357,6 @@
     }
     throw new Error("获取歌手列表失败");
   };
-  const getSingerFollowCount = async (singermid) => {
-    const params = {
-      singermid,
-      format: "json",
-      outCharset: "utf-8",
-      utf8: "1",
-      rnd: dayjs().valueOf() + ""
-    };
-    return qqMusicRequest(
-      `/rsc/fcgi-bin/fcg_order_singer_getnum.fcg?${new URLSearchParams(params).toString()}`,
-      {},
-      "c"
-    );
-  };
   const getSingerHotSong = async (singermid, options = {}) => {
     const { sin = 0, num = 60 } = options;
     const params = {
@@ -3770,54 +3384,11 @@
       {},
       "u"
     );
+    console.log("res", res);
     if (res.code === 0) {
       return res.singer?.data;
     }
     throw new Error("获取歌手热门歌曲失败");
-  };
-  const getSingerAllHotSong = async (singermid) => {
-    let sin = 0;
-    const num = 60;
-    let hasMore = true;
-    const result = {
-      code: 200,
-      total: 0,
-      songList: [],
-      singerBrief: "",
-      singerInfo: {}
-    };
-    while (hasMore) {
-      const res = await getSingerHotSong(singermid, { sin, num });
-      if (res) {
-        Object.assign(result, {
-          total: res.total_song,
-          singerBrief: res.singer_brief,
-          singerInfo: res.singer_info,
-          songList: [...result.songList, ...res.songlist]
-        });
-        hasMore = result.songList.length < res.total_song;
-      } else {
-        hasMore = false;
-      }
-      sin += num;
-    }
-    return result;
-  };
-  const getSimilarSinger = async (singer_mid, options = {}) => {
-    const { start = 0, num = 5 } = options;
-    const params = {
-      singer_mid,
-      format: "json",
-      outCharset: "utf-8",
-      utf8: "1",
-      start: start + "",
-      num: num + ""
-    };
-    const res = await qqMusicRequest(
-      `/v8/fcg-bin/fcg_v8_simsinger.fcg?${new URLSearchParams(params).toString()}`,
-      {}
-    );
-    return res.singers;
   };
   const getSingerPic = (singermid, options) => {
     const { size = "800x800" } = {};
@@ -4536,24 +4107,6 @@
       )
     ] });
   }
-  function MyButton(props) {
-    const { loading: loading2, onClick, ...rest } = props;
-    const [_loading, setLoading] = require$$0.useState(loading2);
-    const handleClick = async (...args) => {
-      try {
-        setLoading(true);
-        await onClick?.(...args);
-      } catch (error) {
-        console.log("error", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    require$$0.useEffect(() => {
-      setLoading(loading2);
-    }, [loading2]);
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { ...rest, onClick: handleClick, loading: _loading });
-  }
   const Styles$1 = {
     "select-search": "_select-search_19wb1_1"
   };
@@ -4730,11 +4283,11 @@
       }
     }
   };
-  const { Item: Item$3 } = antd.Form;
+  const { Item: Item$1 } = antd.Form;
   const SearchFormItem = (props) => {
     const { name, type = "input", label = "", inputProps = {}, ...formItemProps } = props;
     const InputComponent = COMPONENT_TYPE_MAP[type];
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(Item$3, { name, label, ...formItemProps, children: /* @__PURE__ */ jsxRuntimeExports.jsx(InputComponent, { ...{ ...defaultComponentProps[type], ...inputProps } }) });
+    return /* @__PURE__ */ jsxRuntimeExports.jsx(Item$1, { name, label, ...formItemProps, children: /* @__PURE__ */ jsxRuntimeExports.jsx(InputComponent, { ...{ ...defaultComponentProps[type], ...inputProps } }) });
   };
   function AdvancedSearch(props) {
     antd.Form.useFormInstance();
@@ -4779,7 +4332,7 @@
   const Styles = {
     "search-form": "_search-form_10eg9_1"
   };
-  const { Item: Item$2 } = antd.Form;
+  const { Item } = antd.Form;
   const SearchForm = (props, ref) => {
     const [formRef] = antd.Form.useForm();
     const {
@@ -4855,9 +4408,9 @@
             );
           }),
           isAdvancedSearch && /* @__PURE__ */ jsxRuntimeExports.jsx(AdvancedSearch, { params: searchParams, items: advancedOptions }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Item$2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", onClick: handleSearch, shape: "round", loading: loading2, children: "查询" }) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(Item$2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { onClick: handleReset, shape: "round", children: "重置" }) }),
-          advancedOptions.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(Item$2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "link", onClick: () => setIsAdvancedSearch(!isAdvancedSearch), children: isAdvancedSearch ? "关闭" : "高级搜索" }) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Item, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", onClick: handleSearch, shape: "round", loading: loading2, children: "查询" }) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(Item, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { onClick: handleReset, shape: "round", children: "重置" }) }),
+          advancedOptions.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(Item, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "link", onClick: () => setIsAdvancedSearch(!isAdvancedSearch), children: isAdvancedSearch ? "关闭" : "高级搜索" }) })
         ]
       }
     );
@@ -10386,6 +9939,8 @@
         },
         onReset: () => {
           setSingerInfo({});
+          setSelectedRowKeys([]);
+          setSelectedRows([]);
         }
       },
       ref
@@ -10618,7 +10173,7 @@
           result.push({
             albumName,
             albumCover,
-            songList: albumSongs
+            list: albumSongs
           });
         }
         downloadAsJson(result, `${singerInfo.singerName}-专辑`);
@@ -12147,31 +11702,6 @@
     }
     throw new Error("搜索失败");
   };
-  const getWebSearchResult = async (keyword, type = "song", options) => {
-    const { pageNum = 1, pageSize = 20 } = {};
-    const params = {
-      req_1: {
-        method: "DoSearchForQQMusicDesktop",
-        module: "music.search.SearchCgiService",
-        param: {
-          num_per_page: Number(pageSize),
-          page_num: Number(pageNum),
-          query: keyword,
-          search_type: Number(typeMap[type])
-        }
-      }
-    };
-    console.log("params", params);
-    const res = await qqMusicRequest(
-      `/cgi-bin/musicu.fcg`,
-      {
-        method: "POST",
-        data: JSON.stringify(params)
-      },
-      "u"
-    );
-    console.log("res", res);
-  };
   const styles$1 = {
     "song-search-modal": "_song-search-modal_15iqn_1",
     "modal-title": "_modal-title_15iqn_1",
@@ -12187,7 +11717,7 @@
     "singer-name": "_singer-name_15iqn_60",
     "song-mid-text": "_song-mid-text_15iqn_75"
   };
-  const SongTab$1 = ({ data, loading: loading2 }) => {
+  const SongTab = ({ data, loading: loading2 }) => {
     const [qualityMap, setQualityMap] = require$$0.useState({});
     const { play, download, isPlaying, pause } = usePlayMusic();
     const { getHighestQualityInAlbum } = useGetAlbumDetail();
@@ -12351,7 +11881,7 @@
       }
     );
   };
-  const AlbumTab$1 = ({ data, loading: loading2 }) => {
+  const AlbumTab = ({ data, loading: loading2 }) => {
     const albumDetailRef = useCompRef();
     const { pause, isPlaying } = usePlayMusic();
     const {
@@ -12521,7 +12051,7 @@
       /* @__PURE__ */ jsxRuntimeExports.jsx(AlbumDetail, { ref: albumDetailRef })
     ] });
   };
-  const SingerTab$1 = ({ data, loading: loading2 }) => {
+  const SingerTab = ({ data, loading: loading2 }) => {
     const hotSongModalRef = useCompRef();
     const handleHotSong = (record) => {
       hotSongModalRef.current.open({
@@ -12814,9 +12344,9 @@
               activeKey: searchParams.type,
               onChange: (key) => setSearchParams({ ...searchParams, type: key, pageNum: 1 }),
               children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tabs.TabPane, { tab: "歌曲", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SongTab$1, { data: data?.song?.list || [], loading: loading2 }) }, "song"),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tabs.TabPane, { tab: "专辑", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AlbumTab$1, { data: data?.album?.list || [], loading: loading2 }) }, "album"),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tabs.TabPane, { tab: "歌手", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SingerTab$1, { data: data?.singer?.list || [], loading: loading2 }) }, "user"),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tabs.TabPane, { tab: "歌曲", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SongTab, { data: data?.song?.list || [], loading: loading2 }) }, "song"),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tabs.TabPane, { tab: "专辑", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AlbumTab, { data: data?.album?.list || [], loading: loading2 }) }, "album"),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tabs.TabPane, { tab: "歌手", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SingerTab, { data: data?.singer?.list || [], loading: loading2 }) }, "user"),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tabs.TabPane, { tab: "MV", children: /* @__PURE__ */ jsxRuntimeExports.jsx(MvTab, { data: data?.mv?.list || [], loading: loading2 }) }, "mv"),
                 /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tabs.TabPane, { tab: "歌词", children: /* @__PURE__ */ jsxRuntimeExports.jsx(LyricTab, { data: data?.lyric?.list || [], loading: loading2 }) }, "lyric")
               ]
@@ -12865,831 +12395,551 @@
       }
     );
   });
-  const AlbumTab = () => {
-    const [albummid, setAlbummid] = require$$0.useState("0016l2F430zMux");
-    const [getAlbumInfoLoading, setGetAlbumInfoLoading] = require$$0.useState(false);
-    const handleGetAlbumInfo = async () => {
-      try {
-        setGetAlbumInfoLoading(true);
-        const res = await getAlbumInfo(albummid);
-        console.log("res", res);
-      } catch (error) {
-        console.log("error", error);
-      } finally {
-        setGetAlbumInfoLoading(false);
-      }
+  const FLAG_UNSYNCHRONISATION = 8 << 4;
+  const FLAG_EXTENDED_HEADER = 4 << 4;
+  const FLAG_EXPERIMENTAL_INDICATOR = 2 << 4;
+  const FLAG_TAG_ALTER_PRESERVATION = 4 << 4;
+  const FLAG_FILE_ALTER_PRESERVATION = 2 << 4;
+  const FLAG_FRAME_READ_ONLY = 1 << 4;
+  const FLAG_FRAME_HAS_GROUP = 4 << 4;
+  const FLAG_COMPRESSION = 8;
+  const FLAG_ENCRYPTION = 4;
+  const FLAG_FRAME_UNSYNCHRONISATION = 2;
+  const FLAG_DATA_LENGTH_INDICATOR = 1;
+  function hasID3(bytes) {
+    return bytes[0] === /* "I" */
+    73 && bytes[1] === /* "D" */
+    68 && bytes[2] === /* "3" */
+    51;
+  }
+  function readTagSize(bytes) {
+    return (bytes[0] << 21) + (bytes[1] << 14) + (bytes[2] << 7) + bytes[3];
+  }
+  var Preservation;
+  (function(Preservation2) {
+    Preservation2[Preservation2["Preserved"] = 0] = "Preserved";
+    Preservation2[Preservation2["Discarded"] = 1] = "Discarded";
+  })(Preservation || (Preservation = {}));
+  var FrameContentType;
+  (function(FrameContentType2) {
+    FrameContentType2[FrameContentType2["Unknown"] = 0] = "Unknown";
+    FrameContentType2[FrameContentType2["Text"] = 1] = "Text";
+    FrameContentType2[FrameContentType2["AttachedPicture"] = 2] = "AttachedPicture";
+    FrameContentType2[FrameContentType2["Comment"] = 3] = "Comment";
+    FrameContentType2[FrameContentType2["URLLink"] = 4] = "URLLink";
+    FrameContentType2[FrameContentType2["UnsynchronisedLyrics"] = 5] = "UnsynchronisedLyrics";
+    FrameContentType2[FrameContentType2["UserDefinedText"] = 6] = "UserDefinedText";
+    FrameContentType2[FrameContentType2["Private"] = 7] = "Private";
+  })(FrameContentType || (FrameContentType = {}));
+  var TextEncoding;
+  (function(TextEncoding2) {
+    TextEncoding2[TextEncoding2["ISO-8859-1"] = 0] = "ISO-8859-1";
+    TextEncoding2[TextEncoding2["UTF-16"] = 1] = "UTF-16";
+    TextEncoding2[TextEncoding2["UTF-16BE"] = 2] = "UTF-16BE";
+    TextEncoding2[TextEncoding2["UTF-8"] = 3] = "UTF-8";
+  })(TextEncoding || (TextEncoding = {}));
+  var PictureType;
+  (function(PictureType2) {
+    PictureType2[PictureType2["Other"] = 0] = "Other";
+    PictureType2[PictureType2["FileIcon"] = 1] = "FileIcon";
+    PictureType2[PictureType2["OtherFileIcon"] = 2] = "OtherFileIcon";
+    PictureType2[PictureType2["FrontCover"] = 3] = "FrontCover";
+    PictureType2[PictureType2["BackCover"] = 4] = "BackCover";
+    PictureType2[PictureType2["LeafletPage"] = 5] = "LeafletPage";
+    PictureType2[PictureType2["Media"] = 6] = "Media";
+    PictureType2[PictureType2["LeadArtist"] = 7] = "LeadArtist";
+    PictureType2[PictureType2["Artist"] = 8] = "Artist";
+    PictureType2[PictureType2["Conductor"] = 9] = "Conductor";
+    PictureType2[PictureType2["Orchestra"] = 10] = "Orchestra";
+    PictureType2[PictureType2["Composer"] = 11] = "Composer";
+    PictureType2[PictureType2["Lyricist"] = 12] = "Lyricist";
+    PictureType2[PictureType2["RecordingLocation"] = 13] = "RecordingLocation";
+    PictureType2[PictureType2["DuringRecording"] = 14] = "DuringRecording";
+    PictureType2[PictureType2["DuringPerformance"] = 15] = "DuringPerformance";
+    PictureType2[PictureType2["Movie"] = 16] = "Movie";
+    PictureType2[PictureType2["ABrightColoredFish"] = 17] = "ABrightColoredFish";
+    PictureType2[PictureType2["Illustration"] = 18] = "Illustration";
+    PictureType2[PictureType2["ArtistLogotype"] = 19] = "ArtistLogotype";
+    PictureType2[PictureType2["Publisher"] = 20] = "Publisher";
+  })(PictureType || (PictureType = {}));
+  function isTextFrame(frame) {
+    return frame.type === FrameContentType.Text;
+  }
+  function isAttachedPictureFrame(frame) {
+    return frame.type === FrameContentType.AttachedPicture;
+  }
+  function parse(bytes) {
+    if (!hasID3(bytes)) {
+      return void 0;
+    }
+    const majorVersion = bytes[3];
+    const revision = bytes[4];
+    const headerFlags = bytes[5];
+    const unsynchronisation = !!(headerFlags & FLAG_UNSYNCHRONISATION);
+    const hasExtendedHeader = headerFlags & FLAG_EXTENDED_HEADER;
+    const isExperimental = !!(headerFlags & FLAG_EXPERIMENTAL_INDICATOR);
+    const tagSize = readTagSize(bytes.subarray(6));
+    let offset = 10;
+    const extendedHeaderSize = hasExtendedHeader ? skipExtenedHeader(bytes.subarray(offset), majorVersion) : 0;
+    offset += extendedHeaderSize;
+    const frames = parseFrames(bytes.subarray(offset), {
+      totalFramesSize: offset + (tagSize - extendedHeaderSize),
+      version: majorVersion
+    });
+    return {
+      version: {
+        major: majorVersion,
+        revision
+      },
+      flags: {
+        unsynchronisation,
+        isExperimental
+      },
+      frames
     };
-    const [getAlbumPicUrlLoading, setGetAlbumPicUrlLoading] = require$$0.useState(false);
-    const handleGetAlbumPicUrl = async () => {
-      try {
-        setGetAlbumPicUrlLoading(true);
-        const res = getAlbumPicUrl(albummid);
-        console.log("res", res);
-      } catch (error) {
-        console.log("error", error);
-      } finally {
-        setGetAlbumPicUrlLoading(false);
-      }
-    };
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { label: "获取专辑信息", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        antd.Input,
-        {
-          placeholder: "请输入专辑mid",
-          style: { width: 300 },
-          value: albummid,
-          onChange: (e) => setAlbummid(e.target.value)
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", onClick: handleGetAlbumInfo, loading: getAlbumInfoLoading, children: "获取专辑信息" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", onClick: handleGetAlbumPicUrl, loading: getAlbumPicUrlLoading, children: "获取专辑图片" })
-    ] }) }) });
-  };
-  function SettingItem(props) {
-    const { value, onChange, type = "switch", disabled, ...otherProps } = props;
-    switch (type) {
-      case "input":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(
-          antd.Input,
-          {
-            value,
-            onChange: (e) => onChange?.(e.target.value),
-            disabled,
-            ...otherProps
-          }
-        );
-      case "select":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(
-          antd.Select,
-          {
-            value,
-            onChange,
-            disabled,
-            ...otherProps
-          }
-        );
-      case "radio":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(
-          antd.Radio.Group,
-          {
-            value,
-            onChange: (e) => onChange?.(e.target.value),
-            disabled,
-            ...otherProps
-          }
-        );
-      case "checkbox":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(
-          antd.Checkbox.Group,
-          {
-            value,
-            onChange,
-            disabled,
-            ...otherProps
-          }
-        );
-      case "date":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(
-          antd.DatePicker,
-          {
-            value,
-            onChange,
-            disabled,
-            ...otherProps
-          }
-        );
-      case "time":
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(
-          antd.TimePicker,
-          {
-            value,
-            onChange,
-            disabled,
-            ...otherProps
-          }
-        );
-      case "switch":
-      default:
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(
-          antd.Switch,
-          {
-            checked: value,
-            onChange,
-            disabled,
-            ...otherProps
-          }
-        );
+  }
+  function readSize(bytes, version) {
+    if (version >= 4) {
+      return (bytes[0] << 21) + (bytes[1] << 14) + (bytes[2] << 7) + bytes[3];
+    } else {
+      return (bytes[0] << 24) + (bytes[1] << 16) + (bytes[2] << 8) + bytes[3];
     }
   }
-  const { Item: Item$1 } = antd.Descriptions;
-  const getQualityOptions = () => {
-    return [
-      { label: "128k MP3", value: "128" },
-      { label: "320k MP3", value: "320" },
-      { label: "FLAC", value: "flac" }
-    ];
-  };
-  const DOWNLOAD_SETTING_STRATEGIES = [
-    {
-      label: "下载音质",
-      key: "quality",
-      type: "select",
-      options: getQualityOptions(),
-      style: { width: "100%" }
-    },
-    {
-      label: "是否下载歌词",
-      key: "downloadLyric",
-      type: "switch"
-    },
-    {
-      label: "是否内嵌歌词封面",
-      key: "embedLyricCover",
-      type: "switch"
-    },
-    {
-      label: "是否内嵌歌曲信息",
-      key: "embedSongInfo",
-      type: "switch"
+  function skipExtenedHeader(bytes, version) {
+    return readSize(bytes, version);
+  }
+  function peekIsPadding(bytes, offset) {
+    return bytes[offset] === 0 && bytes[offset + 1] === 0 && bytes[offset + 2] === 0 && bytes[offset + 3] === 0;
+  }
+  function findTerminatorIndex(encoding, bytes) {
+    switch (encoding) {
+      case TextEncoding["ISO-8859-1"]:
+      case TextEncoding["UTF-8"]:
+        return bytes.indexOf(0);
+      case TextEncoding["UTF-16"]:
+      case TextEncoding["UTF-16BE"]:
+        return bytes.findIndex((byte, index2, bytes2) => byte === 0 && bytes2[index2 + 1] === 0);
     }
-  ];
-  const DownloadSettingTab = () => {
-    const { downloadConfig, setDownloadConfig } = useConfig();
-    const handleConfigChange = (key, value) => {
-      setDownloadConfig({
-        ...downloadConfig,
-        [key]: value
-      });
-    };
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(
-      antd.Descriptions,
-      {
-        column: 3,
-        size: "large",
-        bordered: true,
-        style: {
-          minWidth: 800
-        },
-        children: DOWNLOAD_SETTING_STRATEGIES.map((strategy) => {
-          const { type, key, label, ...rest } = strategy;
-          return /* @__PURE__ */ jsxRuntimeExports.jsx(Item$1, { label, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-            SettingItem,
-            {
-              value: downloadConfig[key],
-              onChange: (value) => handleConfigChange(key, value),
-              type,
-              ...rest
-            }
-          ) }, key);
-        })
-      }
-    );
-  };
-  const FlacTab = () => {
-    const [flacFile, setFlacFile] = require$$0.useState(null);
-    const [flacTagName, setFlacTagName] = require$$0.useState("all");
-    const [flacTagValue, setFlacTagValue] = require$$0.useState("");
-    const [flacPicture, setFlacPicture] = require$$0.useState(null);
-    const [picturePreview, setPicturePreview] = require$$0.useState(null);
-    const [flacTags, setFlacTags] = require$$0.useState({});
-    const [flacFileList, setFlacFileList] = require$$0.useState([]);
-    const [pictureFileList, setPictureFileList] = require$$0.useState([]);
-    const loadFlacTags = async (file) => {
-      if (!file) return;
-      try {
-        if (flacTags.cover) {
-          URL.revokeObjectURL(flacTags.cover);
-        }
-        const tags = await readAllFlacTag(file);
-        const covers = await readFlacPictures(file) || [];
-        const cover = covers.length > 0 ? URL.createObjectURL(covers[covers.length - 1]) : null;
-        setFlacTags({
-          ...tags,
-          cover
-        });
-        console.log("FLAC 标签:", tags);
-      } catch (error) {
-        console.error("读取 FLAC 标签失败:", error);
-        msgError("读取 FLAC 标签失败");
+  }
+  function skipTerminator(encoding) {
+    switch (encoding) {
+      case TextEncoding["ISO-8859-1"]:
+      case TextEncoding["UTF-8"]:
+        return 1;
+      case TextEncoding["UTF-16"]:
+      case TextEncoding["UTF-16BE"]:
+        return 2;
+    }
+  }
+  function parseFrames(bytes, options) {
+    let offset = 0;
+    const frames = [];
+    while (offset < options.totalFramesSize && !peekIsPadding(bytes, offset)) {
+      const [frameSize, frame] = parseFrame(bytes.subarray(offset), options);
+      frames.push(frame);
+      offset += 10 + frameSize;
+    }
+    return frames;
+  }
+  function parseFrame(bytes, { version }) {
+    const defaultDecoder = new TextDecoder("ISO-8859-1");
+    const id = defaultDecoder.decode(bytes.subarray(0, 4));
+    const size = readSize(bytes.subarray(4), version);
+    const statusFlags = bytes[8];
+    const formatFlags = bytes[9];
+    const frameHeader = {
+      id,
+      flags: {
+        tagAlterPreservation: statusFlags & FLAG_TAG_ALTER_PRESERVATION ? Preservation.Discarded : Preservation.Preserved,
+        fileAlterPreservation: statusFlags & FLAG_FILE_ALTER_PRESERVATION ? Preservation.Discarded : Preservation.Preserved,
+        readOnly: !!(statusFlags & FLAG_FRAME_READ_ONLY),
+        grouping: !!(formatFlags & FLAG_FRAME_HAS_GROUP),
+        compressed: !!(formatFlags & FLAG_COMPRESSION),
+        encrypted: !!(formatFlags & FLAG_ENCRYPTION),
+        unsyrchronised: !!(formatFlags & FLAG_FRAME_UNSYNCHRONISATION),
+        hasDataLengthIndicator: !!(formatFlags & FLAG_DATA_LENGTH_INDICATOR)
       }
     };
-    require$$0.useEffect(() => {
-      if (flacFile) {
-        loadFlacTags(flacFile);
-      }
-      return () => {
-        if (flacTags.cover) {
-          URL.revokeObjectURL(flacTags.cover);
-        }
-      };
-    }, [flacFile]);
-    const handleFlacFileChange = ({ fileList }) => {
-      setFlacFileList(fileList);
-      if (fileList.length > 0 && fileList[0].originFileObj) {
-        const file = fileList[0].originFileObj;
-        setFlacFile(file);
+    const content = (() => {
+      const frameContent = bytes.subarray(10, 10 + size);
+      if (id.startsWith("T") && id !== "TXXX") {
+        return parseTextFrameContent(frameContent);
+      } else if (id === "APIC") {
+        return parseAttachedPictureFrameContent(frameContent);
+      } else if (id === "COMM") {
+        return parseCommentFrameContent(frameContent);
+      } else if (id === "USLT") {
+        return parseUnsynchronisedLyricsFrame(frameContent);
+      } else if (id === "TXXX") {
+        return parseUserDefinedTextFrameContent(frameContent);
+      } else if (id === "PRIV") {
+        return parsePrivateFrame(frameContent);
+      } else if (id.startsWith("W") && id !== "WXXX") {
+        return parseURLLinkFrame(frameContent);
       } else {
-        setFlacFile(null);
-        setFlacTags({});
+        return parseUnknownFrameContent(frameContent);
       }
+    })();
+    return [size, Object.assign(frameHeader, content)];
+  }
+  function parseTextFrameContent(bytes) {
+    const encoding = bytes[0];
+    const decoder = new TextDecoder(TextEncoding[encoding]);
+    return {
+      type: FrameContentType.Text,
+      encoding,
+      text: decoder.decode(bytes.subarray(1))
     };
-    const handlePictureChange = ({ fileList }) => {
-      setPictureFileList(fileList);
-      if (fileList.length > 0 && fileList[0].originFileObj) {
-        const file = fileList[0].originFileObj;
-        setFlacPicture(file);
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          setPicturePreview(e.target?.result);
+  }
+  function parseAttachedPictureFrameContent(bytes) {
+    const encoding = bytes[0];
+    let offset = 1 + bytes.subarray(1).indexOf(0);
+    const defaultDecoder = new TextDecoder("ISO-8859-1");
+    const mimeType = defaultDecoder.decode(bytes.subarray(1, offset));
+    offset += 1;
+    const pictureType = bytes[offset];
+    offset += 1;
+    const descriptionSize = findTerminatorIndex(encoding, bytes.subarray(offset));
+    const decoder = new TextDecoder(TextEncoding[encoding]);
+    const description = decoder.decode(bytes.subarray(offset, offset + descriptionSize));
+    offset += descriptionSize + skipTerminator(encoding);
+    const picture = bytes.slice(offset);
+    return {
+      type: FrameContentType.AttachedPicture,
+      encoding,
+      mimeType,
+      pictureType,
+      description,
+      picture
+    };
+  }
+  function parseCommentFrameContent(bytes) {
+    const encoding = bytes[0];
+    const defaultDecoder = new TextDecoder("ISO-8859-1");
+    const language = defaultDecoder.decode(bytes.subarray(1, 4));
+    const decoder = new TextDecoder(TextEncoding[encoding]);
+    const descriptionSize = findTerminatorIndex(encoding, bytes.subarray(4));
+    let offset = 4 + descriptionSize;
+    const description = decoder.decode(bytes.subarray(4, offset));
+    offset += skipTerminator(encoding);
+    const text = decoder.decode(bytes.subarray(offset));
+    return {
+      type: FrameContentType.Comment,
+      encoding,
+      language,
+      description,
+      text
+    };
+  }
+  function parseUnsynchronisedLyricsFrame(bytes) {
+    const encoding = bytes[0];
+    const defaultDecoder = new TextDecoder("ISO-8859-1");
+    const language = defaultDecoder.decode(bytes.subarray(1, 4));
+    const decoder = new TextDecoder(TextEncoding[encoding]);
+    const descriptorSize = bytes.subarray(4).indexOf(0);
+    let offset = 4 + descriptorSize;
+    const descriptor = decoder.decode(bytes.subarray(4, offset));
+    offset += 1;
+    if (bytes[offset] === 0) {
+      offset += 1;
+    }
+    const lyrics = decoder.decode(bytes.subarray(offset));
+    return {
+      type: FrameContentType.UnsynchronisedLyrics,
+      encoding,
+      language,
+      descriptor,
+      lyrics
+    };
+  }
+  function parseUserDefinedTextFrameContent(bytes) {
+    const encoding = bytes[0];
+    const decoder = new TextDecoder(TextEncoding[encoding]);
+    const descriptionSize = bytes.subarray(1).indexOf(0);
+    let offset = 1 + descriptionSize;
+    const description = decoder.decode(bytes.subarray(1, offset));
+    offset += 1;
+    if (bytes[offset] === 0) {
+      offset += 1;
+    }
+    const text = decoder.decode(bytes.subarray(offset));
+    return {
+      type: FrameContentType.UserDefinedText,
+      encoding,
+      description,
+      text
+    };
+  }
+  function parsePrivateFrame(bytes) {
+    const separator = bytes.indexOf(0);
+    const defaultDecoder = new TextDecoder("ISO-8859-1");
+    const identifier = defaultDecoder.decode(bytes.subarray(0, separator));
+    const data = bytes.slice(separator + 1);
+    return {
+      type: FrameContentType.Private,
+      identifier,
+      data
+    };
+  }
+  function parseURLLinkFrame(bytes) {
+    const decoder = new TextDecoder();
+    return {
+      type: FrameContentType.URLLink,
+      url: decoder.decode(bytes)
+    };
+  }
+  function parseUnknownFrameContent(bytes) {
+    return {
+      type: FrameContentType.Unknown,
+      raw: bytes.slice()
+    };
+  }
+  function createTagView(id3) {
+    const tag = id3 ?? {
+      version: { major: 4, revision: 0 },
+      frames: []
+    };
+    return {
+      get title() {
+        return tag.frames.find((frame) => frame.id === "TIT2")?.text;
+      },
+      set title(value) {
+        setTextFrameValue({ tag, id: "TIT2", value });
+      },
+      get artist() {
+        return tag.frames.find((frame) => frame.id === "TPE1")?.text;
+      },
+      set artist(value) {
+        setTextFrameValue({ tag, id: "TPE1", value });
+      },
+      get album() {
+        return tag.frames.find((frame) => frame.id === "TALB")?.text;
+      },
+      set album(value) {
+        setTextFrameValue({ tag, id: "TALB", value });
+      },
+      get track() {
+        const value = tag.frames.find((frame) => frame.id === "TRCK")?.text;
+        if (value === void 0) {
+          return value;
+        }
+        const matches = /^(\d+)(?:\/(\d+))$/.exec(value);
+        if (!matches) {
+          return void 0;
+        }
+        const [, current, total] = matches;
+        return {
+          current: Number.parseInt(current),
+          total: total ? Number.parseInt(total) : void 0
         };
-        reader.readAsDataURL(file);
-      } else {
-        setFlacPicture(null);
-        setPicturePreview(null);
-      }
-    };
-    const handleReadFlacTag = async () => {
-      try {
-        if (!flacFile) {
-          msgError("请选择文件");
-          return;
+      },
+      set track(value) {
+        const current = value?.current;
+        const total = value?.total;
+        setTextFrameValue({
+          tag,
+          id: "TRCK",
+          value: current && total ? `${current}/${total}` : current ? current.toString() : void 0
+        });
+      },
+      findPicture(type) {
+        const frame = tag.frames.find((frame2) => isAttachedPictureFrame(frame2) && frame2.pictureType === type);
+        if (frame) {
+          return {
+            mime: frame.mimeType,
+            type: frame.pictureType,
+            description: frame.description,
+            picture: frame.picture
+          };
         }
-        if (flacTagName === "all") {
-          const res = await readAllFlacTag(flacFile);
-          setFlacTags(res);
-          msgSuccess("读取所有标签成功，请查看下方信息");
-          console.log("res", res);
+      },
+      attachPicture({ type, picture, mime, description = "" }) {
+        const mimeType = mime || detectPictureMime(picture);
+        const frame = tag.frames.find((frame2) => isAttachedPictureFrame(frame2) && frame2.pictureType === type);
+        if (frame) {
+          frame.mimeType = mimeType;
+          frame.pictureType = type;
+          frame.description = description;
+          frame.picture = picture;
         } else {
-          const res = await readFlacTag(flacFile, flacTagName);
-          msgSuccess(`读取标签 ${FLAC_TAGS[flacTagName]} 成功: ${res || "无值"}`);
-          console.log("res", res);
+          const frame2 = createFrame(FrameContentType.AttachedPicture, "APIC", {
+            encoding: tag.version.major >= 4 ? TextEncoding["UTF-8"] : TextEncoding["UTF-16"],
+            mimeType,
+            pictureType: type,
+            description,
+            picture
+          });
+          tag.frames.push(frame2);
         }
-      } catch (error) {
-        console.log("error", error);
-        msgError("读取标签失败");
+      },
+      removePicture(type) {
+        tag.frames = tag.frames.filter((frame) => !(isAttachedPictureFrame(frame) && frame.pictureType === type));
+      },
+      removeAllPictures() {
+        tag.frames = tag.frames.filter((frame) => !isAttachedPictureFrame(frame));
       }
     };
-    const handleWriteFlacTag = async () => {
-      try {
-        if (!flacFile) {
-          msgError("请选择文件");
-          return;
-        }
-        if (flacTagName === "all") {
-          msgError("请选择具体标签");
-          return;
-        }
-        if (!flacTagValue.trim()) {
-          msgError("请输入标签值");
-          return;
-        }
-        const res = await writeFlacTag(flacFile, flacTagName, flacTagValue);
-        if (res) {
-          console.log("res", res);
-          setFlacFile(new File([res], flacFile.name));
-          msgSuccess("写入标签成功");
-        }
-      } catch (error) {
-        console.log("error", error);
-        msgError("写入标签失败");
+  }
+  function createFrame(type, id, content) {
+    const header = {
+      id,
+      flags: {
+        tagAlterPreservation: Preservation.Preserved,
+        fileAlterPreservation: Preservation.Preserved,
+        readOnly: false,
+        grouping: false,
+        compressed: false,
+        encrypted: false,
+        unsyrchronised: false,
+        hasDataLengthIndicator: false
       }
     };
-    const handleEmbedFlacPicture = async () => {
-      try {
-        if (!flacFile) {
-          msgError("请选择文件");
-          return;
-        }
-        if (!flacPicture) {
-          msgError("请选择图片");
-          return;
-        }
-        const res = await embedFlacPicture(flacFile, flacPicture);
-        if (res) {
-          console.log("res", res);
-          setFlacFile(new File([res], flacFile.name));
-          msgSuccess("嵌入图片成功");
-        }
-      } catch (error) {
-        console.log("error", error);
-        msgError("嵌入图片失败");
-      }
-    };
-    const handleDownloadFlacFile = async () => {
-      try {
-        if (!flacFile) {
-          msgError("请选择文件");
-          return;
-        }
-        downloadFileWithBlob(flacFile, flacFile.name || "test.flac");
-        msgSuccess("文件下载成功");
-      } catch (error) {
-        console.log("error", error);
-        msgError("文件下载失败");
-      }
-    };
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Form, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { label: "FLAC 文件", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-        antd.Upload,
-        {
-          fileList: flacFileList,
-          accept: ".flac",
-          maxCount: 1,
-          beforeUpload: async () => {
-            return false;
-          },
-          onChange: handleFlacFileChange,
-          children: /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.UploadOutlined, {}), children: "选择 FLAC 文件" })
-        }
-      ) }),
-      Object.keys(flacTags).length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { label: "FLAC 标签信息", children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Card, { size: "small", children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Descriptions, { column: 2, size: "small", children: Object.entries(flacTags).map(([key, value]) => /* @__PURE__ */ jsxRuntimeExports.jsx(
-        antd.Descriptions.Item,
-        {
-          label: FLAC_TAGS[key] || key.toUpperCase(),
-          children: key === "cover" && value ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-            antd.Image,
-            {
-              src: value,
-              alt: "封面",
-              width: 100,
-              height: 100,
-              style: { objectFit: "cover", borderRadius: 4 },
-              preview: true
-            }
-          ) : key === "cover" ? "无封面" : value
-        },
-        key
-      )) }) }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { label: "标签操作", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { wrap: true, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          antd.Select,
-          {
-            style: { width: 150 },
-            options: [
-              { label: "全部", value: "all" },
-              ...Object.entries(FLAC_TAGS).map(([key, value]) => ({
-                label: value,
-                value: key
-              }))
-            ],
-            value: flacTagName,
-            onChange: (value) => setFlacTagName(value)
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          antd.Input,
-          {
-            placeholder: "请输入标签值",
-            value: flacTagValue,
-            onChange: (e) => setFlacTagValue(e.target.value),
-            style: { width: 200 }
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleReadFlacTag, children: "读取标签" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleWriteFlacTag, children: "写入标签" })
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { label: "封面图片", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { wrap: true, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          antd.Upload,
-          {
-            fileList: pictureFileList,
-            accept: ".jpg,.png,.jpeg",
-            maxCount: 1,
-            beforeUpload: async () => {
-              return false;
-            },
-            onChange: handlePictureChange,
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { icon: /* @__PURE__ */ jsxRuntimeExports.jsx(icons.PictureOutlined, {}), children: "选择图片" })
-          }
-        ),
-        picturePreview && /* @__PURE__ */ jsxRuntimeExports.jsx(
-          antd.Image,
-          {
-            src: picturePreview,
-            alt: "封面预览",
-            width: 100,
-            height: 100,
-            style: { objectFit: "cover", borderRadius: 4 },
-            preview: true
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleEmbedFlacPicture, children: "嵌入图片" })
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { label: "文件操作", children: /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleDownloadFlacFile, children: "下载最新文件" }) })
-    ] });
-  };
-  const { Item } = antd.Descriptions;
-  const FUNCTION_SWITCH_STRATEGIES = [
-    {
-      label: "功能开关Tab",
-      key: "enableFunctionSwitchTab",
-      type: "switch",
-      disabled: true
-    },
-    {
-      label: "下载设置Tab",
-      key: "enableDownloadSetting",
-      type: "switch"
-    },
-    {
-      label: "测试Modal",
-      key: "enableTestModal",
-      type: "switch"
-    }
+    return { ...header, type, ...content };
+  }
+  const TEXT_FRAME_INSERTION_ORDER = [
+    "TIT2",
+    "TPE1",
+    "TALB",
+    "TRCK",
+    "TYER",
+    "TCON"
   ];
-  const FunctionSwitchTab = () => {
-    const { functionConfig, setFunctionConfig } = useConfig();
-    const handleSwitchChange = (key, checked) => {
-      setFunctionConfig({
-        ...functionConfig,
-        [key]: checked
+  function setTextFrameValue({ tag, id, value }) {
+    if (value == null) {
+      tag.frames = tag.frames.filter((frame2) => frame2.id !== id);
+      return;
+    }
+    const frame = tag.frames.find((frame2) => frame2.id === id);
+    if (frame) {
+      frame.text = value;
+    } else {
+      const frame2 = createFrame(FrameContentType.Text, id, {
+        encoding: tag.version.major >= 4 ? TextEncoding["UTF-8"] : TextEncoding["UTF-16"],
+        text: value
       });
-    };
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Descriptions, { column: 3, size: "large", bordered: true, children: FUNCTION_SWITCH_STRATEGIES.map((strategy) => {
-      const { type, key, label, disabled, ...rest } = strategy;
-      return /* @__PURE__ */ jsxRuntimeExports.jsx(Item, { label, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-        SettingItem,
-        {
-          value: functionConfig[key],
-          onChange: (value) => handleSwitchChange(key, value),
-          type,
-          disabled,
-          ...rest
+      const index2 = TEXT_FRAME_INSERTION_ORDER.indexOf(frame2.id);
+      if (index2 < 0 || index2 === TEXT_FRAME_INSERTION_ORDER.length - 1) {
+        const index3 = tag.frames.findLastIndex(isTextFrame);
+        if (index3 < 0) {
+          tag.frames.unshift(frame2);
+        } else {
+          tag.frames.splice(index3, 0, frame2);
         }
-      ) }, key);
-    }) });
-  };
-  const SearchTab = () => {
-    const [getSearchResultLoading, setGetSearchResultLoading] = require$$0.useState(false);
-    const [getSearchResultParams, setGetSearchResultParams] = require$$0.useState({
-      keyword: "",
-      type: "song"
-    });
-    const handleGetSearchResult = async () => {
-      try {
-        setGetSearchResultLoading(true);
-        const res = await getSearchResult(getSearchResultParams.keyword, getSearchResultParams.type);
-        console.log("res", res);
-      } catch (error) {
-        console.log("error", error);
-      } finally {
-        setGetSearchResultLoading(false);
+      } else {
+        let index3 = -1;
+        for (const id2 of TEXT_FRAME_INSERTION_ORDER) {
+          index3 = tag.frames.findIndex((frame3) => frame3.id === id2);
+        }
+        if (index3 === -1) {
+          tag.frames.unshift(frame2);
+        } else {
+          tag.frames.splice(index3, 0, frame2);
+        }
       }
-    };
-    const [getWebSearchResultLoading, setGetWebSearchResultLoading] = require$$0.useState(false);
-    const handleGetWebSearchResult = async () => {
-      try {
-        setGetWebSearchResultLoading(true);
-        const res = await getWebSearchResult(
-          getSearchResultParams.keyword,
-          getSearchResultParams.type
-        );
-        console.log("res", res);
-      } catch (error) {
-        console.log("error", error);
-      } finally {
-        setGetWebSearchResultLoading(false);
-      }
-    };
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { label: "获取搜索结果", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        antd.Input,
-        {
-          placeholder: "请输入搜索关键词",
-          style: { width: 300 },
-          value: getSearchResultParams.keyword,
-          onChange: (e) => setGetSearchResultParams({ ...getSearchResultParams, keyword: e.target.value })
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        antd.Select,
-        {
-          options: Object.entries(ResourceType).map(([key, value]) => ({
-            label: key,
-            value
-          })),
-          style: { width: 150 },
-          value: getSearchResultParams.type,
-          onChange: (value) => setGetSearchResultParams({ ...getSearchResultParams, type: value }),
-          allowClear: true
-        }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", onClick: handleGetSearchResult, loading: getSearchResultLoading, children: "获取搜索结果" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        antd.Button,
-        {
-          type: "primary",
-          onClick: handleGetWebSearchResult,
-          loading: getWebSearchResultLoading,
-          children: "获取web搜索结果"
-        }
-      )
-    ] }) }) });
+    }
+  }
+  function detectPictureMime(picture) {
+    if (picture[0] === 255 && picture[1] === 216 && picture[2] === 255) {
+      return "image/jpeg";
+    } else if (picture[0] === 137 && picture[1] === 80 && picture[2] === 78 && picture[3] === 71 && picture[4] === 13 && picture[5] === 10 && picture[6] === 26 && picture[7] === 10) {
+      return "image/png";
+    } else if (picture[0] === 66 && picture[1] === 77) {
+      return "image/bmp";
+    } else if (picture[0] === 71 && picture[1] === 73 && picture[2] === 70) {
+      return "image/gif";
+    } else if (picture[0] === 82 && picture[1] === 73 && picture[2] === 70 && picture[3] === 70 && picture[8] === 87 && picture[9] === 69 && picture[10] === 66 && picture[11] === 80) {
+      return "image/webp";
+    } else {
+      throw new Error("Unknown picture MIME.");
+    }
+  }
+  const blobToBuffer = async (file) => {
+    return new Uint8Array(await file.arrayBuffer());
   };
-  const SingerTab = () => {
+  const readAllMp3Tag = async (file) => {
+    const buffer = await blobToBuffer(file);
+    const id3 = parse(buffer);
+    const tagView = createTagView(id3);
+    console.log("id3", id3);
+    console.log("tagView", tagView);
+    const result = {
+      album: tagView.album || "",
+      artist: tagView.artist || "",
+      title: tagView.title || "",
+      track: tagView.track || ""
+    };
+    return result;
+  };
+  hljs.configure({
+    classPrefix: "hljs-",
+    languages: ["json"]
+  });
+  const TestModal = require$$0.forwardRef((_, ref) => {
+    const { visible, close } = useVisible({}, ref);
+    const [getSingerListLoading, setGetSingerListLoading] = require$$0.useState(false);
     const [getSingerListParams, setGetSingerListParams] = require$$0.useState({
       area: -100,
       sex: -100,
       genre: -100,
       cur_page: 1
     });
-    const handleGetSingerList = async () => {
-      try {
-        const res = await getSingerList(getSingerListParams);
-        console.log("res", res);
-        msgSuccess("获取歌手列表成功,请打开控制台查看");
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
     const [mid, setMid] = require$$0.useState("003fA5G40k6hKc");
-    const handleGetSingerInfo = async () => {
-      try {
-        const res = await getSingerInfo(mid);
-        console.log("res", res);
-        msgSuccess("获取歌手信息成功,请打开控制台查看");
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-    const handleGetSingerAlbum = async () => {
-      try {
-        const res = await getSingerAlbum(mid);
-        console.log("res", res);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-    const handleGetSingerAllAlbum = async () => {
-      try {
-        const res = await getSingerAllAlbum(mid);
-        console.log("res", res);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-    const handleGetSingerFollowCount = async () => {
-      try {
-        const res = await getSingerFollowCount(mid);
-        console.log("res", res);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-    const handleGetSingerHotSong = async () => {
-      try {
-        const res = await getSingerHotSong(mid);
-        console.log("res", res);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-    const handleGetSingerAllHotSong = async () => {
-      try {
-        const res = await getSingerAllHotSong(mid);
-        console.log("res", res);
-        msgSuccess("获取歌手全部热门歌曲成功,请打开控制台查看");
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-    const handleGetSimilarSinger = async () => {
-      try {
-        const res = await getSimilarSinger(mid);
-        console.log("res", res);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Form, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { label: "获取歌手列表", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          antd.Select,
-          {
-            options: AreaList,
-            style: {
-              width: 150
-            },
-            value: getSingerListParams.area,
-            onChange: (value) => setGetSingerListParams({ ...getSingerListParams, area: value })
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          antd.Select,
-          {
-            options: GenreList,
-            style: {
-              width: 150
-            },
-            value: getSingerListParams.genre,
-            onChange: (value) => setGetSingerListParams({ ...getSingerListParams, genre: value })
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          antd.Select,
-          {
-            options: SexList,
-            style: {
-              width: 150
-            },
-            value: getSingerListParams.sex,
-            onChange: (value) => setGetSingerListParams({ ...getSingerListParams, sex: value })
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSingerList, children: "获取歌手列表" })
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { label: "获取歌手信息", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { wrap: true, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          antd.Input,
-          {
-            placeholder: "请输入歌手mid",
-            style: { width: 300 },
-            value: mid,
-            onChange: (e) => setMid(e.target.value)
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSingerInfo, children: "获取歌手信息" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSingerAlbum, children: "获取歌手专辑" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSingerAllAlbum, children: "获取歌手所有专辑" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSingerFollowCount, children: "获取歌手被关注数量" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSingerHotSong, children: "获取歌手热门歌曲" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSingerAllHotSong, children: "获取歌手全部热门歌曲" }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleGetSimilarSinger, children: "获取相似歌手" })
-      ] }) })
-    ] });
-  };
-  const SongListTab = () => {
+    const [getSingerInfoLoading, setGetSingerInfoLoading] = require$$0.useState(false);
+    const [getSingerAlbumLoading, setGetSingerAlbumLoading] = require$$0.useState(false);
+    const [getSingerAllAlbumLoading, setGetSingerAllAlbumLoading] = require$$0.useState(false);
+    const [getSingerFollowCountLoading, setGetSingerFollowCountLoading] = require$$0.useState(false);
+    const [getSingerHotSongLoading, setGetSingerHotSongLoading] = require$$0.useState(false);
+    const [getSimilarSingerLoading, setGetSimilarSingerLoading] = require$$0.useState(false);
+    const [albummid, setAlbummid] = require$$0.useState("0016l2F430zMux");
+    const [getAlbumInfoLoading, setGetAlbumInfoLoading] = require$$0.useState(false);
+    const [getAlbumPicUrlLoading, setGetAlbumPicUrlLoading] = require$$0.useState(false);
     const [getSongListLoading, setGetSongListLoading] = require$$0.useState(false);
     const [getSongListCategoryLoading, setGetSongListCategoryLoading] = require$$0.useState(false);
-    const handleGetSongListCategory = async () => {
-      try {
-        setGetSongListCategoryLoading(true);
-        const res = await getSongListCategory();
-        console.log("res", res);
-      } catch (error) {
-        console.log("error", error);
-      } finally {
-        setGetSongListCategoryLoading(false);
-      }
-    };
-    const handleGetSongList = async () => {
-      try {
-        setGetSongListLoading(true);
-        const res = await getSongList();
-        console.log("res", res);
-      } catch (error) {
-        console.log("error", error);
-      } finally {
-        setGetSongListLoading(false);
-      }
-    };
     const [disstid, setDisstid] = require$$0.useState("7011264340");
     const [getSongListDetailLoading, setGetSongListDetailLoading] = require$$0.useState(false);
-    const handleGetSongListDetail = async () => {
-      try {
-        setGetSongListDetailLoading(true);
-        const res = await getSongListDetail(disstid);
-        console.log("res", res);
-      } catch (error) {
-        console.log("error", error);
-      } finally {
-        setGetSongListDetailLoading(false);
-      }
-    };
-    return /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Form, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { label: "获取歌单列表", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          antd.Button,
-          {
-            type: "primary",
-            onClick: handleGetSongListCategory,
-            loading: getSongListCategoryLoading,
-            children: "获取歌单分类列表"
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", onClick: handleGetSongList, loading: getSongListLoading, children: "获取歌单列表" })
-      ] }) }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { label: "获取歌单详情", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          antd.Input,
-          {
-            placeholder: "请输入歌单id",
-            style: { width: 300 },
-            value: disstid,
-            onChange: (e) => setDisstid(e.target.value)
-          }
-        ),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(
-          antd.Button,
-          {
-            type: "primary",
-            onClick: handleGetSongListDetail,
-            loading: getSongListDetailLoading,
-            children: "获取歌单详情"
-          }
-        )
-      ] }) })
-    ] });
-  };
-  const SongTab = () => {
     const [getSongLyricLoading, setGetSongLyricLoading] = require$$0.useState(false);
     const [songmid, setSongmid] = require$$0.useState("003rJSwm3TechU");
-    const handleGetSongLyric = async () => {
-      try {
-        setGetSongLyricLoading(true);
-        const res = await getSongLyric(songmid);
-        console.log("res", res);
-      } catch (error) {
-        console.log("error", error);
-      } finally {
-        setGetSongLyricLoading(false);
-      }
-    };
     const [getSongPlayUrlLoading, setGetSongPlayUrlLoading] = require$$0.useState(false);
-    const handleGetSongPlayUrl = async () => {
-      try {
-        setGetSongPlayUrlLoading(true);
-        const res = await getSongPlayUrl(songmid.split(","));
-        console.log("res", res);
-      } catch (error) {
-        console.log("error", error);
-      } finally {
-        setGetSongPlayUrlLoading(false);
-      }
-    };
     const [getSongInfoLoading, setGetSongInfoLoading] = require$$0.useState(false);
-    const handleGetSongInfo = async () => {
-      try {
-        setGetSongInfoLoading(true);
-        const res = await getSongInfo(songmid);
-        console.log("res", res);
-      } catch (error) {
-        console.log("error", error);
-      } finally {
-        setGetSongInfoLoading(false);
-      }
-    };
-    return /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Form.Item, { label: "获取歌曲信息", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { children: [
-      /* @__PURE__ */ jsxRuntimeExports.jsx(
-        antd.Input,
-        {
-          placeholder: "请输入歌曲mid",
-          style: { width: 300 },
-          value: songmid,
-          onChange: (e) => setSongmid(e.target.value)
+    const [getSearchResultLoading, setGetSearchResultLoading] = require$$0.useState(false);
+    const [getSearchResultParams, setGetSearchResultParams] = require$$0.useState({
+      keyword: "",
+      type: "song"
+    });
+    const [getWebSearchResultLoading, setGetWebSearchResultLoading] = require$$0.useState(false);
+    const [testMetaflacWasmFile, setTestMetaflacWasmFile] = require$$0.useState();
+    const [fileTags, setFileTags] = require$$0.useState();
+    require$$0.useMemo(() => {
+      if (!fileTags) return "";
+      return hljs.highlight(JSON.stringify(fileTags, null, 2), { language: "json" }).value;
+    }, [fileTags]);
+    require$$0.useEffect(() => {
+      const asyncFn = async () => {
+        if (!testMetaflacWasmFile) return;
+        console.log("testMetaflacWasmFile", testMetaflacWasmFile);
+        const finalExt = testMetaflacWasmFile.name.split(".").pop();
+        let tags;
+        switch (finalExt) {
+          case "flac":
+            tags = await readAllFlacTag(testMetaflacWasmFile);
+            setFileTags(tags);
+            break;
+          case "mp3":
+            tags = await readAllMp3Tag(testMetaflacWasmFile);
+            setFileTags(tags);
+            break;
+          default:
+            console.log("当前格式不支持");
+            break;
         }
-      ),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", onClick: handleGetSongLyric, loading: getSongLyricLoading, children: "获取歌曲歌词" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", onClick: handleGetSongPlayUrl, loading: getSongPlayUrlLoading, children: "获取歌曲播放链接" }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Button, { type: "primary", onClick: handleGetSongInfo, loading: getSongInfoLoading, children: "获取歌曲信息" })
-    ] }) }) });
-  };
-  const TestModal = require$$0.forwardRef((_, ref) => {
-    const { visible, close } = useVisible({}, ref);
-    const { functionConfig } = useConfig();
-    const { enableFunctionSwitchTab, enableDownloadSetting } = functionConfig;
-    const tabItems = [
-      {
-        key: "singer",
-        label: "歌手",
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(SingerTab, {})
-      },
-      {
-        key: "album",
-        label: "专辑",
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(AlbumTab, {})
-      },
-      {
-        key: "song",
-        label: "歌曲",
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(SongTab, {})
-      },
-      {
-        key: "songList",
-        label: "歌单",
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(SongListTab, {})
-      },
-      {
-        key: "search",
-        label: "搜索",
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(SearchTab, {})
-      },
-      {
-        key: "flac",
-        label: "FLAC",
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(FlacTab, {})
-      },
-      enableFunctionSwitchTab && {
-        key: "functionSwitchTab",
-        label: "功能开关",
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(FunctionSwitchTab, {})
-      },
-      enableDownloadSetting && {
-        key: "downloadSetting",
-        label: "下载设置",
-        children: /* @__PURE__ */ jsxRuntimeExports.jsx(DownloadSettingTab, {})
-      }
-    ].filter(Boolean);
+      };
+      asyncFn();
+    }, [testMetaflacWasmFile]);
+    const [writeFlacTagParams, setWriteFlacTagParams] = require$$0.useState({
+      tagName: "title",
+      tagValue: ""
+    });
+    require$$0.useRef(null);
     return /* @__PURE__ */ jsxRuntimeExports.jsx(
       antd.Modal,
       {
