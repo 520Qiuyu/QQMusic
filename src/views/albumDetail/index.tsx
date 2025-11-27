@@ -13,19 +13,24 @@ import {
   Button,
   Image,
   Input,
+  message,
   Modal,
   Select,
   Space,
   Table,
+  Tag,
   Tooltip,
   Typography,
 } from 'antd';
-import type { ColumnType } from 'antd/es/table';
+import type { ColumnType, TableProps } from 'antd/es/table';
 import { forwardRef, useState, type ForwardedRef } from 'react';
-import { useGetAlbumDetail, useGetData, usePlayMusic, useVisible } from '../../hooks';
+import { useConfig, useGetAlbumDetail, useGetData, usePlayMusic, useVisible } from '../../hooks';
 import type { Ref } from '../../hooks/useVisible';
 import styles from './index.module.scss';
 import { downloadAsJson } from '@/utils/download';
+import { getFileQualityList } from '@/utils';
+import { msgError, msgWarning } from '@/utils/modal';
+import { MyButton } from '@/components';
 
 const { Text, Title } = Typography;
 
@@ -47,8 +52,9 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
 
   const [currentMid, setCurrentMid] = useState('');
   const [inputMid, setInputMid] = useState('');
-  const [qualityMap, setQualityMap] = useState<Record<string, keyof typeof FileType>>({});
 
+  const { downloadConfig } = useConfig();
+  const { quality: defaultQuality } = downloadConfig;
   const { getAlbumDetail, getAlbumSongList, isLoading, getDownLoadJson } = useGetAlbumDetail();
   const { play, isPlaying, pause, download } = usePlayMusic();
 
@@ -64,39 +70,52 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
   );
 
   // 专辑歌曲列表
-  const { data: list, loading } = useGetData<AlbumSongInfo[] | undefined>(
-    getAlbumSongList,
-    currentMid,
-    {
-      initialValue: [],
-      returnFunction: () => !currentMid || !visible,
-      monitors: [currentMid, visible],
+  const {
+    data: list,
+    loading,
+    setData: setList,
+  } = useGetData<AlbumSongInfo[] | undefined>(getAlbumSongList, currentMid, {
+    initialValue: [],
+    returnFunction: () => !currentMid || !visible,
+    monitors: [currentMid, visible],
+    callback: (data) => {
+      console.log('data', data);
     },
-  );
+  });
 
+  /** 选择音质 */
+  const handleChooseQuality = (record: AlbumSongInfo, quality: keyof typeof FileType) => {
+    setList(
+      list?.map((item) => {
+        if (item.songmid === record.songmid) {
+          return {
+            ...item,
+            quality,
+          };
+        }
+        return item;
+      }) || [],
+    );
+  };
   /** 播放歌曲 */
-  const handlePlay = (record: AlbumSongInfo) => {
-    console.log('record', record);
-    console.log('qualityMap[record.songmid]', qualityMap[record.songmid]);
+  const handlePlay = (record: AlbumSongInfo & { quality?: keyof typeof FileType }) => {
     if (isPlaying) {
       pause();
     } else {
-      play(record.songmid, qualityMap[record.songmid] || 128);
+      const { quality } = record;
+      const finalQuality = getQuality(record, defaultQuality, quality);
+      play(record.songmid, finalQuality);
     }
   };
   /** 下载歌曲 */
   const [downloading, setDownloading] = useState<string>('');
-  const handleDownload = async (record: AlbumSongInfo) => {
+  const handleDownload = async (record: AlbumSongInfo & { quality?: keyof typeof FileType }) => {
     try {
       if (downloading === record.songmid) return;
       setDownloading(record.songmid);
-      console.log('qualityMap[record.songmid]', qualityMap[record.songmid]);
-      await download(
-        record.songmid,
-        record.songname,
-        qualityMap[record.songmid] || 128,
-        record.albummid,
-      );
+      const { quality } = record;
+      const finalQuality = getQuality(record, defaultQuality, quality);
+      await download(record.songmid, finalQuality);
     } catch (error) {
       console.log('error', error);
     } finally {
@@ -147,23 +166,53 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
       width: 100,
       align: 'center',
       render: (_, record: AlbumSongInfo) => {
-        const options: { label: string; value: number | string }[] = [];
-        const { size128, size320, sizeflac } = record;
-        if (size128) options.push({ label: '128k', value: 128 });
-        if (size320) options.push({ label: '320k', value: 320 });
-        if (sizeflac) options.push({ label: 'FLAC', value: 'flac' });
+        const qualityList = getFileQualityList(record);
+        const defaultValue = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
         return (
           <Select
-            options={options}
-            defaultValue={128}
+            options={qualityList.map((quality) => ({
+              label: quality,
+              value: quality,
+            }))}
+            defaultValue={defaultValue}
             style={{ width: '100%' }}
             onChange={(value) => {
-              setQualityMap((prev) => ({
-                ...prev,
-                [record.songmid]: value as any,
-              }));
+              handleChooseQuality(record, value as keyof typeof FileType);
             }}
           />
+        );
+      },
+    },
+    // 格式
+    {
+      title: '格式',
+      key: 'format',
+      width: 150,
+      align: 'center',
+      render: (_, record: AlbumSongInfo) => {
+        const qualityList = getFileQualityList(record);
+        const qualityColorMap = {
+          flac: 'green',
+          ape: 'volcano',
+          320: 'blue',
+          m4a: 'orange',
+          128: 'gray',
+        };
+        const qualityTextMap = {
+          flac: 'FLAC',
+          ape: 'APE',
+          320: '320k',
+          m4a: 'M4A',
+          128: '128k',
+        };
+        return (
+          <Space wrap>
+            {qualityList.map((quality) => (
+              <Tag key={quality} color={qualityColorMap[quality]}>
+                {qualityTextMap[quality] || quality}
+              </Tag>
+            ))}
+          </Space>
         );
       },
     },
@@ -211,6 +260,19 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
     },
   ];
 
+  const [selectedRowKeys, setSelectedRowKeys] = useState<string[]>([]);
+  const [selectedRows, setSelectedRows] = useState<AlbumSongInfo[]>([]);
+  const rowSelection: TableProps<AlbumSongInfo>['rowSelection'] = {
+    preserveSelectedRowKeys: true,
+    selectedRowKeys: selectedRowKeys,
+    onChange: (selectedRowKeys, selectedRows) => {
+      setSelectedRowKeys(selectedRowKeys as string[]);
+      setSelectedRows(selectedRows as AlbumSongInfo[]);
+      console.log('selectedRowKeys', selectedRowKeys);
+      console.log('selectedRows', selectedRows);
+    },
+  };
+
   const renderTitle = () => {
     const albumName = detail?.name || '专辑详情';
     const singerName = detail?.singername || '';
@@ -252,44 +314,124 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
   };
 
   /** 下载全部 */
-  const [downloadingAll, setDownloadingAll] = useState(false);
-  const handleDownloadAll = async () => {
+  const handleBatchDownload = async () => {
+    if (selectedRows.length === 0) {
+      msgWarning('请先选择要下载的歌曲');
+      return;
+    }
+
+    const loadingKey = 'download-album-song';
     try {
-      setDownloadingAll(true);
-      await download(currentMid, detail?.name || '', 128);
+      message.loading({
+        key: loadingKey,
+        content: `正在准备下载 ${selectedRows.length} 首歌曲...`,
+        duration: 0,
+      });
+      let index = 1;
+      for (const song of selectedRows) {
+        message.loading({
+          key: loadingKey,
+          content: `正在下载第 ${index} 首歌曲 ${song.songname}...`,
+          duration: 0,
+        });
+        const finalQuality = getQuality(song, defaultQuality);
+        await download(song.songmid, finalQuality);
+        message.success({
+          key: loadingKey,
+          content: `第 ${index} 首歌曲 ${song.songname} 下载成功！`,
+          duration: 1,
+        });
+        index++;
+      }
+      message.success({
+        key: loadingKey,
+        content: `成功下载 ${selectedRows.length} 首歌曲！`,
+        duration: 1,
+      });
     } catch (error) {
-      console.log('error', error);
+      console.error('批量下载失败:', error);
+      message.destroy(loadingKey);
+      msgError('批量下载失败: ' + (error as Error).message);
     } finally {
-      setDownloadingAll(false);
+      message.destroy(loadingKey);
     }
   };
   /** 下载JSON */
-  const [downloadingJson, setDownloadingJson] = useState(false);
   const handleDownloadAllJson = async () => {
-    try {
-      setDownloadingJson(true);
-      const json = await getDownLoadJson(currentMid);
-      downloadAsJson(json, `${detail?.name}.json`);
-    } catch (error) {
-      console.log('error', error);
-    } finally {
-      setDownloadingJson(false);
+    /* if (selectedRows.length === 0) {
+      msgWarning('请先选择要下载的歌曲');
+      return;
     }
+    const loadingKey = 'download-album-song-json';
+    try {
+      message.loading({
+        key: loadingKey,
+        content: `正在准备下载 ${selectedRows.length} 首歌曲...`,
+        duration: 0,
+      });
+      const result = [] as any;
+      let index = 1;
+      for (const song of selectedRows) {
+        message.loading({
+          key: loadingKey,
+          content: `正在下载第 ${index} 首歌曲 ${song.songname}...`,
+          duration: 0,
+        });
+        const res = await getDownLoadJson(song.songmid);
+        result.push(res);
+        message.success({
+          key: loadingKey,
+          content: `第 ${index} 首歌曲 ${song.songname} 下载成功！`,
+          duration: 1,
+        });
+        index++;
+      }
+      downloadAsJson(result, `${detail?.name}.json`);
+      message.success({
+        key: loadingKey,
+        content: `成功下载 ${selectedRows.length} 首歌曲！`,
+        duration: 1,
+      });
+    } catch (error) {
+      console.error('批量下载JSON失败:', error);
+      message.destroy(loadingKey);
+      msgError('批量下载JSON失败: ' + (error as Error).message);
+    } finally {
+      message.destroy(loadingKey);
+    } */
   };
+
   const renderFooter = () => {
     return (
-      <Space>
-        <Button
-          type='primary'
-          icon={<DownloadOutlined />}
-          onClick={handleDownloadAll}
-          loading={downloadingAll}>
-          下载全部
-        </Button>
-        <Button icon={<FileOutlined />} onClick={handleDownloadAllJson} loading={downloadingJson}>
-          下载JSON
-        </Button>
-      </Space>
+      <div className={styles['footer']}>
+        <div className={styles['selected-count']}>已选择 {selectedRows.length} 首歌曲</div>
+        <Space>
+          {/* 全部选择 */}
+          {selectedRowKeys?.length < list!.length ? (
+            <Button
+              onClick={() => {
+                setSelectedRowKeys(list?.map((item) => item.songmid) || []);
+                setSelectedRows(list || []);
+              }}>
+              全部选择
+            </Button>
+          ) : (
+            <Button
+              onClick={() => {
+                setSelectedRowKeys([]);
+                setSelectedRows([]);
+              }}>
+              清空选择
+            </Button>
+          )}
+          <MyButton type='primary' icon={<DownloadOutlined />} onClick={handleBatchDownload}>
+            下载选中歌曲{selectedRows?.length ? `(${selectedRows?.length})` : ''}
+          </MyButton>
+          <MyButton icon={<FileOutlined />} type='primary' onClick={handleDownloadAllJson}>
+            下载JSON{selectedRows?.length ? `(${selectedRows?.length})` : ''}
+          </MyButton>
+        </Space>
+      </div>
     );
   };
 
@@ -331,6 +473,7 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
       <Table
         columns={songColumns}
         dataSource={list || []}
+        rowSelection={rowSelection}
         rowKey='songmid'
         loading={loading || detailLoading || isLoading}
         scroll={{ y: 400, x: 600 }}
@@ -346,3 +489,14 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
 });
 
 export default AlbumDetail;
+
+const getQuality = (
+  record: AlbumSongInfo,
+  defaultQuality: keyof typeof FileType,
+  chooseQuality?: keyof typeof FileType,
+) => {
+  const qualityList = getFileQualityList(record);
+  const songDefaultQuality = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
+  const finalQuality = chooseQuality || songDefaultQuality;
+  return finalQuality;
+};

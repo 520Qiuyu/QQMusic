@@ -80,7 +80,7 @@ export const useGetAlbumDetail = () => {
       };
     });
     const urls = await promiseLimit(promiseArr!, 6);
-    console.log('urls', urls);
+    console.log('专辑歌曲播放地址:', urls);
     return urls;
   };
 
@@ -92,7 +92,7 @@ export const useGetAlbumDetail = () => {
   const downloadAlbumSong = async (mid: string) => {
     try {
       const albumSongList = await getAlbumSongList(mid);
-      console.log('albumSongList', albumSongList);
+      console.log('准备下载专辑歌曲:', albumSongList);
       for (const item of albumSongList || []) {
         const { songmid, songname } = item;
         console.log(`正在下载: songmid=${songmid}, songname=${songname}`);

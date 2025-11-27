@@ -1,15 +1,18 @@
 import { getSongListDetail } from '@/apis/songList';
 import type { FileType } from '@/constants';
 import type { PlaylistInfo } from '@/types/songList';
-import { promiseLimit } from '@/utils';
+import { getFile_qualityList, promiseLimit } from '@/utils';
 import { useRef, useState } from 'react';
 import { usePlayMusic } from './usePlayMusic';
+import { useConfig } from './useConfig';
 
 export const useGetSonglistDetail = () => {
   const [playlistInfo, setPlaylistInfo] = useState<PlaylistInfo>();
   const [isLoading, setIsLoading] = useState(false);
   const playlistInfoMap = useRef<Record<string, PlaylistInfo>>({});
 
+  const { downloadConfig } = useConfig();
+  const { quality: downloadQuality } = downloadConfig;
   const { playList, play, getUrl, download, getLyric } = usePlayMusic();
 
   /**
@@ -24,8 +27,7 @@ export const useGetSonglistDetail = () => {
         return playlistInfoMap.current[dissid];
       }
       const res = await getSongListDetail(dissid);
-      console.log('歌单详情响应:', res);
-      // 由于API返回的是数组，取第一个元素
+      console.log('歌单详情:', res);
       const playlistDetail = Array.isArray(res) ? res[0] : res;
       playlistInfoMap.current[dissid] = playlistDetail;
       return playlistDetail;
@@ -61,18 +63,20 @@ export const useGetSonglistDetail = () => {
   const getPlaylistSongUrl = async (dissid: string) => {
     const res = await getPlaylistSongList(dissid);
     const ids = res?.map((item) => {
-      const quality = getHighestQualityInSonglist(item.file);
       return {
         id: item.mid,
         name: item.name,
-        quality,
+        file: item.file,
       };
     });
     const promiseArr = ids?.map((item) => async () => {
-      const url = await getUrl(item.id, item.quality);
+      const qualityList = getFile_qualityList(item.file);
+      const finalQuality = qualityList.includes(downloadQuality) ? downloadQuality : qualityList[0];
+      const url = await getUrl(item.id, finalQuality);
       return {
         ...item,
         url,
+        quality: finalQuality,
       };
     });
     const urls = await promiseLimit(promiseArr!, 6);
@@ -90,10 +94,7 @@ export const useGetSonglistDetail = () => {
       console.log('准备下载歌单歌曲:', songList);
       for (const item of songList || []) {
         const { mid, name, file } = item;
-        console.log('id:', mid);
-        console.log('name:', name);
-        console.log('file:', file);
-        console.log(`当前正在下载${name}...`);
+        console.log(`正在下载: mid=${mid}, name=${name}`);
         await download(mid);
       }
     } catch (error) {
@@ -111,7 +112,9 @@ export const useGetSonglistDetail = () => {
     const { dissname, songlist } = playlistDetail || {};
     const promiseArr = songlist?.map((item) => async () => {
       const lrcContent = await getLyric(item.mid);
-      const url = await getUrl(item.mid, getHighestQualityInSonglist(item.file));
+      const qualityList = getFile_qualityList(item.file);
+      const finalQuality = qualityList.includes(downloadQuality) ? downloadQuality : qualityList[0];
+      const url = await getUrl(item.mid, finalQuality);
       return {
         songName: item.name,
         url,
@@ -151,22 +154,5 @@ export const useGetSonglistDetail = () => {
     getPlaylistSongUrl,
     downloadPlaylistSong,
     getPlaylistDownloadJson,
-    getHighestQualityInSonglist,
   };
-};
-
-const getHighestQualityInSonglist = (file: {
-  size_flac?: number;
-  size_ape?: number;
-  size_320mp3?: number;
-  size_128mp3?: number;
-}): keyof typeof FileType => {
-  // 按音质从高到低排序检查
-  if (file.size_flac && file.size_flac > 0) return 'flac';
-  if (file.size_ape && file.size_ape > 0) return 'ape';
-  if (file.size_320mp3 && file.size_320mp3 > 0) return 320;
-  if (file.size_128mp3 && file.size_128mp3 > 0) return 128;
-
-  // 默认返回128kbps
-  return 128;
 };

@@ -1,17 +1,12 @@
 import { getQQAvatarUrl } from '@/apis/qq';
-import { CopyText, SearchForm } from '@/components';
+import { CopyText, MyButton, SearchForm } from '@/components';
 import type { Option as SearchFormOption } from '@/components/SearchForm';
 import type { SongListItem } from '@/types/songList';
 import {
   ClockCircleOutlined,
   DownloadOutlined,
-  EyeOutlined,
   FileOutlined,
-  HeartOutlined,
-  InfoCircleOutlined,
   PlayCircleOutlined,
-  StarOutlined,
-  TrophyOutlined,
   UserOutlined,
 } from '@ant-design/icons';
 import {
@@ -24,16 +19,16 @@ import {
   Space,
   Table,
   Tag,
-  Tooltip,
   type TreeSelectProps,
 } from 'antd';
 import type { ColumnType } from 'antd/es/table';
-import { forwardRef, useMemo, useRef, useState, type ForwardedRef } from 'react';
+import { forwardRef, useMemo, useState, type ForwardedRef } from 'react';
 import { getSongList, getSongListCategory } from '../../apis/songList';
 import { useCompRef, useGetData, useGetSonglistDetail, useVisible } from '../../hooks';
 import type { Ref } from '../../hooks/useVisible';
-import styles from './index.module.scss';
 import SongListDetail from '../songListDetail';
+import styles from './index.module.scss';
+import { downloadAsJson } from '@/utils/download';
 
 const { Option } = Select;
 
@@ -158,7 +153,9 @@ const SongListSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
   const handleDownloadJson = async (record: SongListItem) => {
     console.log('下载歌单json:', record);
     try {
-      await getPlaylistDownloadJson(record.dissid);
+      const data = await getPlaylistDownloadJson(record.dissid);
+      console.log('data', data);
+      downloadAsJson(data, `${data.playlistName}.json`);
     } catch (error) {
       console.error('下载歌单json失败:', error);
     }
@@ -239,45 +236,36 @@ const SongListSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
       width: 350,
       align: 'center',
       fixed: 'right',
+      onCell: () => ({
+        style: {
+          cursor: 'default',
+        },
+        onClick: (e) => e.stopPropagation(),
+      }),
       render: (_, record: SongListItem) => (
         <Space>
-          <Tooltip title='播放歌单'>
-            <Button
-              type='link'
-              size='small'
-              icon={<PlayCircleOutlined />}
-              onClick={() => handlePlay(record)}>
-              播放
-            </Button>
-          </Tooltip>
-          <Tooltip title='下载歌单'>
-            <Button
-              type='link'
-              size='small'
-              icon={<DownloadOutlined />}
-              onClick={() => handleDownload(record)}>
-              下载
-            </Button>
-          </Tooltip>
+          <MyButton
+            type='link'
+            size='small'
+            icon={<PlayCircleOutlined />}
+            onClick={() => handlePlay(record)}>
+            播放
+          </MyButton>
+          <MyButton
+            type='link'
+            size='small'
+            icon={<DownloadOutlined />}
+            onClick={() => handleDownload(record)}>
+            下载
+          </MyButton>
           {/* 下载json */}
-          <Tooltip title='下载json'>
-            <Button
-              type='link'
-              size='small'
-              icon={<FileOutlined />}
-              onClick={() => handleDownloadJson(record)}>
-              下载json
-            </Button>
-          </Tooltip>
-          <Tooltip title='查看详情'>
-            <Button
-              type='link'
-              size='small'
-              icon={<InfoCircleOutlined />}
-              onClick={() => handleViewDetail(record)}>
-              详情
-            </Button>
-          </Tooltip>
+          <MyButton
+            type='link'
+            size='small'
+            icon={<FileOutlined />}
+            onClick={() => handleDownloadJson(record)}>
+            下载json
+          </MyButton>
         </Space>
       ),
     },
@@ -293,6 +281,9 @@ const SongListSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
     {
       returnFunction: () => !visible,
       monitors: [searchParams, visible],
+      callback: (data) => {
+        console.log('data', data);
+      },
     },
   );
 
@@ -321,6 +312,12 @@ const SongListSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
         dataSource={data?.list || []}
         rowKey='dissid'
         loading={loading}
+        onRow={(record) => ({
+          style: {
+            cursor: 'pointer',
+          },
+          onClick: () => handleViewDetail(record),
+        })}
         scroll={{ y: 500, x: 970 }}
         pagination={false}
       />
