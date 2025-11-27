@@ -19,7 +19,6 @@ interface SongTabProps {
 const SongTab = ({ data, loading }: SongTabProps) => {
   const [qualityMap, setQualityMap] = useState<Record<string, keyof typeof FileType>>({});
   const { play, download, isPlaying, pause } = usePlayMusic();
-  const { getHighestQualityInAlbum } = useGetAlbumDetail();
 
   const handlePlay = (record: SongInfo) => {
     console.log('播放歌曲:', record);
@@ -31,14 +30,7 @@ const SongTab = ({ data, loading }: SongTabProps) => {
   };
 
   const handleDownload = (record: SongInfo) => {
-    // 先挑选音质
-    const quality = getHighestQualityInAlbum(record);
-    download(
-      record.songmid,
-      record.songname,
-      qualityMap[record.songmid] || quality,
-      record.albummid,
-    );
+    download(record.songmid);
   };
 
   // 歌曲表格列配置

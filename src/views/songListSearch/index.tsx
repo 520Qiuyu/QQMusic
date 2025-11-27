@@ -69,7 +69,12 @@ const SongListSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
 
   /** 歌单分类配置项 */
   const { data: songListCategory } = useGetData(getSongListCategory, undefined, {
+    monitors: [visible],
+    returnFunction: () => !visible,
     initialValue: [],
+    callback: (data) => {
+      console.log('data', data);
+    },
   });
 
   const categoryOptions = useMemo(() => {
@@ -290,8 +295,6 @@ const SongListSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
       monitors: [searchParams, visible],
     },
   );
-
-  console.log('data', data);
 
   return (
     <Modal

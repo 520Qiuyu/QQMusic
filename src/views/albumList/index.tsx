@@ -1,5 +1,5 @@
 import { getAlbumPicUrl } from '@/apis/album';
-import { CopyText, SearchForm } from '@/components';
+import { CopyText, MyButton, SearchForm } from '@/components';
 import type { Option as SearchFormOption } from '@/components/SearchForm';
 import { usePlayMusic } from '@/hooks/usePlayMusic';
 import { uniqueArrayByKey } from '@/utils';
@@ -10,7 +10,7 @@ import {
   PauseCircleOutlined,
   PlayCircleOutlined,
   SaveOutlined,
-  UserOutlined
+  UserOutlined,
 } from '@ant-design/icons';
 import { Avatar, Button, Image, Modal, Space, Table, Tag, Typography, message } from 'antd';
 import type { ColumnType } from 'antd/es/table';
@@ -59,6 +59,9 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
     monitors: [singerInfo.singerMid, visible],
     returnFunction: () => !visible || !singerInfo.singerMid,
     initialValue: [],
+    callback: (data) => {
+      console.log('data', data);
+    },
   });
 
   const searchFormOptions: SearchFormOption[] = [
@@ -172,9 +175,7 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
               fallback='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAADDCAYAAADQvc6UAAABRWlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSSwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAwSDCIMogwMCcmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis7PPOq3QdDFcvjV3jOD1boQVTPQrgSkktTgbSf4A4LbmgqISBgTEFyFYuLykAsTuAbJEioKOA7DkgdjqEvQHEToKwj4DVhAQ5A9k3gGyB5IxEoBmML4BsnSQk8XQkNtReEOBxcfXxUQg1Mjc0dyHgXNJBSWpFCYh2zi+oLMpMzyhRcASGUqqCZ16yno6CkYGRAQMDKMwhqj/fAIcloxgHQqxAjIHBEugw5sUIsSQpBobtQPdLciLEVJYzMPBHMDBsayhILEqEO4DxG0txmrERhM29nYGBddr//5/DGRjYNRkY/l7////39v///y4Dmn+LgeHANwDrkl1AuO+pmgAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAwqADAAQAAAABAAAAwwAAAAD9b/HnAAAHlklEQVR4Ae3dP3Ik1RnG4W+FgYxN'
             />
           </div>
-          <div
-            className={styles['album-details']}
-            onClick={() => albumDetailRef.current?.open({ albummid: record.albumMid })}>
+          <div className={styles['album-details']}>
             <div className={styles['album-name']} title={text}>
               {text}
             </div>
@@ -255,6 +256,12 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
       width: 300,
       align: 'center',
       fixed: 'right',
+      onCell: () => ({
+        style: {
+          cursor: 'default',
+        },
+        onClick: (e) => e.stopPropagation(),
+      }),
       render: (_, record: AlbumInfo) => {
         return (
           <Space size='middle'>
@@ -338,62 +345,85 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
   };
 
   /** 批量下载选中的专辑 */
-  const [downloadingBatch, setDownloadingBatch] = useState(false);
   const handleBatchDownload = async () => {
     if (selectedRows.length === 0) {
       msgWarning('请先选择要下载的专辑');
       return;
     }
 
+    const loadingKey = 'download-album';
     try {
-      setDownloadingBatch(true);
-      message.loading(`正在准备下载 ${selectedRows.length} 张专辑...`, 0);
-
-      // 这里可以实现批量下载逻辑
-      // 暂时只是显示成功消息
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-
-      message.destroy();
-      msgSuccess(`成功下载 ${selectedRows.length} 张专辑！`);
-
-      // 清空选择
-      setSelectedRowKeys([]);
-      setSelectedRows([]);
+      message.loading({
+        key: loadingKey,
+        content: `正在准备下载 ${selectedRows.length} 张专辑...`,
+        duration: 0,
+      });
+      let index = 1;
+      for (const album of selectedRows) {
+        message.loading({
+          key: loadingKey,
+          content: `正在下载第 ${index} 张专辑 ${album.albumName}...`,
+          duration: 0,
+        });
+        await downloadAlbumSong(album.albumMid);
+        message.success({
+          key: loadingKey,
+          content: `第 ${index} 张专辑 ${album.albumName} 下载成功！`,
+          duration: 1,
+        });
+        index++;
+      }
     } catch (error) {
-      message.destroy();
       msgError('批量下载失败: ' + (error as Error).message);
       console.error('批量下载失败:', error);
     } finally {
-      setDownloadingBatch(false);
+      message.destroy(loadingKey);
     }
   };
 
   /** 批量下载选中专辑的JSON */
-  const [downloadingBatchJson, setDownloadingBatchJson] = useState(false);
   const handleBatchDownloadJson = async () => {
     if (selectedRows.length === 0) {
       msgWarning('请先选择要下载的专辑');
       return;
     }
+    const loadingKey = 'download-album-json';
     try {
-      setDownloadingBatchJson(true);
-
-      // 使用 msgLoading 的 Promise 形式，让它自动处理成功和失败
-      const hide = msgLoading(`正在准备下载 ${selectedRows.length} 张专辑...`);
-
+      message.loading({
+        key: loadingKey,
+        content: `正在准备下载 ${selectedRows.length} 张专辑...`,
+        duration: 0,
+      });
       const result = [] as any;
+      let index = 1;
       for (const album of selectedRows) {
         console.log('album', album);
+        message.loading({
+          key: loadingKey,
+          content: `正在下载第 ${index} 张专辑 ${album.albumName}...`,
+          duration: 0,
+        });
         const res = await getDownLoadJson(album.albumMid);
         result.push(res);
+        message.success({
+          key: loadingKey,
+          content: `第 ${index} 张专辑 ${album.albumName} 下载成功！`,
+          duration: 1,
+        });
+        index++;
       }
       downloadAsJson(result, `${singerInfo.singerName}-专辑`);
-      hide();
-      msgSuccess(`成功下载 ${selectedRows.length} 张专辑！`);
+      message.success({
+        key: loadingKey,
+        content: `成功下载 ${selectedRows.length} 张专辑！`,
+        duration: 1,
+      });
     } catch (error) {
       console.error('批量下载JSON失败:', error);
+      message.destroy(loadingKey);
+      msgError('批量下载JSON失败: ' + (error as Error).message);
     } finally {
-      setDownloadingBatchJson(false);
+      message.destroy(loadingKey);
     }
   };
 
@@ -428,20 +458,18 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
             清空选择
           </Button>
           {/* 下载Json选中专辑 */}
-          <Button
+          <MyButton
             type='primary'
             onClick={handleBatchDownloadJson}
-            loading={downloadingBatchJson}
             disabled={selectedRows.length === 0}>
             下载Json{selectedRows?.length ? `(${selectedRows?.length})` : ''}
-          </Button>
-          <Button
+          </MyButton>
+          <MyButton
             type='primary'
             onClick={handleBatchDownload}
-            loading={downloadingBatch}
             disabled={selectedRows.length === 0}>
             下载选中专辑{selectedRows?.length ? `(${selectedRows?.length})` : ''}
-          </Button>
+          </MyButton>
         </Space>
       </div>
     );
@@ -471,6 +499,14 @@ const AlbumListModal = forwardRef((props, ref: ForwardedRef<Ref<any, IOpenParams
         loading={loading}
         scroll={{ y: 500, x: 1100 }}
         className={styles['album-table']}
+        onRow={(record) => ({
+          style: {
+            cursor: 'pointer',
+          },
+          onClick: () => {
+            albumDetailRef.current?.open({ albummid: record.albumMid });
+          },
+        })}
         pagination={{
           showSizeChanger: true,
           showQuickJumper: true,

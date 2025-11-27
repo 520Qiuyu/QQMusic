@@ -187,7 +187,7 @@ const SingerSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
       open={visible}
       onCancel={close}
       footer={null}
-      width={1100}
+      width={1200}
       centered
       className={styles['singer-search-modal']}>
       {/* 搜索表单 */}
@@ -200,7 +200,7 @@ const SingerSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
         rowKey='singer_mid'
         loading={loading}
         pagination={false}
-        scroll={{ y: 500 }}
+        scroll={{ y: 500, x: 1000 }}
       />
 
       <Pagination

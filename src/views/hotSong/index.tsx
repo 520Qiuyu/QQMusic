@@ -1,25 +1,25 @@
 import { getAlbumPicUrl } from '@/apis/album';
-import { CopyText } from '@/components';
+import { CopyText, MyButton } from '@/components';
 import type { Option as SearchFormOption } from '@/components/SearchForm';
 import SearchForm from '@/components/SearchForm';
 import { FileType } from '@/constants';
 import { usePlayMusic } from '@/hooks/usePlayMusic';
-import { promiseLimit, uniqueArrayByKey } from '@/utils';
+import { getFile_qualityList, promiseLimit, uniqueArrayByKey } from '@/utils';
 import { downloadAsJson } from '@/utils/download';
-import { msgLoading, msgWarning } from '@/utils/modal';
+import { msgLoading, msgSuccess, msgWarning } from '@/utils/modal';
 import {
   DownloadOutlined,
   PauseCircleOutlined,
   PlayCircleOutlined,
   UserOutlined,
 } from '@ant-design/icons';
-import { Avatar, Button, Image, Modal, Space, Table, Typography } from 'antd';
+import { Avatar, Button, Image, message, Modal, Select, Space, Table, Tag, Typography } from 'antd';
 import type { ColumnType } from 'antd/es/table';
 import type { TableProps } from 'antd/lib';
 import { groupBy } from 'lodash';
 import { forwardRef, useState, type ForwardedRef } from 'react';
 import { getSingerAllHotSong } from '../../apis/singer';
-import { useFilter, useGetData, useVisible } from '../../hooks';
+import { useConfig, useFilter, useGetData, useVisible } from '../../hooks';
 import type { Ref } from '../../hooks/useVisible';
 import type { SingerHotSongExtra, SongInfo } from '../../types/singer';
 import styles from './index.module.scss';
@@ -62,7 +62,8 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
     },
     ref,
   );
-
+  const { downloadConfig } = useConfig();
+  const { quality: defaultQuality } = downloadConfig;
   const { play, pause, stop, isPlaying, download, getUrl, getLyric } = usePlayMusic();
 
   const [singerInfo, setSingerInfo] = useState<IOpenParams>({} as IOpenParams);
@@ -123,7 +124,7 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
       },
     },
   ];
-  const { filteredList, handleFilter } = useFilter(songList, {
+  const { filteredList, setFilteredList, handleFilter } = useFilter(songList, {
     fields: {
       name: {
         getValue: (item) => item.name,
@@ -134,38 +135,35 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
     },
   });
 
-  /**
-   * 根据文件大小信息判断最高音质
-   * @param file 文件信息
-   * @returns 最高音质类型
-   */
-  const getHighestQuality = (file: SongInfo['file']): keyof typeof FileType => {
-    // 按音质从高到低排序检查
-    if (file.size_flac > 0) return 'flac';
-    if (file.size_ape > 0) return 'ape';
-    if (file.size_320mp3 > 0) return 320;
-    if (file.size_192aac > 0) return 'm4a';
-    if (file.size_128mp3 > 0) return 128;
-
-    // 默认返回128kbps
-    return 128;
+  const handleChooseQuality = (record: SongInfo, quality: keyof typeof FileType) => {
+    setFilteredList(
+      filteredList.map((item) => {
+        if (item.mid === record.mid) {
+          return {
+            ...item,
+            quality,
+          };
+        }
+        return item;
+      }),
+    );
   };
-
-  const handlePlay = (record: SongInfo) => {
+  const handlePlay = (record: SongInfo & { quality?: keyof typeof FileType }) => {
     console.log('record', record);
-    const { mid, file } = record;
-    const quality = getHighestQuality(file);
-    console.log('选择音质:', quality);
-    play(mid, quality);
+    const { mid, quality, file } = record;
+    const finalQuality = getQuality(file, defaultQuality, quality);
+    console.log('当前播放歌曲:', record.name, '音质:', finalQuality);
+    play(mid, finalQuality);
   };
 
   const [downloading, setDownloading] = useState<string | undefined>();
-  const handleDownload = async (record: SongInfo) => {
+  const handleDownload = async (record: SongInfo & { quality?: keyof typeof FileType }) => {
     try {
       setDownloading(record.mid);
-      const { mid, name, file } = record;
-      const quality = getHighestQuality(file);
-      await download(mid, name, quality);
+      const { mid, name, quality, file } = record;
+      const finalQuality = getQuality(file, defaultQuality, quality);
+      console.log('当前下载歌曲:', name, '音质:', finalQuality);
+      await download(mid, finalQuality);
     } catch (error) {
       console.log('error', error);
     } finally {
@@ -233,6 +231,66 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
       },
     },
     {
+      title: '音质',
+      dataIndex: 'file',
+      key: 'file',
+      width: 100,
+      align: 'center',
+      render: (file: SongInfo['file'], record: SongInfo) => {
+        const qualityList = getFile_qualityList(file);
+        const defaultValue = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
+        return (
+          <Select
+            options={qualityList.map((quality) => ({
+              label: quality,
+              value: quality,
+            }))}
+            defaultValue={defaultValue}
+            style={{ width: '100%' }}
+            onChange={(value) => {
+              handleChooseQuality(record, value as keyof typeof FileType);
+            }}
+          />
+        );
+      },
+    },
+    // 格式
+    {
+      title: '格式',
+      dataIndex: 'format',
+      key: 'format',
+      width: 150,
+      align: 'center',
+      render: (_, record: SongInfo) => {
+        const qualityList = getFile_qualityList(record.file);
+        // 定义不同音质对应的颜色
+        const qualityColorMap = {
+          flac: 'green',
+          ape: 'volcano',
+          320: 'blue',
+          m4a: 'orange',
+          128: 'gray',
+        };
+        // 音质tag文本映射
+        const qualityTextMap = {
+          flac: 'FLAC',
+          ape: 'APE',
+          320: '320k',
+          m4a: 'M4A',
+          128: '128k',
+        };
+        return (
+          <Space wrap>
+            {qualityList.map((quality) => (
+              <Tag key={quality} color={qualityColorMap[quality]}>
+                {qualityTextMap[quality] || quality}
+              </Tag>
+            ))}
+          </Space>
+        );
+      },
+    },
+    {
       title: '发布时间',
       dataIndex: 'time_public',
       key: 'time_public',
@@ -271,18 +329,6 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
       align: 'center',
       fixed: 'right',
       render: (_, record: SongInfo) => {
-        const quality = getHighestQuality(record.file);
-        const qualityText =
-          quality === 'ape'
-            ? 'APE'
-            : quality === 'flac'
-              ? 'FLAC'
-              : quality === 320
-                ? '320k'
-                : quality === 'm4a'
-                  ? 'AAC'
-                  : '128k';
-
         return (
           <Space size='middle'>
             <Button
@@ -295,8 +341,7 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
                 } else {
                   handlePlay(record);
                 }
-              }}
-              title={`播放 (${qualityText})`}>
+              }}>
               播放
             </Button>
             {/* <Button type='link' size='small' icon={<HeartOutlined />}>
@@ -358,7 +403,6 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
   };
 
   /** 批量下载选中歌曲的JSON */
-  const [downloadingBatchJson, setDownloadingBatchJson] = useState(false);
   const handleBatchDownloadJson = async () => {
     try {
       if (selectedRows.length === 0) {
@@ -366,7 +410,6 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
         return;
       }
       console.log('selectedRows', selectedRows);
-      setDownloadingBatchJson(true);
       // 首先按照专辑groupBy
       const groupData = groupBy(selectedRows, 'album.mid');
       console.log('groupData', groupData);
@@ -379,14 +422,32 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
           lrcContent: string;
         }[];
       }[];
-      const hide = msgLoading(`正在准备下载 ${selectedRows.length} 首歌曲...`);
+      const loadingKey = 'download-json';
+      message.loading({
+        key: loadingKey,
+        content: `正在准备下载 ${selectedRows.length} 首歌曲，其中包括 ${Object.keys(groupData).length} 个专辑`,
+        duration: 0,
+      });
+      let albumIndex = 1;
+      let songIndex = 1;
       for (const albumMid in groupData) {
         const album = groupData[albumMid];
         const albumName = album[0].album.name;
         const albumCover = getAlbumPicUrl(albumMid);
+        message.loading({
+          key: loadingKey,
+          content: `开始下载第 ${albumIndex} / ${Object.keys(groupData).length} 个专辑 ：《${albumName}》`,
+          duration: 0,
+        });
         const promiseArr = album.map((song) => async () => {
           const lrcContent = await getLyric(song.mid);
-          const url = await getUrl(song.mid, getHighestQuality(song.file));
+          const finalQuality = getQuality(song.file, defaultQuality);
+          const url = await getUrl(song.mid, finalQuality);
+          message.loading({
+            key: loadingKey,
+            content: `第 ${songIndex++} / ${album.length} 首歌曲：《${song.name}》 下载完成！`,
+            duration: 0,
+          });
           return {
             songName: song.name,
             url,
@@ -399,33 +460,50 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
           albumCover: albumCover,
           list: albumSongs,
         });
+        message.success({
+          key: loadingKey,
+          content: `第 ${albumIndex++} / ${Object.keys(groupData).length} 个专辑：《${albumName}》下载完成！`,
+          duration: 0,
+        });
       }
+      message.destroy(loadingKey);
       downloadAsJson(result, `${singerInfo.singerName}-专辑`);
-      hide();
     } catch (error) {
       console.error('批量下载JSON失败:', error);
-    } finally {
-      setDownloadingBatchJson(false);
     }
   };
 
   /** 批量下载歌曲 */
-  const [downloadingBatch, setDownloadingBatch] = useState(false);
   const handleBatchDownload = async () => {
     try {
       if (selectedRows.length === 0) {
         msgWarning('请先选择要下载的歌曲');
         return;
       }
-      console.log('selectedRows', selectedRows);
-      setDownloadingBatch(true);
+      const loadingKey = 'download-song';
+      message.loading({
+        key: loadingKey,
+        content: `正在准备下载 ${selectedRows.length} 首歌曲`,
+        duration: 0,
+      });
+      let songIndex = 1;
       for (const song of selectedRows) {
-        await download(song.mid, song.name, getHighestQuality(song.file));
+        const finalQuality = getQuality(song.file, defaultQuality);
+        message.loading({
+          key: loadingKey,
+          content: `第 ${songIndex++} / ${selectedRows.length} 首歌曲：《${song.name}》 开始下载！`,
+          duration: 0,
+        });
+        await download(song.mid, finalQuality);
+        message.success({
+          key: loadingKey,
+          content: `第 ${songIndex++} / ${selectedRows.length} 首歌曲：《${song.name}》 下载完成！`,
+          duration: 0,
+        });
       }
+      message.destroy(loadingKey);
     } catch (error) {
       console.error('批量下载失败:', error);
-    } finally {
-      setDownloadingBatch(false);
     }
   };
 
@@ -455,20 +533,15 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
           )}
 
           {/* 下载JSON选中歌曲 */}
-          <Button
+          <MyButton
             type='primary'
             onClick={handleBatchDownloadJson}
-            loading={downloadingBatchJson}
             disabled={!selectedRows?.length}>
             下载JSON{selectedRows?.length ? `(${selectedRows?.length})` : ''}
-          </Button>
-          <Button
-            type='primary'
-            onClick={handleBatchDownload}
-            loading={downloadingBatch}
-            disabled={!selectedRows?.length}>
+          </MyButton>
+          <MyButton type='primary' onClick={handleBatchDownload} disabled={!selectedRows?.length}>
             下载选中歌曲{selectedRows?.length ? `(${selectedRows?.length})` : ''}
-          </Button>
+          </MyButton>
         </Space>
       </div>
     );
@@ -511,3 +584,14 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
 };
 
 export default forwardRef(HotSongModal);
+
+const getQuality = (
+  file: SongInfo['file'],
+  defaultQuality: keyof typeof FileType,
+  chooseQuality?: keyof typeof FileType,
+) => {
+  const qualityList = getFile_qualityList(file);
+  const songDefaultQuality = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
+  const finalQuality = chooseQuality || songDefaultQuality;
+  return finalQuality;
+};

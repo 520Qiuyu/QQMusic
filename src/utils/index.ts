@@ -1,5 +1,6 @@
 // #region ================ 工具函数 ================
 import type { FileType } from '@/constants';
+import type { AlbumSongInfo } from '@/types/album';
 import type { SongInfo } from '@/types/singer';
 import { unsafeWindow } from 'vite-plugin-monkey/dist/client';
 
@@ -254,6 +255,34 @@ export const getCookie = (key?: string) => {
 };
 
 /**
+ * 获取文件音质列表1
+ * @param file 文件信息
+ * @returns 音质列表
+ */
+export const getFile_qualityList = (file: SongInfo['file']) => {
+  const qualityList = [] as (keyof typeof FileType)[];
+  if (file.size_flac) qualityList.push('flac');
+  if (file.size_ape) qualityList.push('ape');
+  if (file.size_320mp3) qualityList.push(320);
+  if (file.size_192aac) qualityList.push('m4a');
+  if (file.size_128mp3) qualityList.push(128);
+  return qualityList;
+};
+
+/**
+ * 获取文件音质列表2
+ * @param file 文件信息
+ * @returns 音质列表
+ */
+export const getFileQualityList = (file: AlbumSongInfo) => {
+  const qualityList = [] as (keyof typeof FileType)[];
+  if (file.size128) qualityList.push(128);
+  if (file.size320) qualityList.push(320);
+  if (file.sizeflac) qualityList.push('flac');
+  return qualityList;
+};
+
+/**
  * 根据文件大小信息判断最高音质
  * @param file 文件信息
  * @returns 最高音质类型
@@ -269,8 +298,6 @@ export const getHighestQuality = (file: SongInfo['file']): keyof typeof FileType
   // 默认返回128kbps
   return 128;
 };
-
-
 
 // #endregion ================ 工具函数 ================
 

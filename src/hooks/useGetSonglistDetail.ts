@@ -1,9 +1,7 @@
 import { getSongListDetail } from '@/apis/songList';
 import type { FileType } from '@/constants';
 import type { PlaylistInfo } from '@/types/songList';
-import type { SongInfo } from '@/types/singer';
 import { promiseLimit } from '@/utils';
-import { downloadWithFileName } from '@/utils/download';
 import { useRef, useState } from 'react';
 import { usePlayMusic } from './usePlayMusic';
 
@@ -96,7 +94,7 @@ export const useGetSonglistDetail = () => {
         console.log('name:', name);
         console.log('file:', file);
         console.log(`当前正在下载${name}...`);
-        await download(mid, name, getHighestQualityInSonglist(file), item.album?.mid);
+        await download(mid);
       }
     } catch (error) {
       console.error('下载歌单歌曲失败:', error);
