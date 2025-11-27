@@ -1909,6 +1909,22 @@
     });
     return cookieMap[key];
   };
+  const getFile_qualityList = (file) => {
+    const qualityList = [];
+    if (file.size_flac) qualityList.push("flac");
+    if (file.size_ape) qualityList.push("ape");
+    if (file.size_320mp3) qualityList.push(320);
+    if (file.size_192aac) qualityList.push("m4a");
+    if (file.size_128mp3) qualityList.push(128);
+    return qualityList;
+  };
+  const getFileQualityList = (file) => {
+    const qualityList = [];
+    if (file.size128) qualityList.push(128);
+    if (file.size320) qualityList.push(320);
+    if (file.sizeflac) qualityList.push("flac");
+    return qualityList;
+  };
   const mapToList = (map) => {
     return Object.entries(map).map(([key, value]) => ({
       label: key,
@@ -3161,6 +3177,29 @@
       return false;
     }
   };
+  const downloadAsLRC = (lrcContent, filename, options = {}) => {
+    try {
+      const { timestamp = false } = options;
+      let finalFilename = filename;
+      if (timestamp) {
+        const now = /* @__PURE__ */ new Date();
+        const ts = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, "0")}${String(
+        now.getDate()
+      ).padStart(2, "0")}_${String(now.getHours()).padStart(2, "0")}${String(
+        now.getMinutes()
+      ).padStart(2, "0")}${String(now.getSeconds()).padStart(2, "0")}`;
+        finalFilename = `${filename}_${ts}`;
+      }
+      const blob = new Blob([lrcContent], { type: "text/plain" });
+      const blobUrl = window.URL.createObjectURL(blob);
+      downloadFileWithBlob(blob, `${finalFilename}.lrc`);
+      window.URL.revokeObjectURL(blobUrl);
+      return true;
+    } catch (error) {
+      console.error("LRC歌词下载失败:", error);
+      return false;
+    }
+  };
   const downloadFileWithBlob = (file, name) => {
     const blobUrl = window.URL.createObjectURL(file);
     const a = document.createElement("a");
@@ -3173,22 +3212,33 @@
   };
   const audio = new Audio();
   const usePlayMusic = () => {
+    const { downloadConfig } = useConfig();
+    const { quality: downloadQuality, downloadLyric, embedLyricCover } = downloadConfig;
     const [currentMid, setCurrentMid] = require$$0.useState("");
     const [isPlaying, setIsPlaying] = require$$0.useState();
     const [currentTime, setCurrentTime] = require$$0.useState(0);
     const [duration, setDuration] = require$$0.useState(0);
     const urlMap = require$$0.useRef({});
-    const { functionConfig, downloadConfig } = useConfig();
-    const { uploadConcurrency } = functionConfig;
-    const { quality: downloadQuality } = downloadConfig;
-    const getUrl = async (mid, quality = downloadQuality) => {
-      if (urlMap.current[mid]) {
-        return urlMap.current[mid];
+    const songInfoMap = require$$0.useRef({});
+    const getSongInfo$1 = async (mid) => {
+      if (songInfoMap.current[mid]) {
+        return songInfoMap.current[mid];
       }
-      const res = await getSongPlayUrl(mid, quality && { quality });
-      urlMap.current[mid] = res[mid].url;
-      const url = res[mid].url;
+      const res = await getSongInfo(mid);
+      const songInfo = res.track_info;
+      songInfoMap.current[mid] = songInfo;
+      return songInfo;
+    };
+    const getUrl = async (mid, quality = downloadQuality) => {
+      const key = mid + quality;
+      if (urlMap.current[key]) {
+        return urlMap.current[key];
+      }
+      const res = await getSongPlayUrl(mid, { quality });
+      const url = res[mid]?.url || "";
       if (!url) throw new Error("获取歌曲播放地址失败");
+      urlMap.current[key] = url;
+      console.log("url", url);
       return url;
     };
     const play = async (mid, quality = downloadQuality) => {
@@ -3198,11 +3248,9 @@
           return;
         }
         const url = await getUrl(mid, quality);
-        console.log("url", url);
         audio.src = url;
         audio.play();
         setCurrentMid(mid);
-        urlMap.current[mid] = url;
         return new Promise((resolve) => {
           audio.onended = () => {
             resolve(true);
@@ -3220,31 +3268,34 @@
         await play(mid);
       }
     };
-    const download = async (mid, name, quality = downloadQuality, albumMid) => {
+    const download = async (mid, quality = downloadQuality) => {
       try {
+        const songInfo = await getSongInfo$1(mid);
+        const { name, album: { mid: albumMid } = {} } = songInfo;
         const url = await getUrl(mid, quality);
         console.log(`当前下载歌曲${name},音质为${quality},链接为${url}`);
         const finalExt = url.split("?")[0].split(".").pop();
-        const { blob, response } = await getFileBlob(url.replace("http://", "https://"));
+        const { blob } = await getFileBlob(url.replace("http://", "https://"));
         let outputFile = blob;
         const lyric = await getLyric(mid);
         let coverBlob;
         if (albumMid) {
           const cover = getAlbumPicUrl(albumMid);
-          const { blob: blob2, response: response2 } = await getFileBlob(cover.replace("http://", "https://"));
+          const { blob: blob2 } = await getFileBlob(cover.replace("http://", "https://"));
           coverBlob = blob2;
         }
-        console.log("blob", blob);
-        switch (finalExt) {
-          case "flac":
-            outputFile = await writeFlacTagAndPicture(blob, "lyrics", lyric, coverBlob);
-            break;
-          /*  case 'mp3':
-            outputFile = await writeFlacTagAndPicture(blob, 'lyrics', lyric, coverBlob!);
-            break; */
-          default:
-            console.log("当前格式不支持");
-            break;
+        if (embedLyricCover) {
+          switch (finalExt) {
+            case "flac":
+              outputFile = await writeFlacTagAndPicture(blob, "lyrics", lyric, coverBlob);
+              break;
+            default:
+              console.log("当前格式不支持");
+              break;
+          }
+        }
+        if (downloadLyric) {
+          downloadAsLRC(lyric, name);
         }
         downloadFileWithBlob(outputFile, `${name}.${finalExt}`);
       } catch (error) {
@@ -3276,14 +3327,15 @@
       isPlaying,
       currentTime,
       duration,
+      audio,
       play,
       pause,
       stop,
-      audio,
       download,
       playList,
       getUrl,
-      getLyric
+      getLyric,
+      getSongInfo: getSongInfo$1
     };
   };
   const useGetAlbumDetail = () => {
@@ -3291,6 +3343,8 @@
     const [albumInfo, setAlbumInfo] = require$$0.useState();
     const [isLoading, setIsLoading] = require$$0.useState(false);
     const albumInfoMap = require$$0.useRef({});
+    const { downloadConfig } = useConfig();
+    const { quality: downloadQuality } = downloadConfig;
     const { play, getUrl, download, getLyric } = usePlayMusic();
     const getAlbumDetail = async (mid) => {
       try {
@@ -3299,8 +3353,9 @@
           return albumInfoMap.current[mid];
         }
         const res = await getAlbumInfo(mid);
-        console.log("res", res);
+        console.log("专辑详情", res);
         albumInfoMap.current[mid] = res;
+        setAlbumInfo(res);
         return res;
       } catch (error) {
         console.error("获取专辑详情失败:", error);
@@ -3322,18 +3377,20 @@
     const getAlbumSongUrl = async (mid) => {
       const res = await getAlbumSongList(mid);
       const ids = res?.map((item) => {
-        const quality = getHighestQualityInAlbum(item);
         return {
           id: item.songmid,
           name: item.songname,
-          quality
+          file: item
         };
       });
       const promiseArr = ids?.map((item) => async () => {
-        const url = await getUrl(item.id, item.quality);
+        const qualityList = getFileQualityList(item.file);
+        const finalQuality = qualityList.includes(downloadQuality) ? downloadQuality : qualityList[0];
+        const url = await getUrl(item.id, finalQuality);
         return {
           ...item,
-          url
+          url,
+          quality: finalQuality
         };
       });
       const urls = await promiseLimit(promiseArr, 6);
@@ -3346,10 +3403,8 @@
         console.log("albumSongList", albumSongList);
         for (const item of albumSongList || []) {
           const { songmid, songname } = item;
-          console.log("songmid", songmid);
-          console.log("songname", songname);
-          console.log(`当前正在下载${songname}...`);
-          await download(songmid, songname, "flac", mid);
+          console.log(`正在下载: songmid=${songmid}, songname=${songname}`);
+          await download(songmid);
         }
       } catch (error) {
         console.error("下载专辑歌曲失败:", error);
@@ -3360,7 +3415,9 @@
       const { name, list } = albumDetail || {};
       const promiseArr = list?.map((item) => async () => {
         const lrcContent = await getLyric(item.songmid);
-        const url = await getUrl(item.songmid, getHighestQualityInAlbum(item));
+        const qualityList = getFileQualityList(item);
+        const finalQuality = qualityList.includes(downloadQuality) ? downloadQuality : qualityList[0];
+        const url = await getUrl(item.songmid, finalQuality);
         return {
           songName: item.songname,
           url,
@@ -3383,13 +3440,6 @@
         await play(item.songmid);
       }
     };
-    const getHighestQualityInAlbum = (file) => {
-      if (file.sizeflac && file.sizeflac > 0) return "flac";
-      if (file.sizeape && file.sizeape > 0) return "ape";
-      if (file.size320 && file.size320 > 0) return 320;
-      if (file.size128 && file.size128 > 0) return 128;
-      return 128;
-    };
     return {
       albumInfo,
       isLoading,
@@ -3398,8 +3448,7 @@
       playAlbum,
       getAlbumSongUrl,
       downloadAlbumSong,
-      getDownLoadJson,
-      getHighestQualityInAlbum
+      getDownLoadJson
     };
   };
   const useGetData = (api, params, options) => {
@@ -3563,7 +3612,7 @@
           console.log("name:", name);
           console.log("file:", file);
           console.log(`当前正在下载${name}...`);
-          await download(mid, name, getHighestQualityInSonglist(file), item.album?.mid);
+          await download(mid);
         }
       } catch (error) {
         console.error("下载歌单歌曲失败:", error);
@@ -10615,6 +10664,8 @@
       },
       ref
     );
+    const { downloadConfig } = useConfig();
+    const { quality: defaultQuality } = downloadConfig;
     const { play, pause, isPlaying, download, getUrl, getLyric } = usePlayMusic();
     const [singerInfo, setSingerInfo] = require$$0.useState({});
     const [loadingData, setLoadingData] = require$$0.useState(defaultLoadingData);
@@ -10671,7 +10722,7 @@
         }
       }
     ];
-    const { filteredList, handleFilter } = useFilter(songList, {
+    const { filteredList, setFilteredList, handleFilter } = useFilter(songList, {
       fields: {
         name: {
           getValue: (item) => item.name
@@ -10681,28 +10732,34 @@
         }
       }
     });
-    const getHighestQuality = (file) => {
-      if (file.size_flac > 0) return "flac";
-      if (file.size_ape > 0) return "ape";
-      if (file.size_320mp3 > 0) return 320;
-      if (file.size_192aac > 0) return "m4a";
-      if (file.size_128mp3 > 0) return 128;
-      return 128;
+    const handleChooseQuality = (record, quality) => {
+      setFilteredList(
+        filteredList.map((item) => {
+          if (item.mid === record.mid) {
+            return {
+              ...item,
+              quality
+            };
+          }
+          return item;
+        })
+      );
     };
     const handlePlay = (record) => {
       console.log("record", record);
-      const { mid, file } = record;
-      const quality = getHighestQuality(file);
-      console.log("选择音质:", quality);
-      play(mid, quality);
+      const { mid, quality, file } = record;
+      const finalQuality = getQuality(file, defaultQuality, quality);
+      console.log("当前播放歌曲:", record.name, "音质:", finalQuality);
+      play(mid, finalQuality);
     };
     const [downloading, setDownloading] = require$$0.useState();
     const handleDownload = async (record) => {
       try {
         setDownloading(record.mid);
-        const { mid, name, file } = record;
-        const quality = getHighestQuality(file);
-        await download(mid, name, quality);
+        const { mid, name, quality, file } = record;
+        const finalQuality = getQuality(file, defaultQuality, quality);
+        console.log("当前下载歌曲:", name, "音质:", finalQuality);
+        await download(mid, finalQuality);
       } catch (error) {
         console.log("error", error);
       } finally {
@@ -10757,6 +10814,57 @@
         }
       },
       {
+        title: "音质",
+        dataIndex: "file",
+        key: "file",
+        width: 100,
+        align: "center",
+        render: (file, record) => {
+          const qualityList = getFile_qualityList(file);
+          const defaultValue = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
+          return /* @__PURE__ */ jsxRuntimeExports.jsx(
+            antd.Select,
+            {
+              options: qualityList.map((quality) => ({
+                label: quality,
+                value: quality
+              })),
+              defaultValue,
+              style: { width: "100%" },
+              onChange: (value) => {
+                handleChooseQuality(record, value);
+              }
+            }
+          );
+        }
+      },
+      // 格式
+      {
+        title: "格式",
+        dataIndex: "format",
+        key: "format",
+        width: 150,
+        align: "center",
+        render: (_, record) => {
+          const qualityList = getFile_qualityList(record.file);
+          const qualityColorMap = {
+            flac: "green",
+            ape: "volcano",
+            320: "blue",
+            m4a: "orange",
+            128: "gray"
+          };
+          const qualityTextMap = {
+            flac: "FLAC",
+            ape: "APE",
+            320: "320k",
+            m4a: "M4A",
+            128: "128k"
+          };
+          return /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Space, { wrap: true, children: qualityList.map((quality) => /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tag, { color: qualityColorMap[quality], children: qualityTextMap[quality] || quality }, quality)) });
+        }
+      },
+      {
         title: "发布时间",
         dataIndex: "time_public",
         key: "time_public",
@@ -10791,8 +10899,6 @@
         align: "center",
         fixed: "right",
         render: (_, record) => {
-          const quality = getHighestQuality(record.file);
-          const qualityText = quality === "ape" ? "APE" : quality === "flac" ? "FLAC" : quality === 320 ? "320k" : quality === "m4a" ? "AAC" : "128k";
           return /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(
               antd.Button,
@@ -10807,7 +10913,6 @@
                     handlePlay(record);
                   }
                 },
-                title: `播放 (${qualityText})`,
                 children: "播放"
               }
             ),
@@ -10862,7 +10967,6 @@
         ] })
       ] }) });
     };
-    const [downloadingBatchJson, setDownloadingBatchJson] = require$$0.useState(false);
     const handleBatchDownloadJson = async () => {
       try {
         if (selectedRows.length === 0) {
@@ -10870,18 +10974,35 @@
           return;
         }
         console.log("selectedRows", selectedRows);
-        setDownloadingBatchJson(true);
         const groupData = lodashExports.groupBy(selectedRows, "album.mid");
         console.log("groupData", groupData);
         const result = [];
-        const hide = msgLoading(`正在准备下载 ${selectedRows.length} 首歌曲...`);
+        const loadingKey = "download-json";
+        antd.message.loading({
+          key: loadingKey,
+          content: `正在准备下载 ${selectedRows.length} 首歌曲，其中包括 ${Object.keys(groupData).length} 个专辑`,
+          duration: 0
+        });
+        let albumIndex = 1;
+        let songIndex = 1;
         for (const albumMid in groupData) {
           const album = groupData[albumMid];
           const albumName = album[0].album.name;
           const albumCover = getAlbumPicUrl(albumMid);
+          antd.message.loading({
+            key: loadingKey,
+            content: `开始下载第 ${albumIndex} / ${Object.keys(groupData).length} 个专辑 ：《${albumName}》`,
+            duration: 0
+          });
           const promiseArr = album.map((song) => async () => {
             const lrcContent = await getLyric(song.mid);
-            const url = await getUrl(song.mid, getHighestQuality(song.file));
+            const finalQuality = getQuality(song.file, defaultQuality);
+            const url = await getUrl(song.mid, finalQuality);
+            antd.message.loading({
+              key: loadingKey,
+              content: `第 ${songIndex++} / ${album.length} 首歌曲：《${song.name}》 下载完成！`,
+              duration: 0
+            });
             return {
               songName: song.name,
               url,
@@ -10894,31 +11015,48 @@
             albumCover,
             list: albumSongs
           });
+          antd.message.success({
+            key: loadingKey,
+            content: `第 ${albumIndex++} / ${Object.keys(groupData).length} 个专辑：《${albumName}》下载完成！`,
+            duration: 0
+          });
         }
+        antd.message.destroy(loadingKey);
         downloadAsJson(result, `${singerInfo.singerName}-专辑`);
-        hide();
       } catch (error) {
         console.error("批量下载JSON失败:", error);
-      } finally {
-        setDownloadingBatchJson(false);
       }
     };
-    const [downloadingBatch, setDownloadingBatch] = require$$0.useState(false);
     const handleBatchDownload = async () => {
       try {
         if (selectedRows.length === 0) {
           msgWarning("请先选择要下载的歌曲");
           return;
         }
-        console.log("selectedRows", selectedRows);
-        setDownloadingBatch(true);
+        const loadingKey = "download-song";
+        antd.message.loading({
+          key: loadingKey,
+          content: `正在准备下载 ${selectedRows.length} 首歌曲`,
+          duration: 0
+        });
+        let songIndex = 1;
         for (const song of selectedRows) {
-          await download(song.mid, song.name, getHighestQuality(song.file));
+          const finalQuality = getQuality(song.file, defaultQuality);
+          antd.message.loading({
+            key: loadingKey,
+            content: `第 ${songIndex++} / ${selectedRows.length} 首歌曲：《${song.name}》 开始下载！`,
+            duration: 0
+          });
+          await download(song.mid, finalQuality);
+          antd.message.success({
+            key: loadingKey,
+            content: `第 ${songIndex++} / ${selectedRows.length} 首歌曲：《${song.name}》 下载完成！`,
+            duration: 0
+          });
         }
+        antd.message.destroy(loadingKey);
       } catch (error) {
         console.error("批量下载失败:", error);
-      } finally {
-        setDownloadingBatch(false);
       }
     };
     const renderFooter = () => {
@@ -10949,11 +11087,10 @@
             }
           ),
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            antd.Button,
+            MyButton,
             {
               type: "primary",
               onClick: handleBatchDownloadJson,
-              loading: downloadingBatchJson,
               disabled: !selectedRows?.length,
               children: [
                 "下载JSON",
@@ -10961,19 +11098,10 @@
               ]
             }
           ),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            antd.Button,
-            {
-              type: "primary",
-              onClick: handleBatchDownload,
-              loading: downloadingBatch,
-              disabled: !selectedRows?.length,
-              children: [
-                "下载选中歌曲",
-                selectedRows?.length ? `(${selectedRows?.length})` : ""
-              ]
-            }
-          )
+          /* @__PURE__ */ jsxRuntimeExports.jsxs(MyButton, { type: "primary", onClick: handleBatchDownload, disabled: !selectedRows?.length, children: [
+            "下载选中歌曲",
+            selectedRows?.length ? `(${selectedRows?.length})` : ""
+          ] })
         ] })
       ] });
     };
@@ -11019,6 +11147,12 @@
     );
   };
   const HotSongModal$1 = require$$0.forwardRef(HotSongModal);
+  const getQuality = (file, defaultQuality, chooseQuality) => {
+    const qualityList = getFile_qualityList(file);
+    const songDefaultQuality = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
+    const finalQuality = chooseQuality || songDefaultQuality;
+    return finalQuality;
+  };
   const loading = "_loading_1fb5b_49";
   const footer = "_footer_1fb5b_152";
   const styles$5 = {
@@ -11066,7 +11200,10 @@
     const { data, loading: loading2 } = useGetData(getSingerAllAlbum, singerInfo.singerMid, {
       monitors: [singerInfo.singerMid, visible],
       returnFunction: () => !visible || !singerInfo.singerMid,
-      initialValue: []
+      initialValue: [],
+      callback: (data2) => {
+        console.log("data", data2);
+      }
     });
     const searchFormOptions = [
       {
@@ -11155,18 +11292,11 @@
               fallback: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAADDCAYAAADQvc6UAAABRWlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSSwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAwSDCIMogwMCcmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis7PPOq3QdDFcvjV3jOD1boQVTPQrgSkktTgbSf4A4LbmgqISBgTEFyFYuLykAsTuAbJEioKOA7DkgdjqEvQHEToKwj4DVhAQ5A9k3gGyB5IxEoBmML4BsnSQk8XQkNtReEOBxcfXxUQg1Mjc0dyHgXNJBSWpFCYh2zi+oLMpMzyhRcASGUqqCZ16yno6CkYGRAQMDKMwhqj/fAIcloxgHQqxAjIHBEugw5sUIsSQpBobtQPdLciLEVJYzMPBHMDBsayhILEqEO4DxG0txmrERhM29nYGBddr//5/DGRjYNRkY/l7////39v///y4Dmn+LgeHANwDrkl1AuO+pmgAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAwqADAAQAAAABAAAAwwAAAAD9b/HnAAAHlklEQVR4Ae3dP3Ik1RnG4W+FgYxN"
             }
           ) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            "div",
-            {
-              className: styles$5["album-details"],
-              onClick: () => albumDetailRef.current?.open({ albummid: record.albumMid }),
-              children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$5["album-name"], title: text, children: text }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$5["album-trans-name"], title: record.albumTranName || "", children: record.albumTranName || "" }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$5["album-type"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tag, { color: "blue", children: record.albumType || "专辑" }) })
-              ]
-            }
-          )
+          /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$5["album-details"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$5["album-name"], title: text, children: text }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$5["album-trans-name"], title: record.albumTranName || "", children: record.albumTranName || "" }),
+            /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$5["album-type"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(antd.Tag, { color: "blue", children: record.albumType || "专辑" }) })
+          ] })
         ] })
       },
       {
@@ -11225,6 +11355,12 @@
         width: 300,
         align: "center",
         fixed: "right",
+        onCell: () => ({
+          style: {
+            cursor: "default"
+          },
+          onClick: (e) => e.stopPropagation()
+        }),
         render: (_, record) => {
           return /* @__PURE__ */ jsxRuntimeExports.jsxs(antd.Space, { size: "middle", children: [
             /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -11304,50 +11440,82 @@
         ] })
       ] }) });
     };
-    const [downloadingBatch, setDownloadingBatch] = require$$0.useState(false);
     const handleBatchDownload = async () => {
       if (selectedRows.length === 0) {
         msgWarning("请先选择要下载的专辑");
         return;
       }
+      const loadingKey = "download-album";
       try {
-        setDownloadingBatch(true);
-        antd.message.loading(`正在准备下载 ${selectedRows.length} 张专辑...`, 0);
-        await new Promise((resolve) => setTimeout(resolve, 2e3));
-        antd.message.destroy();
-        msgSuccess(`成功下载 ${selectedRows.length} 张专辑！`);
-        setSelectedRowKeys([]);
-        setSelectedRows([]);
+        antd.message.loading({
+          key: loadingKey,
+          content: `正在准备下载 ${selectedRows.length} 张专辑...`,
+          duration: 0
+        });
+        let index2 = 1;
+        for (const album of selectedRows) {
+          antd.message.loading({
+            key: loadingKey,
+            content: `正在下载第 ${index2} 张专辑 ${album.albumName}...`,
+            duration: 0
+          });
+          await downloadAlbumSong(album.albumMid);
+          antd.message.success({
+            key: loadingKey,
+            content: `第 ${index2} 张专辑 ${album.albumName} 下载成功！`,
+            duration: 1
+          });
+          index2++;
+        }
       } catch (error) {
-        antd.message.destroy();
         msgError("批量下载失败: " + error.message);
         console.error("批量下载失败:", error);
       } finally {
-        setDownloadingBatch(false);
+        antd.message.destroy(loadingKey);
       }
     };
-    const [downloadingBatchJson, setDownloadingBatchJson] = require$$0.useState(false);
     const handleBatchDownloadJson = async () => {
       if (selectedRows.length === 0) {
         msgWarning("请先选择要下载的专辑");
         return;
       }
+      const loadingKey = "download-album-json";
       try {
-        setDownloadingBatchJson(true);
-        const hide = msgLoading(`正在准备下载 ${selectedRows.length} 张专辑...`);
+        antd.message.loading({
+          key: loadingKey,
+          content: `正在准备下载 ${selectedRows.length} 张专辑...`,
+          duration: 0
+        });
         const result = [];
+        let index2 = 1;
         for (const album of selectedRows) {
           console.log("album", album);
+          antd.message.loading({
+            key: loadingKey,
+            content: `正在下载第 ${index2} 张专辑 ${album.albumName}...`,
+            duration: 0
+          });
           const res = await getDownLoadJson(album.albumMid);
           result.push(res);
+          antd.message.success({
+            key: loadingKey,
+            content: `第 ${index2} 张专辑 ${album.albumName} 下载成功！`,
+            duration: 1
+          });
+          index2++;
         }
         downloadAsJson(result, `${singerInfo.singerName}-专辑`);
-        hide();
-        msgSuccess(`成功下载 ${selectedRows.length} 张专辑！`);
+        antd.message.success({
+          key: loadingKey,
+          content: `成功下载 ${selectedRows.length} 张专辑！`,
+          duration: 1
+        });
       } catch (error) {
         console.error("批量下载JSON失败:", error);
+        antd.message.destroy(loadingKey);
+        msgError("批量下载JSON失败: " + error.message);
       } finally {
-        setDownloadingBatchJson(false);
+        antd.message.destroy(loadingKey);
       }
     };
     const renderFooter = () => {
@@ -11386,11 +11554,10 @@
             }
           ),
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            antd.Button,
+            MyButton,
             {
               type: "primary",
               onClick: handleBatchDownloadJson,
-              loading: downloadingBatchJson,
               disabled: selectedRows.length === 0,
               children: [
                 "下载Json",
@@ -11399,11 +11566,10 @@
             }
           ),
           /* @__PURE__ */ jsxRuntimeExports.jsxs(
-            antd.Button,
+            MyButton,
             {
               type: "primary",
               onClick: handleBatchDownload,
-              loading: downloadingBatch,
               disabled: selectedRows.length === 0,
               children: [
                 "下载选中专辑",
@@ -11443,6 +11609,14 @@
               loading: loading2,
               scroll: { y: 500, x: 1100 },
               className: styles$5["album-table"],
+              onRow: (record) => ({
+                style: {
+                  cursor: "pointer"
+                },
+                onClick: () => {
+                  albumDetailRef.current?.open({ albummid: record.albumMid });
+                }
+              }),
               pagination: {
                 showSizeChanger: true,
                 showQuickJumper: true,
@@ -11630,7 +11804,7 @@
         open: visible,
         onCancel: close,
         footer: null,
-        width: 1100,
+        width: 1200,
         centered: true,
         className: styles$4["singer-search-modal"],
         children: [
@@ -11643,7 +11817,7 @@
               rowKey: "singer_mid",
               loading: loading2,
               pagination: false,
-              scroll: { y: 500 }
+              scroll: { y: 500, x: 1e3 }
             }
           ),
           /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -11821,7 +11995,7 @@
       try {
         if (downloading === record.mid) return;
         setDownloading(record.mid);
-        await download(record.mid, record.name, qualityMap[record.mid] || 128, record.album?.mid);
+        await download(record.mid, qualityMap[record.mid] || 128);
       } catch (error) {
         console.log("error", error);
       } finally {
@@ -12119,7 +12293,12 @@
       getPlaylistDownloadJson
     } = useGetSonglistDetail();
     const { data: songListCategory } = useGetData(getSongListCategory, void 0, {
-      initialValue: []
+      monitors: [visible],
+      returnFunction: () => !visible,
+      initialValue: [],
+      callback: (data2) => {
+        console.log("data", data2);
+      }
     });
     const categoryOptions = require$$0.useMemo(() => {
       return songListCategory?.map((item) => ({
@@ -12329,7 +12508,6 @@
         monitors: [searchParams, visible]
       }
     );
-    console.log("data", data);
     return /* @__PURE__ */ jsxRuntimeExports.jsxs(
       antd.Modal,
       {
@@ -12472,7 +12650,6 @@
   const SongTab$1 = ({ data, loading: loading2 }) => {
     const [qualityMap, setQualityMap] = require$$0.useState({});
     const { play, download, isPlaying, pause } = usePlayMusic();
-    const { getHighestQualityInAlbum } = useGetAlbumDetail();
     const handlePlay = (record) => {
       console.log("播放歌曲:", record);
       if (isPlaying) {
@@ -12482,13 +12659,7 @@
       }
     };
     const handleDownload = (record) => {
-      const quality = getHighestQualityInAlbum(record);
-      download(
-        record.songmid,
-        record.songname,
-        qualityMap[record.songmid] || quality,
-        record.albummid
-      );
+      download(record.songmid);
     };
     const columns_song = [
       {
