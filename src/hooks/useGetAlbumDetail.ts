@@ -1,9 +1,10 @@
 import { getAlbumInfo, getAlbumPicUrl } from '@/apis/album';
-import type { AlbumInfoData } from '@/types/album';
+import type { AlbumInfoData, AlbumSongInfo } from '@/types/album';
 import { getFileQualityList, promiseLimit } from '@/utils';
 import { useRef, useState } from 'react';
 import { useConfig } from './useConfig';
 import { usePlayMusic } from './usePlayMusic';
+import { message } from 'antd';
 
 export const useGetAlbumDetail = () => {
   const [currentMid, setCurrentMid] = useState<string>('');
@@ -11,8 +12,9 @@ export const useGetAlbumDetail = () => {
   const [isLoading, setIsLoading] = useState(false);
   const albumInfoMap = useRef<Record<string, AlbumInfoData>>({});
 
-  const { downloadConfig } = useConfig();
+  const { downloadConfig, functionConfig } = useConfig();
   const { quality: downloadQuality } = downloadConfig;
+  const { uploadConcurrency } = functionConfig;
   const { playList, play, getUrl, download, getLyric } = usePlayMusic();
 
   /**
@@ -89,15 +91,42 @@ export const useGetAlbumDetail = () => {
    * @param mid 专辑mid
    * @returns 下载专辑歌曲列表
    */
-  const downloadAlbumSong = async (mid: string) => {
+  const downloadAlbumSong = async (
+    mid: string,
+    options?: {
+      onChange?: (options: { songList: AlbumSongInfo[]; index: number }) => void;
+    },
+  ) => {
     try {
+      const { onChange } = options || {};
       const albumSongList = await getAlbumSongList(mid);
       console.log('准备下载专辑歌曲:', albumSongList);
-      for (const item of albumSongList || []) {
-        const { songmid, songname } = item;
-        console.log(`正在下载: songmid=${songmid}, songname=${songname}`);
-        await download(songmid);
-      }
+      let index = 1;
+      const successList = [] as AlbumSongInfo[];
+      const errorList = [] as AlbumSongInfo[];
+      const promiseArr = albumSongList?.map((item) => async () => {
+        try {
+          const { songmid, songname } = item;
+          console.log(`正在下载: songmid=${songmid}, songname=${songname}`);
+          await download(songmid);
+          console.log(`第${index}首歌曲《${songname}》下载完成！`);
+          successList.push(item);
+          index++;
+          onChange?.({
+            songList: albumSongList,
+            index,
+          });
+        } catch (error) {
+          errorList.push(item);
+        }
+      });
+      const songList = await promiseLimit(promiseArr!, uploadConcurrency);
+      return {
+        successList,
+        errorList,
+        songList,
+        total: albumSongList?.length,
+      };
     } catch (error) {
       console.error('下载专辑歌曲失败:', error);
     }
@@ -122,7 +151,7 @@ export const useGetAlbumDetail = () => {
         lrcContent,
       };
     });
-    const songList = await promiseLimit(promiseArr!, 6);
+    const songList = await promiseLimit(promiseArr!, uploadConcurrency);
     return {
       albumName: name,
       albumCover: getAlbumPicUrl(mid),

@@ -259,7 +259,13 @@ export const getCookie = (key?: string) => {
  * @param file 文件信息
  * @returns 音质列表
  */
-export const getFile_qualityList = (file: SongInfo['file']) => {
+export const getFile_qualityList = (file: {
+  size_flac?: number;
+  size_ape?: number;
+  size_320mp3?: number;
+  size_192aac?: number;
+  size_128mp3?: number;
+}) => {
   const qualityList = [] as (keyof typeof FileType)[];
   if (file.size_flac) qualityList.push('flac');
   if (file.size_ape) qualityList.push('ape');
@@ -274,7 +280,11 @@ export const getFile_qualityList = (file: SongInfo['file']) => {
  * @param file 文件信息
  * @returns 音质列表
  */
-export const getFileQualityList = (file: AlbumSongInfo) => {
+export const getFileQualityList = (file: {
+  size128?: number;
+  size320?: number;
+  sizeflac?: number;
+}) => {
   const qualityList = [] as (keyof typeof FileType)[];
   if (file.size128) qualityList.push(128);
   if (file.size320) qualityList.push(320);

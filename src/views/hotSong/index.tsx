@@ -501,6 +501,7 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
           duration: 0,
         });
       }
+      msgSuccess(`成功下载 ${selectedRows.length} 首歌曲！`);
       message.destroy(loadingKey);
     } catch (error) {
       console.error('批量下载失败:', error);

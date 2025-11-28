@@ -29,7 +29,7 @@ import type { Ref } from '../../hooks/useVisible';
 import styles from './index.module.scss';
 import { downloadAsJson } from '@/utils/download';
 import { getFileQualityList } from '@/utils';
-import { msgError, msgWarning } from '@/utils/modal';
+import { msgError, msgSuccess, msgWarning } from '@/utils/modal';
 import { MyButton } from '@/components';
 
 const { Text, Title } = Typography;
@@ -358,47 +358,23 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
   };
   /** 下载JSON */
   const handleDownloadAllJson = async () => {
-    /* if (selectedRows.length === 0) {
-      msgWarning('请先选择要下载的歌曲');
-      return;
-    }
-    const loadingKey = 'download-album-song-json';
+    if (!currentMid) return;
+    const loadingKey = 'download-album-json';
     try {
       message.loading({
         key: loadingKey,
-        content: `正在准备下载 ${selectedRows.length} 首歌曲...`,
+        content: `正在下载专辑JSON...`,
         duration: 0,
       });
-      const result = [] as any;
-      let index = 1;
-      for (const song of selectedRows) {
-        message.loading({
-          key: loadingKey,
-          content: `正在下载第 ${index} 首歌曲 ${song.songname}...`,
-          duration: 0,
-        });
-        const res = await getDownLoadJson(song.songmid);
-        result.push(res);
-        message.success({
-          key: loadingKey,
-          content: `第 ${index} 首歌曲 ${song.songname} 下载成功！`,
-          duration: 1,
-        });
-        index++;
-      }
-      downloadAsJson(result, `${detail?.name}.json`);
-      message.success({
-        key: loadingKey,
-        content: `成功下载 ${selectedRows.length} 首歌曲！`,
-        duration: 1,
-      });
-    } catch (error) {
-      console.error('批量下载JSON失败:', error);
+      const res = await getDownLoadJson(currentMid);
+      downloadAsJson([res], `${detail?.name}.json`);
       message.destroy(loadingKey);
-      msgError('批量下载JSON失败: ' + (error as Error).message);
+      msgSuccess('成功下载专辑JSON！');
+    } catch (error) {
+      console.log('error', error);
     } finally {
       message.destroy(loadingKey);
-    } */
+    }
   };
 
   const renderFooter = () => {
@@ -428,7 +404,7 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
             下载选中歌曲{selectedRows?.length ? `(${selectedRows?.length})` : ''}
           </MyButton>
           <MyButton icon={<FileOutlined />} type='primary' onClick={handleDownloadAllJson}>
-            下载JSON{selectedRows?.length ? `(${selectedRows?.length})` : ''}
+            下载全部歌曲JSON
           </MyButton>
         </Space>
       </div>

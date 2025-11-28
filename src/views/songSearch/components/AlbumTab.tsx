@@ -1,3 +1,4 @@
+import { getAlbumPicUrl } from '@/apis/album';
 import { CopyText } from '@/components';
 import { useCompRef, useGetAlbumDetail, usePlayMusic } from '@/hooks';
 import type { AlbumItem } from '@/types/search';
@@ -10,10 +11,9 @@ import {
   PlayCircleOutlined,
   SaveOutlined,
 } from '@ant-design/icons';
-import { Button, Image, Space, Table } from 'antd';
+import { Button, Image, message, Space, Table } from 'antd';
 import type { ColumnType } from 'antd/es/table';
 import styles from '../index.module.scss';
-import { getAlbumPicUrl } from '@/apis/album';
 
 interface AlbumTabProps {
   data: AlbumItem[];
@@ -60,27 +60,37 @@ const AlbumTab = ({ data, loading }: AlbumTabProps) => {
    * @param record 专辑信息
    */
   const handleDownload = async (record: AlbumItem) => {
+    const loadingKey = 'download-album-song';
     try {
       setDownloading(record.albumMID);
       const { albumMID, albumName } = record;
-
-      // 使用 msgLoading 的 Promise 形式，让它自动处理成功和失败
-      const hide = msgLoading(`正在准备下载《${albumName}》...`);
-
-      // 这里需要获取专辑详情并下载所有歌曲
-      // 暂时使用专辑MID作为歌曲MID（实际项目中需要获取专辑详情）
-      await downloadAlbumSong(albumMID);
-      hide();
+      message.loading({
+        key: loadingKey,
+        content: `正在下载专辑歌曲《${albumName}》...`,
+        duration: 0,
+      });
+      await downloadAlbumSong(albumMID, {
+        onChange: (options) => {
+          message.loading({
+            key: loadingKey,
+            content: `正在下载第${options.index}首歌曲《${options.songList[options.index - 1].songname}》...`,
+            duration: 0,
+          });
+        },
+      });
+      message.destroy(loadingKey);
       msgSuccess(`《${albumName}》下载成功！`);
     } catch (error) {
       console.error('下载失败:', error);
     } finally {
       setDownloading(undefined);
+      message.destroy(loadingKey);
     }
   };
 
   const [downloadingJson, setDownloadingJson] = useState<string | undefined>(undefined);
   const handleDownloadJson = async (record: AlbumItem) => {
+    if (!record.albumMID) return;
     try {
       setDownloadingJson(record.albumMID);
       const { albumMID, albumName } = record;
