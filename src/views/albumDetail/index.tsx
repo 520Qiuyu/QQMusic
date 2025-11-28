@@ -1,8 +1,13 @@
 import { getAlbumPicUrl } from '@/apis/album';
 import { getSingerPic } from '@/apis/singer';
+import { MyButton } from '@/components';
 import type { FileType } from '@/constants';
 import type { AlbumInfoData, AlbumSongInfo } from '@/types/album';
+import { getFileQualityList } from '@/utils';
+import { downloadAsJson } from '@/utils/download';
+import { msgError, msgSuccess, msgWarning } from '@/utils/modal';
 import {
+  CloudDownloadOutlined,
   DownloadOutlined,
   FileOutlined,
   PauseCircleOutlined,
@@ -27,10 +32,6 @@ import { forwardRef, useState, type ForwardedRef } from 'react';
 import { useConfig, useGetAlbumDetail, useGetData, usePlayMusic, useVisible } from '../../hooks';
 import type { Ref } from '../../hooks/useVisible';
 import styles from './index.module.scss';
-import { downloadAsJson } from '@/utils/download';
-import { getFileQualityList } from '@/utils';
-import { msgError, msgSuccess, msgWarning } from '@/utils/modal';
-import { MyButton } from '@/components';
 
 const { Text, Title } = Typography;
 
@@ -56,7 +57,7 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
   const { downloadConfig } = useConfig();
   const { quality: defaultQuality } = downloadConfig;
   const { getAlbumDetail, getAlbumSongList, isLoading, getDownLoadJson } = useGetAlbumDetail();
-  const { play, isPlaying, pause, download } = usePlayMusic();
+  const { play, isPlaying, pause, download, convertToNeteaseMusic } = usePlayMusic();
 
   // 专辑基础信息
   const { data: detail, loading: detailLoading } = useGetData<AlbumInfoData | undefined>(
@@ -313,7 +314,7 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
     );
   };
 
-  /** 下载全部 */
+  /** 下载选中歌曲 */
   const handleBatchDownload = async () => {
     if (selectedRows.length === 0) {
       msgWarning('请先选择要下载的歌曲');
@@ -352,6 +353,46 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
       console.error('批量下载失败:', error);
       message.destroy(loadingKey);
       msgError('批量下载失败: ' + (error as Error).message);
+    } finally {
+      message.destroy(loadingKey);
+    }
+  };
+  /** 转存网易云选中歌曲 */
+  const handleBatchDownloadNeteaseMusic = async () => {
+    if (selectedRows.length === 0) {
+      msgWarning('请先选择要转存网易云的歌曲');
+      return;
+    }
+
+    const loadingKey = 'download-album-song-netease';
+    try {
+      message.loading({
+        key: loadingKey,
+        content: `正在准备转存网易云 ${selectedRows.length} 首歌曲...`,
+        duration: 0,
+      });
+      let index = 1;
+      for (const song of selectedRows) {
+        message.loading({
+          key: loadingKey,
+          content: `正在转存第 ${index} 首歌曲 ${song.songname}...`,
+          duration: 0,
+        });
+        await convertToNeteaseMusic(song.songmid);
+        message.success({
+          content: `第 ${index} 首歌曲 ${song.songname} 转存成功！`,
+          duration: 1,
+        });
+        index++;
+      }
+      message.success({
+        key: loadingKey,
+        content: `成功转存 ${selectedRows.length} 首歌曲！`,
+        duration: 1,
+      });
+    } catch (error) {
+      console.error('批量转存网易云失败:', error);
+      msgError('批量转存网易云失败: ' + (error as Error).message);
     } finally {
       message.destroy(loadingKey);
     }
@@ -402,6 +443,12 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
           )}
           <MyButton type='primary' icon={<DownloadOutlined />} onClick={handleBatchDownload}>
             下载选中歌曲{selectedRows?.length ? `(${selectedRows?.length})` : ''}
+          </MyButton>
+          <MyButton
+            type='primary'
+            icon={<CloudDownloadOutlined />}
+            onClick={handleBatchDownloadNeteaseMusic}>
+            转存网易云{selectedRows?.length ? `(${selectedRows?.length})` : ''}
           </MyButton>
           <MyButton icon={<FileOutlined />} type='primary' onClick={handleDownloadAllJson}>
             下载全部歌曲JSON

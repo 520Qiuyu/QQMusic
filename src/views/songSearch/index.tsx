@@ -49,17 +49,14 @@ const SongSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
     });
   };
 
-
   const { data, loading } = useGetData(
     () => getSearchResult(searchParams.keyword!, searchParams.type, searchParams),
     undefined,
     {
-      returnFunction: () => !searchParams.keyword,
-      monitors: [searchParams],
+      returnFunction: () => !searchParams.keyword || !visible,
+      monitors: [searchParams, visible],
     },
   );
-  console.log('data', data);
-
 
   const renderTitle = () => {
     return (
@@ -87,7 +84,9 @@ const SongSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
 
       <Tabs
         activeKey={searchParams.type}
-        onChange={(key) => setSearchParams({ ...searchParams, type: key as ResourceTypeValues, pageNum: 1 })}>
+        onChange={(key) =>
+          setSearchParams({ ...searchParams, type: key as ResourceTypeValues, pageNum: 1 })
+        }>
         <Tabs.TabPane tab='歌曲' key='song'>
           <SongTab data={data?.song?.list || []} loading={loading} />
         </Tabs.TabPane>

@@ -16,8 +16,9 @@ import type { Ref } from '@/hooks/useVisible';
 import type { Album, SongInfo } from '@/types/singer';
 import { getFile_qualityList, uniqueArrayByKey } from '@/utils';
 import { downloadAsJson } from '@/utils/download';
-import { msgSuccess, msgWarning } from '@/utils/modal';
+import { msgError, msgSuccess, msgWarning } from '@/utils/modal';
 import {
+  CloudDownloadOutlined,
   DownloadOutlined,
   EyeOutlined,
   FileOutlined,
@@ -70,7 +71,7 @@ const SongListDetail = forwardRef((_, ref: ForwardedRef<Ref<any, IOpenParams>>) 
     playlistInfo,
   } = useGetSonglistDetail();
   // 歌曲相关hook
-  const { play, isPlaying, pause, download } = usePlayMusic();
+  const { play, isPlaying, pause, download, convertToNeteaseMusic } = usePlayMusic();
 
   const { data: detail, loading } = useGetData(getPlaylistDetail, currentDissid, {
     initialValue: {},
@@ -182,21 +183,29 @@ const SongListDetail = forwardRef((_, ref: ForwardedRef<Ref<any, IOpenParams>>) 
     }
   };
   /** 下载歌曲 */
-  const [downloading, setDownloading] = useState<string>('');
   const handleDownload = async (record: SongInfo & { quality?: keyof typeof FileType }) => {
     try {
-      if (downloading === record.mid) return;
-      setDownloading(record.mid);
       const { file, quality } = record;
       const finalQuality = getQuality(file, defaultQuality, quality);
       await download(record.mid, finalQuality);
     } catch (error) {
       console.log('error', error);
-    } finally {
-      setDownloading('');
     }
   };
-
+  /** 转存网易云歌曲 */
+  const handleDownloadNeteaseMusic = async (
+    record: SongInfo & { quality?: keyof typeof FileType },
+  ) => {
+    try {
+      const { file, quality } = record;
+      const finalQuality = getQuality(file, defaultQuality, quality);
+      await convertToNeteaseMusic(record.mid, { quality: finalQuality });
+      msgSuccess('歌曲转存网易云成功');
+    } catch (error) {
+      console.log('error', error);
+      msgError('歌曲转存网易云失败');
+    }
+  };
   // 歌曲列表列配置
   const songColumns: ColumnType<SongInfo>[] = [
     {
@@ -340,11 +349,11 @@ const SongListDetail = forwardRef((_, ref: ForwardedRef<Ref<any, IOpenParams>>) 
     {
       title: '操作',
       key: 'action',
-      width: 150,
+      width: 200,
       align: 'center',
       fixed: 'right',
       render: (_, record: SongInfo) => (
-        <Space>
+        <Space size='small' wrap>
           <Button
             type='link'
             size='small'
@@ -352,14 +361,20 @@ const SongListDetail = forwardRef((_, ref: ForwardedRef<Ref<any, IOpenParams>>) 
             onClick={() => handlePlay(record)}>
             播放
           </Button>
-          <Button
+          <MyButton
             type='link'
             size='small'
             icon={<DownloadOutlined />}
-            loading={downloading === record.mid}
             onClick={() => handleDownload(record)}>
             下载
-          </Button>
+          </MyButton>
+          <MyButton
+            type='link'
+            size='small'
+            icon={<CloudDownloadOutlined />}
+            onClick={() => handleDownloadNeteaseMusic(record)}>
+            转存网易云
+          </MyButton>
         </Space>
       ),
     },

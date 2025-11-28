@@ -1,7 +1,8 @@
 // #region ================ 工具函数 ================
 import type { FileType } from '@/constants';
-import type { AlbumSongInfo } from '@/types/album';
 import type { SongInfo } from '@/types/singer';
+import md5 from 'md5';
+import * as mm from 'music-metadata';
 import { unsafeWindow } from 'vite-plugin-monkey/dist/client';
 
 /**
@@ -308,6 +309,70 @@ export const getHighestQuality = (file: SongInfo['file']): keyof typeof FileType
   // 默认返回128kbps
   return 128;
 };
+
+/**
+ * 计算文件的MD5哈希值
+ * @param {File} file - 要计算MD5的文件对象
+ * @returns {Promise<string>} 返回文件的MD5哈希值（32位小写十六进制字符串）
+ * @example
+ * const file = new File(['hello'], 'hello.txt');
+ * const md5 = await getFileMD5(file);
+ * console.log(md5); // 5d41402abc4b2a76b9719d911017c592
+ */
+export async function getFileMD5(file: File): Promise<string> {
+  const arrayBuffer = await file.arrayBuffer(); // 读取文件为 ArrayBuffer
+  const uint8Array = new Uint8Array(arrayBuffer);
+  return md5(uint8Array);
+}
+
+/**
+ * 从音频文件中获取元数据信息
+ * @param {File} file - 音频文件对象
+ * @returns {Promise<Object>} 包含音频元数据的对象
+ * @example
+ * const file = new File(['...'], 'song.mp3');
+ * const metadata = await getAudioMetadata(file);
+ * console.log(metadata.title, metadata.artist, metadata.album);
+ */
+export async function getAudioMetadata(file: File): Promise<{
+  title: string;
+  artist: string;
+  artists: string[];
+  album: string;
+  duration: number;
+  bitrate: number;
+  sampleRate: number;
+  format: string;
+}> {
+  try {
+    const metadata = await mm.parseBlob(file);
+    console.log('metadata.common', metadata, metadata.common);
+    const { album, artist, artists, title } = metadata.common || {};
+    const { bitrate = 0 } = metadata.format || {};
+    return {
+      title: title || '',
+      artist: artist || artists?.[0] || '',
+      artists: artists || (artist ? [artist] : []),
+      album: album || '',
+      duration: metadata.format?.duration || 0,
+      sampleRate: metadata.format?.sampleRate || 0,
+      format: metadata.format?.container || '',
+      bitrate: Math.floor(bitrate / 1000) || 0,
+    };
+  } catch (error) {
+    console.error('Failed to parse audio metadata:', error);
+    return {
+      title: '',
+      artist: '',
+      artists: [],
+      album: '',
+      duration: 0,
+      bitrate: 0,
+      sampleRate: 0,
+      format: '',
+    };
+  }
+}
 
 // #endregion ================ 工具函数 ================
 

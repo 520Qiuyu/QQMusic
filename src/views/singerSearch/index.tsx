@@ -161,7 +161,7 @@ const SingerSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
             color='danger'
             size='small'
             icon={<PlayCircleOutlined />}
-            onClick={() => handleAlbum(record)}>
+            onClick={() => handleAlbum(record)}>  
             查看专辑
           </Button>
         </Space>
@@ -173,7 +173,6 @@ const SingerSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
     returnFunction: () => !visible,
   });
   const renderList = useMemo(() => {
-    console.log('data', data);
     return (
       data.singerlist?.filter((item) =>
         item.singer_name.toLocaleLowerCase().includes(keyword.toLocaleLowerCase() || ''),

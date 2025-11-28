@@ -1,6 +1,5 @@
 import { useCompRef, useConfig } from '@/hooks';
 import AlbumDetail from '@/views/albumDetail';
-import AlbumSearch from '@/views/albumSearch';
 import GithubInfo from '@/views/githubInfo';
 import SingerSearch from '@/views/singerSearch';
 import SongListDetail from '@/views/songListDetail';
@@ -33,12 +32,6 @@ const ButtonGroup = () => {
   const songListSearchRef = useCompRef(SongListSearch);
   const handleSongListSearch = () => {
     songListSearchRef.current.open();
-  };
-
-  // 专辑查询
-  const albumSearchRef = useCompRef(AlbumSearch);
-  const handleAlbumSearch = () => {
-    albumSearchRef.current.open();
   };
 
   // 歌曲查询
@@ -89,16 +82,6 @@ const ButtonGroup = () => {
           type='primary'
           icon={<UnorderedListOutlined />}
           onClick={handleSongListSearch}
-          className={styles['button']}
-        />
-      </Tooltip>
-
-      {/* 专辑查询 */}
-      <Tooltip title={'专辑查询'} placement='left'>
-        <Button
-          type='primary'
-          icon={<BookOutlined />}
-          onClick={handleAlbumSearch}
           className={styles['button']}
         />
       </Tooltip>
@@ -164,8 +147,6 @@ const ButtonGroup = () => {
       <SingerSearch ref={singerSearchRef} />
       {/* 歌单查询 */}
       <SongListSearch ref={songListSearchRef} />
-      {/* 专辑查询 */}
-      <AlbumSearch ref={albumSearchRef} />
       {/* 歌单详情 */}
       <SongListDetail ref={songListDetailRef} />
       {/* 专辑详情 */}

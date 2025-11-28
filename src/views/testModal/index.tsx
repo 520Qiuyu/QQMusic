@@ -12,7 +12,8 @@ import SearchTab from './components/SearchTab';
 import SingerTab from './components/SingerTab';
 import SongListTab from './components/SongListTab';
 import SongTab from './components/SongTab';
-
+import NeteaseMusicTab from './components/NeteaseMusicTab';
+import { getUserAccount } from '@/apis/neteaseApi';
 
 const TestModal = forwardRef((_, ref: ForwardedRef<Ref>) => {
   const { visible, open, close } = useVisible({}, ref);
@@ -46,6 +47,11 @@ const TestModal = forwardRef((_, ref: ForwardedRef<Ref>) => {
       children: <SearchTab />,
     },
     {
+      key: 'neteaseMusic',
+      label: '网易云音乐',
+      children: <NeteaseMusicTab />,
+    },
+    {
       key: 'flac',
       label: 'FLAC',
       children: <FlacTab />,
@@ -61,6 +67,26 @@ const TestModal = forwardRef((_, ref: ForwardedRef<Ref>) => {
       children: <DownloadSettingTab />,
     },
   ].filter(Boolean) as TabsProps['items'];
+
+  // 网易云cookie
+  const [cookie, setCookie] = useLocalStorageState('neteaseMusicCookie', {
+    defaultValue: '',
+    listenStorageChange: true,
+  });
+  /** 获取用户信息 */
+  const handleGetUserAccount = async () => {
+    if (!cookie) return;
+    const res = await getUserAccount();
+    console.log('res', res);
+    if (res.code !== 200) {
+      console.log('cookie无效，已置空。');
+      setCookie('');
+      return;
+    }
+  };
+  useEffect(() => {
+    handleGetUserAccount();
+  }, []);
 
   return (
     <Modal

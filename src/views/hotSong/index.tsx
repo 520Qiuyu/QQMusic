@@ -6,8 +6,9 @@ import { FileType } from '@/constants';
 import { usePlayMusic } from '@/hooks/usePlayMusic';
 import { getFile_qualityList, promiseLimit, uniqueArrayByKey } from '@/utils';
 import { downloadAsJson } from '@/utils/download';
-import { msgLoading, msgSuccess, msgWarning } from '@/utils/modal';
+import { msgError, msgSuccess, msgWarning } from '@/utils/modal';
 import {
+  CloudDownloadOutlined,
   DownloadOutlined,
   PauseCircleOutlined,
   PlayCircleOutlined,
@@ -64,7 +65,8 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
   );
   const { downloadConfig } = useConfig();
   const { quality: defaultQuality } = downloadConfig;
-  const { play, pause, stop, isPlaying, download, getUrl, getLyric } = usePlayMusic();
+  const { play, pause, stop, isPlaying, download, getUrl, getLyric, convertToNeteaseMusic } =
+    usePlayMusic();
 
   const [singerInfo, setSingerInfo] = useState<IOpenParams>({} as IOpenParams);
   const [loadingData, setLoadingData] = useState(defaultLoadingData);
@@ -156,18 +158,28 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
     play(mid, finalQuality);
   };
 
-  const [downloading, setDownloading] = useState<string | undefined>();
   const handleDownload = async (record: SongInfo & { quality?: keyof typeof FileType }) => {
     try {
-      setDownloading(record.mid);
       const { mid, name, quality, file } = record;
       const finalQuality = getQuality(file, defaultQuality, quality);
       console.log('当前下载歌曲:', name, '音质:', finalQuality);
       await download(mid, finalQuality);
     } catch (error) {
       console.log('error', error);
-    } finally {
-      setDownloading(undefined);
+    }
+  };
+
+  const handleConvertToNeteaseMusic = async (
+    record: SongInfo & { quality?: keyof typeof FileType },
+  ) => {
+    try {
+      const { mid, name, quality, file } = record;
+      const finalQuality = getQuality(file, defaultQuality, quality);
+      console.log('当前转存网易云歌曲:', name, '音质:', finalQuality);
+      await convertToNeteaseMusic(mid, { quality: finalQuality });
+    } catch (error) {
+      console.log('error', error);
+      msgError('转存网易云失败');
     }
   };
 
@@ -330,7 +342,7 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
       fixed: 'right',
       render: (_, record: SongInfo) => {
         return (
-          <Space size='middle'>
+          <Space size='small' wrap>
             <Button
               type='link'
               size='small'
@@ -344,19 +356,20 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
               }}>
               播放
             </Button>
-            {/* <Button type='link' size='small' icon={<HeartOutlined />}>
-              收藏
-            </Button> */}
-            <Button
+            <MyButton
               type='link'
               size='small'
-              loading={downloading === record.mid}
               icon={<DownloadOutlined />}
-              onClick={() => {
-                handleDownload(record);
-              }}>
+              onClick={() => handleDownload(record)}>
               下载
-            </Button>
+            </MyButton>
+            <MyButton
+              type='link'
+              size='small'
+              icon={<CloudDownloadOutlined />}
+              onClick={() => handleConvertToNeteaseMusic(record)}>
+              转存网易云
+            </MyButton>
           </Space>
         );
       },

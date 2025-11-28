@@ -6,7 +6,9 @@ import { useConfig, usePlayMusic } from '@/hooks';
 import type { SongInfo } from '@/types/search';
 import { getFileQualityList } from '@/utils';
 import { downloadAsLRC } from '@/utils/download';
+import { msgError, msgSuccess } from '@/utils/modal';
 import {
+  CloudDownloadOutlined,
   DownloadOutlined,
   FileOutlined,
   PauseCircleOutlined,
@@ -24,7 +26,7 @@ interface SongTabProps {
 const SongTab = ({ data, loading }: SongTabProps) => {
   const { downloadConfig } = useConfig();
   const { quality: defaultQuality } = downloadConfig;
-  const { play, download, isPlaying, pause, getLyric } = usePlayMusic();
+  const { play, download, isPlaying, pause, getLyric, convertToNeteaseMusic } = usePlayMusic();
 
   const [list, setList] = useState<SongInfo[]>(data);
   useEffect(() => {
@@ -70,6 +72,18 @@ const SongTab = ({ data, loading }: SongTabProps) => {
       downloadAsLRC(lyric, record.songname);
     } catch (error) {
       console.error('下载歌词失败:', error);
+    }
+  };
+
+  const handleDownloadNeteaseMusic = async (
+    record: SongInfo & { quality?: keyof typeof FileType },
+  ) => {
+    try {
+      await convertToNeteaseMusic(record.songmid);
+      msgSuccess('歌曲转存网易云成功');
+    } catch (error) {
+      console.log('error', error);
+      msgError('歌曲转存网易云失败');
     }
   };
 
@@ -207,7 +221,7 @@ const SongTab = ({ data, loading }: SongTabProps) => {
       fixed: 'right',
       render: (_, record) => {
         return (
-          <Space size='middle'>
+          <Space size='small' wrap>
             <Button
               type='link'
               size='small'
@@ -232,6 +246,14 @@ const SongTab = ({ data, loading }: SongTabProps) => {
               onClick={() => handleDownloadLyric(record)}
               title='下载歌词'>
               下载歌词
+            </MyButton>
+            <MyButton
+              type='link'
+              size='small'
+              icon={<CloudDownloadOutlined />}
+              onClick={() => handleDownloadNeteaseMusic(record)}
+              title='转存网易云'>
+              转存网易云
             </MyButton>
           </Space>
         );

@@ -1,51 +1,61 @@
 import { getSongInfo, getSongLyric, getSongPlayUrl } from '@/apis/song';
-import { Button, Form, Input, Space } from 'antd';
+import { MyButton } from '@/components';
+import { usePlayMusic } from '@/hooks';
+import { msgError, msgSuccess } from '@/utils/modal';
+import { Form, Input, Space } from 'antd';
 import { useState } from 'react';
 
 /**
  * 歌曲相关测试组件
  */
 const SongTab = () => {
+  const { convertToNeteaseMusic } = usePlayMusic();
+
   // 测试获取歌曲歌词
-  const [getSongLyricLoading, setGetSongLyricLoading] = useState(false);
   const [songmid, setSongmid] = useState('003rJSwm3TechU');
   const handleGetSongLyric = async () => {
     try {
-      setGetSongLyricLoading(true);
       const res = await getSongLyric(songmid);
       console.log('res', res);
+      msgSuccess('歌曲歌词获取成功');
     } catch (error) {
       console.log('error', error);
-    } finally {
-      setGetSongLyricLoading(false);
+      msgError('歌曲歌词获取失败');
     }
   };
 
   // 测试获取歌曲播放链接
-  const [getSongPlayUrlLoading, setGetSongPlayUrlLoading] = useState(false);
   const handleGetSongPlayUrl = async () => {
     try {
-      setGetSongPlayUrlLoading(true);
       const res = await getSongPlayUrl(songmid.split(','));
       console.log('res', res);
+      msgSuccess('歌曲播放链接获取成功');
     } catch (error) {
       console.log('error', error);
-    } finally {
-      setGetSongPlayUrlLoading(false);
+      msgError('歌曲播放链接获取失败');
     }
   };
 
   // 测试获取歌曲信息
-  const [getSongInfoLoading, setGetSongInfoLoading] = useState(false);
   const handleGetSongInfo = async () => {
     try {
-      setGetSongInfoLoading(true);
       const res = await getSongInfo(songmid);
       console.log('res', res);
+      msgSuccess('歌曲信息获取成功');
     } catch (error) {
       console.log('error', error);
-    } finally {
-      setGetSongInfoLoading(false);
+      msgError('歌曲信息获取失败');
+    }
+  };
+
+  // 测试歌曲转存网易云
+  const handleConvertToNeteaseMusic = async () => {
+    try {
+      const res = await convertToNeteaseMusic(songmid);
+      msgSuccess('歌曲转存网易云成功');
+    } catch (error) {
+      console.log('error', error);
+      msgError('歌曲转存网易云失败');
     }
   };
 
@@ -60,15 +70,19 @@ const SongTab = () => {
             value={songmid}
             onChange={(e) => setSongmid(e.target.value)}
           />
-          <Button type='primary' onClick={handleGetSongLyric} loading={getSongLyricLoading}>
+          <MyButton type='primary' onClick={handleGetSongLyric}>
             获取歌曲歌词
-          </Button>
-          <Button type='primary' onClick={handleGetSongPlayUrl} loading={getSongPlayUrlLoading}>
+          </MyButton>
+          <MyButton type='primary' onClick={handleGetSongPlayUrl}>
             获取歌曲播放链接
-          </Button>
-          <Button type='primary' onClick={handleGetSongInfo} loading={getSongInfoLoading}>
+          </MyButton>
+          <MyButton type='primary' onClick={handleGetSongInfo}>
             获取歌曲信息
-          </Button>
+          </MyButton>
+          {/* 歌曲转存网易云 */}
+          <MyButton type='primary' onClick={handleConvertToNeteaseMusic}>
+            歌曲转存网易云
+          </MyButton>
         </Space>
       </Form.Item>
     </Form>
@@ -76,4 +90,3 @@ const SongTab = () => {
 };
 
 export default SongTab;
-

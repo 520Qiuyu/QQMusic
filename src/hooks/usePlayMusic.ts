@@ -1,11 +1,13 @@
 import { getAlbumPicUrl } from '@/apis/album';
+import { uploadLocalSong } from '@/apis/neteaseApi';
 import { getSongInfo as getSongInfoApi, getSongLyric, getSongPlayUrl } from '@/apis/song';
+import type { FileType } from '@/constants';
 import { writeFlacTagAndPicture } from '@/libs/flac';
 import type { TrackInfo } from '@/types/song';
 import { downloadAsLRC, downloadFileWithBlob, getFileBlob } from '@/utils/download';
+import { message } from 'antd';
 import { useEffect, useRef, useState } from 'react';
 import { useConfig } from './useConfig';
-import { getFile_qualityList } from '@/utils';
 
 const audio = new Audio();
 
@@ -53,6 +55,16 @@ export const usePlayMusic = () => {
     urlMap.current[key] = url;
     console.log('url', url);
     return url;
+  };
+
+  /**
+   * 获取歌曲歌词
+   * @param mid 歌曲mid
+   * @returns 歌曲歌词
+   */
+  const getLyric = async (mid: string) => {
+    const res = await getSongLyric(mid);
+    return res;
   };
 
   /**
@@ -149,9 +161,81 @@ export const usePlayMusic = () => {
     }
   };
 
-  const getLyric = async (mid: string) => {
-    const res = await getSongLyric(mid);
-    return res;
+  /**
+   * 歌曲转存网易云
+   * @param mid 歌曲mid
+   * @returns
+   */
+  const convertToNeteaseMusic = async (
+    mid: string,
+    options?: {
+      quality?: keyof typeof FileType;
+      onChange?: (message: string) => void;
+    },
+  ) => {
+    const { quality = downloadQuality, onChange } = options || {};
+    const loadingKey = 'convert-to-netease-music' + mid;
+    const msgLoading = (msg: string) => {
+      message.loading({
+        key: loadingKey,
+        content: msg,
+        duration: 0,
+      });
+    };
+    const log = (msg: string, ...rest: any[]) => {
+      console.log(msg, ...rest);
+      onChange?.(msg);
+      msgLoading(msg);
+    };
+    try {
+      // 获取歌曲信息
+      log(`开始获取歌曲信息：${mid}`);
+      const songInfo = await getSongInfo(mid);
+      const { name, album: { mid: albumMid } = {} } = songInfo;
+      log(`获取到歌曲信息：${name}`, songInfo);
+      // 获取歌曲播放地址
+      const url = await getUrl(mid, quality);
+      log(`获取到歌曲《${name}》播放地址`, url);
+      /** 获取文件后缀 */
+      const finalExt = url.split('?')[0].split('.').pop();
+      // 下载歌曲
+      log(`开始下载歌曲《${name}》`, url);
+      const { blob } = await getFileBlob(url.replace('http://', 'https://'));
+      let outputFile: Blob = blob;
+      if (embedLyricCover) {
+        log(`开始写入歌词和封面《${name}》`);
+        /** 获取歌词 */
+        const lyric = await getLyric(mid);
+        log(`获取到歌词《${name}》`, lyric);
+        /** 获取封面 */
+        let coverBlob: Blob;
+        // 如果有专辑mid，则获取封面
+        if (albumMid) {
+          const cover = getAlbumPicUrl(albumMid);
+          const { blob } = await getFileBlob(cover.replace('http://', 'https://'));
+          coverBlob = blob;
+          log(`获取到封面《${name}》`, coverBlob);
+        }
+
+        switch (finalExt) {
+          case 'flac':
+            outputFile = await writeFlacTagAndPicture(blob, 'lyrics', lyric, coverBlob!);
+            log(`写入歌词和封面成功《${name}》`, outputFile);
+            break;
+          default:
+            log('当前格式不支持嵌入歌词和封面');
+            break;
+        }
+      }
+      // 转存网易云
+      log(`开始转存网易云《${name}》`, outputFile);
+      const res = await uploadLocalSong(new File([outputFile], `${name}.${finalExt}`));
+      log(`转存网易云成功《${name}》`, res);
+    } catch (error) {
+      log(`转存网易云失败《${name}》`, error);
+    }finally{
+      message.destroy(loadingKey);
+    }
   };
 
   const pause = () => {
@@ -187,5 +271,6 @@ export const usePlayMusic = () => {
     getUrl,
     getLyric,
     getSongInfo,
+    convertToNeteaseMusic,
   };
 };
