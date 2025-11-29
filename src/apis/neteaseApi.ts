@@ -192,7 +192,7 @@ export const uploadLocalSong = async (
       data: {
         md5: fileMd5,
         songid: songId,
-        filename,
+        filename: file.name,
         song: title || filename,
         album: album || '未知专辑',
         artist: artist || artists.join(',') || '未知歌手',
