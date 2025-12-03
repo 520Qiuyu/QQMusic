@@ -14,7 +14,7 @@ import {
 } from '@/hooks';
 import type { Ref } from '@/hooks/useVisible';
 import type { Album, SongInfo } from '@/types/singer';
-import { getFile_qualityList, uniqueArrayByKey } from '@/utils';
+import { getFile_qualityList, promiseLimit, uniqueArrayByKey } from '@/utils';
 import { downloadAsJson } from '@/utils/download';
 import { msgError, msgSuccess, msgWarning } from '@/utils/modal';
 import {
@@ -57,8 +57,9 @@ const SongListDetail = forwardRef((_, ref: ForwardedRef<Ref<any, IOpenParams>>) 
   const [currentDissid, setCurrentDissid] = useState<string>('');
   const [inputMid, setInputMid] = useState('');
 
-  const { downloadConfig } = useConfig();
+  const { downloadConfig, functionConfig } = useConfig();
   const { quality: defaultQuality } = downloadConfig;
+  const { uploadConcurrency } = functionConfig;
   // 歌单详情hook
   const {
     getPlaylistDetail,
@@ -69,6 +70,7 @@ const SongListDetail = forwardRef((_, ref: ForwardedRef<Ref<any, IOpenParams>>) 
     isLoading,
     getPlaylistSongUrl,
     playlistInfo,
+    convertToNeteaseMusicPlaylistSong,
   } = useGetSonglistDetail();
   // 歌曲相关hook
   const { play, isPlaying, pause, download, convertToNeteaseMusic } = usePlayMusic();
@@ -498,6 +500,37 @@ const SongListDetail = forwardRef((_, ref: ForwardedRef<Ref<any, IOpenParams>>) 
       console.error('下载歌单JSON失败:', error);
     }
   };
+  /** 转存网易云歌单歌曲 */
+  const handleConvertToNeteaseMusicPlaylistSong = async () => {
+    if (!selectedRows.length) return;
+    const loadingKey = 'convert-to-netease-music-playlist-song';
+    message.loading({
+      key: loadingKey,
+      content: `正在转存歌单歌曲...`,
+      duration: 0,
+    });
+    try {
+      const task = selectedRows.map((item) => async () => {
+        await convertToNeteaseMusic(item.mid, {
+          onChange: (msg) => {
+            message.loading({
+              key: loadingKey,
+              content: msg,
+              duration: 0,
+            });
+          },
+        });
+      });
+      await promiseLimit(task, uploadConcurrency);
+      message.success({
+        key: loadingKey,
+        content: `转存歌单歌曲成功`,
+        duration: 0,
+      });
+    } catch (error) {
+      console.error('转存网易云歌单歌曲失败:', error);
+    }
+  };
   const renderFooter = () => {
     return (
       <Space>
@@ -533,6 +566,13 @@ const SongListDetail = forwardRef((_, ref: ForwardedRef<Ref<any, IOpenParams>>) 
           onClick={handleDownloadAllJson}
           disabled={!list?.length}>
           下载全部JSON{list?.length ? `(${list?.length})` : ''}
+        </MyButton>
+        <MyButton
+          type='primary'
+          icon={<CloudDownloadOutlined />}
+          onClick={handleConvertToNeteaseMusicPlaylistSong}
+          disabled={!selectedRows?.length}>
+          转存网易云歌单选中歌曲{selectedRows?.length ? `(${selectedRows?.length})` : ''}
         </MyButton>
       </Space>
     );
