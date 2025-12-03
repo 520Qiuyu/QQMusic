@@ -15,9 +15,9 @@ interface AlbumData {
 }
 
 /** 要下载的文件 */
-const DOWNLOAD_FILE = path.join(__dirname, '王大毛-专辑.json');
+const DOWNLOAD_FILE = path.join(__dirname, '周杰伦-专辑(2).json');
 /** 下载目录 */
-const DOWNLOAD_DIR = path.join(__dirname, '..', 'music/王大毛');
+const DOWNLOAD_DIR = path.join(__dirname, '..', 'music/周杰伦');
 /** 并发量 */
 export const DOWNLOAD_LIMIT = 6;
 /** 是否下载封面 */
@@ -92,6 +92,10 @@ async function downloadAlbumCover(albumData: AlbumData, albumDir: string): Promi
   if (!DOWNLOAD_COVER) return;
   if (albumData.albumCover) {
     const coverPath = path.join(albumDir, 'cover.jpg');
+    if (fs.existsSync(coverPath)) {
+      console.log(`专辑封面已存在: ${coverPath}`);
+      return;
+    }
     await downloadFile(albumData.albumCover, coverPath);
     console.log(`专辑封面下载完成: ${coverPath}`);
   }
@@ -107,9 +111,14 @@ async function downloadLyrics(song: SongData, albumDir: string): Promise<void> {
   if (song.lrcContent) {
     const lrcFileName = `${sanitizeFileName(song.songName)}.lrc`;
     const lrcContent = song.lrcContent;
+    const lrcPath = path.join(albumDir, lrcFileName);
+    if (fs.existsSync(lrcPath)) {
+      console.log(`歌词已存在: ${lrcPath}`);
+      return;
+    }
     // 将文本写入文件 使用utf8编码
-    fs.writeFileSync(path.join(albumDir, lrcFileName), lrcContent, { encoding: 'utf8' });
-    console.log(`歌词下载完成: ${lrcFileName}`);
+    fs.writeFileSync(lrcPath, lrcContent, { encoding: 'utf8' });
+    console.log(`歌词下载完成: ${lrcPath}`);
   }
 }
 
