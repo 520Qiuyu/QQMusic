@@ -415,6 +415,41 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
     );
   };
 
+  /** 批量转存网易云选中歌曲 */
+  const handleBatchConvertToNeteaseMusic = async () => {
+    try {
+      if (selectedRows.length === 0) {
+        msgWarning('请先选择要转存网易云的歌曲');
+        return;
+      }
+      const loadingKey = 'convert-to-netease-music';
+      message.loading({
+        key: loadingKey,
+        content: `正在准备转存网易云 ${selectedRows.length} 首歌曲`,
+        duration: 0,
+      });
+      let songIndex = 1;
+      for (const song of selectedRows) {
+        const record = song as SongInfo & { quality?: keyof typeof FileType };
+        const finalQuality = getQuality(record.file, defaultQuality, record.quality);
+        message.loading({
+          key: loadingKey,
+          content: `第 ${songIndex++} / ${selectedRows.length} 首歌曲：《${song.name}》 开始转存！`,
+          duration: 0,
+        });
+        await convertToNeteaseMusic(song.mid, { quality: finalQuality });
+      }
+      message.success({
+        key: loadingKey,
+        content: `成功转存 ${selectedRows.length} 首歌曲！`,
+        duration: 0,
+      });
+      message.destroy(loadingKey);
+    } catch (error) {
+      console.error('批量转存网易云失败:', error);
+    }
+  };
+
   /** 批量下载选中歌曲的JSON */
   const handleBatchDownloadJson = async () => {
     try {
@@ -546,6 +581,13 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
             </Button>
           )}
 
+          {/* 转存网易云选中歌曲 */}
+          <MyButton
+            type='primary'
+            onClick={handleBatchConvertToNeteaseMusic}
+            disabled={!selectedRows?.length}>
+            转存网易云{selectedRows?.length ? `(${selectedRows?.length})` : ''}
+          </MyButton>
           {/* 下载JSON选中歌曲 */}
           <MyButton
             type='primary'

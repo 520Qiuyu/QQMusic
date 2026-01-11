@@ -373,12 +373,15 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
       });
       let index = 1;
       for (const song of selectedRows) {
+        console.log('song', song);
+        const record = song as AlbumSongInfo & { quality?: keyof typeof FileType };
+        const finalQuality = getQuality(record, defaultQuality, record.quality);
         message.loading({
           key: loadingKey,
           content: `正在转存第 ${index} 首歌曲 ${song.songname}...`,
           duration: 0,
         });
-        await convertToNeteaseMusic(song.songmid);
+        await convertToNeteaseMusic(song.songmid, { quality: finalQuality });
         message.success({
           content: `第 ${index} 首歌曲 ${song.songname} 转存成功！`,
           duration: 1,
