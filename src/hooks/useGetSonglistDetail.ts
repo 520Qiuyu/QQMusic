@@ -5,15 +5,17 @@ import { getFile_qualityList, promiseLimit } from '@/utils';
 import { useRef, useState } from 'react';
 import { usePlayMusic } from './usePlayMusic';
 import { useConfig } from './useConfig';
+import { message } from 'antd';
 
 export const useGetSonglistDetail = () => {
   const [playlistInfo, setPlaylistInfo] = useState<PlaylistInfo>();
   const [isLoading, setIsLoading] = useState(false);
   const playlistInfoMap = useRef<Record<string, PlaylistInfo>>({});
 
-  const { downloadConfig } = useConfig();
+  const { downloadConfig, functionConfig } = useConfig();
   const { quality: downloadQuality } = downloadConfig;
-  const { playList, play, getUrl, download, getLyric } = usePlayMusic();
+  const { uploadConcurrency } = functionConfig;
+  const { playList, play, getUrl, download, getLyric, convertToNeteaseMusic } = usePlayMusic();
 
   /**
    * 获取歌单详情
@@ -103,6 +105,43 @@ export const useGetSonglistDetail = () => {
   };
 
   /**
+   * 歌单歌曲转存网易云
+   * @param dissid 歌单ID
+   */
+  const convertToNeteaseMusicPlaylistSong = async (dissid: string) => {
+    const loadingKey = 'convert-to-netease-music-playlist-song';
+    message.loading({
+      key: loadingKey,
+      content: `正在转存歌单歌曲...`,
+      duration: 0,
+    });
+    try {
+      const songList = await getPlaylistSongList(dissid);
+      const task = songList?.map((item) => async () => {
+        const { mid, name } = item;
+        console.log(`正在转存: mid=${mid}, name=${name}`);
+        await convertToNeteaseMusic(mid, {
+          onChange: (msg) => {
+            message.loading({
+              key: loadingKey,
+              content: msg,
+              duration: 0,
+            });
+          },
+        });
+      });
+      await promiseLimit(task!, uploadConcurrency);
+      message.success({
+        key: loadingKey,
+        content: `转存歌单歌曲成功`,
+        duration: 0,
+      });
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
+  /**
    * 获取歌单下载JSON数据
    * @param dissid 歌单ID
    * @returns 包含歌单信息和歌曲下载链接的JSON数据
@@ -154,5 +193,6 @@ export const useGetSonglistDetail = () => {
     getPlaylistSongUrl,
     downloadPlaylistSong,
     getPlaylistDownloadJson,
+    convertToNeteaseMusicPlaylistSong,
   };
 };
