@@ -7485,7 +7485,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-B4OfR2kR-tqIqi24-.js');
+            const { MpegParser } = await module.import('./MpegParser-CkO7zYHQ-BPbvZNBp.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -7507,7 +7507,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-C8VBC85A-D-36u3ml.js');
+            const { AsfParser } = await module.import('./AsfParser-BG9tgk7L-BTuQ3Ejt.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -7518,7 +7518,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-CaTB_8eC-DnWQSTYG.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-64DveArO-CGImW7R4.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -7529,7 +7529,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-CFoK_4rz-HWnCSJMx.js');
+            const { AIFFParser } = await module.import('./AiffParser-Bt5OM9Tk-D2qfr--G.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -7540,7 +7540,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-CmBmcNDd-Bw1XHTsi.js');
+            const { DsfParser } = await module.import('./DsfParser-CmRXWJX--CIgz7Lzs.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -7551,7 +7551,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-CMZgzJrf-C1dd8ePl.js').then((n) => n.d);
+            const { FlacParser } = await module.import('./FlacParser-Bf0VnExc-BWH8357r.js').then((n) => n.d);
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -7562,7 +7562,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-C4w_CZ7r-CHFZCHGG.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-seYoqYLS-BY0XRE3Y.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -7573,7 +7573,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-B0kLX5Ze-BHSje4AN.js');
+            const { MP4Parser } = await module.import('./MP4Parser-B2krzQvA-DmMOcxME.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -7584,7 +7584,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-DfRWeIYC-Bf2NaWiR.js');
+            const { MusepackParser } = await module.import('./MusepackParser-DGdWKsHh-PSWydDbc.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -7596,7 +7596,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         // RFC 7845, RFC 6716, RFC 5574
         async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-BFDl_BXX-SwF3DLTZ.js');
+            const { OggParser } = await module.import('./OggParser-C04o2Ifc-CKEjp_xJ.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -7607,7 +7607,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-CyVuNUAc-BQB1rz26.js');
+            const { WavPackParser } = await module.import('./WavPackParser-DTsQs3dM-FRhSUYZH.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -7618,7 +7618,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-BDIbSw-0-BHtIbtCn.js');
+            const { WaveParser } = await module.import('./WaveParser-BL273En4-Crjs-0XG.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -29083,6 +29083,13 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
               if (params?.albummid) {
                 setCurrentMid(params.albummid);
               }
+            },
+            onReset() {
+              setCurrentMid("");
+              setInputMid("");
+              setSelectedRowKeys([]);
+              setSelectedRows([]);
+              setList([]);
             }
           },
           ref
@@ -29468,6 +29475,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
             onCancel: close,
             width: 1200,
             centered: true,
+            destroyOnHidden: true,
             className: styles$7["album-detail-modal"],
             footer: renderFooter(),
             children: [
@@ -39332,7 +39340,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
   };
 }));
 
-System.register("./MpegParser-B4OfR2kR-tqIqi24-.js", ['./main-DutICk6s-B1gClSmI.js', './AbstractID3Parser-CB2E83i5-B7F3g4sO.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-COEbnaTf-D9tOB-q0.js'], (function (exports, module) {
+System.register("./MpegParser-CkO7zYHQ-BPbvZNBp.js", ['./main-D21qr-5v-CVxtkLuZ.js', './AbstractID3Parser-1ueQXMzt-CyLpas0T.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-AalKZW-z-BjKLpThX.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -39961,7 +39969,7 @@ System.register("./MpegParser-B4OfR2kR-tqIqi24-.js", ['./main-DutICk6s-B1gClSmI.
   };
 }));
 
-System.register("./AsfParser-C8VBC85A-D-36u3ml.js", ['./main-DutICk6s-B1gClSmI.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-BG9tgk7L-BTuQ3Ejt.js", ['./main-D21qr-5v-CVxtkLuZ.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -40489,7 +40497,7 @@ System.register("./AsfParser-C8VBC85A-D-36u3ml.js", ['./main-DutICk6s-B1gClSmI.j
   };
 }));
 
-System.register("./DsdiffParser-CaTB_8eC-DnWQSTYG.js", ['./main-DutICk6s-B1gClSmI.js', './ID3v2Parser-COEbnaTf-D9tOB-q0.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-64DveArO-CGImW7R4.js", ['./main-D21qr-5v-CVxtkLuZ.js', './ID3v2Parser-AalKZW-z-BjKLpThX.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -40666,7 +40674,7 @@ System.register("./DsdiffParser-CaTB_8eC-DnWQSTYG.js", ['./main-DutICk6s-B1gClSm
   };
 }));
 
-System.register("./AiffParser-CFoK_4rz-HWnCSJMx.js", ['./main-DutICk6s-B1gClSmI.js', './ID3v2Parser-COEbnaTf-D9tOB-q0.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-Bt5OM9Tk-D2qfr--G.js", ['./main-D21qr-5v-CVxtkLuZ.js', './ID3v2Parser-AalKZW-z-BjKLpThX.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -40843,7 +40851,7 @@ System.register("./AiffParser-CFoK_4rz-HWnCSJMx.js", ['./main-DutICk6s-B1gClSmI.
   };
 }));
 
-System.register("./DsfParser-CmBmcNDd-Bw1XHTsi.js", ['./main-DutICk6s-B1gClSmI.js', './AbstractID3Parser-CB2E83i5-B7F3g4sO.js', './ID3v2Parser-COEbnaTf-D9tOB-q0.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-CmRXWJX--CIgz7Lzs.js", ['./main-D21qr-5v-CVxtkLuZ.js', './AbstractID3Parser-1ueQXMzt-CyLpas0T.js', './ID3v2Parser-AalKZW-z-BjKLpThX.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -40942,7 +40950,7 @@ System.register("./DsfParser-CmBmcNDd-Bw1XHTsi.js", ['./main-DutICk6s-B1gClSmI.j
   };
 }));
 
-System.register("./MatroskaParser-C4w_CZ7r-CHFZCHGG.js", ['./main-DutICk6s-B1gClSmI.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-seYoqYLS-BY0XRE3Y.js", ['./main-D21qr-5v-CVxtkLuZ.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -41587,7 +41595,7 @@ System.register("./MatroskaParser-C4w_CZ7r-CHFZCHGG.js", ['./main-DutICk6s-B1gCl
   };
 }));
 
-System.register("./MP4Parser-B0kLX5Ze-BHSje4AN.js", ['./main-DutICk6s-B1gClSmI.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-B2krzQvA-DmMOcxME.js", ['./main-D21qr-5v-CVxtkLuZ.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, textDecode, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, getBit, INT16_BE;
   return {
@@ -42695,7 +42703,7 @@ System.register("./MP4Parser-B0kLX5Ze-BHSje4AN.js", ['./main-DutICk6s-B1gClSmI.j
   };
 }));
 
-System.register("./MusepackParser-DfRWeIYC-Bf2NaWiR.js", ['./main-DutICk6s-B1gClSmI.js', './AbstractID3Parser-CB2E83i5-B7F3g4sO.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-COEbnaTf-D9tOB-q0.js'], (function (exports, module) {
+System.register("./MusepackParser-DGdWKsHh-PSWydDbc.js", ['./main-D21qr-5v-CVxtkLuZ.js', './AbstractID3Parser-1ueQXMzt-CyLpas0T.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-AalKZW-z-BjKLpThX.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, tryParseApeHeader, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, textDecode, AbstractID3Parser;
   return {
@@ -42989,7 +42997,7 @@ System.register("./MusepackParser-DfRWeIYC-Bf2NaWiR.js", ['./main-DutICk6s-B1gCl
   };
 }));
 
-System.register("./OggParser-BFDl_BXX-SwF3DLTZ.js", ['./main-DutICk6s-B1gClSmI.js', './FlacParser-CMZgzJrf-C1dd8ePl.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './AbstractID3Parser-CB2E83i5-B7F3g4sO.js', './ID3v2Parser-COEbnaTf-D9tOB-q0.js'], (function (exports, module) {
+System.register("./OggParser-C04o2Ifc-CKEjp_xJ.js", ['./main-D21qr-5v-CVxtkLuZ.js', './FlacParser-Bf0VnExc-BWH8357r.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './AbstractID3Parser-1ueQXMzt-CyLpas0T.js', './ID3v2Parser-AalKZW-z-BjKLpThX.js'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, UINT8, UINT32_LE, getBit, StringType, UINT64_LE, makeUnexpectedFileContentError, Uint8ArrayType, FourCcToken, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, VorbisStream, FlacParser, BlockHeader, BlockType, VorbisPictureToken, BlockStreamInfo;
   return {
@@ -43385,7 +43393,7 @@ System.register("./OggParser-BFDl_BXX-SwF3DLTZ.js", ['./main-DutICk6s-B1gClSmI.j
   };
 }));
 
-System.register("./FlacParser-CMZgzJrf-C1dd8ePl.js", ['./main-DutICk6s-B1gClSmI.js', './AbstractID3Parser-CB2E83i5-B7F3g4sO.js'], (function (exports, module) {
+System.register("./FlacParser-Bf0VnExc-BWH8357r.js", ['./main-D21qr-5v-CVxtkLuZ.js', './AbstractID3Parser-1ueQXMzt-CyLpas0T.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, UINT32_LE, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, textDecode, AttachedPictureType, UINT32_BE, StringType, UINT8, AbstractID3Parser;
   return {
@@ -43794,7 +43802,7 @@ System.register("./FlacParser-CMZgzJrf-C1dd8ePl.js", ['./main-DutICk6s-B1gClSmI.
   };
 }));
 
-System.register("./AbstractID3Parser-CB2E83i5-B7F3g4sO.js", ['./main-DutICk6s-B1gClSmI.js', './ID3v2Parser-COEbnaTf-D9tOB-q0.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-1ueQXMzt-CyLpas0T.js", ['./main-D21qr-5v-CVxtkLuZ.js', './ID3v2Parser-AalKZW-z-BjKLpThX.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -43858,7 +43866,7 @@ System.register("./AbstractID3Parser-CB2E83i5-B7F3g4sO.js", ['./main-DutICk6s-B1
   };
 }));
 
-System.register("./WavPackParser-CyVuNUAc-BQB1rz26.js", ['./main-DutICk6s-B1gClSmI.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-DTsQs3dM-FRhSUYZH.js", ['./main-D21qr-5v-CVxtkLuZ.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, tryParseApeHeader, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -44055,7 +44063,7 @@ System.register("./WavPackParser-CyVuNUAc-BQB1rz26.js", ['./main-DutICk6s-B1gClS
   };
 }));
 
-System.register("./WaveParser-BDIbSw-0-BHtIbtCn.js", ['./main-DutICk6s-B1gClSmI.js', './ID3v2Parser-COEbnaTf-D9tOB-q0.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-BL273En4-Crjs-0XG.js", ['./main-D21qr-5v-CVxtkLuZ.js', './ID3v2Parser-AalKZW-z-BjKLpThX.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -44334,7 +44342,7 @@ System.register("./WaveParser-BDIbSw-0-BHtIbtCn.js", ['./main-DutICk6s-B1gClSmI.
   };
 }));
 
-System.register("./ID3v2Parser-COEbnaTf-D9tOB-q0.js", ['./main-DutICk6s-B1gClSmI.js'], (function (exports, module) {
+System.register("./ID3v2Parser-AalKZW-z-BjKLpThX.js", ['./main-D21qr-5v-CVxtkLuZ.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, textDecode, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
@@ -44901,7 +44909,7 @@ System.register("./ID3v2Parser-COEbnaTf-D9tOB-q0.js", ['./main-DutICk6s-B1gClSmI
   };
 }));
 
-System.register("./main-DutICk6s-B1gClSmI.js", ['react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./main-D21qr-5v-CVxtkLuZ.js", ['react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var forwardRef, useState, useMemo, useEffect, require$$0, useImperativeHandle, useRef, useCallback, useLayoutEffect, Input, DatePicker, Form, Typography, Modal, Button, Table, Spin, Descriptions, Space, Image, Pagination, Select, Tabs, ConfigProvider, Avatar, Tag, Tooltip, message$1, App$1, TreeSelect, Upload, Card, Switch, TimePicker, Checkbox, Radio, require$$0$1, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, UploadOutlined, DownloadOutlined, CloudDownloadOutlined, FileOutlined, PauseCircleOutlined, PlayCircleOutlined, UserOutlined, SaveOutlined, SelectOutlined, TrophyOutlined, ClockCircleOutlined, CopyOutlined, PictureOutlined, UnorderedListOutlined, ContainerOutlined, BookOutlined, SearchOutlined, InfoCircleOutlined;
   return {
@@ -52859,7 +52867,7 @@ System.register("./main-DutICk6s-B1gClSmI.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-B4OfR2kR-tqIqi24-.js');
+            const { MpegParser } = await module.import('./MpegParser-CkO7zYHQ-BPbvZNBp.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -52881,7 +52889,7 @@ System.register("./main-DutICk6s-B1gClSmI.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-C8VBC85A-D-36u3ml.js');
+            const { AsfParser } = await module.import('./AsfParser-BG9tgk7L-BTuQ3Ejt.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -52892,7 +52900,7 @@ System.register("./main-DutICk6s-B1gClSmI.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-CaTB_8eC-DnWQSTYG.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-64DveArO-CGImW7R4.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -52903,7 +52911,7 @@ System.register("./main-DutICk6s-B1gClSmI.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-CFoK_4rz-HWnCSJMx.js');
+            const { AIFFParser } = await module.import('./AiffParser-Bt5OM9Tk-D2qfr--G.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -52914,7 +52922,7 @@ System.register("./main-DutICk6s-B1gClSmI.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-CmBmcNDd-Bw1XHTsi.js');
+            const { DsfParser } = await module.import('./DsfParser-CmRXWJX--CIgz7Lzs.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -52925,7 +52933,7 @@ System.register("./main-DutICk6s-B1gClSmI.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-CMZgzJrf-C1dd8ePl.js').then((n) => n.d);
+            const { FlacParser } = await module.import('./FlacParser-Bf0VnExc-BWH8357r.js').then((n) => n.d);
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -52936,7 +52944,7 @@ System.register("./main-DutICk6s-B1gClSmI.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-C4w_CZ7r-CHFZCHGG.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-seYoqYLS-BY0XRE3Y.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -52947,7 +52955,7 @@ System.register("./main-DutICk6s-B1gClSmI.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-B0kLX5Ze-BHSje4AN.js');
+            const { MP4Parser } = await module.import('./MP4Parser-B2krzQvA-DmMOcxME.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -52958,7 +52966,7 @@ System.register("./main-DutICk6s-B1gClSmI.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-DfRWeIYC-Bf2NaWiR.js');
+            const { MusepackParser } = await module.import('./MusepackParser-DGdWKsHh-PSWydDbc.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -52970,7 +52978,7 @@ System.register("./main-DutICk6s-B1gClSmI.js", ['react', 'antd', 'react-dom', '@
         // RFC 7845, RFC 6716, RFC 5574
         async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-BFDl_BXX-SwF3DLTZ.js');
+            const { OggParser } = await module.import('./OggParser-C04o2Ifc-CKEjp_xJ.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -52981,7 +52989,7 @@ System.register("./main-DutICk6s-B1gClSmI.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-CyVuNUAc-BQB1rz26.js');
+            const { WavPackParser } = await module.import('./WavPackParser-DTsQs3dM-FRhSUYZH.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -52992,7 +53000,7 @@ System.register("./main-DutICk6s-B1gClSmI.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-BDIbSw-0-BHtIbtCn.js');
+            const { WaveParser } = await module.import('./WaveParser-BL273En4-Crjs-0XG.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -74732,6 +74740,13 @@ System.register("./main-DutICk6s-B1gClSmI.js", ['react', 'antd', 'react-dom', '@
               if (params?.albummid) {
                 setCurrentMid(params.albummid);
               }
+            },
+            onReset() {
+              setCurrentMid("");
+              setInputMid("");
+              setSelectedRowKeys([]);
+              setSelectedRows([]);
+              setList([]);
             }
           },
           ref
@@ -75117,6 +75132,7 @@ System.register("./main-DutICk6s-B1gClSmI.js", ['react', 'antd', 'react-dom', '@
             onCancel: close,
             width: 1200,
             centered: true,
+            destroyOnHidden: true,
             className: styles$7["album-detail-modal"],
             footer: renderFooter(),
             children: [
