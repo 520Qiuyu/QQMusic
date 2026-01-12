@@ -47,6 +47,13 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
           setCurrentMid(params.albummid);
         }
       },
+      onReset(){
+        setCurrentMid('');
+        setInputMid('');
+        setSelectedRowKeys([]);
+        setSelectedRows([]);
+        setList([]);
+      }
     },
     ref,
   );
@@ -473,6 +480,7 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
       onCancel={close}
       width={1200}
       centered
+      destroyOnHidden
       className={styles['album-detail-modal']}
       footer={renderFooter()}>
       {/* 顶部：专辑ID输入 */}
