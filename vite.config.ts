@@ -33,8 +33,8 @@ export default defineConfig({
           // "https://cdn.jsdelivr.net/npm/antd@5.22.4/dist/reset.min.css",
           'https://cdn.jsdelivr.net/npm/dayjs@1.11.13/dayjs.min.js',
         ],
-        connect: ['y.qq.com', 'music.163.com'],
-        grant: ['GM_addStyle', 'GM_setValue', 'GM_getValue', 'GM_deleteValue', 'GM_listValues'],
+        connect: ['y.qq.com', 'music.163.com', 'aqqmusic.tc.qq.com'],
+        grant: ['GM_addStyle', 'GM_setValue', 'GM_getValue', 'GM_deleteValue', 'GM_listValues', 'GM_xmlhttpRequest'],
       },
 
       build: {
