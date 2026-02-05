@@ -19,6 +19,7 @@
 // @require      data:application/javascript,%3B(typeof%20System!%3D'undefined')%26%26(System%3Dnew%20System.constructor())%3B
 // @connect      y.qq.com
 // @connect      music.163.com
+// @connect      aqqmusic.tc.qq.com
 // @grant        GM_addStyle
 // @grant        GM_deleteValue
 // @grant        GM_getValue
