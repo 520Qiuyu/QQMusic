@@ -102,7 +102,7 @@ export const writeFlacTag = async (
   file: Blob,
   tagName: keyof FlacTags,
   tagValue: string,
-): Promise<Blob | undefined> => {
+): Promise<Blob> => {
   try {
     const metaflac = await Metaflac.fromBlob(file);
     // 先移除同名标签，再添加新标签
