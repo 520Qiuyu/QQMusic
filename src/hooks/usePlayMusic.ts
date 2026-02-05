@@ -129,6 +129,7 @@ export const usePlayMusic = () => {
       let outputFile: Blob = blob;
       // 写入歌曲信息到文件、以获取到的为准
       if (songInfo) {
+        console.log('songInfo', songInfo)
         const { name, album: { name: albumName }, singer } = songInfo
         if (name) {
           outputFile = await writeFlacTag(outputFile, FlacTag.标题, name);
@@ -139,6 +140,7 @@ export const usePlayMusic = () => {
         if (singer) {
           outputFile = await writeFlacTag(outputFile, FlacTag.艺术家, singer.map(item => item.name).join(','));
         }
+        console.log(`写入歌曲信息到文件《${name}》`, { name, albumName, singer });
       }
       let lyric: string = '';
       /** 获取歌词 */
@@ -161,7 +163,7 @@ export const usePlayMusic = () => {
         // 根据音频格式读取标签信息
         switch (finalExt) {
           case 'flac':
-            outputFile = await writeFlacTagAndPicture(blob, 'lyrics', lyric, coverBlob!);
+            outputFile = await writeFlacTagAndPicture(outputFile, 'lyrics', lyric, coverBlob!);
             break;
           default:
             console.log('当前格式不支持');
@@ -258,7 +260,7 @@ export const usePlayMusic = () => {
 
         switch (finalExt) {
           case 'flac':
-            outputFile = await writeFlacTagAndPicture(blob, 'lyrics', lyric, coverBlob!);
+            outputFile = await writeFlacTagAndPicture(outputFile, 'lyrics', lyric, coverBlob!);
             log(`写入歌词和封面成功《${name}》`, outputFile);
             break;
           default:
