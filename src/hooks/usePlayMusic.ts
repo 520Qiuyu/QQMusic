@@ -127,21 +127,6 @@ export const usePlayMusic = () => {
       const { blob } = await getFileBlob(url.replace('http://', 'https://'));
       /** 输出文件 */
       let outputFile: Blob = blob;
-      // 写入歌曲信息到文件、以获取到的为准
-      if (songInfo) {
-        console.log('songInfo', songInfo)
-        const { name, album: { name: albumName }, singer } = songInfo
-        if (name) {
-          outputFile = await writeFlacTag(outputFile, FlacTag.标题, name);
-        }
-        if (albumName) {
-          outputFile = await writeFlacTag(outputFile, FlacTag.专辑, albumName);
-        }
-        if (singer) {
-          outputFile = await writeFlacTag(outputFile, FlacTag.艺术家, singer.map(item => item.name).join(','));
-        }
-        console.log(`写入歌曲信息到文件《${name}》`, { name, albumName, singer });
-      }
       let lyric: string = '';
       /** 获取歌词 */
       try {
@@ -163,6 +148,21 @@ export const usePlayMusic = () => {
         // 根据音频格式读取标签信息
         switch (finalExt) {
           case 'flac':
+            // 写入歌曲信息到文件、以获取到的为准
+            if (songInfo) {
+              console.log('songInfo', songInfo)
+              const { name, album: { name: albumName }, singer } = songInfo
+              if (name) {
+                outputFile = await writeFlacTag(outputFile, FlacTag.标题, name);
+              }
+              if (albumName) {
+                outputFile = await writeFlacTag(outputFile, FlacTag.专辑, albumName);
+              }
+              if (singer) {
+                outputFile = await writeFlacTag(outputFile, FlacTag.艺术家, singer.map(item => item.name).join(','));
+              }
+              console.log(`写入歌曲信息到文件《${name}》`, { name, albumName, singer });
+            }
             outputFile = await writeFlacTagAndPicture(outputFile, 'lyrics', lyric, coverBlob!);
             break;
           default:
@@ -223,20 +223,6 @@ export const usePlayMusic = () => {
       log(`开始下载歌曲《${name}》`, url);
       const { blob } = await getFileBlob(url.replace('http://', 'https://'));
       let outputFile: Blob = blob;
-      // 写入歌曲信息到文件、以获取到的为准
-      if (songInfo) {
-        const { name, album: { name: albumName }, singer } = songInfo
-        if (name) {
-          outputFile = await writeFlacTag(outputFile, FlacTag.标题, name);
-        }
-        if (albumName) {
-          outputFile = await writeFlacTag(outputFile, FlacTag.专辑, albumName);
-        }
-        if (singer) {
-          outputFile = await writeFlacTag(outputFile, FlacTag.艺术家, singer.map(item => item.name).join(','));
-        }
-        log(`写入歌曲信息到文件《${name}》`, { name, albumName, singer });
-      }
 
       /** 写入歌词和封面 */
       if (embedLyricCover) {
@@ -260,6 +246,20 @@ export const usePlayMusic = () => {
 
         switch (finalExt) {
           case 'flac':
+            // 写入歌曲信息到文件、以获取到的为准
+            if (songInfo) {
+              const { name, album: { name: albumName }, singer } = songInfo
+              if (name) {
+                outputFile = await writeFlacTag(outputFile, FlacTag.标题, name);
+              }
+              if (albumName) {
+                outputFile = await writeFlacTag(outputFile, FlacTag.专辑, albumName);
+              }
+              if (singer) {
+                outputFile = await writeFlacTag(outputFile, FlacTag.艺术家, singer.map(item => item.name).join(','));
+              }
+              log(`写入歌曲信息到文件《${name}》`, { name, albumName, singer });
+            }
             outputFile = await writeFlacTagAndPicture(outputFile, 'lyrics', lyric, coverBlob!);
             log(`写入歌词和封面成功《${name}》`, outputFile);
             break;
