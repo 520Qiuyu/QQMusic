@@ -558,3 +558,199 @@ export interface SearchResult {
     zhida_singer: ZhidaSinger;
   };
 }
+
+/** 网页搜索 - 歌曲项中的 action */
+export interface WebSearchSongAction {
+  alert: number;
+  icon2: number;
+  icons: number;
+  msgdown: number;
+  msgfav: number;
+  msgid: number;
+  msgpay: number;
+  msgshare: number;
+  switch: number;
+  switch2: number;
+}
+
+/** 网页搜索 - 歌曲项中的专辑简要信息 */
+export interface WebSearchSongAlbum {
+  id: number;
+  mid: string;
+  name: string;
+  pmid: string;
+  subtitle: string;
+  time_public: string;
+  title: string;
+}
+
+/** 网页搜索 - 歌曲项中的 file 信息 */
+export interface WebSearchSongFile {
+  b_30s: number;
+  e_30s: number;
+  hires_bitdepth: number;
+  hires_sample: number;
+  media_mid: string;
+  size_128mp3: number;
+  size_192aac: number;
+  size_192ogg: number;
+  size_24aac: number;
+  size_320mp3: number;
+  size_360ra: number[];
+  size_48aac: number;
+  size_96aac: number;
+  size_96ogg: number;
+  size_ape: number;
+  size_dolby: number;
+  size_dts: number;
+  size_flac: number;
+  size_hires: number;
+  size_new: number[];
+  size_try: number;
+  try_begin: number;
+  try_end: number;
+  url: string;
+}
+
+/** 网页搜索 - 歌曲项中的歌手简要信息 */
+export interface WebSearchSongSingerItem {
+  id: number;
+  mid: string;
+  name: string;
+  pmid: string;
+  title: string;
+  type: number;
+  uin: number;
+}
+
+/** 网页搜索 - 歌曲项中的 pay 信息 */
+export interface WebSearchSongPay {
+  pay_down: number;
+  pay_month: number;
+  pay_play: number;
+  pay_status: number;
+  price_album: number;
+  price_track: number;
+  time_free: number;
+}
+
+/** 网页搜索 - 歌曲项中的 mv 简要信息 */
+export interface WebSearchSongMv {
+  id: number;
+  name: string;
+  title: string;
+  vid: string;
+  vt: number;
+}
+
+/** 网页搜索 - 歌曲项 */
+export interface WebSearchSongItem {
+  act: number;
+  action: WebSearchSongAction;
+  album: WebSearchSongAlbum;
+  bpm: number;
+  content: string;
+  desc: string;
+  desc_hilight: string;
+  docid: string;
+  eq: number;
+  es: string;
+  file: WebSearchSongFile;
+  fnote: number;
+  genre: number;
+  grp: unknown[];
+  hotness: {
+    desc: string;
+    icon_url: string;
+    jump_type: number;
+    jump_url: string;
+  };
+  href3: string;
+  id: number;
+  index_album: number;
+  index_cd: number;
+  interval: number;
+  isonly: number;
+  ksong: { id: number; mid: string };
+  label: string;
+  language: number;
+  lyric: string;
+  lyric_hilight: string;
+  mid: string;
+  mv: WebSearchSongMv;
+  name: string;
+  newStatus: number;
+  ov: number;
+  pay: WebSearchSongPay;
+  protect: number;
+  sa: number;
+  singer: WebSearchSongSingerItem[];
+  status: number;
+  subtitle: string;
+  tag: number;
+  tid: number;
+  time_public: string;
+  title: string;
+  title_hilight: string;
+  type: number;
+  url: string;
+  version: number;
+  vf: number[];
+  vi: number[];
+  volume: { gain: number; lra: number; peak: number };
+  vs: string[];
+}
+
+/** 网页搜索 - 知达(zhida)列表项 custom_info */
+export interface WebSearchZhidaCustomInfo {
+  begin_time: string;
+  end_time: string;
+  extra_desc: string;
+  from: string;
+  grade: string;
+  icon_type: string;
+  icon_type2: string;
+  icon_type2_schema: string;
+  ifpicurl: string;
+  is_follow: string;
+  mid: string;
+  one_line_desc: string;
+  parent_ids: string;
+  play_list: string;
+  search_history: string;
+  source_d: string;
+  tab_id: string;
+  ticket: string;
+  tribe: string;
+}
+
+/** 网页搜索 - 知达(zhida)列表项 */
+export interface WebSearchZhidaItem {
+  album_list: { items: unknown[] };
+  custom_info: WebSearchZhidaCustomInfo;
+  desciption: string;
+  docid: string;
+  id: string;
+  jumpurl: string;
+  mid: string;
+  pic: string;
+  publish_date: string;
+  title: string;
+  track_list: { items: unknown[] };
+  type: number;
+  vid: string;
+  video_type: number;
+}
+
+/** 网页搜索 - body 结构（getWebSearchResult 返回的数据） */
+export interface WebSearchResult {
+  album: { list: unknown[] };
+  gedantip: { tab: number; tip: string };
+  mv: { list: unknown[] };
+  qc: unknown[];
+  singer: { list: unknown[] };
+  song: { list: WebSearchSongItem[] };
+  songlist: { list: unknown[] };
+  user: { list: unknown[] };
+  zhida: { list: WebSearchZhidaItem[] };
+}

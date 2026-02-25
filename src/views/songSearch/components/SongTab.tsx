@@ -3,7 +3,7 @@ import { getSingerPic } from '@/apis/singer';
 import { CopyText, MyButton } from '@/components';
 import type { FileType } from '@/constants';
 import { useConfig, usePlayMusic } from '@/hooks';
-import type { SongInfo } from '@/types/search';
+import type { WebSearchSongItem } from '@/types/search';
 import { getFileQualityList } from '@/utils';
 import { downloadAsLRC } from '@/utils/download';
 import { msgError, msgSuccess } from '@/utils/modal';
@@ -16,70 +16,83 @@ import {
 } from '@ant-design/icons';
 import { Button, Image, Select, Space, Table, Tag } from 'antd';
 import type { ColumnType } from 'antd/es/table';
+import { useEffect, useState } from 'react';
 import styles from '../index.module.scss';
 
+type SongRow = WebSearchSongItem & { quality?: keyof typeof FileType };
+
 interface SongTabProps {
-  data: SongInfo[];
+  data: WebSearchSongItem[];
   loading: boolean;
 }
+
+/** 从 file 得到 getFileQualityList 所需形状 */
+const getQualityListFromFile = (file: WebSearchSongItem['file']) =>
+  getFileQualityList({
+    size128: file.size_128mp3,
+    size320: file.size_320mp3,
+    sizeflac: file.size_flac,
+  });
+
+/** 按音质取 file 大小 */
+const getSizeByQuality = (file: WebSearchSongItem['file'], quality: keyof typeof FileType) => {
+  if (quality === 128) return file.size_128mp3;
+  if (quality === 320) return file.size_320mp3;
+  if (quality === 'flac') return file.size_flac;
+  return file.size_128mp3;
+};
 
 const SongTab = ({ data, loading }: SongTabProps) => {
   const { downloadConfig } = useConfig();
   const { quality: defaultQuality } = downloadConfig;
   const { play, download, isPlaying, pause, getLyric, convertToNeteaseMusic } = usePlayMusic();
 
-  const [list, setList] = useState<SongInfo[]>(data);
+  const [list, setList] = useState<SongRow[]>(data);
   useEffect(() => {
     setList(data);
   }, [data]);
 
-  const handleChooseQuality = (record: SongInfo, quality: keyof typeof FileType) => {
+  const handleChooseQuality = (record: SongRow, quality: keyof typeof FileType) => {
     setList(
       list.map((item) => {
-        if (item.songmid === record.songmid) {
-          return {
-            ...item,
-            quality,
-          };
+        if (item.mid === record.mid) {
+          return { ...item, quality };
         }
         return item;
       }),
     );
   };
 
-  const handlePlay = (record: SongInfo & { quality?: keyof typeof FileType }) => {
-    console.log('播放歌曲:', record);
+  const handlePlay = (record: SongRow) => {
     if (isPlaying) {
       pause();
     } else {
       const finalQuality = getQuality(record, defaultQuality, record.quality);
-      play(record.songmid, finalQuality);
+      play(record.mid, finalQuality);
     }
   };
 
-  const handleDownload = async (record: SongInfo & { quality?: keyof typeof FileType }) => {
+  const handleDownload = async (record: SongRow) => {
     try {
       const finalQuality = getQuality(record, defaultQuality, record.quality);
-      await download(record.songmid, finalQuality);
+      await download(record.mid, finalQuality);
     } catch (error) {
       console.error('下载歌曲失败:', error);
     }
   };
 
-  const handleDownloadLyric = async (record: SongInfo & { quality?: keyof typeof FileType }) => {
+  const handleDownloadLyric = async (record: SongRow) => {
     try {
-      const lyric = await getLyric(record.songmid);
-      downloadAsLRC(lyric, record.songname);
+      const lyric = await getLyric(record.mid);
+      downloadAsLRC(lyric, record.name);
     } catch (error) {
       console.error('下载歌词失败:', error);
     }
   };
 
-  const handleDownloadNeteaseMusic = async (
-    record: SongInfo & { quality?: keyof typeof FileType },
-  ) => {
+  const handleDownloadNeteaseMusic = async (record: SongRow) => {
     try {
-      await convertToNeteaseMusic(record.songmid);
+      await convertToNeteaseMusic(record.mid);
       msgSuccess('歌曲转存网易云成功');
     } catch (error) {
       console.log('error', error);
@@ -87,23 +100,22 @@ const SongTab = ({ data, loading }: SongTabProps) => {
     }
   };
 
-  // 歌曲表格列配置
-  const columns_song: ColumnType<SongInfo>[] = [
+  const columns_song: ColumnType<SongRow>[] = [
     {
       title: '歌曲信息',
-      dataIndex: 'songname',
+      dataIndex: 'name',
       width: 300,
       render: (text, record) => (
         <Space size='middle' className={styles['song-info']}>
           <div className={styles['song-cover']}>
-            <Image src={getAlbumPicUrl(record.albummid)} />
+            <Image src={getAlbumPicUrl(record.album.mid)} />
           </div>
           <div className={styles['song-details']}>
             <div className={styles['song-name']} title={text}>
               {text}
             </div>
-            <div className={styles['song-album']} title={record.albumname || ''}>
-              {record.albumname || ''}
+            <div className={styles['song-album']} title={record.album.name || ''}>
+              {record.album.name || ''}
             </div>
           </div>
         </Space>
@@ -113,9 +125,9 @@ const SongTab = ({ data, loading }: SongTabProps) => {
       title: '歌手',
       dataIndex: 'singer',
       width: 200,
-      render: (singers: { id: number; mid: string; name: string; name_hilight: string }[]) => (
+      render: (singers: WebSearchSongItem['singer']) => (
         <Space size='small'>
-          <Image src={getSingerPic(singers[0].mid)} width={40} height={40} />
+          <Image src={getSingerPic(singers[0]?.mid)} width={40} height={40} />
           <div className={styles['singer-info']}>
             <div
               className={styles['singer-name']}
@@ -128,41 +140,31 @@ const SongTab = ({ data, loading }: SongTabProps) => {
     },
     {
       title: '专辑',
-      dataIndex: 'albumname',
+      dataIndex: ['album', 'name'],
       width: 200,
       ellipsis: true,
     },
     {
       title: '大小',
-      dataIndex: 'size128',
       width: 120,
       align: 'center',
-      render: (_, record: SongInfo & { quality?: keyof typeof FileType }) => {
+      render: (_: unknown, record: SongRow) => {
         const quality = record.quality || defaultQuality;
-        const sizeKey = `size${quality}`;
-        if (record.quality) {
-          console.log('quality', quality);
-          console.log('sizeKey', sizeKey);
-        }
-        const size = record[sizeKey] || 0;
-        return <span>{Math.round(size / 1024 / 1024)}MB</span>;
+        const size = getSizeByQuality(record.file, quality);
+        return <span>{Math.round((size || 0) / 1024 / 1024)}MB</span>;
       },
     },
-    // 音质选择器
     {
       title: '音质',
       key: 'quality',
       width: 150,
       align: 'center',
-      render: (_, record) => {
-        const qualityList = getFileQualityList(record);
+      render: (_: unknown, record: SongRow) => {
+        const qualityList = getQualityListFromFile(record.file);
         const defaultValue = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
         return (
           <Select
-            options={qualityList.map((quality) => ({
-              label: quality,
-              value: quality,
-            }))}
+            options={qualityList.map((q) => ({ label: q, value: q }))}
             defaultValue={defaultValue}
             style={{ width: '100%' }}
             onChange={(value) => {
@@ -177,9 +179,8 @@ const SongTab = ({ data, loading }: SongTabProps) => {
       key: 'format',
       width: 150,
       align: 'center',
-      render: (_, record: SongInfo & { quality?: keyof typeof FileType }) => {
-        const qualityList = getFileQualityList(record);
-        // 定义不同音质对应的颜色
+      render: (_: unknown, record: SongRow) => {
+        const qualityList = getQualityListFromFile(record.file);
         const qualityColorMap = {
           flac: 'green',
           ape: 'volcano',
@@ -187,7 +188,6 @@ const SongTab = ({ data, loading }: SongTabProps) => {
           m4a: 'orange',
           128: 'gray',
         };
-        // 音质tag文本映射
         const qualityTextMap = {
           flac: 'FLAC',
           ape: 'APE',
@@ -208,10 +208,10 @@ const SongTab = ({ data, loading }: SongTabProps) => {
     },
     {
       title: '歌曲ID',
-      dataIndex: 'songmid',
+      dataIndex: 'mid',
       width: 200,
       align: 'center',
-      render: (songmid: string) => <CopyText className={styles['song-mid-text']} text={songmid} />,
+      render: (mid: string) => <CopyText className={styles['song-mid-text']} text={mid} />,
     },
     {
       title: '操作',
@@ -219,45 +219,42 @@ const SongTab = ({ data, loading }: SongTabProps) => {
       width: 300,
       align: 'center',
       fixed: 'right',
-      render: (_, record) => {
-        return (
-          <Space size='small' wrap>
-            <Button
-              type='link'
-              size='small'
-              icon={isPlaying === record.songmid ? <PauseCircleOutlined /> : <PlayCircleOutlined />}
-              onClick={() => handlePlay(record)}
-              title='播放歌曲'>
-              播放
-            </Button>
-            <MyButton
-              type='link'
-              size='small'
-              icon={<DownloadOutlined />}
-              onClick={() => handleDownload(record)}
-              title='下载歌曲'>
-              下载
-            </MyButton>
-            {/* 下载歌词 */}
-            <MyButton
-              type='link'
-              size='small'
-              icon={<FileOutlined />}
-              onClick={() => handleDownloadLyric(record)}
-              title='下载歌词'>
-              下载歌词
-            </MyButton>
-            <MyButton
-              type='link'
-              size='small'
-              icon={<CloudDownloadOutlined />}
-              onClick={() => handleDownloadNeteaseMusic(record)}
-              title='转存网易云'>
-              转存网易云
-            </MyButton>
-          </Space>
-        );
-      },
+      render: (_: unknown, record: SongRow) => (
+        <Space size='small' wrap>
+          <Button
+            type='link'
+            size='small'
+            icon={isPlaying === record.mid ? <PauseCircleOutlined /> : <PlayCircleOutlined />}
+            onClick={() => handlePlay(record)}
+            title='播放歌曲'>
+            播放
+          </Button>
+          <MyButton
+            type='link'
+            size='small'
+            icon={<DownloadOutlined />}
+            onClick={() => handleDownload(record)}
+            title='下载歌曲'>
+            下载
+          </MyButton>
+          <MyButton
+            type='link'
+            size='small'
+            icon={<FileOutlined />}
+            onClick={() => handleDownloadLyric(record)}
+            title='下载歌词'>
+            下载歌词
+          </MyButton>
+          <MyButton
+            type='link'
+            size='small'
+            icon={<CloudDownloadOutlined />}
+            onClick={() => handleDownloadNeteaseMusic(record)}
+            title='转存网易云'>
+            转存网易云
+          </MyButton>
+        </Space>
+      ),
     },
   ];
 
@@ -265,7 +262,7 @@ const SongTab = ({ data, loading }: SongTabProps) => {
     <Table
       columns={columns_song}
       dataSource={list}
-      rowKey='songmid'
+      rowKey='mid'
       loading={loading}
       scroll={{ y: 500, x: 1100 }}
       className={styles['song-table']}
@@ -276,13 +273,12 @@ const SongTab = ({ data, loading }: SongTabProps) => {
 
 export default SongTab;
 
-const getQuality = (
-  record: SongInfo,
+function getQuality(
+  record: SongRow,
   defaultQuality: keyof typeof FileType,
   chooseQuality?: keyof typeof FileType,
-) => {
-  const qualityList = getFileQualityList(record);
+) {
+  const qualityList = getQualityListFromFile(record.file);
   const songDefaultQuality = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
-  const finalQuality = chooseQuality || songDefaultQuality;
-  return finalQuality;
-};
+  return chooseQuality || songDefaultQuality;
+}

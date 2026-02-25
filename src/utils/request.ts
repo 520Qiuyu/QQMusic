@@ -58,8 +58,14 @@ export const qqMusicRequest = async <T = any>(
       responseType,
       headers: { ...getDefaultHeaders(type), cookie, ...headers } as Record<string, string>,
       cookie,
-      onload: (res) => resolve(res.response),
-      onerror: reject,
+      onload: (res) => {
+        console.log('GM_xmlhttpRequest onload', res);
+        resolve(res.response);
+      },
+      onerror: (error) => {
+        console.log('GM_xmlhttpRequest onerror', error);
+        reject(error.error);
+      },
       ...rest,
     });
   });

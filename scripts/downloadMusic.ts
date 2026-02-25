@@ -15,9 +15,9 @@ interface AlbumData {
 }
 
 /** 要下载的文件 */
-const DOWNLOAD_FILE = path.join(__dirname, '周杰伦-专辑(2).json');
+const DOWNLOAD_FILE = path.join(__dirname, '周深-专辑.json');
 /** 下载目录 */
-const DOWNLOAD_DIR = path.join(__dirname, '..', 'music/周杰伦');
+const DOWNLOAD_DIR = path.join(__dirname, '..', 'music/周深');
 /** 并发量 */
 export const DOWNLOAD_LIMIT = 6;
 /** 是否下载封面 */

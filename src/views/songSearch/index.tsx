@@ -1,7 +1,14 @@
-import { getSearchResult } from '@/apis/search';
+import { getSearchResult, getWebSearchResult } from '@/apis/search';
 import { SearchForm } from '@/components';
 import type { Option as SearchFormOption } from '@/components/SearchForm';
 import type { ResourceTypeValues } from '@/constants';
+import type {
+  AlbumItem,
+  LyricItem,
+  MvItem,
+  SingerItem,
+  WebSearchResult,
+} from '@/types/search';
 import { Modal, Pagination, Tabs } from 'antd';
 import { forwardRef, useState, type ForwardedRef } from 'react';
 import { useGetData, useVisible } from '../../hooks';
@@ -22,7 +29,7 @@ const defaultSearchParams: SearchParams = {
   type: 'song',
 };
 
-const SongSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
+const SongSearch = forwardRef((_props, ref: ForwardedRef<Ref>) => {
   const { visible, open, close } = useVisible({}, ref);
 
   const [searchParams, setSearchParams] = useState<SearchParams>(defaultSearchParams);
@@ -88,19 +95,19 @@ const SongSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
           setSearchParams({ ...searchParams, type: key as ResourceTypeValues, pageNum: 1 })
         }>
         <Tabs.TabPane tab='歌曲' key='song'>
-          <SongTab data={data?.song?.list || []} loading={loading} />
+          <SongTab data={data?.song?.list ?? []} loading={loading} />
         </Tabs.TabPane>
         <Tabs.TabPane tab='专辑' key='album'>
-          <AlbumTab data={data?.album?.list || []} loading={loading} />
+          <AlbumTab data={(data?.album?.list ?? []) as AlbumItem[]} loading={loading} />
         </Tabs.TabPane>
         <Tabs.TabPane tab='歌手' key='user'>
-          <SingerTab data={data?.singer?.list || []} loading={loading} />
+          <SingerTab data={(data?.singer?.list ?? []) as SingerItem[]} loading={loading} />
         </Tabs.TabPane>
         <Tabs.TabPane tab='MV' key='mv'>
-          <MvTab data={data?.mv?.list || []} loading={loading} />
+          <MvTab data={(data?.mv?.list ?? []) as MvItem[]} loading={loading} />
         </Tabs.TabPane>
         <Tabs.TabPane tab='歌词' key='lyric'>
-          <LyricTab data={data?.lyric?.list || []} loading={loading} />
+          <LyricTab data={([] as LyricItem[])} loading={loading} />
         </Tabs.TabPane>
       </Tabs>
 
@@ -109,15 +116,15 @@ const SongSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
         total={(() => {
           switch (searchParams.type) {
             case 'song':
-              return data?.song?.totalnum || 0;
+              return data?.song?.list?.length ?? 0;
             case 'album':
-              return data?.album?.totalnum || 0;
+              return data?.album?.list?.length ?? 0;
             case 'user':
-              return data?.singer?.totalnum || 0;
+              return data?.singer?.list?.length ?? 0;
             case 'mv':
-              return data?.mv?.totalnum || 0;
+              return data?.mv?.list?.length ?? 0;
             case 'lyric':
-              return data?.lyric?.totalnum || 0;
+              return 0;
             default:
               return 0;
           }

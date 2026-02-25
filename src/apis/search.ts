@@ -1,6 +1,6 @@
 import type { ResourceTypeValues } from '@/constants';
 import { qqMusicRequest } from '@/utils/request';
-import type { SearchResult } from '../types/search';
+import type { SearchResult, WebSearchResult } from '../types/search';
 
 const typeMap: Record<ResourceTypeValues, number> = {
   song: 0,
@@ -38,15 +38,21 @@ export const getSearchResult = async (
 
   console.log('params', params);
 
-  const res = await qqMusicRequest(
-    `/soso/fcgi-bin/client_search_cp?${new URLSearchParams(params as any).toString()}`,
-    {
-      method: 'GET',
-    },
-    'c',
-  );
-  if (res.code === 0) {
-    return res.data;
+  try {
+    const res = await qqMusicRequest(
+      `/soso/fcgi-bin/client_search_cp?${new URLSearchParams(params as any).toString()}`,
+      {
+        method: 'GET',
+        originResponse: true,
+      },
+      'c',
+    );
+    console.log('res', res);
+    if (res.code === 0) {
+      return res.data;
+    }
+  } catch (error) {
+    console.log('error', error);
   }
 
   throw new Error('搜索失败');
@@ -60,7 +66,7 @@ export const getWebSearchResult = async (
     pageNum: number;
     pageSize: number;
   },
-) => {
+): Promise<WebSearchResult> => {
   const { pageNum = 1, pageSize = 20 } = options || {};
 
   const params = {
@@ -76,16 +82,22 @@ export const getWebSearchResult = async (
     },
   };
 
-  console.log('params',params)
+  console.log('params', params);
 
   const res = await qqMusicRequest(
     `/cgi-bin/musicu.fcg`,
     {
       method: 'POST',
       data: JSON.stringify(params),
+      headers: {
+        Referer: 'https://y.qq.com',
+      },
     },
     'u',
   );
-
   console.log('res', res);
+  if (res.code === 0) {
+    return res.req_1.data.body;
+  }
+  throw new Error('搜索失败');
 };
