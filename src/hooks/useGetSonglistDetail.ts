@@ -25,9 +25,9 @@ export const useGetSonglistDetail = () => {
   const getPlaylistDetail = async (dissid: string) => {
     try {
       setIsLoading(true);
-      if (playlistInfoMap.current[dissid]) {
+      /* if (playlistInfoMap.current[dissid]) {
         return playlistInfoMap.current[dissid];
-      }
+      } */
       const res = await getSongListDetail(dissid);
       console.log('歌单详情:', res);
       const playlistDetail = Array.isArray(res) ? res[0] : res;

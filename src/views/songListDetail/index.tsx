@@ -75,7 +75,11 @@ const SongListDetail = forwardRef((_, ref: ForwardedRef<Ref<any, IOpenParams>>) 
   // 歌曲相关hook
   const { play, isPlaying, pause, download, convertToNeteaseMusic } = usePlayMusic();
 
-  const { data: detail, loading } = useGetData(getPlaylistDetail, currentDissid, {
+  const {
+    data: detail,
+    loading,
+    getData,
+  } = useGetData(getPlaylistDetail, currentDissid, {
     initialValue: {},
     returnFunction: () => !currentDissid || !visible,
     monitors: [currentDissid, visible],
@@ -154,6 +158,10 @@ const SongListDetail = forwardRef((_, ref: ForwardedRef<Ref<any, IOpenParams>>) 
         onPressEnter: () => {
           if (inputMid) {
             setCurrentDissid(inputMid);
+            if (inputMid === currentDissid) {
+              console.log('inputMid === currentDissid');
+              getData();
+            }
           }
         },
       },
