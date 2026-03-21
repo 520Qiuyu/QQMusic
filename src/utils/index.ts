@@ -374,6 +374,69 @@ export async function getAudioMetadata(file: File): Promise<{
   }
 }
 
+/**
+ * 逆向还原的 QQ 搜索相关大数运算（十进制字符串，避免 JS Number 精度问题）
+ */
+
+/** 十进制字符串大数乘法，返回十进制字符串 */
+function multiplyDecimalStrings(
+  multiplicand: string | number,
+  multiplier: string | number,
+): string {
+  const leftDigits = `${multiplicand}`.split('').reverse();
+  const rightDigits = `${multiplier}`.split('').reverse();
+  const result: number[] = [];
+  const leftLen = leftDigits.length;
+  const rightLen = rightDigits.length;
+  const maxIndex = leftLen + rightLen - 1;
+  for (let k = 0; k <= maxIndex; k++) {
+    result[k] = 0;
+  }
+  for (let j = 0; j < rightLen; j++) {
+    for (let i = 0; i < leftLen; i++) {
+      result[i + j] += parseInt(leftDigits[i], 10) * parseInt(rightDigits[j], 10);
+      result[i + j + 1] += Math.floor(result[i + j] / 10);
+      result[i + j] = result[i + j] % 10;
+    }
+  }
+  result.reverse();
+  if (result[0] === 0) result.shift();
+  return result.join('');
+}
+
+/** 十进制字符串大数加法，返回十进制字符串 */
+function addDecimalStrings(augend: string | number, addend: string | number): string {
+  const augendRev = `${augend}`.split('').reverse();
+  const addendRev = `${addend}`.split('').reverse();
+  const lenA = augendRev.length;
+  const lenB = addendRev.length;
+  let carry = 0;
+  const maxLen = Math.max(lenA, lenB);
+  for (let k = 0; k < maxLen; k++) {
+    const d1 = k < lenA ? parseInt(augendRev[k], 10) : 0;
+    const d2 = k < lenB ? parseInt(addendRev[k], 10) : 0;
+    const sum = d1 + d2 + carry;
+    augendRev[k] = `${sum % 10}`;
+    carry = sum >= 10 ? 1 : 0;
+  }
+  if (carry === 1) augendRev.push('1');
+  return augendRev.reverse().join('');
+}
+
+/** 生成搜索请求用的混淆 ID（与客户端逻辑一致） */
+export function generateSearchObfuscatedId(seed: string | number): string {
+  const scaledSeed = multiplyDecimalStrings(seed, '18014398509481984');
+  const randomPart = multiplyDecimalStrings(
+    Math.round(Math.random() * parseInt('4194304', 10)),
+    '4294967296',
+  );
+  const now = new Date();
+  const dayTimeMs =
+    1000 * (3600 * now.getHours() + 60 * now.getMinutes() + now.getSeconds()) +
+    now.getMilliseconds();
+  return addDecimalStrings(addDecimalStrings(scaledSeed, randomPart), dayTimeMs);
+}
+
 // #endregion ================ 工具函数 ================
 
 // #region ================ 下载功能 ================

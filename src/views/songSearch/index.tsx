@@ -1,4 +1,4 @@
-import { getSearchResult } from '@/apis/search';
+import { getSearchResult, getWebSearchResult } from '@/apis/search';
 import { SearchForm } from '@/components';
 import type { Option as SearchFormOption } from '@/components/SearchForm';
 import type { ResourceTypeValues } from '@/constants';
@@ -6,8 +6,8 @@ import { Modal, Pagination, Tabs } from 'antd';
 import { forwardRef, useState, type ForwardedRef } from 'react';
 import { useGetData, useVisible } from '../../hooks';
 import type { Ref } from '../../hooks/useVisible';
+import { AlbumTab, LyricTab, MvTab, SingerTab, SongTab } from './components';
 import styles from './index.module.scss';
-import { SongTab, AlbumTab, SingerTab, MvTab, LyricTab } from './components';
 
 interface SearchParams {
   keyword?: string;
@@ -50,11 +50,14 @@ const SongSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
   };
 
   const { data, loading } = useGetData(
-    () => getSearchResult(searchParams.keyword!, searchParams.type, searchParams),
+    () => getWebSearchResult(searchParams.keyword!, searchParams.type, searchParams),
     undefined,
     {
       returnFunction: () => !searchParams.keyword || !visible,
       monitors: [searchParams, visible],
+      callback: (data) => {
+        console.log('data', data);
+      },
     },
   );
 
@@ -99,29 +102,14 @@ const SongSearch = forwardRef((props, ref: ForwardedRef<Ref>) => {
         <Tabs.TabPane tab='MV' key='mv'>
           <MvTab data={data?.mv?.list || []} loading={loading} />
         </Tabs.TabPane>
-        <Tabs.TabPane tab='歌词' key='lyric'>
+        {/*         <Tabs.TabPane tab='歌词' key='lyric'>
           <LyricTab data={data?.lyric?.list || []} loading={loading} />
-        </Tabs.TabPane>
+        </Tabs.TabPane> */}
       </Tabs>
 
       <Pagination
         align='end'
-        total={(() => {
-          switch (searchParams.type) {
-            case 'song':
-              return data?.song?.totalnum || 0;
-            case 'album':
-              return data?.album?.totalnum || 0;
-            case 'user':
-              return data?.singer?.totalnum || 0;
-            case 'mv':
-              return data?.mv?.totalnum || 0;
-            case 'lyric':
-              return data?.lyric?.totalnum || 0;
-            default:
-              return 0;
-          }
-        })()}
+        total={data?.total}
         current={searchParams.pageNum}
         pageSize={searchParams.pageSize}
         showSizeChanger={true}

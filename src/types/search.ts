@@ -1,3 +1,5 @@
+import type { TrackInfo } from './song';
+
 /**
  * 搜索结果的语义信息
  */
@@ -557,4 +559,35 @@ export interface SearchResult {
     /** 歌手详细信息 */
     zhida_singer: ZhidaSinger;
   };
+}
+
+/**
+ * 网页搜索 DoSearchForQQMusicDesktop 返回的 body（与控制台结构一致）
+ */
+export interface WebSearchGedantip {
+  tab: number;
+  tip: string;
+}
+
+/** 带 list 的分块（专辑 / 歌曲 / 歌手等） */
+export interface WebSearchListSection<T = unknown> {
+  list: T[];
+}
+
+/**
+ * `getWebSearchResult` 实际返回：`res.req_1.data.body`
+ */
+export interface WebSearchResult {
+  pageNum: number;
+  pageSize: number;
+  total: number;
+  album: WebSearchListSection<AlbumItem>;
+  gedantip: WebSearchGedantip;
+  mv: WebSearchListSection<MvItem>;
+  qc: unknown[];
+  singer: WebSearchListSection<SingerItem>;
+  song: WebSearchListSection<TrackInfo>;
+  songlist: WebSearchListSection;
+  user: WebSearchListSection;
+  zhida: WebSearchListSection;
 }

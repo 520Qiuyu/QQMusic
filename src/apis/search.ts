@@ -1,6 +1,7 @@
 import type { ResourceTypeValues } from '@/constants';
 import { qqMusicRequest } from '@/utils/request';
-import type { SearchResult } from '../types/search';
+import type { SearchResult, WebSearchResult } from '../types/search';
+import { generateSearchObfuscatedId } from '@/utils';
 
 const typeMap: Record<ResourceTypeValues, number> = {
   song: 0,
@@ -45,6 +46,7 @@ export const getSearchResult = async (
     },
     'c',
   );
+  console.log('res', res);
   if (res.code === 0) {
     return res.data;
   }
@@ -60,8 +62,25 @@ export const getWebSearchResult = async (
     pageNum: number;
     pageSize: number;
   },
-) => {
+): Promise<WebSearchResult> => {
   const { pageNum = 1, pageSize = 20 } = options || {};
+
+  const f = {
+    song: 3,
+    album: 4,
+    playlist: 6,
+    user: 13,
+    lyric: 5,
+    mv: 7,
+  };
+  const p = {
+    song: 0,
+    album: 2,
+    mv: 4,
+    playlist: 3,
+    user: 1,
+    lyric: 7,
+  };
 
   const params = {
     req_1: {
@@ -71,12 +90,14 @@ export const getWebSearchResult = async (
         num_per_page: Number(pageSize),
         page_num: Number(pageNum),
         query: keyword,
-        search_type: Number(typeMap[type]),
+        remoteplace: 'txt.yqq.center',
+        search_type: Number(p[type]),
+        searchid: generateSearchObfuscatedId(f[type]),
       },
     },
   };
 
-  console.log('params',params)
+  console.log('params', params);
 
   const res = await qqMusicRequest(
     `/cgi-bin/musicu.fcg`,
@@ -88,4 +109,17 @@ export const getWebSearchResult = async (
   );
 
   console.log('res', res);
+  if (res.code === 0 && res.req_1?.code === 0 && res.req_1?.data?.code === 0) {
+    const { body, meta } = (res.req_1?.data as any) || {};
+    if (body != null) {
+      return {
+        ...body,
+        pageNum: meta.curpage,
+        pageSize: meta.perpage,
+        total: meta.estimate_sum,
+      };
+    }
+  }
+
+  throw new Error('搜索失败');
 };
