@@ -7486,7 +7486,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-HNTEbzll-DLtBFxsC.js');
+            const { MpegParser } = await module.import('./MpegParser-DfWJ4kwL-DlNvfYRn.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -7508,7 +7508,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-wkYX8Xl--BFdv9sIu.js');
+            const { AsfParser } = await module.import('./AsfParser-B3ohu62N-LLyTYc_7.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -7519,7 +7519,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-hxWITvS--WfxXQKpz.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-CAlIhs3v-DX2DNR_7.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -7530,7 +7530,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-B8x3Zd7d-BiFHwbWE.js');
+            const { AIFFParser } = await module.import('./AiffParser-CfyCvuGG-DHZwquJ8.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -7541,7 +7541,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-CFC-EdZU-iurryzge.js');
+            const { DsfParser } = await module.import('./DsfParser-8VzHwIyf-BlgjadK4.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -7552,7 +7552,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-CumHzKqh-_CN7wTwV.js').then((n) => n.d);
+            const { FlacParser } = await module.import('./FlacParser-BbIUWZbA-B2CgdxDq.js').then((n) => n.d);
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -7563,7 +7563,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-BeTA0VLu-LcCGf8E5.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-BISMahKb-ClcPmH63.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -7574,7 +7574,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-BJmNbJg_-JtFS82B_.js');
+            const { MP4Parser } = await module.import('./MP4Parser-C1BTHs8Q-COxvQcXO.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -7585,7 +7585,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-BQLrWktD-BKVA17BJ.js');
+            const { MusepackParser } = await module.import('./MusepackParser-CPj31G3i-DyWh6lI0.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -7597,7 +7597,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         // RFC 7845, RFC 6716, RFC 5574
         async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-DwRpMXJH-CfZfubsd.js');
+            const { OggParser } = await module.import('./OggParser-DkvGON6m-BTomt2vR.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -7608,7 +7608,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-DRV03EVY-DK4NC2LU.js');
+            const { WavPackParser } = await module.import('./WavPackParser-ClbpBFl4-WuPl-D3i.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -7619,7 +7619,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-BYRMLe9O-5pZlYhTr.js');
+            const { WaveParser } = await module.import('./WaveParser-0eqbtcCE-EyuUZA5w.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -8365,6 +8365,54 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
             format: ""
           };
         }
+      }
+      function multiplyDecimalStrings(multiplicand, multiplier) {
+        const leftDigits = `${multiplicand}`.split("").reverse();
+        const rightDigits = `${multiplier}`.split("").reverse();
+        const result = [];
+        const leftLen = leftDigits.length;
+        const rightLen = rightDigits.length;
+        const maxIndex = leftLen + rightLen - 1;
+        for (let k = 0; k <= maxIndex; k++) {
+          result[k] = 0;
+        }
+        for (let j = 0; j < rightLen; j++) {
+          for (let i = 0; i < leftLen; i++) {
+            result[i + j] += parseInt(leftDigits[i], 10) * parseInt(rightDigits[j], 10);
+            result[i + j + 1] += Math.floor(result[i + j] / 10);
+            result[i + j] = result[i + j] % 10;
+          }
+        }
+        result.reverse();
+        if (result[0] === 0) result.shift();
+        return result.join("");
+      }
+      function addDecimalStrings(augend, addend) {
+        const augendRev = `${augend}`.split("").reverse();
+        const addendRev = `${addend}`.split("").reverse();
+        const lenA = augendRev.length;
+        const lenB = addendRev.length;
+        let carry = 0;
+        const maxLen = Math.max(lenA, lenB);
+        for (let k = 0; k < maxLen; k++) {
+          const d1 = k < lenA ? parseInt(augendRev[k], 10) : 0;
+          const d2 = k < lenB ? parseInt(addendRev[k], 10) : 0;
+          const sum = d1 + d2 + carry;
+          augendRev[k] = `${sum % 10}`;
+          carry = sum >= 10 ? 1 : 0;
+        }
+        if (carry === 1) augendRev.push("1");
+        return augendRev.reverse().join("");
+      }
+      function generateSearchObfuscatedId(seed) {
+        const scaledSeed = multiplyDecimalStrings(seed, "18014398509481984");
+        const randomPart = multiplyDecimalStrings(
+          Math.round(Math.random() * parseInt("4194304", 10)),
+          "4294967296"
+        );
+        const now = /* @__PURE__ */ new Date();
+        const dayTimeMs = 1e3 * (3600 * now.getHours() + 60 * now.getMinutes() + now.getSeconds()) + now.getMilliseconds();
+        return addDecimalStrings(addDecimalStrings(scaledSeed, randomPart), dayTimeMs);
       }
       const urlAlphabet = "useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";
       let nanoid = (size = 21) => {
@@ -37430,7 +37478,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mv: 12
       };
       const getSearchResult = async (keyword, type = "song", options) => {
-        const { pageNum = 1, pageSize = 20 } = options || {};
+        const { pageNum = 1, pageSize = 20 } = {};
         const params = {
           w: keyword,
           n: pageSize,
@@ -37453,13 +37501,30 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
           },
           "c"
         );
+        console.log("res", res);
         if (res.code === 0) {
           return res.data;
         }
         throw new Error("搜索失败");
       };
       const getWebSearchResult = async (keyword, type = "song", options) => {
-        const { pageNum = 1, pageSize = 20 } = {};
+        const { pageNum = 1, pageSize = 20 } = options || {};
+        const f = {
+          song: 3,
+          album: 4,
+          playlist: 6,
+          user: 13,
+          lyric: 5,
+          mv: 7
+        };
+        const p = {
+          song: 0,
+          album: 2,
+          mv: 4,
+          playlist: 3,
+          user: 1,
+          lyric: 7
+        };
         const params = {
           req_1: {
             method: "DoSearchForQQMusicDesktop",
@@ -37468,7 +37533,9 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
               num_per_page: Number(pageSize),
               page_num: Number(pageNum),
               query: keyword,
-              search_type: Number(typeMap[type])
+              remoteplace: "txt.yqq.center",
+              search_type: Number(p[type]),
+              searchid: generateSearchObfuscatedId(f[type])
             }
           }
         };
@@ -37482,6 +37549,18 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
           "u"
         );
         console.log("res", res);
+        if (res.code === 0 && res.req_1?.code === 0 && res.req_1?.data?.code === 0) {
+          const { body, meta } = res.req_1?.data || {};
+          if (body != null) {
+            return {
+              ...body,
+              pageNum: meta.curpage,
+              pageSize: meta.perpage,
+              total: meta.estimate_sum
+            };
+          }
+        }
+        throw new Error("搜索失败");
       };
       const styles$1 = {
         "song-search-modal": "_song-search-modal_15iqn_1",
@@ -37498,6 +37577,12 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         "singer-name": "_singer-name_15iqn_60",
         "song-mid-text": "_song-mid-text_15iqn_75"
       };
+      const sizeByQuality = (file, quality) => {
+        if (quality === 128) return file.size_128mp3;
+        if (quality === 320) return file.size_320mp3;
+        if (quality === "flac") return file.size_flac;
+        return file.size_128mp3;
+      };
       const SongTab$1 = ({ data, loading: loading2 }) => {
         const { downloadConfig } = useConfig();
         const { quality: defaultQuality } = downloadConfig;
@@ -37509,11 +37594,8 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         const handleChooseQuality = (record, quality) => {
           setList(
             list.map((item) => {
-              if (item.songmid === record.songmid) {
-                return {
-                  ...item,
-                  quality
-                };
+              if (item.mid === record.mid) {
+                return { ...item, quality };
               }
               return item;
             })
@@ -37525,28 +37607,28 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
             pause();
           } else {
             const finalQuality = getQuality(record, defaultQuality, record.quality);
-            play(record.songmid, finalQuality);
+            play(record.mid, finalQuality);
           }
         };
         const handleDownload = async (record) => {
           try {
             const finalQuality = getQuality(record, defaultQuality, record.quality);
-            await download(record.songmid, finalQuality);
+            await download(record.mid, finalQuality);
           } catch (error) {
             console.error("下载歌曲失败:", error);
           }
         };
         const handleDownloadLyric = async (record) => {
           try {
-            const lyric = await getLyric(record.songmid);
-            downloadAsLRC(lyric, record.songname);
+            const lyric = await getLyric(record.mid);
+            downloadAsLRC(lyric, record.name);
           } catch (error) {
             console.error("下载歌词失败:", error);
           }
         };
         const handleDownloadNeteaseMusic = async (record) => {
           try {
-            await convertToNeteaseMusic(record.songmid);
+            await convertToNeteaseMusic(record.mid);
             msgSuccess("歌曲转存网易云成功");
           } catch (error) {
             console.log("error", error);
@@ -37556,13 +37638,13 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         const columns_song = [
           {
             title: "歌曲信息",
-            dataIndex: "songname",
+            dataIndex: "name",
             width: 300,
             render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { size: "middle", className: styles$1["song-info"], children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["song-cover"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { src: getAlbumPicUrl(record.albummid) }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["song-cover"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { src: getAlbumPicUrl(record.album.mid) }) }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["song-details"], children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["song-name"], title: text, children: text }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["song-album"], title: record.albumname || "", children: record.albumname || "" })
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["song-album"], title: record.album.name || "", children: record.album.name || "" })
               ] })
             ] })
           },
@@ -37571,7 +37653,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
             dataIndex: "singer",
             width: 200,
             render: (singers) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { size: "small", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { src: getSingerPic(singers[0].mid), width: 40, height: 40 }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { src: getSingerPic(singers[0]?.mid), width: 40, height: 40 }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["singer-info"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "div",
                 {
@@ -37584,45 +37666,35 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
           },
           {
             title: "专辑",
-            dataIndex: "albumname",
+            dataIndex: ["album", "name"],
             width: 200,
             ellipsis: true
           },
           {
             title: "大小",
-            dataIndex: "size128",
             width: 120,
             align: "center",
             render: (_, record) => {
-              const quality = record.quality || defaultQuality;
-              const sizeKey = `size${quality}`;
-              if (record.quality) {
-                console.log("quality", quality);
-                console.log("sizeKey", sizeKey);
-              }
-              const size = record[sizeKey] || 0;
+              const quality = getQuality(record, defaultQuality, record.quality);
+              const size = sizeByQuality(record.file, quality);
               return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
-                Math.round(size / 1024 / 1024),
+                Math.round((size || 0) / 1024 / 1024),
                 "MB"
               ] });
             }
           },
-          // 音质选择器
           {
             title: "音质",
             key: "quality",
             width: 150,
             align: "center",
             render: (_, record) => {
-              const qualityList = getFileQualityList(record);
+              const qualityList = getFile_qualityList(record.file);
               const defaultValue = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
               return /* @__PURE__ */ jsxRuntimeExports.jsx(
                 Select,
                 {
-                  options: qualityList.map((quality) => ({
-                    label: quality,
-                    value: quality
-                  })),
+                  options: qualityList.map((q) => ({ label: q, value: q })),
                   defaultValue,
                   style: { width: "100%" },
                   onChange: (value) => {
@@ -37638,7 +37710,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
             width: 150,
             align: "center",
             render: (_, record) => {
-              const qualityList = getFileQualityList(record);
+              const qualityList = getFile_qualityList(record.file);
               const qualityColorMap = {
                 flac: "green",
                 ape: "volcano",
@@ -37658,10 +37730,10 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
           },
           {
             title: "歌曲ID",
-            dataIndex: "songmid",
+            dataIndex: "mid",
             width: 200,
             align: "center",
-            render: (songmid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$1["song-mid-text"], text: songmid })
+            render: (mid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$1["song-mid-text"], text: mid })
           },
           {
             title: "操作",
@@ -37669,54 +37741,52 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
             width: 300,
             align: "center",
             fixed: "right",
-            render: (_, record) => {
-              return /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { size: "small", wrap: true, children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Button,
-                  {
-                    type: "link",
-                    size: "small",
-                    icon: isPlaying === record.songmid ? /* @__PURE__ */ jsxRuntimeExports.jsx(PauseCircleOutlined, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(PlayCircleOutlined, {}),
-                    onClick: () => handlePlay(record),
-                    title: "播放歌曲",
-                    children: "播放"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  MyButton,
-                  {
-                    type: "link",
-                    size: "small",
-                    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DownloadOutlined, {}),
-                    onClick: () => handleDownload(record),
-                    title: "下载歌曲",
-                    children: "下载"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  MyButton,
-                  {
-                    type: "link",
-                    size: "small",
-                    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(FileOutlined, {}),
-                    onClick: () => handleDownloadLyric(record),
-                    title: "下载歌词",
-                    children: "下载歌词"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  MyButton,
-                  {
-                    type: "link",
-                    size: "small",
-                    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(CloudDownloadOutlined, {}),
-                    onClick: () => handleDownloadNeteaseMusic(record),
-                    title: "转存网易云",
-                    children: "转存网易云"
-                  }
-                )
-              ] });
-            }
+            render: (_, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { size: "small", wrap: true, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Button,
+                {
+                  type: "link",
+                  size: "small",
+                  icon: isPlaying === record.mid ? /* @__PURE__ */ jsxRuntimeExports.jsx(PauseCircleOutlined, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(PlayCircleOutlined, {}),
+                  onClick: () => handlePlay(record),
+                  title: "播放歌曲",
+                  children: "播放"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                MyButton,
+                {
+                  type: "link",
+                  size: "small",
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DownloadOutlined, {}),
+                  onClick: () => handleDownload(record),
+                  title: "下载歌曲",
+                  children: "下载"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                MyButton,
+                {
+                  type: "link",
+                  size: "small",
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(FileOutlined, {}),
+                  onClick: () => handleDownloadLyric(record),
+                  title: "下载歌词",
+                  children: "下载歌词"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                MyButton,
+                {
+                  type: "link",
+                  size: "small",
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(CloudDownloadOutlined, {}),
+                  onClick: () => handleDownloadNeteaseMusic(record),
+                  title: "转存网易云",
+                  children: "转存网易云"
+                }
+              )
+            ] })
           }
         ];
         return /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -37724,7 +37794,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
           {
             columns: columns_song,
             dataSource: list,
-            rowKey: "songmid",
+            rowKey: "mid",
             loading: loading2,
             scroll: { y: 500, x: 1100 },
             className: styles$1["song-table"],
@@ -37732,12 +37802,11 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
           }
         );
       };
-      const getQuality = (record, defaultQuality, chooseQuality) => {
-        const qualityList = getFileQualityList(record);
+      function getQuality(record, defaultQuality, chooseQuality) {
+        const qualityList = getFile_qualityList(record.file);
         const songDefaultQuality = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
-        const finalQuality = chooseQuality || songDefaultQuality;
-        return finalQuality;
-      };
+        return chooseQuality || songDefaultQuality;
+      }
       const AlbumTab$1 = ({ data, loading: loading2 }) => {
         const albumDetailRef = useCompRef();
         const { pause, isPlaying } = usePlayMusic();
@@ -38094,64 +38163,6 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
           }
         );
       };
-      const LyricTab = ({ data, loading: loading2 }) => {
-        const columns_lyric = [
-          {
-            title: "歌曲信息",
-            dataIndex: "songname",
-            width: 300,
-            render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { size: "middle", className: styles$1["song-info"], children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["song-cover"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { src: getAlbumPicUrl(record.albummid) }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["song-details"], children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["song-name"], title: text, children: text }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["song-album"], title: record.albumname || "", children: record.albumname || "" })
-              ] })
-            ] })
-          },
-          {
-            title: "歌手",
-            dataIndex: "singer",
-            width: 200,
-            render: (singers) => /* @__PURE__ */ jsxRuntimeExports.jsx(Space, { size: "small", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["singer-info"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "div",
-              {
-                className: styles$1["singer-name"],
-                title: singers?.map((s) => s.name).join("/") || "未知歌手",
-                children: singers?.map((s) => s.name).join("/") || "未知歌手"
-              }
-            ) }) })
-          },
-          {
-            title: "歌词预览",
-            dataIndex: "content",
-            width: 300,
-            ellipsis: true,
-            render: (content) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { title: content, style: { maxWidth: 300 }, children: [
-              content?.substring(0, 50),
-              "..."
-            ] })
-          },
-          {
-            title: "歌曲ID",
-            dataIndex: "songmid",
-            width: 200,
-            align: "center",
-            render: (songmid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$1["song-mid-text"], text: songmid })
-          }
-        ];
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Table,
-          {
-            columns: columns_lyric,
-            dataSource: data,
-            rowKey: "songmid",
-            loading: loading2,
-            scroll: { y: 500, x: 1100 },
-            className: styles$1["song-table"],
-            pagination: false
-          }
-        );
-      };
       const defaultSearchParams = {
         pageNum: 1,
         pageSize: 20,
@@ -38181,11 +38192,14 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
           });
         };
         const { data, loading: loading2 } = useGetData(
-          () => getSearchResult(searchParams.keyword, searchParams.type, searchParams),
+          () => getWebSearchResult(searchParams.keyword, searchParams.type, searchParams),
           void 0,
           {
             returnFunction: () => !searchParams.keyword || !visible,
-            monitors: [searchParams, visible]
+            monitors: [searchParams, visible],
+            callback: (data2) => {
+              console.log("data", data2);
+            }
           }
         );
         const renderTitle = () => {
@@ -38218,8 +38232,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
                     /* @__PURE__ */ jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "歌曲", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SongTab$1, { data: data?.song?.list || [], loading: loading2 }) }, "song"),
                     /* @__PURE__ */ jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "专辑", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AlbumTab$1, { data: data?.album?.list || [], loading: loading2 }) }, "album"),
                     /* @__PURE__ */ jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "歌手", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SingerTab$1, { data: data?.singer?.list || [], loading: loading2 }) }, "user"),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "MV", children: /* @__PURE__ */ jsxRuntimeExports.jsx(MvTab, { data: data?.mv?.list || [], loading: loading2 }) }, "mv"),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "歌词", children: /* @__PURE__ */ jsxRuntimeExports.jsx(LyricTab, { data: data?.lyric?.list || [], loading: loading2 }) }, "lyric")
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "MV", children: /* @__PURE__ */ jsxRuntimeExports.jsx(MvTab, { data: data?.mv?.list || [], loading: loading2 }) }, "mv")
                   ]
                 }
               ),
@@ -38227,22 +38240,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
                 Pagination,
                 {
                   align: "end",
-                  total: (() => {
-                    switch (searchParams.type) {
-                      case "song":
-                        return data?.song?.totalnum || 0;
-                      case "album":
-                        return data?.album?.totalnum || 0;
-                      case "user":
-                        return data?.singer?.totalnum || 0;
-                      case "mv":
-                        return data?.mv?.totalnum || 0;
-                      case "lyric":
-                        return data?.lyric?.totalnum || 0;
-                      default:
-                        return 0;
-                    }
-                  })(),
+                  total: data?.total,
                   current: searchParams.pageNum,
                   pageSize: searchParams.pageSize,
                   showSizeChanger: true,
@@ -39384,7 +39382,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
   };
 }));
 
-System.register("./MpegParser-HNTEbzll-DLtBFxsC.js", ['./main-CXRpBxPh-DsjFkeKp.js', './AbstractID3Parser-BmhZmsmA-DR9qYlU8.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-C2gEjETs-Bt48QREk.js'], (function (exports, module) {
+System.register("./MpegParser-DfWJ4kwL-DlNvfYRn.js", ['./main-Dx7QgiG_-CM1Na34k.js', './AbstractID3Parser-BrhoJB0T-CFAV736x.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-DQgXK-sr-6dJ9pWUQ.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -40013,7 +40011,7 @@ System.register("./MpegParser-HNTEbzll-DLtBFxsC.js", ['./main-CXRpBxPh-DsjFkeKp.
   };
 }));
 
-System.register("./AsfParser-wkYX8Xl--BFdv9sIu.js", ['./main-CXRpBxPh-DsjFkeKp.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-B3ohu62N-LLyTYc_7.js", ['./main-Dx7QgiG_-CM1Na34k.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -40541,7 +40539,7 @@ System.register("./AsfParser-wkYX8Xl--BFdv9sIu.js", ['./main-CXRpBxPh-DsjFkeKp.j
   };
 }));
 
-System.register("./DsdiffParser-hxWITvS--WfxXQKpz.js", ['./main-CXRpBxPh-DsjFkeKp.js', './ID3v2Parser-C2gEjETs-Bt48QREk.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-CAlIhs3v-DX2DNR_7.js", ['./main-Dx7QgiG_-CM1Na34k.js', './ID3v2Parser-DQgXK-sr-6dJ9pWUQ.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -40718,7 +40716,7 @@ System.register("./DsdiffParser-hxWITvS--WfxXQKpz.js", ['./main-CXRpBxPh-DsjFkeK
   };
 }));
 
-System.register("./AiffParser-B8x3Zd7d-BiFHwbWE.js", ['./main-CXRpBxPh-DsjFkeKp.js', './ID3v2Parser-C2gEjETs-Bt48QREk.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-CfyCvuGG-DHZwquJ8.js", ['./main-Dx7QgiG_-CM1Na34k.js', './ID3v2Parser-DQgXK-sr-6dJ9pWUQ.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -40895,7 +40893,7 @@ System.register("./AiffParser-B8x3Zd7d-BiFHwbWE.js", ['./main-CXRpBxPh-DsjFkeKp.
   };
 }));
 
-System.register("./DsfParser-CFC-EdZU-iurryzge.js", ['./main-CXRpBxPh-DsjFkeKp.js', './AbstractID3Parser-BmhZmsmA-DR9qYlU8.js', './ID3v2Parser-C2gEjETs-Bt48QREk.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-8VzHwIyf-BlgjadK4.js", ['./main-Dx7QgiG_-CM1Na34k.js', './AbstractID3Parser-BrhoJB0T-CFAV736x.js', './ID3v2Parser-DQgXK-sr-6dJ9pWUQ.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -40994,7 +40992,7 @@ System.register("./DsfParser-CFC-EdZU-iurryzge.js", ['./main-CXRpBxPh-DsjFkeKp.j
   };
 }));
 
-System.register("./MatroskaParser-BeTA0VLu-LcCGf8E5.js", ['./main-CXRpBxPh-DsjFkeKp.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-BISMahKb-ClcPmH63.js", ['./main-Dx7QgiG_-CM1Na34k.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -41639,7 +41637,7 @@ System.register("./MatroskaParser-BeTA0VLu-LcCGf8E5.js", ['./main-CXRpBxPh-DsjFk
   };
 }));
 
-System.register("./MP4Parser-BJmNbJg_-JtFS82B_.js", ['./main-CXRpBxPh-DsjFkeKp.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-C1BTHs8Q-COxvQcXO.js", ['./main-Dx7QgiG_-CM1Na34k.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, textDecode, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, getBit, INT16_BE;
   return {
@@ -42747,7 +42745,7 @@ System.register("./MP4Parser-BJmNbJg_-JtFS82B_.js", ['./main-CXRpBxPh-DsjFkeKp.j
   };
 }));
 
-System.register("./MusepackParser-BQLrWktD-BKVA17BJ.js", ['./main-CXRpBxPh-DsjFkeKp.js', './AbstractID3Parser-BmhZmsmA-DR9qYlU8.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-C2gEjETs-Bt48QREk.js'], (function (exports, module) {
+System.register("./MusepackParser-CPj31G3i-DyWh6lI0.js", ['./main-Dx7QgiG_-CM1Na34k.js', './AbstractID3Parser-BrhoJB0T-CFAV736x.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-DQgXK-sr-6dJ9pWUQ.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, tryParseApeHeader, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, textDecode, AbstractID3Parser;
   return {
@@ -43041,7 +43039,7 @@ System.register("./MusepackParser-BQLrWktD-BKVA17BJ.js", ['./main-CXRpBxPh-DsjFk
   };
 }));
 
-System.register("./OggParser-DwRpMXJH-CfZfubsd.js", ['./main-CXRpBxPh-DsjFkeKp.js', './FlacParser-CumHzKqh-_CN7wTwV.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './AbstractID3Parser-BmhZmsmA-DR9qYlU8.js', './ID3v2Parser-C2gEjETs-Bt48QREk.js'], (function (exports, module) {
+System.register("./OggParser-DkvGON6m-BTomt2vR.js", ['./main-Dx7QgiG_-CM1Na34k.js', './FlacParser-BbIUWZbA-B2CgdxDq.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './AbstractID3Parser-BrhoJB0T-CFAV736x.js', './ID3v2Parser-DQgXK-sr-6dJ9pWUQ.js'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, UINT8, UINT32_LE, getBit, StringType, UINT64_LE, makeUnexpectedFileContentError, Uint8ArrayType, FourCcToken, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, VorbisStream, FlacParser, BlockHeader, BlockType, VorbisPictureToken, BlockStreamInfo;
   return {
@@ -43437,7 +43435,7 @@ System.register("./OggParser-DwRpMXJH-CfZfubsd.js", ['./main-CXRpBxPh-DsjFkeKp.j
   };
 }));
 
-System.register("./FlacParser-CumHzKqh-_CN7wTwV.js", ['./main-CXRpBxPh-DsjFkeKp.js', './AbstractID3Parser-BmhZmsmA-DR9qYlU8.js'], (function (exports, module) {
+System.register("./FlacParser-BbIUWZbA-B2CgdxDq.js", ['./main-Dx7QgiG_-CM1Na34k.js', './AbstractID3Parser-BrhoJB0T-CFAV736x.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, UINT32_LE, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, textDecode, AttachedPictureType, UINT32_BE, StringType, UINT8, AbstractID3Parser;
   return {
@@ -43846,7 +43844,7 @@ System.register("./FlacParser-CumHzKqh-_CN7wTwV.js", ['./main-CXRpBxPh-DsjFkeKp.
   };
 }));
 
-System.register("./AbstractID3Parser-BmhZmsmA-DR9qYlU8.js", ['./main-CXRpBxPh-DsjFkeKp.js', './ID3v2Parser-C2gEjETs-Bt48QREk.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-BrhoJB0T-CFAV736x.js", ['./main-Dx7QgiG_-CM1Na34k.js', './ID3v2Parser-DQgXK-sr-6dJ9pWUQ.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -43910,7 +43908,7 @@ System.register("./AbstractID3Parser-BmhZmsmA-DR9qYlU8.js", ['./main-CXRpBxPh-Ds
   };
 }));
 
-System.register("./WavPackParser-DRV03EVY-DK4NC2LU.js", ['./main-CXRpBxPh-DsjFkeKp.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-ClbpBFl4-WuPl-D3i.js", ['./main-Dx7QgiG_-CM1Na34k.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, tryParseApeHeader, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -44107,7 +44105,7 @@ System.register("./WavPackParser-DRV03EVY-DK4NC2LU.js", ['./main-CXRpBxPh-DsjFke
   };
 }));
 
-System.register("./WaveParser-BYRMLe9O-5pZlYhTr.js", ['./main-CXRpBxPh-DsjFkeKp.js', './ID3v2Parser-C2gEjETs-Bt48QREk.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-0eqbtcCE-EyuUZA5w.js", ['./main-Dx7QgiG_-CM1Na34k.js', './ID3v2Parser-DQgXK-sr-6dJ9pWUQ.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -44386,7 +44384,7 @@ System.register("./WaveParser-BYRMLe9O-5pZlYhTr.js", ['./main-CXRpBxPh-DsjFkeKp.
   };
 }));
 
-System.register("./ID3v2Parser-C2gEjETs-Bt48QREk.js", ['./main-CXRpBxPh-DsjFkeKp.js'], (function (exports, module) {
+System.register("./ID3v2Parser-DQgXK-sr-6dJ9pWUQ.js", ['./main-Dx7QgiG_-CM1Na34k.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, textDecode, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
@@ -44953,7 +44951,7 @@ System.register("./ID3v2Parser-C2gEjETs-Bt48QREk.js", ['./main-CXRpBxPh-DsjFkeKp
   };
 }));
 
-System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./main-Dx7QgiG_-CM1Na34k.js", ['react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var forwardRef, useState, useMemo, useEffect, require$$0, useImperativeHandle, useRef, useCallback, useLayoutEffect, Input, DatePicker, Form, Typography, Modal, Button, Table, Spin, Descriptions, Space, Image, Pagination, Select, Tabs, ConfigProvider, Avatar, Tag, Tooltip, message$1, App$1, TreeSelect, Upload, Card, Switch, TimePicker, Checkbox, Radio, require$$0$1, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, UploadOutlined, DownloadOutlined, CloudDownloadOutlined, FileOutlined, PauseCircleOutlined, PlayCircleOutlined, UserOutlined, SaveOutlined, SelectOutlined, TrophyOutlined, ClockCircleOutlined, CopyOutlined, PictureOutlined, UnorderedListOutlined, ContainerOutlined, BookOutlined, SearchOutlined, InfoCircleOutlined;
   return {
@@ -52911,7 +52909,7 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-HNTEbzll-DLtBFxsC.js');
+            const { MpegParser } = await module.import('./MpegParser-DfWJ4kwL-DlNvfYRn.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -52933,7 +52931,7 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-wkYX8Xl--BFdv9sIu.js');
+            const { AsfParser } = await module.import('./AsfParser-B3ohu62N-LLyTYc_7.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -52944,7 +52942,7 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-hxWITvS--WfxXQKpz.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-CAlIhs3v-DX2DNR_7.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -52955,7 +52953,7 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-B8x3Zd7d-BiFHwbWE.js');
+            const { AIFFParser } = await module.import('./AiffParser-CfyCvuGG-DHZwquJ8.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -52966,7 +52964,7 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-CFC-EdZU-iurryzge.js');
+            const { DsfParser } = await module.import('./DsfParser-8VzHwIyf-BlgjadK4.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -52977,7 +52975,7 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-CumHzKqh-_CN7wTwV.js').then((n) => n.d);
+            const { FlacParser } = await module.import('./FlacParser-BbIUWZbA-B2CgdxDq.js').then((n) => n.d);
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -52988,7 +52986,7 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-BeTA0VLu-LcCGf8E5.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-BISMahKb-ClcPmH63.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -52999,7 +52997,7 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-BJmNbJg_-JtFS82B_.js');
+            const { MP4Parser } = await module.import('./MP4Parser-C1BTHs8Q-COxvQcXO.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -53010,7 +53008,7 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-BQLrWktD-BKVA17BJ.js');
+            const { MusepackParser } = await module.import('./MusepackParser-CPj31G3i-DyWh6lI0.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -53022,7 +53020,7 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
         // RFC 7845, RFC 6716, RFC 5574
         async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-DwRpMXJH-CfZfubsd.js');
+            const { OggParser } = await module.import('./OggParser-DkvGON6m-BTomt2vR.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -53033,7 +53031,7 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-DRV03EVY-DK4NC2LU.js');
+            const { WavPackParser } = await module.import('./WavPackParser-ClbpBFl4-WuPl-D3i.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -53044,7 +53042,7 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-BYRMLe9O-5pZlYhTr.js');
+            const { WaveParser } = await module.import('./WaveParser-0eqbtcCE-EyuUZA5w.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -54065,6 +54063,54 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
             format: ""
           };
         }
+      }
+      function multiplyDecimalStrings(multiplicand, multiplier) {
+        const leftDigits = `${multiplicand}`.split("").reverse();
+        const rightDigits = `${multiplier}`.split("").reverse();
+        const result = [];
+        const leftLen = leftDigits.length;
+        const rightLen = rightDigits.length;
+        const maxIndex = leftLen + rightLen - 1;
+        for (let k = 0; k <= maxIndex; k++) {
+          result[k] = 0;
+        }
+        for (let j = 0; j < rightLen; j++) {
+          for (let i = 0; i < leftLen; i++) {
+            result[i + j] += parseInt(leftDigits[i], 10) * parseInt(rightDigits[j], 10);
+            result[i + j + 1] += Math.floor(result[i + j] / 10);
+            result[i + j] = result[i + j] % 10;
+          }
+        }
+        result.reverse();
+        if (result[0] === 0) result.shift();
+        return result.join("");
+      }
+      function addDecimalStrings(augend, addend) {
+        const augendRev = `${augend}`.split("").reverse();
+        const addendRev = `${addend}`.split("").reverse();
+        const lenA = augendRev.length;
+        const lenB = addendRev.length;
+        let carry = 0;
+        const maxLen = Math.max(lenA, lenB);
+        for (let k = 0; k < maxLen; k++) {
+          const d1 = k < lenA ? parseInt(augendRev[k], 10) : 0;
+          const d2 = k < lenB ? parseInt(addendRev[k], 10) : 0;
+          const sum = d1 + d2 + carry;
+          augendRev[k] = `${sum % 10}`;
+          carry = sum >= 10 ? 1 : 0;
+        }
+        if (carry === 1) augendRev.push("1");
+        return augendRev.reverse().join("");
+      }
+      function generateSearchObfuscatedId(seed) {
+        const scaledSeed = multiplyDecimalStrings(seed, "18014398509481984");
+        const randomPart = multiplyDecimalStrings(
+          Math.round(Math.random() * parseInt("4194304", 10)),
+          "4294967296"
+        );
+        const now = /* @__PURE__ */ new Date();
+        const dayTimeMs = 1e3 * (3600 * now.getHours() + 60 * now.getMinutes() + now.getSeconds()) + now.getMilliseconds();
+        return addDecimalStrings(addDecimalStrings(scaledSeed, randomPart), dayTimeMs);
       }
       const urlAlphabet = "useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";
       let nanoid = (size = 21) => {
@@ -83130,7 +83176,7 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
         mv: 12
       };
       const getSearchResult = async (keyword, type = "song", options) => {
-        const { pageNum = 1, pageSize = 20 } = options || {};
+        const { pageNum = 1, pageSize = 20 } = {};
         const params = {
           w: keyword,
           n: pageSize,
@@ -83153,13 +83199,30 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
           },
           "c"
         );
+        console.log("res", res);
         if (res.code === 0) {
           return res.data;
         }
         throw new Error("搜索失败");
       };
       const getWebSearchResult = async (keyword, type = "song", options) => {
-        const { pageNum = 1, pageSize = 20 } = {};
+        const { pageNum = 1, pageSize = 20 } = options || {};
+        const f = {
+          song: 3,
+          album: 4,
+          playlist: 6,
+          user: 13,
+          lyric: 5,
+          mv: 7
+        };
+        const p = {
+          song: 0,
+          album: 2,
+          mv: 4,
+          playlist: 3,
+          user: 1,
+          lyric: 7
+        };
         const params = {
           req_1: {
             method: "DoSearchForQQMusicDesktop",
@@ -83168,7 +83231,9 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
               num_per_page: Number(pageSize),
               page_num: Number(pageNum),
               query: keyword,
-              search_type: Number(typeMap[type])
+              remoteplace: "txt.yqq.center",
+              search_type: Number(p[type]),
+              searchid: generateSearchObfuscatedId(f[type])
             }
           }
         };
@@ -83182,6 +83247,18 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
           "u"
         );
         console.log("res", res);
+        if (res.code === 0 && res.req_1?.code === 0 && res.req_1?.data?.code === 0) {
+          const { body, meta } = res.req_1?.data || {};
+          if (body != null) {
+            return {
+              ...body,
+              pageNum: meta.curpage,
+              pageSize: meta.perpage,
+              total: meta.estimate_sum
+            };
+          }
+        }
+        throw new Error("搜索失败");
       };
       const styles$1 = {
         "song-search-modal": "_song-search-modal_15iqn_1",
@@ -83198,6 +83275,12 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
         "singer-name": "_singer-name_15iqn_60",
         "song-mid-text": "_song-mid-text_15iqn_75"
       };
+      const sizeByQuality = (file, quality) => {
+        if (quality === 128) return file.size_128mp3;
+        if (quality === 320) return file.size_320mp3;
+        if (quality === "flac") return file.size_flac;
+        return file.size_128mp3;
+      };
       const SongTab$1 = ({ data, loading: loading2 }) => {
         const { downloadConfig } = useConfig();
         const { quality: defaultQuality } = downloadConfig;
@@ -83209,11 +83292,8 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
         const handleChooseQuality = (record, quality) => {
           setList(
             list.map((item) => {
-              if (item.songmid === record.songmid) {
-                return {
-                  ...item,
-                  quality
-                };
+              if (item.mid === record.mid) {
+                return { ...item, quality };
               }
               return item;
             })
@@ -83225,28 +83305,28 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
             pause();
           } else {
             const finalQuality = getQuality(record, defaultQuality, record.quality);
-            play(record.songmid, finalQuality);
+            play(record.mid, finalQuality);
           }
         };
         const handleDownload = async (record) => {
           try {
             const finalQuality = getQuality(record, defaultQuality, record.quality);
-            await download(record.songmid, finalQuality);
+            await download(record.mid, finalQuality);
           } catch (error) {
             console.error("下载歌曲失败:", error);
           }
         };
         const handleDownloadLyric = async (record) => {
           try {
-            const lyric = await getLyric(record.songmid);
-            downloadAsLRC(lyric, record.songname);
+            const lyric = await getLyric(record.mid);
+            downloadAsLRC(lyric, record.name);
           } catch (error) {
             console.error("下载歌词失败:", error);
           }
         };
         const handleDownloadNeteaseMusic = async (record) => {
           try {
-            await convertToNeteaseMusic(record.songmid);
+            await convertToNeteaseMusic(record.mid);
             msgSuccess("歌曲转存网易云成功");
           } catch (error) {
             console.log("error", error);
@@ -83256,13 +83336,13 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
         const columns_song = [
           {
             title: "歌曲信息",
-            dataIndex: "songname",
+            dataIndex: "name",
             width: 300,
             render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { size: "middle", className: styles$1["song-info"], children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["song-cover"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { src: getAlbumPicUrl(record.albummid) }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["song-cover"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { src: getAlbumPicUrl(record.album.mid) }) }),
               /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["song-details"], children: [
                 /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["song-name"], title: text, children: text }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["song-album"], title: record.albumname || "", children: record.albumname || "" })
+                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["song-album"], title: record.album.name || "", children: record.album.name || "" })
               ] })
             ] })
           },
@@ -83271,7 +83351,7 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
             dataIndex: "singer",
             width: 200,
             render: (singers) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { size: "small", children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { src: getSingerPic(singers[0].mid), width: 40, height: 40 }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { src: getSingerPic(singers[0]?.mid), width: 40, height: 40 }),
               /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["singer-info"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(
                 "div",
                 {
@@ -83284,45 +83364,35 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
           },
           {
             title: "专辑",
-            dataIndex: "albumname",
+            dataIndex: ["album", "name"],
             width: 200,
             ellipsis: true
           },
           {
             title: "大小",
-            dataIndex: "size128",
             width: 120,
             align: "center",
             render: (_, record) => {
-              const quality = record.quality || defaultQuality;
-              const sizeKey = `size${quality}`;
-              if (record.quality) {
-                console.log("quality", quality);
-                console.log("sizeKey", sizeKey);
-              }
-              const size = record[sizeKey] || 0;
+              const quality = getQuality(record, defaultQuality, record.quality);
+              const size = sizeByQuality(record.file, quality);
               return /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { children: [
-                Math.round(size / 1024 / 1024),
+                Math.round((size || 0) / 1024 / 1024),
                 "MB"
               ] });
             }
           },
-          // 音质选择器
           {
             title: "音质",
             key: "quality",
             width: 150,
             align: "center",
             render: (_, record) => {
-              const qualityList = getFileQualityList(record);
+              const qualityList = getFile_qualityList(record.file);
               const defaultValue = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
               return /* @__PURE__ */ jsxRuntimeExports.jsx(
                 Select,
                 {
-                  options: qualityList.map((quality) => ({
-                    label: quality,
-                    value: quality
-                  })),
+                  options: qualityList.map((q) => ({ label: q, value: q })),
                   defaultValue,
                   style: { width: "100%" },
                   onChange: (value) => {
@@ -83338,7 +83408,7 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
             width: 150,
             align: "center",
             render: (_, record) => {
-              const qualityList = getFileQualityList(record);
+              const qualityList = getFile_qualityList(record.file);
               const qualityColorMap = {
                 flac: "green",
                 ape: "volcano",
@@ -83358,10 +83428,10 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
           },
           {
             title: "歌曲ID",
-            dataIndex: "songmid",
+            dataIndex: "mid",
             width: 200,
             align: "center",
-            render: (songmid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$1["song-mid-text"], text: songmid })
+            render: (mid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$1["song-mid-text"], text: mid })
           },
           {
             title: "操作",
@@ -83369,54 +83439,52 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
             width: 300,
             align: "center",
             fixed: "right",
-            render: (_, record) => {
-              return /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { size: "small", wrap: true, children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Button,
-                  {
-                    type: "link",
-                    size: "small",
-                    icon: isPlaying === record.songmid ? /* @__PURE__ */ jsxRuntimeExports.jsx(PauseCircleOutlined, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(PlayCircleOutlined, {}),
-                    onClick: () => handlePlay(record),
-                    title: "播放歌曲",
-                    children: "播放"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  MyButton,
-                  {
-                    type: "link",
-                    size: "small",
-                    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DownloadOutlined, {}),
-                    onClick: () => handleDownload(record),
-                    title: "下载歌曲",
-                    children: "下载"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  MyButton,
-                  {
-                    type: "link",
-                    size: "small",
-                    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(FileOutlined, {}),
-                    onClick: () => handleDownloadLyric(record),
-                    title: "下载歌词",
-                    children: "下载歌词"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  MyButton,
-                  {
-                    type: "link",
-                    size: "small",
-                    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(CloudDownloadOutlined, {}),
-                    onClick: () => handleDownloadNeteaseMusic(record),
-                    title: "转存网易云",
-                    children: "转存网易云"
-                  }
-                )
-              ] });
-            }
+            render: (_, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { size: "small", wrap: true, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Button,
+                {
+                  type: "link",
+                  size: "small",
+                  icon: isPlaying === record.mid ? /* @__PURE__ */ jsxRuntimeExports.jsx(PauseCircleOutlined, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(PlayCircleOutlined, {}),
+                  onClick: () => handlePlay(record),
+                  title: "播放歌曲",
+                  children: "播放"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                MyButton,
+                {
+                  type: "link",
+                  size: "small",
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DownloadOutlined, {}),
+                  onClick: () => handleDownload(record),
+                  title: "下载歌曲",
+                  children: "下载"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                MyButton,
+                {
+                  type: "link",
+                  size: "small",
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(FileOutlined, {}),
+                  onClick: () => handleDownloadLyric(record),
+                  title: "下载歌词",
+                  children: "下载歌词"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                MyButton,
+                {
+                  type: "link",
+                  size: "small",
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(CloudDownloadOutlined, {}),
+                  onClick: () => handleDownloadNeteaseMusic(record),
+                  title: "转存网易云",
+                  children: "转存网易云"
+                }
+              )
+            ] })
           }
         ];
         return /* @__PURE__ */ jsxRuntimeExports.jsx(
@@ -83424,7 +83492,7 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
           {
             columns: columns_song,
             dataSource: list,
-            rowKey: "songmid",
+            rowKey: "mid",
             loading: loading2,
             scroll: { y: 500, x: 1100 },
             className: styles$1["song-table"],
@@ -83432,12 +83500,11 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
           }
         );
       };
-      const getQuality = (record, defaultQuality, chooseQuality) => {
-        const qualityList = getFileQualityList(record);
+      function getQuality(record, defaultQuality, chooseQuality) {
+        const qualityList = getFile_qualityList(record.file);
         const songDefaultQuality = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
-        const finalQuality = chooseQuality || songDefaultQuality;
-        return finalQuality;
-      };
+        return chooseQuality || songDefaultQuality;
+      }
       const AlbumTab$1 = ({ data, loading: loading2 }) => {
         const albumDetailRef = useCompRef();
         const { pause, isPlaying } = usePlayMusic();
@@ -83794,64 +83861,6 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
           }
         );
       };
-      const LyricTab = ({ data, loading: loading2 }) => {
-        const columns_lyric = [
-          {
-            title: "歌曲信息",
-            dataIndex: "songname",
-            width: 300,
-            render: (text, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { size: "middle", className: styles$1["song-info"], children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["song-cover"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(Image, { src: getAlbumPicUrl(record.albummid) }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$1["song-details"], children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["song-name"], title: text, children: text }),
-                /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["song-album"], title: record.albumname || "", children: record.albumname || "" })
-              ] })
-            ] })
-          },
-          {
-            title: "歌手",
-            dataIndex: "singer",
-            width: 200,
-            render: (singers) => /* @__PURE__ */ jsxRuntimeExports.jsx(Space, { size: "small", children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$1["singer-info"], children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-              "div",
-              {
-                className: styles$1["singer-name"],
-                title: singers?.map((s) => s.name).join("/") || "未知歌手",
-                children: singers?.map((s) => s.name).join("/") || "未知歌手"
-              }
-            ) }) })
-          },
-          {
-            title: "歌词预览",
-            dataIndex: "content",
-            width: 300,
-            ellipsis: true,
-            render: (content) => /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { title: content, style: { maxWidth: 300 }, children: [
-              content?.substring(0, 50),
-              "..."
-            ] })
-          },
-          {
-            title: "歌曲ID",
-            dataIndex: "songmid",
-            width: 200,
-            align: "center",
-            render: (songmid) => /* @__PURE__ */ jsxRuntimeExports.jsx(CopyText, { className: styles$1["song-mid-text"], text: songmid })
-          }
-        ];
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Table,
-          {
-            columns: columns_lyric,
-            dataSource: data,
-            rowKey: "songmid",
-            loading: loading2,
-            scroll: { y: 500, x: 1100 },
-            className: styles$1["song-table"],
-            pagination: false
-          }
-        );
-      };
       const defaultSearchParams = {
         pageNum: 1,
         pageSize: 20,
@@ -83881,11 +83890,14 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
           });
         };
         const { data, loading: loading2 } = useGetData(
-          () => getSearchResult(searchParams.keyword, searchParams.type, searchParams),
+          () => getWebSearchResult(searchParams.keyword, searchParams.type, searchParams),
           void 0,
           {
             returnFunction: () => !searchParams.keyword || !visible,
-            monitors: [searchParams, visible]
+            monitors: [searchParams, visible],
+            callback: (data2) => {
+              console.log("data", data2);
+            }
           }
         );
         const renderTitle = () => {
@@ -83918,8 +83930,7 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
                     /* @__PURE__ */ jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "歌曲", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SongTab$1, { data: data?.song?.list || [], loading: loading2 }) }, "song"),
                     /* @__PURE__ */ jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "专辑", children: /* @__PURE__ */ jsxRuntimeExports.jsx(AlbumTab$1, { data: data?.album?.list || [], loading: loading2 }) }, "album"),
                     /* @__PURE__ */ jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "歌手", children: /* @__PURE__ */ jsxRuntimeExports.jsx(SingerTab$1, { data: data?.singer?.list || [], loading: loading2 }) }, "user"),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "MV", children: /* @__PURE__ */ jsxRuntimeExports.jsx(MvTab, { data: data?.mv?.list || [], loading: loading2 }) }, "mv"),
-                    /* @__PURE__ */ jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "歌词", children: /* @__PURE__ */ jsxRuntimeExports.jsx(LyricTab, { data: data?.lyric?.list || [], loading: loading2 }) }, "lyric")
+                    /* @__PURE__ */ jsxRuntimeExports.jsx(Tabs.TabPane, { tab: "MV", children: /* @__PURE__ */ jsxRuntimeExports.jsx(MvTab, { data: data?.mv?.list || [], loading: loading2 }) }, "mv")
                   ]
                 }
               ),
@@ -83927,22 +83938,7 @@ System.register("./main-CXRpBxPh-DsjFkeKp.js", ['react', 'antd', 'react-dom', '@
                 Pagination,
                 {
                   align: "end",
-                  total: (() => {
-                    switch (searchParams.type) {
-                      case "song":
-                        return data?.song?.totalnum || 0;
-                      case "album":
-                        return data?.album?.totalnum || 0;
-                      case "user":
-                        return data?.singer?.totalnum || 0;
-                      case "mv":
-                        return data?.mv?.totalnum || 0;
-                      case "lyric":
-                        return data?.lyric?.totalnum || 0;
-                      default:
-                        return 0;
-                    }
-                  })(),
+                  total: data?.total,
                   current: searchParams.pageNum,
                   pageSize: searchParams.pageSize,
                   showSizeChanger: true,
