@@ -1,7 +1,10 @@
+import { getAlbumPicUrl } from '@/apis/album';
 import { getSongListDetail } from '@/apis/songList';
 import type { FileType } from '@/constants';
 import type { PlaylistInfo } from '@/types/songList';
+import type { SongInfo } from '@/types/singer';
 import { getFile_qualityList, promiseLimit } from '@/utils';
+import { groupBy } from 'lodash';
 import { useRef, useState } from 'react';
 import { usePlayMusic } from './usePlayMusic';
 import { useConfig } from './useConfig';
@@ -149,24 +152,48 @@ export const useGetSonglistDetail = () => {
   const getPlaylistDownloadJson = async (dissid: string) => {
     const playlistDetail = await getPlaylistDetail(dissid);
     const { dissname, songlist } = playlistDetail || {};
-    const promiseArr = songlist?.map((item) => async () => {
+    const playlistCover = playlistDetail?.pic_mid
+      ? `https://y.gtimg.cn/music/photo_new/T002R300x300M000${playlistDetail.pic_mid}.jpg`
+      : '';
+
+    if (!songlist?.length) {
+      return {
+        playlistName: dissname,
+        playlistCover,
+        albums: [],
+      };
+    }
+
+    const promiseArr = songlist.map((item) => async () => {
       const lrcContent = await getLyric(item.mid);
       const qualityList = getFile_qualityList(item.file);
       const finalQuality = qualityList.includes(downloadQuality) ? downloadQuality : qualityList[0];
       const url = await getUrl(item.mid, finalQuality);
       return {
-        songName: item.name,
-        url,
+        ...item,
         lrcContent,
-      };
+        url,
+      } as SongInfo & { lrcContent: string; url: string };
     });
-    const songList = await promiseLimit(promiseArr!, 6);
-    return {
-      playlistName: dissname,
-      playlistCover: playlistDetail?.pic_mid
-        ? `https://y.gtimg.cn/music/photo_new/T002R300x300M000${playlistDetail.pic_mid}.jpg`
+    const res = await promiseLimit(promiseArr, 6);
+
+    const albumsMap = groupBy(res, (item) => item.album?.name ?? '');
+    const albums = Object.entries(albumsMap).map(([albumName, songs]) => ({
+      albumName: albumName || '未知专辑',
+      albumCover: songs[0]?.album?.mid
+        ? getAlbumPicUrl(songs[0].album.mid, { size: '300x300' })
         : '',
-      songList,
+      list: songs.map((song) => ({
+        songName: song.name,
+        url: song.url,
+        lrcContent: song.lrcContent,
+      })),
+    }));
+
+    return {
+      albums,
+      playlistName: dissname,
+      playlistCover,
     };
   };
 

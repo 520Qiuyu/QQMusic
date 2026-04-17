@@ -132,7 +132,7 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
   };
 
   // 歌曲表格列
-  const songColumns: ColumnType<AlbumSongInfo>[] = [
+  const songColumns: ColumnType<AlbumSongInfo & { quality?: keyof typeof FileType }>[] = [
     {
       title: '歌曲',
       dataIndex: 'songname',
@@ -173,7 +173,7 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
       key: 'quality',
       width: 100,
       align: 'center',
-      render: (_, record: AlbumSongInfo) => {
+      render: (_, record) => {
         const qualityList = getFileQualityList(record);
         const defaultValue = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
         return (
@@ -182,7 +182,7 @@ const AlbumDetail = forwardRef((_: unknown, ref: ForwardedRef<Ref<any, IOpenPara
               label: quality,
               value: quality,
             }))}
-            defaultValue={defaultValue}
+            value={record.quality || defaultValue}
             style={{ width: '100%' }}
             onChange={(value) => {
               handleChooseQuality(record, value as keyof typeof FileType);

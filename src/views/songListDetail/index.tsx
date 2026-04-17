@@ -357,7 +357,7 @@ const SongListDetail = forwardRef((_, ref: ForwardedRef<Ref<any, IOpenParams>>) 
     }
   };
   // 歌曲列表列配置
-  const songColumns: ColumnType<SongInfo>[] = [
+  const songColumns: ColumnType<SongInfo & { quality?: keyof typeof FileType }>[] = [
     {
       title: '歌曲信息',
       dataIndex: 'name',
@@ -442,7 +442,7 @@ const SongListDetail = forwardRef((_, ref: ForwardedRef<Ref<any, IOpenParams>>) 
       key: 'file',
       width: 120,
       align: 'center',
-      render: (file: SongInfo['file'], record: SongInfo) => {
+      render: (file: SongInfo['file'], record) => {
         const qualityList = getFile_qualityList(file);
         const defaultValue = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
         return (
@@ -451,7 +451,7 @@ const SongListDetail = forwardRef((_, ref: ForwardedRef<Ref<any, IOpenParams>>) 
               label: quality,
               value: quality,
             }))}
-            defaultValue={defaultValue}
+            value={record.quality || defaultValue}
             style={{ width: '100%' }}
             onChange={(value) => {
               handleChooseQuality(record, value as keyof typeof FileType);
@@ -643,7 +643,7 @@ const SongListDetail = forwardRef((_, ref: ForwardedRef<Ref<any, IOpenParams>>) 
     try {
       const data = await getPlaylistDownloadJson(currentDissid);
       console.log('data', data);
-      downloadAsJson(data, `${data.playlistName}.json`);
+      downloadAsJson(data.albums, `${data.playlistName}`);
     } catch (error) {
       console.error('下载歌单JSON失败:', error);
     }

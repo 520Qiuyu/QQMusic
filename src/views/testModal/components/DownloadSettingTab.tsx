@@ -10,8 +10,8 @@ const { Item } = Descriptions;
  */
 const getQualityOptions = () => {
   return [
-    { label: '128k MP3', value: '128' },
-    { label: '320k MP3', value: '320' },
+    { label: '128k MP3', value: 128 },
+    { label: '320k MP3', value: 320 },
     { label: 'FLAC', value: 'flac' },
   ];
 };

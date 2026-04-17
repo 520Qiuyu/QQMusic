@@ -184,7 +184,7 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
   };
 
   // 表格列配置
-  const columns: ColumnType<SongInfo>[] = [
+  const columns: ColumnType<SongInfo & { quality?: keyof typeof FileType }>[] = [
     {
       title: '歌曲信息',
       dataIndex: 'name',
@@ -248,7 +248,7 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
       key: 'file',
       width: 100,
       align: 'center',
-      render: (file: SongInfo['file'], record: SongInfo) => {
+        render: (file: SongInfo['file'], record) => {
         const qualityList = getFile_qualityList(file);
         const defaultValue = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
         return (
@@ -257,7 +257,7 @@ const HotSongModal = (props, ref: ForwardedRef<Ref<any, IOpenParams>>) => {
               label: quality,
               value: quality,
             }))}
-            defaultValue={defaultValue}
+            value={record.quality || defaultValue}
             style={{ width: '100%' }}
             onChange={(value) => {
               handleChooseQuality(record, value as keyof typeof FileType);
