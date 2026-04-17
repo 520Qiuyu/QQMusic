@@ -7488,7 +7488,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-D4OTIk2w-BRXz6VW3.js');
+            const { MpegParser } = await module.import('./MpegParser-u0mXo9FE-DiK4U1IX.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -7510,7 +7510,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-CZgcvmwX-DHzifDS8.js');
+            const { AsfParser } = await module.import('./AsfParser-DSfd8_4U-Z3aR5Xdn.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -7521,7 +7521,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-DkYq7g0k-mKsuvBbA.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-DqH2E7ZX-DLxXpivn.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -7532,7 +7532,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-B1R9FGYG-BGoTb1_s.js');
+            const { AIFFParser } = await module.import('./AiffParser-C1JG9411-C7pOZhLN.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -7543,7 +7543,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-CU5V0HIn-Dx_WJYs2.js');
+            const { DsfParser } = await module.import('./DsfParser-Dq1m5JFk-UJV5gfym.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -7554,7 +7554,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-BFuAy9qr-CFyOlKnE.js').then((n) => n.d);
+            const { FlacParser } = await module.import('./FlacParser-5MV_YOr0-CaSUJFes.js').then((n) => n.d);
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -7565,7 +7565,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-B1PzfZfE-dUchVWxn.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-Cob5fM4H-Dmjj5Y6P.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -7576,7 +7576,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-Bqtczl0Z-Gdy0jNnF.js');
+            const { MP4Parser } = await module.import('./MP4Parser-DZbELfBV-BN9sQitk.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -7587,7 +7587,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-6QYi3d0Q-AcpdGD7N.js');
+            const { MusepackParser } = await module.import('./MusepackParser-CztaxqR5-CdrwrOPb.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -7599,7 +7599,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         // RFC 7845, RFC 6716, RFC 5574
         async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-CoiZFUHK-ffAZWZb8.js');
+            const { OggParser } = await module.import('./OggParser-DGial4MZ-rMJOoZcl.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -7610,7 +7610,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-1dOauoJp-ueYAkeW-.js');
+            const { WavPackParser } = await module.import('./WavPackParser-CX-AxhVk-DSzdooRj.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -7621,7 +7621,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-DBneH1Dd-pmSH-93G.js');
+            const { WaveParser } = await module.import('./WaveParser-CGHoaQXV-CuiXTFIV.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -28241,1556 +28241,6 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         }
         throw new Error("获取歌单详情失败");
       };
-      const useGetSonglistDetail = () => {
-        const [playlistInfo, setPlaylistInfo] = useState();
-        const [isLoading, setIsLoading] = useState(false);
-        const playlistInfoMap = useRef({});
-        const { downloadConfig, functionConfig } = useConfig();
-        const { quality: downloadQuality } = downloadConfig;
-        const { uploadConcurrency } = functionConfig;
-        const { play, getUrl, download, getLyric, convertToNeteaseMusic } = usePlayMusic();
-        const getPlaylistDetail = async (dissid) => {
-          try {
-            setIsLoading(true);
-            const res = await getSongListDetail(dissid);
-            console.log("歌单详情:", res);
-            const playlistDetail = Array.isArray(res) ? res[0] : res;
-            playlistInfoMap.current[dissid] = playlistDetail;
-            return playlistDetail;
-          } catch (error) {
-            console.error("获取歌单详情失败:", error);
-          } finally {
-            setIsLoading(false);
-          }
-        };
-        const getPlaylistSongList = async (dissid) => {
-          try {
-            setIsLoading(true);
-            const res = await getPlaylistDetail(dissid);
-            return res?.songlist;
-          } catch (error) {
-            console.error("获取歌单歌曲列表失败:", error);
-          } finally {
-            setIsLoading(false);
-          }
-        };
-        const getPlaylistSongUrl = async (dissid) => {
-          const res = await getPlaylistSongList(dissid);
-          const ids = res?.map((item) => {
-            return {
-              id: item.mid,
-              name: item.name,
-              file: item.file
-            };
-          });
-          const promiseArr = ids?.map((item) => async () => {
-            const qualityList = getFile_qualityList(item.file);
-            const finalQuality = qualityList.includes(downloadQuality) ? downloadQuality : qualityList[0];
-            const url = await getUrl(item.id, finalQuality);
-            return {
-              ...item,
-              url,
-              quality: finalQuality
-            };
-          });
-          const urls = await promiseLimit(promiseArr, 6);
-          console.log("歌单歌曲播放地址:", urls);
-          return urls;
-        };
-        const downloadPlaylistSong = async (dissid) => {
-          try {
-            const songList = await getPlaylistSongList(dissid);
-            console.log("准备下载歌单歌曲:", songList);
-            for (const item of songList || []) {
-              const { mid, name: name2, file } = item;
-              console.log(`正在下载: mid=${mid}, name=${name2}`);
-              await download(mid);
-            }
-          } catch (error) {
-            console.error("下载歌单歌曲失败:", error);
-          }
-        };
-        const convertToNeteaseMusicPlaylistSong = async (dissid) => {
-          const loadingKey = "convert-to-netease-music-playlist-song";
-          message$1.loading({
-            key: loadingKey,
-            content: `正在转存歌单歌曲...`,
-            duration: 0
-          });
-          try {
-            const songList = await getPlaylistSongList(dissid);
-            const task = songList?.map((item) => async () => {
-              const { mid, name: name2 } = item;
-              console.log(`正在转存: mid=${mid}, name=${name2}`);
-              await convertToNeteaseMusic(mid, {
-                onChange: (msg) => {
-                  message$1.loading({
-                    key: loadingKey,
-                    content: msg,
-                    duration: 0
-                  });
-                }
-              });
-            });
-            await promiseLimit(task, uploadConcurrency);
-            message$1.success({
-              key: loadingKey,
-              content: `转存歌单歌曲成功`,
-              duration: 0
-            });
-          } catch (error) {
-            console.log("error", error);
-          }
-        };
-        const getPlaylistDownloadJson = async (dissid) => {
-          const playlistDetail = await getPlaylistDetail(dissid);
-          const { dissname, songlist } = playlistDetail || {};
-          const promiseArr = songlist?.map((item) => async () => {
-            const lrcContent = await getLyric(item.mid);
-            const qualityList = getFile_qualityList(item.file);
-            const finalQuality = qualityList.includes(downloadQuality) ? downloadQuality : qualityList[0];
-            const url = await getUrl(item.mid, finalQuality);
-            return {
-              songName: item.name,
-              url,
-              lrcContent
-            };
-          });
-          const songList = await promiseLimit(promiseArr, 6);
-          return {
-            playlistName: dissname,
-            playlistCover: playlistDetail?.pic_mid ? `https://y.gtimg.cn/music/photo_new/T002R300x300M000${playlistDetail.pic_mid}.jpg` : "",
-            songList
-          };
-        };
-        const playPlaylist = async (dissid) => {
-          const songList = await getPlaylistSongList(dissid);
-          console.log("歌单歌曲列表:", songList);
-          if (!songList?.length) return;
-          for (const item of songList) {
-            console.log("当前正在播放", item.name);
-            await play(item.mid);
-          }
-        };
-        return {
-          playlistInfo,
-          isLoading,
-          getPlaylistDetail,
-          getPlaylistSongList,
-          playPlaylist,
-          getPlaylistSongUrl,
-          downloadPlaylistSong,
-          getPlaylistDownloadJson,
-          convertToNeteaseMusicPlaylistSong
-        };
-      };
-      const useVisible = (props = {}, ref) => {
-        const {
-          onOpen = NOOP,
-          onClose = NOOP,
-          onReset = NOOP,
-          resetOnOpen = true,
-          resetOnClose = false
-        } = props;
-        const [visible, setVisible] = useState(false);
-        const open = (params) => {
-          resetOnOpen && reset();
-          setVisible(true);
-          onOpen(params);
-        };
-        const close = () => {
-          resetOnClose && reset();
-          setVisible(false);
-          onClose();
-        };
-        const reset = () => {
-          setVisible(false);
-          onReset();
-        };
-        const resolve = useRef(null);
-        const reject = useRef(null);
-        const submit = () => {
-          return new Promise((_resolve, _reject) => {
-            resolve.current = _resolve;
-            reject.current = _reject;
-          });
-        };
-        ref && useImperativeHandle(ref, () => ({
-          open,
-          close,
-          reset,
-          submit,
-          resolve,
-          reject
-        }));
-        return {
-          visible,
-          open,
-          close,
-          reset,
-          submit,
-          resolve,
-          reject
-        };
-      };
-      const NOOP = () => {
-      };
-      const getSingerInfo = async (singermid) => {
-        const params = {
-          singermid,
-          format: "xml",
-          outCharset: "utf-8",
-          utf8: "1",
-          r: dayjs().valueOf() + ""
-        };
-        return qqMusicRequest(
-          `/splcloud/fcgi-bin/fcg_get_singer_desc.fcg?${new URLSearchParams(params).toString()}`,
-          {
-            method: "GET",
-            responseType: "text"
-            // 改为 text 因为返回的是 XML
-          }
-        );
-      };
-      const getSingerAlbum = async (singermid, options = {}) => {
-        const { begin = 0, num = 80 } = options;
-        const params = {
-          format: "json",
-          singermid,
-          data: JSON.stringify({
-            comm: {
-              ct: 24,
-              cv: 0
-            },
-            singer: {
-              method: "GetAlbumList",
-              param: {
-                sort: 5,
-                singermid,
-                begin,
-                num
-              },
-              module: "music.musichallAlbum.AlbumListServer"
-            }
-          })
-        };
-        const res = await qqMusicRequest(
-          `/cgi-bin/musicu.fcg?${new URLSearchParams(params).toString()}`,
-          {},
-          "u"
-        );
-        if (res.code === 0) {
-          return res.singer?.data;
-        }
-        throw new Error("获取歌手专辑失败");
-      };
-      const getSingerAllAlbum = async (singermid) => {
-        const allAlbum = [];
-        let begin = 0;
-        const num = 80;
-        let hasMore = true;
-        while (hasMore) {
-          const res = await getSingerAlbum(singermid, { begin, num });
-          if (res) {
-            allAlbum.push(...res.albumList);
-            hasMore = allAlbum.length < res.total;
-          } else {
-            hasMore = false;
-          }
-          begin += num;
-        }
-        return allAlbum;
-      };
-      const getSingerList = async (options) => {
-        const { area = -100, sex = -100, genre = -100, cur_page = 1 } = options;
-        const params = {
-          format: "json",
-          data: JSON.stringify({
-            comm: {
-              ct: 24,
-              cv: 0
-            },
-            singerList: {
-              module: "Music.SingerListServer",
-              method: "get_singer_list",
-              param: {
-                area: +area,
-                sex: +sex,
-                genre: +genre,
-                index: -100,
-                sin: (cur_page - 1) * 80,
-                num: 80,
-                cur_page
-              }
-            }
-          })
-        };
-        const res = await qqMusicRequest(
-          `/cgi-bin/musicu.fcg?${new URLSearchParams(params).toString()}`,
-          {},
-          "u"
-        );
-        if (res.code === 0) {
-          return res.singerList?.data;
-        }
-        throw new Error("获取歌手列表失败");
-      };
-      const getSingerFollowCount = async (singermid) => {
-        const params = {
-          singermid,
-          format: "json",
-          outCharset: "utf-8",
-          utf8: "1",
-          rnd: dayjs().valueOf() + ""
-        };
-        return qqMusicRequest(
-          `/rsc/fcgi-bin/fcg_order_singer_getnum.fcg?${new URLSearchParams(params).toString()}`,
-          {},
-          "c"
-        );
-      };
-      const getSingerHotSong = async (singermid, options = {}) => {
-        const { sin = 0, num = 60 } = options;
-        const params = {
-          singermid,
-          format: "json",
-          data: JSON.stringify({
-            comm: {
-              ct: 24,
-              cv: 0
-            },
-            singer: {
-              method: "get_singer_detail_info",
-              param: {
-                sort: 5,
-                singermid,
-                sin,
-                num
-              },
-              module: "music.web_singer_info_svr"
-            }
-          })
-        };
-        const res = await qqMusicRequest(
-          `/cgi-bin/musicu.fcg?${new URLSearchParams(params).toString()}`,
-          {},
-          "u"
-        );
-        if (res.code === 0) {
-          return res.singer?.data;
-        }
-        throw new Error("获取歌手热门歌曲失败");
-      };
-      const getSingerAllHotSong = async (singermid, options) => {
-        const { onChange } = options || {};
-        let sin = 0;
-        const num = 60;
-        let hasMore = true;
-        const result = {
-          code: 200,
-          total: 0,
-          totalSong: 0,
-          totalAlbum: 0,
-          totalMV: 0,
-          songList: [],
-          singerBrief: "",
-          singerInfo: {},
-          extras: []
-        };
-        while (hasMore) {
-          const res = await getSingerHotSong(singermid, { sin, num });
-          if (res) {
-            Object.assign(result, {
-              total: res.total_song,
-              singerBrief: res.singer_brief,
-              singerInfo: res.singer_info,
-              totalSong: res.total_song,
-              totalAlbum: res.total_album,
-              totalMV: res.total_mv,
-              songList: [...result.songList, ...res.songlist],
-              extras: [...result.extras, ...res.extras]
-            });
-            onChange?.(result);
-            hasMore = result.songList.length < res.total_song;
-          } else {
-            hasMore = false;
-          }
-          sin += num;
-        }
-        console.log("result", result);
-        return result;
-      };
-      const getSimilarSinger = async (singer_mid, options = {}) => {
-        const { start = 0, num = 5 } = options;
-        const params = {
-          singer_mid,
-          format: "json",
-          outCharset: "utf-8",
-          utf8: "1",
-          start: start + "",
-          num: num + ""
-        };
-        const res = await qqMusicRequest(
-          `/v8/fcg-bin/fcg_v8_simsinger.fcg?${new URLSearchParams(params).toString()}`,
-          {}
-        );
-        return res.singers;
-      };
-      const getSingerPic = (singermid, options) => {
-        const { size = "800x800" } = {};
-        return `https://y.qq.com/music/photo_new/T001R${size}M000${singermid}.jpg?max_age=2592000`;
-      };
-      const copy = async (text, options = {}) => {
-        try {
-          if (navigator.clipboard && window.isSecureContext) {
-            if (options.html) {
-              const type = "text/html";
-              const blob = new Blob([text], { type });
-              const data = [new ClipboardItem({ [type]: blob })];
-              await navigator.clipboard.write(data);
-            } else {
-              await navigator.clipboard.writeText(text);
-            }
-          } else {
-            const textArea = document.createElement("textarea");
-            textArea.value = text;
-            textArea.style.cssText = "position: fixed; top: -9999px; left: -9999px";
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            try {
-              document.execCommand("copy");
-            } catch (err2) {
-              throw new Error("复制失败，请检查浏览器权限设置");
-            } finally {
-              document.body.removeChild(textArea);
-            }
-          }
-        } catch (err2) {
-          throw new Error(
-            err2 instanceof Error ? err2.message : "复制失败，请重试"
-          );
-        }
-      };
-      const styles$a = {
-        "copy-text": "_copy-text_1att4_1",
-        "copy-btn": "_copy-btn_1att4_12"
-      };
-      var classnames = { exports: {} };
-      /*!
-      	Copyright (c) 2018 Jed Watson.
-      	Licensed under the MIT License (MIT), see
-      	http://jedwatson.github.io/classnames
-      */
-      var hasRequiredClassnames;
-      function requireClassnames() {
-        if (hasRequiredClassnames) return classnames.exports;
-        hasRequiredClassnames = 1;
-        (function(module) {
-          (function() {
-            var hasOwn = {}.hasOwnProperty;
-            function classNames2() {
-              var classes = "";
-              for (var i = 0; i < arguments.length; i++) {
-                var arg = arguments[i];
-                if (arg) {
-                  classes = appendClass(classes, parseValue(arg));
-                }
-              }
-              return classes;
-            }
-            function parseValue(arg) {
-              if (typeof arg === "string" || typeof arg === "number") {
-                return arg;
-              }
-              if (typeof arg !== "object") {
-                return "";
-              }
-              if (Array.isArray(arg)) {
-                return classNames2.apply(null, arg);
-              }
-              if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes("[native code]")) {
-                return arg.toString();
-              }
-              var classes = "";
-              for (var key in arg) {
-                if (hasOwn.call(arg, key) && arg[key]) {
-                  classes = appendClass(classes, key);
-                }
-              }
-              return classes;
-            }
-            function appendClass(value, newClass) {
-              if (!newClass) {
-                return value;
-              }
-              if (value) {
-                return value + " " + newClass;
-              }
-              return value + newClass;
-            }
-            if (module.exports) {
-              classNames2.default = classNames2;
-              module.exports = classNames2;
-            } else {
-              window.classNames = classNames2;
-            }
-          })();
-        })(classnames);
-        return classnames.exports;
-      }
-      var classnamesExports = requireClassnames();
-      const classNames = /* @__PURE__ */ getDefaultExportFromCjs(classnamesExports);
-      const styles$9 = {
-        "text-overflow-show-tips-container": "_text-overflow-show-tips-container_btabq_1"
-      };
-      function TextOverflowShowTips({
-        text,
-        tooltipProps,
-        className,
-        ...restProps
-      }) {
-        const containerRef = useRef(null);
-        const { width: containerWidth } = useSize(containerRef) || {};
-        const isTooLong = useMemo(() => {
-          if (containerWidth) {
-            const textWidth = getTextWidth(text);
-            return containerWidth < textWidth;
-          }
-          return false;
-        }, [text, containerWidth]);
-        const containerStyle = {
-          maxWidth: "100%",
-          overflow: "hidden",
-          textOverflow: "ellipsis",
-          whiteSpace: "nowrap"
-        };
-        return isTooLong ? /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { title: text, ...tooltipProps, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "div",
-          {
-            ...restProps,
-            className: classNames(styles$9["text-overflow-show-tips-container"], className),
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, children: text })
-          }
-        ) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, ...restProps, className, children: text });
-      }
-      function getTextWidth(text, font = "14px Arial") {
-        const span = document.createElement("span");
-        span.style.visibility = "hidden";
-        span.style.whiteSpace = "nowrap";
-        span.style.font = font;
-        span.style.position = "absolute";
-        span.style.top = "-9999px";
-        span.style.left = "-9999px";
-        span.innerText = text;
-        document.body.appendChild(span);
-        const width = span.offsetWidth;
-        document.body.removeChild(span);
-        return width;
-      }
-      function CopyText(props) {
-        const { text, className, ...rest } = props;
-        const handleCopy = () => {
-          copy(text);
-          msgSuccess("复制成功");
-        };
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: classNames(styles$a["copy-text"], className), ...rest, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            TextOverflowShowTips,
-            {
-              text: text + "",
-              tooltipProps: {
-                getPopupContainer: (node) => {
-                  return document.body;
-                }
-              }
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            Button,
-            {
-              type: "link",
-              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(CopyOutlined, {}),
-              onClick: handleCopy,
-              className: styles$a["copy-btn"]
-            }
-          )
-        ] });
-      }
-      function MyButton(props) {
-        const { loading: loading2, onClick, ...rest } = props;
-        const [_loading, setLoading] = useState(loading2);
-        const handleClick = async (...args) => {
-          try {
-            setLoading(true);
-            await onClick?.(...args);
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setLoading(false);
-          }
-        };
-        useEffect(() => {
-          setLoading(loading2);
-        }, [loading2]);
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { ...rest, onClick: handleClick, loading: _loading });
-      }
-      const Styles$1 = {
-        "select-search": "_select-search_19wb1_1"
-      };
-      const { Group } = Input;
-      const defaultSearchParams$3 = {
-        prop: "xm",
-        value: ""
-      };
-      function SelectSearch(props) {
-        const {
-          value,
-          onChange,
-          defaultValue,
-          SearchSelectOptions,
-          selectProps,
-          inputProps,
-          width = 300,
-          selectWidth = 80,
-          inputWidth = 180
-        } = props;
-        const [searchParams, setSearchParams] = useState(() => {
-          if (value?.prop == void 0) return defaultValue || defaultSearchParams$3;
-          return {
-            ...defaultValue || defaultSearchParams$3,
-            ...value
-          };
-        });
-        useEffect(() => {
-          if (value?.prop == void 0) return;
-          if (typeof value !== "object") return console.warn("value类型错误,必须为对象");
-          setSearchParams({
-            ...value
-          });
-        }, [value]);
-        const handleSearchSelectChange = (value2) => {
-          const newSearchParams = {
-            ...searchParams,
-            prop: value2
-          };
-          setSearchParams(newSearchParams);
-          onChange?.(newSearchParams, searchParams);
-        };
-        const handleSearchInputChange = (e) => {
-          const value2 = e.target.value;
-          const newSearchParams = {
-            ...searchParams,
-            value: value2
-          };
-          setSearchParams(newSearchParams);
-          onChange?.(newSearchParams, searchParams);
-        };
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          Group,
-          {
-            compact: true,
-            style: {
-              width
-            },
-            className: Styles$1["select-search"],
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Select,
-                {
-                  options: SearchSelectOptions || defaultSearchSelectOptions,
-                  placeholder: "请选择",
-                  value: searchParams.prop,
-                  onChange: handleSearchSelectChange,
-                  style: {
-                    width: selectWidth,
-                    borderRadius: "6px 0 0 6px"
-                  },
-                  ...selectProps
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Input,
-                {
-                  placeholder: `请输入`,
-                  style: { width: inputWidth, height: 32 },
-                  value: searchParams.value,
-                  onChange: handleSearchInputChange,
-                  allowClear: true,
-                  ...inputProps
-                }
-              )
-            ]
-          }
-        );
-      }
-      const defaultSearchSelectOptions = [
-        {
-          value: "xh",
-          label: "学号"
-        },
-        {
-          value: "xm",
-          label: "姓名"
-        }
-      ];
-      const styles$8 = {};
-      const { RangePicker: AntRangePicker } = DatePicker;
-      const RangePicker = ({
-        value,
-        onChange,
-        format = "YYYY-MM-DD",
-        className,
-        placeholder = ["开始日期", "结束日期"],
-        ...rest
-      }) => {
-        const toDayjs = (val) => {
-          if (!val) return null;
-          if (dayjs.isDayjs(val)) return val;
-          return dayjs(val);
-        };
-        const rangeValue = Array.isArray(value) ? [toDayjs(value[0]), toDayjs(value[1])] : null;
-        const handleChange = (dates, dateStrings) => {
-          console.log("dates", dates);
-          console.log("dateStrings", dateStrings);
-          if (dates && onChange) {
-            onChange(
-              dates.map((date) => date ? date.format(format) : ""),
-              dateStrings
-            );
-          }
-        };
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(
-          AntRangePicker,
-          {
-            value: rangeValue,
-            onChange: handleChange,
-            format,
-            className: classNames(styles$8["rangePicker"], className),
-            placeholder,
-            ...rest
-          }
-        );
-      };
-      const filterOption = (inputValue, option) => {
-        return option.label.toLowerCase().indexOf(inputValue.toLowerCase()) >= 0;
-      };
-      const COMPONENT_TYPE_MAP = {
-        input: Input,
-        select: Select,
-        selectSearch: SelectSearch,
-        rangePicker: RangePicker,
-        treeSelect: TreeSelect
-      };
-      const defaultComponentProps = {
-        input: {
-          placeholder: "请输入",
-          style: { width: "200px" },
-          allowClear: true
-        },
-        select: {
-          placeholder: "请选择",
-          style: { width: "200px" },
-          allowClear: true,
-          maxTagCount: 2,
-          showSearch: true,
-          filterOption
-        },
-        selectSearch: {},
-        rangePicker: {},
-        treeSelect: {
-          treeCheckable: true,
-          allowClear: true,
-          treeExpandAction: "click",
-          filterTreeNode: (inputValue, treeNode) => {
-            return treeNode.props.title.toLowerCase().indexOf(inputValue.toLowerCase()) >= 0;
-          },
-          placeholder: "请选择",
-          style: {
-            width: "200px"
-          }
-        }
-      };
-      const { Item: Item$3 } = Form;
-      const SearchFormItem = (props) => {
-        const { name: name2, type = "input", label = "", inputProps = {}, ...formItemProps } = props;
-        const InputComponent = COMPONENT_TYPE_MAP[type];
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(Item$3, { name: name2, label, ...formItemProps, children: /* @__PURE__ */ jsxRuntimeExports.jsx(InputComponent, { ...{ ...defaultComponentProps[type], ...inputProps } }) });
-      };
-      function AdvancedSearch(props) {
-        Form.useFormInstance();
-        const { params, items = [] } = props;
-        const [optionsMap, setOptionsMap] = useState({});
-        useEffect(() => {
-          const asyncFn = async () => {
-            try {
-              items.map(async (item) => {
-                if (!item.getOptionsApi) return;
-                const res = await item.getOptionsApi(params);
-                setOptionsMap((prev) => {
-                  return {
-                    ...prev,
-                    [item.name]: res.data
-                  };
-                });
-                item.getOptionsApiAfter?.(res.data);
-              });
-            } catch (error) {
-              console.log("error", error);
-            }
-          };
-          asyncFn();
-        }, []);
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: items.map((item) => {
-          return /* @__PURE__ */ jsxRuntimeExports.jsx(
-            SearchFormItem,
-            {
-              name: item.name,
-              label: item.label,
-              type: item.type,
-              inputProps: {
-                ...item.inputProps,
-                options: optionsMap[item.name] || item.options
-              }
-            },
-            item.name
-          );
-        }) });
-      }
-      const Styles = {
-        "search-form": "_search-form_10eg9_1"
-      };
-      const { Item: Item$2 } = Form;
-      const SearchForm = (props, ref) => {
-        const [formRef] = Form.useForm();
-        const {
-          options = [],
-          advancedOptions = [],
-          searchParams = {},
-          onSearch = () => {
-          },
-          loading: loading2 = false,
-          keepAdvancedSearchValue = true,
-          ...restFormProps
-        } = props;
-        useEffect(() => {
-          !keepAdvancedSearchValue && formRef.resetFields();
-          formRef.setFieldsValue(searchParams);
-        }, [searchParams]);
-        const [optionsMap, setOptionsMap] = useState({});
-        useEffect(() => {
-          const asyncFn = async () => {
-            try {
-              options.map(async (item) => {
-                if (!item.getOptionsApi || !item.name) return;
-                const res = await item.getOptionsApi(searchParams);
-                setOptionsMap((prev) => {
-                  return {
-                    ...prev,
-                    [item.name]: res.data
-                  };
-                });
-                item.getOptionsApiAfter?.(res.data);
-              });
-            } catch (error) {
-              console.log("error", error);
-            }
-          };
-          asyncFn();
-        }, []);
-        const [isAdvancedSearch, setIsAdvancedSearch] = useState(false);
-        const handleSearch = () => {
-          const values = formRef.getFieldsValue();
-          console.log("values", values);
-          onSearch(values);
-        };
-        const handleReset = () => {
-          formRef.resetFields();
-          handleSearch();
-        };
-        useImperativeHandle(ref, () => ({
-          reset: handleReset,
-          search: handleSearch,
-          getValues: formRef.getFieldsValue
-        }));
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          Form,
-          {
-            layout: "inline",
-            form: formRef,
-            className: Styles["search-form"],
-            ...restFormProps,
-            children: [
-              options.map((item) => {
-                const { getOptionsApi, getOptionsApiAfter, ...rest } = item;
-                return /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  SearchFormItem,
-                  {
-                    ...rest,
-                    inputProps: {
-                      ...item.inputProps,
-                      options: optionsMap[item.name] || item.options
-                    }
-                  },
-                  item.name || item.label
-                );
-              }),
-              isAdvancedSearch && /* @__PURE__ */ jsxRuntimeExports.jsx(AdvancedSearch, { params: searchParams, items: advancedOptions }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Item$2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleSearch, shape: "round", loading: loading2, children: "查询" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Item$2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { onClick: handleReset, shape: "round", children: "重置" }) }),
-              advancedOptions.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(Item$2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { type: "link", onClick: () => setIsAdvancedSearch(!isAdvancedSearch), children: isAdvancedSearch ? "关闭" : "高级搜索" }) })
-            ]
-          }
-        );
-      };
-      const SearchForm$1 = forwardRef(SearchForm);
-      const footer$2 = "_footer_e7ura_48";
-      const styles$7 = {
-        "album-detail-modal": "_album-detail-modal_e7ura_1",
-        "modal-header": "_modal-header_e7ura_1",
-        "album-basic-info": "_album-basic-info_e7ura_6",
-        "album-info": "_album-info_e7ura_11",
-        "album-name": "_album-name_e7ura_16",
-        "album-meta": "_album-meta_e7ura_19",
-        "song-table": "_song-table_e7ura_24",
-        "song-name": "_song-name_e7ura_27",
-        "artist-item": "_artist-item_e7ura_33",
-        "artist-name": "_artist-name_e7ura_37",
-        "artist-separator": "_artist-separator_e7ura_41",
-        "song-duration": "_song-duration_e7ura_45",
-        footer: footer$2,
-        "selected-count": "_selected-count_e7ura_55"
-      };
-      const { Text: Text$4, Title: Title$3 } = Typography;
-      const AlbumDetail = forwardRef((_, ref) => {
-        const { visible, close } = useVisible(
-          {
-            onOpen(params) {
-              if (params?.albummid) {
-                setCurrentMid(params.albummid);
-              }
-            },
-            onReset() {
-              setCurrentMid("");
-              setInputMid("");
-              setSelectedRowKeys([]);
-              setSelectedRows([]);
-              setList([]);
-            }
-          },
-          ref
-        );
-        const [currentMid, setCurrentMid] = useState("");
-        const [inputMid, setInputMid] = useState("");
-        const { downloadConfig } = useConfig();
-        const { quality: defaultQuality } = downloadConfig;
-        const { getAlbumDetail, getAlbumSongList, isLoading, getDownLoadJson } = useGetAlbumDetail();
-        const { play, isPlaying, pause, download, convertToNeteaseMusic } = usePlayMusic();
-        const { data: detail, loading: detailLoading } = useGetData(
-          getAlbumDetail,
-          currentMid,
-          {
-            initialValue: void 0,
-            returnFunction: () => !currentMid || !visible,
-            monitors: [currentMid, visible]
-          }
-        );
-        const {
-          data: list,
-          loading: loading2,
-          setData: setList
-        } = useGetData(getAlbumSongList, currentMid, {
-          initialValue: [],
-          returnFunction: () => !currentMid || !visible,
-          monitors: [currentMid, visible],
-          callback: (data) => {
-            console.log("data", data);
-          }
-        });
-        const handleChooseQuality = (record, quality) => {
-          setList(
-            list?.map((item) => {
-              if (item.songmid === record.songmid) {
-                return {
-                  ...item,
-                  quality
-                };
-              }
-              return item;
-            }) || []
-          );
-        };
-        const handlePlay = (record) => {
-          if (isPlaying) {
-            pause();
-          } else {
-            const { quality } = record;
-            const finalQuality = getQuality$3(record, defaultQuality, quality);
-            play(record.songmid, finalQuality);
-          }
-        };
-        const [downloading, setDownloading] = useState("");
-        const handleDownload = async (record) => {
-          try {
-            if (downloading === record.songmid) return;
-            setDownloading(record.songmid);
-            const { quality } = record;
-            const finalQuality = getQuality$3(record, defaultQuality, quality);
-            await download(record.songmid, finalQuality);
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setDownloading("");
-          }
-        };
-        const songColumns = [
-          {
-            title: "歌曲",
-            dataIndex: "songname",
-            key: "songname",
-            width: 300,
-            render: (text) => /* @__PURE__ */ jsxRuntimeExports.jsx(Text$4, { className: styles$7["song-name"], title: text, children: text })
-          },
-          {
-            title: "歌手",
-            dataIndex: "singer",
-            key: "singer",
-            width: 240,
-            render: (singers = []) => /* @__PURE__ */ jsxRuntimeExports.jsx(Space, { size: "small", wrap: true, children: singers.length > 0 ? singers.map((s, index2) => /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$7["artist-item"], children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Avatar, { size: 30, style: { marginRight: 4 }, src: getSingerPic(s.mid) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$7["artist-name"], children: s.name }),
-              index2 < singers.length - 1 && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$7["artist-separator"], children: "/" })
-            ] }, s.mid || index2)) : /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "-" }) })
-          },
-          // 音质选择器
-          {
-            title: "音质",
-            key: "quality",
-            width: 100,
-            align: "center",
-            render: (_2, record) => {
-              const qualityList = getFileQualityList(record);
-              const defaultValue = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
-              return /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Select,
-                {
-                  options: qualityList.map((quality) => ({
-                    label: quality,
-                    value: quality
-                  })),
-                  defaultValue,
-                  style: { width: "100%" },
-                  onChange: (value) => {
-                    handleChooseQuality(record, value);
-                  }
-                }
-              );
-            }
-          },
-          // 格式
-          {
-            title: "格式",
-            key: "format",
-            width: 150,
-            align: "center",
-            render: (_2, record) => {
-              const qualityList = getFileQualityList(record);
-              const qualityColorMap = {
-                flac: "green",
-                ape: "volcano",
-                320: "blue",
-                m4a: "orange",
-                128: "gray"
-              };
-              const qualityTextMap = {
-                flac: "FLAC",
-                ape: "APE",
-                320: "320k",
-                m4a: "M4A",
-                128: "128k"
-              };
-              return /* @__PURE__ */ jsxRuntimeExports.jsx(Space, { wrap: true, children: qualityList.map((quality) => /* @__PURE__ */ jsxRuntimeExports.jsx(Tag, { color: qualityColorMap[quality], children: qualityTextMap[quality] || quality }, quality)) });
-            }
-          },
-          {
-            title: "时长",
-            dataIndex: "interval",
-            key: "interval",
-            width: 100,
-            align: "center",
-            render: (interval) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Text$4, { className: styles$7["song-duration"], children: [
-              Math.floor((interval || 0) / 60),
-              ":",
-              ((interval || 0) % 60).toString().padStart(2, "0")
-            ] })
-          },
-          {
-            title: "操作",
-            key: "action",
-            width: 200,
-            align: "center",
-            fixed: "right",
-            render: (_2, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { title: "播放", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Button,
-                {
-                  type: "link",
-                  size: "small",
-                  icon: isPlaying === record.songmid ? /* @__PURE__ */ jsxRuntimeExports.jsx(PauseCircleOutlined, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(PlayCircleOutlined, {}),
-                  onClick: () => handlePlay(record),
-                  children: "播放"
-                }
-              ) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { title: "下载", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Button,
-                {
-                  type: "link",
-                  size: "small",
-                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DownloadOutlined, {}),
-                  loading: downloading === record.songmid,
-                  onClick: () => handleDownload(record),
-                  children: "下载"
-                }
-              ) })
-            ] })
-          }
-        ];
-        const [selectedRowKeys, setSelectedRowKeys] = useState([]);
-        const [selectedRows, setSelectedRows] = useState([]);
-        const rowSelection = {
-          preserveSelectedRowKeys: true,
-          selectedRowKeys,
-          onChange: (selectedRowKeys2, selectedRows2) => {
-            setSelectedRowKeys(selectedRowKeys2);
-            setSelectedRows(selectedRows2);
-            console.log("selectedRowKeys", selectedRowKeys2);
-            console.log("selectedRows", selectedRows2);
-          }
-        };
-        const renderTitle = () => {
-          const albumName = detail?.name || "专辑详情";
-          const singerName = detail?.singername || "";
-          const publishDate = detail?.aDate || "";
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["modal-header"], children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Title$3, { level: 4, className: styles$7["modal-title"], children: "专辑详情" }),
-            detail && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["album-basic-info"], children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Image,
-                {
-                  src: currentMid ? getAlbumPicUrl(currentMid) : "",
-                  alt: albumName,
-                  width: 80,
-                  height: 80,
-                  style: { borderRadius: 8 },
-                  fallback: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAADDCAYAAADQvc6UAAABRWlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSSwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAwSDCIMogwMCcmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis7PPOq3QdDFcvjV3jOD1boQVTPQrgSkktTgbSf4A4LbmgqISBgTEFyFYuLykAsTuAbJEioKOA7DkgdjqEvQHEToKwj4DVhAQ5A9k3gGyB5IxEoBmML4BsnSQk8XQkNtReEOBxcfXxUQg1Mjc0dyHgXNJBSWpFCYh2zi+oLMpMzyhRcASGUqqCZ16yno6CkYGRAQMDKMwhqj/fAIcloxgHQqxAjIHBEugw5sUIsSQpBobtQPdLciLEVJYzMPBHMDBsayhILEqEO4DxG0txmrERhM29nYGBddr//5/DGRjYNRkY/l7////39v///y4Dmn+LgeHANwDrkl1AuO+pmgAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAwqADAAQAAAABAAAAwwAAAAD9b/HnAAAHlklEQVR4Ae3dP3Ik1RnG4W+FgYxN"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["album-info"], children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(Title$3, { level: 5, className: styles$7["album-name"], children: albumName }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["album-meta"], children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$4, { type: "secondary", className: styles$7["singer-name"], children: singerName || "未知歌手" }),
-                  publishDate && /* @__PURE__ */ jsxRuntimeExports.jsxs(Text$4, { type: "secondary", className: styles$7["publish-date"], children: [
-                    "· ",
-                    publishDate
-                  ] })
-                ] })
-              ] })
-            ] })
-          ] });
-        };
-        const handleBatchDownload = async () => {
-          if (selectedRows.length === 0) {
-            msgWarning("请先选择要下载的歌曲");
-            return;
-          }
-          const loadingKey = "download-album-song";
-          try {
-            message$1.loading({
-              key: loadingKey,
-              content: `正在准备下载 ${selectedRows.length} 首歌曲...`,
-              duration: 0
-            });
-            let index2 = 1;
-            for (const song of selectedRows) {
-              message$1.loading({
-                key: loadingKey,
-                content: `正在下载第 ${index2} 首歌曲 ${song.songname}...`,
-                duration: 0
-              });
-              const finalQuality = getQuality$3(song, defaultQuality);
-              await download(song.songmid, finalQuality);
-              message$1.success({
-                key: loadingKey,
-                content: `第 ${index2} 首歌曲 ${song.songname} 下载成功！`,
-                duration: 1
-              });
-              index2++;
-            }
-            message$1.success({
-              key: loadingKey,
-              content: `成功下载 ${selectedRows.length} 首歌曲！`,
-              duration: 1
-            });
-          } catch (error) {
-            console.error("批量下载失败:", error);
-            message$1.destroy(loadingKey);
-            msgError("批量下载失败: " + error.message);
-          } finally {
-            message$1.destroy(loadingKey);
-          }
-        };
-        const handleBatchDownloadNeteaseMusic = async () => {
-          if (selectedRows.length === 0) {
-            msgWarning("请先选择要转存网易云的歌曲");
-            return;
-          }
-          const loadingKey = "download-album-song-netease";
-          try {
-            message$1.loading({
-              key: loadingKey,
-              content: `正在准备转存网易云 ${selectedRows.length} 首歌曲...`,
-              duration: 0
-            });
-            let index2 = 1;
-            for (const song of selectedRows) {
-              console.log("song", song);
-              const record = song;
-              const finalQuality = getQuality$3(record, defaultQuality, record.quality);
-              message$1.loading({
-                key: loadingKey,
-                content: `正在转存第 ${index2} 首歌曲 ${song.songname}...`,
-                duration: 0
-              });
-              await convertToNeteaseMusic(song.songmid, { quality: finalQuality });
-              message$1.success({
-                content: `第 ${index2} 首歌曲 ${song.songname} 转存成功！`,
-                duration: 1
-              });
-              index2++;
-            }
-            message$1.success({
-              key: loadingKey,
-              content: `成功转存 ${selectedRows.length} 首歌曲！`,
-              duration: 1
-            });
-          } catch (error) {
-            console.error("批量转存网易云失败:", error);
-            msgError("批量转存网易云失败: " + error.message);
-          } finally {
-            message$1.destroy(loadingKey);
-          }
-        };
-        const handleDownloadAllJson = async () => {
-          if (!currentMid) return;
-          const loadingKey = "download-album-json";
-          try {
-            message$1.loading({
-              key: loadingKey,
-              content: `正在下载专辑JSON...`,
-              duration: 0
-            });
-            const res = await getDownLoadJson(currentMid);
-            downloadAsJson([res], `${detail?.name}.json`);
-            message$1.destroy(loadingKey);
-            msgSuccess("成功下载专辑JSON！");
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            message$1.destroy(loadingKey);
-          }
-        };
-        const renderFooter = () => {
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["footer"], children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["selected-count"], children: [
-              "已选择 ",
-              selectedRows.length,
-              " 首歌曲"
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
-              selectedRowKeys?.length < list.length ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Button,
-                {
-                  onClick: () => {
-                    setSelectedRowKeys(list?.map((item) => item.songmid) || []);
-                    setSelectedRows(list || []);
-                  },
-                  children: "全部选择"
-                }
-              ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Button,
-                {
-                  onClick: () => {
-                    setSelectedRowKeys([]);
-                    setSelectedRows([]);
-                  },
-                  children: "清空选择"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(MyButton, { type: "primary", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DownloadOutlined, {}), onClick: handleBatchDownload, children: [
-                "下载选中歌曲",
-                selectedRows?.length ? `(${selectedRows?.length})` : ""
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                MyButton,
-                {
-                  type: "primary",
-                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(CloudDownloadOutlined, {}),
-                  onClick: handleBatchDownloadNeteaseMusic,
-                  children: [
-                    "转存网易云",
-                    selectedRows?.length ? `(${selectedRows?.length})` : ""
-                  ]
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { icon: /* @__PURE__ */ jsxRuntimeExports.jsx(FileOutlined, {}), type: "primary", onClick: handleDownloadAllJson, children: "下载全部歌曲JSON" })
-            ] })
-          ] });
-        };
-        const handleInputChange = (e) => {
-          setInputMid(e.target.value.trim());
-        };
-        const handleOpenById = () => {
-          if (!inputMid) return;
-          setCurrentMid(inputMid);
-        };
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          Modal,
-          {
-            title: renderTitle(),
-            open: visible,
-            onCancel: close,
-            width: 1200,
-            centered: true,
-            destroyOnHidden: true,
-            className: styles$7["album-detail-modal"],
-            footer: renderFooter(),
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { marginBottom: 12, display: "flex", gap: 8 }, children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Input,
-                  {
-                    placeholder: "请输入专辑ID/MID，如 003rJSwm3TechU",
-                    value: inputMid,
-                    onChange: handleInputChange,
-                    onPressEnter: handleOpenById,
-                    allowClear: true,
-                    "aria-label": "专辑ID输入框"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Button,
-                  {
-                    type: "primary",
-                    onClick: handleOpenById,
-                    loading: loading2 || detailLoading || isLoading,
-                    children: "打开"
-                  }
-                )
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Table,
-                {
-                  columns: songColumns,
-                  dataSource: list || [],
-                  rowSelection,
-                  rowKey: "songmid",
-                  loading: loading2 || detailLoading || isLoading,
-                  scroll: { y: 400, x: 600 },
-                  pagination: {
-                    showSizeChanger: true,
-                    showQuickJumper: true,
-                    showTotal: (total) => `共 ${total} 首歌曲`
-                  },
-                  className: styles$7["song-table"]
-                }
-              )
-            ]
-          }
-        );
-      });
-      const getQuality$3 = (record, defaultQuality, chooseQuality) => {
-        const qualityList = getFileQualityList(record);
-        const songDefaultQuality = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
-        const finalQuality = chooseQuality || songDefaultQuality;
-        return finalQuality;
-      };
-      const { Link, Text: Text$3 } = Typography;
-      const GITHUB_CONFIG = {
-        owner: "520Qiuyu",
-        repo: "QQMusic",
-        homepage: "https://github.com/520Qiuyu/QQMusic",
-        authorUrl: "https://github.com/520Qiuyu",
-        scriptUrl: "https://raw.githubusercontent.com/520Qiuyu/QQMusic/main/dist/qqmusic.user.js"
-      };
-      const GithubInfo = forwardRef((_props, ref) => {
-        const { visible, close } = useVisible(
-          {
-            onOpen: () => {
-              fetchRepoInfo();
-            }
-          },
-          ref
-        );
-        const [repoInfo, setRepoInfo] = useState(null);
-        const [loading2, setLoading] = useState(false);
-        const { functionConfig, setFunctionConfig } = useConfig();
-        const fetchRepoInfo = async () => {
-          setLoading(true);
-          try {
-            const response = await fetch(
-              `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}`
-            );
-            if (response.ok) {
-              const data = await response.json();
-              setRepoInfo({
-                stars: data.stargazers_count || 0,
-                forks: data.forks_count || 0,
-                watchers: data.watchers_count || 0,
-                description: data.description || "",
-                language: data.language || "",
-                updatedAt: data.updated_at || "",
-                createdAt: data.created_at || "",
-                openIssues: data.open_issues_count || 0,
-                license: data.license?.name || "无",
-                defaultBranch: data.default_branch || "main",
-                avatarUrl: data.owner?.avatar_url || "",
-                authorName: data.owner?.login || GITHUB_CONFIG.owner
-              });
-            }
-          } catch (error) {
-            console.error("获取 GitHub 信息失败:", error);
-          } finally {
-            setLoading(false);
-          }
-        };
-        const formatDate = (dateString) => {
-          if (!dateString) return "-";
-          const date = new Date(dateString);
-          return date.toLocaleDateString("zh-CN", {
-            year: "numeric",
-            month: "long",
-            day: "numeric"
-          });
-        };
-        const handleDoubleClickDefaultBranch = () => {
-          console.log("handleDoubleClickDefaultBranch");
-          setFunctionConfig({
-            ...functionConfig,
-            enableTestModal: !functionConfig.enableTestModal
-          });
-          close();
-        };
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Modal,
-          {
-            title: /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(GithubOutlined, {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "GitHub 信息" })
-            ] }),
-            open: visible,
-            onCancel: close,
-            footer: null,
-            centered: true,
-            width: 700,
-            zIndex: 99999,
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Spin, { spinning: loading2, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Descriptions, { column: 1, bordered: true, size: "small", styles: { label: { width: 120 } }, children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "项目主页", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Space, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { href: GITHUB_CONFIG.homepage, target: "_blank", rel: "noopener noreferrer", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(LinkOutlined, {}),
-                " ",
-                GITHUB_CONFIG.homepage
-              ] }) }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "作者主页", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
-                repoInfo?.avatarUrl && /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Image,
-                  {
-                    src: repoInfo.avatarUrl,
-                    alt: repoInfo.authorName || "作者头像",
-                    width: 60,
-                    height: 60,
-                    style: {
-                      borderRadius: "50%",
-                      objectFit: "cover",
-                      cursor: "pointer"
-                    }
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { href: GITHUB_CONFIG.authorUrl, target: "_blank", rel: "noopener noreferrer", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(GithubOutlined, {}),
-                  " ",
-                  GITHUB_CONFIG.authorUrl
-                ] })
-              ] }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "项目描述", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: repoInfo?.description || "暂无描述" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "统计信息", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { size: "large", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(StarOutlined, { style: { color: "#faad14" } }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { strong: true, children: repoInfo?.stars || 0 }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { type: "secondary", children: "Stars" })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(ForkOutlined, { style: { color: "#1890ff" } }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { strong: true, children: repoInfo?.forks || 0 }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { type: "secondary", children: "Forks" })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(EyeOutlined, { style: { color: "#52c41a" } }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { strong: true, children: repoInfo?.watchers || 0 }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { type: "secondary", children: "Watchers" })
-                ] })
-              ] }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "主要语言", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: repoInfo?.language || "未知" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "默认分支", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Text$3,
-                {
-                  code: true,
-                  onDoubleClick: handleDoubleClickDefaultBranch,
-                  onTouchStart: handleDoubleClickDefaultBranch,
-                  style: { cursor: "pointer", userSelect: "none" },
-                  children: repoInfo?.defaultBranch || "main"
-                }
-              ) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "许可证", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: repoInfo?.license || "无" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "开放 Issues", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: repoInfo?.openIssues || 0 }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "创建时间", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: formatDate(repoInfo?.createdAt) }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "更新时间", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: formatDate(repoInfo?.updatedAt) }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "操作", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Button,
-                  {
-                    type: "primary",
-                    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(GithubOutlined, {}),
-                    href: GITHUB_CONFIG.homepage,
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                    children: "访问仓库"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Button,
-                  {
-                    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(StarOutlined, {}),
-                    href: `${GITHUB_CONFIG.homepage}/stargazers`,
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                    children: "查看 Stars"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Button,
-                  {
-                    type: "primary",
-                    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(UploadOutlined, {}),
-                    href: GITHUB_CONFIG.scriptUrl,
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                    children: "更新脚本"
-                  }
-                )
-              ] }) })
-            ] }) })
-          }
-        );
-      });
       var lodash$1 = { exports: {} };
       /**
        * @license
@@ -35279,6 +33729,1574 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         return lodash$1.exports;
       }
       var lodashExports = requireLodash();
+      const useGetSonglistDetail = () => {
+        const [playlistInfo, setPlaylistInfo] = useState();
+        const [isLoading, setIsLoading] = useState(false);
+        const playlistInfoMap = useRef({});
+        const { downloadConfig, functionConfig } = useConfig();
+        const { quality: downloadQuality } = downloadConfig;
+        const { uploadConcurrency } = functionConfig;
+        const { play, getUrl, download, getLyric, convertToNeteaseMusic } = usePlayMusic();
+        const getPlaylistDetail = async (dissid) => {
+          try {
+            setIsLoading(true);
+            const res = await getSongListDetail(dissid);
+            console.log("歌单详情:", res);
+            const playlistDetail = Array.isArray(res) ? res[0] : res;
+            playlistInfoMap.current[dissid] = playlistDetail;
+            return playlistDetail;
+          } catch (error) {
+            console.error("获取歌单详情失败:", error);
+          } finally {
+            setIsLoading(false);
+          }
+        };
+        const getPlaylistSongList = async (dissid) => {
+          try {
+            setIsLoading(true);
+            const res = await getPlaylistDetail(dissid);
+            return res?.songlist;
+          } catch (error) {
+            console.error("获取歌单歌曲列表失败:", error);
+          } finally {
+            setIsLoading(false);
+          }
+        };
+        const getPlaylistSongUrl = async (dissid) => {
+          const res = await getPlaylistSongList(dissid);
+          const ids = res?.map((item) => {
+            return {
+              id: item.mid,
+              name: item.name,
+              file: item.file
+            };
+          });
+          const promiseArr = ids?.map((item) => async () => {
+            const qualityList = getFile_qualityList(item.file);
+            const finalQuality = qualityList.includes(downloadQuality) ? downloadQuality : qualityList[0];
+            const url = await getUrl(item.id, finalQuality);
+            return {
+              ...item,
+              url,
+              quality: finalQuality
+            };
+          });
+          const urls = await promiseLimit(promiseArr, 6);
+          console.log("歌单歌曲播放地址:", urls);
+          return urls;
+        };
+        const downloadPlaylistSong = async (dissid) => {
+          try {
+            const songList = await getPlaylistSongList(dissid);
+            console.log("准备下载歌单歌曲:", songList);
+            for (const item of songList || []) {
+              const { mid, name: name2, file } = item;
+              console.log(`正在下载: mid=${mid}, name=${name2}`);
+              await download(mid);
+            }
+          } catch (error) {
+            console.error("下载歌单歌曲失败:", error);
+          }
+        };
+        const convertToNeteaseMusicPlaylistSong = async (dissid) => {
+          const loadingKey = "convert-to-netease-music-playlist-song";
+          message$1.loading({
+            key: loadingKey,
+            content: `正在转存歌单歌曲...`,
+            duration: 0
+          });
+          try {
+            const songList = await getPlaylistSongList(dissid);
+            const task = songList?.map((item) => async () => {
+              const { mid, name: name2 } = item;
+              console.log(`正在转存: mid=${mid}, name=${name2}`);
+              await convertToNeteaseMusic(mid, {
+                onChange: (msg) => {
+                  message$1.loading({
+                    key: loadingKey,
+                    content: msg,
+                    duration: 0
+                  });
+                }
+              });
+            });
+            await promiseLimit(task, uploadConcurrency);
+            message$1.success({
+              key: loadingKey,
+              content: `转存歌单歌曲成功`,
+              duration: 0
+            });
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        const getPlaylistDownloadJson = async (dissid) => {
+          const playlistDetail = await getPlaylistDetail(dissid);
+          const { dissname, songlist } = playlistDetail || {};
+          const playlistCover = playlistDetail?.pic_mid ? `https://y.gtimg.cn/music/photo_new/T002R300x300M000${playlistDetail.pic_mid}.jpg` : "";
+          if (!songlist?.length) {
+            return {
+              playlistName: dissname,
+              playlistCover,
+              albums: []
+            };
+          }
+          const promiseArr = songlist.map((item) => async () => {
+            const lrcContent = await getLyric(item.mid);
+            const qualityList = getFile_qualityList(item.file);
+            const finalQuality = qualityList.includes(downloadQuality) ? downloadQuality : qualityList[0];
+            const url = await getUrl(item.mid, finalQuality);
+            return {
+              ...item,
+              lrcContent,
+              url
+            };
+          });
+          const res = await promiseLimit(promiseArr, 6);
+          const albumsMap = lodashExports.groupBy(res, (item) => item.album?.name ?? "");
+          const albums = Object.entries(albumsMap).map(([albumName, songs]) => ({
+            albumName: albumName || "未知专辑",
+            albumCover: songs[0]?.album?.mid ? getAlbumPicUrl(songs[0].album.mid, { size: "300x300" }) : "",
+            list: songs.map((song) => ({
+              songName: song.name,
+              url: song.url,
+              lrcContent: song.lrcContent
+            }))
+          }));
+          return {
+            albums,
+            playlistName: dissname,
+            playlistCover
+          };
+        };
+        const playPlaylist = async (dissid) => {
+          const songList = await getPlaylistSongList(dissid);
+          console.log("歌单歌曲列表:", songList);
+          if (!songList?.length) return;
+          for (const item of songList) {
+            console.log("当前正在播放", item.name);
+            await play(item.mid);
+          }
+        };
+        return {
+          playlistInfo,
+          isLoading,
+          getPlaylistDetail,
+          getPlaylistSongList,
+          playPlaylist,
+          getPlaylistSongUrl,
+          downloadPlaylistSong,
+          getPlaylistDownloadJson,
+          convertToNeteaseMusicPlaylistSong
+        };
+      };
+      const useVisible = (props = {}, ref) => {
+        const {
+          onOpen = NOOP,
+          onClose = NOOP,
+          onReset = NOOP,
+          resetOnOpen = true,
+          resetOnClose = false
+        } = props;
+        const [visible, setVisible] = useState(false);
+        const open = (params) => {
+          resetOnOpen && reset();
+          setVisible(true);
+          onOpen(params);
+        };
+        const close = () => {
+          resetOnClose && reset();
+          setVisible(false);
+          onClose();
+        };
+        const reset = () => {
+          setVisible(false);
+          onReset();
+        };
+        const resolve = useRef(null);
+        const reject = useRef(null);
+        const submit = () => {
+          return new Promise((_resolve, _reject) => {
+            resolve.current = _resolve;
+            reject.current = _reject;
+          });
+        };
+        ref && useImperativeHandle(ref, () => ({
+          open,
+          close,
+          reset,
+          submit,
+          resolve,
+          reject
+        }));
+        return {
+          visible,
+          open,
+          close,
+          reset,
+          submit,
+          resolve,
+          reject
+        };
+      };
+      const NOOP = () => {
+      };
+      const getSingerInfo = async (singermid) => {
+        const params = {
+          singermid,
+          format: "xml",
+          outCharset: "utf-8",
+          utf8: "1",
+          r: dayjs().valueOf() + ""
+        };
+        return qqMusicRequest(
+          `/splcloud/fcgi-bin/fcg_get_singer_desc.fcg?${new URLSearchParams(params).toString()}`,
+          {
+            method: "GET",
+            responseType: "text"
+            // 改为 text 因为返回的是 XML
+          }
+        );
+      };
+      const getSingerAlbum = async (singermid, options = {}) => {
+        const { begin = 0, num = 80 } = options;
+        const params = {
+          format: "json",
+          singermid,
+          data: JSON.stringify({
+            comm: {
+              ct: 24,
+              cv: 0
+            },
+            singer: {
+              method: "GetAlbumList",
+              param: {
+                sort: 5,
+                singermid,
+                begin,
+                num
+              },
+              module: "music.musichallAlbum.AlbumListServer"
+            }
+          })
+        };
+        const res = await qqMusicRequest(
+          `/cgi-bin/musicu.fcg?${new URLSearchParams(params).toString()}`,
+          {},
+          "u"
+        );
+        if (res.code === 0) {
+          return res.singer?.data;
+        }
+        throw new Error("获取歌手专辑失败");
+      };
+      const getSingerAllAlbum = async (singermid) => {
+        const allAlbum = [];
+        let begin = 0;
+        const num = 80;
+        let hasMore = true;
+        while (hasMore) {
+          const res = await getSingerAlbum(singermid, { begin, num });
+          if (res) {
+            allAlbum.push(...res.albumList);
+            hasMore = allAlbum.length < res.total;
+          } else {
+            hasMore = false;
+          }
+          begin += num;
+        }
+        return allAlbum;
+      };
+      const getSingerList = async (options) => {
+        const { area = -100, sex = -100, genre = -100, cur_page = 1 } = options;
+        const params = {
+          format: "json",
+          data: JSON.stringify({
+            comm: {
+              ct: 24,
+              cv: 0
+            },
+            singerList: {
+              module: "Music.SingerListServer",
+              method: "get_singer_list",
+              param: {
+                area: +area,
+                sex: +sex,
+                genre: +genre,
+                index: -100,
+                sin: (cur_page - 1) * 80,
+                num: 80,
+                cur_page
+              }
+            }
+          })
+        };
+        const res = await qqMusicRequest(
+          `/cgi-bin/musicu.fcg?${new URLSearchParams(params).toString()}`,
+          {},
+          "u"
+        );
+        if (res.code === 0) {
+          return res.singerList?.data;
+        }
+        throw new Error("获取歌手列表失败");
+      };
+      const getSingerFollowCount = async (singermid) => {
+        const params = {
+          singermid,
+          format: "json",
+          outCharset: "utf-8",
+          utf8: "1",
+          rnd: dayjs().valueOf() + ""
+        };
+        return qqMusicRequest(
+          `/rsc/fcgi-bin/fcg_order_singer_getnum.fcg?${new URLSearchParams(params).toString()}`,
+          {},
+          "c"
+        );
+      };
+      const getSingerHotSong = async (singermid, options = {}) => {
+        const { sin = 0, num = 60 } = options;
+        const params = {
+          singermid,
+          format: "json",
+          data: JSON.stringify({
+            comm: {
+              ct: 24,
+              cv: 0
+            },
+            singer: {
+              method: "get_singer_detail_info",
+              param: {
+                sort: 5,
+                singermid,
+                sin,
+                num
+              },
+              module: "music.web_singer_info_svr"
+            }
+          })
+        };
+        const res = await qqMusicRequest(
+          `/cgi-bin/musicu.fcg?${new URLSearchParams(params).toString()}`,
+          {},
+          "u"
+        );
+        if (res.code === 0) {
+          return res.singer?.data;
+        }
+        throw new Error("获取歌手热门歌曲失败");
+      };
+      const getSingerAllHotSong = async (singermid, options) => {
+        const { onChange } = options || {};
+        let sin = 0;
+        const num = 60;
+        let hasMore = true;
+        const result = {
+          code: 200,
+          total: 0,
+          totalSong: 0,
+          totalAlbum: 0,
+          totalMV: 0,
+          songList: [],
+          singerBrief: "",
+          singerInfo: {},
+          extras: []
+        };
+        while (hasMore) {
+          const res = await getSingerHotSong(singermid, { sin, num });
+          if (res) {
+            Object.assign(result, {
+              total: res.total_song,
+              singerBrief: res.singer_brief,
+              singerInfo: res.singer_info,
+              totalSong: res.total_song,
+              totalAlbum: res.total_album,
+              totalMV: res.total_mv,
+              songList: [...result.songList, ...res.songlist],
+              extras: [...result.extras, ...res.extras]
+            });
+            onChange?.(result);
+            hasMore = result.songList.length < res.total_song;
+          } else {
+            hasMore = false;
+          }
+          sin += num;
+        }
+        console.log("result", result);
+        return result;
+      };
+      const getSimilarSinger = async (singer_mid, options = {}) => {
+        const { start = 0, num = 5 } = options;
+        const params = {
+          singer_mid,
+          format: "json",
+          outCharset: "utf-8",
+          utf8: "1",
+          start: start + "",
+          num: num + ""
+        };
+        const res = await qqMusicRequest(
+          `/v8/fcg-bin/fcg_v8_simsinger.fcg?${new URLSearchParams(params).toString()}`,
+          {}
+        );
+        return res.singers;
+      };
+      const getSingerPic = (singermid, options) => {
+        const { size = "800x800" } = {};
+        return `https://y.qq.com/music/photo_new/T001R${size}M000${singermid}.jpg?max_age=2592000`;
+      };
+      const copy = async (text, options = {}) => {
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            if (options.html) {
+              const type = "text/html";
+              const blob = new Blob([text], { type });
+              const data = [new ClipboardItem({ [type]: blob })];
+              await navigator.clipboard.write(data);
+            } else {
+              await navigator.clipboard.writeText(text);
+            }
+          } else {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.cssText = "position: fixed; top: -9999px; left: -9999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+              document.execCommand("copy");
+            } catch (err2) {
+              throw new Error("复制失败，请检查浏览器权限设置");
+            } finally {
+              document.body.removeChild(textArea);
+            }
+          }
+        } catch (err2) {
+          throw new Error(
+            err2 instanceof Error ? err2.message : "复制失败，请重试"
+          );
+        }
+      };
+      const styles$a = {
+        "copy-text": "_copy-text_1att4_1",
+        "copy-btn": "_copy-btn_1att4_12"
+      };
+      var classnames = { exports: {} };
+      /*!
+      	Copyright (c) 2018 Jed Watson.
+      	Licensed under the MIT License (MIT), see
+      	http://jedwatson.github.io/classnames
+      */
+      var hasRequiredClassnames;
+      function requireClassnames() {
+        if (hasRequiredClassnames) return classnames.exports;
+        hasRequiredClassnames = 1;
+        (function(module) {
+          (function() {
+            var hasOwn = {}.hasOwnProperty;
+            function classNames2() {
+              var classes = "";
+              for (var i = 0; i < arguments.length; i++) {
+                var arg = arguments[i];
+                if (arg) {
+                  classes = appendClass(classes, parseValue(arg));
+                }
+              }
+              return classes;
+            }
+            function parseValue(arg) {
+              if (typeof arg === "string" || typeof arg === "number") {
+                return arg;
+              }
+              if (typeof arg !== "object") {
+                return "";
+              }
+              if (Array.isArray(arg)) {
+                return classNames2.apply(null, arg);
+              }
+              if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes("[native code]")) {
+                return arg.toString();
+              }
+              var classes = "";
+              for (var key in arg) {
+                if (hasOwn.call(arg, key) && arg[key]) {
+                  classes = appendClass(classes, key);
+                }
+              }
+              return classes;
+            }
+            function appendClass(value, newClass) {
+              if (!newClass) {
+                return value;
+              }
+              if (value) {
+                return value + " " + newClass;
+              }
+              return value + newClass;
+            }
+            if (module.exports) {
+              classNames2.default = classNames2;
+              module.exports = classNames2;
+            } else {
+              window.classNames = classNames2;
+            }
+          })();
+        })(classnames);
+        return classnames.exports;
+      }
+      var classnamesExports = requireClassnames();
+      const classNames = /* @__PURE__ */ getDefaultExportFromCjs(classnamesExports);
+      const styles$9 = {
+        "text-overflow-show-tips-container": "_text-overflow-show-tips-container_btabq_1"
+      };
+      function TextOverflowShowTips({
+        text,
+        tooltipProps,
+        className,
+        ...restProps
+      }) {
+        const containerRef = useRef(null);
+        const { width: containerWidth } = useSize(containerRef) || {};
+        const isTooLong = useMemo(() => {
+          if (containerWidth) {
+            const textWidth = getTextWidth(text);
+            return containerWidth < textWidth;
+          }
+          return false;
+        }, [text, containerWidth]);
+        const containerStyle = {
+          maxWidth: "100%",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+          whiteSpace: "nowrap"
+        };
+        return isTooLong ? /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { title: text, ...tooltipProps, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            ...restProps,
+            className: classNames(styles$9["text-overflow-show-tips-container"], className),
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, children: text })
+          }
+        ) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, ...restProps, className, children: text });
+      }
+      function getTextWidth(text, font = "14px Arial") {
+        const span = document.createElement("span");
+        span.style.visibility = "hidden";
+        span.style.whiteSpace = "nowrap";
+        span.style.font = font;
+        span.style.position = "absolute";
+        span.style.top = "-9999px";
+        span.style.left = "-9999px";
+        span.innerText = text;
+        document.body.appendChild(span);
+        const width = span.offsetWidth;
+        document.body.removeChild(span);
+        return width;
+      }
+      function CopyText(props) {
+        const { text, className, ...rest } = props;
+        const handleCopy = () => {
+          copy(text);
+          msgSuccess("复制成功");
+        };
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: classNames(styles$a["copy-text"], className), ...rest, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            TextOverflowShowTips,
+            {
+              text: text + "",
+              tooltipProps: {
+                getPopupContainer: (node) => {
+                  return document.body;
+                }
+              }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Button,
+            {
+              type: "link",
+              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(CopyOutlined, {}),
+              onClick: handleCopy,
+              className: styles$a["copy-btn"]
+            }
+          )
+        ] });
+      }
+      function MyButton(props) {
+        const { loading: loading2, onClick, ...rest } = props;
+        const [_loading, setLoading] = useState(loading2);
+        const handleClick = async (...args) => {
+          try {
+            setLoading(true);
+            await onClick?.(...args);
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        useEffect(() => {
+          setLoading(loading2);
+        }, [loading2]);
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { ...rest, onClick: handleClick, loading: _loading });
+      }
+      const Styles$1 = {
+        "select-search": "_select-search_19wb1_1"
+      };
+      const { Group } = Input;
+      const defaultSearchParams$3 = {
+        prop: "xm",
+        value: ""
+      };
+      function SelectSearch(props) {
+        const {
+          value,
+          onChange,
+          defaultValue,
+          SearchSelectOptions,
+          selectProps,
+          inputProps,
+          width = 300,
+          selectWidth = 80,
+          inputWidth = 180
+        } = props;
+        const [searchParams, setSearchParams] = useState(() => {
+          if (value?.prop == void 0) return defaultValue || defaultSearchParams$3;
+          return {
+            ...defaultValue || defaultSearchParams$3,
+            ...value
+          };
+        });
+        useEffect(() => {
+          if (value?.prop == void 0) return;
+          if (typeof value !== "object") return console.warn("value类型错误,必须为对象");
+          setSearchParams({
+            ...value
+          });
+        }, [value]);
+        const handleSearchSelectChange = (value2) => {
+          const newSearchParams = {
+            ...searchParams,
+            prop: value2
+          };
+          setSearchParams(newSearchParams);
+          onChange?.(newSearchParams, searchParams);
+        };
+        const handleSearchInputChange = (e) => {
+          const value2 = e.target.value;
+          const newSearchParams = {
+            ...searchParams,
+            value: value2
+          };
+          setSearchParams(newSearchParams);
+          onChange?.(newSearchParams, searchParams);
+        };
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          Group,
+          {
+            compact: true,
+            style: {
+              width
+            },
+            className: Styles$1["select-search"],
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Select,
+                {
+                  options: SearchSelectOptions || defaultSearchSelectOptions,
+                  placeholder: "请选择",
+                  value: searchParams.prop,
+                  onChange: handleSearchSelectChange,
+                  style: {
+                    width: selectWidth,
+                    borderRadius: "6px 0 0 6px"
+                  },
+                  ...selectProps
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Input,
+                {
+                  placeholder: `请输入`,
+                  style: { width: inputWidth, height: 32 },
+                  value: searchParams.value,
+                  onChange: handleSearchInputChange,
+                  allowClear: true,
+                  ...inputProps
+                }
+              )
+            ]
+          }
+        );
+      }
+      const defaultSearchSelectOptions = [
+        {
+          value: "xh",
+          label: "学号"
+        },
+        {
+          value: "xm",
+          label: "姓名"
+        }
+      ];
+      const styles$8 = {};
+      const { RangePicker: AntRangePicker } = DatePicker;
+      const RangePicker = ({
+        value,
+        onChange,
+        format = "YYYY-MM-DD",
+        className,
+        placeholder = ["开始日期", "结束日期"],
+        ...rest
+      }) => {
+        const toDayjs = (val) => {
+          if (!val) return null;
+          if (dayjs.isDayjs(val)) return val;
+          return dayjs(val);
+        };
+        const rangeValue = Array.isArray(value) ? [toDayjs(value[0]), toDayjs(value[1])] : null;
+        const handleChange = (dates, dateStrings) => {
+          console.log("dates", dates);
+          console.log("dateStrings", dateStrings);
+          if (dates && onChange) {
+            onChange(
+              dates.map((date) => date ? date.format(format) : ""),
+              dateStrings
+            );
+          }
+        };
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(
+          AntRangePicker,
+          {
+            value: rangeValue,
+            onChange: handleChange,
+            format,
+            className: classNames(styles$8["rangePicker"], className),
+            placeholder,
+            ...rest
+          }
+        );
+      };
+      const filterOption = (inputValue, option) => {
+        return option.label.toLowerCase().indexOf(inputValue.toLowerCase()) >= 0;
+      };
+      const COMPONENT_TYPE_MAP = {
+        input: Input,
+        select: Select,
+        selectSearch: SelectSearch,
+        rangePicker: RangePicker,
+        treeSelect: TreeSelect
+      };
+      const defaultComponentProps = {
+        input: {
+          placeholder: "请输入",
+          style: { width: "200px" },
+          allowClear: true
+        },
+        select: {
+          placeholder: "请选择",
+          style: { width: "200px" },
+          allowClear: true,
+          maxTagCount: 2,
+          showSearch: true,
+          filterOption
+        },
+        selectSearch: {},
+        rangePicker: {},
+        treeSelect: {
+          treeCheckable: true,
+          allowClear: true,
+          treeExpandAction: "click",
+          filterTreeNode: (inputValue, treeNode) => {
+            return treeNode.props.title.toLowerCase().indexOf(inputValue.toLowerCase()) >= 0;
+          },
+          placeholder: "请选择",
+          style: {
+            width: "200px"
+          }
+        }
+      };
+      const { Item: Item$3 } = Form;
+      const SearchFormItem = (props) => {
+        const { name: name2, type = "input", label = "", inputProps = {}, ...formItemProps } = props;
+        const InputComponent = COMPONENT_TYPE_MAP[type];
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(Item$3, { name: name2, label, ...formItemProps, children: /* @__PURE__ */ jsxRuntimeExports.jsx(InputComponent, { ...{ ...defaultComponentProps[type], ...inputProps } }) });
+      };
+      function AdvancedSearch(props) {
+        Form.useFormInstance();
+        const { params, items = [] } = props;
+        const [optionsMap, setOptionsMap] = useState({});
+        useEffect(() => {
+          const asyncFn = async () => {
+            try {
+              items.map(async (item) => {
+                if (!item.getOptionsApi) return;
+                const res = await item.getOptionsApi(params);
+                setOptionsMap((prev) => {
+                  return {
+                    ...prev,
+                    [item.name]: res.data
+                  };
+                });
+                item.getOptionsApiAfter?.(res.data);
+              });
+            } catch (error) {
+              console.log("error", error);
+            }
+          };
+          asyncFn();
+        }, []);
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: items.map((item) => {
+          return /* @__PURE__ */ jsxRuntimeExports.jsx(
+            SearchFormItem,
+            {
+              name: item.name,
+              label: item.label,
+              type: item.type,
+              inputProps: {
+                ...item.inputProps,
+                options: optionsMap[item.name] || item.options
+              }
+            },
+            item.name
+          );
+        }) });
+      }
+      const Styles = {
+        "search-form": "_search-form_10eg9_1"
+      };
+      const { Item: Item$2 } = Form;
+      const SearchForm = (props, ref) => {
+        const [formRef] = Form.useForm();
+        const {
+          options = [],
+          advancedOptions = [],
+          searchParams = {},
+          onSearch = () => {
+          },
+          loading: loading2 = false,
+          keepAdvancedSearchValue = true,
+          ...restFormProps
+        } = props;
+        useEffect(() => {
+          !keepAdvancedSearchValue && formRef.resetFields();
+          formRef.setFieldsValue(searchParams);
+        }, [searchParams]);
+        const [optionsMap, setOptionsMap] = useState({});
+        useEffect(() => {
+          const asyncFn = async () => {
+            try {
+              options.map(async (item) => {
+                if (!item.getOptionsApi || !item.name) return;
+                const res = await item.getOptionsApi(searchParams);
+                setOptionsMap((prev) => {
+                  return {
+                    ...prev,
+                    [item.name]: res.data
+                  };
+                });
+                item.getOptionsApiAfter?.(res.data);
+              });
+            } catch (error) {
+              console.log("error", error);
+            }
+          };
+          asyncFn();
+        }, []);
+        const [isAdvancedSearch, setIsAdvancedSearch] = useState(false);
+        const handleSearch = () => {
+          const values = formRef.getFieldsValue();
+          console.log("values", values);
+          onSearch(values);
+        };
+        const handleReset = () => {
+          formRef.resetFields();
+          handleSearch();
+        };
+        useImperativeHandle(ref, () => ({
+          reset: handleReset,
+          search: handleSearch,
+          getValues: formRef.getFieldsValue
+        }));
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          Form,
+          {
+            layout: "inline",
+            form: formRef,
+            className: Styles["search-form"],
+            ...restFormProps,
+            children: [
+              options.map((item) => {
+                const { getOptionsApi, getOptionsApiAfter, ...rest } = item;
+                return /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SearchFormItem,
+                  {
+                    ...rest,
+                    inputProps: {
+                      ...item.inputProps,
+                      options: optionsMap[item.name] || item.options
+                    }
+                  },
+                  item.name || item.label
+                );
+              }),
+              isAdvancedSearch && /* @__PURE__ */ jsxRuntimeExports.jsx(AdvancedSearch, { params: searchParams, items: advancedOptions }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Item$2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleSearch, shape: "round", loading: loading2, children: "查询" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Item$2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { onClick: handleReset, shape: "round", children: "重置" }) }),
+              advancedOptions.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(Item$2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { type: "link", onClick: () => setIsAdvancedSearch(!isAdvancedSearch), children: isAdvancedSearch ? "关闭" : "高级搜索" }) })
+            ]
+          }
+        );
+      };
+      const SearchForm$1 = forwardRef(SearchForm);
+      const footer$2 = "_footer_e7ura_48";
+      const styles$7 = {
+        "album-detail-modal": "_album-detail-modal_e7ura_1",
+        "modal-header": "_modal-header_e7ura_1",
+        "album-basic-info": "_album-basic-info_e7ura_6",
+        "album-info": "_album-info_e7ura_11",
+        "album-name": "_album-name_e7ura_16",
+        "album-meta": "_album-meta_e7ura_19",
+        "song-table": "_song-table_e7ura_24",
+        "song-name": "_song-name_e7ura_27",
+        "artist-item": "_artist-item_e7ura_33",
+        "artist-name": "_artist-name_e7ura_37",
+        "artist-separator": "_artist-separator_e7ura_41",
+        "song-duration": "_song-duration_e7ura_45",
+        footer: footer$2,
+        "selected-count": "_selected-count_e7ura_55"
+      };
+      const { Text: Text$4, Title: Title$3 } = Typography;
+      const AlbumDetail = forwardRef((_, ref) => {
+        const { visible, close } = useVisible(
+          {
+            onOpen(params) {
+              if (params?.albummid) {
+                setCurrentMid(params.albummid);
+              }
+            },
+            onReset() {
+              setCurrentMid("");
+              setInputMid("");
+              setSelectedRowKeys([]);
+              setSelectedRows([]);
+              setList([]);
+            }
+          },
+          ref
+        );
+        const [currentMid, setCurrentMid] = useState("");
+        const [inputMid, setInputMid] = useState("");
+        const { downloadConfig } = useConfig();
+        const { quality: defaultQuality } = downloadConfig;
+        const { getAlbumDetail, getAlbumSongList, isLoading, getDownLoadJson } = useGetAlbumDetail();
+        const { play, isPlaying, pause, download, convertToNeteaseMusic } = usePlayMusic();
+        const { data: detail, loading: detailLoading } = useGetData(
+          getAlbumDetail,
+          currentMid,
+          {
+            initialValue: void 0,
+            returnFunction: () => !currentMid || !visible,
+            monitors: [currentMid, visible]
+          }
+        );
+        const {
+          data: list,
+          loading: loading2,
+          setData: setList
+        } = useGetData(getAlbumSongList, currentMid, {
+          initialValue: [],
+          returnFunction: () => !currentMid || !visible,
+          monitors: [currentMid, visible],
+          callback: (data) => {
+            console.log("data", data);
+          }
+        });
+        const handleChooseQuality = (record, quality) => {
+          setList(
+            list?.map((item) => {
+              if (item.songmid === record.songmid) {
+                return {
+                  ...item,
+                  quality
+                };
+              }
+              return item;
+            }) || []
+          );
+        };
+        const handlePlay = (record) => {
+          if (isPlaying) {
+            pause();
+          } else {
+            const { quality } = record;
+            const finalQuality = getQuality$3(record, defaultQuality, quality);
+            play(record.songmid, finalQuality);
+          }
+        };
+        const [downloading, setDownloading] = useState("");
+        const handleDownload = async (record) => {
+          try {
+            if (downloading === record.songmid) return;
+            setDownloading(record.songmid);
+            const { quality } = record;
+            const finalQuality = getQuality$3(record, defaultQuality, quality);
+            await download(record.songmid, finalQuality);
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setDownloading("");
+          }
+        };
+        const songColumns = [
+          {
+            title: "歌曲",
+            dataIndex: "songname",
+            key: "songname",
+            width: 300,
+            render: (text) => /* @__PURE__ */ jsxRuntimeExports.jsx(Text$4, { className: styles$7["song-name"], title: text, children: text })
+          },
+          {
+            title: "歌手",
+            dataIndex: "singer",
+            key: "singer",
+            width: 240,
+            render: (singers = []) => /* @__PURE__ */ jsxRuntimeExports.jsx(Space, { size: "small", wrap: true, children: singers.length > 0 ? singers.map((s, index2) => /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$7["artist-item"], children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Avatar, { size: 30, style: { marginRight: 4 }, src: getSingerPic(s.mid) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$7["artist-name"], children: s.name }),
+              index2 < singers.length - 1 && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$7["artist-separator"], children: "/" })
+            ] }, s.mid || index2)) : /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "-" }) })
+          },
+          // 音质选择器
+          {
+            title: "音质",
+            key: "quality",
+            width: 100,
+            align: "center",
+            render: (_2, record) => {
+              const qualityList = getFileQualityList(record);
+              const defaultValue = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
+              return /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Select,
+                {
+                  options: qualityList.map((quality) => ({
+                    label: quality,
+                    value: quality
+                  })),
+                  value: record.quality || defaultValue,
+                  style: { width: "100%" },
+                  onChange: (value) => {
+                    handleChooseQuality(record, value);
+                  }
+                }
+              );
+            }
+          },
+          // 格式
+          {
+            title: "格式",
+            key: "format",
+            width: 150,
+            align: "center",
+            render: (_2, record) => {
+              const qualityList = getFileQualityList(record);
+              const qualityColorMap = {
+                flac: "green",
+                ape: "volcano",
+                320: "blue",
+                m4a: "orange",
+                128: "gray"
+              };
+              const qualityTextMap = {
+                flac: "FLAC",
+                ape: "APE",
+                320: "320k",
+                m4a: "M4A",
+                128: "128k"
+              };
+              return /* @__PURE__ */ jsxRuntimeExports.jsx(Space, { wrap: true, children: qualityList.map((quality) => /* @__PURE__ */ jsxRuntimeExports.jsx(Tag, { color: qualityColorMap[quality], children: qualityTextMap[quality] || quality }, quality)) });
+            }
+          },
+          {
+            title: "时长",
+            dataIndex: "interval",
+            key: "interval",
+            width: 100,
+            align: "center",
+            render: (interval) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Text$4, { className: styles$7["song-duration"], children: [
+              Math.floor((interval || 0) / 60),
+              ":",
+              ((interval || 0) % 60).toString().padStart(2, "0")
+            ] })
+          },
+          {
+            title: "操作",
+            key: "action",
+            width: 200,
+            align: "center",
+            fixed: "right",
+            render: (_2, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { title: "播放", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Button,
+                {
+                  type: "link",
+                  size: "small",
+                  icon: isPlaying === record.songmid ? /* @__PURE__ */ jsxRuntimeExports.jsx(PauseCircleOutlined, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(PlayCircleOutlined, {}),
+                  onClick: () => handlePlay(record),
+                  children: "播放"
+                }
+              ) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { title: "下载", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Button,
+                {
+                  type: "link",
+                  size: "small",
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DownloadOutlined, {}),
+                  loading: downloading === record.songmid,
+                  onClick: () => handleDownload(record),
+                  children: "下载"
+                }
+              ) })
+            ] })
+          }
+        ];
+        const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+        const [selectedRows, setSelectedRows] = useState([]);
+        const rowSelection = {
+          preserveSelectedRowKeys: true,
+          selectedRowKeys,
+          onChange: (selectedRowKeys2, selectedRows2) => {
+            setSelectedRowKeys(selectedRowKeys2);
+            setSelectedRows(selectedRows2);
+            console.log("selectedRowKeys", selectedRowKeys2);
+            console.log("selectedRows", selectedRows2);
+          }
+        };
+        const renderTitle = () => {
+          const albumName = detail?.name || "专辑详情";
+          const singerName = detail?.singername || "";
+          const publishDate = detail?.aDate || "";
+          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["modal-header"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Title$3, { level: 4, className: styles$7["modal-title"], children: "专辑详情" }),
+            detail && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["album-basic-info"], children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Image,
+                {
+                  src: currentMid ? getAlbumPicUrl(currentMid) : "",
+                  alt: albumName,
+                  width: 80,
+                  height: 80,
+                  style: { borderRadius: 8 },
+                  fallback: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAADDCAYAAADQvc6UAAABRWlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSSwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAwSDCIMogwMCcmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis7PPOq3QdDFcvjV3jOD1boQVTPQrgSkktTgbSf4A4LbmgqISBgTEFyFYuLykAsTuAbJEioKOA7DkgdjqEvQHEToKwj4DVhAQ5A9k3gGyB5IxEoBmML4BsnSQk8XQkNtReEOBxcfXxUQg1Mjc0dyHgXNJBSWpFCYh2zi+oLMpMzyhRcASGUqqCZ16yno6CkYGRAQMDKMwhqj/fAIcloxgHQqxAjIHBEugw5sUIsSQpBobtQPdLciLEVJYzMPBHMDBsayhILEqEO4DxG0txmrERhM29nYGBddr//5/DGRjYNRkY/l7////39v///y4Dmn+LgeHANwDrkl1AuO+pmgAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAwqADAAQAAAABAAAAwwAAAAD9b/HnAAAHlklEQVR4Ae3dP3Ik1RnG4W+FgYxN"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["album-info"], children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Title$3, { level: 5, className: styles$7["album-name"], children: albumName }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["album-meta"], children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$4, { type: "secondary", className: styles$7["singer-name"], children: singerName || "未知歌手" }),
+                  publishDate && /* @__PURE__ */ jsxRuntimeExports.jsxs(Text$4, { type: "secondary", className: styles$7["publish-date"], children: [
+                    "· ",
+                    publishDate
+                  ] })
+                ] })
+              ] })
+            ] })
+          ] });
+        };
+        const handleBatchDownload = async () => {
+          if (selectedRows.length === 0) {
+            msgWarning("请先选择要下载的歌曲");
+            return;
+          }
+          const loadingKey = "download-album-song";
+          try {
+            message$1.loading({
+              key: loadingKey,
+              content: `正在准备下载 ${selectedRows.length} 首歌曲...`,
+              duration: 0
+            });
+            let index2 = 1;
+            for (const song of selectedRows) {
+              message$1.loading({
+                key: loadingKey,
+                content: `正在下载第 ${index2} 首歌曲 ${song.songname}...`,
+                duration: 0
+              });
+              const finalQuality = getQuality$3(song, defaultQuality);
+              await download(song.songmid, finalQuality);
+              message$1.success({
+                key: loadingKey,
+                content: `第 ${index2} 首歌曲 ${song.songname} 下载成功！`,
+                duration: 1
+              });
+              index2++;
+            }
+            message$1.success({
+              key: loadingKey,
+              content: `成功下载 ${selectedRows.length} 首歌曲！`,
+              duration: 1
+            });
+          } catch (error) {
+            console.error("批量下载失败:", error);
+            message$1.destroy(loadingKey);
+            msgError("批量下载失败: " + error.message);
+          } finally {
+            message$1.destroy(loadingKey);
+          }
+        };
+        const handleBatchDownloadNeteaseMusic = async () => {
+          if (selectedRows.length === 0) {
+            msgWarning("请先选择要转存网易云的歌曲");
+            return;
+          }
+          const loadingKey = "download-album-song-netease";
+          try {
+            message$1.loading({
+              key: loadingKey,
+              content: `正在准备转存网易云 ${selectedRows.length} 首歌曲...`,
+              duration: 0
+            });
+            let index2 = 1;
+            for (const song of selectedRows) {
+              console.log("song", song);
+              const record = song;
+              const finalQuality = getQuality$3(record, defaultQuality, record.quality);
+              message$1.loading({
+                key: loadingKey,
+                content: `正在转存第 ${index2} 首歌曲 ${song.songname}...`,
+                duration: 0
+              });
+              await convertToNeteaseMusic(song.songmid, { quality: finalQuality });
+              message$1.success({
+                content: `第 ${index2} 首歌曲 ${song.songname} 转存成功！`,
+                duration: 1
+              });
+              index2++;
+            }
+            message$1.success({
+              key: loadingKey,
+              content: `成功转存 ${selectedRows.length} 首歌曲！`,
+              duration: 1
+            });
+          } catch (error) {
+            console.error("批量转存网易云失败:", error);
+            msgError("批量转存网易云失败: " + error.message);
+          } finally {
+            message$1.destroy(loadingKey);
+          }
+        };
+        const handleDownloadAllJson = async () => {
+          if (!currentMid) return;
+          const loadingKey = "download-album-json";
+          try {
+            message$1.loading({
+              key: loadingKey,
+              content: `正在下载专辑JSON...`,
+              duration: 0
+            });
+            const res = await getDownLoadJson(currentMid);
+            downloadAsJson([res], `${detail?.name}.json`);
+            message$1.destroy(loadingKey);
+            msgSuccess("成功下载专辑JSON！");
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            message$1.destroy(loadingKey);
+          }
+        };
+        const renderFooter = () => {
+          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["footer"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["selected-count"], children: [
+              "已选择 ",
+              selectedRows.length,
+              " 首歌曲"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
+              selectedRowKeys?.length < list.length ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Button,
+                {
+                  onClick: () => {
+                    setSelectedRowKeys(list?.map((item) => item.songmid) || []);
+                    setSelectedRows(list || []);
+                  },
+                  children: "全部选择"
+                }
+              ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Button,
+                {
+                  onClick: () => {
+                    setSelectedRowKeys([]);
+                    setSelectedRows([]);
+                  },
+                  children: "清空选择"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(MyButton, { type: "primary", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DownloadOutlined, {}), onClick: handleBatchDownload, children: [
+                "下载选中歌曲",
+                selectedRows?.length ? `(${selectedRows?.length})` : ""
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                MyButton,
+                {
+                  type: "primary",
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(CloudDownloadOutlined, {}),
+                  onClick: handleBatchDownloadNeteaseMusic,
+                  children: [
+                    "转存网易云",
+                    selectedRows?.length ? `(${selectedRows?.length})` : ""
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { icon: /* @__PURE__ */ jsxRuntimeExports.jsx(FileOutlined, {}), type: "primary", onClick: handleDownloadAllJson, children: "下载全部歌曲JSON" })
+            ] })
+          ] });
+        };
+        const handleInputChange = (e) => {
+          setInputMid(e.target.value.trim());
+        };
+        const handleOpenById = () => {
+          if (!inputMid) return;
+          setCurrentMid(inputMid);
+        };
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          Modal,
+          {
+            title: renderTitle(),
+            open: visible,
+            onCancel: close,
+            width: 1200,
+            centered: true,
+            destroyOnHidden: true,
+            className: styles$7["album-detail-modal"],
+            footer: renderFooter(),
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { marginBottom: 12, display: "flex", gap: 8 }, children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Input,
+                  {
+                    placeholder: "请输入专辑ID/MID，如 003rJSwm3TechU",
+                    value: inputMid,
+                    onChange: handleInputChange,
+                    onPressEnter: handleOpenById,
+                    allowClear: true,
+                    "aria-label": "专辑ID输入框"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Button,
+                  {
+                    type: "primary",
+                    onClick: handleOpenById,
+                    loading: loading2 || detailLoading || isLoading,
+                    children: "打开"
+                  }
+                )
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Table,
+                {
+                  columns: songColumns,
+                  dataSource: list || [],
+                  rowSelection,
+                  rowKey: "songmid",
+                  loading: loading2 || detailLoading || isLoading,
+                  scroll: { y: 400, x: 600 },
+                  pagination: {
+                    showSizeChanger: true,
+                    showQuickJumper: true,
+                    showTotal: (total) => `共 ${total} 首歌曲`
+                  },
+                  className: styles$7["song-table"]
+                }
+              )
+            ]
+          }
+        );
+      });
+      const getQuality$3 = (record, defaultQuality, chooseQuality) => {
+        const qualityList = getFileQualityList(record);
+        const songDefaultQuality = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
+        const finalQuality = chooseQuality || songDefaultQuality;
+        return finalQuality;
+      };
+      const { Link, Text: Text$3 } = Typography;
+      const GITHUB_CONFIG = {
+        owner: "520Qiuyu",
+        repo: "QQMusic",
+        homepage: "https://github.com/520Qiuyu/QQMusic",
+        authorUrl: "https://github.com/520Qiuyu",
+        scriptUrl: "https://raw.githubusercontent.com/520Qiuyu/QQMusic/main/dist/qqmusic.user.js"
+      };
+      const GithubInfo = forwardRef((_props, ref) => {
+        const { visible, close } = useVisible(
+          {
+            onOpen: () => {
+              fetchRepoInfo();
+            }
+          },
+          ref
+        );
+        const [repoInfo, setRepoInfo] = useState(null);
+        const [loading2, setLoading] = useState(false);
+        const { functionConfig, setFunctionConfig } = useConfig();
+        const fetchRepoInfo = async () => {
+          setLoading(true);
+          try {
+            const response = await fetch(
+              `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}`
+            );
+            if (response.ok) {
+              const data = await response.json();
+              setRepoInfo({
+                stars: data.stargazers_count || 0,
+                forks: data.forks_count || 0,
+                watchers: data.watchers_count || 0,
+                description: data.description || "",
+                language: data.language || "",
+                updatedAt: data.updated_at || "",
+                createdAt: data.created_at || "",
+                openIssues: data.open_issues_count || 0,
+                license: data.license?.name || "无",
+                defaultBranch: data.default_branch || "main",
+                avatarUrl: data.owner?.avatar_url || "",
+                authorName: data.owner?.login || GITHUB_CONFIG.owner
+              });
+            }
+          } catch (error) {
+            console.error("获取 GitHub 信息失败:", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        const formatDate = (dateString) => {
+          if (!dateString) return "-";
+          const date = new Date(dateString);
+          return date.toLocaleDateString("zh-CN", {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+          });
+        };
+        const handleDoubleClickDefaultBranch = () => {
+          console.log("handleDoubleClickDefaultBranch");
+          setFunctionConfig({
+            ...functionConfig,
+            enableTestModal: !functionConfig.enableTestModal
+          });
+          close();
+        };
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Modal,
+          {
+            title: /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(GithubOutlined, {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "GitHub 信息" })
+            ] }),
+            open: visible,
+            onCancel: close,
+            footer: null,
+            centered: true,
+            width: 700,
+            zIndex: 99999,
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Spin, { spinning: loading2, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Descriptions, { column: 1, bordered: true, size: "small", styles: { label: { width: 120 } }, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "项目主页", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Space, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { href: GITHUB_CONFIG.homepage, target: "_blank", rel: "noopener noreferrer", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(LinkOutlined, {}),
+                " ",
+                GITHUB_CONFIG.homepage
+              ] }) }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "作者主页", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
+                repoInfo?.avatarUrl && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Image,
+                  {
+                    src: repoInfo.avatarUrl,
+                    alt: repoInfo.authorName || "作者头像",
+                    width: 60,
+                    height: 60,
+                    style: {
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                      cursor: "pointer"
+                    }
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { href: GITHUB_CONFIG.authorUrl, target: "_blank", rel: "noopener noreferrer", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(GithubOutlined, {}),
+                  " ",
+                  GITHUB_CONFIG.authorUrl
+                ] })
+              ] }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "项目描述", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: repoInfo?.description || "暂无描述" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "统计信息", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { size: "large", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(StarOutlined, { style: { color: "#faad14" } }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { strong: true, children: repoInfo?.stars || 0 }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { type: "secondary", children: "Stars" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(ForkOutlined, { style: { color: "#1890ff" } }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { strong: true, children: repoInfo?.forks || 0 }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { type: "secondary", children: "Forks" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(EyeOutlined, { style: { color: "#52c41a" } }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { strong: true, children: repoInfo?.watchers || 0 }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { type: "secondary", children: "Watchers" })
+                ] })
+              ] }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "主要语言", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: repoInfo?.language || "未知" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "默认分支", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Text$3,
+                {
+                  code: true,
+                  onDoubleClick: handleDoubleClickDefaultBranch,
+                  onTouchStart: handleDoubleClickDefaultBranch,
+                  style: { cursor: "pointer", userSelect: "none" },
+                  children: repoInfo?.defaultBranch || "main"
+                }
+              ) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "许可证", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: repoInfo?.license || "无" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "开放 Issues", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: repoInfo?.openIssues || 0 }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "创建时间", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: formatDate(repoInfo?.createdAt) }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "更新时间", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: formatDate(repoInfo?.updatedAt) }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "操作", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Button,
+                  {
+                    type: "primary",
+                    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(GithubOutlined, {}),
+                    href: GITHUB_CONFIG.homepage,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    children: "访问仓库"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Button,
+                  {
+                    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(StarOutlined, {}),
+                    href: `${GITHUB_CONFIG.homepage}/stargazers`,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    children: "查看 Stars"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Button,
+                  {
+                    type: "primary",
+                    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(UploadOutlined, {}),
+                    href: GITHUB_CONFIG.scriptUrl,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    children: "更新脚本"
+                  }
+                )
+              ] }) })
+            ] }) })
+          }
+        );
+      });
       const loading$1 = "_loading_jnpqx_59";
       const footer$1 = "_footer_jnpqx_161";
       const styles$6 = {
@@ -35504,7 +35522,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
                     label: quality,
                     value: quality
                   })),
-                  defaultValue,
+                  value: record.quality || defaultValue,
                   style: { width: "100%" },
                   onChange: (value) => {
                     handleChooseQuality(record, value);
@@ -37096,7 +37114,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
                     label: quality,
                     value: quality
                   })),
-                  defaultValue,
+                  value: record.quality || defaultValue,
                   style: { width: "100%" },
                   onChange: (value) => {
                     handleChooseQuality(record, value);
@@ -37276,7 +37294,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
           try {
             const data = await getPlaylistDownloadJson(currentDissid);
             console.log("data", data);
-            downloadAsJson(data, `${data.playlistName}.json`);
+            downloadAsJson(data.albums, `${data.playlistName}`);
           } catch (error) {
             console.error("下载歌单JSON失败:", error);
           }
@@ -38650,8 +38668,8 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
       const { Item: Item$1 } = Descriptions;
       const getQualityOptions = () => {
         return [
-          { label: "128k MP3", value: "128" },
-          { label: "320k MP3", value: "320" },
+          { label: "128k MP3", value: 128 },
+          { label: "320k MP3", value: 320 },
           { label: "FLAC", value: "flac" }
         ];
       };
@@ -39711,7 +39729,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
   };
 }));
 
-System.register("./MpegParser-D4OTIk2w-BRXz6VW3.js", ['./main-D8Z2gnC--6SX1oftk.js', './AbstractID3Parser-GktKn8qp-Dr8rgNZX.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-jJIw7kU2-DMjCZFVJ.js'], (function (exports, module) {
+System.register("./MpegParser-u0mXo9FE-DiK4U1IX.js", ['./main-CgloWa0i-GjGuKtXs.js', './AbstractID3Parser-CzO4OhO--C-f-CwKV.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-DNYhptxy-B28JPniw.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -40340,7 +40358,7 @@ System.register("./MpegParser-D4OTIk2w-BRXz6VW3.js", ['./main-D8Z2gnC--6SX1oftk.
   };
 }));
 
-System.register("./AsfParser-CZgcvmwX-DHzifDS8.js", ['./main-D8Z2gnC--6SX1oftk.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-DSfd8_4U-Z3aR5Xdn.js", ['./main-CgloWa0i-GjGuKtXs.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -40868,7 +40886,7 @@ System.register("./AsfParser-CZgcvmwX-DHzifDS8.js", ['./main-D8Z2gnC--6SX1oftk.j
   };
 }));
 
-System.register("./DsdiffParser-DkYq7g0k-mKsuvBbA.js", ['./main-D8Z2gnC--6SX1oftk.js', './ID3v2Parser-jJIw7kU2-DMjCZFVJ.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-DqH2E7ZX-DLxXpivn.js", ['./main-CgloWa0i-GjGuKtXs.js', './ID3v2Parser-DNYhptxy-B28JPniw.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -41045,7 +41063,7 @@ System.register("./DsdiffParser-DkYq7g0k-mKsuvBbA.js", ['./main-D8Z2gnC--6SX1oft
   };
 }));
 
-System.register("./AiffParser-B1R9FGYG-BGoTb1_s.js", ['./main-D8Z2gnC--6SX1oftk.js', './ID3v2Parser-jJIw7kU2-DMjCZFVJ.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-C1JG9411-C7pOZhLN.js", ['./main-CgloWa0i-GjGuKtXs.js', './ID3v2Parser-DNYhptxy-B28JPniw.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -41222,7 +41240,7 @@ System.register("./AiffParser-B1R9FGYG-BGoTb1_s.js", ['./main-D8Z2gnC--6SX1oftk.
   };
 }));
 
-System.register("./DsfParser-CU5V0HIn-Dx_WJYs2.js", ['./main-D8Z2gnC--6SX1oftk.js', './AbstractID3Parser-GktKn8qp-Dr8rgNZX.js', './ID3v2Parser-jJIw7kU2-DMjCZFVJ.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-Dq1m5JFk-UJV5gfym.js", ['./main-CgloWa0i-GjGuKtXs.js', './AbstractID3Parser-CzO4OhO--C-f-CwKV.js', './ID3v2Parser-DNYhptxy-B28JPniw.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -41321,7 +41339,7 @@ System.register("./DsfParser-CU5V0HIn-Dx_WJYs2.js", ['./main-D8Z2gnC--6SX1oftk.j
   };
 }));
 
-System.register("./MatroskaParser-B1PzfZfE-dUchVWxn.js", ['./main-D8Z2gnC--6SX1oftk.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-Cob5fM4H-Dmjj5Y6P.js", ['./main-CgloWa0i-GjGuKtXs.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -41966,7 +41984,7 @@ System.register("./MatroskaParser-B1PzfZfE-dUchVWxn.js", ['./main-D8Z2gnC--6SX1o
   };
 }));
 
-System.register("./MP4Parser-Bqtczl0Z-Gdy0jNnF.js", ['./main-D8Z2gnC--6SX1oftk.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-DZbELfBV-BN9sQitk.js", ['./main-CgloWa0i-GjGuKtXs.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, textDecode, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, getBit, INT16_BE;
   return {
@@ -43074,7 +43092,7 @@ System.register("./MP4Parser-Bqtczl0Z-Gdy0jNnF.js", ['./main-D8Z2gnC--6SX1oftk.j
   };
 }));
 
-System.register("./MusepackParser-6QYi3d0Q-AcpdGD7N.js", ['./main-D8Z2gnC--6SX1oftk.js', './AbstractID3Parser-GktKn8qp-Dr8rgNZX.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-jJIw7kU2-DMjCZFVJ.js'], (function (exports, module) {
+System.register("./MusepackParser-CztaxqR5-CdrwrOPb.js", ['./main-CgloWa0i-GjGuKtXs.js', './AbstractID3Parser-CzO4OhO--C-f-CwKV.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-DNYhptxy-B28JPniw.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, tryParseApeHeader, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, textDecode, AbstractID3Parser;
   return {
@@ -43368,7 +43386,7 @@ System.register("./MusepackParser-6QYi3d0Q-AcpdGD7N.js", ['./main-D8Z2gnC--6SX1o
   };
 }));
 
-System.register("./OggParser-CoiZFUHK-ffAZWZb8.js", ['./main-D8Z2gnC--6SX1oftk.js', './FlacParser-BFuAy9qr-CFyOlKnE.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './AbstractID3Parser-GktKn8qp-Dr8rgNZX.js', './ID3v2Parser-jJIw7kU2-DMjCZFVJ.js'], (function (exports, module) {
+System.register("./OggParser-DGial4MZ-rMJOoZcl.js", ['./main-CgloWa0i-GjGuKtXs.js', './FlacParser-5MV_YOr0-CaSUJFes.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './AbstractID3Parser-CzO4OhO--C-f-CwKV.js', './ID3v2Parser-DNYhptxy-B28JPniw.js'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, UINT8, UINT32_LE, getBit, StringType, UINT64_LE, makeUnexpectedFileContentError, Uint8ArrayType, FourCcToken, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, VorbisStream, FlacParser, BlockHeader, BlockType, VorbisPictureToken, BlockStreamInfo;
   return {
@@ -43764,7 +43782,7 @@ System.register("./OggParser-CoiZFUHK-ffAZWZb8.js", ['./main-D8Z2gnC--6SX1oftk.j
   };
 }));
 
-System.register("./FlacParser-BFuAy9qr-CFyOlKnE.js", ['./main-D8Z2gnC--6SX1oftk.js', './AbstractID3Parser-GktKn8qp-Dr8rgNZX.js'], (function (exports, module) {
+System.register("./FlacParser-5MV_YOr0-CaSUJFes.js", ['./main-CgloWa0i-GjGuKtXs.js', './AbstractID3Parser-CzO4OhO--C-f-CwKV.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, UINT32_LE, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, textDecode, AttachedPictureType, UINT32_BE, StringType, UINT8, AbstractID3Parser;
   return {
@@ -44173,7 +44191,7 @@ System.register("./FlacParser-BFuAy9qr-CFyOlKnE.js", ['./main-D8Z2gnC--6SX1oftk.
   };
 }));
 
-System.register("./AbstractID3Parser-GktKn8qp-Dr8rgNZX.js", ['./main-D8Z2gnC--6SX1oftk.js', './ID3v2Parser-jJIw7kU2-DMjCZFVJ.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-CzO4OhO--C-f-CwKV.js", ['./main-CgloWa0i-GjGuKtXs.js', './ID3v2Parser-DNYhptxy-B28JPniw.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -44237,7 +44255,7 @@ System.register("./AbstractID3Parser-GktKn8qp-Dr8rgNZX.js", ['./main-D8Z2gnC--6S
   };
 }));
 
-System.register("./WavPackParser-1dOauoJp-ueYAkeW-.js", ['./main-D8Z2gnC--6SX1oftk.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-CX-AxhVk-DSzdooRj.js", ['./main-CgloWa0i-GjGuKtXs.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, tryParseApeHeader, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -44434,7 +44452,7 @@ System.register("./WavPackParser-1dOauoJp-ueYAkeW-.js", ['./main-D8Z2gnC--6SX1of
   };
 }));
 
-System.register("./WaveParser-DBneH1Dd-pmSH-93G.js", ['./main-D8Z2gnC--6SX1oftk.js', './ID3v2Parser-jJIw7kU2-DMjCZFVJ.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-CGHoaQXV-CuiXTFIV.js", ['./main-CgloWa0i-GjGuKtXs.js', './ID3v2Parser-DNYhptxy-B28JPniw.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -44713,7 +44731,7 @@ System.register("./WaveParser-DBneH1Dd-pmSH-93G.js", ['./main-D8Z2gnC--6SX1oftk.
   };
 }));
 
-System.register("./ID3v2Parser-jJIw7kU2-DMjCZFVJ.js", ['./main-D8Z2gnC--6SX1oftk.js'], (function (exports, module) {
+System.register("./ID3v2Parser-DNYhptxy-B28JPniw.js", ['./main-CgloWa0i-GjGuKtXs.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, textDecode, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
@@ -45280,7 +45298,7 @@ System.register("./ID3v2Parser-jJIw7kU2-DMjCZFVJ.js", ['./main-D8Z2gnC--6SX1oftk
   };
 }));
 
-System.register("./main-D8Z2gnC--6SX1oftk.js", ['react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./main-CgloWa0i-GjGuKtXs.js", ['react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var forwardRef, useState, useMemo, useEffect, require$$0, useImperativeHandle, useRef, useCallback, useLayoutEffect, Input, DatePicker, Form, Typography, Modal, Button, Table, Spin, Descriptions, Space, Image, Pagination, Tag, Select, Tabs, ConfigProvider, Avatar, Tooltip, message$1, App$1, TreeSelect, Upload, Card, Switch, TimePicker, Checkbox, Radio, require$$0$1, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, UploadOutlined, DownloadOutlined, CloudDownloadOutlined, FileOutlined, PauseCircleOutlined, PlayCircleOutlined, UserOutlined, SaveOutlined, SelectOutlined, TrophyOutlined, ClockCircleOutlined, CopyOutlined, PictureOutlined, UnorderedListOutlined, ContainerOutlined, BookOutlined, SearchOutlined, InfoCircleOutlined;
   return {
@@ -53238,7 +53256,7 @@ System.register("./main-D8Z2gnC--6SX1oftk.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-D4OTIk2w-BRXz6VW3.js');
+            const { MpegParser } = await module.import('./MpegParser-u0mXo9FE-DiK4U1IX.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -53260,7 +53278,7 @@ System.register("./main-D8Z2gnC--6SX1oftk.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-CZgcvmwX-DHzifDS8.js');
+            const { AsfParser } = await module.import('./AsfParser-DSfd8_4U-Z3aR5Xdn.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -53271,7 +53289,7 @@ System.register("./main-D8Z2gnC--6SX1oftk.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-DkYq7g0k-mKsuvBbA.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-DqH2E7ZX-DLxXpivn.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -53282,7 +53300,7 @@ System.register("./main-D8Z2gnC--6SX1oftk.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-B1R9FGYG-BGoTb1_s.js');
+            const { AIFFParser } = await module.import('./AiffParser-C1JG9411-C7pOZhLN.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -53293,7 +53311,7 @@ System.register("./main-D8Z2gnC--6SX1oftk.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-CU5V0HIn-Dx_WJYs2.js');
+            const { DsfParser } = await module.import('./DsfParser-Dq1m5JFk-UJV5gfym.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -53304,7 +53322,7 @@ System.register("./main-D8Z2gnC--6SX1oftk.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-BFuAy9qr-CFyOlKnE.js').then((n) => n.d);
+            const { FlacParser } = await module.import('./FlacParser-5MV_YOr0-CaSUJFes.js').then((n) => n.d);
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -53315,7 +53333,7 @@ System.register("./main-D8Z2gnC--6SX1oftk.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-B1PzfZfE-dUchVWxn.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-Cob5fM4H-Dmjj5Y6P.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -53326,7 +53344,7 @@ System.register("./main-D8Z2gnC--6SX1oftk.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-Bqtczl0Z-Gdy0jNnF.js');
+            const { MP4Parser } = await module.import('./MP4Parser-DZbELfBV-BN9sQitk.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -53337,7 +53355,7 @@ System.register("./main-D8Z2gnC--6SX1oftk.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-6QYi3d0Q-AcpdGD7N.js');
+            const { MusepackParser } = await module.import('./MusepackParser-CztaxqR5-CdrwrOPb.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -53349,7 +53367,7 @@ System.register("./main-D8Z2gnC--6SX1oftk.js", ['react', 'antd', 'react-dom', '@
         // RFC 7845, RFC 6716, RFC 5574
         async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-CoiZFUHK-ffAZWZb8.js');
+            const { OggParser } = await module.import('./OggParser-DGial4MZ-rMJOoZcl.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -53360,7 +53378,7 @@ System.register("./main-D8Z2gnC--6SX1oftk.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-1dOauoJp-ueYAkeW-.js');
+            const { WavPackParser } = await module.import('./WavPackParser-CX-AxhVk-DSzdooRj.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -53371,7 +53389,7 @@ System.register("./main-D8Z2gnC--6SX1oftk.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-DBneH1Dd-pmSH-93G.js');
+            const { WaveParser } = await module.import('./WaveParser-CGHoaQXV-CuiXTFIV.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -74266,1556 +74284,6 @@ System.register("./main-D8Z2gnC--6SX1oftk.js", ['react', 'antd', 'react-dom', '@
         }
         throw new Error("获取歌单详情失败");
       };
-      const useGetSonglistDetail = () => {
-        const [playlistInfo, setPlaylistInfo] = useState();
-        const [isLoading, setIsLoading] = useState(false);
-        const playlistInfoMap = useRef({});
-        const { downloadConfig, functionConfig } = useConfig();
-        const { quality: downloadQuality } = downloadConfig;
-        const { uploadConcurrency } = functionConfig;
-        const { play, getUrl, download, getLyric, convertToNeteaseMusic } = usePlayMusic();
-        const getPlaylistDetail = async (dissid) => {
-          try {
-            setIsLoading(true);
-            const res = await getSongListDetail(dissid);
-            console.log("歌单详情:", res);
-            const playlistDetail = Array.isArray(res) ? res[0] : res;
-            playlistInfoMap.current[dissid] = playlistDetail;
-            return playlistDetail;
-          } catch (error) {
-            console.error("获取歌单详情失败:", error);
-          } finally {
-            setIsLoading(false);
-          }
-        };
-        const getPlaylistSongList = async (dissid) => {
-          try {
-            setIsLoading(true);
-            const res = await getPlaylistDetail(dissid);
-            return res?.songlist;
-          } catch (error) {
-            console.error("获取歌单歌曲列表失败:", error);
-          } finally {
-            setIsLoading(false);
-          }
-        };
-        const getPlaylistSongUrl = async (dissid) => {
-          const res = await getPlaylistSongList(dissid);
-          const ids = res?.map((item) => {
-            return {
-              id: item.mid,
-              name: item.name,
-              file: item.file
-            };
-          });
-          const promiseArr = ids?.map((item) => async () => {
-            const qualityList = getFile_qualityList(item.file);
-            const finalQuality = qualityList.includes(downloadQuality) ? downloadQuality : qualityList[0];
-            const url = await getUrl(item.id, finalQuality);
-            return {
-              ...item,
-              url,
-              quality: finalQuality
-            };
-          });
-          const urls = await promiseLimit(promiseArr, 6);
-          console.log("歌单歌曲播放地址:", urls);
-          return urls;
-        };
-        const downloadPlaylistSong = async (dissid) => {
-          try {
-            const songList = await getPlaylistSongList(dissid);
-            console.log("准备下载歌单歌曲:", songList);
-            for (const item of songList || []) {
-              const { mid, name: name2, file } = item;
-              console.log(`正在下载: mid=${mid}, name=${name2}`);
-              await download(mid);
-            }
-          } catch (error) {
-            console.error("下载歌单歌曲失败:", error);
-          }
-        };
-        const convertToNeteaseMusicPlaylistSong = async (dissid) => {
-          const loadingKey = "convert-to-netease-music-playlist-song";
-          message$1.loading({
-            key: loadingKey,
-            content: `正在转存歌单歌曲...`,
-            duration: 0
-          });
-          try {
-            const songList = await getPlaylistSongList(dissid);
-            const task = songList?.map((item) => async () => {
-              const { mid, name: name2 } = item;
-              console.log(`正在转存: mid=${mid}, name=${name2}`);
-              await convertToNeteaseMusic(mid, {
-                onChange: (msg) => {
-                  message$1.loading({
-                    key: loadingKey,
-                    content: msg,
-                    duration: 0
-                  });
-                }
-              });
-            });
-            await promiseLimit(task, uploadConcurrency);
-            message$1.success({
-              key: loadingKey,
-              content: `转存歌单歌曲成功`,
-              duration: 0
-            });
-          } catch (error) {
-            console.log("error", error);
-          }
-        };
-        const getPlaylistDownloadJson = async (dissid) => {
-          const playlistDetail = await getPlaylistDetail(dissid);
-          const { dissname, songlist } = playlistDetail || {};
-          const promiseArr = songlist?.map((item) => async () => {
-            const lrcContent = await getLyric(item.mid);
-            const qualityList = getFile_qualityList(item.file);
-            const finalQuality = qualityList.includes(downloadQuality) ? downloadQuality : qualityList[0];
-            const url = await getUrl(item.mid, finalQuality);
-            return {
-              songName: item.name,
-              url,
-              lrcContent
-            };
-          });
-          const songList = await promiseLimit(promiseArr, 6);
-          return {
-            playlistName: dissname,
-            playlistCover: playlistDetail?.pic_mid ? `https://y.gtimg.cn/music/photo_new/T002R300x300M000${playlistDetail.pic_mid}.jpg` : "",
-            songList
-          };
-        };
-        const playPlaylist = async (dissid) => {
-          const songList = await getPlaylistSongList(dissid);
-          console.log("歌单歌曲列表:", songList);
-          if (!songList?.length) return;
-          for (const item of songList) {
-            console.log("当前正在播放", item.name);
-            await play(item.mid);
-          }
-        };
-        return {
-          playlistInfo,
-          isLoading,
-          getPlaylistDetail,
-          getPlaylistSongList,
-          playPlaylist,
-          getPlaylistSongUrl,
-          downloadPlaylistSong,
-          getPlaylistDownloadJson,
-          convertToNeteaseMusicPlaylistSong
-        };
-      };
-      const useVisible = (props = {}, ref) => {
-        const {
-          onOpen = NOOP,
-          onClose = NOOP,
-          onReset = NOOP,
-          resetOnOpen = true,
-          resetOnClose = false
-        } = props;
-        const [visible, setVisible] = useState(false);
-        const open = (params) => {
-          resetOnOpen && reset();
-          setVisible(true);
-          onOpen(params);
-        };
-        const close = () => {
-          resetOnClose && reset();
-          setVisible(false);
-          onClose();
-        };
-        const reset = () => {
-          setVisible(false);
-          onReset();
-        };
-        const resolve = useRef(null);
-        const reject = useRef(null);
-        const submit = () => {
-          return new Promise((_resolve, _reject) => {
-            resolve.current = _resolve;
-            reject.current = _reject;
-          });
-        };
-        ref && useImperativeHandle(ref, () => ({
-          open,
-          close,
-          reset,
-          submit,
-          resolve,
-          reject
-        }));
-        return {
-          visible,
-          open,
-          close,
-          reset,
-          submit,
-          resolve,
-          reject
-        };
-      };
-      const NOOP = () => {
-      };
-      const getSingerInfo = async (singermid) => {
-        const params = {
-          singermid,
-          format: "xml",
-          outCharset: "utf-8",
-          utf8: "1",
-          r: dayjs().valueOf() + ""
-        };
-        return qqMusicRequest(
-          `/splcloud/fcgi-bin/fcg_get_singer_desc.fcg?${new URLSearchParams(params).toString()}`,
-          {
-            method: "GET",
-            responseType: "text"
-            // 改为 text 因为返回的是 XML
-          }
-        );
-      };
-      const getSingerAlbum = async (singermid, options = {}) => {
-        const { begin = 0, num = 80 } = options;
-        const params = {
-          format: "json",
-          singermid,
-          data: JSON.stringify({
-            comm: {
-              ct: 24,
-              cv: 0
-            },
-            singer: {
-              method: "GetAlbumList",
-              param: {
-                sort: 5,
-                singermid,
-                begin,
-                num
-              },
-              module: "music.musichallAlbum.AlbumListServer"
-            }
-          })
-        };
-        const res = await qqMusicRequest(
-          `/cgi-bin/musicu.fcg?${new URLSearchParams(params).toString()}`,
-          {},
-          "u"
-        );
-        if (res.code === 0) {
-          return res.singer?.data;
-        }
-        throw new Error("获取歌手专辑失败");
-      };
-      const getSingerAllAlbum = async (singermid) => {
-        const allAlbum = [];
-        let begin = 0;
-        const num = 80;
-        let hasMore = true;
-        while (hasMore) {
-          const res = await getSingerAlbum(singermid, { begin, num });
-          if (res) {
-            allAlbum.push(...res.albumList);
-            hasMore = allAlbum.length < res.total;
-          } else {
-            hasMore = false;
-          }
-          begin += num;
-        }
-        return allAlbum;
-      };
-      const getSingerList = async (options) => {
-        const { area = -100, sex = -100, genre = -100, cur_page = 1 } = options;
-        const params = {
-          format: "json",
-          data: JSON.stringify({
-            comm: {
-              ct: 24,
-              cv: 0
-            },
-            singerList: {
-              module: "Music.SingerListServer",
-              method: "get_singer_list",
-              param: {
-                area: +area,
-                sex: +sex,
-                genre: +genre,
-                index: -100,
-                sin: (cur_page - 1) * 80,
-                num: 80,
-                cur_page
-              }
-            }
-          })
-        };
-        const res = await qqMusicRequest(
-          `/cgi-bin/musicu.fcg?${new URLSearchParams(params).toString()}`,
-          {},
-          "u"
-        );
-        if (res.code === 0) {
-          return res.singerList?.data;
-        }
-        throw new Error("获取歌手列表失败");
-      };
-      const getSingerFollowCount = async (singermid) => {
-        const params = {
-          singermid,
-          format: "json",
-          outCharset: "utf-8",
-          utf8: "1",
-          rnd: dayjs().valueOf() + ""
-        };
-        return qqMusicRequest(
-          `/rsc/fcgi-bin/fcg_order_singer_getnum.fcg?${new URLSearchParams(params).toString()}`,
-          {},
-          "c"
-        );
-      };
-      const getSingerHotSong = async (singermid, options = {}) => {
-        const { sin = 0, num = 60 } = options;
-        const params = {
-          singermid,
-          format: "json",
-          data: JSON.stringify({
-            comm: {
-              ct: 24,
-              cv: 0
-            },
-            singer: {
-              method: "get_singer_detail_info",
-              param: {
-                sort: 5,
-                singermid,
-                sin,
-                num
-              },
-              module: "music.web_singer_info_svr"
-            }
-          })
-        };
-        const res = await qqMusicRequest(
-          `/cgi-bin/musicu.fcg?${new URLSearchParams(params).toString()}`,
-          {},
-          "u"
-        );
-        if (res.code === 0) {
-          return res.singer?.data;
-        }
-        throw new Error("获取歌手热门歌曲失败");
-      };
-      const getSingerAllHotSong = async (singermid, options) => {
-        const { onChange } = options || {};
-        let sin = 0;
-        const num = 60;
-        let hasMore = true;
-        const result = {
-          code: 200,
-          total: 0,
-          totalSong: 0,
-          totalAlbum: 0,
-          totalMV: 0,
-          songList: [],
-          singerBrief: "",
-          singerInfo: {},
-          extras: []
-        };
-        while (hasMore) {
-          const res = await getSingerHotSong(singermid, { sin, num });
-          if (res) {
-            Object.assign(result, {
-              total: res.total_song,
-              singerBrief: res.singer_brief,
-              singerInfo: res.singer_info,
-              totalSong: res.total_song,
-              totalAlbum: res.total_album,
-              totalMV: res.total_mv,
-              songList: [...result.songList, ...res.songlist],
-              extras: [...result.extras, ...res.extras]
-            });
-            onChange?.(result);
-            hasMore = result.songList.length < res.total_song;
-          } else {
-            hasMore = false;
-          }
-          sin += num;
-        }
-        console.log("result", result);
-        return result;
-      };
-      const getSimilarSinger = async (singer_mid, options = {}) => {
-        const { start = 0, num = 5 } = options;
-        const params = {
-          singer_mid,
-          format: "json",
-          outCharset: "utf-8",
-          utf8: "1",
-          start: start + "",
-          num: num + ""
-        };
-        const res = await qqMusicRequest(
-          `/v8/fcg-bin/fcg_v8_simsinger.fcg?${new URLSearchParams(params).toString()}`,
-          {}
-        );
-        return res.singers;
-      };
-      const getSingerPic = (singermid, options) => {
-        const { size = "800x800" } = {};
-        return `https://y.qq.com/music/photo_new/T001R${size}M000${singermid}.jpg?max_age=2592000`;
-      };
-      const copy = async (text, options = {}) => {
-        try {
-          if (navigator.clipboard && window.isSecureContext) {
-            if (options.html) {
-              const type = "text/html";
-              const blob = new Blob([text], { type });
-              const data = [new ClipboardItem({ [type]: blob })];
-              await navigator.clipboard.write(data);
-            } else {
-              await navigator.clipboard.writeText(text);
-            }
-          } else {
-            const textArea = document.createElement("textarea");
-            textArea.value = text;
-            textArea.style.cssText = "position: fixed; top: -9999px; left: -9999px";
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            try {
-              document.execCommand("copy");
-            } catch (err2) {
-              throw new Error("复制失败，请检查浏览器权限设置");
-            } finally {
-              document.body.removeChild(textArea);
-            }
-          }
-        } catch (err2) {
-          throw new Error(
-            err2 instanceof Error ? err2.message : "复制失败，请重试"
-          );
-        }
-      };
-      const styles$a = {
-        "copy-text": "_copy-text_1att4_1",
-        "copy-btn": "_copy-btn_1att4_12"
-      };
-      var classnames = { exports: {} };
-      /*!
-      	Copyright (c) 2018 Jed Watson.
-      	Licensed under the MIT License (MIT), see
-      	http://jedwatson.github.io/classnames
-      */
-      var hasRequiredClassnames;
-      function requireClassnames() {
-        if (hasRequiredClassnames) return classnames.exports;
-        hasRequiredClassnames = 1;
-        (function(module) {
-          (function() {
-            var hasOwn = {}.hasOwnProperty;
-            function classNames2() {
-              var classes = "";
-              for (var i = 0; i < arguments.length; i++) {
-                var arg = arguments[i];
-                if (arg) {
-                  classes = appendClass(classes, parseValue(arg));
-                }
-              }
-              return classes;
-            }
-            function parseValue(arg) {
-              if (typeof arg === "string" || typeof arg === "number") {
-                return arg;
-              }
-              if (typeof arg !== "object") {
-                return "";
-              }
-              if (Array.isArray(arg)) {
-                return classNames2.apply(null, arg);
-              }
-              if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes("[native code]")) {
-                return arg.toString();
-              }
-              var classes = "";
-              for (var key in arg) {
-                if (hasOwn.call(arg, key) && arg[key]) {
-                  classes = appendClass(classes, key);
-                }
-              }
-              return classes;
-            }
-            function appendClass(value, newClass) {
-              if (!newClass) {
-                return value;
-              }
-              if (value) {
-                return value + " " + newClass;
-              }
-              return value + newClass;
-            }
-            if (module.exports) {
-              classNames2.default = classNames2;
-              module.exports = classNames2;
-            } else {
-              window.classNames = classNames2;
-            }
-          })();
-        })(classnames);
-        return classnames.exports;
-      }
-      var classnamesExports = requireClassnames();
-      const classNames = /* @__PURE__ */ getDefaultExportFromCjs(classnamesExports);
-      const styles$9 = {
-        "text-overflow-show-tips-container": "_text-overflow-show-tips-container_btabq_1"
-      };
-      function TextOverflowShowTips({
-        text,
-        tooltipProps,
-        className,
-        ...restProps
-      }) {
-        const containerRef = useRef(null);
-        const { width: containerWidth } = useSize(containerRef) || {};
-        const isTooLong = useMemo(() => {
-          if (containerWidth) {
-            const textWidth = getTextWidth(text);
-            return containerWidth < textWidth;
-          }
-          return false;
-        }, [text, containerWidth]);
-        const containerStyle = {
-          maxWidth: "100%",
-          overflow: "hidden",
-          textOverflow: "ellipsis",
-          whiteSpace: "nowrap"
-        };
-        return isTooLong ? /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { title: text, ...tooltipProps, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-          "div",
-          {
-            ...restProps,
-            className: classNames(styles$9["text-overflow-show-tips-container"], className),
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, children: text })
-          }
-        ) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, ...restProps, className, children: text });
-      }
-      function getTextWidth(text, font = "14px Arial") {
-        const span = document.createElement("span");
-        span.style.visibility = "hidden";
-        span.style.whiteSpace = "nowrap";
-        span.style.font = font;
-        span.style.position = "absolute";
-        span.style.top = "-9999px";
-        span.style.left = "-9999px";
-        span.innerText = text;
-        document.body.appendChild(span);
-        const width = span.offsetWidth;
-        document.body.removeChild(span);
-        return width;
-      }
-      function CopyText(props) {
-        const { text, className, ...rest } = props;
-        const handleCopy = () => {
-          copy(text);
-          msgSuccess("复制成功");
-        };
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: classNames(styles$a["copy-text"], className), ...rest, children: [
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            TextOverflowShowTips,
-            {
-              text: text + "",
-              tooltipProps: {
-                getPopupContainer: (node) => {
-                  return document.body;
-                }
-              }
-            }
-          ),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(
-            Button,
-            {
-              type: "link",
-              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(CopyOutlined, {}),
-              onClick: handleCopy,
-              className: styles$a["copy-btn"]
-            }
-          )
-        ] });
-      }
-      function MyButton(props) {
-        const { loading: loading2, onClick, ...rest } = props;
-        const [_loading, setLoading] = useState(loading2);
-        const handleClick = async (...args) => {
-          try {
-            setLoading(true);
-            await onClick?.(...args);
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setLoading(false);
-          }
-        };
-        useEffect(() => {
-          setLoading(loading2);
-        }, [loading2]);
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { ...rest, onClick: handleClick, loading: _loading });
-      }
-      const Styles$1 = {
-        "select-search": "_select-search_19wb1_1"
-      };
-      const { Group } = Input;
-      const defaultSearchParams$3 = {
-        prop: "xm",
-        value: ""
-      };
-      function SelectSearch(props) {
-        const {
-          value,
-          onChange,
-          defaultValue,
-          SearchSelectOptions,
-          selectProps,
-          inputProps,
-          width = 300,
-          selectWidth = 80,
-          inputWidth = 180
-        } = props;
-        const [searchParams, setSearchParams] = useState(() => {
-          if (value?.prop == void 0) return defaultValue || defaultSearchParams$3;
-          return {
-            ...defaultValue || defaultSearchParams$3,
-            ...value
-          };
-        });
-        useEffect(() => {
-          if (value?.prop == void 0) return;
-          if (typeof value !== "object") return console.warn("value类型错误,必须为对象");
-          setSearchParams({
-            ...value
-          });
-        }, [value]);
-        const handleSearchSelectChange = (value2) => {
-          const newSearchParams = {
-            ...searchParams,
-            prop: value2
-          };
-          setSearchParams(newSearchParams);
-          onChange?.(newSearchParams, searchParams);
-        };
-        const handleSearchInputChange = (e) => {
-          const value2 = e.target.value;
-          const newSearchParams = {
-            ...searchParams,
-            value: value2
-          };
-          setSearchParams(newSearchParams);
-          onChange?.(newSearchParams, searchParams);
-        };
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          Group,
-          {
-            compact: true,
-            style: {
-              width
-            },
-            className: Styles$1["select-search"],
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Select,
-                {
-                  options: SearchSelectOptions || defaultSearchSelectOptions,
-                  placeholder: "请选择",
-                  value: searchParams.prop,
-                  onChange: handleSearchSelectChange,
-                  style: {
-                    width: selectWidth,
-                    borderRadius: "6px 0 0 6px"
-                  },
-                  ...selectProps
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Input,
-                {
-                  placeholder: `请输入`,
-                  style: { width: inputWidth, height: 32 },
-                  value: searchParams.value,
-                  onChange: handleSearchInputChange,
-                  allowClear: true,
-                  ...inputProps
-                }
-              )
-            ]
-          }
-        );
-      }
-      const defaultSearchSelectOptions = [
-        {
-          value: "xh",
-          label: "学号"
-        },
-        {
-          value: "xm",
-          label: "姓名"
-        }
-      ];
-      const styles$8 = {};
-      const { RangePicker: AntRangePicker } = DatePicker;
-      const RangePicker = ({
-        value,
-        onChange,
-        format = "YYYY-MM-DD",
-        className,
-        placeholder = ["开始日期", "结束日期"],
-        ...rest
-      }) => {
-        const toDayjs = (val) => {
-          if (!val) return null;
-          if (dayjs.isDayjs(val)) return val;
-          return dayjs(val);
-        };
-        const rangeValue = Array.isArray(value) ? [toDayjs(value[0]), toDayjs(value[1])] : null;
-        const handleChange = (dates, dateStrings) => {
-          console.log("dates", dates);
-          console.log("dateStrings", dateStrings);
-          if (dates && onChange) {
-            onChange(
-              dates.map((date) => date ? date.format(format) : ""),
-              dateStrings
-            );
-          }
-        };
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(
-          AntRangePicker,
-          {
-            value: rangeValue,
-            onChange: handleChange,
-            format,
-            className: classNames(styles$8["rangePicker"], className),
-            placeholder,
-            ...rest
-          }
-        );
-      };
-      const filterOption = (inputValue, option) => {
-        return option.label.toLowerCase().indexOf(inputValue.toLowerCase()) >= 0;
-      };
-      const COMPONENT_TYPE_MAP = {
-        input: Input,
-        select: Select,
-        selectSearch: SelectSearch,
-        rangePicker: RangePicker,
-        treeSelect: TreeSelect
-      };
-      const defaultComponentProps = {
-        input: {
-          placeholder: "请输入",
-          style: { width: "200px" },
-          allowClear: true
-        },
-        select: {
-          placeholder: "请选择",
-          style: { width: "200px" },
-          allowClear: true,
-          maxTagCount: 2,
-          showSearch: true,
-          filterOption
-        },
-        selectSearch: {},
-        rangePicker: {},
-        treeSelect: {
-          treeCheckable: true,
-          allowClear: true,
-          treeExpandAction: "click",
-          filterTreeNode: (inputValue, treeNode) => {
-            return treeNode.props.title.toLowerCase().indexOf(inputValue.toLowerCase()) >= 0;
-          },
-          placeholder: "请选择",
-          style: {
-            width: "200px"
-          }
-        }
-      };
-      const { Item: Item$3 } = Form;
-      const SearchFormItem = (props) => {
-        const { name: name2, type = "input", label = "", inputProps = {}, ...formItemProps } = props;
-        const InputComponent = COMPONENT_TYPE_MAP[type];
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(Item$3, { name: name2, label, ...formItemProps, children: /* @__PURE__ */ jsxRuntimeExports.jsx(InputComponent, { ...{ ...defaultComponentProps[type], ...inputProps } }) });
-      };
-      function AdvancedSearch(props) {
-        Form.useFormInstance();
-        const { params, items = [] } = props;
-        const [optionsMap, setOptionsMap] = useState({});
-        useEffect(() => {
-          const asyncFn = async () => {
-            try {
-              items.map(async (item) => {
-                if (!item.getOptionsApi) return;
-                const res = await item.getOptionsApi(params);
-                setOptionsMap((prev) => {
-                  return {
-                    ...prev,
-                    [item.name]: res.data
-                  };
-                });
-                item.getOptionsApiAfter?.(res.data);
-              });
-            } catch (error) {
-              console.log("error", error);
-            }
-          };
-          asyncFn();
-        }, []);
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: items.map((item) => {
-          return /* @__PURE__ */ jsxRuntimeExports.jsx(
-            SearchFormItem,
-            {
-              name: item.name,
-              label: item.label,
-              type: item.type,
-              inputProps: {
-                ...item.inputProps,
-                options: optionsMap[item.name] || item.options
-              }
-            },
-            item.name
-          );
-        }) });
-      }
-      const Styles = {
-        "search-form": "_search-form_10eg9_1"
-      };
-      const { Item: Item$2 } = Form;
-      const SearchForm = (props, ref) => {
-        const [formRef] = Form.useForm();
-        const {
-          options = [],
-          advancedOptions = [],
-          searchParams = {},
-          onSearch = () => {
-          },
-          loading: loading2 = false,
-          keepAdvancedSearchValue = true,
-          ...restFormProps
-        } = props;
-        useEffect(() => {
-          !keepAdvancedSearchValue && formRef.resetFields();
-          formRef.setFieldsValue(searchParams);
-        }, [searchParams]);
-        const [optionsMap, setOptionsMap] = useState({});
-        useEffect(() => {
-          const asyncFn = async () => {
-            try {
-              options.map(async (item) => {
-                if (!item.getOptionsApi || !item.name) return;
-                const res = await item.getOptionsApi(searchParams);
-                setOptionsMap((prev) => {
-                  return {
-                    ...prev,
-                    [item.name]: res.data
-                  };
-                });
-                item.getOptionsApiAfter?.(res.data);
-              });
-            } catch (error) {
-              console.log("error", error);
-            }
-          };
-          asyncFn();
-        }, []);
-        const [isAdvancedSearch, setIsAdvancedSearch] = useState(false);
-        const handleSearch = () => {
-          const values = formRef.getFieldsValue();
-          console.log("values", values);
-          onSearch(values);
-        };
-        const handleReset = () => {
-          formRef.resetFields();
-          handleSearch();
-        };
-        useImperativeHandle(ref, () => ({
-          reset: handleReset,
-          search: handleSearch,
-          getValues: formRef.getFieldsValue
-        }));
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          Form,
-          {
-            layout: "inline",
-            form: formRef,
-            className: Styles["search-form"],
-            ...restFormProps,
-            children: [
-              options.map((item) => {
-                const { getOptionsApi, getOptionsApiAfter, ...rest } = item;
-                return /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  SearchFormItem,
-                  {
-                    ...rest,
-                    inputProps: {
-                      ...item.inputProps,
-                      options: optionsMap[item.name] || item.options
-                    }
-                  },
-                  item.name || item.label
-                );
-              }),
-              isAdvancedSearch && /* @__PURE__ */ jsxRuntimeExports.jsx(AdvancedSearch, { params: searchParams, items: advancedOptions }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Item$2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleSearch, shape: "round", loading: loading2, children: "查询" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Item$2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { onClick: handleReset, shape: "round", children: "重置" }) }),
-              advancedOptions.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(Item$2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { type: "link", onClick: () => setIsAdvancedSearch(!isAdvancedSearch), children: isAdvancedSearch ? "关闭" : "高级搜索" }) })
-            ]
-          }
-        );
-      };
-      const SearchForm$1 = forwardRef(SearchForm);
-      const footer$2 = "_footer_e7ura_48";
-      const styles$7 = {
-        "album-detail-modal": "_album-detail-modal_e7ura_1",
-        "modal-header": "_modal-header_e7ura_1",
-        "album-basic-info": "_album-basic-info_e7ura_6",
-        "album-info": "_album-info_e7ura_11",
-        "album-name": "_album-name_e7ura_16",
-        "album-meta": "_album-meta_e7ura_19",
-        "song-table": "_song-table_e7ura_24",
-        "song-name": "_song-name_e7ura_27",
-        "artist-item": "_artist-item_e7ura_33",
-        "artist-name": "_artist-name_e7ura_37",
-        "artist-separator": "_artist-separator_e7ura_41",
-        "song-duration": "_song-duration_e7ura_45",
-        footer: footer$2,
-        "selected-count": "_selected-count_e7ura_55"
-      };
-      const { Text: Text$4, Title: Title$3 } = Typography;
-      const AlbumDetail = forwardRef((_, ref) => {
-        const { visible, close } = useVisible(
-          {
-            onOpen(params) {
-              if (params?.albummid) {
-                setCurrentMid(params.albummid);
-              }
-            },
-            onReset() {
-              setCurrentMid("");
-              setInputMid("");
-              setSelectedRowKeys([]);
-              setSelectedRows([]);
-              setList([]);
-            }
-          },
-          ref
-        );
-        const [currentMid, setCurrentMid] = useState("");
-        const [inputMid, setInputMid] = useState("");
-        const { downloadConfig } = useConfig();
-        const { quality: defaultQuality } = downloadConfig;
-        const { getAlbumDetail, getAlbumSongList, isLoading, getDownLoadJson } = useGetAlbumDetail();
-        const { play, isPlaying, pause, download, convertToNeteaseMusic } = usePlayMusic();
-        const { data: detail, loading: detailLoading } = useGetData(
-          getAlbumDetail,
-          currentMid,
-          {
-            initialValue: void 0,
-            returnFunction: () => !currentMid || !visible,
-            monitors: [currentMid, visible]
-          }
-        );
-        const {
-          data: list,
-          loading: loading2,
-          setData: setList
-        } = useGetData(getAlbumSongList, currentMid, {
-          initialValue: [],
-          returnFunction: () => !currentMid || !visible,
-          monitors: [currentMid, visible],
-          callback: (data) => {
-            console.log("data", data);
-          }
-        });
-        const handleChooseQuality = (record, quality) => {
-          setList(
-            list?.map((item) => {
-              if (item.songmid === record.songmid) {
-                return {
-                  ...item,
-                  quality
-                };
-              }
-              return item;
-            }) || []
-          );
-        };
-        const handlePlay = (record) => {
-          if (isPlaying) {
-            pause();
-          } else {
-            const { quality } = record;
-            const finalQuality = getQuality$3(record, defaultQuality, quality);
-            play(record.songmid, finalQuality);
-          }
-        };
-        const [downloading, setDownloading] = useState("");
-        const handleDownload = async (record) => {
-          try {
-            if (downloading === record.songmid) return;
-            setDownloading(record.songmid);
-            const { quality } = record;
-            const finalQuality = getQuality$3(record, defaultQuality, quality);
-            await download(record.songmid, finalQuality);
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            setDownloading("");
-          }
-        };
-        const songColumns = [
-          {
-            title: "歌曲",
-            dataIndex: "songname",
-            key: "songname",
-            width: 300,
-            render: (text) => /* @__PURE__ */ jsxRuntimeExports.jsx(Text$4, { className: styles$7["song-name"], title: text, children: text })
-          },
-          {
-            title: "歌手",
-            dataIndex: "singer",
-            key: "singer",
-            width: 240,
-            render: (singers = []) => /* @__PURE__ */ jsxRuntimeExports.jsx(Space, { size: "small", wrap: true, children: singers.length > 0 ? singers.map((s, index2) => /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$7["artist-item"], children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Avatar, { size: 30, style: { marginRight: 4 }, src: getSingerPic(s.mid) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$7["artist-name"], children: s.name }),
-              index2 < singers.length - 1 && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$7["artist-separator"], children: "/" })
-            ] }, s.mid || index2)) : /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "-" }) })
-          },
-          // 音质选择器
-          {
-            title: "音质",
-            key: "quality",
-            width: 100,
-            align: "center",
-            render: (_2, record) => {
-              const qualityList = getFileQualityList(record);
-              const defaultValue = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
-              return /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Select,
-                {
-                  options: qualityList.map((quality) => ({
-                    label: quality,
-                    value: quality
-                  })),
-                  defaultValue,
-                  style: { width: "100%" },
-                  onChange: (value) => {
-                    handleChooseQuality(record, value);
-                  }
-                }
-              );
-            }
-          },
-          // 格式
-          {
-            title: "格式",
-            key: "format",
-            width: 150,
-            align: "center",
-            render: (_2, record) => {
-              const qualityList = getFileQualityList(record);
-              const qualityColorMap = {
-                flac: "green",
-                ape: "volcano",
-                320: "blue",
-                m4a: "orange",
-                128: "gray"
-              };
-              const qualityTextMap = {
-                flac: "FLAC",
-                ape: "APE",
-                320: "320k",
-                m4a: "M4A",
-                128: "128k"
-              };
-              return /* @__PURE__ */ jsxRuntimeExports.jsx(Space, { wrap: true, children: qualityList.map((quality) => /* @__PURE__ */ jsxRuntimeExports.jsx(Tag, { color: qualityColorMap[quality], children: qualityTextMap[quality] || quality }, quality)) });
-            }
-          },
-          {
-            title: "时长",
-            dataIndex: "interval",
-            key: "interval",
-            width: 100,
-            align: "center",
-            render: (interval) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Text$4, { className: styles$7["song-duration"], children: [
-              Math.floor((interval || 0) / 60),
-              ":",
-              ((interval || 0) % 60).toString().padStart(2, "0")
-            ] })
-          },
-          {
-            title: "操作",
-            key: "action",
-            width: 200,
-            align: "center",
-            fixed: "right",
-            render: (_2, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { title: "播放", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Button,
-                {
-                  type: "link",
-                  size: "small",
-                  icon: isPlaying === record.songmid ? /* @__PURE__ */ jsxRuntimeExports.jsx(PauseCircleOutlined, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(PlayCircleOutlined, {}),
-                  onClick: () => handlePlay(record),
-                  children: "播放"
-                }
-              ) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { title: "下载", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Button,
-                {
-                  type: "link",
-                  size: "small",
-                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DownloadOutlined, {}),
-                  loading: downloading === record.songmid,
-                  onClick: () => handleDownload(record),
-                  children: "下载"
-                }
-              ) })
-            ] })
-          }
-        ];
-        const [selectedRowKeys, setSelectedRowKeys] = useState([]);
-        const [selectedRows, setSelectedRows] = useState([]);
-        const rowSelection = {
-          preserveSelectedRowKeys: true,
-          selectedRowKeys,
-          onChange: (selectedRowKeys2, selectedRows2) => {
-            setSelectedRowKeys(selectedRowKeys2);
-            setSelectedRows(selectedRows2);
-            console.log("selectedRowKeys", selectedRowKeys2);
-            console.log("selectedRows", selectedRows2);
-          }
-        };
-        const renderTitle = () => {
-          const albumName = detail?.name || "专辑详情";
-          const singerName = detail?.singername || "";
-          const publishDate = detail?.aDate || "";
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["modal-header"], children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsx(Title$3, { level: 4, className: styles$7["modal-title"], children: "专辑详情" }),
-            detail && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["album-basic-info"], children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Image,
-                {
-                  src: currentMid ? getAlbumPicUrl(currentMid) : "",
-                  alt: albumName,
-                  width: 80,
-                  height: 80,
-                  style: { borderRadius: 8 },
-                  fallback: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAADDCAYAAADQvc6UAAABRWlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSSwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAwSDCIMogwMCcmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis7PPOq3QdDFcvjV3jOD1boQVTPQrgSkktTgbSf4A4LbmgqISBgTEFyFYuLykAsTuAbJEioKOA7DkgdjqEvQHEToKwj4DVhAQ5A9k3gGyB5IxEoBmML4BsnSQk8XQkNtReEOBxcfXxUQg1Mjc0dyHgXNJBSWpFCYh2zi+oLMpMzyhRcASGUqqCZ16yno6CkYGRAQMDKMwhqj/fAIcloxgHQqxAjIHBEugw5sUIsSQpBobtQPdLciLEVJYzMPBHMDBsayhILEqEO4DxG0txmrERhM29nYGBddr//5/DGRjYNRkY/l7////39v///y4Dmn+LgeHANwDrkl1AuO+pmgAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAwqADAAQAAAABAAAAwwAAAAD9b/HnAAAHlklEQVR4Ae3dP3Ik1RnG4W+FgYxN"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["album-info"], children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(Title$3, { level: 5, className: styles$7["album-name"], children: albumName }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["album-meta"], children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$4, { type: "secondary", className: styles$7["singer-name"], children: singerName || "未知歌手" }),
-                  publishDate && /* @__PURE__ */ jsxRuntimeExports.jsxs(Text$4, { type: "secondary", className: styles$7["publish-date"], children: [
-                    "· ",
-                    publishDate
-                  ] })
-                ] })
-              ] })
-            ] })
-          ] });
-        };
-        const handleBatchDownload = async () => {
-          if (selectedRows.length === 0) {
-            msgWarning("请先选择要下载的歌曲");
-            return;
-          }
-          const loadingKey = "download-album-song";
-          try {
-            message$1.loading({
-              key: loadingKey,
-              content: `正在准备下载 ${selectedRows.length} 首歌曲...`,
-              duration: 0
-            });
-            let index2 = 1;
-            for (const song of selectedRows) {
-              message$1.loading({
-                key: loadingKey,
-                content: `正在下载第 ${index2} 首歌曲 ${song.songname}...`,
-                duration: 0
-              });
-              const finalQuality = getQuality$3(song, defaultQuality);
-              await download(song.songmid, finalQuality);
-              message$1.success({
-                key: loadingKey,
-                content: `第 ${index2} 首歌曲 ${song.songname} 下载成功！`,
-                duration: 1
-              });
-              index2++;
-            }
-            message$1.success({
-              key: loadingKey,
-              content: `成功下载 ${selectedRows.length} 首歌曲！`,
-              duration: 1
-            });
-          } catch (error) {
-            console.error("批量下载失败:", error);
-            message$1.destroy(loadingKey);
-            msgError("批量下载失败: " + error.message);
-          } finally {
-            message$1.destroy(loadingKey);
-          }
-        };
-        const handleBatchDownloadNeteaseMusic = async () => {
-          if (selectedRows.length === 0) {
-            msgWarning("请先选择要转存网易云的歌曲");
-            return;
-          }
-          const loadingKey = "download-album-song-netease";
-          try {
-            message$1.loading({
-              key: loadingKey,
-              content: `正在准备转存网易云 ${selectedRows.length} 首歌曲...`,
-              duration: 0
-            });
-            let index2 = 1;
-            for (const song of selectedRows) {
-              console.log("song", song);
-              const record = song;
-              const finalQuality = getQuality$3(record, defaultQuality, record.quality);
-              message$1.loading({
-                key: loadingKey,
-                content: `正在转存第 ${index2} 首歌曲 ${song.songname}...`,
-                duration: 0
-              });
-              await convertToNeteaseMusic(song.songmid, { quality: finalQuality });
-              message$1.success({
-                content: `第 ${index2} 首歌曲 ${song.songname} 转存成功！`,
-                duration: 1
-              });
-              index2++;
-            }
-            message$1.success({
-              key: loadingKey,
-              content: `成功转存 ${selectedRows.length} 首歌曲！`,
-              duration: 1
-            });
-          } catch (error) {
-            console.error("批量转存网易云失败:", error);
-            msgError("批量转存网易云失败: " + error.message);
-          } finally {
-            message$1.destroy(loadingKey);
-          }
-        };
-        const handleDownloadAllJson = async () => {
-          if (!currentMid) return;
-          const loadingKey = "download-album-json";
-          try {
-            message$1.loading({
-              key: loadingKey,
-              content: `正在下载专辑JSON...`,
-              duration: 0
-            });
-            const res = await getDownLoadJson(currentMid);
-            downloadAsJson([res], `${detail?.name}.json`);
-            message$1.destroy(loadingKey);
-            msgSuccess("成功下载专辑JSON！");
-          } catch (error) {
-            console.log("error", error);
-          } finally {
-            message$1.destroy(loadingKey);
-          }
-        };
-        const renderFooter = () => {
-          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["footer"], children: [
-            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["selected-count"], children: [
-              "已选择 ",
-              selectedRows.length,
-              " 首歌曲"
-            ] }),
-            /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
-              selectedRowKeys?.length < list.length ? /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Button,
-                {
-                  onClick: () => {
-                    setSelectedRowKeys(list?.map((item) => item.songmid) || []);
-                    setSelectedRows(list || []);
-                  },
-                  children: "全部选择"
-                }
-              ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Button,
-                {
-                  onClick: () => {
-                    setSelectedRowKeys([]);
-                    setSelectedRows([]);
-                  },
-                  children: "清空选择"
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(MyButton, { type: "primary", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DownloadOutlined, {}), onClick: handleBatchDownload, children: [
-                "下载选中歌曲",
-                selectedRows?.length ? `(${selectedRows?.length})` : ""
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsxs(
-                MyButton,
-                {
-                  type: "primary",
-                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(CloudDownloadOutlined, {}),
-                  onClick: handleBatchDownloadNeteaseMusic,
-                  children: [
-                    "转存网易云",
-                    selectedRows?.length ? `(${selectedRows?.length})` : ""
-                  ]
-                }
-              ),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { icon: /* @__PURE__ */ jsxRuntimeExports.jsx(FileOutlined, {}), type: "primary", onClick: handleDownloadAllJson, children: "下载全部歌曲JSON" })
-            ] })
-          ] });
-        };
-        const handleInputChange = (e) => {
-          setInputMid(e.target.value.trim());
-        };
-        const handleOpenById = () => {
-          if (!inputMid) return;
-          setCurrentMid(inputMid);
-        };
-        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
-          Modal,
-          {
-            title: renderTitle(),
-            open: visible,
-            onCancel: close,
-            width: 1200,
-            centered: true,
-            destroyOnHidden: true,
-            className: styles$7["album-detail-modal"],
-            footer: renderFooter(),
-            children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { marginBottom: 12, display: "flex", gap: 8 }, children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Input,
-                  {
-                    placeholder: "请输入专辑ID/MID，如 003rJSwm3TechU",
-                    value: inputMid,
-                    onChange: handleInputChange,
-                    onPressEnter: handleOpenById,
-                    allowClear: true,
-                    "aria-label": "专辑ID输入框"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Button,
-                  {
-                    type: "primary",
-                    onClick: handleOpenById,
-                    loading: loading2 || detailLoading || isLoading,
-                    children: "打开"
-                  }
-                )
-              ] }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Table,
-                {
-                  columns: songColumns,
-                  dataSource: list || [],
-                  rowSelection,
-                  rowKey: "songmid",
-                  loading: loading2 || detailLoading || isLoading,
-                  scroll: { y: 400, x: 600 },
-                  pagination: {
-                    showSizeChanger: true,
-                    showQuickJumper: true,
-                    showTotal: (total) => `共 ${total} 首歌曲`
-                  },
-                  className: styles$7["song-table"]
-                }
-              )
-            ]
-          }
-        );
-      });
-      const getQuality$3 = (record, defaultQuality, chooseQuality) => {
-        const qualityList = getFileQualityList(record);
-        const songDefaultQuality = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
-        const finalQuality = chooseQuality || songDefaultQuality;
-        return finalQuality;
-      };
-      const { Link, Text: Text$3 } = Typography;
-      const GITHUB_CONFIG = {
-        owner: "520Qiuyu",
-        repo: "QQMusic",
-        homepage: "https://github.com/520Qiuyu/QQMusic",
-        authorUrl: "https://github.com/520Qiuyu",
-        scriptUrl: "https://raw.githubusercontent.com/520Qiuyu/QQMusic/main/dist/qqmusic.user.js"
-      };
-      const GithubInfo = forwardRef((_props, ref) => {
-        const { visible, close } = useVisible(
-          {
-            onOpen: () => {
-              fetchRepoInfo();
-            }
-          },
-          ref
-        );
-        const [repoInfo, setRepoInfo] = useState(null);
-        const [loading2, setLoading] = useState(false);
-        const { functionConfig, setFunctionConfig } = useConfig();
-        const fetchRepoInfo = async () => {
-          setLoading(true);
-          try {
-            const response = await fetch(
-              `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}`
-            );
-            if (response.ok) {
-              const data = await response.json();
-              setRepoInfo({
-                stars: data.stargazers_count || 0,
-                forks: data.forks_count || 0,
-                watchers: data.watchers_count || 0,
-                description: data.description || "",
-                language: data.language || "",
-                updatedAt: data.updated_at || "",
-                createdAt: data.created_at || "",
-                openIssues: data.open_issues_count || 0,
-                license: data.license?.name || "无",
-                defaultBranch: data.default_branch || "main",
-                avatarUrl: data.owner?.avatar_url || "",
-                authorName: data.owner?.login || GITHUB_CONFIG.owner
-              });
-            }
-          } catch (error) {
-            console.error("获取 GitHub 信息失败:", error);
-          } finally {
-            setLoading(false);
-          }
-        };
-        const formatDate = (dateString) => {
-          if (!dateString) return "-";
-          const date = new Date(dateString);
-          return date.toLocaleDateString("zh-CN", {
-            year: "numeric",
-            month: "long",
-            day: "numeric"
-          });
-        };
-        const handleDoubleClickDefaultBranch = () => {
-          console.log("handleDoubleClickDefaultBranch");
-          setFunctionConfig({
-            ...functionConfig,
-            enableTestModal: !functionConfig.enableTestModal
-          });
-          close();
-        };
-        return /* @__PURE__ */ jsxRuntimeExports.jsx(
-          Modal,
-          {
-            title: /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(GithubOutlined, {}),
-              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "GitHub 信息" })
-            ] }),
-            open: visible,
-            onCancel: close,
-            footer: null,
-            centered: true,
-            width: 700,
-            zIndex: 99999,
-            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Spin, { spinning: loading2, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Descriptions, { column: 1, bordered: true, size: "small", styles: { label: { width: 120 } }, children: [
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "项目主页", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Space, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { href: GITHUB_CONFIG.homepage, target: "_blank", rel: "noopener noreferrer", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(LinkOutlined, {}),
-                " ",
-                GITHUB_CONFIG.homepage
-              ] }) }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "作者主页", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
-                repoInfo?.avatarUrl && /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Image,
-                  {
-                    src: repoInfo.avatarUrl,
-                    alt: repoInfo.authorName || "作者头像",
-                    width: 60,
-                    height: 60,
-                    style: {
-                      borderRadius: "50%",
-                      objectFit: "cover",
-                      cursor: "pointer"
-                    }
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { href: GITHUB_CONFIG.authorUrl, target: "_blank", rel: "noopener noreferrer", children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(GithubOutlined, {}),
-                  " ",
-                  GITHUB_CONFIG.authorUrl
-                ] })
-              ] }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "项目描述", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: repoInfo?.description || "暂无描述" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "统计信息", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { size: "large", children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(StarOutlined, { style: { color: "#faad14" } }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { strong: true, children: repoInfo?.stars || 0 }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { type: "secondary", children: "Stars" })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(ForkOutlined, { style: { color: "#1890ff" } }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { strong: true, children: repoInfo?.forks || 0 }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { type: "secondary", children: "Forks" })
-                ] }),
-                /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(EyeOutlined, { style: { color: "#52c41a" } }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { strong: true, children: repoInfo?.watchers || 0 }),
-                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { type: "secondary", children: "Watchers" })
-                ] })
-              ] }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "主要语言", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: repoInfo?.language || "未知" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "默认分支", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
-                Text$3,
-                {
-                  code: true,
-                  onDoubleClick: handleDoubleClickDefaultBranch,
-                  onTouchStart: handleDoubleClickDefaultBranch,
-                  style: { cursor: "pointer", userSelect: "none" },
-                  children: repoInfo?.defaultBranch || "main"
-                }
-              ) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "许可证", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: repoInfo?.license || "无" }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "开放 Issues", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: repoInfo?.openIssues || 0 }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "创建时间", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: formatDate(repoInfo?.createdAt) }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "更新时间", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: formatDate(repoInfo?.updatedAt) }) }),
-              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "操作", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Button,
-                  {
-                    type: "primary",
-                    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(GithubOutlined, {}),
-                    href: GITHUB_CONFIG.homepage,
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                    children: "访问仓库"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Button,
-                  {
-                    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(StarOutlined, {}),
-                    href: `${GITHUB_CONFIG.homepage}/stargazers`,
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                    children: "查看 Stars"
-                  }
-                ),
-                /* @__PURE__ */ jsxRuntimeExports.jsx(
-                  Button,
-                  {
-                    type: "primary",
-                    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(UploadOutlined, {}),
-                    href: GITHUB_CONFIG.scriptUrl,
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                    children: "更新脚本"
-                  }
-                )
-              ] }) })
-            ] }) })
-          }
-        );
-      });
       var lodash$1 = { exports: {} };
       /**
        * @license
@@ -81304,6 +79772,1574 @@ System.register("./main-D8Z2gnC--6SX1oftk.js", ['react', 'antd', 'react-dom', '@
         return lodash$1.exports;
       }
       var lodashExports = requireLodash();
+      const useGetSonglistDetail = () => {
+        const [playlistInfo, setPlaylistInfo] = useState();
+        const [isLoading, setIsLoading] = useState(false);
+        const playlistInfoMap = useRef({});
+        const { downloadConfig, functionConfig } = useConfig();
+        const { quality: downloadQuality } = downloadConfig;
+        const { uploadConcurrency } = functionConfig;
+        const { play, getUrl, download, getLyric, convertToNeteaseMusic } = usePlayMusic();
+        const getPlaylistDetail = async (dissid) => {
+          try {
+            setIsLoading(true);
+            const res = await getSongListDetail(dissid);
+            console.log("歌单详情:", res);
+            const playlistDetail = Array.isArray(res) ? res[0] : res;
+            playlistInfoMap.current[dissid] = playlistDetail;
+            return playlistDetail;
+          } catch (error) {
+            console.error("获取歌单详情失败:", error);
+          } finally {
+            setIsLoading(false);
+          }
+        };
+        const getPlaylistSongList = async (dissid) => {
+          try {
+            setIsLoading(true);
+            const res = await getPlaylistDetail(dissid);
+            return res?.songlist;
+          } catch (error) {
+            console.error("获取歌单歌曲列表失败:", error);
+          } finally {
+            setIsLoading(false);
+          }
+        };
+        const getPlaylistSongUrl = async (dissid) => {
+          const res = await getPlaylistSongList(dissid);
+          const ids = res?.map((item) => {
+            return {
+              id: item.mid,
+              name: item.name,
+              file: item.file
+            };
+          });
+          const promiseArr = ids?.map((item) => async () => {
+            const qualityList = getFile_qualityList(item.file);
+            const finalQuality = qualityList.includes(downloadQuality) ? downloadQuality : qualityList[0];
+            const url = await getUrl(item.id, finalQuality);
+            return {
+              ...item,
+              url,
+              quality: finalQuality
+            };
+          });
+          const urls = await promiseLimit(promiseArr, 6);
+          console.log("歌单歌曲播放地址:", urls);
+          return urls;
+        };
+        const downloadPlaylistSong = async (dissid) => {
+          try {
+            const songList = await getPlaylistSongList(dissid);
+            console.log("准备下载歌单歌曲:", songList);
+            for (const item of songList || []) {
+              const { mid, name: name2, file } = item;
+              console.log(`正在下载: mid=${mid}, name=${name2}`);
+              await download(mid);
+            }
+          } catch (error) {
+            console.error("下载歌单歌曲失败:", error);
+          }
+        };
+        const convertToNeteaseMusicPlaylistSong = async (dissid) => {
+          const loadingKey = "convert-to-netease-music-playlist-song";
+          message$1.loading({
+            key: loadingKey,
+            content: `正在转存歌单歌曲...`,
+            duration: 0
+          });
+          try {
+            const songList = await getPlaylistSongList(dissid);
+            const task = songList?.map((item) => async () => {
+              const { mid, name: name2 } = item;
+              console.log(`正在转存: mid=${mid}, name=${name2}`);
+              await convertToNeteaseMusic(mid, {
+                onChange: (msg) => {
+                  message$1.loading({
+                    key: loadingKey,
+                    content: msg,
+                    duration: 0
+                  });
+                }
+              });
+            });
+            await promiseLimit(task, uploadConcurrency);
+            message$1.success({
+              key: loadingKey,
+              content: `转存歌单歌曲成功`,
+              duration: 0
+            });
+          } catch (error) {
+            console.log("error", error);
+          }
+        };
+        const getPlaylistDownloadJson = async (dissid) => {
+          const playlistDetail = await getPlaylistDetail(dissid);
+          const { dissname, songlist } = playlistDetail || {};
+          const playlistCover = playlistDetail?.pic_mid ? `https://y.gtimg.cn/music/photo_new/T002R300x300M000${playlistDetail.pic_mid}.jpg` : "";
+          if (!songlist?.length) {
+            return {
+              playlistName: dissname,
+              playlistCover,
+              albums: []
+            };
+          }
+          const promiseArr = songlist.map((item) => async () => {
+            const lrcContent = await getLyric(item.mid);
+            const qualityList = getFile_qualityList(item.file);
+            const finalQuality = qualityList.includes(downloadQuality) ? downloadQuality : qualityList[0];
+            const url = await getUrl(item.mid, finalQuality);
+            return {
+              ...item,
+              lrcContent,
+              url
+            };
+          });
+          const res = await promiseLimit(promiseArr, 6);
+          const albumsMap = lodashExports.groupBy(res, (item) => item.album?.name ?? "");
+          const albums = Object.entries(albumsMap).map(([albumName, songs]) => ({
+            albumName: albumName || "未知专辑",
+            albumCover: songs[0]?.album?.mid ? getAlbumPicUrl(songs[0].album.mid, { size: "300x300" }) : "",
+            list: songs.map((song) => ({
+              songName: song.name,
+              url: song.url,
+              lrcContent: song.lrcContent
+            }))
+          }));
+          return {
+            albums,
+            playlistName: dissname,
+            playlistCover
+          };
+        };
+        const playPlaylist = async (dissid) => {
+          const songList = await getPlaylistSongList(dissid);
+          console.log("歌单歌曲列表:", songList);
+          if (!songList?.length) return;
+          for (const item of songList) {
+            console.log("当前正在播放", item.name);
+            await play(item.mid);
+          }
+        };
+        return {
+          playlistInfo,
+          isLoading,
+          getPlaylistDetail,
+          getPlaylistSongList,
+          playPlaylist,
+          getPlaylistSongUrl,
+          downloadPlaylistSong,
+          getPlaylistDownloadJson,
+          convertToNeteaseMusicPlaylistSong
+        };
+      };
+      const useVisible = (props = {}, ref) => {
+        const {
+          onOpen = NOOP,
+          onClose = NOOP,
+          onReset = NOOP,
+          resetOnOpen = true,
+          resetOnClose = false
+        } = props;
+        const [visible, setVisible] = useState(false);
+        const open = (params) => {
+          resetOnOpen && reset();
+          setVisible(true);
+          onOpen(params);
+        };
+        const close = () => {
+          resetOnClose && reset();
+          setVisible(false);
+          onClose();
+        };
+        const reset = () => {
+          setVisible(false);
+          onReset();
+        };
+        const resolve = useRef(null);
+        const reject = useRef(null);
+        const submit = () => {
+          return new Promise((_resolve, _reject) => {
+            resolve.current = _resolve;
+            reject.current = _reject;
+          });
+        };
+        ref && useImperativeHandle(ref, () => ({
+          open,
+          close,
+          reset,
+          submit,
+          resolve,
+          reject
+        }));
+        return {
+          visible,
+          open,
+          close,
+          reset,
+          submit,
+          resolve,
+          reject
+        };
+      };
+      const NOOP = () => {
+      };
+      const getSingerInfo = async (singermid) => {
+        const params = {
+          singermid,
+          format: "xml",
+          outCharset: "utf-8",
+          utf8: "1",
+          r: dayjs().valueOf() + ""
+        };
+        return qqMusicRequest(
+          `/splcloud/fcgi-bin/fcg_get_singer_desc.fcg?${new URLSearchParams(params).toString()}`,
+          {
+            method: "GET",
+            responseType: "text"
+            // 改为 text 因为返回的是 XML
+          }
+        );
+      };
+      const getSingerAlbum = async (singermid, options = {}) => {
+        const { begin = 0, num = 80 } = options;
+        const params = {
+          format: "json",
+          singermid,
+          data: JSON.stringify({
+            comm: {
+              ct: 24,
+              cv: 0
+            },
+            singer: {
+              method: "GetAlbumList",
+              param: {
+                sort: 5,
+                singermid,
+                begin,
+                num
+              },
+              module: "music.musichallAlbum.AlbumListServer"
+            }
+          })
+        };
+        const res = await qqMusicRequest(
+          `/cgi-bin/musicu.fcg?${new URLSearchParams(params).toString()}`,
+          {},
+          "u"
+        );
+        if (res.code === 0) {
+          return res.singer?.data;
+        }
+        throw new Error("获取歌手专辑失败");
+      };
+      const getSingerAllAlbum = async (singermid) => {
+        const allAlbum = [];
+        let begin = 0;
+        const num = 80;
+        let hasMore = true;
+        while (hasMore) {
+          const res = await getSingerAlbum(singermid, { begin, num });
+          if (res) {
+            allAlbum.push(...res.albumList);
+            hasMore = allAlbum.length < res.total;
+          } else {
+            hasMore = false;
+          }
+          begin += num;
+        }
+        return allAlbum;
+      };
+      const getSingerList = async (options) => {
+        const { area = -100, sex = -100, genre = -100, cur_page = 1 } = options;
+        const params = {
+          format: "json",
+          data: JSON.stringify({
+            comm: {
+              ct: 24,
+              cv: 0
+            },
+            singerList: {
+              module: "Music.SingerListServer",
+              method: "get_singer_list",
+              param: {
+                area: +area,
+                sex: +sex,
+                genre: +genre,
+                index: -100,
+                sin: (cur_page - 1) * 80,
+                num: 80,
+                cur_page
+              }
+            }
+          })
+        };
+        const res = await qqMusicRequest(
+          `/cgi-bin/musicu.fcg?${new URLSearchParams(params).toString()}`,
+          {},
+          "u"
+        );
+        if (res.code === 0) {
+          return res.singerList?.data;
+        }
+        throw new Error("获取歌手列表失败");
+      };
+      const getSingerFollowCount = async (singermid) => {
+        const params = {
+          singermid,
+          format: "json",
+          outCharset: "utf-8",
+          utf8: "1",
+          rnd: dayjs().valueOf() + ""
+        };
+        return qqMusicRequest(
+          `/rsc/fcgi-bin/fcg_order_singer_getnum.fcg?${new URLSearchParams(params).toString()}`,
+          {},
+          "c"
+        );
+      };
+      const getSingerHotSong = async (singermid, options = {}) => {
+        const { sin = 0, num = 60 } = options;
+        const params = {
+          singermid,
+          format: "json",
+          data: JSON.stringify({
+            comm: {
+              ct: 24,
+              cv: 0
+            },
+            singer: {
+              method: "get_singer_detail_info",
+              param: {
+                sort: 5,
+                singermid,
+                sin,
+                num
+              },
+              module: "music.web_singer_info_svr"
+            }
+          })
+        };
+        const res = await qqMusicRequest(
+          `/cgi-bin/musicu.fcg?${new URLSearchParams(params).toString()}`,
+          {},
+          "u"
+        );
+        if (res.code === 0) {
+          return res.singer?.data;
+        }
+        throw new Error("获取歌手热门歌曲失败");
+      };
+      const getSingerAllHotSong = async (singermid, options) => {
+        const { onChange } = options || {};
+        let sin = 0;
+        const num = 60;
+        let hasMore = true;
+        const result = {
+          code: 200,
+          total: 0,
+          totalSong: 0,
+          totalAlbum: 0,
+          totalMV: 0,
+          songList: [],
+          singerBrief: "",
+          singerInfo: {},
+          extras: []
+        };
+        while (hasMore) {
+          const res = await getSingerHotSong(singermid, { sin, num });
+          if (res) {
+            Object.assign(result, {
+              total: res.total_song,
+              singerBrief: res.singer_brief,
+              singerInfo: res.singer_info,
+              totalSong: res.total_song,
+              totalAlbum: res.total_album,
+              totalMV: res.total_mv,
+              songList: [...result.songList, ...res.songlist],
+              extras: [...result.extras, ...res.extras]
+            });
+            onChange?.(result);
+            hasMore = result.songList.length < res.total_song;
+          } else {
+            hasMore = false;
+          }
+          sin += num;
+        }
+        console.log("result", result);
+        return result;
+      };
+      const getSimilarSinger = async (singer_mid, options = {}) => {
+        const { start = 0, num = 5 } = options;
+        const params = {
+          singer_mid,
+          format: "json",
+          outCharset: "utf-8",
+          utf8: "1",
+          start: start + "",
+          num: num + ""
+        };
+        const res = await qqMusicRequest(
+          `/v8/fcg-bin/fcg_v8_simsinger.fcg?${new URLSearchParams(params).toString()}`,
+          {}
+        );
+        return res.singers;
+      };
+      const getSingerPic = (singermid, options) => {
+        const { size = "800x800" } = {};
+        return `https://y.qq.com/music/photo_new/T001R${size}M000${singermid}.jpg?max_age=2592000`;
+      };
+      const copy = async (text, options = {}) => {
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            if (options.html) {
+              const type = "text/html";
+              const blob = new Blob([text], { type });
+              const data = [new ClipboardItem({ [type]: blob })];
+              await navigator.clipboard.write(data);
+            } else {
+              await navigator.clipboard.writeText(text);
+            }
+          } else {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.cssText = "position: fixed; top: -9999px; left: -9999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+              document.execCommand("copy");
+            } catch (err2) {
+              throw new Error("复制失败，请检查浏览器权限设置");
+            } finally {
+              document.body.removeChild(textArea);
+            }
+          }
+        } catch (err2) {
+          throw new Error(
+            err2 instanceof Error ? err2.message : "复制失败，请重试"
+          );
+        }
+      };
+      const styles$a = {
+        "copy-text": "_copy-text_1att4_1",
+        "copy-btn": "_copy-btn_1att4_12"
+      };
+      var classnames = { exports: {} };
+      /*!
+      	Copyright (c) 2018 Jed Watson.
+      	Licensed under the MIT License (MIT), see
+      	http://jedwatson.github.io/classnames
+      */
+      var hasRequiredClassnames;
+      function requireClassnames() {
+        if (hasRequiredClassnames) return classnames.exports;
+        hasRequiredClassnames = 1;
+        (function(module) {
+          (function() {
+            var hasOwn = {}.hasOwnProperty;
+            function classNames2() {
+              var classes = "";
+              for (var i = 0; i < arguments.length; i++) {
+                var arg = arguments[i];
+                if (arg) {
+                  classes = appendClass(classes, parseValue(arg));
+                }
+              }
+              return classes;
+            }
+            function parseValue(arg) {
+              if (typeof arg === "string" || typeof arg === "number") {
+                return arg;
+              }
+              if (typeof arg !== "object") {
+                return "";
+              }
+              if (Array.isArray(arg)) {
+                return classNames2.apply(null, arg);
+              }
+              if (arg.toString !== Object.prototype.toString && !arg.toString.toString().includes("[native code]")) {
+                return arg.toString();
+              }
+              var classes = "";
+              for (var key in arg) {
+                if (hasOwn.call(arg, key) && arg[key]) {
+                  classes = appendClass(classes, key);
+                }
+              }
+              return classes;
+            }
+            function appendClass(value, newClass) {
+              if (!newClass) {
+                return value;
+              }
+              if (value) {
+                return value + " " + newClass;
+              }
+              return value + newClass;
+            }
+            if (module.exports) {
+              classNames2.default = classNames2;
+              module.exports = classNames2;
+            } else {
+              window.classNames = classNames2;
+            }
+          })();
+        })(classnames);
+        return classnames.exports;
+      }
+      var classnamesExports = requireClassnames();
+      const classNames = /* @__PURE__ */ getDefaultExportFromCjs(classnamesExports);
+      const styles$9 = {
+        "text-overflow-show-tips-container": "_text-overflow-show-tips-container_btabq_1"
+      };
+      function TextOverflowShowTips({
+        text,
+        tooltipProps,
+        className,
+        ...restProps
+      }) {
+        const containerRef = useRef(null);
+        const { width: containerWidth } = useSize(containerRef) || {};
+        const isTooLong = useMemo(() => {
+          if (containerWidth) {
+            const textWidth = getTextWidth(text);
+            return containerWidth < textWidth;
+          }
+          return false;
+        }, [text, containerWidth]);
+        const containerStyle = {
+          maxWidth: "100%",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+          whiteSpace: "nowrap"
+        };
+        return isTooLong ? /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { title: text, ...tooltipProps, children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+          "div",
+          {
+            ...restProps,
+            className: classNames(styles$9["text-overflow-show-tips-container"], className),
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, children: text })
+          }
+        ) }) : /* @__PURE__ */ jsxRuntimeExports.jsx("div", { ref: containerRef, style: containerStyle, ...restProps, className, children: text });
+      }
+      function getTextWidth(text, font = "14px Arial") {
+        const span = document.createElement("span");
+        span.style.visibility = "hidden";
+        span.style.whiteSpace = "nowrap";
+        span.style.font = font;
+        span.style.position = "absolute";
+        span.style.top = "-9999px";
+        span.style.left = "-9999px";
+        span.innerText = text;
+        document.body.appendChild(span);
+        const width = span.offsetWidth;
+        document.body.removeChild(span);
+        return width;
+      }
+      function CopyText(props) {
+        const { text, className, ...rest } = props;
+        const handleCopy = () => {
+          copy(text);
+          msgSuccess("复制成功");
+        };
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: classNames(styles$a["copy-text"], className), ...rest, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            TextOverflowShowTips,
+            {
+              text: text + "",
+              tooltipProps: {
+                getPopupContainer: (node) => {
+                  return document.body;
+                }
+              }
+            }
+          ),
+          /* @__PURE__ */ jsxRuntimeExports.jsx(
+            Button,
+            {
+              type: "link",
+              icon: /* @__PURE__ */ jsxRuntimeExports.jsx(CopyOutlined, {}),
+              onClick: handleCopy,
+              className: styles$a["copy-btn"]
+            }
+          )
+        ] });
+      }
+      function MyButton(props) {
+        const { loading: loading2, onClick, ...rest } = props;
+        const [_loading, setLoading] = useState(loading2);
+        const handleClick = async (...args) => {
+          try {
+            setLoading(true);
+            await onClick?.(...args);
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        useEffect(() => {
+          setLoading(loading2);
+        }, [loading2]);
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { ...rest, onClick: handleClick, loading: _loading });
+      }
+      const Styles$1 = {
+        "select-search": "_select-search_19wb1_1"
+      };
+      const { Group } = Input;
+      const defaultSearchParams$3 = {
+        prop: "xm",
+        value: ""
+      };
+      function SelectSearch(props) {
+        const {
+          value,
+          onChange,
+          defaultValue,
+          SearchSelectOptions,
+          selectProps,
+          inputProps,
+          width = 300,
+          selectWidth = 80,
+          inputWidth = 180
+        } = props;
+        const [searchParams, setSearchParams] = useState(() => {
+          if (value?.prop == void 0) return defaultValue || defaultSearchParams$3;
+          return {
+            ...defaultValue || defaultSearchParams$3,
+            ...value
+          };
+        });
+        useEffect(() => {
+          if (value?.prop == void 0) return;
+          if (typeof value !== "object") return console.warn("value类型错误,必须为对象");
+          setSearchParams({
+            ...value
+          });
+        }, [value]);
+        const handleSearchSelectChange = (value2) => {
+          const newSearchParams = {
+            ...searchParams,
+            prop: value2
+          };
+          setSearchParams(newSearchParams);
+          onChange?.(newSearchParams, searchParams);
+        };
+        const handleSearchInputChange = (e) => {
+          const value2 = e.target.value;
+          const newSearchParams = {
+            ...searchParams,
+            value: value2
+          };
+          setSearchParams(newSearchParams);
+          onChange?.(newSearchParams, searchParams);
+        };
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          Group,
+          {
+            compact: true,
+            style: {
+              width
+            },
+            className: Styles$1["select-search"],
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Select,
+                {
+                  options: SearchSelectOptions || defaultSearchSelectOptions,
+                  placeholder: "请选择",
+                  value: searchParams.prop,
+                  onChange: handleSearchSelectChange,
+                  style: {
+                    width: selectWidth,
+                    borderRadius: "6px 0 0 6px"
+                  },
+                  ...selectProps
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Input,
+                {
+                  placeholder: `请输入`,
+                  style: { width: inputWidth, height: 32 },
+                  value: searchParams.value,
+                  onChange: handleSearchInputChange,
+                  allowClear: true,
+                  ...inputProps
+                }
+              )
+            ]
+          }
+        );
+      }
+      const defaultSearchSelectOptions = [
+        {
+          value: "xh",
+          label: "学号"
+        },
+        {
+          value: "xm",
+          label: "姓名"
+        }
+      ];
+      const styles$8 = {};
+      const { RangePicker: AntRangePicker } = DatePicker;
+      const RangePicker = ({
+        value,
+        onChange,
+        format = "YYYY-MM-DD",
+        className,
+        placeholder = ["开始日期", "结束日期"],
+        ...rest
+      }) => {
+        const toDayjs = (val) => {
+          if (!val) return null;
+          if (dayjs.isDayjs(val)) return val;
+          return dayjs(val);
+        };
+        const rangeValue = Array.isArray(value) ? [toDayjs(value[0]), toDayjs(value[1])] : null;
+        const handleChange = (dates, dateStrings) => {
+          console.log("dates", dates);
+          console.log("dateStrings", dateStrings);
+          if (dates && onChange) {
+            onChange(
+              dates.map((date) => date ? date.format(format) : ""),
+              dateStrings
+            );
+          }
+        };
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(
+          AntRangePicker,
+          {
+            value: rangeValue,
+            onChange: handleChange,
+            format,
+            className: classNames(styles$8["rangePicker"], className),
+            placeholder,
+            ...rest
+          }
+        );
+      };
+      const filterOption = (inputValue, option) => {
+        return option.label.toLowerCase().indexOf(inputValue.toLowerCase()) >= 0;
+      };
+      const COMPONENT_TYPE_MAP = {
+        input: Input,
+        select: Select,
+        selectSearch: SelectSearch,
+        rangePicker: RangePicker,
+        treeSelect: TreeSelect
+      };
+      const defaultComponentProps = {
+        input: {
+          placeholder: "请输入",
+          style: { width: "200px" },
+          allowClear: true
+        },
+        select: {
+          placeholder: "请选择",
+          style: { width: "200px" },
+          allowClear: true,
+          maxTagCount: 2,
+          showSearch: true,
+          filterOption
+        },
+        selectSearch: {},
+        rangePicker: {},
+        treeSelect: {
+          treeCheckable: true,
+          allowClear: true,
+          treeExpandAction: "click",
+          filterTreeNode: (inputValue, treeNode) => {
+            return treeNode.props.title.toLowerCase().indexOf(inputValue.toLowerCase()) >= 0;
+          },
+          placeholder: "请选择",
+          style: {
+            width: "200px"
+          }
+        }
+      };
+      const { Item: Item$3 } = Form;
+      const SearchFormItem = (props) => {
+        const { name: name2, type = "input", label = "", inputProps = {}, ...formItemProps } = props;
+        const InputComponent = COMPONENT_TYPE_MAP[type];
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(Item$3, { name: name2, label, ...formItemProps, children: /* @__PURE__ */ jsxRuntimeExports.jsx(InputComponent, { ...{ ...defaultComponentProps[type], ...inputProps } }) });
+      };
+      function AdvancedSearch(props) {
+        Form.useFormInstance();
+        const { params, items = [] } = props;
+        const [optionsMap, setOptionsMap] = useState({});
+        useEffect(() => {
+          const asyncFn = async () => {
+            try {
+              items.map(async (item) => {
+                if (!item.getOptionsApi) return;
+                const res = await item.getOptionsApi(params);
+                setOptionsMap((prev) => {
+                  return {
+                    ...prev,
+                    [item.name]: res.data
+                  };
+                });
+                item.getOptionsApiAfter?.(res.data);
+              });
+            } catch (error) {
+              console.log("error", error);
+            }
+          };
+          asyncFn();
+        }, []);
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: items.map((item) => {
+          return /* @__PURE__ */ jsxRuntimeExports.jsx(
+            SearchFormItem,
+            {
+              name: item.name,
+              label: item.label,
+              type: item.type,
+              inputProps: {
+                ...item.inputProps,
+                options: optionsMap[item.name] || item.options
+              }
+            },
+            item.name
+          );
+        }) });
+      }
+      const Styles = {
+        "search-form": "_search-form_10eg9_1"
+      };
+      const { Item: Item$2 } = Form;
+      const SearchForm = (props, ref) => {
+        const [formRef] = Form.useForm();
+        const {
+          options = [],
+          advancedOptions = [],
+          searchParams = {},
+          onSearch = () => {
+          },
+          loading: loading2 = false,
+          keepAdvancedSearchValue = true,
+          ...restFormProps
+        } = props;
+        useEffect(() => {
+          !keepAdvancedSearchValue && formRef.resetFields();
+          formRef.setFieldsValue(searchParams);
+        }, [searchParams]);
+        const [optionsMap, setOptionsMap] = useState({});
+        useEffect(() => {
+          const asyncFn = async () => {
+            try {
+              options.map(async (item) => {
+                if (!item.getOptionsApi || !item.name) return;
+                const res = await item.getOptionsApi(searchParams);
+                setOptionsMap((prev) => {
+                  return {
+                    ...prev,
+                    [item.name]: res.data
+                  };
+                });
+                item.getOptionsApiAfter?.(res.data);
+              });
+            } catch (error) {
+              console.log("error", error);
+            }
+          };
+          asyncFn();
+        }, []);
+        const [isAdvancedSearch, setIsAdvancedSearch] = useState(false);
+        const handleSearch = () => {
+          const values = formRef.getFieldsValue();
+          console.log("values", values);
+          onSearch(values);
+        };
+        const handleReset = () => {
+          formRef.resetFields();
+          handleSearch();
+        };
+        useImperativeHandle(ref, () => ({
+          reset: handleReset,
+          search: handleSearch,
+          getValues: formRef.getFieldsValue
+        }));
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          Form,
+          {
+            layout: "inline",
+            form: formRef,
+            className: Styles["search-form"],
+            ...restFormProps,
+            children: [
+              options.map((item) => {
+                const { getOptionsApi, getOptionsApiAfter, ...rest } = item;
+                return /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  SearchFormItem,
+                  {
+                    ...rest,
+                    inputProps: {
+                      ...item.inputProps,
+                      options: optionsMap[item.name] || item.options
+                    }
+                  },
+                  item.name || item.label
+                );
+              }),
+              isAdvancedSearch && /* @__PURE__ */ jsxRuntimeExports.jsx(AdvancedSearch, { params: searchParams, items: advancedOptions }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Item$2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { type: "primary", onClick: handleSearch, shape: "round", loading: loading2, children: "查询" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Item$2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { onClick: handleReset, shape: "round", children: "重置" }) }),
+              advancedOptions.length > 0 && /* @__PURE__ */ jsxRuntimeExports.jsx(Item$2, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { type: "link", onClick: () => setIsAdvancedSearch(!isAdvancedSearch), children: isAdvancedSearch ? "关闭" : "高级搜索" }) })
+            ]
+          }
+        );
+      };
+      const SearchForm$1 = forwardRef(SearchForm);
+      const footer$2 = "_footer_e7ura_48";
+      const styles$7 = {
+        "album-detail-modal": "_album-detail-modal_e7ura_1",
+        "modal-header": "_modal-header_e7ura_1",
+        "album-basic-info": "_album-basic-info_e7ura_6",
+        "album-info": "_album-info_e7ura_11",
+        "album-name": "_album-name_e7ura_16",
+        "album-meta": "_album-meta_e7ura_19",
+        "song-table": "_song-table_e7ura_24",
+        "song-name": "_song-name_e7ura_27",
+        "artist-item": "_artist-item_e7ura_33",
+        "artist-name": "_artist-name_e7ura_37",
+        "artist-separator": "_artist-separator_e7ura_41",
+        "song-duration": "_song-duration_e7ura_45",
+        footer: footer$2,
+        "selected-count": "_selected-count_e7ura_55"
+      };
+      const { Text: Text$4, Title: Title$3 } = Typography;
+      const AlbumDetail = forwardRef((_, ref) => {
+        const { visible, close } = useVisible(
+          {
+            onOpen(params) {
+              if (params?.albummid) {
+                setCurrentMid(params.albummid);
+              }
+            },
+            onReset() {
+              setCurrentMid("");
+              setInputMid("");
+              setSelectedRowKeys([]);
+              setSelectedRows([]);
+              setList([]);
+            }
+          },
+          ref
+        );
+        const [currentMid, setCurrentMid] = useState("");
+        const [inputMid, setInputMid] = useState("");
+        const { downloadConfig } = useConfig();
+        const { quality: defaultQuality } = downloadConfig;
+        const { getAlbumDetail, getAlbumSongList, isLoading, getDownLoadJson } = useGetAlbumDetail();
+        const { play, isPlaying, pause, download, convertToNeteaseMusic } = usePlayMusic();
+        const { data: detail, loading: detailLoading } = useGetData(
+          getAlbumDetail,
+          currentMid,
+          {
+            initialValue: void 0,
+            returnFunction: () => !currentMid || !visible,
+            monitors: [currentMid, visible]
+          }
+        );
+        const {
+          data: list,
+          loading: loading2,
+          setData: setList
+        } = useGetData(getAlbumSongList, currentMid, {
+          initialValue: [],
+          returnFunction: () => !currentMid || !visible,
+          monitors: [currentMid, visible],
+          callback: (data) => {
+            console.log("data", data);
+          }
+        });
+        const handleChooseQuality = (record, quality) => {
+          setList(
+            list?.map((item) => {
+              if (item.songmid === record.songmid) {
+                return {
+                  ...item,
+                  quality
+                };
+              }
+              return item;
+            }) || []
+          );
+        };
+        const handlePlay = (record) => {
+          if (isPlaying) {
+            pause();
+          } else {
+            const { quality } = record;
+            const finalQuality = getQuality$3(record, defaultQuality, quality);
+            play(record.songmid, finalQuality);
+          }
+        };
+        const [downloading, setDownloading] = useState("");
+        const handleDownload = async (record) => {
+          try {
+            if (downloading === record.songmid) return;
+            setDownloading(record.songmid);
+            const { quality } = record;
+            const finalQuality = getQuality$3(record, defaultQuality, quality);
+            await download(record.songmid, finalQuality);
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            setDownloading("");
+          }
+        };
+        const songColumns = [
+          {
+            title: "歌曲",
+            dataIndex: "songname",
+            key: "songname",
+            width: 300,
+            render: (text) => /* @__PURE__ */ jsxRuntimeExports.jsx(Text$4, { className: styles$7["song-name"], title: text, children: text })
+          },
+          {
+            title: "歌手",
+            dataIndex: "singer",
+            key: "singer",
+            width: 240,
+            render: (singers = []) => /* @__PURE__ */ jsxRuntimeExports.jsx(Space, { size: "small", wrap: true, children: singers.length > 0 ? singers.map((s, index2) => /* @__PURE__ */ jsxRuntimeExports.jsxs("span", { className: styles$7["artist-item"], children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Avatar, { size: 30, style: { marginRight: 4 }, src: getSingerPic(s.mid) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$7["artist-name"], children: s.name }),
+              index2 < singers.length - 1 && /* @__PURE__ */ jsxRuntimeExports.jsx("span", { className: styles$7["artist-separator"], children: "/" })
+            ] }, s.mid || index2)) : /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "-" }) })
+          },
+          // 音质选择器
+          {
+            title: "音质",
+            key: "quality",
+            width: 100,
+            align: "center",
+            render: (_2, record) => {
+              const qualityList = getFileQualityList(record);
+              const defaultValue = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
+              return /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Select,
+                {
+                  options: qualityList.map((quality) => ({
+                    label: quality,
+                    value: quality
+                  })),
+                  value: record.quality || defaultValue,
+                  style: { width: "100%" },
+                  onChange: (value) => {
+                    handleChooseQuality(record, value);
+                  }
+                }
+              );
+            }
+          },
+          // 格式
+          {
+            title: "格式",
+            key: "format",
+            width: 150,
+            align: "center",
+            render: (_2, record) => {
+              const qualityList = getFileQualityList(record);
+              const qualityColorMap = {
+                flac: "green",
+                ape: "volcano",
+                320: "blue",
+                m4a: "orange",
+                128: "gray"
+              };
+              const qualityTextMap = {
+                flac: "FLAC",
+                ape: "APE",
+                320: "320k",
+                m4a: "M4A",
+                128: "128k"
+              };
+              return /* @__PURE__ */ jsxRuntimeExports.jsx(Space, { wrap: true, children: qualityList.map((quality) => /* @__PURE__ */ jsxRuntimeExports.jsx(Tag, { color: qualityColorMap[quality], children: qualityTextMap[quality] || quality }, quality)) });
+            }
+          },
+          {
+            title: "时长",
+            dataIndex: "interval",
+            key: "interval",
+            width: 100,
+            align: "center",
+            render: (interval) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Text$4, { className: styles$7["song-duration"], children: [
+              Math.floor((interval || 0) / 60),
+              ":",
+              ((interval || 0) % 60).toString().padStart(2, "0")
+            ] })
+          },
+          {
+            title: "操作",
+            key: "action",
+            width: 200,
+            align: "center",
+            fixed: "right",
+            render: (_2, record) => /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { title: "播放", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Button,
+                {
+                  type: "link",
+                  size: "small",
+                  icon: isPlaying === record.songmid ? /* @__PURE__ */ jsxRuntimeExports.jsx(PauseCircleOutlined, {}) : /* @__PURE__ */ jsxRuntimeExports.jsx(PlayCircleOutlined, {}),
+                  onClick: () => handlePlay(record),
+                  children: "播放"
+                }
+              ) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Tooltip, { title: "下载", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Button,
+                {
+                  type: "link",
+                  size: "small",
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DownloadOutlined, {}),
+                  loading: downloading === record.songmid,
+                  onClick: () => handleDownload(record),
+                  children: "下载"
+                }
+              ) })
+            ] })
+          }
+        ];
+        const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+        const [selectedRows, setSelectedRows] = useState([]);
+        const rowSelection = {
+          preserveSelectedRowKeys: true,
+          selectedRowKeys,
+          onChange: (selectedRowKeys2, selectedRows2) => {
+            setSelectedRowKeys(selectedRowKeys2);
+            setSelectedRows(selectedRows2);
+            console.log("selectedRowKeys", selectedRowKeys2);
+            console.log("selectedRows", selectedRows2);
+          }
+        };
+        const renderTitle = () => {
+          const albumName = detail?.name || "专辑详情";
+          const singerName = detail?.singername || "";
+          const publishDate = detail?.aDate || "";
+          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["modal-header"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsx(Title$3, { level: 4, className: styles$7["modal-title"], children: "专辑详情" }),
+            detail && /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["album-basic-info"], children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Image,
+                {
+                  src: currentMid ? getAlbumPicUrl(currentMid) : "",
+                  alt: albumName,
+                  width: 80,
+                  height: 80,
+                  style: { borderRadius: 8 },
+                  fallback: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAADDCAYAAADQvc6UAAABRWlDQ1BJQ0MgUHJvZmlsZQAAKJFjYGASSSwoyGFhYGDIzSspCnJ3UoiIjFJgf8LAwSDCIMogwMCcmFxc4BgQ4ANUwgCjUcG3awyMIPqyLsis7PPOq3QdDFcvjV3jOD1boQVTPQrgSkktTgbSf4A4LbmgqISBgTEFyFYuLykAsTuAbJEioKOA7DkgdjqEvQHEToKwj4DVhAQ5A9k3gGyB5IxEoBmML4BsnSQk8XQkNtReEOBxcfXxUQg1Mjc0dyHgXNJBSWpFCYh2zi+oLMpMzyhRcASGUqqCZ16yno6CkYGRAQMDKMwhqj/fAIcloxgHQqxAjIHBEugw5sUIsSQpBobtQPdLciLEVJYzMPBHMDBsayhILEqEO4DxG0txmrERhM29nYGBddr//5/DGRjYNRkY/l7////39v///y4Dmn+LgeHANwDrkl1AuO+pmgAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAwqADAAQAAAABAAAAwwAAAAD9b/HnAAAHlklEQVR4Ae3dP3Ik1RnG4W+FgYxN"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["album-info"], children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(Title$3, { level: 5, className: styles$7["album-name"], children: albumName }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["album-meta"], children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$4, { type: "secondary", className: styles$7["singer-name"], children: singerName || "未知歌手" }),
+                  publishDate && /* @__PURE__ */ jsxRuntimeExports.jsxs(Text$4, { type: "secondary", className: styles$7["publish-date"], children: [
+                    "· ",
+                    publishDate
+                  ] })
+                ] })
+              ] })
+            ] })
+          ] });
+        };
+        const handleBatchDownload = async () => {
+          if (selectedRows.length === 0) {
+            msgWarning("请先选择要下载的歌曲");
+            return;
+          }
+          const loadingKey = "download-album-song";
+          try {
+            message$1.loading({
+              key: loadingKey,
+              content: `正在准备下载 ${selectedRows.length} 首歌曲...`,
+              duration: 0
+            });
+            let index2 = 1;
+            for (const song of selectedRows) {
+              message$1.loading({
+                key: loadingKey,
+                content: `正在下载第 ${index2} 首歌曲 ${song.songname}...`,
+                duration: 0
+              });
+              const finalQuality = getQuality$3(song, defaultQuality);
+              await download(song.songmid, finalQuality);
+              message$1.success({
+                key: loadingKey,
+                content: `第 ${index2} 首歌曲 ${song.songname} 下载成功！`,
+                duration: 1
+              });
+              index2++;
+            }
+            message$1.success({
+              key: loadingKey,
+              content: `成功下载 ${selectedRows.length} 首歌曲！`,
+              duration: 1
+            });
+          } catch (error) {
+            console.error("批量下载失败:", error);
+            message$1.destroy(loadingKey);
+            msgError("批量下载失败: " + error.message);
+          } finally {
+            message$1.destroy(loadingKey);
+          }
+        };
+        const handleBatchDownloadNeteaseMusic = async () => {
+          if (selectedRows.length === 0) {
+            msgWarning("请先选择要转存网易云的歌曲");
+            return;
+          }
+          const loadingKey = "download-album-song-netease";
+          try {
+            message$1.loading({
+              key: loadingKey,
+              content: `正在准备转存网易云 ${selectedRows.length} 首歌曲...`,
+              duration: 0
+            });
+            let index2 = 1;
+            for (const song of selectedRows) {
+              console.log("song", song);
+              const record = song;
+              const finalQuality = getQuality$3(record, defaultQuality, record.quality);
+              message$1.loading({
+                key: loadingKey,
+                content: `正在转存第 ${index2} 首歌曲 ${song.songname}...`,
+                duration: 0
+              });
+              await convertToNeteaseMusic(song.songmid, { quality: finalQuality });
+              message$1.success({
+                content: `第 ${index2} 首歌曲 ${song.songname} 转存成功！`,
+                duration: 1
+              });
+              index2++;
+            }
+            message$1.success({
+              key: loadingKey,
+              content: `成功转存 ${selectedRows.length} 首歌曲！`,
+              duration: 1
+            });
+          } catch (error) {
+            console.error("批量转存网易云失败:", error);
+            msgError("批量转存网易云失败: " + error.message);
+          } finally {
+            message$1.destroy(loadingKey);
+          }
+        };
+        const handleDownloadAllJson = async () => {
+          if (!currentMid) return;
+          const loadingKey = "download-album-json";
+          try {
+            message$1.loading({
+              key: loadingKey,
+              content: `正在下载专辑JSON...`,
+              duration: 0
+            });
+            const res = await getDownLoadJson(currentMid);
+            downloadAsJson([res], `${detail?.name}.json`);
+            message$1.destroy(loadingKey);
+            msgSuccess("成功下载专辑JSON！");
+          } catch (error) {
+            console.log("error", error);
+          } finally {
+            message$1.destroy(loadingKey);
+          }
+        };
+        const renderFooter = () => {
+          return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["footer"], children: [
+            /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$7["selected-count"], children: [
+              "已选择 ",
+              selectedRows.length,
+              " 首歌曲"
+            ] }),
+            /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
+              selectedRowKeys?.length < list.length ? /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Button,
+                {
+                  onClick: () => {
+                    setSelectedRowKeys(list?.map((item) => item.songmid) || []);
+                    setSelectedRows(list || []);
+                  },
+                  children: "全部选择"
+                }
+              ) : /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Button,
+                {
+                  onClick: () => {
+                    setSelectedRowKeys([]);
+                    setSelectedRows([]);
+                  },
+                  children: "清空选择"
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(MyButton, { type: "primary", icon: /* @__PURE__ */ jsxRuntimeExports.jsx(DownloadOutlined, {}), onClick: handleBatchDownload, children: [
+                "下载选中歌曲",
+                selectedRows?.length ? `(${selectedRows?.length})` : ""
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsxs(
+                MyButton,
+                {
+                  type: "primary",
+                  icon: /* @__PURE__ */ jsxRuntimeExports.jsx(CloudDownloadOutlined, {}),
+                  onClick: handleBatchDownloadNeteaseMusic,
+                  children: [
+                    "转存网易云",
+                    selectedRows?.length ? `(${selectedRows?.length})` : ""
+                  ]
+                }
+              ),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { icon: /* @__PURE__ */ jsxRuntimeExports.jsx(FileOutlined, {}), type: "primary", onClick: handleDownloadAllJson, children: "下载全部歌曲JSON" })
+            ] })
+          ] });
+        };
+        const handleInputChange = (e) => {
+          setInputMid(e.target.value.trim());
+        };
+        const handleOpenById = () => {
+          if (!inputMid) return;
+          setCurrentMid(inputMid);
+        };
+        return /* @__PURE__ */ jsxRuntimeExports.jsxs(
+          Modal,
+          {
+            title: renderTitle(),
+            open: visible,
+            onCancel: close,
+            width: 1200,
+            centered: true,
+            destroyOnHidden: true,
+            className: styles$7["album-detail-modal"],
+            footer: renderFooter(),
+            children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { style: { marginBottom: 12, display: "flex", gap: 8 }, children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Input,
+                  {
+                    placeholder: "请输入专辑ID/MID，如 003rJSwm3TechU",
+                    value: inputMid,
+                    onChange: handleInputChange,
+                    onPressEnter: handleOpenById,
+                    allowClear: true,
+                    "aria-label": "专辑ID输入框"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Button,
+                  {
+                    type: "primary",
+                    onClick: handleOpenById,
+                    loading: loading2 || detailLoading || isLoading,
+                    children: "打开"
+                  }
+                )
+              ] }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Table,
+                {
+                  columns: songColumns,
+                  dataSource: list || [],
+                  rowSelection,
+                  rowKey: "songmid",
+                  loading: loading2 || detailLoading || isLoading,
+                  scroll: { y: 400, x: 600 },
+                  pagination: {
+                    showSizeChanger: true,
+                    showQuickJumper: true,
+                    showTotal: (total) => `共 ${total} 首歌曲`
+                  },
+                  className: styles$7["song-table"]
+                }
+              )
+            ]
+          }
+        );
+      });
+      const getQuality$3 = (record, defaultQuality, chooseQuality) => {
+        const qualityList = getFileQualityList(record);
+        const songDefaultQuality = qualityList.includes(defaultQuality) ? defaultQuality : qualityList[0];
+        const finalQuality = chooseQuality || songDefaultQuality;
+        return finalQuality;
+      };
+      const { Link, Text: Text$3 } = Typography;
+      const GITHUB_CONFIG = {
+        owner: "520Qiuyu",
+        repo: "QQMusic",
+        homepage: "https://github.com/520Qiuyu/QQMusic",
+        authorUrl: "https://github.com/520Qiuyu",
+        scriptUrl: "https://raw.githubusercontent.com/520Qiuyu/QQMusic/main/dist/qqmusic.user.js"
+      };
+      const GithubInfo = forwardRef((_props, ref) => {
+        const { visible, close } = useVisible(
+          {
+            onOpen: () => {
+              fetchRepoInfo();
+            }
+          },
+          ref
+        );
+        const [repoInfo, setRepoInfo] = useState(null);
+        const [loading2, setLoading] = useState(false);
+        const { functionConfig, setFunctionConfig } = useConfig();
+        const fetchRepoInfo = async () => {
+          setLoading(true);
+          try {
+            const response = await fetch(
+              `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}`
+            );
+            if (response.ok) {
+              const data = await response.json();
+              setRepoInfo({
+                stars: data.stargazers_count || 0,
+                forks: data.forks_count || 0,
+                watchers: data.watchers_count || 0,
+                description: data.description || "",
+                language: data.language || "",
+                updatedAt: data.updated_at || "",
+                createdAt: data.created_at || "",
+                openIssues: data.open_issues_count || 0,
+                license: data.license?.name || "无",
+                defaultBranch: data.default_branch || "main",
+                avatarUrl: data.owner?.avatar_url || "",
+                authorName: data.owner?.login || GITHUB_CONFIG.owner
+              });
+            }
+          } catch (error) {
+            console.error("获取 GitHub 信息失败:", error);
+          } finally {
+            setLoading(false);
+          }
+        };
+        const formatDate = (dateString) => {
+          if (!dateString) return "-";
+          const date = new Date(dateString);
+          return date.toLocaleDateString("zh-CN", {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+          });
+        };
+        const handleDoubleClickDefaultBranch = () => {
+          console.log("handleDoubleClickDefaultBranch");
+          setFunctionConfig({
+            ...functionConfig,
+            enableTestModal: !functionConfig.enableTestModal
+          });
+          close();
+        };
+        return /* @__PURE__ */ jsxRuntimeExports.jsx(
+          Modal,
+          {
+            title: /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(GithubOutlined, {}),
+              /* @__PURE__ */ jsxRuntimeExports.jsx("span", { children: "GitHub 信息" })
+            ] }),
+            open: visible,
+            onCancel: close,
+            footer: null,
+            centered: true,
+            width: 700,
+            zIndex: 99999,
+            children: /* @__PURE__ */ jsxRuntimeExports.jsx(Spin, { spinning: loading2, children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Descriptions, { column: 1, bordered: true, size: "small", styles: { label: { width: 120 } }, children: [
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "项目主页", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Space, { children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { href: GITHUB_CONFIG.homepage, target: "_blank", rel: "noopener noreferrer", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(LinkOutlined, {}),
+                " ",
+                GITHUB_CONFIG.homepage
+              ] }) }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "作者主页", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
+                repoInfo?.avatarUrl && /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Image,
+                  {
+                    src: repoInfo.avatarUrl,
+                    alt: repoInfo.authorName || "作者头像",
+                    width: 60,
+                    height: 60,
+                    style: {
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                      cursor: "pointer"
+                    }
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(Link, { href: GITHUB_CONFIG.authorUrl, target: "_blank", rel: "noopener noreferrer", children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(GithubOutlined, {}),
+                  " ",
+                  GITHUB_CONFIG.authorUrl
+                ] })
+              ] }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "项目描述", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: repoInfo?.description || "暂无描述" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "统计信息", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { size: "large", children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(StarOutlined, { style: { color: "#faad14" } }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { strong: true, children: repoInfo?.stars || 0 }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { type: "secondary", children: "Stars" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(ForkOutlined, { style: { color: "#1890ff" } }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { strong: true, children: repoInfo?.forks || 0 }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { type: "secondary", children: "Forks" })
+                ] }),
+                /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(EyeOutlined, { style: { color: "#52c41a" } }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { strong: true, children: repoInfo?.watchers || 0 }),
+                  /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { type: "secondary", children: "Watchers" })
+                ] })
+              ] }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "主要语言", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: repoInfo?.language || "未知" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "默认分支", children: /* @__PURE__ */ jsxRuntimeExports.jsx(
+                Text$3,
+                {
+                  code: true,
+                  onDoubleClick: handleDoubleClickDefaultBranch,
+                  onTouchStart: handleDoubleClickDefaultBranch,
+                  style: { cursor: "pointer", userSelect: "none" },
+                  children: repoInfo?.defaultBranch || "main"
+                }
+              ) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "许可证", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: repoInfo?.license || "无" }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "开放 Issues", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: repoInfo?.openIssues || 0 }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "创建时间", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: formatDate(repoInfo?.createdAt) }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "更新时间", children: /* @__PURE__ */ jsxRuntimeExports.jsx(Text$3, { children: formatDate(repoInfo?.updatedAt) }) }),
+              /* @__PURE__ */ jsxRuntimeExports.jsx(Descriptions.Item, { label: "操作", children: /* @__PURE__ */ jsxRuntimeExports.jsxs(Space, { children: [
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Button,
+                  {
+                    type: "primary",
+                    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(GithubOutlined, {}),
+                    href: GITHUB_CONFIG.homepage,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    children: "访问仓库"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Button,
+                  {
+                    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(StarOutlined, {}),
+                    href: `${GITHUB_CONFIG.homepage}/stargazers`,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    children: "查看 Stars"
+                  }
+                ),
+                /* @__PURE__ */ jsxRuntimeExports.jsx(
+                  Button,
+                  {
+                    type: "primary",
+                    icon: /* @__PURE__ */ jsxRuntimeExports.jsx(UploadOutlined, {}),
+                    href: GITHUB_CONFIG.scriptUrl,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    children: "更新脚本"
+                  }
+                )
+              ] }) })
+            ] }) })
+          }
+        );
+      });
       const loading$1 = "_loading_jnpqx_59";
       const footer$1 = "_footer_jnpqx_161";
       const styles$6 = {
@@ -81529,7 +81565,7 @@ System.register("./main-D8Z2gnC--6SX1oftk.js", ['react', 'antd', 'react-dom', '@
                     label: quality,
                     value: quality
                   })),
-                  defaultValue,
+                  value: record.quality || defaultValue,
                   style: { width: "100%" },
                   onChange: (value) => {
                     handleChooseQuality(record, value);
@@ -83121,7 +83157,7 @@ System.register("./main-D8Z2gnC--6SX1oftk.js", ['react', 'antd', 'react-dom', '@
                     label: quality,
                     value: quality
                   })),
-                  defaultValue,
+                  value: record.quality || defaultValue,
                   style: { width: "100%" },
                   onChange: (value) => {
                     handleChooseQuality(record, value);
@@ -83301,7 +83337,7 @@ System.register("./main-D8Z2gnC--6SX1oftk.js", ['react', 'antd', 'react-dom', '@
           try {
             const data = await getPlaylistDownloadJson(currentDissid);
             console.log("data", data);
-            downloadAsJson(data, `${data.playlistName}.json`);
+            downloadAsJson(data.albums, `${data.playlistName}`);
           } catch (error) {
             console.error("下载歌单JSON失败:", error);
           }
@@ -84675,8 +84711,8 @@ System.register("./main-D8Z2gnC--6SX1oftk.js", ['react', 'antd', 'react-dom', '@
       const { Item: Item$1 } = Descriptions;
       const getQualityOptions = () => {
         return [
-          { label: "128k MP3", value: "128" },
-          { label: "320k MP3", value: "320" },
+          { label: "128k MP3", value: 128 },
+          { label: "320k MP3", value: 320 },
           { label: "FLAC", value: "flac" }
         ];
       };
