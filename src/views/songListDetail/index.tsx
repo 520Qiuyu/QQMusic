@@ -33,10 +33,19 @@ import { Avatar, Button, Image, message, Modal, Select, Space, Table, Tag, Typog
 import type { ColumnType } from 'antd/es/table';
 import type { TableProps } from 'antd/lib';
 import { groupBy } from 'lodash';
-import { forwardRef, useState, type ForwardedRef } from 'react';
+import { forwardRef, useMemo, useState, type ForwardedRef } from 'react';
 import styles from './index.module.scss';
+import { getUserCollectedSonglist, getUserCreatedPlaylist } from '@/apis/user';
+import type { UserCollectedSonglistItem, UserCreatedDissItem } from '@/types/user';
 
 const { Text, Title } = Typography;
+
+/** 播放量展示（收藏歌单 listennum 可能很大） */
+const formatListenNum = (n: number) => {
+  if (n >= 100000000) return `${(n / 100000000).toFixed(1)}亿`;
+  if (n >= 10000) return `${(n / 10000).toFixed(1)}万`;
+  return `${n}`;
+};
 
 interface IOpenParams {
   dissid?: string;
@@ -74,6 +83,52 @@ const SongListDetail = forwardRef((_, ref: ForwardedRef<Ref<any, IOpenParams>>) 
   } = useGetSonglistDetail();
   // 歌曲相关hook
   const { play, isPlaying, pause, download, convertToNeteaseMusic } = usePlayMusic();
+
+  // 当前用户创建歌单
+  const { data: createdPlaylist } = useGetData(getUserCreatedPlaylist, undefined, {
+    initialValue: { list: [] },
+    returnFunction: () => !visible,
+    monitors: [visible],
+    callback: (data) => {
+      console.log('createdPlaylist', data);
+    },
+  });
+  // 当前用户收藏歌单
+  const { data: collectedPlaylist } = useGetData(getUserCollectedSonglist, undefined, {
+    initialValue: { list: [], total: 0, pageNo: 1, pageSize: 20 },
+    returnFunction: () => !visible,
+    monitors: [visible],
+    callback: (data) => {
+      console.log('collectedPlaylist', data);
+    },
+  });
+
+  const playListOptions = useMemo(() => {
+    return [
+      {
+        label: '创建歌单',
+        options:
+          createdPlaylist?.list
+            ?.filter((item) => item.tid)
+            .map((item) => ({
+              label: item.diss_name,
+              value: item.tid,
+              cover: item.diss_cover,
+              count: item.song_cnt,
+            })) || [],
+      },
+      {
+        label: '收藏歌单',
+        options:
+          collectedPlaylist?.list?.map((item) => ({
+            label: item.dissname,
+            value: item.dissid,
+            cover: item.logo,
+            count: item.songnum,
+          })) || [],
+      },
+    ];
+  }, [createdPlaylist, collectedPlaylist]);
 
   const {
     data: detail,
@@ -163,6 +218,91 @@ const SongListDetail = forwardRef((_, ref: ForwardedRef<Ref<any, IOpenParams>>) 
               getData();
             }
           }
+        },
+      },
+    },
+    // 歌单
+    {
+      label: '歌单',
+      type: 'select',
+      options: playListOptions,
+      inputProps: {
+        mode: undefined,
+        listHeight: 360,
+        popupMatchSelectWidth: false,
+        dropdownStyle: { minWidth: 420 },
+        filterOption: (input, option) => {
+          const text = (option as { playlistSearchText?: string })?.playlistSearchText ?? '';
+          return String(text).toLowerCase().includes(input.toLowerCase());
+        },
+        onChange: (value: string) => {
+          setCurrentDissid(value);
+        },
+        optionRender: (option) => {
+          const data = option.data as
+            | (typeof playListOptions)[number]['options'][number]
+            | undefined;
+          if (!data) return null;
+          const {
+            cover = 'https://y.gtimg.cn/mediastyle/global/img/playlist_300.png',
+            count,
+            label,
+            value,
+          } = data;
+
+          return (
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: 12,
+                padding: '4px 0',
+                minWidth: 0,
+              }}>
+              <div style={{ flexShrink: 0 }}>
+                <Image
+                  width={48}
+                  height={48}
+                  src={cover}
+                  alt=''
+                  preview={false}
+                  style={{ borderRadius: 8, objectFit: 'cover', display: 'block' }}
+                />
+              </div>
+              <div
+                style={{
+                  flex: 1,
+                  minWidth: 0,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 6,
+                }}>
+                <div
+                  style={{
+                    fontSize: 14,
+                    fontWeight: 500,
+                    color: 'rgba(0, 0, 0, 0.88)',
+                    lineHeight: 1.35,
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    whiteSpace: 'nowrap',
+                  }}
+                  title={label}>
+                  {label}
+                </div>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: 6,
+                    alignItems: 'center',
+                  }}>
+                  <Tag color='processing'>{count ?? 0} 首</Tag>
+                  <Tag color='default'>歌单 ID：{String(value)}</Tag>
+                </div>
+              </div>
+            </div>
+          );
         },
       },
     },

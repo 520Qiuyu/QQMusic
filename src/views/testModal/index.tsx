@@ -14,6 +14,7 @@ import SongListTab from './components/SongListTab';
 import SongTab from './components/SongTab';
 import NeteaseMusicTab from './components/NeteaseMusicTab';
 import { getUserAccount } from '@/apis/neteaseApi';
+import UserTab from './components/UserTab';
 
 const TestModal = forwardRef((_, ref: ForwardedRef<Ref>) => {
   const { visible, open, close } = useVisible({}, ref);
@@ -45,6 +46,11 @@ const TestModal = forwardRef((_, ref: ForwardedRef<Ref>) => {
       key: 'search',
       label: '搜索',
       children: <SearchTab />,
+    },
+    {
+      key: 'user',
+      label: '用户',
+      children: <UserTab />,
     },
     {
       key: 'neteaseMusic',
