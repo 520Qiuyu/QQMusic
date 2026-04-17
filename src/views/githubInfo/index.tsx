@@ -139,6 +139,7 @@ const GithubInfo = forwardRef((_props, ref: ForwardedRef<Ref>) => {
    * 处理双击默认分支事件
    */
   const handleDoubleClickDefaultBranch = (): void => {
+    console.log('handleDoubleClickDefaultBranch');
     setFunctionConfig({
       ...functionConfig,
       enableTestModal: !functionConfig.enableTestModal,
@@ -223,6 +224,7 @@ const GithubInfo = forwardRef((_props, ref: ForwardedRef<Ref>) => {
             <Text
               code
               onDoubleClick={handleDoubleClickDefaultBranch}
+              onTouchStart={handleDoubleClickDefaultBranch}
               style={{ cursor: 'pointer', userSelect: 'none' }}>
               {repoInfo?.defaultBranch || 'main'}
             </Text>
