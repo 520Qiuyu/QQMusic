@@ -13,8 +13,13 @@ const audio = new Audio();
 
 export const usePlayMusic = () => {
   const { functionConfig, downloadConfig } = useConfig();
-  const { quality: downloadQuality, downloadLyric, embedLyricCover } = downloadConfig;
-  const { } = functionConfig;
+  const {
+    quality: downloadQuality,
+    downloadLyric,
+    embedLyricCover,
+    fileNameFormat,
+  } = downloadConfig;
+  const {} = functionConfig;
 
   const [currentMid, setCurrentMid] = useState<string>('');
   const [isPlaying, setIsPlaying] = useState<string>();
@@ -150,8 +155,12 @@ export const usePlayMusic = () => {
           case 'flac':
             // 写入歌曲信息到文件、以获取到的为准
             if (songInfo) {
-              console.log('songInfo', songInfo)
-              const { name, album: { name: albumName }, singer } = songInfo
+              console.log('songInfo', songInfo);
+              const {
+                name,
+                album: { name: albumName },
+                singer,
+              } = songInfo;
               if (name) {
                 outputFile = await writeFlacTag(outputFile, FlacTag.标题, name);
               }
@@ -159,7 +168,11 @@ export const usePlayMusic = () => {
                 outputFile = await writeFlacTag(outputFile, FlacTag.专辑, albumName);
               }
               if (singer) {
-                outputFile = await writeFlacTag(outputFile, FlacTag.艺术家, singer.map(item => item.name).join(','));
+                outputFile = await writeFlacTag(
+                  outputFile,
+                  FlacTag.艺术家,
+                  singer.map((item) => item.name).join(','),
+                );
               }
               console.log(`写入歌曲信息到文件《${name}》`, { name, albumName, singer });
             }
@@ -176,7 +189,11 @@ export const usePlayMusic = () => {
         downloadAsLRC(lyric, name);
       }
 
-      downloadFileWithBlob(outputFile, `${name}.${finalExt}`);
+      const fileName = fileNameFormat
+        .replace('【歌曲名】', name)
+        .replace('【歌手】', songInfo.singer.map((item) => item.name).join(','))
+        .replace('【专辑】', songInfo.album.name);
+      downloadFileWithBlob(outputFile, `${fileName || name}.${finalExt}`);
     } catch (error) {
       console.log('error', error);
     }
@@ -248,7 +265,11 @@ export const usePlayMusic = () => {
           case 'flac':
             // 写入歌曲信息到文件、以获取到的为准
             if (songInfo) {
-              const { name, album: { name: albumName }, singer } = songInfo
+              const {
+                name,
+                album: { name: albumName },
+                singer,
+              } = songInfo;
               if (name) {
                 outputFile = await writeFlacTag(outputFile, FlacTag.标题, name);
               }
@@ -256,7 +277,11 @@ export const usePlayMusic = () => {
                 outputFile = await writeFlacTag(outputFile, FlacTag.专辑, albumName);
               }
               if (singer) {
-                outputFile = await writeFlacTag(outputFile, FlacTag.艺术家, singer.map(item => item.name).join(','));
+                outputFile = await writeFlacTag(
+                  outputFile,
+                  FlacTag.艺术家,
+                  singer.map((item) => item.name).join(','),
+                );
               }
               log(`写入歌曲信息到文件《${name}》`, { name, albumName, singer });
             }

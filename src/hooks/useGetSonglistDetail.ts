@@ -16,7 +16,7 @@ export const useGetSonglistDetail = () => {
   const playlistInfoMap = useRef<Record<string, PlaylistInfo>>({});
 
   const { downloadConfig, functionConfig } = useConfig();
-  const { quality: downloadQuality } = downloadConfig;
+  const { quality: downloadQuality, fileNameFormat } = downloadConfig;
   const { uploadConcurrency } = functionConfig;
   const { playList, play, getUrl, download, getLyric, convertToNeteaseMusic } = usePlayMusic();
 
@@ -183,11 +183,17 @@ export const useGetSonglistDetail = () => {
       albumCover: songs[0]?.album?.mid
         ? getAlbumPicUrl(songs[0].album.mid, { size: '300x300' })
         : '',
-      list: songs.map((song) => ({
-        songName: song.name,
-        url: song.url,
-        lrcContent: song.lrcContent,
-      })),
+      list: songs.map((song) => {
+        const formatName = fileNameFormat
+          .replace('【歌曲名】', song.name)
+          .replace('【歌手】', song.singer.map((item) => item.name).join(','))
+          .replace('【专辑】', song.album.name);
+        return {
+          songName: formatName || song.name,
+          url: song.url,
+          lrcContent: song.lrcContent,
+        };
+      }),
     }));
 
     return {

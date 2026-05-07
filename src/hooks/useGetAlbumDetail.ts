@@ -13,7 +13,7 @@ export const useGetAlbumDetail = () => {
   const albumInfoMap = useRef<Record<string, AlbumInfoData>>({});
 
   const { downloadConfig, functionConfig } = useConfig();
-  const { quality: downloadQuality } = downloadConfig;
+  const { quality: downloadQuality, fileNameFormat } = downloadConfig;
   const { uploadConcurrency } = functionConfig;
   const { playList, play, getUrl, download, getLyric } = usePlayMusic();
 
@@ -145,8 +145,12 @@ export const useGetAlbumDetail = () => {
       const qualityList = getFileQualityList(item);
       const finalQuality = qualityList.includes(downloadQuality) ? downloadQuality : qualityList[0];
       const url = await getUrl(item.songmid, finalQuality);
+      const formatName = fileNameFormat
+        .replace('【歌曲名】', item.songname)
+        .replace('【歌手】', item.singer.map((item) => item.name).join(','))
+        .replace('【专辑】', name || '未知专辑');
       return {
-        songName: item.songname,
+        songName: formatName || item.songname,
         url,
         lrcContent,
       };

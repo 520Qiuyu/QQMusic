@@ -1,4 +1,4 @@
-import type { FileType } from "@/constants";
+import type { FileType } from '@/constants';
 
 const isDev = import.meta.env.DEV;
 
@@ -44,4 +44,8 @@ export const defaultDownloadConfig = {
   embedLyricCover: true,
   /** 是否内嵌歌曲信息 */
   embedSongInfo: true,
+  /**
+   * 下载文件名称格式 占位符为【歌曲名】 【歌手】 【专辑】
+   */
+  fileNameFormat: '【歌曲名】-【歌手】',
 };

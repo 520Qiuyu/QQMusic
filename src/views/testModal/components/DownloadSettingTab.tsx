@@ -1,7 +1,8 @@
 import { useConfig } from '@/hooks/useConfig';
 import type { SettingStrategy } from '@/types/testModal';
-import { Descriptions } from 'antd';
+import { Descriptions, Tooltip } from 'antd';
 import SettingItem from './SettingItem';
+import { InfoCircleOutlined } from '@ant-design/icons';
 
 const { Item } = Descriptions;
 
@@ -37,6 +38,23 @@ const DOWNLOAD_SETTING_STRATEGIES: SettingStrategy[] = [
     label: '是否内嵌歌词封面',
     key: 'embedLyricCover',
     type: 'switch',
+  },
+  {
+    label: '是否内嵌歌曲信息',
+    key: 'embedSongInfo',
+    type: 'switch',
+  },
+  {
+    label: (
+      <span>
+        下载文件名称格式
+        <Tooltip title='占位符为【歌曲名】 【歌手】 【专辑】'>
+          <InfoCircleOutlined style={{ marginLeft: 4 }} />
+        </Tooltip>
+      </span>
+    ),
+    key: 'fileNameFormat',
+    type: 'input',
   },
 ];
 

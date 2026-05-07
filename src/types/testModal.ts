@@ -18,7 +18,7 @@ export type SettingStrategyType =
   | 'radio';
 
 export type SettingStrategy = {
-  label: string;
+  label: string | React.ReactNode;
   key: string;
 } & (
   | ({ type: 'switch' } & SwitchProps)
