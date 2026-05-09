@@ -7492,7 +7492,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-VBs6C8v--OSwZ4A99.js');
+            const { MpegParser } = await module.import('./MpegParser-DHXg25k0-BC1mJscz.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -7514,7 +7514,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-D5jasqax-BBCtTM70.js');
+            const { AsfParser } = await module.import('./AsfParser-Cw_H4iOc-L6mta9-9.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -7525,7 +7525,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-D9W5IG2F-CRimsLce.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-B5yR9sX_-BGSRLA34.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -7536,7 +7536,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-DoAfQoHS-DpOHlycX.js');
+            const { AIFFParser } = await module.import('./AiffParser-GTVtDQpH-Di5vGyeQ.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -7547,7 +7547,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-k5Du8Bsz-BZmz31uI.js');
+            const { DsfParser } = await module.import('./DsfParser-BymSzitY-r_tUZ-ob.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -7558,7 +7558,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-DxOTFTVv-Dt8_SeX-.js').then((n2) => n2.d);
+            const { FlacParser } = await module.import('./FlacParser-BRn0JQMx-CZGs3SSd.js').then((n2) => n2.d);
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -7569,7 +7569,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-yvxdpzrd-Piyql8mM.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-Cbl-TrqO-D-K7rTXe.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -7580,7 +7580,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-CLenTBhK-S5AIqNAM.js');
+            const { MP4Parser } = await module.import('./MP4Parser-BS_0nvk8-CGiZ4sTi.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -7591,7 +7591,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-D1WMtVzS-MN3eIAD-.js');
+            const { MusepackParser } = await module.import('./MusepackParser-9_1S2ffs-DlZ5ZFa4.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -7603,7 +7603,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         // RFC 7845, RFC 6716, RFC 5574
         async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-CQhJUt_w-DvdYxxwF.js');
+            const { OggParser } = await module.import('./OggParser-CtEKVY9d-RQhn7iuY.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -7614,7 +7614,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-eMP7x7bI-DGmBLvpT.js');
+            const { WavPackParser } = await module.import('./WavPackParser-DQM1A1f2-CqVaf9Bu.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -7625,7 +7625,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-B80TuZIw-B9aX6Zu0.js');
+            const { WaveParser } = await module.import('./WaveParser-DFwNijqO-uBIepAmW.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -27793,6 +27793,428 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
         document.body.removeChild(a2);
         window.URL.revokeObjectURL(blobUrl);
       };
+      function e(e2) {
+        return String(e2).split("").map((e3) => e3.charCodeAt(0));
+      }
+      function t(t2) {
+        return new Uint8Array(e(t2));
+      }
+      function a(t2) {
+        const a2 = new ArrayBuffer(2 * t2.length), r2 = new Uint8Array(a2);
+        return new Uint16Array(a2).set(e(t2)), r2;
+      }
+      function r(e2) {
+        const t2 = 255;
+        return [e2 >>> 24 & t2, e2 >>> 16 & t2, e2 >>> 8 & t2, e2 & t2];
+      }
+      function n(e2) {
+        return 11 + e2;
+      }
+      function s(e2, t2, a2, r2) {
+        return 11 + t2 + 1 + 1 + (r2 ? 2 + 2 * (a2 + 1) : a2 + 1) + e2;
+      }
+      function i(e2) {
+        let t2 = 0;
+        return e2.forEach((e3) => {
+          t2 += 2 + 2 * e3[0].length + 2 + 2 + 2 * e3[1].length + 2;
+        }), 11 + t2;
+      }
+      function c(e2, t2) {
+        const a2 = 2 * t2;
+        let r2 = 0;
+        return e2.forEach((e3) => {
+          r2 += 2 + 2 * e3[0].length + 2 + 4;
+        }), 18 + a2 + 2 + r2;
+      }
+      class o {
+        _setIntegerFrame(e2, t2) {
+          const a2 = parseInt(t2, 10);
+          this.frames.push({ name: e2, value: a2, size: n(a2.toString().length) });
+        }
+        _setStringFrame(e2, t2) {
+          const a2 = t2.toString();
+          let r2 = 13 + 2 * a2.length;
+          "TDAT" === e2 && (r2 = n(a2.length)), this.frames.push({ name: e2, value: a2, size: r2 });
+        }
+        _setPictureFrame(e2, t2, a2, r2) {
+          const n2 = (function(e3) {
+            if (!e3 || !e3.length) return null;
+            if (255 === e3[0] && 216 === e3[1] && 255 === e3[2]) return "image/jpeg";
+            if (137 === e3[0] && 80 === e3[1] && 78 === e3[2] && 71 === e3[3]) return "image/png";
+            if (71 === e3[0] && 73 === e3[1] && 70 === e3[2]) return "image/gif";
+            if (87 === e3[8] && 69 === e3[9] && 66 === e3[10] && 80 === e3[11]) return "image/webp";
+            const t3 = 73 === e3[0] && 73 === e3[1] && 42 === e3[2] && 0 === e3[3], a3 = 77 === e3[0] && 77 === e3[1] && 0 === e3[2] && 42 === e3[3];
+            return t3 || a3 ? "image/tiff" : 66 === e3[0] && 77 === e3[1] ? "image/bmp" : 0 === e3[0] && 0 === e3[1] && 1 === e3[2] && 0 === e3[3] ? "image/x-icon" : null;
+          })(new Uint8Array(t2)), i2 = a2.toString();
+          if (!n2) throw new Error("Unknown picture MIME type");
+          a2 || (r2 = false), this.frames.push({ name: "APIC", value: t2, pictureType: e2, mimeType: n2, useUnicodeEncoding: r2, description: i2, size: s(t2.byteLength, n2.length, i2.length, r2) });
+        }
+        _setLyricsFrame(e2, t2, a2) {
+          const r2 = e2.split("").map((e3) => e3.charCodeAt(0)), n2 = t2.toString(), s2 = a2.toString();
+          var i2, c2;
+          this.frames.push({ name: "USLT", value: s2, language: r2, description: n2, size: (i2 = n2.length, c2 = s2.length, 16 + 2 * i2 + 2 + 2 + 2 * c2) });
+        }
+        _setCommentFrame(e2, t2, a2) {
+          const r2 = e2.split("").map((e3) => e3.charCodeAt(0)), n2 = t2.toString(), s2 = a2.toString();
+          var i2, c2;
+          this.frames.push({ name: "COMM", value: s2, language: r2, description: n2, size: (i2 = n2.length, c2 = s2.length, 16 + 2 * i2 + 2 + 2 + 2 * c2) });
+        }
+        _setPrivateFrame(e2, t2) {
+          const a2 = e2.toString();
+          var r2, n2;
+          this.frames.push({ name: "PRIV", value: t2, id: a2, size: (r2 = a2.length, n2 = t2.byteLength, 10 + r2 + 1 + n2) });
+        }
+        _setUserStringFrame(e2, t2) {
+          const a2 = e2.toString(), r2 = t2.toString();
+          var n2, s2;
+          this.frames.push({ name: "TXXX", description: a2, value: r2, size: (n2 = a2.length, s2 = r2.length, 13 + 2 * n2 + 2 + 2 + 2 * s2) });
+        }
+        _setUrlLinkFrame(e2, t2) {
+          const a2 = t2.toString();
+          var r2;
+          this.frames.push({ name: e2, value: a2, size: (r2 = a2.length, 10 + r2) });
+        }
+        _setPairedTextFrame(e2, t2) {
+          this.frames.push({ name: e2, value: t2, size: i(t2) });
+        }
+        _setSynchronisedLyricsFrame(e2, t2, a2, r2, n2) {
+          const s2 = n2.toString(), i2 = r2.split("").map((e3) => e3.charCodeAt(0));
+          this.frames.push({ name: "SYLT", value: t2, language: i2, description: s2, type: e2, timestampFormat: a2, size: c(t2, s2.length) });
+        }
+        constructor(e2) {
+          if (!e2 || "object" != typeof e2 || !("byteLength" in e2)) throw new Error("First argument should be an instance of ArrayBuffer or Buffer");
+          this.arrayBuffer = e2, this.padding = 4096, this.frames = [], this.url = "";
+        }
+        setFrame(e2, t2) {
+          switch (e2) {
+            case "TPE1":
+            case "TCOM":
+            case "TCON": {
+              if (!Array.isArray(t2)) throw new Error(`${e2} frame value should be an array of strings`);
+              const a2 = "TCON" === e2 ? ";" : "/", r2 = t2.join(a2);
+              this._setStringFrame(e2, r2);
+              break;
+            }
+            case "TLAN":
+            case "TIT1":
+            case "TIT2":
+            case "TIT3":
+            case "TALB":
+            case "TPE2":
+            case "TPE3":
+            case "TPE4":
+            case "TRCK":
+            case "TPOS":
+            case "TMED":
+            case "TPUB":
+            case "TCOP":
+            case "TKEY":
+            case "TEXT":
+            case "TDAT":
+            case "TCMP":
+            case "TSSE":
+            case "TSRC":
+              this._setStringFrame(e2, t2);
+              break;
+            case "TBPM":
+            case "TLEN":
+            case "TYER":
+              this._setIntegerFrame(e2, t2);
+              break;
+            case "USLT":
+              if (t2.language = t2.language || "eng", "object" != typeof t2 || !("description" in t2) || !("lyrics" in t2)) throw new Error("USLT frame value should be an object with keys description and lyrics");
+              if (t2.language && !t2.language.match(/[a-z]{3}/i)) throw new Error("Language must be coded following the ISO 639-2 standards");
+              this._setLyricsFrame(t2.language, t2.description, t2.lyrics);
+              break;
+            case "APIC":
+              if ("object" != typeof t2 || !("type" in t2) || !("data" in t2) || !("description" in t2)) throw new Error("APIC frame value should be an object with keys type, data and description");
+              if (t2.type < 0 || t2.type > 20) throw new Error("Incorrect APIC frame picture type");
+              this._setPictureFrame(t2.type, t2.data, t2.description, !!t2.useUnicodeEncoding);
+              break;
+            case "TXXX":
+              if ("object" != typeof t2 || !("description" in t2) || !("value" in t2)) throw new Error("TXXX frame value should be an object with keys description and value");
+              this._setUserStringFrame(t2.description, t2.value);
+              break;
+            case "WCOM":
+            case "WCOP":
+            case "WOAF":
+            case "WOAR":
+            case "WOAS":
+            case "WORS":
+            case "WPAY":
+            case "WPUB":
+              this._setUrlLinkFrame(e2, t2);
+              break;
+            case "COMM":
+              if (t2.language = t2.language || "eng", "object" != typeof t2 || !("description" in t2) || !("text" in t2)) throw new Error("COMM frame value should be an object with keys description and text");
+              if (t2.language && !t2.language.match(/[a-z]{3}/i)) throw new Error("Language must be coded following the ISO 639-2 standards");
+              this._setCommentFrame(t2.language, t2.description, t2.text);
+              break;
+            case "PRIV":
+              if ("object" != typeof t2 || !("id" in t2) || !("data" in t2)) throw new Error("PRIV frame value should be an object with keys id and data");
+              this._setPrivateFrame(t2.id, t2.data);
+              break;
+            case "IPLS":
+              if (!Array.isArray(t2) || !Array.isArray(t2[0])) throw new Error("IPLS frame value should be an array of pairs");
+              this._setPairedTextFrame(e2, t2);
+              break;
+            case "SYLT":
+              if ("object" != typeof t2 || !("type" in t2) || !("text" in t2) || !("timestampFormat" in t2)) throw new Error("SYLT frame value should be an object with keys type, text and timestampFormat");
+              if (!Array.isArray(t2.text) || !Array.isArray(t2.text[0])) throw new Error("SYLT frame text value should be an array of pairs");
+              if (t2.type < 0 || t2.type > 6) throw new Error("Incorrect SYLT frame content type");
+              if (t2.timestampFormat < 1 || t2.timestampFormat > 2) throw new Error("Incorrect SYLT frame time stamp format");
+              t2.language = t2.language || "eng", t2.description = t2.description || "", this._setSynchronisedLyricsFrame(t2.type, t2.text, t2.timestampFormat, t2.language, t2.description);
+              break;
+            default:
+              throw new Error(`Unsupported frame ${e2}`);
+          }
+          return this;
+        }
+        removeTag() {
+          if (this.arrayBuffer.byteLength < 10) return;
+          const e2 = new Uint8Array(this.arrayBuffer), t2 = e2[3], a2 = ((r2 = [e2[6], e2[7], e2[8], e2[9]])[0] << 21) + (r2[1] << 14) + (r2[2] << 7) + r2[3] + 10;
+          var r2, n2;
+          73 !== (n2 = e2)[0] || 68 !== n2[1] || 51 !== n2[2] || t2 < 2 || t2 > 4 || (this.arrayBuffer = new Uint8Array(e2.subarray(a2)).buffer);
+        }
+        addTag() {
+          this.removeTag();
+          const e2 = [255, 254], n2 = 10 + this.frames.reduce((e3, t2) => e3 + t2.size, 0) + this.padding, s2 = new ArrayBuffer(this.arrayBuffer.byteLength + n2), i2 = new Uint8Array(s2);
+          let c2 = 0, o2 = [];
+          return o2 = [73, 68, 51, 3], i2.set(o2, c2), c2 += o2.length, c2++, c2++, o2 = (function(e3) {
+            const t2 = 127;
+            return [e3 >>> 21 & t2, e3 >>> 14 & t2, e3 >>> 7 & t2, e3 & t2];
+          })(n2 - 10), i2.set(o2, c2), c2 += o2.length, this.frames.forEach((n3) => {
+            switch (o2 = t(n3.name), i2.set(o2, c2), c2 += o2.length, o2 = r(n3.size - 10), i2.set(o2, c2), c2 += o2.length, c2 += 2, n3.name) {
+              case "WCOM":
+              case "WCOP":
+              case "WOAF":
+              case "WOAR":
+              case "WOAS":
+              case "WORS":
+              case "WPAY":
+              case "WPUB":
+                o2 = t(n3.value), i2.set(o2, c2), c2 += o2.length;
+                break;
+              case "TPE1":
+              case "TCOM":
+              case "TCON":
+              case "TLAN":
+              case "TIT1":
+              case "TIT2":
+              case "TIT3":
+              case "TALB":
+              case "TPE2":
+              case "TPE3":
+              case "TPE4":
+              case "TRCK":
+              case "TPOS":
+              case "TKEY":
+              case "TMED":
+              case "TPUB":
+              case "TCOP":
+              case "TEXT":
+              case "TSSE":
+              case "TSRC":
+                o2 = [1].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.value), i2.set(o2, c2), c2 += o2.length;
+                break;
+              case "TXXX":
+              case "USLT":
+              case "COMM":
+                o2 = [1], "USLT" !== n3.name && "COMM" !== n3.name || (o2 = o2.concat(n3.language)), o2 = o2.concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.description), i2.set(o2, c2), c2 += o2.length, o2 = [0, 0].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.value), i2.set(o2, c2), c2 += o2.length;
+                break;
+              case "TBPM":
+              case "TLEN":
+              case "TDAT":
+              case "TYER":
+                c2++, o2 = t(n3.value), i2.set(o2, c2), c2 += o2.length;
+                break;
+              case "PRIV":
+                o2 = t(n3.id), i2.set(o2, c2), c2 += o2.length, c2++, i2.set(new Uint8Array(n3.value), c2), c2 += n3.value.byteLength;
+                break;
+              case "APIC":
+                o2 = [n3.useUnicodeEncoding ? 1 : 0], i2.set(o2, c2), c2 += o2.length, o2 = t(n3.mimeType), i2.set(o2, c2), c2 += o2.length, o2 = [0, n3.pictureType], i2.set(o2, c2), c2 += o2.length, n3.useUnicodeEncoding ? (o2 = [].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.description), i2.set(o2, c2), c2 += o2.length, c2 += 2) : (o2 = t(n3.description), i2.set(o2, c2), c2 += o2.length, c2++), i2.set(new Uint8Array(n3.value), c2), c2 += n3.value.byteLength;
+                break;
+              case "IPLS":
+                o2 = [1], i2.set(o2, c2), c2 += o2.length, n3.value.forEach((t2) => {
+                  o2 = [].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(t2[0].toString()), i2.set(o2, c2), c2 += o2.length, o2 = [0, 0].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(t2[1].toString()), i2.set(o2, c2), c2 += o2.length, o2 = [0, 0], i2.set(o2, c2), c2 += o2.length;
+                });
+                break;
+              case "SYLT":
+                o2 = [1].concat(n3.language).concat(n3.timestampFormat).concat(n3.type), i2.set(o2, c2), c2 += o2.length, o2 = [].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.description), i2.set(o2, c2), c2 += o2.length, c2 += 2, n3.value.forEach((t2) => {
+                  o2 = [].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(t2[0].toString()), i2.set(o2, c2), c2 += o2.length, o2 = [0, 0], i2.set(o2, c2), c2 += o2.length, o2 = r(t2[1]), i2.set(o2, c2), c2 += o2.length;
+                });
+            }
+          }), c2 += this.padding, i2.set(new Uint8Array(this.arrayBuffer), c2), this.arrayBuffer = s2, s2;
+        }
+        getBlob() {
+          return new Blob([this.arrayBuffer], { type: "audio/mpeg" });
+        }
+        getURL() {
+          return this.url || (this.url = URL.createObjectURL(this.getBlob())), this.url;
+        }
+        revokeURL() {
+          URL.revokeObjectURL(this.url);
+        }
+      }
+      const blobToArrayBuffer = async (blob) => {
+        if (!blob) throw new Error("blob 不能为空");
+        return await blob.arrayBuffer();
+      };
+      const normalizeMp3Tags = (metadata) => {
+        const common2 = metadata?.common || {};
+        const {
+          title,
+          artist,
+          album,
+          year,
+          genre,
+          comment,
+          track,
+          disk,
+          composer,
+          lyricist,
+          lyrics,
+          picture
+        } = common2;
+        console.log("metadata", metadata);
+        return {
+          title: title || void 0,
+          artist: artist || (Array.isArray(common2?.artists) ? common2.artists[0] : "") || void 0,
+          album: album || void 0,
+          year: typeof year === "number" ? String(year) : year || void 0,
+          genre: Array.isArray(genre) ? genre.join(",") : genre || void 0,
+          comment: Array.isArray(comment) ? comment.filter(Boolean).join("\n") : comment || void 0,
+          track: track?.no ? String(track.no) : void 0,
+          disc: disk?.no ? String(disk.no) : void 0,
+          composer: Array.isArray(composer) ? composer.filter(Boolean).join(",") : composer || void 0,
+          lyricist: Array.isArray(lyricist) ? lyricist.filter(Boolean).join(",") : lyricist || void 0,
+          lyrics: lyrics?.[0]?.text,
+          picture: Array.isArray(picture) ? picture : void 0
+        };
+      };
+      const readAllMp3Tag = async (file) => {
+        try {
+          const metadata = await parseBlob(file);
+          const tags = normalizeMp3Tags(metadata);
+          console.log("MP3 解析后的标签:", tags);
+          return tags;
+        } catch (error) {
+          console.error("读取 MP3 标签失败:", error);
+          return {};
+        }
+      };
+      const readMp3Tag = async (file, tagName) => {
+        try {
+          if (!tagName) return void 0;
+          const all = await readAllMp3Tag(file);
+          const key = String(tagName).toLowerCase();
+          const val = all[key];
+          return typeof val === "string" ? val : void 0;
+        } catch (error) {
+          console.error(`读取 MP3 标签 ${tagName} 失败:`, error);
+          return void 0;
+        }
+      };
+      const applyId3Frames = (writer, tags) => {
+        if (!tags || typeof tags !== "object") return;
+        const { title, artist, album, year, genre, comment, track, disc, composer, lyricist, lyrics } = tags;
+        if (title) writer.setFrame("TIT2", String(title));
+        if (album) writer.setFrame("TALB", String(album));
+        if (year) writer.setFrame("TYER", Number(String(year).slice(0, 4)) || 0);
+        if (artist) writer.setFrame("TPE1", [String(artist)]);
+        if (genre) writer.setFrame("TCON", [String(genre)]);
+        if (composer) writer.setFrame("TCOM", [String(composer)]);
+        if (track) writer.setFrame("TRCK", String(track));
+        if (disc) writer.setFrame("TPOS", String(disc));
+        if (comment) {
+          writer.setFrame("COMM", {
+            description: "comment",
+            text: String(comment),
+            language: "chi"
+          });
+        }
+        if (lyricist) writer.setFrame("TEXT", String(lyricist));
+        if (lyrics) {
+          writer.setFrame("USLT", {
+            description: "LYRICS",
+            lyrics: String(lyrics)
+          });
+          writer.setFrame("TXXX", {
+            description: "LYRICS",
+            value: String(lyrics)
+          });
+        }
+      };
+      const writeMp3Tag = async (file, tagName, tagValue) => {
+        try {
+          if (!tagName) throw new Error("tagName 不能为空");
+          const key = String(tagName).toLowerCase();
+          const all = await readAllMp3Tag(file);
+          const nextTags = {
+            ...all,
+            [key]: tagValue
+          };
+          const buffer = await blobToArrayBuffer(file);
+          const writer = new o(buffer);
+          writer.removeTag();
+          applyId3Frames(writer, nextTags);
+          writer.addTag();
+          const blob = writer.getBlob();
+          console.log("给 MP3 写标签成功");
+          return blob;
+        } catch (error) {
+          console.error("给 MP3 写标签失败:", error);
+          throw new Error("给 MP3 写标签失败");
+        }
+      };
+      const writeMp3Tags = async (file, tags) => {
+        try {
+          if (!tags?.length) return file;
+          const all = await readAllMp3Tag(file);
+          const newTags = Object.fromEntries(tags.map(({ tag, value }) => [tag, value]));
+          const nextTags = {
+            ...all,
+            ...newTags
+          };
+          const buffer = await blobToArrayBuffer(file);
+          const writer = new o(buffer);
+          writer.removeTag();
+          applyId3Frames(writer, nextTags);
+          writer.addTag();
+          const blob = writer.getBlob();
+          console.log("给 MP3 写多个标签成功");
+          return blob;
+        } catch (error) {
+          console.error("给 MP3 写多个标签失败:", error);
+          throw new Error("给 MP3 写多个标签失败");
+        }
+      };
+      const embedMp3Picture = async (file, picture) => {
+        try {
+          if (!picture) return file;
+          const all = await readAllMp3Tag(file);
+          const buffer = await blobToArrayBuffer(file);
+          const picBuffer = await blobToArrayBuffer(picture);
+          const writer = new o(buffer);
+          writer.removeTag();
+          applyId3Frames(writer, all);
+          writer.setFrame("APIC", {
+            description: "cover",
+            data: picBuffer,
+            type: (
+              /* ImageType.CoverFront */
+              3
+            ),
+            useUnicodeEncoding: false
+          });
+          writer.addTag();
+          console.log("给 MP3 嵌入封面成功");
+          return writer.getBlob();
+        } catch (error) {
+          console.error("给 MP3 嵌入封面失败:", error);
+          return file;
+        }
+      };
       const audio = new Audio();
       const usePlayMusic = () => {
         const { downloadConfig } = useConfig();
@@ -27909,16 +28331,40 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
                   }
                   outputFile = await writeFlacTagAndPicture(outputFile, "lyrics", lyric, coverBlob);
                   break;
+                case "mp3":
+                  if (songInfo) {
+                    const {
+                      name: name3,
+                      album: { name: albumName },
+                      singer
+                    } = songInfo;
+                    const tags = [];
+                    if (name3) {
+                      tags.push({ tag: "title", value: name3 });
+                    }
+                    if (albumName) {
+                      tags.push({ tag: "album", value: albumName });
+                    }
+                    if (singer) {
+                      tags.push({ tag: "artist", value: singer.map((item) => item.name).join(",") });
+                    }
+                    if (lyric) {
+                      tags.push({ tag: "lyrics", value: lyric });
+                    }
+                    outputFile = await writeMp3Tags(outputFile, tags);
+                  }
+                  outputFile = await embedMp3Picture(outputFile, coverBlob);
+                  break;
                 default:
                   console.log("当前格式不支持");
                   break;
               }
             }
+            const fileName = fileNameFormat.replace("【歌曲名】", name2).replace("【歌手】", songInfo.singer.map((item) => item.name).join(",")).replace("【专辑】", songInfo.album.name) || name2;
             if (downloadLyric) {
-              downloadAsLRC(lyric, name2);
+              downloadAsLRC(lyric, fileName);
             }
-            const fileName = fileNameFormat.replace("【歌曲名】", name2).replace("【歌手】", songInfo.singer.map((item) => item.name).join(",")).replace("【专辑】", songInfo.album.name);
-            downloadFileWithBlob(outputFile, `${fileName || name2}.${finalExt}`);
+            downloadFileWithBlob(outputFile, `${fileName}.${finalExt}`);
           } catch (error) {
             console.log("error", error);
           }
@@ -39004,406 +39450,6 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
           /* @__PURE__ */ jsxRuntimeExports.jsx(Form.Item, { label: "文件操作", children: /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleDownloadFlacFile, children: "下载最新文件" }) })
         ] });
       };
-      function e(e2) {
-        return String(e2).split("").map((e3) => e3.charCodeAt(0));
-      }
-      function t(t2) {
-        return new Uint8Array(e(t2));
-      }
-      function a(t2) {
-        const a2 = new ArrayBuffer(2 * t2.length), r2 = new Uint8Array(a2);
-        return new Uint16Array(a2).set(e(t2)), r2;
-      }
-      function r(e2) {
-        const t2 = 255;
-        return [e2 >>> 24 & t2, e2 >>> 16 & t2, e2 >>> 8 & t2, e2 & t2];
-      }
-      function n(e2) {
-        return 11 + e2;
-      }
-      function s(e2, t2, a2, r2) {
-        return 11 + t2 + 1 + 1 + (r2 ? 2 + 2 * (a2 + 1) : a2 + 1) + e2;
-      }
-      function i(e2) {
-        let t2 = 0;
-        return e2.forEach((e3) => {
-          t2 += 2 + 2 * e3[0].length + 2 + 2 + 2 * e3[1].length + 2;
-        }), 11 + t2;
-      }
-      function c(e2, t2) {
-        const a2 = 2 * t2;
-        let r2 = 0;
-        return e2.forEach((e3) => {
-          r2 += 2 + 2 * e3[0].length + 2 + 4;
-        }), 18 + a2 + 2 + r2;
-      }
-      class o {
-        _setIntegerFrame(e2, t2) {
-          const a2 = parseInt(t2, 10);
-          this.frames.push({ name: e2, value: a2, size: n(a2.toString().length) });
-        }
-        _setStringFrame(e2, t2) {
-          const a2 = t2.toString();
-          let r2 = 13 + 2 * a2.length;
-          "TDAT" === e2 && (r2 = n(a2.length)), this.frames.push({ name: e2, value: a2, size: r2 });
-        }
-        _setPictureFrame(e2, t2, a2, r2) {
-          const n2 = (function(e3) {
-            if (!e3 || !e3.length) return null;
-            if (255 === e3[0] && 216 === e3[1] && 255 === e3[2]) return "image/jpeg";
-            if (137 === e3[0] && 80 === e3[1] && 78 === e3[2] && 71 === e3[3]) return "image/png";
-            if (71 === e3[0] && 73 === e3[1] && 70 === e3[2]) return "image/gif";
-            if (87 === e3[8] && 69 === e3[9] && 66 === e3[10] && 80 === e3[11]) return "image/webp";
-            const t3 = 73 === e3[0] && 73 === e3[1] && 42 === e3[2] && 0 === e3[3], a3 = 77 === e3[0] && 77 === e3[1] && 0 === e3[2] && 42 === e3[3];
-            return t3 || a3 ? "image/tiff" : 66 === e3[0] && 77 === e3[1] ? "image/bmp" : 0 === e3[0] && 0 === e3[1] && 1 === e3[2] && 0 === e3[3] ? "image/x-icon" : null;
-          })(new Uint8Array(t2)), i2 = a2.toString();
-          if (!n2) throw new Error("Unknown picture MIME type");
-          a2 || (r2 = false), this.frames.push({ name: "APIC", value: t2, pictureType: e2, mimeType: n2, useUnicodeEncoding: r2, description: i2, size: s(t2.byteLength, n2.length, i2.length, r2) });
-        }
-        _setLyricsFrame(e2, t2, a2) {
-          const r2 = e2.split("").map((e3) => e3.charCodeAt(0)), n2 = t2.toString(), s2 = a2.toString();
-          var i2, c2;
-          this.frames.push({ name: "USLT", value: s2, language: r2, description: n2, size: (i2 = n2.length, c2 = s2.length, 16 + 2 * i2 + 2 + 2 + 2 * c2) });
-        }
-        _setCommentFrame(e2, t2, a2) {
-          const r2 = e2.split("").map((e3) => e3.charCodeAt(0)), n2 = t2.toString(), s2 = a2.toString();
-          var i2, c2;
-          this.frames.push({ name: "COMM", value: s2, language: r2, description: n2, size: (i2 = n2.length, c2 = s2.length, 16 + 2 * i2 + 2 + 2 + 2 * c2) });
-        }
-        _setPrivateFrame(e2, t2) {
-          const a2 = e2.toString();
-          var r2, n2;
-          this.frames.push({ name: "PRIV", value: t2, id: a2, size: (r2 = a2.length, n2 = t2.byteLength, 10 + r2 + 1 + n2) });
-        }
-        _setUserStringFrame(e2, t2) {
-          const a2 = e2.toString(), r2 = t2.toString();
-          var n2, s2;
-          this.frames.push({ name: "TXXX", description: a2, value: r2, size: (n2 = a2.length, s2 = r2.length, 13 + 2 * n2 + 2 + 2 + 2 * s2) });
-        }
-        _setUrlLinkFrame(e2, t2) {
-          const a2 = t2.toString();
-          var r2;
-          this.frames.push({ name: e2, value: a2, size: (r2 = a2.length, 10 + r2) });
-        }
-        _setPairedTextFrame(e2, t2) {
-          this.frames.push({ name: e2, value: t2, size: i(t2) });
-        }
-        _setSynchronisedLyricsFrame(e2, t2, a2, r2, n2) {
-          const s2 = n2.toString(), i2 = r2.split("").map((e3) => e3.charCodeAt(0));
-          this.frames.push({ name: "SYLT", value: t2, language: i2, description: s2, type: e2, timestampFormat: a2, size: c(t2, s2.length) });
-        }
-        constructor(e2) {
-          if (!e2 || "object" != typeof e2 || !("byteLength" in e2)) throw new Error("First argument should be an instance of ArrayBuffer or Buffer");
-          this.arrayBuffer = e2, this.padding = 4096, this.frames = [], this.url = "";
-        }
-        setFrame(e2, t2) {
-          switch (e2) {
-            case "TPE1":
-            case "TCOM":
-            case "TCON": {
-              if (!Array.isArray(t2)) throw new Error(`${e2} frame value should be an array of strings`);
-              const a2 = "TCON" === e2 ? ";" : "/", r2 = t2.join(a2);
-              this._setStringFrame(e2, r2);
-              break;
-            }
-            case "TLAN":
-            case "TIT1":
-            case "TIT2":
-            case "TIT3":
-            case "TALB":
-            case "TPE2":
-            case "TPE3":
-            case "TPE4":
-            case "TRCK":
-            case "TPOS":
-            case "TMED":
-            case "TPUB":
-            case "TCOP":
-            case "TKEY":
-            case "TEXT":
-            case "TDAT":
-            case "TCMP":
-            case "TSSE":
-            case "TSRC":
-              this._setStringFrame(e2, t2);
-              break;
-            case "TBPM":
-            case "TLEN":
-            case "TYER":
-              this._setIntegerFrame(e2, t2);
-              break;
-            case "USLT":
-              if (t2.language = t2.language || "eng", "object" != typeof t2 || !("description" in t2) || !("lyrics" in t2)) throw new Error("USLT frame value should be an object with keys description and lyrics");
-              if (t2.language && !t2.language.match(/[a-z]{3}/i)) throw new Error("Language must be coded following the ISO 639-2 standards");
-              this._setLyricsFrame(t2.language, t2.description, t2.lyrics);
-              break;
-            case "APIC":
-              if ("object" != typeof t2 || !("type" in t2) || !("data" in t2) || !("description" in t2)) throw new Error("APIC frame value should be an object with keys type, data and description");
-              if (t2.type < 0 || t2.type > 20) throw new Error("Incorrect APIC frame picture type");
-              this._setPictureFrame(t2.type, t2.data, t2.description, !!t2.useUnicodeEncoding);
-              break;
-            case "TXXX":
-              if ("object" != typeof t2 || !("description" in t2) || !("value" in t2)) throw new Error("TXXX frame value should be an object with keys description and value");
-              this._setUserStringFrame(t2.description, t2.value);
-              break;
-            case "WCOM":
-            case "WCOP":
-            case "WOAF":
-            case "WOAR":
-            case "WOAS":
-            case "WORS":
-            case "WPAY":
-            case "WPUB":
-              this._setUrlLinkFrame(e2, t2);
-              break;
-            case "COMM":
-              if (t2.language = t2.language || "eng", "object" != typeof t2 || !("description" in t2) || !("text" in t2)) throw new Error("COMM frame value should be an object with keys description and text");
-              if (t2.language && !t2.language.match(/[a-z]{3}/i)) throw new Error("Language must be coded following the ISO 639-2 standards");
-              this._setCommentFrame(t2.language, t2.description, t2.text);
-              break;
-            case "PRIV":
-              if ("object" != typeof t2 || !("id" in t2) || !("data" in t2)) throw new Error("PRIV frame value should be an object with keys id and data");
-              this._setPrivateFrame(t2.id, t2.data);
-              break;
-            case "IPLS":
-              if (!Array.isArray(t2) || !Array.isArray(t2[0])) throw new Error("IPLS frame value should be an array of pairs");
-              this._setPairedTextFrame(e2, t2);
-              break;
-            case "SYLT":
-              if ("object" != typeof t2 || !("type" in t2) || !("text" in t2) || !("timestampFormat" in t2)) throw new Error("SYLT frame value should be an object with keys type, text and timestampFormat");
-              if (!Array.isArray(t2.text) || !Array.isArray(t2.text[0])) throw new Error("SYLT frame text value should be an array of pairs");
-              if (t2.type < 0 || t2.type > 6) throw new Error("Incorrect SYLT frame content type");
-              if (t2.timestampFormat < 1 || t2.timestampFormat > 2) throw new Error("Incorrect SYLT frame time stamp format");
-              t2.language = t2.language || "eng", t2.description = t2.description || "", this._setSynchronisedLyricsFrame(t2.type, t2.text, t2.timestampFormat, t2.language, t2.description);
-              break;
-            default:
-              throw new Error(`Unsupported frame ${e2}`);
-          }
-          return this;
-        }
-        removeTag() {
-          if (this.arrayBuffer.byteLength < 10) return;
-          const e2 = new Uint8Array(this.arrayBuffer), t2 = e2[3], a2 = ((r2 = [e2[6], e2[7], e2[8], e2[9]])[0] << 21) + (r2[1] << 14) + (r2[2] << 7) + r2[3] + 10;
-          var r2, n2;
-          73 !== (n2 = e2)[0] || 68 !== n2[1] || 51 !== n2[2] || t2 < 2 || t2 > 4 || (this.arrayBuffer = new Uint8Array(e2.subarray(a2)).buffer);
-        }
-        addTag() {
-          this.removeTag();
-          const e2 = [255, 254], n2 = 10 + this.frames.reduce((e3, t2) => e3 + t2.size, 0) + this.padding, s2 = new ArrayBuffer(this.arrayBuffer.byteLength + n2), i2 = new Uint8Array(s2);
-          let c2 = 0, o2 = [];
-          return o2 = [73, 68, 51, 3], i2.set(o2, c2), c2 += o2.length, c2++, c2++, o2 = (function(e3) {
-            const t2 = 127;
-            return [e3 >>> 21 & t2, e3 >>> 14 & t2, e3 >>> 7 & t2, e3 & t2];
-          })(n2 - 10), i2.set(o2, c2), c2 += o2.length, this.frames.forEach((n3) => {
-            switch (o2 = t(n3.name), i2.set(o2, c2), c2 += o2.length, o2 = r(n3.size - 10), i2.set(o2, c2), c2 += o2.length, c2 += 2, n3.name) {
-              case "WCOM":
-              case "WCOP":
-              case "WOAF":
-              case "WOAR":
-              case "WOAS":
-              case "WORS":
-              case "WPAY":
-              case "WPUB":
-                o2 = t(n3.value), i2.set(o2, c2), c2 += o2.length;
-                break;
-              case "TPE1":
-              case "TCOM":
-              case "TCON":
-              case "TLAN":
-              case "TIT1":
-              case "TIT2":
-              case "TIT3":
-              case "TALB":
-              case "TPE2":
-              case "TPE3":
-              case "TPE4":
-              case "TRCK":
-              case "TPOS":
-              case "TKEY":
-              case "TMED":
-              case "TPUB":
-              case "TCOP":
-              case "TEXT":
-              case "TSSE":
-              case "TSRC":
-                o2 = [1].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.value), i2.set(o2, c2), c2 += o2.length;
-                break;
-              case "TXXX":
-              case "USLT":
-              case "COMM":
-                o2 = [1], "USLT" !== n3.name && "COMM" !== n3.name || (o2 = o2.concat(n3.language)), o2 = o2.concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.description), i2.set(o2, c2), c2 += o2.length, o2 = [0, 0].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.value), i2.set(o2, c2), c2 += o2.length;
-                break;
-              case "TBPM":
-              case "TLEN":
-              case "TDAT":
-              case "TYER":
-                c2++, o2 = t(n3.value), i2.set(o2, c2), c2 += o2.length;
-                break;
-              case "PRIV":
-                o2 = t(n3.id), i2.set(o2, c2), c2 += o2.length, c2++, i2.set(new Uint8Array(n3.value), c2), c2 += n3.value.byteLength;
-                break;
-              case "APIC":
-                o2 = [n3.useUnicodeEncoding ? 1 : 0], i2.set(o2, c2), c2 += o2.length, o2 = t(n3.mimeType), i2.set(o2, c2), c2 += o2.length, o2 = [0, n3.pictureType], i2.set(o2, c2), c2 += o2.length, n3.useUnicodeEncoding ? (o2 = [].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.description), i2.set(o2, c2), c2 += o2.length, c2 += 2) : (o2 = t(n3.description), i2.set(o2, c2), c2 += o2.length, c2++), i2.set(new Uint8Array(n3.value), c2), c2 += n3.value.byteLength;
-                break;
-              case "IPLS":
-                o2 = [1], i2.set(o2, c2), c2 += o2.length, n3.value.forEach((t2) => {
-                  o2 = [].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(t2[0].toString()), i2.set(o2, c2), c2 += o2.length, o2 = [0, 0].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(t2[1].toString()), i2.set(o2, c2), c2 += o2.length, o2 = [0, 0], i2.set(o2, c2), c2 += o2.length;
-                });
-                break;
-              case "SYLT":
-                o2 = [1].concat(n3.language).concat(n3.timestampFormat).concat(n3.type), i2.set(o2, c2), c2 += o2.length, o2 = [].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.description), i2.set(o2, c2), c2 += o2.length, c2 += 2, n3.value.forEach((t2) => {
-                  o2 = [].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(t2[0].toString()), i2.set(o2, c2), c2 += o2.length, o2 = [0, 0], i2.set(o2, c2), c2 += o2.length, o2 = r(t2[1]), i2.set(o2, c2), c2 += o2.length;
-                });
-            }
-          }), c2 += this.padding, i2.set(new Uint8Array(this.arrayBuffer), c2), this.arrayBuffer = s2, s2;
-        }
-        getBlob() {
-          return new Blob([this.arrayBuffer], { type: "audio/mpeg" });
-        }
-        getURL() {
-          return this.url || (this.url = URL.createObjectURL(this.getBlob())), this.url;
-        }
-        revokeURL() {
-          URL.revokeObjectURL(this.url);
-        }
-      }
-      const blobToArrayBuffer = async (blob) => {
-        if (!blob) throw new Error("blob 不能为空");
-        return await blob.arrayBuffer();
-      };
-      const normalizeMp3Tags = (metadata) => {
-        const common2 = metadata?.common || {};
-        const {
-          title,
-          artist,
-          album,
-          year,
-          genre,
-          comment,
-          track,
-          disk,
-          composer,
-          lyricist,
-          lyrics,
-          picture
-        } = common2;
-        console.log("metadata", metadata);
-        return {
-          title: title || void 0,
-          artist: artist || (Array.isArray(common2?.artists) ? common2.artists[0] : "") || void 0,
-          album: album || void 0,
-          year: typeof year === "number" ? String(year) : year || void 0,
-          genre: Array.isArray(genre) ? genre.join(",") : genre || void 0,
-          comment: Array.isArray(comment) ? comment.filter(Boolean).join("\n") : comment || void 0,
-          track: track?.no ? String(track.no) : void 0,
-          disc: disk?.no ? String(disk.no) : void 0,
-          composer: Array.isArray(composer) ? composer.filter(Boolean).join(",") : composer || void 0,
-          lyricist: Array.isArray(lyricist) ? lyricist.filter(Boolean).join(",") : lyricist || void 0,
-          lyrics: lyrics?.[0]?.text,
-          picture: Array.isArray(picture) ? picture : void 0
-        };
-      };
-      const readAllMp3Tag = async (file) => {
-        try {
-          const metadata = await parseBlob(file);
-          const tags = normalizeMp3Tags(metadata);
-          console.log("MP3 解析后的标签:", tags);
-          return tags;
-        } catch (error) {
-          console.error("读取 MP3 标签失败:", error);
-          return {};
-        }
-      };
-      const readMp3Tag = async (file, tagName) => {
-        try {
-          if (!tagName) return void 0;
-          const all = await readAllMp3Tag(file);
-          const key = String(tagName).toLowerCase();
-          const val = all[key];
-          return typeof val === "string" ? val : void 0;
-        } catch (error) {
-          console.error(`读取 MP3 标签 ${tagName} 失败:`, error);
-          return void 0;
-        }
-      };
-      const applyId3Frames = (writer, tags) => {
-        if (!tags || typeof tags !== "object") return;
-        const { title, artist, album, year, genre, comment, track, disc, composer, lyricist, lyrics } = tags;
-        if (title) writer.setFrame("TIT2", String(title));
-        if (album) writer.setFrame("TALB", String(album));
-        if (year) writer.setFrame("TYER", Number(String(year).slice(0, 4)) || 0);
-        if (artist) writer.setFrame("TPE1", [String(artist)]);
-        if (genre) writer.setFrame("TCON", [String(genre)]);
-        if (composer) writer.setFrame("TCOM", [String(composer)]);
-        if (track) writer.setFrame("TRCK", String(track));
-        if (disc) writer.setFrame("TPOS", String(disc));
-        if (comment) {
-          writer.setFrame("COMM", {
-            description: "comment",
-            text: String(comment),
-            language: "chi"
-          });
-        }
-        if (lyricist) writer.setFrame("TEXT", String(lyricist));
-        if (lyrics) {
-          writer.setFrame("USLT", {
-            description: "LYRICS",
-            lyrics: String(lyrics)
-          });
-          writer.setFrame("TXXX", {
-            description: "LYRICS",
-            value: String(lyrics)
-          });
-        }
-      };
-      const writeMp3Tag = async (file, tagName, tagValue) => {
-        try {
-          if (!tagName) throw new Error("tagName 不能为空");
-          const key = String(tagName).toLowerCase();
-          const all = await readAllMp3Tag(file);
-          const nextTags = {
-            ...all,
-            [key]: tagValue
-          };
-          const buffer = await blobToArrayBuffer(file);
-          const writer = new o(buffer);
-          writer.removeTag();
-          applyId3Frames(writer, nextTags);
-          writer.addTag();
-          const blob = writer.getBlob();
-          console.log("给 MP3 写标签成功");
-          return blob;
-        } catch (error) {
-          console.error("给 MP3 写标签失败:", error);
-          throw new Error("给 MP3 写标签失败");
-        }
-      };
-      const embedMp3Picture = async (file, picture) => {
-        try {
-          if (!picture) return file;
-          const all = await readAllMp3Tag(file);
-          const buffer = await blobToArrayBuffer(file);
-          const picBuffer = await blobToArrayBuffer(picture);
-          const writer = new o(buffer);
-          writer.removeTag();
-          applyId3Frames(writer, all);
-          writer.setFrame("APIC", {
-            description: "cover",
-            data: picBuffer,
-            type: (
-              /* ImageType.CoverFront */
-              3
-            ),
-            useUnicodeEncoding: false
-          });
-          writer.addTag();
-          console.log("给 MP3 嵌入封面成功");
-          return writer.getBlob();
-        } catch (error) {
-          console.error("给 MP3 嵌入封面失败:", error);
-          return file;
-        }
-      };
       const MP3_TAG_SELECT_OPTIONS = Object.entries(MP3_TAGS).filter(([key]) => key !== "picture");
       const Mp3Tab = () => {
         const [mp3File, setMp3File] = useState(null);
@@ -40410,7 +40456,7 @@ System.register("./__entry.js", ['react', 'antd', 'react-dom', '@ant-design/icon
   };
 }));
 
-System.register("./MpegParser-VBs6C8v--OSwZ4A99.js", ['./main-jEvaWtdz-DbkOLO4t.js', './AbstractID3Parser-D5dANmqd-iVqnwYGL.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-DODqoRKL-CuqS_Bhh.js'], (function (exports, module) {
+System.register("./MpegParser-DHXg25k0-BC1mJscz.js", ['./main-CmDXwSEj-D1IQdpIm.js', './AbstractID3Parser-zgTy6Uu9-Cxjdt4df.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-BttZTNNl-BcPb0vnY.js'], (function (exports, module) {
   'use strict';
   var EndOfStreamError, initDebug, getBitAllignedNumber, INT16_BE, Uint8ArrayType, StringType, stripNulls, isBitSet$1, makeUnexpectedFileContentError, UINT32_BE, UINT16_BE, UINT8, AbstractID3Parser;
   return {
@@ -41039,7 +41085,7 @@ System.register("./MpegParser-VBs6C8v--OSwZ4A99.js", ['./main-jEvaWtdz-DbkOLO4t.
   };
 }));
 
-System.register("./AsfParser-D5jasqax-BBCtTM70.js", ['./main-jEvaWtdz-DbkOLO4t.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./AsfParser-Cw_H4iOc-L6mta9-9.js", ['./main-CmDXwSEj-D1IQdpIm.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TrackType, UINT32_LE, UINT64_LE, uint8ArrayToHex, hexToUint8Array, makeUnexpectedFileContentError, getBit, UINT16_LE, stripNulls, decodeString, StringType, AttachedPictureType;
   return {
@@ -41567,7 +41613,7 @@ System.register("./AsfParser-D5jasqax-BBCtTM70.js", ['./main-jEvaWtdz-DbkOLO4t.j
   };
 }));
 
-System.register("./DsdiffParser-D9W5IG2F-CRimsLce.js", ['./main-jEvaWtdz-DbkOLO4t.js', './ID3v2Parser-DODqoRKL-CuqS_Bhh.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsdiffParser-B5yR9sX_-BGSRLA34.js", ['./main-CmDXwSEj-D1IQdpIm.js', './ID3v2Parser-BttZTNNl-BcPb0vnY.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, Uint8ArrayType, fromBuffer, UINT32_LE, UINT16_BE, UINT8, UINT32_BE, StringType, INT64_BE, makeUnexpectedFileContentError, ID3v2Parser;
   return {
@@ -41744,7 +41790,7 @@ System.register("./DsdiffParser-D9W5IG2F-CRimsLce.js", ['./main-jEvaWtdz-DbkOLO4
   };
 }));
 
-System.register("./AiffParser-DoAfQoHS-DpOHlycX.js", ['./main-jEvaWtdz-DbkOLO4t.js', './ID3v2Parser-DODqoRKL-CuqS_Bhh.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./AiffParser-GTVtDQpH-Di5vGyeQ.js", ['./main-CmDXwSEj-D1IQdpIm.js', './ID3v2Parser-BttZTNNl-BcPb0vnY.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, FourCcToken, initDebug, EndOfStreamError, Uint8ArrayType, fromBuffer, StringType, UINT32_BE, makeUnexpectedFileContentError, UINT16_BE, UINT8, ID3v2Parser;
   return {
@@ -41921,7 +41967,7 @@ System.register("./AiffParser-DoAfQoHS-DpOHlycX.js", ['./main-jEvaWtdz-DbkOLO4t.
   };
 }));
 
-System.register("./DsfParser-k5Du8Bsz-BZmz31uI.js", ['./main-jEvaWtdz-DbkOLO4t.js', './AbstractID3Parser-D5dANmqd-iVqnwYGL.js', './ID3v2Parser-DODqoRKL-CuqS_Bhh.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./DsfParser-BymSzitY-r_tUZ-ob.js", ['./main-CmDXwSEj-D1IQdpIm.js', './AbstractID3Parser-zgTy6Uu9-Cxjdt4df.js', './ID3v2Parser-BttZTNNl-BcPb0vnY.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var initDebug, UINT64_LE, FourCcToken, makeUnexpectedFileContentError, INT64_LE, INT32_LE, AbstractID3Parser, ID3v2Parser;
   return {
@@ -42020,7 +42066,7 @@ System.register("./DsfParser-k5Du8Bsz-BZmz31uI.js", ['./main-jEvaWtdz-DbkOLO4t.j
   };
 }));
 
-System.register("./MatroskaParser-yvxdpzrd-Piyql8mM.js", ['./main-jEvaWtdz-DbkOLO4t.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./MatroskaParser-Cbl-TrqO-D-K7rTXe.js", ['./main-CmDXwSEj-D1IQdpIm.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, TargetType, TrackType, EndOfStreamError, UINT8, Float64_BE, Float32_BE, StringType, makeUnexpectedFileContentError, UINT64_BE;
   return {
@@ -42665,7 +42711,7 @@ System.register("./MatroskaParser-yvxdpzrd-Piyql8mM.js", ['./main-jEvaWtdz-DbkOL
   };
 }));
 
-System.register("./MP4Parser-CLenTBhK-S5AIqNAM.js", ['./main-jEvaWtdz-DbkOLO4t.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./MP4Parser-BS_0nvk8-CGiZ4sTi.js", ['./main-CmDXwSEj-D1IQdpIm.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, StringType, initDebug, UINT32_BE, Token, Uint8ArrayType, uint8ArrayToHex, textDecode, UINT16_BE, UINT8, Genres, TrackType, INT32_BE, INT24_BE, INT8, UINT24_BE, makeUnexpectedFileContentError, FourCcToken, UINT64_BE, getBit, INT16_BE;
   return {
@@ -43773,7 +43819,7 @@ System.register("./MP4Parser-CLenTBhK-S5AIqNAM.js", ['./main-jEvaWtdz-DbkOLO4t.j
   };
 }));
 
-System.register("./MusepackParser-D1WMtVzS-MN3eIAD-.js", ['./main-jEvaWtdz-DbkOLO4t.js', './AbstractID3Parser-D5dANmqd-iVqnwYGL.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-DODqoRKL-CuqS_Bhh.js'], (function (exports, module) {
+System.register("./MusepackParser-9_1S2ffs-DlZ5ZFa4.js", ['./main-CmDXwSEj-D1IQdpIm.js', './AbstractID3Parser-zgTy6Uu9-Cxjdt4df.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './ID3v2Parser-BttZTNNl-BcPb0vnY.js'], (function (exports, module) {
   'use strict';
   var StringType, initDebug, makeUnexpectedFileContentError, BasicParser, FourCcToken, tryParseApeHeader, UINT8, isBitSet$1, UINT32_LE, UINT16_LE, getBitAllignedNumber, textDecode, AbstractID3Parser;
   return {
@@ -44067,7 +44113,7 @@ System.register("./MusepackParser-D1WMtVzS-MN3eIAD-.js", ['./main-jEvaWtdz-DbkOL
   };
 }));
 
-System.register("./OggParser-CQhJUt_w-DvdYxxwF.js", ['./main-jEvaWtdz-DbkOLO4t.js', './FlacParser-DxOTFTVv-Dt8_SeX-.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './AbstractID3Parser-D5dANmqd-iVqnwYGL.js', './ID3v2Parser-DODqoRKL-CuqS_Bhh.js'], (function (exports, module) {
+System.register("./OggParser-CtEKVY9d-RQhn7iuY.js", ['./main-CmDXwSEj-D1IQdpIm.js', './FlacParser-BRn0JQMx-CZGs3SSd.js', 'react', 'antd', 'react-dom', '@ant-design/icons', './AbstractID3Parser-zgTy6Uu9-Cxjdt4df.js', './ID3v2Parser-BttZTNNl-BcPb0vnY.js'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, UINT8, UINT32_LE, getBit, StringType, UINT64_LE, makeUnexpectedFileContentError, Uint8ArrayType, FourCcToken, UINT24_BE, UINT16_BE, INT32_LE, trimRightNull, UINT16_LE, VorbisStream, FlacParser, BlockHeader, BlockType, VorbisPictureToken, BlockStreamInfo;
   return {
@@ -44463,7 +44509,7 @@ System.register("./OggParser-CQhJUt_w-DvdYxxwF.js", ['./main-jEvaWtdz-DbkOLO4t.j
   };
 }));
 
-System.register("./FlacParser-DxOTFTVv-Dt8_SeX-.js", ['./main-jEvaWtdz-DbkOLO4t.js', './AbstractID3Parser-D5dANmqd-iVqnwYGL.js'], (function (exports, module) {
+System.register("./FlacParser-BRn0JQMx-CZGs3SSd.js", ['./main-CmDXwSEj-D1IQdpIm.js', './AbstractID3Parser-zgTy6Uu9-Cxjdt4df.js'], (function (exports, module) {
   'use strict';
   var FourCcToken, initDebug, Uint8ArrayType, UINT32_LE, makeUnexpectedFileContentError, UINT24_BE, getBitAllignedNumber, getBit, UINT16_BE, textDecode, AttachedPictureType, UINT32_BE, StringType, UINT8, AbstractID3Parser;
   return {
@@ -44872,7 +44918,7 @@ System.register("./FlacParser-DxOTFTVv-Dt8_SeX-.js", ['./main-jEvaWtdz-DbkOLO4t.
   };
 }));
 
-System.register("./AbstractID3Parser-D5dANmqd-iVqnwYGL.js", ['./main-jEvaWtdz-DbkOLO4t.js', './ID3v2Parser-DODqoRKL-CuqS_Bhh.js'], (function (exports, module) {
+System.register("./AbstractID3Parser-zgTy6Uu9-Cxjdt4df.js", ['./main-CmDXwSEj-D1IQdpIm.js', './ID3v2Parser-BttZTNNl-BcPb0vnY.js'], (function (exports, module) {
   'use strict';
   var BasicParser, ID3v2Header, EndOfStreamError, initDebug, ID3v1Parser, ID3v2Parser;
   return {
@@ -44936,7 +44982,7 @@ System.register("./AbstractID3Parser-D5dANmqd-iVqnwYGL.js", ['./main-jEvaWtdz-Db
   };
 }));
 
-System.register("./WavPackParser-eMP7x7bI-DGmBLvpT.js", ['./main-jEvaWtdz-DbkOLO4t.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./WavPackParser-DQM1A1f2-CqVaf9Bu.js", ['./main-CmDXwSEj-D1IQdpIm.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, tryParseApeHeader, FourCcToken, initDebug, UINT24_LE, UINT8, uint8ArrayToHex, UINT32_LE, Uint8ArrayType, UINT16_LE, makeUnexpectedFileContentError;
   return {
@@ -45133,7 +45179,7 @@ System.register("./WavPackParser-eMP7x7bI-DGmBLvpT.js", ['./main-jEvaWtdz-DbkOLO
   };
 }));
 
-System.register("./WaveParser-B80TuZIw-B9aX6Zu0.js", ['./main-jEvaWtdz-DbkOLO4t.js', './ID3v2Parser-DODqoRKL-CuqS_Bhh.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./WaveParser-DFwNijqO-uBIepAmW.js", ['./main-CmDXwSEj-D1IQdpIm.js', './ID3v2Parser-BttZTNNl-BcPb0vnY.js', 'react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var BasicParser, initDebug, EndOfStreamError, FourCcToken, Uint8ArrayType, fromBuffer, StringType, stripNulls, UINT32_LE, makeUnexpectedFileContentError, UINT16_LE, ID3v2Parser;
   return {
@@ -45412,7 +45458,7 @@ System.register("./WaveParser-B80TuZIw-B9aX6Zu0.js", ['./main-jEvaWtdz-DbkOLO4t.
   };
 }));
 
-System.register("./ID3v2Parser-DODqoRKL-CuqS_Bhh.js", ['./main-jEvaWtdz-DbkOLO4t.js'], (function (exports, module) {
+System.register("./ID3v2Parser-BttZTNNl-BcPb0vnY.js", ['./main-CmDXwSEj-D1IQdpIm.js'], (function (exports, module) {
   'use strict';
   var getBit, ID3v2Header, ExtendedHeader, Uint8ArrayType, UINT32SYNCSAFE, UINT32_BE, textDecode, UINT24_BE, TextEncodingToken, initDebug, decodeString, findZero, UINT8, TextHeader, SyncTextHeader, AttachedPictureType, makeUnexpectedFileContentError, Genres;
   return {
@@ -45979,7 +46025,7 @@ System.register("./ID3v2Parser-DODqoRKL-CuqS_Bhh.js", ['./main-jEvaWtdz-DbkOLO4t
   };
 }));
 
-System.register("./main-jEvaWtdz-DbkOLO4t.js", ['react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
+System.register("./main-CmDXwSEj-D1IQdpIm.js", ['react', 'antd', 'react-dom', '@ant-design/icons'], (function (exports, module) {
   'use strict';
   var forwardRef, useState, useMemo, useEffect, require$$0, useImperativeHandle, useRef, useCallback, useLayoutEffect, Input, DatePicker, Form, Typography, Modal, Button, Table, Spin, Descriptions, Space, Image, Pagination, Tag, Select, Tabs, ConfigProvider, Avatar, Tooltip, message$1, App$1, TreeSelect, Upload, Card, Switch, TimePicker, Checkbox, Radio, require$$0$1, LinkOutlined, GithubOutlined, StarOutlined, ForkOutlined, EyeOutlined, UploadOutlined, DownloadOutlined, CloudDownloadOutlined, FileOutlined, PauseCircleOutlined, PlayCircleOutlined, UserOutlined, SaveOutlined, SelectOutlined, TrophyOutlined, ClockCircleOutlined, CopyOutlined, PictureOutlined, UnorderedListOutlined, ContainerOutlined, BookOutlined, SearchOutlined, InfoCircleOutlined;
   return {
@@ -53941,7 +53987,7 @@ System.register("./main-jEvaWtdz-DbkOLO4t.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/mpeg", "audio/mp3", "audio/aacs", "audio/aacp"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MpegParser } = await module.import('./MpegParser-VBs6C8v--OSwZ4A99.js');
+            const { MpegParser } = await module.import('./MpegParser-DHXg25k0-BC1mJscz.js');
             return { MpegParser };
           }, void 0 )).MpegParser;
         }
@@ -53963,7 +54009,7 @@ System.register("./main-jEvaWtdz-DbkOLO4t.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/ms-wma", "video/ms-wmv", "audio/ms-asf", "video/ms-asf", "application/vnd.ms-asf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AsfParser } = await module.import('./AsfParser-D5jasqax-BBCtTM70.js');
+            const { AsfParser } = await module.import('./AsfParser-Cw_H4iOc-L6mta9-9.js');
             return { AsfParser };
           }, void 0 )).AsfParser;
         }
@@ -53974,7 +54020,7 @@ System.register("./main-jEvaWtdz-DbkOLO4t.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/dsf", "audio/dsd"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsdiffParser } = await module.import('./DsdiffParser-D9W5IG2F-CRimsLce.js');
+            const { DsdiffParser } = await module.import('./DsdiffParser-B5yR9sX_-BGSRLA34.js');
             return { DsdiffParser };
           }, void 0 )).DsdiffParser;
         }
@@ -53985,7 +54031,7 @@ System.register("./main-jEvaWtdz-DbkOLO4t.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/aiff", "audio/aif", "audio/aifc", "application/aiff"],
         async load() {
           return (await __vitePreload(async () => {
-            const { AIFFParser } = await module.import('./AiffParser-DoAfQoHS-DpOHlycX.js');
+            const { AIFFParser } = await module.import('./AiffParser-GTVtDQpH-Di5vGyeQ.js');
             return { AIFFParser };
           }, void 0 )).AIFFParser;
         }
@@ -53996,7 +54042,7 @@ System.register("./main-jEvaWtdz-DbkOLO4t.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/dsf"],
         async load() {
           return (await __vitePreload(async () => {
-            const { DsfParser } = await module.import('./DsfParser-k5Du8Bsz-BZmz31uI.js');
+            const { DsfParser } = await module.import('./DsfParser-BymSzitY-r_tUZ-ob.js');
             return { DsfParser };
           }, void 0 )).DsfParser;
         }
@@ -54007,7 +54053,7 @@ System.register("./main-jEvaWtdz-DbkOLO4t.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/flac"],
         async load() {
           return (await __vitePreload(async () => {
-            const { FlacParser } = await module.import('./FlacParser-DxOTFTVv-Dt8_SeX-.js').then((n2) => n2.d);
+            const { FlacParser } = await module.import('./FlacParser-BRn0JQMx-CZGs3SSd.js').then((n2) => n2.d);
             return { FlacParser };
           }, void 0 )).FlacParser;
         }
@@ -54018,7 +54064,7 @@ System.register("./main-jEvaWtdz-DbkOLO4t.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/matroska", "video/matroska", "audio/webm", "video/webm"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MatroskaParser } = await module.import('./MatroskaParser-yvxdpzrd-Piyql8mM.js');
+            const { MatroskaParser } = await module.import('./MatroskaParser-Cbl-TrqO-D-K7rTXe.js');
             return { MatroskaParser };
           }, void 0 )).MatroskaParser;
         }
@@ -54029,7 +54075,7 @@ System.register("./main-jEvaWtdz-DbkOLO4t.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/mp4", "audio/m4a", "video/m4v", "video/mp4"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MP4Parser } = await module.import('./MP4Parser-CLenTBhK-S5AIqNAM.js');
+            const { MP4Parser } = await module.import('./MP4Parser-BS_0nvk8-CGiZ4sTi.js');
             return { MP4Parser };
           }, void 0 )).MP4Parser;
         }
@@ -54040,7 +54086,7 @@ System.register("./main-jEvaWtdz-DbkOLO4t.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/musepack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { MusepackParser } = await module.import('./MusepackParser-D1WMtVzS-MN3eIAD-.js');
+            const { MusepackParser } = await module.import('./MusepackParser-9_1S2ffs-DlZ5ZFa4.js');
             return { MusepackParser };
           }, void 0 )).MusepackParser;
         }
@@ -54052,7 +54098,7 @@ System.register("./main-jEvaWtdz-DbkOLO4t.js", ['react', 'antd', 'react-dom', '@
         // RFC 7845, RFC 6716, RFC 5574
         async load() {
           return (await __vitePreload(async () => {
-            const { OggParser } = await module.import('./OggParser-CQhJUt_w-DvdYxxwF.js');
+            const { OggParser } = await module.import('./OggParser-CtEKVY9d-RQhn7iuY.js');
             return { OggParser };
           }, void 0 )).OggParser;
         }
@@ -54063,7 +54109,7 @@ System.register("./main-jEvaWtdz-DbkOLO4t.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/wavpack"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WavPackParser } = await module.import('./WavPackParser-eMP7x7bI-DGmBLvpT.js');
+            const { WavPackParser } = await module.import('./WavPackParser-DQM1A1f2-CqVaf9Bu.js');
             return { WavPackParser };
           }, void 0 )).WavPackParser;
         }
@@ -54074,7 +54120,7 @@ System.register("./main-jEvaWtdz-DbkOLO4t.js", ['react', 'antd', 'react-dom', '@
         mimeTypes: ["audio/vnd.wave", "audio/wav", "audio/wave"],
         async load() {
           return (await __vitePreload(async () => {
-            const { WaveParser } = await module.import('./WaveParser-B80TuZIw-B9aX6Zu0.js');
+            const { WaveParser } = await module.import('./WaveParser-DFwNijqO-uBIepAmW.js');
             return { WaveParser };
           }, void 0 )).WaveParser;
         }
@@ -74517,6 +74563,428 @@ System.register("./main-jEvaWtdz-DbkOLO4t.js", ['react', 'antd', 'react-dom', '@
         document.body.removeChild(a2);
         window.URL.revokeObjectURL(blobUrl);
       };
+      function e(e2) {
+        return String(e2).split("").map((e3) => e3.charCodeAt(0));
+      }
+      function t(t2) {
+        return new Uint8Array(e(t2));
+      }
+      function a(t2) {
+        const a2 = new ArrayBuffer(2 * t2.length), r2 = new Uint8Array(a2);
+        return new Uint16Array(a2).set(e(t2)), r2;
+      }
+      function r(e2) {
+        const t2 = 255;
+        return [e2 >>> 24 & t2, e2 >>> 16 & t2, e2 >>> 8 & t2, e2 & t2];
+      }
+      function n(e2) {
+        return 11 + e2;
+      }
+      function s(e2, t2, a2, r2) {
+        return 11 + t2 + 1 + 1 + (r2 ? 2 + 2 * (a2 + 1) : a2 + 1) + e2;
+      }
+      function i(e2) {
+        let t2 = 0;
+        return e2.forEach((e3) => {
+          t2 += 2 + 2 * e3[0].length + 2 + 2 + 2 * e3[1].length + 2;
+        }), 11 + t2;
+      }
+      function c(e2, t2) {
+        const a2 = 2 * t2;
+        let r2 = 0;
+        return e2.forEach((e3) => {
+          r2 += 2 + 2 * e3[0].length + 2 + 4;
+        }), 18 + a2 + 2 + r2;
+      }
+      class o {
+        _setIntegerFrame(e2, t2) {
+          const a2 = parseInt(t2, 10);
+          this.frames.push({ name: e2, value: a2, size: n(a2.toString().length) });
+        }
+        _setStringFrame(e2, t2) {
+          const a2 = t2.toString();
+          let r2 = 13 + 2 * a2.length;
+          "TDAT" === e2 && (r2 = n(a2.length)), this.frames.push({ name: e2, value: a2, size: r2 });
+        }
+        _setPictureFrame(e2, t2, a2, r2) {
+          const n2 = (function(e3) {
+            if (!e3 || !e3.length) return null;
+            if (255 === e3[0] && 216 === e3[1] && 255 === e3[2]) return "image/jpeg";
+            if (137 === e3[0] && 80 === e3[1] && 78 === e3[2] && 71 === e3[3]) return "image/png";
+            if (71 === e3[0] && 73 === e3[1] && 70 === e3[2]) return "image/gif";
+            if (87 === e3[8] && 69 === e3[9] && 66 === e3[10] && 80 === e3[11]) return "image/webp";
+            const t3 = 73 === e3[0] && 73 === e3[1] && 42 === e3[2] && 0 === e3[3], a3 = 77 === e3[0] && 77 === e3[1] && 0 === e3[2] && 42 === e3[3];
+            return t3 || a3 ? "image/tiff" : 66 === e3[0] && 77 === e3[1] ? "image/bmp" : 0 === e3[0] && 0 === e3[1] && 1 === e3[2] && 0 === e3[3] ? "image/x-icon" : null;
+          })(new Uint8Array(t2)), i2 = a2.toString();
+          if (!n2) throw new Error("Unknown picture MIME type");
+          a2 || (r2 = false), this.frames.push({ name: "APIC", value: t2, pictureType: e2, mimeType: n2, useUnicodeEncoding: r2, description: i2, size: s(t2.byteLength, n2.length, i2.length, r2) });
+        }
+        _setLyricsFrame(e2, t2, a2) {
+          const r2 = e2.split("").map((e3) => e3.charCodeAt(0)), n2 = t2.toString(), s2 = a2.toString();
+          var i2, c2;
+          this.frames.push({ name: "USLT", value: s2, language: r2, description: n2, size: (i2 = n2.length, c2 = s2.length, 16 + 2 * i2 + 2 + 2 + 2 * c2) });
+        }
+        _setCommentFrame(e2, t2, a2) {
+          const r2 = e2.split("").map((e3) => e3.charCodeAt(0)), n2 = t2.toString(), s2 = a2.toString();
+          var i2, c2;
+          this.frames.push({ name: "COMM", value: s2, language: r2, description: n2, size: (i2 = n2.length, c2 = s2.length, 16 + 2 * i2 + 2 + 2 + 2 * c2) });
+        }
+        _setPrivateFrame(e2, t2) {
+          const a2 = e2.toString();
+          var r2, n2;
+          this.frames.push({ name: "PRIV", value: t2, id: a2, size: (r2 = a2.length, n2 = t2.byteLength, 10 + r2 + 1 + n2) });
+        }
+        _setUserStringFrame(e2, t2) {
+          const a2 = e2.toString(), r2 = t2.toString();
+          var n2, s2;
+          this.frames.push({ name: "TXXX", description: a2, value: r2, size: (n2 = a2.length, s2 = r2.length, 13 + 2 * n2 + 2 + 2 + 2 * s2) });
+        }
+        _setUrlLinkFrame(e2, t2) {
+          const a2 = t2.toString();
+          var r2;
+          this.frames.push({ name: e2, value: a2, size: (r2 = a2.length, 10 + r2) });
+        }
+        _setPairedTextFrame(e2, t2) {
+          this.frames.push({ name: e2, value: t2, size: i(t2) });
+        }
+        _setSynchronisedLyricsFrame(e2, t2, a2, r2, n2) {
+          const s2 = n2.toString(), i2 = r2.split("").map((e3) => e3.charCodeAt(0));
+          this.frames.push({ name: "SYLT", value: t2, language: i2, description: s2, type: e2, timestampFormat: a2, size: c(t2, s2.length) });
+        }
+        constructor(e2) {
+          if (!e2 || "object" != typeof e2 || !("byteLength" in e2)) throw new Error("First argument should be an instance of ArrayBuffer or Buffer");
+          this.arrayBuffer = e2, this.padding = 4096, this.frames = [], this.url = "";
+        }
+        setFrame(e2, t2) {
+          switch (e2) {
+            case "TPE1":
+            case "TCOM":
+            case "TCON": {
+              if (!Array.isArray(t2)) throw new Error(`${e2} frame value should be an array of strings`);
+              const a2 = "TCON" === e2 ? ";" : "/", r2 = t2.join(a2);
+              this._setStringFrame(e2, r2);
+              break;
+            }
+            case "TLAN":
+            case "TIT1":
+            case "TIT2":
+            case "TIT3":
+            case "TALB":
+            case "TPE2":
+            case "TPE3":
+            case "TPE4":
+            case "TRCK":
+            case "TPOS":
+            case "TMED":
+            case "TPUB":
+            case "TCOP":
+            case "TKEY":
+            case "TEXT":
+            case "TDAT":
+            case "TCMP":
+            case "TSSE":
+            case "TSRC":
+              this._setStringFrame(e2, t2);
+              break;
+            case "TBPM":
+            case "TLEN":
+            case "TYER":
+              this._setIntegerFrame(e2, t2);
+              break;
+            case "USLT":
+              if (t2.language = t2.language || "eng", "object" != typeof t2 || !("description" in t2) || !("lyrics" in t2)) throw new Error("USLT frame value should be an object with keys description and lyrics");
+              if (t2.language && !t2.language.match(/[a-z]{3}/i)) throw new Error("Language must be coded following the ISO 639-2 standards");
+              this._setLyricsFrame(t2.language, t2.description, t2.lyrics);
+              break;
+            case "APIC":
+              if ("object" != typeof t2 || !("type" in t2) || !("data" in t2) || !("description" in t2)) throw new Error("APIC frame value should be an object with keys type, data and description");
+              if (t2.type < 0 || t2.type > 20) throw new Error("Incorrect APIC frame picture type");
+              this._setPictureFrame(t2.type, t2.data, t2.description, !!t2.useUnicodeEncoding);
+              break;
+            case "TXXX":
+              if ("object" != typeof t2 || !("description" in t2) || !("value" in t2)) throw new Error("TXXX frame value should be an object with keys description and value");
+              this._setUserStringFrame(t2.description, t2.value);
+              break;
+            case "WCOM":
+            case "WCOP":
+            case "WOAF":
+            case "WOAR":
+            case "WOAS":
+            case "WORS":
+            case "WPAY":
+            case "WPUB":
+              this._setUrlLinkFrame(e2, t2);
+              break;
+            case "COMM":
+              if (t2.language = t2.language || "eng", "object" != typeof t2 || !("description" in t2) || !("text" in t2)) throw new Error("COMM frame value should be an object with keys description and text");
+              if (t2.language && !t2.language.match(/[a-z]{3}/i)) throw new Error("Language must be coded following the ISO 639-2 standards");
+              this._setCommentFrame(t2.language, t2.description, t2.text);
+              break;
+            case "PRIV":
+              if ("object" != typeof t2 || !("id" in t2) || !("data" in t2)) throw new Error("PRIV frame value should be an object with keys id and data");
+              this._setPrivateFrame(t2.id, t2.data);
+              break;
+            case "IPLS":
+              if (!Array.isArray(t2) || !Array.isArray(t2[0])) throw new Error("IPLS frame value should be an array of pairs");
+              this._setPairedTextFrame(e2, t2);
+              break;
+            case "SYLT":
+              if ("object" != typeof t2 || !("type" in t2) || !("text" in t2) || !("timestampFormat" in t2)) throw new Error("SYLT frame value should be an object with keys type, text and timestampFormat");
+              if (!Array.isArray(t2.text) || !Array.isArray(t2.text[0])) throw new Error("SYLT frame text value should be an array of pairs");
+              if (t2.type < 0 || t2.type > 6) throw new Error("Incorrect SYLT frame content type");
+              if (t2.timestampFormat < 1 || t2.timestampFormat > 2) throw new Error("Incorrect SYLT frame time stamp format");
+              t2.language = t2.language || "eng", t2.description = t2.description || "", this._setSynchronisedLyricsFrame(t2.type, t2.text, t2.timestampFormat, t2.language, t2.description);
+              break;
+            default:
+              throw new Error(`Unsupported frame ${e2}`);
+          }
+          return this;
+        }
+        removeTag() {
+          if (this.arrayBuffer.byteLength < 10) return;
+          const e2 = new Uint8Array(this.arrayBuffer), t2 = e2[3], a2 = ((r2 = [e2[6], e2[7], e2[8], e2[9]])[0] << 21) + (r2[1] << 14) + (r2[2] << 7) + r2[3] + 10;
+          var r2, n2;
+          73 !== (n2 = e2)[0] || 68 !== n2[1] || 51 !== n2[2] || t2 < 2 || t2 > 4 || (this.arrayBuffer = new Uint8Array(e2.subarray(a2)).buffer);
+        }
+        addTag() {
+          this.removeTag();
+          const e2 = [255, 254], n2 = 10 + this.frames.reduce((e3, t2) => e3 + t2.size, 0) + this.padding, s2 = new ArrayBuffer(this.arrayBuffer.byteLength + n2), i2 = new Uint8Array(s2);
+          let c2 = 0, o2 = [];
+          return o2 = [73, 68, 51, 3], i2.set(o2, c2), c2 += o2.length, c2++, c2++, o2 = (function(e3) {
+            const t2 = 127;
+            return [e3 >>> 21 & t2, e3 >>> 14 & t2, e3 >>> 7 & t2, e3 & t2];
+          })(n2 - 10), i2.set(o2, c2), c2 += o2.length, this.frames.forEach((n3) => {
+            switch (o2 = t(n3.name), i2.set(o2, c2), c2 += o2.length, o2 = r(n3.size - 10), i2.set(o2, c2), c2 += o2.length, c2 += 2, n3.name) {
+              case "WCOM":
+              case "WCOP":
+              case "WOAF":
+              case "WOAR":
+              case "WOAS":
+              case "WORS":
+              case "WPAY":
+              case "WPUB":
+                o2 = t(n3.value), i2.set(o2, c2), c2 += o2.length;
+                break;
+              case "TPE1":
+              case "TCOM":
+              case "TCON":
+              case "TLAN":
+              case "TIT1":
+              case "TIT2":
+              case "TIT3":
+              case "TALB":
+              case "TPE2":
+              case "TPE3":
+              case "TPE4":
+              case "TRCK":
+              case "TPOS":
+              case "TKEY":
+              case "TMED":
+              case "TPUB":
+              case "TCOP":
+              case "TEXT":
+              case "TSSE":
+              case "TSRC":
+                o2 = [1].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.value), i2.set(o2, c2), c2 += o2.length;
+                break;
+              case "TXXX":
+              case "USLT":
+              case "COMM":
+                o2 = [1], "USLT" !== n3.name && "COMM" !== n3.name || (o2 = o2.concat(n3.language)), o2 = o2.concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.description), i2.set(o2, c2), c2 += o2.length, o2 = [0, 0].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.value), i2.set(o2, c2), c2 += o2.length;
+                break;
+              case "TBPM":
+              case "TLEN":
+              case "TDAT":
+              case "TYER":
+                c2++, o2 = t(n3.value), i2.set(o2, c2), c2 += o2.length;
+                break;
+              case "PRIV":
+                o2 = t(n3.id), i2.set(o2, c2), c2 += o2.length, c2++, i2.set(new Uint8Array(n3.value), c2), c2 += n3.value.byteLength;
+                break;
+              case "APIC":
+                o2 = [n3.useUnicodeEncoding ? 1 : 0], i2.set(o2, c2), c2 += o2.length, o2 = t(n3.mimeType), i2.set(o2, c2), c2 += o2.length, o2 = [0, n3.pictureType], i2.set(o2, c2), c2 += o2.length, n3.useUnicodeEncoding ? (o2 = [].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.description), i2.set(o2, c2), c2 += o2.length, c2 += 2) : (o2 = t(n3.description), i2.set(o2, c2), c2 += o2.length, c2++), i2.set(new Uint8Array(n3.value), c2), c2 += n3.value.byteLength;
+                break;
+              case "IPLS":
+                o2 = [1], i2.set(o2, c2), c2 += o2.length, n3.value.forEach((t2) => {
+                  o2 = [].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(t2[0].toString()), i2.set(o2, c2), c2 += o2.length, o2 = [0, 0].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(t2[1].toString()), i2.set(o2, c2), c2 += o2.length, o2 = [0, 0], i2.set(o2, c2), c2 += o2.length;
+                });
+                break;
+              case "SYLT":
+                o2 = [1].concat(n3.language).concat(n3.timestampFormat).concat(n3.type), i2.set(o2, c2), c2 += o2.length, o2 = [].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.description), i2.set(o2, c2), c2 += o2.length, c2 += 2, n3.value.forEach((t2) => {
+                  o2 = [].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(t2[0].toString()), i2.set(o2, c2), c2 += o2.length, o2 = [0, 0], i2.set(o2, c2), c2 += o2.length, o2 = r(t2[1]), i2.set(o2, c2), c2 += o2.length;
+                });
+            }
+          }), c2 += this.padding, i2.set(new Uint8Array(this.arrayBuffer), c2), this.arrayBuffer = s2, s2;
+        }
+        getBlob() {
+          return new Blob([this.arrayBuffer], { type: "audio/mpeg" });
+        }
+        getURL() {
+          return this.url || (this.url = URL.createObjectURL(this.getBlob())), this.url;
+        }
+        revokeURL() {
+          URL.revokeObjectURL(this.url);
+        }
+      }
+      const blobToArrayBuffer = async (blob) => {
+        if (!blob) throw new Error("blob 不能为空");
+        return await blob.arrayBuffer();
+      };
+      const normalizeMp3Tags = (metadata) => {
+        const common2 = metadata?.common || {};
+        const {
+          title,
+          artist,
+          album,
+          year,
+          genre,
+          comment,
+          track,
+          disk,
+          composer,
+          lyricist,
+          lyrics,
+          picture
+        } = common2;
+        console.log("metadata", metadata);
+        return {
+          title: title || void 0,
+          artist: artist || (Array.isArray(common2?.artists) ? common2.artists[0] : "") || void 0,
+          album: album || void 0,
+          year: typeof year === "number" ? String(year) : year || void 0,
+          genre: Array.isArray(genre) ? genre.join(",") : genre || void 0,
+          comment: Array.isArray(comment) ? comment.filter(Boolean).join("\n") : comment || void 0,
+          track: track?.no ? String(track.no) : void 0,
+          disc: disk?.no ? String(disk.no) : void 0,
+          composer: Array.isArray(composer) ? composer.filter(Boolean).join(",") : composer || void 0,
+          lyricist: Array.isArray(lyricist) ? lyricist.filter(Boolean).join(",") : lyricist || void 0,
+          lyrics: lyrics?.[0]?.text,
+          picture: Array.isArray(picture) ? picture : void 0
+        };
+      };
+      const readAllMp3Tag = async (file) => {
+        try {
+          const metadata = await parseBlob(file);
+          const tags = normalizeMp3Tags(metadata);
+          console.log("MP3 解析后的标签:", tags);
+          return tags;
+        } catch (error) {
+          console.error("读取 MP3 标签失败:", error);
+          return {};
+        }
+      };
+      const readMp3Tag = async (file, tagName) => {
+        try {
+          if (!tagName) return void 0;
+          const all = await readAllMp3Tag(file);
+          const key = String(tagName).toLowerCase();
+          const val = all[key];
+          return typeof val === "string" ? val : void 0;
+        } catch (error) {
+          console.error(`读取 MP3 标签 ${tagName} 失败:`, error);
+          return void 0;
+        }
+      };
+      const applyId3Frames = (writer, tags) => {
+        if (!tags || typeof tags !== "object") return;
+        const { title, artist, album, year, genre, comment, track, disc, composer, lyricist, lyrics } = tags;
+        if (title) writer.setFrame("TIT2", String(title));
+        if (album) writer.setFrame("TALB", String(album));
+        if (year) writer.setFrame("TYER", Number(String(year).slice(0, 4)) || 0);
+        if (artist) writer.setFrame("TPE1", [String(artist)]);
+        if (genre) writer.setFrame("TCON", [String(genre)]);
+        if (composer) writer.setFrame("TCOM", [String(composer)]);
+        if (track) writer.setFrame("TRCK", String(track));
+        if (disc) writer.setFrame("TPOS", String(disc));
+        if (comment) {
+          writer.setFrame("COMM", {
+            description: "comment",
+            text: String(comment),
+            language: "chi"
+          });
+        }
+        if (lyricist) writer.setFrame("TEXT", String(lyricist));
+        if (lyrics) {
+          writer.setFrame("USLT", {
+            description: "LYRICS",
+            lyrics: String(lyrics)
+          });
+          writer.setFrame("TXXX", {
+            description: "LYRICS",
+            value: String(lyrics)
+          });
+        }
+      };
+      const writeMp3Tag = async (file, tagName, tagValue) => {
+        try {
+          if (!tagName) throw new Error("tagName 不能为空");
+          const key = String(tagName).toLowerCase();
+          const all = await readAllMp3Tag(file);
+          const nextTags = {
+            ...all,
+            [key]: tagValue
+          };
+          const buffer = await blobToArrayBuffer(file);
+          const writer = new o(buffer);
+          writer.removeTag();
+          applyId3Frames(writer, nextTags);
+          writer.addTag();
+          const blob = writer.getBlob();
+          console.log("给 MP3 写标签成功");
+          return blob;
+        } catch (error) {
+          console.error("给 MP3 写标签失败:", error);
+          throw new Error("给 MP3 写标签失败");
+        }
+      };
+      const writeMp3Tags = async (file, tags) => {
+        try {
+          if (!tags?.length) return file;
+          const all = await readAllMp3Tag(file);
+          const newTags = Object.fromEntries(tags.map(({ tag, value }) => [tag, value]));
+          const nextTags = {
+            ...all,
+            ...newTags
+          };
+          const buffer = await blobToArrayBuffer(file);
+          const writer = new o(buffer);
+          writer.removeTag();
+          applyId3Frames(writer, nextTags);
+          writer.addTag();
+          const blob = writer.getBlob();
+          console.log("给 MP3 写多个标签成功");
+          return blob;
+        } catch (error) {
+          console.error("给 MP3 写多个标签失败:", error);
+          throw new Error("给 MP3 写多个标签失败");
+        }
+      };
+      const embedMp3Picture = async (file, picture) => {
+        try {
+          if (!picture) return file;
+          const all = await readAllMp3Tag(file);
+          const buffer = await blobToArrayBuffer(file);
+          const picBuffer = await blobToArrayBuffer(picture);
+          const writer = new o(buffer);
+          writer.removeTag();
+          applyId3Frames(writer, all);
+          writer.setFrame("APIC", {
+            description: "cover",
+            data: picBuffer,
+            type: (
+              /* ImageType.CoverFront */
+              3
+            ),
+            useUnicodeEncoding: false
+          });
+          writer.addTag();
+          console.log("给 MP3 嵌入封面成功");
+          return writer.getBlob();
+        } catch (error) {
+          console.error("给 MP3 嵌入封面失败:", error);
+          return file;
+        }
+      };
       const audio = new Audio();
       const usePlayMusic = () => {
         const { downloadConfig } = useConfig();
@@ -74633,16 +75101,40 @@ System.register("./main-jEvaWtdz-DbkOLO4t.js", ['react', 'antd', 'react-dom', '@
                   }
                   outputFile = await writeFlacTagAndPicture(outputFile, "lyrics", lyric, coverBlob);
                   break;
+                case "mp3":
+                  if (songInfo) {
+                    const {
+                      name: name3,
+                      album: { name: albumName },
+                      singer
+                    } = songInfo;
+                    const tags = [];
+                    if (name3) {
+                      tags.push({ tag: "title", value: name3 });
+                    }
+                    if (albumName) {
+                      tags.push({ tag: "album", value: albumName });
+                    }
+                    if (singer) {
+                      tags.push({ tag: "artist", value: singer.map((item) => item.name).join(",") });
+                    }
+                    if (lyric) {
+                      tags.push({ tag: "lyrics", value: lyric });
+                    }
+                    outputFile = await writeMp3Tags(outputFile, tags);
+                  }
+                  outputFile = await embedMp3Picture(outputFile, coverBlob);
+                  break;
                 default:
                   console.log("当前格式不支持");
                   break;
               }
             }
+            const fileName = fileNameFormat.replace("【歌曲名】", name2).replace("【歌手】", songInfo.singer.map((item) => item.name).join(",")).replace("【专辑】", songInfo.album.name) || name2;
             if (downloadLyric) {
-              downloadAsLRC(lyric, name2);
+              downloadAsLRC(lyric, fileName);
             }
-            const fileName = fileNameFormat.replace("【歌曲名】", name2).replace("【歌手】", songInfo.singer.map((item) => item.name).join(",")).replace("【专辑】", songInfo.album.name);
-            downloadFileWithBlob(outputFile, `${fileName || name2}.${finalExt}`);
+            downloadFileWithBlob(outputFile, `${fileName}.${finalExt}`);
           } catch (error) {
             console.log("error", error);
           }
@@ -85727,406 +86219,6 @@ System.register("./main-jEvaWtdz-DbkOLO4t.js", ['react', 'antd', 'react-dom', '@
           ] }) }),
           /* @__PURE__ */ jsxRuntimeExports.jsx(Form.Item, { label: "文件操作", children: /* @__PURE__ */ jsxRuntimeExports.jsx(MyButton, { type: "primary", onClick: handleDownloadFlacFile, children: "下载最新文件" }) })
         ] });
-      };
-      function e(e2) {
-        return String(e2).split("").map((e3) => e3.charCodeAt(0));
-      }
-      function t(t2) {
-        return new Uint8Array(e(t2));
-      }
-      function a(t2) {
-        const a2 = new ArrayBuffer(2 * t2.length), r2 = new Uint8Array(a2);
-        return new Uint16Array(a2).set(e(t2)), r2;
-      }
-      function r(e2) {
-        const t2 = 255;
-        return [e2 >>> 24 & t2, e2 >>> 16 & t2, e2 >>> 8 & t2, e2 & t2];
-      }
-      function n(e2) {
-        return 11 + e2;
-      }
-      function s(e2, t2, a2, r2) {
-        return 11 + t2 + 1 + 1 + (r2 ? 2 + 2 * (a2 + 1) : a2 + 1) + e2;
-      }
-      function i(e2) {
-        let t2 = 0;
-        return e2.forEach((e3) => {
-          t2 += 2 + 2 * e3[0].length + 2 + 2 + 2 * e3[1].length + 2;
-        }), 11 + t2;
-      }
-      function c(e2, t2) {
-        const a2 = 2 * t2;
-        let r2 = 0;
-        return e2.forEach((e3) => {
-          r2 += 2 + 2 * e3[0].length + 2 + 4;
-        }), 18 + a2 + 2 + r2;
-      }
-      class o {
-        _setIntegerFrame(e2, t2) {
-          const a2 = parseInt(t2, 10);
-          this.frames.push({ name: e2, value: a2, size: n(a2.toString().length) });
-        }
-        _setStringFrame(e2, t2) {
-          const a2 = t2.toString();
-          let r2 = 13 + 2 * a2.length;
-          "TDAT" === e2 && (r2 = n(a2.length)), this.frames.push({ name: e2, value: a2, size: r2 });
-        }
-        _setPictureFrame(e2, t2, a2, r2) {
-          const n2 = (function(e3) {
-            if (!e3 || !e3.length) return null;
-            if (255 === e3[0] && 216 === e3[1] && 255 === e3[2]) return "image/jpeg";
-            if (137 === e3[0] && 80 === e3[1] && 78 === e3[2] && 71 === e3[3]) return "image/png";
-            if (71 === e3[0] && 73 === e3[1] && 70 === e3[2]) return "image/gif";
-            if (87 === e3[8] && 69 === e3[9] && 66 === e3[10] && 80 === e3[11]) return "image/webp";
-            const t3 = 73 === e3[0] && 73 === e3[1] && 42 === e3[2] && 0 === e3[3], a3 = 77 === e3[0] && 77 === e3[1] && 0 === e3[2] && 42 === e3[3];
-            return t3 || a3 ? "image/tiff" : 66 === e3[0] && 77 === e3[1] ? "image/bmp" : 0 === e3[0] && 0 === e3[1] && 1 === e3[2] && 0 === e3[3] ? "image/x-icon" : null;
-          })(new Uint8Array(t2)), i2 = a2.toString();
-          if (!n2) throw new Error("Unknown picture MIME type");
-          a2 || (r2 = false), this.frames.push({ name: "APIC", value: t2, pictureType: e2, mimeType: n2, useUnicodeEncoding: r2, description: i2, size: s(t2.byteLength, n2.length, i2.length, r2) });
-        }
-        _setLyricsFrame(e2, t2, a2) {
-          const r2 = e2.split("").map((e3) => e3.charCodeAt(0)), n2 = t2.toString(), s2 = a2.toString();
-          var i2, c2;
-          this.frames.push({ name: "USLT", value: s2, language: r2, description: n2, size: (i2 = n2.length, c2 = s2.length, 16 + 2 * i2 + 2 + 2 + 2 * c2) });
-        }
-        _setCommentFrame(e2, t2, a2) {
-          const r2 = e2.split("").map((e3) => e3.charCodeAt(0)), n2 = t2.toString(), s2 = a2.toString();
-          var i2, c2;
-          this.frames.push({ name: "COMM", value: s2, language: r2, description: n2, size: (i2 = n2.length, c2 = s2.length, 16 + 2 * i2 + 2 + 2 + 2 * c2) });
-        }
-        _setPrivateFrame(e2, t2) {
-          const a2 = e2.toString();
-          var r2, n2;
-          this.frames.push({ name: "PRIV", value: t2, id: a2, size: (r2 = a2.length, n2 = t2.byteLength, 10 + r2 + 1 + n2) });
-        }
-        _setUserStringFrame(e2, t2) {
-          const a2 = e2.toString(), r2 = t2.toString();
-          var n2, s2;
-          this.frames.push({ name: "TXXX", description: a2, value: r2, size: (n2 = a2.length, s2 = r2.length, 13 + 2 * n2 + 2 + 2 + 2 * s2) });
-        }
-        _setUrlLinkFrame(e2, t2) {
-          const a2 = t2.toString();
-          var r2;
-          this.frames.push({ name: e2, value: a2, size: (r2 = a2.length, 10 + r2) });
-        }
-        _setPairedTextFrame(e2, t2) {
-          this.frames.push({ name: e2, value: t2, size: i(t2) });
-        }
-        _setSynchronisedLyricsFrame(e2, t2, a2, r2, n2) {
-          const s2 = n2.toString(), i2 = r2.split("").map((e3) => e3.charCodeAt(0));
-          this.frames.push({ name: "SYLT", value: t2, language: i2, description: s2, type: e2, timestampFormat: a2, size: c(t2, s2.length) });
-        }
-        constructor(e2) {
-          if (!e2 || "object" != typeof e2 || !("byteLength" in e2)) throw new Error("First argument should be an instance of ArrayBuffer or Buffer");
-          this.arrayBuffer = e2, this.padding = 4096, this.frames = [], this.url = "";
-        }
-        setFrame(e2, t2) {
-          switch (e2) {
-            case "TPE1":
-            case "TCOM":
-            case "TCON": {
-              if (!Array.isArray(t2)) throw new Error(`${e2} frame value should be an array of strings`);
-              const a2 = "TCON" === e2 ? ";" : "/", r2 = t2.join(a2);
-              this._setStringFrame(e2, r2);
-              break;
-            }
-            case "TLAN":
-            case "TIT1":
-            case "TIT2":
-            case "TIT3":
-            case "TALB":
-            case "TPE2":
-            case "TPE3":
-            case "TPE4":
-            case "TRCK":
-            case "TPOS":
-            case "TMED":
-            case "TPUB":
-            case "TCOP":
-            case "TKEY":
-            case "TEXT":
-            case "TDAT":
-            case "TCMP":
-            case "TSSE":
-            case "TSRC":
-              this._setStringFrame(e2, t2);
-              break;
-            case "TBPM":
-            case "TLEN":
-            case "TYER":
-              this._setIntegerFrame(e2, t2);
-              break;
-            case "USLT":
-              if (t2.language = t2.language || "eng", "object" != typeof t2 || !("description" in t2) || !("lyrics" in t2)) throw new Error("USLT frame value should be an object with keys description and lyrics");
-              if (t2.language && !t2.language.match(/[a-z]{3}/i)) throw new Error("Language must be coded following the ISO 639-2 standards");
-              this._setLyricsFrame(t2.language, t2.description, t2.lyrics);
-              break;
-            case "APIC":
-              if ("object" != typeof t2 || !("type" in t2) || !("data" in t2) || !("description" in t2)) throw new Error("APIC frame value should be an object with keys type, data and description");
-              if (t2.type < 0 || t2.type > 20) throw new Error("Incorrect APIC frame picture type");
-              this._setPictureFrame(t2.type, t2.data, t2.description, !!t2.useUnicodeEncoding);
-              break;
-            case "TXXX":
-              if ("object" != typeof t2 || !("description" in t2) || !("value" in t2)) throw new Error("TXXX frame value should be an object with keys description and value");
-              this._setUserStringFrame(t2.description, t2.value);
-              break;
-            case "WCOM":
-            case "WCOP":
-            case "WOAF":
-            case "WOAR":
-            case "WOAS":
-            case "WORS":
-            case "WPAY":
-            case "WPUB":
-              this._setUrlLinkFrame(e2, t2);
-              break;
-            case "COMM":
-              if (t2.language = t2.language || "eng", "object" != typeof t2 || !("description" in t2) || !("text" in t2)) throw new Error("COMM frame value should be an object with keys description and text");
-              if (t2.language && !t2.language.match(/[a-z]{3}/i)) throw new Error("Language must be coded following the ISO 639-2 standards");
-              this._setCommentFrame(t2.language, t2.description, t2.text);
-              break;
-            case "PRIV":
-              if ("object" != typeof t2 || !("id" in t2) || !("data" in t2)) throw new Error("PRIV frame value should be an object with keys id and data");
-              this._setPrivateFrame(t2.id, t2.data);
-              break;
-            case "IPLS":
-              if (!Array.isArray(t2) || !Array.isArray(t2[0])) throw new Error("IPLS frame value should be an array of pairs");
-              this._setPairedTextFrame(e2, t2);
-              break;
-            case "SYLT":
-              if ("object" != typeof t2 || !("type" in t2) || !("text" in t2) || !("timestampFormat" in t2)) throw new Error("SYLT frame value should be an object with keys type, text and timestampFormat");
-              if (!Array.isArray(t2.text) || !Array.isArray(t2.text[0])) throw new Error("SYLT frame text value should be an array of pairs");
-              if (t2.type < 0 || t2.type > 6) throw new Error("Incorrect SYLT frame content type");
-              if (t2.timestampFormat < 1 || t2.timestampFormat > 2) throw new Error("Incorrect SYLT frame time stamp format");
-              t2.language = t2.language || "eng", t2.description = t2.description || "", this._setSynchronisedLyricsFrame(t2.type, t2.text, t2.timestampFormat, t2.language, t2.description);
-              break;
-            default:
-              throw new Error(`Unsupported frame ${e2}`);
-          }
-          return this;
-        }
-        removeTag() {
-          if (this.arrayBuffer.byteLength < 10) return;
-          const e2 = new Uint8Array(this.arrayBuffer), t2 = e2[3], a2 = ((r2 = [e2[6], e2[7], e2[8], e2[9]])[0] << 21) + (r2[1] << 14) + (r2[2] << 7) + r2[3] + 10;
-          var r2, n2;
-          73 !== (n2 = e2)[0] || 68 !== n2[1] || 51 !== n2[2] || t2 < 2 || t2 > 4 || (this.arrayBuffer = new Uint8Array(e2.subarray(a2)).buffer);
-        }
-        addTag() {
-          this.removeTag();
-          const e2 = [255, 254], n2 = 10 + this.frames.reduce((e3, t2) => e3 + t2.size, 0) + this.padding, s2 = new ArrayBuffer(this.arrayBuffer.byteLength + n2), i2 = new Uint8Array(s2);
-          let c2 = 0, o2 = [];
-          return o2 = [73, 68, 51, 3], i2.set(o2, c2), c2 += o2.length, c2++, c2++, o2 = (function(e3) {
-            const t2 = 127;
-            return [e3 >>> 21 & t2, e3 >>> 14 & t2, e3 >>> 7 & t2, e3 & t2];
-          })(n2 - 10), i2.set(o2, c2), c2 += o2.length, this.frames.forEach((n3) => {
-            switch (o2 = t(n3.name), i2.set(o2, c2), c2 += o2.length, o2 = r(n3.size - 10), i2.set(o2, c2), c2 += o2.length, c2 += 2, n3.name) {
-              case "WCOM":
-              case "WCOP":
-              case "WOAF":
-              case "WOAR":
-              case "WOAS":
-              case "WORS":
-              case "WPAY":
-              case "WPUB":
-                o2 = t(n3.value), i2.set(o2, c2), c2 += o2.length;
-                break;
-              case "TPE1":
-              case "TCOM":
-              case "TCON":
-              case "TLAN":
-              case "TIT1":
-              case "TIT2":
-              case "TIT3":
-              case "TALB":
-              case "TPE2":
-              case "TPE3":
-              case "TPE4":
-              case "TRCK":
-              case "TPOS":
-              case "TKEY":
-              case "TMED":
-              case "TPUB":
-              case "TCOP":
-              case "TEXT":
-              case "TSSE":
-              case "TSRC":
-                o2 = [1].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.value), i2.set(o2, c2), c2 += o2.length;
-                break;
-              case "TXXX":
-              case "USLT":
-              case "COMM":
-                o2 = [1], "USLT" !== n3.name && "COMM" !== n3.name || (o2 = o2.concat(n3.language)), o2 = o2.concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.description), i2.set(o2, c2), c2 += o2.length, o2 = [0, 0].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.value), i2.set(o2, c2), c2 += o2.length;
-                break;
-              case "TBPM":
-              case "TLEN":
-              case "TDAT":
-              case "TYER":
-                c2++, o2 = t(n3.value), i2.set(o2, c2), c2 += o2.length;
-                break;
-              case "PRIV":
-                o2 = t(n3.id), i2.set(o2, c2), c2 += o2.length, c2++, i2.set(new Uint8Array(n3.value), c2), c2 += n3.value.byteLength;
-                break;
-              case "APIC":
-                o2 = [n3.useUnicodeEncoding ? 1 : 0], i2.set(o2, c2), c2 += o2.length, o2 = t(n3.mimeType), i2.set(o2, c2), c2 += o2.length, o2 = [0, n3.pictureType], i2.set(o2, c2), c2 += o2.length, n3.useUnicodeEncoding ? (o2 = [].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.description), i2.set(o2, c2), c2 += o2.length, c2 += 2) : (o2 = t(n3.description), i2.set(o2, c2), c2 += o2.length, c2++), i2.set(new Uint8Array(n3.value), c2), c2 += n3.value.byteLength;
-                break;
-              case "IPLS":
-                o2 = [1], i2.set(o2, c2), c2 += o2.length, n3.value.forEach((t2) => {
-                  o2 = [].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(t2[0].toString()), i2.set(o2, c2), c2 += o2.length, o2 = [0, 0].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(t2[1].toString()), i2.set(o2, c2), c2 += o2.length, o2 = [0, 0], i2.set(o2, c2), c2 += o2.length;
-                });
-                break;
-              case "SYLT":
-                o2 = [1].concat(n3.language).concat(n3.timestampFormat).concat(n3.type), i2.set(o2, c2), c2 += o2.length, o2 = [].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(n3.description), i2.set(o2, c2), c2 += o2.length, c2 += 2, n3.value.forEach((t2) => {
-                  o2 = [].concat(e2), i2.set(o2, c2), c2 += o2.length, o2 = a(t2[0].toString()), i2.set(o2, c2), c2 += o2.length, o2 = [0, 0], i2.set(o2, c2), c2 += o2.length, o2 = r(t2[1]), i2.set(o2, c2), c2 += o2.length;
-                });
-            }
-          }), c2 += this.padding, i2.set(new Uint8Array(this.arrayBuffer), c2), this.arrayBuffer = s2, s2;
-        }
-        getBlob() {
-          return new Blob([this.arrayBuffer], { type: "audio/mpeg" });
-        }
-        getURL() {
-          return this.url || (this.url = URL.createObjectURL(this.getBlob())), this.url;
-        }
-        revokeURL() {
-          URL.revokeObjectURL(this.url);
-        }
-      }
-      const blobToArrayBuffer = async (blob) => {
-        if (!blob) throw new Error("blob 不能为空");
-        return await blob.arrayBuffer();
-      };
-      const normalizeMp3Tags = (metadata) => {
-        const common2 = metadata?.common || {};
-        const {
-          title,
-          artist,
-          album,
-          year,
-          genre,
-          comment,
-          track,
-          disk,
-          composer,
-          lyricist,
-          lyrics,
-          picture
-        } = common2;
-        console.log("metadata", metadata);
-        return {
-          title: title || void 0,
-          artist: artist || (Array.isArray(common2?.artists) ? common2.artists[0] : "") || void 0,
-          album: album || void 0,
-          year: typeof year === "number" ? String(year) : year || void 0,
-          genre: Array.isArray(genre) ? genre.join(",") : genre || void 0,
-          comment: Array.isArray(comment) ? comment.filter(Boolean).join("\n") : comment || void 0,
-          track: track?.no ? String(track.no) : void 0,
-          disc: disk?.no ? String(disk.no) : void 0,
-          composer: Array.isArray(composer) ? composer.filter(Boolean).join(",") : composer || void 0,
-          lyricist: Array.isArray(lyricist) ? lyricist.filter(Boolean).join(",") : lyricist || void 0,
-          lyrics: lyrics?.[0]?.text,
-          picture: Array.isArray(picture) ? picture : void 0
-        };
-      };
-      const readAllMp3Tag = async (file) => {
-        try {
-          const metadata = await parseBlob(file);
-          const tags = normalizeMp3Tags(metadata);
-          console.log("MP3 解析后的标签:", tags);
-          return tags;
-        } catch (error) {
-          console.error("读取 MP3 标签失败:", error);
-          return {};
-        }
-      };
-      const readMp3Tag = async (file, tagName) => {
-        try {
-          if (!tagName) return void 0;
-          const all = await readAllMp3Tag(file);
-          const key = String(tagName).toLowerCase();
-          const val = all[key];
-          return typeof val === "string" ? val : void 0;
-        } catch (error) {
-          console.error(`读取 MP3 标签 ${tagName} 失败:`, error);
-          return void 0;
-        }
-      };
-      const applyId3Frames = (writer, tags) => {
-        if (!tags || typeof tags !== "object") return;
-        const { title, artist, album, year, genre, comment, track, disc, composer, lyricist, lyrics } = tags;
-        if (title) writer.setFrame("TIT2", String(title));
-        if (album) writer.setFrame("TALB", String(album));
-        if (year) writer.setFrame("TYER", Number(String(year).slice(0, 4)) || 0);
-        if (artist) writer.setFrame("TPE1", [String(artist)]);
-        if (genre) writer.setFrame("TCON", [String(genre)]);
-        if (composer) writer.setFrame("TCOM", [String(composer)]);
-        if (track) writer.setFrame("TRCK", String(track));
-        if (disc) writer.setFrame("TPOS", String(disc));
-        if (comment) {
-          writer.setFrame("COMM", {
-            description: "comment",
-            text: String(comment),
-            language: "chi"
-          });
-        }
-        if (lyricist) writer.setFrame("TEXT", String(lyricist));
-        if (lyrics) {
-          writer.setFrame("USLT", {
-            description: "LYRICS",
-            lyrics: String(lyrics)
-          });
-          writer.setFrame("TXXX", {
-            description: "LYRICS",
-            value: String(lyrics)
-          });
-        }
-      };
-      const writeMp3Tag = async (file, tagName, tagValue) => {
-        try {
-          if (!tagName) throw new Error("tagName 不能为空");
-          const key = String(tagName).toLowerCase();
-          const all = await readAllMp3Tag(file);
-          const nextTags = {
-            ...all,
-            [key]: tagValue
-          };
-          const buffer = await blobToArrayBuffer(file);
-          const writer = new o(buffer);
-          writer.removeTag();
-          applyId3Frames(writer, nextTags);
-          writer.addTag();
-          const blob = writer.getBlob();
-          console.log("给 MP3 写标签成功");
-          return blob;
-        } catch (error) {
-          console.error("给 MP3 写标签失败:", error);
-          throw new Error("给 MP3 写标签失败");
-        }
-      };
-      const embedMp3Picture = async (file, picture) => {
-        try {
-          if (!picture) return file;
-          const all = await readAllMp3Tag(file);
-          const buffer = await blobToArrayBuffer(file);
-          const picBuffer = await blobToArrayBuffer(picture);
-          const writer = new o(buffer);
-          writer.removeTag();
-          applyId3Frames(writer, all);
-          writer.setFrame("APIC", {
-            description: "cover",
-            data: picBuffer,
-            type: (
-              /* ImageType.CoverFront */
-              3
-            ),
-            useUnicodeEncoding: false
-          });
-          writer.addTag();
-          console.log("给 MP3 嵌入封面成功");
-          return writer.getBlob();
-        } catch (error) {
-          console.error("给 MP3 嵌入封面失败:", error);
-          return file;
-        }
       };
       const MP3_TAG_SELECT_OPTIONS = Object.entries(MP3_TAGS).filter(([key]) => key !== "picture");
       const Mp3Tab = () => {
