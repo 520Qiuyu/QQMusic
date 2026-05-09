@@ -7,6 +7,7 @@ import { forwardRef } from 'react';
 import AlbumTab from './components/AlbumTab';
 import DownloadSettingTab from './components/DownloadSettingTab';
 import FlacTab from './components/FlacTab';
+import Mp3Tab from './components/Mp3Tab';
 import FunctionSwitchTab from './components/FunctionSwitchTab';
 import SearchTab from './components/SearchTab';
 import SingerTab from './components/SingerTab';
@@ -61,6 +62,11 @@ const TestModal = forwardRef((_, ref: ForwardedRef<Ref>) => {
       key: 'flac',
       label: 'FLAC',
       children: <FlacTab />,
+    },
+    {
+      key: 'mp3',
+      label: 'MP3',
+      children: <Mp3Tab />,
     },
     enableFunctionSwitchTab && {
       key: 'functionSwitchTab',

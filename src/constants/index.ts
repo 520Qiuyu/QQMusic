@@ -116,3 +116,9 @@ export const FLAC_TAGS: Record<string, string> = Object.entries(FlacTag).reduce(
   },
   {} as Record<string, string>,
 );
+
+/** MP3（ID3）标签中文映射，字段与 {@link FlacTag} 对齐并含内嵌封面 */
+export const MP3_TAGS: Record<string, string> = {
+  ...FLAC_TAGS,
+  picture: '封面',
+};
