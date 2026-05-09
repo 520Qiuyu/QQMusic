@@ -8,6 +8,7 @@ import { downloadAsLRC, downloadFileWithBlob, getFileBlob } from '@/utils/downlo
 import { message } from 'antd';
 import { useEffect, useRef, useState } from 'react';
 import { useConfig } from './useConfig';
+import { embedMp3Picture, writeMp3Tag, writeMp3Tags, type Mp3TagWriteEntry } from '@/libs/mp3';
 
 const audio = new Audio();
 
@@ -178,22 +179,48 @@ export const usePlayMusic = () => {
             }
             outputFile = await writeFlacTagAndPicture(outputFile, 'lyrics', lyric, coverBlob!);
             break;
+          case 'mp3':
+            if (songInfo) {
+              const {
+                name,
+                album: { name: albumName },
+                singer,
+              } = songInfo;
+              const tags: Mp3TagWriteEntry[] = [];
+              if (name) {
+                tags.push({ tag: 'title', value: name });
+              }
+              if (albumName) {
+                tags.push({ tag: 'album', value: albumName });
+              }
+              if (singer) {
+                tags.push({ tag: 'artist', value: singer.map((item) => item.name).join(',') });
+              }
+              if (lyric) {
+                tags.push({ tag: 'lyrics', value: lyric });
+              }
+              outputFile = await writeMp3Tags(outputFile, tags);
+            }
+            outputFile = await embedMp3Picture(outputFile, coverBlob!);
+            break;
           default:
             console.log('当前格式不支持');
             break;
         }
       }
 
+      const fileName =
+        fileNameFormat
+          .replace('【歌曲名】', name)
+          .replace('【歌手】', songInfo.singer.map((item) => item.name).join(','))
+          .replace('【专辑】', songInfo.album.name) || name;
+
       // 下载歌词
       if (downloadLyric) {
-        downloadAsLRC(lyric, name);
+        downloadAsLRC(lyric, fileName);
       }
 
-      const fileName = fileNameFormat
-        .replace('【歌曲名】', name)
-        .replace('【歌手】', songInfo.singer.map((item) => item.name).join(','))
-        .replace('【专辑】', songInfo.album.name);
-      downloadFileWithBlob(outputFile, `${fileName || name}.${finalExt}`);
+      downloadFileWithBlob(outputFile, `${fileName}.${finalExt}`);
     } catch (error) {
       console.log('error', error);
     }
