@@ -186,8 +186,8 @@ export const useGetSonglistDetail = () => {
       list: songs.map((song) => {
         const formatName = fileNameFormat
           .replace('【歌曲名】', song.name)
-          .replace('【歌手】', song.singer.map((item) => item.name).join(','))
-          .replace('【专辑】', song.album.name);
+          .replace('【歌手】', song.singer?.map((item) => item.name).join(','))
+          .replace('【专辑】', song.album?.name);
         return {
           songName: formatName || song.name,
           url: song.url,

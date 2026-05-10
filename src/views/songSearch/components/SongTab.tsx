@@ -95,7 +95,7 @@ const SongTab = ({ data, loading }: SongTabProps) => {
   const columns_song: ColumnType<SongRow>[] = [
     {
       title: '歌曲信息',
-      dataIndex: 'name',
+      dataIndex: 'title',
       width: 300,
       render: (text, record) => (
         <Space size='middle' className={styles['song-info']}>

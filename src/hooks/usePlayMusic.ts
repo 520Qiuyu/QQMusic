@@ -124,7 +124,9 @@ export const usePlayMusic = () => {
     try {
       // 获取歌曲信息
       const songInfo = await getSongInfo(mid);
-      const { name, album: { mid: albumMid } = {} } = songInfo;
+      console.log('songInfo', songInfo);
+      const { album: { mid: albumMid } = {} } = songInfo;
+      const name = songInfo.title || songInfo.name;
       // 获取歌曲播放地址
       const url = await getUrl(mid, quality);
       console.log(`当前下载歌曲${name},音质为${quality},链接为${url}`);
@@ -161,9 +163,10 @@ export const usePlayMusic = () => {
                 name,
                 album: { name: albumName },
                 singer,
+                title,
               } = songInfo;
-              if (name) {
-                outputFile = await writeFlacTag(outputFile, FlacTag.标题, name);
+              if (title || name) {
+                outputFile = await writeFlacTag(outputFile, FlacTag.标题, title || name);
               }
               if (albumName) {
                 outputFile = await writeFlacTag(outputFile, FlacTag.专辑, albumName);
@@ -185,10 +188,11 @@ export const usePlayMusic = () => {
                 name,
                 album: { name: albumName },
                 singer,
+                title,
               } = songInfo;
               const tags: Mp3TagWriteEntry[] = [];
-              if (name) {
-                tags.push({ tag: 'title', value: name });
+              if (title || name) {
+                tags.push({ tag: 'title', value: title || name });
               }
               if (albumName) {
                 tags.push({ tag: 'album', value: albumName });
@@ -256,7 +260,8 @@ export const usePlayMusic = () => {
       // 获取歌曲信息
       log(`开始获取歌曲信息：${mid}`);
       const songInfo = await getSongInfo(mid);
-      const { name, album: { mid: albumMid } = {} } = songInfo;
+      const { album: { mid: albumMid } = {} } = songInfo;
+      const name = songInfo.title || songInfo.name;
       log(`获取到歌曲信息：${name}`, songInfo);
       // 获取歌曲播放地址
       const url = await getUrl(mid, quality);
