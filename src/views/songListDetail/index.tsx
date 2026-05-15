@@ -360,8 +360,8 @@ const SongListDetail = forwardRef((_, ref: ForwardedRef<Ref<any, IOpenParams>>) 
   const songColumns: ColumnType<SongInfo & { quality?: keyof typeof FileType }>[] = [
     {
       title: '歌曲信息',
-      dataIndex: 'name',
-      key: 'name',
+      dataIndex: 'title',
+      key: 'title',
       width: 280,
       render: (text: string, record: SongInfo) => (
         <div className={styles['song-info']}>
