@@ -84,7 +84,8 @@ const SongTab = ({ data, loading }: SongTabProps) => {
 
   const handleDownloadNeteaseMusic = async (record: SongRow) => {
     try {
-      await convertToNeteaseMusic(record.mid);
+      const finalQuality = getQuality(record, defaultQuality, record.quality);
+      await convertToNeteaseMusic(record.mid, { quality: finalQuality });
       msgSuccess('歌曲转存网易云成功');
     } catch (error) {
       console.log('error', error);
